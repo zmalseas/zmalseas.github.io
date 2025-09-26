@@ -268,4 +268,8 @@ class ChatWidget {
   }
 }
 
-export default ChatWidget;
+// Initialize chat widget
+const chatWidget = new ChatWidget();
+
+// Make it globally available
+window.ChatWidget = ChatWidget;

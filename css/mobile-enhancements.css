@@ -19,6 +19,22 @@ input[type="reset"],
   touch-action: manipulation; /* Prevents zoom on double-tap */
 }
 
+/* Enhanced Link Targets */
+a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+/* Override for dropdown submenu - keep left aligned */
+.submenu a {
+  justify-content: flex-start !important;
+  text-align: left !important;
+}
+
 /* Enhanced Button Spacing for Mobile */
 .hero-buttons,
 .cta-buttons,

@@ -282,8 +282,24 @@ class NeraliApp {
   }
 
   initializeChatWidget() {
-    // Will be implemented by ChatWidget module
-    console.log('Chat widget initialized');
+    // Load chat widget JavaScript module
+    try {
+      const currentPath = window.location.pathname;
+      const isInSubfolder = this.isInSubfolder(currentPath);
+      const basePath = isInSubfolder ? "../" : "./";
+      
+      const script = document.createElement('script');
+      script.src = basePath + 'js/chat-widget.js';
+      script.onload = () => {
+        console.log('💬 Chat widget module loaded');
+      };
+      script.onerror = () => {
+        console.log('⚠️ Chat widget module not loaded - basic functionality only');
+      };
+      document.head.appendChild(script);
+    } catch (error) {
+      console.log('⚠️ Chat widget initialization failed:', error);
+    }
   }
 
   initializeCalculators() {
