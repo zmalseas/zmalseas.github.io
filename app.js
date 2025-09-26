@@ -1,0 +1,406 @@
+
+async function injectPartials() {
+  const headerEl = document.getElementById("site-header");
+  const footerEl = document.getElementById("site-footer");
+  const chatEl = document.getElementById("chat-widget");
+  // Use absolute paths to work with Plesk preview and regular domain
+  const logoPath = "/images/logo.png";
+  const homePath = "/index.html";
+  
+  const HEADER_FALLBACK = `
+<header class="site-header">
+  <div class="frame">
+    <div class="container header-row">
+      <a class="brand" href="${homePath}" aria-label="Nerali Home">
+        <img src="${logoPath}" alt="Nerali logo" width="36" height="36" />
+        <span class="name">Nerali</span>
+      </a>
+
+      <nav class="primary" aria-label="Κύρια Πλοήγηση">
+        <ul class="nav-links">
+          <li class="nav-item"><a href="${homePath}"><span class="text">Αρχική</span></a></li>
+
+          <li class="nav-item dropdown">
+            <a href="#"><span class="text">Υπηρεσίες</span><span class="caret">▾</span></a>
+            <div class="submenu" role="menu">
+              <a href="/ipiresies/logistiki.html">Λογιστική <span class="sm-arrow">→</span></a>
+              <a href="/ipiresies/misthodosia.html">Μισθοδοσία <span class="sm-arrow">→</span></a>
+              <a href="/ipiresies/assurance.html">Assurance <span class="sm-arrow">→</span></a>
+              <a href="/ipiresies/consulting.html">Consulting <span class="sm-arrow">→</span></a>
+              <a href="/ipiresies/cyber-security.html">Cyber Security <span class="sm-arrow">→</span></a>
+              <a href="/ipiresies/social-media.html">Social Media <span class="sm-arrow">→</span></a>
+              <a href="/ipiresies/epixorigiseis.html">Επιχορηγήσεις <span class="sm-arrow">→</span></a>
+              <a href="/ipiresies/symvoulos-mixanikos.html">Σύμβουλος Μηχανικός <span class="sm-arrow">→</span></a>
+            </div>
+          </li>
+
+          <li class="nav-item"><a href="/epikoinonia/contact.html"><span class="text">Επικοινωνία</span></a></li>
+        </ul>
+
+        <button class="hamburger" aria-label="Άνοιγμα μενού">
+          <span class="bar"></span>
+        </button>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile overlay menu -->
+<div class="overlay" aria-hidden="true">
+  <div class="overlay-header">
+    <a href="${homePath}">
+      <img src="${logoPath}" alt="Nerali logo" />
+      <span class="title">Nerali</span>
+    </a>
+  </div>
+
+  <div class="menu-wrap">
+    <div class="menu-list">
+      <a class="menu-toggle" href="${homePath}">Αρχική</a>
+      <div class="menu-item">
+        <button class="menu-toggle">Υπηρεσίες <span class="exp-caret">›</span></button>
+        <div class="menu-sub">
+          <a href="/ipiresies/logistiki.html">Λογιστική</a>
+          <a href="/ipiresies/misthodosia.html">Μισθοδοσία</a>
+          <a href="/ipiresies/assurance.html">Assurance</a>
+          <a href="/ipiresies/consulting.html">Consulting</a>
+          <a href="/ipiresies/cyber-security.html">Cyber Security</a>
+          <a href="/ipiresies/social-media.html">Social Media</a>
+          <a href="/ipiresies/epixorigiseis.html">Επιχορηγήσεις</a>
+          <a href="/ipiresies/symvoulos-mixanikos.html">Σύμβουλος Μηχανικός</a>
+        </div>
+      </div>
+      <a class="menu-toggle" href="/epikoinonia/contact.html">Επικοινωνία</a>
+    </div>
+  </div>
+</div>
+`;
+  const FOOTER_FALLBACK = `
+<footer class="site-footer">
+  <div class="container">
+    <small>© <span id="y"></span> Nerali</small>
+    <a href="mailto:info@nerali.gr">info@nerali.gr</a>
+  </div>
+  <script>document.getElementById("y").textContent=new Date().getFullYear()</script>
+</footer>
+`;
+  try {
+    // Determine the correct path to partials based on current location
+    const currentPath = window.location.pathname;
+    const isInSubfolder = currentPath.includes('/') && !currentPath.endsWith('index.html') && currentPath !== '/';
+    const partialsPath = isInSubfolder ? "../partials/" : "partials/";
+    
+    const promises = [
+      fetch(partialsPath + "header.html").then(r => r.text()),
+      fetch(partialsPath + "footer.html").then(r => r.text()),
+    ];
+    
+    // Only load chat widget if not on contact page
+    const isContactPage = window.location.pathname.includes('contact.html');
+    if (chatEl && !isContactPage) {
+      promises.push(fetch(partialsPath + "chat.html").then(r => r.text()));
+    }
+    
+    const results = await Promise.all(promises);
+    const [h, f, c] = results;
+    
+    if (headerEl) headerEl.innerHTML = h;
+    if (footerEl) footerEl.innerHTML = f;
+    if (chatEl && !isContactPage && c) {
+      chatEl.innerHTML = c;
+      initChatWidget();
+    }
+    
+    initHeaderInteractions();
+  } catch (e) {
+    if (headerEl) headerEl.innerHTML = HEADER_FALLBACK;
+    if (footerEl) footerEl.innerHTML = FOOTER_FALLBACK;
+    initHeaderInteractions();
+  }
+}
+
+function initHeaderInteractions(){
+  const header = document.querySelector(".site-header");
+  if (!header) return;
+
+  // Dropdowns now work with CSS hover, no JavaScript needed for desktop
+  
+  header.querySelectorAll(".submenu a").forEach(link => {
+    link.addEventListener("click", () => link.classList.add("clicked"));
+  });
+
+  const hamburger = header.querySelector(".hamburger");
+  const overlay = document.querySelector(".overlay");
+  if (hamburger && overlay){
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      overlay.classList.toggle("open");
+    });
+    overlay.addEventListener("click", (e) => {
+      if (e.target.classList.contains("overlay")) {
+        hamburger.classList.remove("active");
+        overlay.classList.remove("open");
+      }
+    });
+    overlay.querySelectorAll(".menu-item .menu-toggle").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const currentMenuItem = btn.closest(".menu-item");
+        const isCurrentlyOpen = currentMenuItem.classList.contains("open");
+        
+        // Close all menu items first
+        overlay.querySelectorAll(".menu-item").forEach(item => {
+          item.classList.remove("open");
+        });
+        
+        // If the clicked item wasn't open, open it
+        if (!isCurrentlyOpen) {
+          currentMenuItem.classList.add("open");
+        }
+      });
+    });
+    
+    // Close overlay when window resizes above mobile breakpoint
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 1100 && overlay.classList.contains("open")) {
+        hamburger.classList.remove("active");
+        overlay.classList.remove("open");
+      }
+    });
+  }
+}
+
+function initChatWidget() {
+  const chatButton = document.getElementById('chatButton');
+  const chatModal = document.getElementById('chatModal');
+  const chatClose = document.getElementById('chatClose');
+  const chatBackdrop = document.getElementById('chatBackdrop');
+  const chatForm = document.getElementById('chatForm');
+  
+  if (!chatButton || !chatModal) return;
+  
+  // Footer collision detection
+  function handleFooterCollision() {
+    const footer = document.querySelector('.site-footer, footer');
+    const chatWidget = document.querySelector('.chat-widget');
+    
+    if (!footer || !chatWidget) return;
+    
+    const footerRect = footer.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+    const chatHeight = 60; // Approximate chat button height
+    const bottomMargin = 20;
+    
+    // Check if footer is visible in viewport
+    if (footerRect.top <= viewportHeight) {
+      const overlapDistance = viewportHeight - footerRect.top + bottomMargin;
+      chatWidget.style.transform = `translateY(-${overlapDistance}px)`;
+    } else {
+      chatWidget.style.transform = 'translateY(0)';
+    }
+  }
+  
+  // Open chat modal
+  function openChat() {
+    chatModal.classList.add('active');
+    if (chatBackdrop) chatBackdrop.classList.add('active');
+    document.body.classList.add('chat-modal-open');
+    
+    // Add modal-open class to chat widget for animation
+    const chatWidget = document.querySelector('.chat-widget');
+    if (chatWidget) chatWidget.classList.add('modal-open');
+    
+    // Reset textarea to original size and clear inline styles
+    const textarea = chatModal.querySelector('textarea');
+    if (textarea) {
+      textarea.style.cssText = ''; // Clear all inline styles
+      textarea.rows = 4; // Reset to default rows if needed
+    }
+    
+    // Reset form data and remove any focus states
+    const form = chatModal.querySelector('form');
+    if (form) {
+      form.reset();
+      
+      // Remove focus from all inputs
+      const allInputs = form.querySelectorAll('input, textarea');
+      allInputs.forEach(input => {
+        input.blur();
+        input.classList.remove('focused'); // Remove any custom focus classes
+      });
+    }
+    
+    // Focus first input
+    const firstInput = chatModal.querySelector('input');
+    if (firstInput) {
+      setTimeout(() => firstInput.focus(), 350);
+    }
+  }
+  
+  // Close chat modal
+  function closeChat() {
+    // Start closing animation - add closing class to wrapper
+    chatModal.classList.add('closing');
+    
+    // Remove modal-open class from chat widget immediately for visual feedback
+    const chatWidget = document.querySelector('.chat-widget');
+    if (chatWidget) chatWidget.classList.remove('modal-open');
+    
+    // Wait for animation to complete before fully hiding
+    setTimeout(() => {
+      // Now remove everything
+      chatModal.classList.remove('active');
+      chatModal.classList.remove('closing');
+      if (chatBackdrop) chatBackdrop.classList.remove('active');
+      document.body.classList.remove('chat-modal-open');
+    }, 300); // Match the animation duration
+  }
+  
+  // Event listeners
+  chatButton.addEventListener('click', openChat);
+  if (chatClose) chatClose.addEventListener('click', closeChat);
+  
+  // Close when clicking on the wrapper (outside modal)
+  let mouseDownTarget = null;
+  
+  chatModal.addEventListener('mousedown', function(e) {
+    mouseDownTarget = e.target;
+  });
+  
+  chatModal.addEventListener('click', function(e) {
+    // Only close if both mousedown and click happened on the modal wrapper
+    if (e.target === chatModal && mouseDownTarget === chatModal) {
+      closeChat();
+    }
+    mouseDownTarget = null;
+  });
+  
+  // Close when clicking on backdrop
+  if (chatBackdrop) {
+    chatBackdrop.addEventListener('click', closeChat);
+  }
+  
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && chatModal.classList.contains('active')) {
+      closeChat();
+    }
+  });
+  
+  // Handle form submission
+  if (chatForm) {
+    chatForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = new FormData(chatForm);
+      const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        message: formData.get('message')
+      };
+      
+      // Simple validation
+      if (!data.name.trim() || !data.email.trim() || !data.message.trim()) {
+        alert('Παρακαλώ συμπληρώστε όλα τα πεδία');
+        return;
+      }
+      
+      // Simulate form submission (replace with actual implementation)
+      const submitButton = chatForm.querySelector('.chat-submit');
+      const originalText = submitButton.innerHTML;
+      
+      submitButton.innerHTML = '<span>Αποστολή...</span>';
+      submitButton.disabled = true;
+      
+      setTimeout(() => {
+        alert('Το μήνυμά σας στάλθηκε επιτυχώς!');
+        chatForm.reset();
+        closeChat();
+        
+        submitButton.innerHTML = originalText;
+        submitButton.disabled = false;
+      }, 1500);
+    });
+  }
+  
+  // Handle scroll and resize for footer collision
+  let ticking = false;
+  function updateChatPosition() {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        handleFooterCollision();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+  
+  window.addEventListener('scroll', updateChatPosition);
+  window.addEventListener('resize', updateChatPosition);
+  
+  // Initial position check
+  setTimeout(handleFooterCollision, 100);
+  
+  // Initialize floating labels
+  initFloatingLabels();
+}
+
+function initFloatingLabels() {
+  const floatingInputs = document.querySelectorAll('.floating-label input, .floating-label textarea');
+  
+  floatingInputs.forEach(input => {
+    // Handle input events
+    input.addEventListener('input', function() {
+      if (this.value.trim() !== '') {
+        this.classList.add('has-value');
+      } else {
+        this.classList.remove('has-value');
+      }
+    });
+    
+    // Handle focus events
+    input.addEventListener('focus', function() {
+      this.classList.add('is-focused');
+    });
+    
+    // Handle blur events
+    input.addEventListener('blur', function() {
+      this.classList.remove('is-focused');
+      if (this.value.trim() !== '') {
+        this.classList.add('has-value');
+      } else {
+        this.classList.remove('has-value');
+      }
+    });
+    
+    // Check initial state
+    if (input.value.trim() !== '') {
+      input.classList.add('has-value');
+    }
+  });
+}
+
+// ===== Scroll Reveal Animation =====
+function initScrollReveal() {
+  const revealElements = document.querySelectorAll('.scroll-reveal');
+  
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: '50px 0px -50px 0px'
+  });
+
+  revealElements.forEach(el => {
+    revealObserver.observe(el);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  injectPartials();
+  initScrollReveal();
+});

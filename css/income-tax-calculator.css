@@ -1,0 +1,222 @@
+/* Income Tax Calculator Styles */
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 22px;
+  width: 100%;
+  position: relative;
+}
+
+.content-section {
+  margin: 0;
+  padding: 0;
+}
+
+.page-header {
+  margin-bottom: 30px;
+}
+
+.calculator-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.form-section {
+  margin-bottom: 30px;
+}
+
+.form-section h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.form-group input[type="number"]:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+}
+
+.btn-secondary {
+  background-color: #95a5a6;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #7f8c8d;
+}
+
+.results-section {
+  margin-top: 30px;
+}
+
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* Tax Brackets Table Styling */
+.tax-brackets-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.tax-brackets-table th,
+.tax-brackets-table td {
+  padding: 12px 8px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.tax-brackets-table th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.tax-brackets-table td:first-child {
+  text-align: left;
+}
+
+.tax-brackets-table .amount-column {
+  text-align: center;
+}
+
+.tax-brackets-table .rate-column {
+  text-align: center;
+}
+
+.result-item:last-child {
+  border-bottom: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #2c3e50;
+}
+
+.result-label {
+  color: #666;
+}
+
+.result-value {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.info-box {
+  background-color: #e8f4f8;
+  border-left: 4px solid #3498db;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+.info-box h4 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+.warning-box {
+  background-color: #fdf2e8;
+  border-left: 4px solid #f39c12;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+.warning-box h4 {
+  margin-top: 0;
+  color: #d68910;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+  
+  .calculator-card {
+    padding: 15px;
+  }
+  
+  .button-group {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,77 @@
+<!-- Sticky Chat Widget -->
+<div class="chat-widget">
+  <!-- Chat Icon Button -->
+  <button class="chat-button" id="chatButton" aria-label="Άνοιγμα επικοινωνίας">
+    <svg class="chat-icon" viewBox="0 0 24 24" width="28" height="28">
+      <path fill="currentColor" d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+      <circle cx="8" cy="10" r="1.5"/>
+      <circle cx="12" cy="10" r="1.5"/>
+      <circle cx="16" cy="10" r="1.5"/>
+    </svg>
+    <div class="chat-pulse"></div>
+  </button>
+</div>
+
+<!-- Chat Modal Wrapper -->
+<div class="chat-modal-wrapper" id="chatModal">
+  <div class="chat-modal">
+    <div class="chat-modal-content">
+      <div class="chat-header">
+        <h3>Επικοινωνήστε μαζί μας</h3>
+        <button class="chat-close" id="chatClose" aria-label="Κλείσιμο">
+          <svg viewBox="0 0 24 24" width="20" height="20">
+            <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="chat-body">
+        <p class="welcome-text">Θα απαντήσουμε το συντομότερο δυνατό! Πείτε μας τι χρειάζεστε και θα σας βοηθήσουμε. Είμαστε εδώ για να σας παρέχουμε την καλύτερη δυνατή εξυπηρέτηση και να απαντήσουμε σε όλες τις ερωτήσεις σας.</p>
+        
+        <form class="contact-form" id="chat-contact-form">
+          <div class="form-row">
+            <div class="form-group floating-label">
+              <input type="text" id="firstName" name="firstName" required>
+              <label for="firstName">Όνομα *</label>
+            </div>
+            <div class="form-group floating-label">
+              <input type="text" id="lastName" name="lastName" required>
+              <label for="lastName">Επίθετο *</label>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group floating-label">
+              <input type="email" id="email" name="email" required>
+              <label for="email">Email *</label>
+            </div>
+            <div class="form-group floating-label">
+              <input type="tel" id="phone" name="phone">
+              <label for="phone">Κινητό</label>
+            </div>
+          </div>
+          
+          <div class="form-group floating-label">
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <label for="message">Μήνυμα *</label>
+          </div>
+          
+          <div class="form-group checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="privacy" name="privacy" required>
+              <span class="checkmark"></span>
+              Αποδέχομαι την <a href="/nomimotita/privacy-policy.html" target="_blank">Πολιτική Απορρήτου</a> *
+            </label>
+          </div>
+          
+          <div class="form-actions">
+            <button type="submit" class="submit-btn">Αποστολή Μηνύματος</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Backdrop -->
+<div class="chat-backdrop" id="chatBackdrop"></div>

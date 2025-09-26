@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Φόρος Ενοικίων — Υπολογιστής Nerali</title>
+  <link rel="icon" type="image/png" href="../images/logo.png" />
+  <link rel="stylesheet" href="../main.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+  
+  <main>
+    <div class="calculator-layout">
+      <!-- Left Section - Information -->
+      <div class="left-section">
+        <div class="calculator-container">
+          <h1 class="page-title">Υπολογιστής Φόρου Ενοικίων</h1>
+          <p class="page-description">
+            Υπολογίστε εύκολα και γρήγορα τον φόρο που οφείλετε από ενοικιαστικά εισοδήματα. 
+            Ο υπολογιστής μας λαμβάνει υπόψη τις τρεις φορολογικές κλίμακες και υπολογίζει 
+            αυτόματα τις νόμιμες εκπτώσεις.
+          </p>
+          
+          <div class="info-box">
+            <h3>📋 Φορολογικές Κλίμακες 2025</h3>
+            <ul>
+              <li><strong>0€ - 12.000€:</strong> 15% φόρος</li>
+              <li><strong>12.001€ - 35.000€:</strong> 35% φόρος</li>
+              <li><strong>Πάνω από 35.000€:</strong> 45% φόρος</li>
+            </ul>
+          </div>
+          
+          <div class="tip-box">
+            <h4>💡 Χρήσιμες Πληροφορίες</h4>
+            <p>
+              Το φορολογητέο εισόδημα υπολογίζεται αφαιρώντας αυτόματα το 5% των εσόδων 
+              ως τεκμαρτές δαπάνες συντήρησης και διαχείρισης.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Section - Calculator -->
+      <div class="right-section">
+        <div class="calculator-container">
+
+          <section class="calc-card">
+            <div class="calc-header">
+              <h2 class="calc-title-in-card">Φόρος Ενοικίων — Υπολογισμός & Κλιμάκια</h2>
+            </div>
+            
+            <div class="calc-grid">
+              <div>
+                <label class="calc-label" for="count">Αριθμός ακινήτων (1–5)</label>
+                <input class="calc-input" id="count" type="number" min="1" max="5" step="1" value="1" />
+              </div>
+              <div class="calc-muted" style="align-self:end; font-size: 12px;">
+                Συμπλήρωσε μίσθωμα/μήνες για κάθε ακίνητο και πάτησε <strong>Υπολογισμός</strong>.
+              </div>
+            </div>
+
+            <div id="props" class="calc-grid" style="margin-top:12px;"></div>
+
+            <div class="calc-controls">
+              <button id="calcBtn" class="calc-button primary" type="button">Υπολογισμός</button>
+              <button id="resetBtn" class="calc-button" type="button">Επαναφορά</button>
+            </div>
+          </section>
+
+          <section class="calc-card">
+            <h2 class="results-title">Αποτελέσματα</h2>
+            <div class="kpis">
+              <div class="kpi">
+                <div class="label">Συνολικά έσοδα</div>
+                <div id="gross" class="val">—</div>
+              </div>
+              <div class="kpi">
+                <div class="label">Φορολογητέο (95%)</div>
+                <div id="taxable" class="val">—</div>
+              </div>
+              <div class="kpi">
+                <div class="label">Φόρος</div>
+                <div id="tax" class="val">—</div>
+              </div>
+            </div>
+
+            <div>
+              <div class="brackets-title">Κλιμάκια φόρου</div>
+              <div class="calc-row" style="padding:0;">
+                <div class="table-wrapper">
+                  <table class="calc-table">
+                  <thead>
+                    <tr>
+                      <th>Κλιμάκιο</th>
+                      <th class="r">Ποσό</th>
+                      <th class="r">Συντελεστής</th>
+                      <th class="r">Φόρος</th>
+                    </tr>
+                  </thead>
+                  <tbody id="bracketRows">
+                    <tr><td colspan="4" class="calc-muted" style="text-align:center; padding:16px;">Δεν υπάρχουν υπολογισμοί ακόμη.</td></tr>
+                  </tbody>
+                  <tfoot id="bracketFoot"></tfoot>
+                </table>
+                </div>
+              </div>
+              <div class="disclaimer">
+                <p>* Ο υπολογισμός είναι ενδεικτικός και βασίζεται στις ισχύουσες φορολογικές διατάξεις</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="chat-widget"></div>
+
+  <script src="../app.js" defer></script>
+  <script src="../js/rent-tax-calculator.js" defer></script>
+</body>
+</html>
