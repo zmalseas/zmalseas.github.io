@@ -55,8 +55,7 @@ class NeraliApp {
   async loadPartials() {
     const tasks = [
       this.injectHeader(),
-      this.injectFooter(),
-      this.injectChatWidget()
+      this.injectFooter()
     ];
     
     await Promise.allSettled(tasks);
@@ -68,11 +67,7 @@ class NeraliApp {
 
     const currentPath = window.location.pathname;
     const isInSubfolder = this.isInSubfolder(currentPath);
-    const logoPath = isInSubfolder ? "../images/logo.png" : "images/logo.png";
-    const homePath = isInSubfolder ? "../index.html" : "index.html";
     const basePath = isInSubfolder ? "../" : "";
-
-    const headerHtml = this.getHeaderHTML(logoPath, homePath, basePath);
 
     try {
       const response = await fetch(`${basePath}partials/header.html`);
@@ -84,8 +79,8 @@ class NeraliApp {
         throw new Error(`Failed to load header: ${response.status}`);
       }
     } catch (error) {
-      console.warn('Using fallback header:', error.message);
-      headerEl.innerHTML = headerHtml;
+      console.warn('Header loading failed:', error.message);
+      this.showSimpleError();
     }
   }
 
@@ -175,34 +170,7 @@ class NeraliApp {
     }
   }
 
-  async injectChatWidget() {
-    const chatEl = document.getElementById("chat-widget");
-    if (!chatEl) return;
 
-    const currentPath = window.location.pathname;
-    const isInSubfolder = this.isInSubfolder(currentPath);
-    const basePath = isInSubfolder ? "../" : "";
-
-    try {
-      const response = await fetch(`${basePath}partials/chat.html`);
-      if (response.ok) {
-        chatEl.innerHTML = await response.text();
-        console.log('💬 Chat widget loaded');
-      } else {
-        throw new Error(`Failed to load chat widget: ${response.status}`);
-      }
-    } catch (error) {
-      console.warn('Chat widget not loaded:', error.message);
-      // Fallback chat widget
-      chatEl.innerHTML = `
-        <div class="chat-widget">
-          <button class="chat-button" onclick="window.location.href='${basePath}epikoinonia/contact.html'">
-            💬 <span>Επικοινωνία</span>
-          </button>
-        </div>
-      `;
-    }
-  }
 
   initializeNavigation() {
     // Load navigation module instead of duplicating code
@@ -309,130 +277,56 @@ class NeraliApp {
            (currentPath.split('/').length > 2 && !currentPath.endsWith('/'));
   }
 
-  getHeaderHTML(logoPath, homePath, basePath) {
-    return `
-      <header class="site-header">
-        <div class="frame">
-          <div class="container header-row">
-            <a class="brand" href="${homePath}" aria-label="Nerali Home">
-              <img src="${logoPath}" alt="Nerali logo" width="36" height="36" />
+  showSimpleError() {
+    // Simple error message if header fails to load
+    const headerEl = document.getElementById("site-header");
+    if (headerEl) {
+      headerEl.innerHTML = `
+        <header class="site-header">
+          <div class="header-row">
+            <a class="brand" href="/" aria-label="Nerali Home">
               <span class="name">Nerali</span>
             </a>
-
-            <nav class="primary" aria-label="Κύρια Πλοήγηση">
-              <ul class="nav-links">
-                <li class="nav-item"><a href="${homePath}"><span class="text">Αρχική</span></a></li>
-                <li class="nav-item dropdown">
-                  <a href="#"><span class="text">Υπηρεσίες</span><span class="caret">▾</span></a>
-                  <div class="submenu" role="menu">
-                    <a href="${basePath}ipiresies/logistiki.html">Λογιστική <span class="sm-arrow">→</span></a>
-                    <a href="${basePath}ipiresies/misthodosia.html">Μισθοδοσία <span class="sm-arrow">→</span></a>
-                    <a href="${basePath}ipiresies/consulting.html">Consulting <span class="sm-arrow">→</span></a>
-                    <a href="${basePath}ipiresies/cyber-security.html">Cyber Security <span class="sm-arrow">→</span></a>
-                  </div>
-                </li>
-                <li class="nav-item"><a href="${basePath}epikoinonia/contact.html"><span class="text">Επικοινωνία</span></a></li>
-              </ul>
-
-              <button class="hamburger" aria-label="Άνοιγμα μενού">
-                <span class="bar"></span>
-              </button>
+            <nav class="primary">
+              <p style="color: #999; font-size: 0.9rem;">Φόρτωση μενού...</p>
             </nav>
           </div>
-        </div>
-      </header>
-
-      <div class="overlay" aria-hidden="true">
-        <div class="overlay-header">
-          <a href="${homePath}">
-            <img src="${logoPath}" alt="Nerali logo" />
-            <span class="title">Nerali</span>
-          </a>
-        </div>
-        <div class="menu-wrap">
-          <div class="menu-list">
-            <a class="menu-toggle" href="${homePath}">Αρχική</a>
-            <div class="menu-item">
-              <button class="menu-toggle">Υπηρεσίες <span class="exp-caret">›</span></button>
-              <div class="menu-sub">
-                <a href="${basePath}ipiresies/logistiki.html">Λογιστική</a>
-                <a href="${basePath}ipiresies/consulting.html">Consulting</a>
-                <a href="${basePath}ipiresies/cyber-security.html">Cyber Security</a>
-              </div>
-            </div>
-            <a class="menu-toggle" href="${basePath}epikoinonia/contact.html">Επικοινωνία</a>
-          </div>
-        </div>
-      </div>
-    `;
+        </header>
+      `;
+    }
   }
 
   initializeSecurity() {
-    // Basic security initialization without external modules
-    console.log('🔒 Basic security measures active');
-    
-    // Add basic CSRF protection
-    this.addBasicCSRFProtection();
-    
-    // Add basic XSS protection
-    this.addBasicXSSProtection();
-    
-    // Add basic schema markup
-    this.addBasicSchemaMarkup();
+    // Load security manager module for advanced protection
+    try {
+      const currentPath = window.location.pathname;
+      const isInSubfolder = this.isInSubfolder(currentPath);
+      const basePath = isInSubfolder ? "../" : "./";
+      
+      const script = document.createElement('script');
+      script.src = basePath + 'js/security-manager.js';
+      script.onload = () => {
+        console.log('🔒 Security manager module loaded');
+        if (window.SecurityManager) {
+          new SecurityManager();
+        }
+      };
+      script.onerror = () => {
+        console.warn('⚠️ Security manager not loaded - using basic protection');
+        this.addBasicProtection();
+      };
+      document.head.appendChild(script);
+    } catch (error) {
+      console.error('Security initialization failed:', error);
+      this.addBasicProtection();
+    }
   }
 
-  addBasicCSRFProtection() {
-    // Generate simple CSRF token
-    const token = Math.random().toString(36).substr(2, 9) + Date.now().toString(36);
+  addBasicProtection() {
+    // Minimal fallback security
+    const token = Math.random().toString(36).substr(2, 9);
     sessionStorage.setItem('csrf_token', token);
-    
-    // Add to all forms
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('form').forEach(form => {
-        if (!form.querySelector('input[name="csrf_token"]')) {
-          const input = document.createElement('input');
-          input.type = 'hidden';
-          input.name = 'csrf_token';
-          input.value = token;
-          form.appendChild(input);
-        }
-      });
-    });
-  }
-
-  addBasicXSSProtection() {
-    // Basic input sanitization
-    document.addEventListener('input', (e) => {
-      if (e.target.matches('input, textarea')) {
-        const value = e.target.value;
-        if (/<script|javascript:|on\w+=/i.test(value)) {
-          e.target.value = value.replace(/<script.*?<\/script>/gi, '').replace(/javascript:/gi, '').replace(/on\w+=/gi, '');
-        }
-      }
-    });
-  }
-
-  addBasicSchemaMarkup() {
-    // Add basic organization schema
-    const schema = {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Nerali - Λογιστικό Γραφείο",
-      "description": "Λογιστικές υπηρεσίες, φοροτεχνικά, συμβουλευτικές υπηρεσίες",
-      "url": window.location.origin,
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Αθήνα",
-        "addressCountry": "GR"
-      }
-    };
-
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.textContent = JSON.stringify(schema);
-    document.head.appendChild(script);
-    
-    console.log('📊 Basic schema markup added');
+    console.log('� Basic security fallback active');
   }
 
   showError(message) {

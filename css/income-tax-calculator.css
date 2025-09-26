@@ -1,24 +1,5 @@
 /* Income Tax Calculator Styles */
 
-body {
-  margin: 0;
-  padding: 0;
-  line-height: 1;
-}
-
-main {
-  margin: 0;
-  padding: 0;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 22px;
-  width: 100%;
-  position: relative;
-}
-
 .content-section {
   margin: 0;
   padding: 0;

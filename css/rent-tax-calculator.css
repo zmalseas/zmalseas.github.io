@@ -1,16 +1,5 @@
 /* Rent Tax Calculator Styles */
 
-body {
-  margin: 0;
-  padding: 0;
-  line-height: 1;
-}
-
-main {
-  margin: 0;
-  padding: 0;
-}
-
 .calculator-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
