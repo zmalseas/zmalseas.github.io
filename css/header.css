@@ -104,4 +104,4 @@ nav.primary{display:flex;align-items:center;gap:16px}
 .hamburger.active .bar{transform:rotate(45deg); background:var(--brand) !important}
 .hamburger.active .bar::before{transform:rotate(-90deg) translateX(-8px); background:var(--brand) !important; opacity:1}
 .hamburger.active .bar::after{opacity:0}
-@media (max-width:1100px){ .nav-links{display:none} .hamburger{display:flex} }
+@media (max-width:768px){ .nav-links{display:none} .hamburger{display:flex} }

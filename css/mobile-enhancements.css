@@ -20,13 +20,19 @@ input[type="reset"],
 }
 
 /* Enhanced Link Targets */
-a {
+a:not(.legal-link) {
   min-height: 44px;
   display: inline-flex;
   align-items: center;
   text-decoration: none;
   border-radius: var(--radius-sm);
   transition: background-color var(--transition-fast);
+}
+
+/* Keep legal links small */
+.legal-link {
+  min-height: auto !important;
+  display: inline-block !important;
 }
 
 /* Override for dropdown submenu - keep left aligned */
@@ -78,7 +84,7 @@ a {
 }
 
 /* Enhanced Mobile Menu */
-@media (max-width: 1100px) {
+@media (max-width: 768px) {
   .overlay .menu-toggle {
     padding: var(--spacing-lg) var(--spacing-xl);
     min-height: 56px;
@@ -95,7 +101,7 @@ a {
 }
 
 /* Form Input Improvements */
-input,
+input:not([type="checkbox"]):not([type="radio"]),
 textarea,
 select {
   min-height: 48px;
@@ -105,8 +111,16 @@ select {
   touch-action: manipulation;
 }
 
+/* Keep checkboxes and radio buttons at natural size */
+input[type="checkbox"],
+input[type="radio"] {
+  min-height: auto !important;
+  width: auto !important;
+  height: auto !important;
+}
+
 @media (max-width: 768px) {
-  input,
+  input:not([type="checkbox"]):not([type="radio"]),
   textarea,
   select {
     font-size: 16px; /* Prevents zoom on iOS */
@@ -115,6 +129,12 @@ select {
   
   textarea {
     min-height: 120px;
+  }
+  
+  input[type="checkbox"],
+  input[type="radio"] {
+    font-size: inherit !important;
+    min-height: auto !important;
   }
 }
 
@@ -164,21 +184,7 @@ select {
   }
 }
 
-/* Improved Link Targets */
-a {
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-  border-radius: var(--radius-sm);
-  transition: background-color var(--transition-fast);
-}
-
-a:hover,
-a:focus {
-  background-color: rgba(0, 229, 255, 0.1);
-  outline: none;
-}
+/* This section handled above with :not(.legal-link) */
 
 /* Navigation Links */
 .nav-links a {
