@@ -8,23 +8,6 @@
   gap: var(--spacing-sm);
   padding: var(--spacing-lg);
   color: var(--muted);
-  fo/* Skip Link for Accessibility */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 6px;
-  background: var(--primary);
-  color: var(--white);
-  padding: 8px;
-  text-decoration: none;
-  border-radius: var(--radius-sm);
-  z-index: 10000;
-  font-weight: 600;
-  transition: top var(--transition-fast);
-}
-
-.skip-link:focus {
-  top: 6px;
 }
 
 /* Image Lazy Loading & Optimization */

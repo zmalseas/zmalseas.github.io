@@ -176,11 +176,31 @@ class NeraliApp {
   }
 
   async injectChatWidget() {
-    // Chat widget will be handled by ChatWidget module
-    // This is just a placeholder for the container
     const chatEl = document.getElementById("chat-widget");
-    if (chatEl) {
-      // Module will handle the actual injection
+    if (!chatEl) return;
+
+    const currentPath = window.location.pathname;
+    const isInSubfolder = this.isInSubfolder(currentPath);
+    const basePath = isInSubfolder ? "../" : "";
+
+    try {
+      const response = await fetch(`${basePath}partials/chat.html`);
+      if (response.ok) {
+        chatEl.innerHTML = await response.text();
+        console.log('💬 Chat widget loaded');
+      } else {
+        throw new Error(`Failed to load chat widget: ${response.status}`);
+      }
+    } catch (error) {
+      console.warn('Chat widget not loaded:', error.message);
+      // Fallback chat widget
+      chatEl.innerHTML = `
+        <div class="chat-widget">
+          <button class="chat-button" onclick="window.location.href='${basePath}epikoinonia/contact.html'">
+            💬 <span>Επικοινωνία</span>
+          </button>
+        </div>
+      `;
     }
   }
 

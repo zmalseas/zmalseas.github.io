@@ -174,8 +174,9 @@ a:focus {
 /* Footer Links */
 .footer-links a,
 .legal-links a {
-  padding: var(--spacing-sm) var(--spacing-md);
+  padding: var(--spacing-xs) var(--spacing-sm);
   margin: var(--spacing-xs);
+  font-size: var(--font-size-sm);
 }
 
 /* Chat Widget Mobile */
