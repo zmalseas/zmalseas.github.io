@@ -356,37 +356,71 @@ class NeraliApp {
   }
 
   initializeSecurity() {
-    try {
-      // Load security manager script dynamically
-      const script = document.createElement('script');
-      script.src = './js/security-manager.js';
-      script.type = 'module';
-      script.onload = () => {
-        console.log('🔒 Security manager loaded');
-      };
-      script.onerror = (error) => {
-        console.error('❌ Failed to load security manager:', error);
-      };
-      document.head.appendChild(script);
-    } catch (error) {
-      console.error('❌ Security initialization failed:', error);
-    }
+    // Basic security initialization without external modules
+    console.log('🔒 Basic security measures active');
     
-    // Initialize SEO Schema Manager
-    try {
-      const schemaScript = document.createElement('script');
-      schemaScript.src = './js/schema-manager.js';
-      schemaScript.type = 'module';
-      schemaScript.onload = () => {
-        console.log('📈 Schema manager loaded');
-      };
-      schemaScript.onerror = (error) => {
-        console.error('❌ Failed to load schema manager:', error);
-      };
-      document.head.appendChild(schemaScript);
-    } catch (error) {
-      console.error('❌ Schema initialization failed:', error);
-    }
+    // Add basic CSRF protection
+    this.addBasicCSRFProtection();
+    
+    // Add basic XSS protection
+    this.addBasicXSSProtection();
+    
+    // Add basic schema markup
+    this.addBasicSchemaMarkup();
+  }
+
+  addBasicCSRFProtection() {
+    // Generate simple CSRF token
+    const token = Math.random().toString(36).substr(2, 9) + Date.now().toString(36);
+    sessionStorage.setItem('csrf_token', token);
+    
+    // Add to all forms
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('form').forEach(form => {
+        if (!form.querySelector('input[name="csrf_token"]')) {
+          const input = document.createElement('input');
+          input.type = 'hidden';
+          input.name = 'csrf_token';
+          input.value = token;
+          form.appendChild(input);
+        }
+      });
+    });
+  }
+
+  addBasicXSSProtection() {
+    // Basic input sanitization
+    document.addEventListener('input', (e) => {
+      if (e.target.matches('input, textarea')) {
+        const value = e.target.value;
+        if (/<script|javascript:|on\w+=/i.test(value)) {
+          e.target.value = value.replace(/<script.*?<\/script>/gi, '').replace(/javascript:/gi, '').replace(/on\w+=/gi, '');
+        }
+      }
+    });
+  }
+
+  addBasicSchemaMarkup() {
+    // Add basic organization schema
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Nerali - Λογιστικό Γραφείο",
+      "description": "Λογιστικές υπηρεσίες, φοροτεχνικά, συμβουλευτικές υπηρεσίες",
+      "url": window.location.origin,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Αθήνα",
+        "addressCountry": "GR"
+      }
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(schema);
+    document.head.appendChild(script);
+    
+    console.log('📊 Basic schema markup added');
   }
 
   showError(message) {

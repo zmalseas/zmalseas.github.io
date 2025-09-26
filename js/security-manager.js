@@ -442,5 +442,3 @@ const securityManager = new SecurityManager();
 
 // Make it globally available
 window.securityManager = securityManager;
-
-export default SecurityManager;

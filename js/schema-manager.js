@@ -598,5 +598,3 @@ const schemaManager = new SchemaManager();
 
 // Make it globally available
 window.schemaManager = schemaManager;
-
-export default SchemaManager;
