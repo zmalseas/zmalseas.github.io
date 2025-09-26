@@ -8,8 +8,8 @@
 .overlay-header a{display:flex;align-items:center;gap:10px;color:var(--white);text-decoration:none}
 .overlay-header img{width:42px;height:42px}
 .overlay-header .title{font-weight:900;letter-spacing:.2px;font-size:1.5rem;color:var(--white)}
-.menu-wrap{position:absolute;inset:0;display:flex}
-.menu-list{width:min(90vw,560px);padding:96px 28px 180px 28px;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.menu-wrap{position:absolute;inset:0;display:flex;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.menu-list{width:min(90vw,560px);padding:96px 28px 180px 28px;display:flex;flex-direction:column;gap:8px;align-items:flex-start;min-height:100vh;box-sizing:border-box}
 
 /* Overlay expandable */
 .menu-item{width:100%}
@@ -65,10 +65,10 @@
 .overlay-footer .legal-link {
   color: #999;
   text-decoration: none;
-  font-size: 0.75rem;
-  padding: 2px 6px;
+  font-size: 0.7rem;
+  padding: 1px 4px;
   border: 1px solid #444;
-  border-radius: 3px;
+  border-radius: 2px;
   background: transparent;
   transition: all 0.3s ease;
   white-space: nowrap;
@@ -98,6 +98,7 @@
   display: flex;
   gap: 12px;
   align-items: center;
+  justify-content: center;
 }
 
 .overlay-footer .social-link {
@@ -109,6 +110,7 @@
   border-radius: 50%;
   transition: all 0.3s ease;
   color: #666;
+  flex-shrink: 0;
 }
 
 .overlay-footer .social-link svg {
@@ -145,6 +147,21 @@
   font-size: 0.9rem;
   color: #d6d6d6;
   text-align: center;
+}
+
+/* Mobile scrolling enhancements */
+@media (max-width: 1100px) {
+  .overlay {
+    touch-action: pan-y;
+  }
+  
+  .menu-wrap {
+    overscroll-behavior: contain;
+  }
+  
+  .menu-list {
+    padding-bottom: 200px; /* Extra space for mobile scrolling */
+  }
 }
 
 /* Responsive adjustments for overlay footer */

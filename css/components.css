@@ -562,24 +562,32 @@ p{margin:0 0 12px 0;line-height:1.6;color:#222}
 
 .checkbox-group {
   margin-top: 8px;
+  width: 100%;
+  overflow: hidden;
 }
 
 .checkbox-label {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 8px;
   cursor: pointer;
   font-size: 0.9rem;
   line-height: 1.5;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .checkbox-label input[type="checkbox"] {
   width: 16px;
   height: 16px;
   margin: 0;
-  margin-top: 2px;
   cursor: pointer;
   flex-shrink: 0;
+  align-self: flex-start;
+  margin-top: 1px;
+  appearance: auto;
+  -webkit-appearance: checkbox;
+  -moz-appearance: checkbox;
 }
 
 .checkmark {
@@ -595,6 +603,13 @@ p{margin:0 0 12px 0;line-height:1.6;color:#222}
 
 .checkbox-label a:hover {
   border-bottom-color: var(--brand);
+}
+
+.checkbox-label .text-content {
+  flex: 1;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.4;
 }
 
 .form-actions {
