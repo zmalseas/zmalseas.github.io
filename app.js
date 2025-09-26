@@ -3,9 +3,12 @@ async function injectPartials() {
   const headerEl = document.getElementById("site-header");
   const footerEl = document.getElementById("site-footer");
   const chatEl = document.getElementById("chat-widget");
-  // Use absolute paths to work with Plesk preview and regular domain
-  const logoPath = "/images/logo.png";
-  const homePath = "/index.html";
+  // Use relative paths for better compatibility
+  const currentPath = window.location.pathname;
+  const isInSubfolder = currentPath.includes('/') && !currentPath.endsWith('index.html') && currentPath !== '/' && !currentPath.endsWith('/');
+  const logoPath = isInSubfolder ? "../images/logo.png" : "./images/logo.png";
+  const homePath = isInSubfolder ? "../index.html" : "./index.html";
+  const basePath = isInSubfolder ? "../" : "./";
   
   const HEADER_FALLBACK = `
 <header class="site-header">
@@ -23,18 +26,18 @@ async function injectPartials() {
           <li class="nav-item dropdown">
             <a href="#"><span class="text">Υπηρεσίες</span><span class="caret">▾</span></a>
             <div class="submenu" role="menu">
-              <a href="/ipiresies/logistiki.html">Λογιστική <span class="sm-arrow">→</span></a>
-              <a href="/ipiresies/misthodosia.html">Μισθοδοσία <span class="sm-arrow">→</span></a>
-              <a href="/ipiresies/assurance.html">Assurance <span class="sm-arrow">→</span></a>
-              <a href="/ipiresies/consulting.html">Consulting <span class="sm-arrow">→</span></a>
-              <a href="/ipiresies/cyber-security.html">Cyber Security <span class="sm-arrow">→</span></a>
-              <a href="/ipiresies/social-media.html">Social Media <span class="sm-arrow">→</span></a>
-              <a href="/ipiresies/epixorigiseis.html">Επιχορηγήσεις <span class="sm-arrow">→</span></a>
-              <a href="/ipiresies/symvoulos-mixanikos.html">Σύμβουλος Μηχανικός <span class="sm-arrow">→</span></a>
+              <a href="${basePath}ipiresies/logistiki.html">Λογιστική <span class="sm-arrow">→</span></a>
+              <a href="${basePath}ipiresies/misthodosia.html">Μισθοδοσία <span class="sm-arrow">→</span></a>
+              <a href="${basePath}ipiresies/assurance.html">Assurance <span class="sm-arrow">→</span></a>
+              <a href="${basePath}ipiresies/consulting.html">Consulting <span class="sm-arrow">→</span></a>
+              <a href="${basePath}ipiresies/cyber-security.html">Cyber Security <span class="sm-arrow">→</span></a>
+              <a href="${basePath}ipiresies/social-media.html">Social Media <span class="sm-arrow">→</span></a>
+              <a href="${basePath}ipiresies/epixorigiseis.html">Επιχορηγήσεις <span class="sm-arrow">→</span></a>
+              <a href="${basePath}ipiresies/symvoulos-mixanikos.html">Σύμβουλος Μηχανικός <span class="sm-arrow">→</span></a>
             </div>
           </li>
 
-          <li class="nav-item"><a href="/epikoinonia/contact.html"><span class="text">Επικοινωνία</span></a></li>
+          <li class="nav-item"><a href="${basePath}epikoinonia/contact.html"><span class="text">Επικοινωνία</span></a></li>
         </ul>
 
         <button class="hamburger" aria-label="Άνοιγμα μενού">
@@ -60,17 +63,17 @@ async function injectPartials() {
       <div class="menu-item">
         <button class="menu-toggle">Υπηρεσίες <span class="exp-caret">›</span></button>
         <div class="menu-sub">
-          <a href="/ipiresies/logistiki.html">Λογιστική</a>
-          <a href="/ipiresies/misthodosia.html">Μισθοδοσία</a>
-          <a href="/ipiresies/assurance.html">Assurance</a>
-          <a href="/ipiresies/consulting.html">Consulting</a>
-          <a href="/ipiresies/cyber-security.html">Cyber Security</a>
-          <a href="/ipiresies/social-media.html">Social Media</a>
-          <a href="/ipiresies/epixorigiseis.html">Επιχορηγήσεις</a>
-          <a href="/ipiresies/symvoulos-mixanikos.html">Σύμβουλος Μηχανικός</a>
+          <a href="${basePath}ipiresies/logistiki.html">Λογιστική</a>
+          <a href="${basePath}ipiresies/misthodosia.html">Μισθοδοσία</a>
+          <a href="${basePath}ipiresies/assurance.html">Assurance</a>
+          <a href="${basePath}ipiresies/consulting.html">Consulting</a>
+          <a href="${basePath}ipiresies/cyber-security.html">Cyber Security</a>
+          <a href="${basePath}ipiresies/social-media.html">Social Media</a>
+          <a href="${basePath}ipiresies/epixorigiseis.html">Επιχορηγήσεις</a>
+          <a href="${basePath}ipiresies/symvoulos-mixanikos.html">Σύμβουλος Μηχανικός</a>
         </div>
       </div>
-      <a class="menu-toggle" href="/epikoinonia/contact.html">Επικοινωνία</a>
+      <a class="menu-toggle" href="${basePath}epikoinonia/contact.html">Επικοινωνία</a>
     </div>
   </div>
 </div>
@@ -85,10 +88,8 @@ async function injectPartials() {
 </footer>
 `;
   try {
-    // Determine the correct path to partials based on current location
-    const currentPath = window.location.pathname;
-    const isInSubfolder = currentPath.includes('/') && !currentPath.endsWith('index.html') && currentPath !== '/';
-    const partialsPath = isInSubfolder ? "../partials/" : "partials/";
+    // Use the same path detection logic as above
+    const partialsPath = isInSubfolder ? "../partials/" : "./partials/";
     
     const promises = [
       fetch(partialsPath + "header.html").then(r => r.text()),
