@@ -1,0 +1,245 @@
+/* Security Styles - Error notifications and validation states */
+
+/* Security Error Notifications */
+.security-error {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--danger-color, #dc3545);
+  color: white;
+  border-radius: 8px;
+  padding: 0;
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+  z-index: 10000;
+  animation: slideInRight 0.3s ease-out;
+  max-width: 400px;
+  font-family: var(--font-family-primary, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+}
+
+.security-error-content {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  gap: 12px;
+}
+
+.security-error-icon {
+  font-size: 1.2em;
+  flex-shrink: 0;
+}
+
+.security-error-message {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.security-error-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  transition: background-color 0.2s;
+}
+
+.security-error-close:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Input Validation States */
+.security-invalid,
+.validation-invalid {
+  border-color: var(--danger-color, #dc3545) !important;
+  box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.2) !important;
+  background-color: rgba(220, 53, 69, 0.05) !important;
+}
+
+.input-security-error {
+  display: block;
+  color: var(--danger-color, #dc3545);
+  font-size: 12px;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* Form Security Indicators */
+form[data-protected="true"] {
+  position: relative;
+}
+
+form[data-protected="true"]::before {
+  content: "🔒";
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--primary-color, #2c5f2d);
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Enhanced Focus States for Security */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--primary-color, #2c5f2d);
+  outline-offset: 2px;
+}
+
+/* Rate Limiting Indicators */
+.rate-limited {
+  opacity: 0.6;
+  pointer-events: none;
+  position: relative;
+}
+
+.rate-limited::after {
+  content: "Πολλές αιτήσεις - Παρακαλώ περιμένετε";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+/* Security Status Indicators */
+.security-status {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: var(--success-color, #28a745);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  z-index: 9999;
+  display: none;
+}
+
+.security-status.active {
+  display: block;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.security-status.warning {
+  background: var(--warning-color, #ffc107);
+  color: var(--dark-color, #212529);
+}
+
+.security-status.error {
+  background: var(--danger-color, #dc3545);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Security Adjustments */
+@media (max-width: 768px) {
+  .security-error {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+  }
+  
+  .security-error-content {
+    padding: 12px;
+    gap: 8px;
+  }
+  
+  .security-error-message {
+    font-size: 13px;
+  }
+  
+  .security-status {
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    text-align: center;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .security-invalid,
+  .validation-invalid {
+    border-width: 3px !important;
+  }
+  
+  .security-error {
+    border: 2px solid white;
+  }
+  
+  .input-security-error {
+    font-weight: bold;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .security-error,
+  .security-status {
+    animation: none;
+  }
+  
+  .security-error {
+    transform: none;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .security-status {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+  
+  .rate-limited::after {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--dark-color, #212529);
+  }
+}
+
+/* Print Styles */
+@media print {
+  .security-error,
+  .security-status,
+  .rate-limited::after {
+    display: none !important;
+  }
+}

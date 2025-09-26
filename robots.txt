@@ -5,11 +5,10 @@ Allow: /
 Sitemap: https://nerali.gr/sitemap.xml
 
 # Block access to sensitive files
-Disallow: /css/
-Disallow: /js/
 Disallow: /partials/
-Disallow: *.css$
-Disallow: *.js$
+Disallow: /.github/
+Disallow: /DEPLOYMENT_CHECKLIST.md
+Disallow: /GITHUB_PAGES_FIX.md
 
 # Allow important pages
 Allow: /

@@ -2,19 +2,54 @@
 
 class RentTaxCalculator {
   constructor() {
+    this.isLoading = false;
     this.init();
   }
 
   init() {
-    // Formatter (Greek locale, EUR)
-    this.fmt = new Intl.NumberFormat('el-GR', { 
-      style: 'currency', 
-      currency: 'EUR', 
-      maximumFractionDigits: 2 
-    });
+    try {
+      // Formatter (Greek locale, EUR)
+      this.fmt = new Intl.NumberFormat('el-GR', { 
+        style: 'currency', 
+        currency: 'EUR', 
+        maximumFractionDigits: 2 
+      });
 
-    this.setupEventListeners();
-    this.renderProps(1); // Initial render
+      this.setupEventListeners();
+      this.renderProps(1); // Initial render
+      this.showLoadingState(false); // Ensure loading is hidden initially
+    } catch (error) {
+      console.error('Calculator initialization failed:', error);
+      this.showError('Σφάλμα κατά την αρχικοποίηση του υπολογιστή.');
+    }
+  }
+
+  showLoadingState(isLoading) {
+    this.isLoading = isLoading;
+    const calcBtn = document.getElementById('calcBtn');
+    const results = document.getElementById('results');
+    
+    if (calcBtn) {
+      calcBtn.disabled = isLoading;
+      calcBtn.textContent = isLoading ? 'Υπολογισμός...' : 'Υπολογισμός';
+      calcBtn.classList.toggle('loading', isLoading);
+    }
+    
+    if (results && isLoading) {
+      results.innerHTML = '<div class="loading-spinner">⏳ Υπολογισμός σε εξέλιξη...</div>';
+    }
+  }
+
+  showError(message) {
+    const results = document.getElementById('results');
+    if (results) {
+      results.innerHTML = `
+        <div class="error-message" role="alert">
+          <span class="error-icon">❌</span>
+          <span>${message}</span>
+        </div>
+      `;
+    }
   }
 
   setupEventListeners() {
@@ -139,34 +174,61 @@ class RentTaxCalculator {
     return { tax, rows };
   }
 
-  compute() {
-    const countEl = document.getElementById('count');
-    const n = Math.max(1, Math.min(5, Number(countEl?.value || 0)));
-    
-    let gross = 0;
-    
-    // Calculate total gross income from all properties
-    for (let i = 0; i < n; i++) {
-      const rentEl = document.getElementById(`rent_${i}`);
-      const monthsEl = document.getElementById(`months_${i}`);
+  async compute() {
+    try {
+      this.showLoadingState(true);
       
-      const rent = Number(rentEl?.value || 0);
-      const months = Math.max(0, Math.min(12, Number(monthsEl?.value || 0)));
+      // Add small delay to show loading state
+      await new Promise(resolve => setTimeout(resolve, 300));
       
-      gross += rent * months;
+      const countEl = document.getElementById('count');
+      const n = Math.max(1, Math.min(5, Number(countEl?.value || 0)));
+      
+      let gross = 0;
+      let hasValidInput = false;
+      
+      // Calculate total gross income from all properties
+      for (let i = 0; i < n; i++) {
+        const rentEl = document.getElementById(`rent_${i}`);
+        const monthsEl = document.getElementById(`months_${i}`);
+        
+        const rent = Number(rentEl?.value || 0);
+        const months = Math.max(0, Math.min(12, Number(monthsEl?.value || 0)));
+        
+        if (rent > 0 && months > 0) {
+          hasValidInput = true;
+        }
+        
+        gross += rent * months;
+      }
+      
+      // Validate input
+      if (!hasValidInput) {
+        throw new Error('Παρακαλώ εισάγετε έγκυρα στοιχεία (μίσθωμα και μήνες) για τουλάχιστον ένα ακίνητο.');
+      }
+      
+      if (gross > 1000000) {
+        throw new Error('Το συνολικό εισόδημα δεν μπορεί να υπερβαίνει το 1.000.000€.');
+      }
+
+      // Calculate taxable income (95% after 5% expenses deduction)
+      const taxable = gross * 0.95;
+      const { tax, rows } = this.calcTax(taxable);
+
+      // Update KPIs
+      this.updateElement('gross', this.fmt.format(gross));
+      this.updateElement('taxable', this.fmt.format(taxable));
+      this.updateElement('tax', this.fmt.format(tax));
+
+      // Update bracket table
+      this.updateBracketTable(rows);
+      
+    } catch (error) {
+      console.error('Calculation error:', error);
+      this.showError(error.message);
+    } finally {
+      this.showLoadingState(false);
     }
-
-    // Calculate taxable income (95% after 5% expenses deduction)
-    const taxable = gross * 0.95;
-    const { tax, rows } = this.calcTax(taxable);
-
-    // Update KPIs
-    this.updateElement('gross', this.fmt.format(gross));
-    this.updateElement('taxable', this.fmt.format(taxable));
-    this.updateElement('tax', this.fmt.format(tax));
-
-    // Update bracket table
-    this.updateBracketTable(rows);
   }
 
   updateElement(id, value) {

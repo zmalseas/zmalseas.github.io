@@ -1,0 +1,288 @@
+/* Enhanced Mobile Experience - Better Touch Targets & Responsive Design */
+
+/* Minimum Touch Target Sizes (44px minimum) */
+.btn,
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+.nav-links a,
+.hamburger,
+.chat-button,
+.service-card,
+.menu-toggle {
+  min-height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation; /* Prevents zoom on double-tap */
+}
+
+/* Enhanced Button Spacing for Mobile */
+.hero-buttons,
+.cta-buttons,
+.form-actions {
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .hero-buttons,
+  .cta-buttons,
+  .form-actions {
+    gap: var(--spacing-lg);
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-lg);
+    min-height: 48px;
+    font-size: var(--font-size-lg);
+  }
+}
+
+/* Mobile Navigation Improvements */
+.hamburger {
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-base);
+}
+
+.hamburger:hover,
+.hamburger:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.hamburger:active {
+  transform: scale(0.95);
+  transition: transform 0.1s ease;
+}
+
+/* Enhanced Mobile Menu */
+@media (max-width: 1100px) {
+  .overlay .menu-toggle {
+    padding: var(--spacing-lg) var(--spacing-xl);
+    min-height: 56px;
+    font-size: var(--font-size-lg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .overlay .menu-sub a {
+    padding: var(--spacing-md) var(--spacing-2xl);
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* Form Input Improvements */
+input,
+textarea,
+select {
+  min-height: 48px;
+  padding: var(--spacing-md);
+  font-size: var(--font-size-base);
+  border-radius: var(--radius-md);
+  touch-action: manipulation;
+}
+
+@media (max-width: 768px) {
+  input,
+  textarea,
+  select {
+    font-size: 16px; /* Prevents zoom on iOS */
+    min-height: 52px;
+  }
+  
+  textarea {
+    min-height: 120px;
+  }
+}
+
+/* Service Cards Touch Improvements */
+.service-card {
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  cursor: pointer;
+}
+
+.service-card:hover,
+.service-card:focus {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.service-card:active {
+  transform: translateY(-2px);
+  transition: transform 0.1s ease;
+}
+
+@media (max-width: 768px) {
+  .service-card {
+    margin-bottom: var(--spacing-lg);
+    min-height: 200px;
+  }
+}
+
+/* Calculator Interface Mobile Improvements */
+.calc-input,
+.calc-button {
+  min-height: 48px;
+  font-size: var(--font-size-base);
+}
+
+@media (max-width: 768px) {
+  .calc-input {
+    font-size: 16px;
+    min-height: 52px;
+  }
+  
+  .calc-button {
+    min-height: 56px;
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+  }
+}
+
+/* Improved Link Targets */
+a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+a:hover,
+a:focus {
+  background-color: rgba(0, 229, 255, 0.1);
+  outline: none;
+}
+
+/* Navigation Links */
+.nav-links a {
+  padding: var(--spacing-sm) var(--spacing-md);
+  margin: 0 var(--spacing-xs);
+  border-radius: var(--radius-md);
+}
+
+/* Footer Links */
+.footer-links a,
+.legal-links a {
+  padding: var(--spacing-sm) var(--spacing-md);
+  margin: var(--spacing-xs);
+}
+
+/* Chat Widget Mobile */
+.chat-button {
+  min-width: 56px;
+  min-height: 56px;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-lg);
+  transition: transform var(--transition-base);
+}
+
+.chat-button:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .chat-button {
+    min-width: 64px;
+    min-height: 64px;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+/* Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Improved Focus Indicators for Mobile */
+@media (max-width: 768px) {
+  *:focus {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
+  }
+  
+  button:focus,
+  input:focus,
+  textarea:focus,
+  select:focus {
+    box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.3);
+  }
+}
+
+/* Gesture Support */
+.swipeable {
+  touch-action: pan-x pan-y;
+}
+
+.pinch-zoom {
+  touch-action: pinch-zoom;
+}
+
+/* Prevent Text Selection on UI Elements */
+.btn,
+.nav-links,
+.hamburger,
+.service-card {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Safe Area Support for iOS */
+@supports (padding: max(0px)) {
+  .container {
+    padding-left: max(var(--spacing-lg), env(safe-area-inset-left));
+    padding-right: max(var(--spacing-lg), env(safe-area-inset-right));
+  }
+  
+  .site-header {
+    padding-top: max(0px, env(safe-area-inset-top));
+  }
+  
+  .site-footer {
+    padding-bottom: max(0px, env(safe-area-inset-bottom));
+  }
+}
+
+/* Enhanced Table Responsiveness */
+@media (max-width: 768px) {
+  table {
+    font-size: var(--font-size-sm);
+  }
+  
+  th,
+  td {
+    padding: var(--spacing-sm);
+    min-height: 44px;
+  }
+}
+
+/* Loading States for Mobile */
+@media (max-width: 768px) {
+  .loading-spinner {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .skeleton {
+    min-height: 44px;
+  }
+}
