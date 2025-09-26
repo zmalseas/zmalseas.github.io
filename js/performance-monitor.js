@@ -272,4 +272,10 @@ window.neraliPerformance = {
   metrics: () => performanceMonitor.metrics
 };
 
-export default PerformanceMonitor;
+// Make globally available
+window.PerformanceMonitor = PerformanceMonitor;
+
+// Export for module systems if available
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = PerformanceMonitor;
+}

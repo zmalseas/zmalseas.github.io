@@ -127,4 +127,11 @@ class ErrorHandler {
 // Create singleton instance
 const errorHandler = new ErrorHandler();
 
-export default errorHandler;
+// Make globally available
+window.ErrorHandler = ErrorHandler;
+window.errorHandler = errorHandler;
+
+// Export for module systems if available
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = errorHandler;
+}

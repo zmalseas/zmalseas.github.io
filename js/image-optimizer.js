@@ -201,6 +201,10 @@ class ImageOptimizer {
 const imageOptimizer = new ImageOptimizer();
 
 // Make it globally available
+window.ImageOptimizer = ImageOptimizer;
 window.imageOptimizer = imageOptimizer;
 
-export default ImageOptimizer;
+// Export for module systems if available
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = ImageOptimizer;
+}
