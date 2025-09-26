@@ -5,9 +5,18 @@ async function injectPartials() {
   const chatEl = document.getElementById("chat-widget");
   // Determine path based on current location
   const currentPath = window.location.pathname;
-  // Check if we're in a subfolder (not root, not index.html)
-  const pathSegments = currentPath.split('/').filter(segment => segment.length > 0);
-  const isInSubfolder = pathSegments.length > 0 && !currentPath.endsWith('index.html') && currentPath !== '/';
+  console.log("Current path:", currentPath);
+  
+  // Simple check: if path contains a folder name, we're in a subfolder
+  const isInSubfolder = currentPath.includes('/arthra/') || 
+                       currentPath.includes('/etairia/') || 
+                       currentPath.includes('/ipiresies/') || 
+                       currentPath.includes('/efarmoges/') || 
+                       currentPath.includes('/epikoinonia/') || 
+                       currentPath.includes('/nomimotita/') || 
+                       currentPath.includes('/css/') || 
+                       currentPath.includes('/js/') ||
+                       (currentPath.split('/').length > 2 && !currentPath.endsWith('/'));
   
   const logoPath = isInSubfolder ? "../images/logo.png" : "images/logo.png";
   const homePath = isInSubfolder ? "../index.html" : "index.html";
@@ -121,19 +130,40 @@ async function injectPartials() {
     const results = await Promise.all(promises);
     const [h, f, c] = results;
     
-    // Replace absolute paths in loaded HTML with relative paths
+    // Fix paths based on current location depth
     let processedHeader = h;
     let processedFooter = f;
     
+    console.log("Processing paths. isInSubfolder:", isInSubfolder);
+    console.log("Original header sample:", h.substring(0, 200));
+    
     if (isInSubfolder) {
-      // Replace absolute paths with relative paths for subfolders
-      processedHeader = h.replace(/href="\/([^"]*)/g, 'href="../$1').replace(/src="([^\/][^"]*)/g, `src="../$1`);
-      processedFooter = f.replace(/href="\/([^"]*)/g, 'href="../$1').replace(/src="([^\/][^"]*)/g, `src="../$1`);
+      // For subfolders: convert all paths to go back to root directory
+      processedHeader = h
+        // Fix home links
+        .replace(/href="\.\//g, 'href="../')
+        .replace(/href="index\.html"/g, 'href="../index.html"')
+        // Fix absolute paths  
+        .replace(/href="\/([^"]+)"/g, 'href="../$1"')
+        // Fix image sources
+        .replace(/src="images\//g, 'src="../images/');
+      
+      processedFooter = f
+        // Fix footer links to go back to root
+        .replace(/href="([^\.\/h][^"]*)/g, 'href="../$1');
+        
     } else {
-      // For root directory, remove leading slashes but keep relative structure
-      processedHeader = h.replace(/href="\/([^"]*)/g, 'href="$1').replace(/src="images/g, 'src="images/');
-      processedFooter = f.replace(/href="\/([^"]*)/g, 'href="$1').replace(/src="images/g, 'src="images/');
+      // For root directory: convert absolute paths to relative
+      processedHeader = h
+        .replace(/href="\.\//g, 'href="./"')
+        .replace(/href="\/([^"]+)"/g, 'href="$1"')
+        .replace(/src="images\//g, 'src="images/');
+      
+      processedFooter = f
+        .replace(/href="\/([^"]+)"/g, 'href="$1"');
     }
+    
+    console.log("Processed header sample:", processedHeader.substring(0, 200));
     
     if (headerEl) headerEl.innerHTML = processedHeader;
     if (footerEl) footerEl.innerHTML = processedFooter;
