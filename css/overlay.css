@@ -1,15 +1,15 @@
 /* Overlay Full-Screen Menu Styles */
 
 /* ===== Overlay (full screen) ===== */
-.overlay{position:fixed;inset:0;background:#000;display:none;z-index:60}
+.overlay{position:fixed;inset:0;background:#000;display:none;z-index:60;overflow:hidden}
 .overlay.open{display:block;animation:fadeIn var(--speed) ease forwards}
 @keyframes fadeIn{from{opacity:0} to{opacity:1}}
 .overlay-header{position:absolute;top:16px;left:22px;display:flex;align-items:center;gap:10px;z-index:2}
 .overlay-header a{display:flex;align-items:center;gap:10px;color:var(--white);text-decoration:none}
 .overlay-header img{width:42px;height:42px}
 .overlay-header .title{font-weight:900;letter-spacing:.2px;font-size:1.5rem;color:var(--white)}
-.menu-wrap{position:absolute;inset:0;display:flex;overflow-y:auto;-webkit-overflow-scrolling:touch}
-.menu-list{width:min(90vw,560px);padding:96px 28px 180px 28px;display:flex;flex-direction:column;gap:8px;align-items:flex-start;min-height:100vh;box-sizing:border-box}
+.menu-wrap{position:absolute;inset:0;display:flex;overflow-y:auto;-webkit-overflow-scrolling:touch;overflow-x:hidden}
+.menu-list{width:min(90vw,560px);padding:96px 28px 220px 28px;display:flex;flex-direction:column;gap:8px;align-items:flex-start;min-height:calc(100vh + 100px);box-sizing:border-box}
 
 /* Overlay expandable */
 .menu-item{width:100%}
@@ -65,8 +65,8 @@
 .overlay-footer .legal-link {
   color: #999;
   text-decoration: none;
-  font-size: 0.7rem;
-  padding: 1px 4px;
+  font-size: 0.6rem;
+  padding: 1px 3px;
   border: 1px solid #444;
   border-radius: 2px;
   background: transparent;
@@ -99,6 +99,7 @@
   gap: 12px;
   align-items: center;
   justify-content: center;
+  flex-wrap: nowrap;
 }
 
 .overlay-footer .social-link {
@@ -152,15 +153,21 @@
 /* Mobile scrolling enhancements */
 @media (max-width: 1100px) {
   .overlay {
-    touch-action: pan-y;
+    touch-action: manipulation;
+    height: 100vh;
+    height: 100dvh; /* Use dynamic viewport height on modern browsers */
   }
   
   .menu-wrap {
     overscroll-behavior: contain;
+    height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
   }
   
   .menu-list {
-    padding-bottom: 200px; /* Extra space for mobile scrolling */
+    padding-bottom: 250px; /* Extra space for mobile scrolling */
+    min-height: 150vh; /* Ensure there's enough content to scroll */
   }
 }
 
@@ -179,8 +186,8 @@
   }
   
   .overlay-footer .legal-link {
-    font-size: 0.8rem;
-    padding: 3px 8px;
+    font-size: 0.55rem;
+    padding: 1px 3px;
   }
   
   .overlay-footer .social-section {

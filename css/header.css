@@ -94,14 +94,14 @@ nav.primary{display:flex;align-items:center;gap:16px}
 .submenu a.clicked .sm-arrow{opacity:1;transform:translateX(0)}
 
 /* Hamburger */
-.hamburger{display:none;align-items:center;justify-content:center;width:48px;height:48px;border:none;background:transparent;cursor:pointer;position:relative;z-index:101}
+.hamburger{display:none;align-items:center;justify-content:center;width:48px;height:48px;border:none;background:transparent;cursor:pointer;position:relative;z-index:101;padding:8px}
 .hamburger:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
 .hamburger .bar,.hamburger .bar::before,.hamburger .bar::after{content:"";display:block;width:26px;height:2px;background:var(--white);border-radius:2px;transition:transform var(--speed) ease,opacity var(--speed) ease,background var(--speed) ease}
 .hamburger .bar{position:relative}
 .hamburger .bar::before{position:absolute;top:-8px}
 .hamburger .bar::after{position:absolute;top:8px}
 .hamburger:hover .bar,.hamburger:hover .bar::before,.hamburger:hover .bar::after{background:var(--brand)}
-.hamburger.active .bar{transform:rotate(45deg); background:var(--brand)}
-.hamburger.active .bar::before{transform:rotate(-90deg) translateX(-8px); background:var(--brand)}
+.hamburger.active .bar{transform:rotate(45deg); background:var(--brand) !important}
+.hamburger.active .bar::before{transform:rotate(-90deg) translateX(-8px); background:var(--brand) !important; opacity:1}
 .hamburger.active .bar::after{opacity:0}
 @media (max-width:1100px){ .nav-links{display:none} .hamburger{display:flex} }

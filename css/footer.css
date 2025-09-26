@@ -67,6 +67,7 @@
   display: flex;
   align-items: center;
   gap: 15px;
+  justify-content: center;
 }
 
 .connect-text {
@@ -80,6 +81,7 @@
   gap: 12px;
   align-items: center;
   justify-content: center;
+  flex-wrap: nowrap;
 }
 
 .social-link {
@@ -127,10 +129,10 @@
 .legal-link {
   color: #999;
   text-decoration: none;
-  font-size: 0.7rem;
-  padding: 2px 6px;
+  font-size: 0.6rem;
+  padding: 1px 4px;
   border: 1px solid #444;
-  border-radius: 3px;
+  border-radius: 2px;
   background: transparent;
   transition: all 0.3s ease;
   white-space: nowrap;
