@@ -78,6 +78,8 @@ class NeraliApp {
       const response = await fetch(`${basePath}partials/header.html`);
       if (response.ok) {
         headerEl.innerHTML = await response.text();
+        // Fix paths after loading header
+        this.fixHeaderPaths(isInSubfolder);
       } else {
         throw new Error(`Failed to load header: ${response.status}`);
       }
@@ -85,6 +87,32 @@ class NeraliApp {
       console.warn('Using fallback header:', error.message);
       headerEl.innerHTML = headerHtml;
     }
+  }
+
+  fixHeaderPaths(isInSubfolder) {
+    if (!isInSubfolder) return; // No need to fix if we're at root
+    
+    const headerEl = document.getElementById("site-header");
+    if (!headerEl) return;
+    
+    // Fix all relative links to add ../
+    const links = headerEl.querySelectorAll('a[href]');
+    links.forEach(link => {
+      const href = link.getAttribute('href');
+      // Skip external links, anchors, and already fixed links
+      if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('../') && !href.startsWith('/')) {
+        link.setAttribute('href', '../' + href);
+      }
+    });
+    
+    // Fix image sources
+    const images = headerEl.querySelectorAll('img[src]');
+    images.forEach(img => {
+      const src = img.getAttribute('src');
+      if (src && !src.startsWith('http') && !src.startsWith('../') && !src.startsWith('/')) {
+        img.setAttribute('src', '../' + src);
+      }
+    });
   }
 
   async injectFooter() {
