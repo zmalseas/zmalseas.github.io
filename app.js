@@ -110,6 +110,32 @@ class NeraliApp {
     });
   }
 
+  fixFooterPaths(isInSubfolder) {
+    if (!isInSubfolder) return; // No need to fix if we're at root
+    
+    const footerEl = document.getElementById("site-footer");
+    if (!footerEl) return;
+    
+    // Fix all relative links to add ../
+    const links = footerEl.querySelectorAll('a[href]');
+    links.forEach(link => {
+      const href = link.getAttribute('href');
+      // Skip external links, anchors, and already fixed links
+      if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('../') && !href.startsWith('/')) {
+        link.setAttribute('href', '../' + href);
+      }
+    });
+    
+    // Fix image sources if any
+    const images = footerEl.querySelectorAll('img[src]');
+    images.forEach(img => {
+      const src = img.getAttribute('src');
+      if (src && !src.startsWith('http') && !src.startsWith('../') && !src.startsWith('/')) {
+        img.setAttribute('src', '../' + src);
+      }
+    });
+  }
+
   async injectFooter() {
     const footerEl = document.getElementById("site-footer");
     if (!footerEl) return;
@@ -155,6 +181,8 @@ class NeraliApp {
       const response = await fetch(`${basePath}partials/footer.html`);
       if (response.ok) {
         footerEl.innerHTML = await response.text();
+        // Fix paths after loading footer
+        this.fixFooterPaths(isInSubfolder);
       } else {
         throw new Error(`Failed to load footer: ${response.status}`);
       }

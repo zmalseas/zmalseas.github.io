@@ -55,6 +55,9 @@ class NavigationManager {
     
     if (!hamburger || !overlay) return;
     
+    // Setup dynamic navigation overflow detection
+    this.setupNavigationOverflow();
+    
     try {
       // Toggle mobile menu
       hamburger.addEventListener('click', () => {
@@ -107,6 +110,41 @@ class NavigationManager {
     if (hamburger) hamburger.classList.remove('active');
     if (overlay) overlay.classList.remove('open');
     document.body.classList.remove('menu-open');
+  }
+
+  setupNavigationOverflow() {
+    const checkNavigationOverflow = () => {
+      const header = document.querySelector('.site-header');
+      const navLinks = document.querySelector('.nav-links');
+      const logo = document.querySelector('.logo');
+      
+      if (!header || !navLinks || !logo) return;
+      
+      const headerWidth = header.offsetWidth;
+      const logoWidth = logo.offsetWidth;
+      const navLinksWidth = navLinks.scrollWidth;
+      const hamburgerWidth = 60; // Account for hamburger button space
+      const padding = 40; // Extra padding for safety
+      
+      const availableSpace = headerWidth - logoWidth - hamburgerWidth - padding;
+      
+      if (navLinksWidth > availableSpace) {
+        header.classList.add('nav-overflow');
+      } else {
+        header.classList.remove('nav-overflow');
+        // Close menu if it was open and now there's space
+        if (document.querySelector('.overlay.open')) {
+          this.closeMobileMenu();
+        }
+      }
+    };
+    
+    // Check on load and resize
+    checkNavigationOverflow();
+    window.addEventListener('resize', checkNavigationOverflow);
+    
+    // Also check after fonts load
+    document.fonts.ready.then(checkNavigationOverflow);
   }
 }
 
