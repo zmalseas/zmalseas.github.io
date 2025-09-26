@@ -91,7 +91,7 @@ class NavigationManager {
       
       // Close overlay when window resizes above mobile breakpoint
       window.addEventListener('resize', () => {
-        if (window.innerWidth > 1100 && overlay.classList.contains('open')) {
+        if (window.innerWidth > 768 && overlay.classList.contains('open')) {
           this.closeMobileMenu();
         }
       });
@@ -110,5 +110,16 @@ class NavigationManager {
   }
 }
 
-// Export for use in other modules
-export default NavigationManager;
+// Export for use in other modules and make available globally
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = NavigationManager;
+} else {
+  window.NavigationManager = NavigationManager;
+}
+
+// Auto-initialize when loaded directly
+if (typeof window !== 'undefined' && !window.APP_LOADED) {
+  document.addEventListener('DOMContentLoaded', () => {
+    new NavigationManager();
+  });
+}

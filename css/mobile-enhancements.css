@@ -186,20 +186,9 @@ input[type="radio"] {
 
 /* This section handled above with :not(.legal-link) */
 
-/* Navigation Links */
-.nav-links a {
-  padding: var(--spacing-sm) var(--spacing-md);
-  margin: 0 var(--spacing-xs);
-  border-radius: var(--radius-md);
-}
+/* Navigation Links - handled in header.css */
 
-/* Footer Links */
-.footer-links a,
-.legal-links a {
-  padding: var(--spacing-xs) var(--spacing-sm);
-  margin: var(--spacing-xs);
-  font-size: var(--font-size-sm);
-}
+/* Footer Links - handled in footer.css */
 
 /* Chat Widget Mobile */
 .chat-button {
@@ -303,9 +292,5 @@ html {
   .loading-spinner {
     width: 32px;
     height: 32px;
-  }
-  
-  .skeleton {
-    min-height: 44px;
   }
 }

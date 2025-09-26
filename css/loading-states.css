@@ -228,44 +228,7 @@ picture img {
   border-radius: var(--radius-md);
 }
 
-/* Skeleton Loading for Cards */
-.skeleton {
-  background: linear-gradient(
-    90deg,
-    var(--secondary) 25%,
-    rgba(244, 246, 251, 0.5) 50%,
-    var(--secondary) 75%
-  );
-  background-size: 200% 100%;
-  animation: loading 1.5s infinite;
-  border-radius: var(--radius-md);
-}
-
-@keyframes loading {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
-}
-
-.skeleton-text {
-  height: 1em;
-  margin: var(--spacing-xs) 0;
-}
-
-.skeleton-text.short {
-  width: 60%;
-}
-
-.skeleton-text.medium {
-  width: 80%;
-}
-
-.skeleton-text.long {
-  width: 100%;
-}
+/* Skeleton styles removed - not used in current implementation */
 
 /* Improved Focus States */
 .btn:focus-visible,

@@ -205,80 +205,28 @@ class NeraliApp {
   }
 
   initializeNavigation() {
-    // Initialize navigation without ES6 modules
-    this.setupMobileMenu();
-    this.setupSmoothScrolling();
-  }
-
-  setupMobileMenu() {
-    const hamburger = document.querySelector('.hamburger');
-    const overlay = document.querySelector('.overlay');
-    
-    if (!hamburger || !overlay) return;
-    
+    // Load navigation module instead of duplicating code
     try {
-      hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        overlay.classList.toggle('open');
-        document.body.classList.toggle('menu-open');
-      });
-
-      overlay.addEventListener('click', (e) => {
-        if (e.target.classList.contains('overlay')) {
-          this.closeMobileMenu();
-        }
-      });
-
-      overlay.querySelectorAll('.menu-item .menu-toggle').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          const currentMenuItem = btn.closest('.menu-item');
-          const isCurrentlyOpen = currentMenuItem.classList.contains('open');
-          
-          overlay.querySelectorAll('.menu-item').forEach(item => {
-            item.classList.remove('open');
-          });
-          
-          if (!isCurrentlyOpen) {
-            currentMenuItem.classList.add('open');
-          }
-        });
-      });
+      const currentPath = window.location.pathname;
+      const isInSubfolder = this.isInSubfolder(currentPath);
+      const basePath = isInSubfolder ? "../" : "./";
       
-      window.addEventListener('resize', () => {
-        if (window.innerWidth > 1100 && overlay.classList.contains('open')) {
-          this.closeMobileMenu();
+      const script = document.createElement('script');
+      script.src = basePath + 'js/navigation.js';
+      script.onload = () => {
+        console.log('🧭 Navigation module loaded');
+        // Initialize navigation after module loads
+        if (window.NavigationManager) {
+          new NavigationManager();
         }
-      });
+      };
+      script.onerror = () => {
+        console.warn('⚠️ Navigation module not loaded - basic functionality only');
+      };
+      document.head.appendChild(script);
     } catch (error) {
-      console.error('Mobile menu setup failed:', error);
+      console.error('Navigation initialization failed:', error);
     }
-  }
-
-  setupSmoothScrolling() {
-    document.addEventListener('click', (e) => {
-      if (e.target.matches('a[href^="#"]')) {
-        e.preventDefault();
-        const targetId = e.target.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      }
-    });
-  }
-
-  closeMobileMenu() {
-    const hamburger = document.querySelector('.hamburger');
-    const overlay = document.querySelector('.overlay');
-    
-    if (hamburger) hamburger.classList.remove('active');
-    if (overlay) overlay.classList.remove('open');
-    document.body.classList.remove('menu-open');
   }
 
   initializeChatWidget() {
