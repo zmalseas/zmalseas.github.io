@@ -1,17 +1,9 @@
-// Modern App.js with ES6 modules and improved error handling
-
-// Import modules (when using ES6 modules)
-// import NavigationManager from './js/navigation.js';
-// import ChatWidget from './js/chat-widget.js';
-// import './js/error-handler.js';
-
-// For now, we'll use the traditional approach for compatibility
+// Modern App.js with integrated modules
 
 // Main App Class
 class NeraliApp {
   constructor() {
     this.isInitialized = false;
-    this.modules = new Map();
     this.init();
   }
 
@@ -32,6 +24,9 @@ class NeraliApp {
 
   async bootstrap() {
     try {
+      // Initialize error handling first
+      this.initializeErrorHandler();
+      
       // Initialize core modules
       await this.loadPartials();
       this.initializeNavigation();
@@ -39,6 +34,12 @@ class NeraliApp {
       this.initializeCalculators();
       this.initializePerformanceOptimizations();
       this.initializeSecurity();
+      
+      // Initialize advanced modules
+      this.initializeImageOptimizer();
+      this.initializePerformanceMonitor();
+      this.initializeSchemaManager();
+      this.initializeServiceWorker();
       
       this.isInitialized = true;
       console.log('✅ Nerali App initialized successfully');
@@ -140,39 +141,6 @@ class NeraliApp {
     const footerEl = document.getElementById("site-footer");
     if (!footerEl) return;
 
-    const footerHtml = `
-      <footer class="site-footer">
-        <div class="container">
-          <div class="footer-content">
-            <div class="footer-section">
-              <h3>Nerali</h3>
-              <p>Το επιχειρηματικό σας οικοσύστημα</p>
-            </div>
-            <div class="footer-section">
-              <h4>Υπηρεσίες</h4>
-              <ul>
-                <li><a href="/ipiresies/logistiki.html">Λογιστική</a></li>
-                <li><a href="/ipiresies/consulting.html">Consulting</a></li>
-                <li><a href="/ipiresies/cyber-security.html">Cyber Security</a></li>
-              </ul>
-            </div>
-            <div class="footer-section">
-              <h4>Επικοινωνία</h4>
-              <p>📧 <a href="mailto:info@nerali.gr">info@nerali.gr</a></p>
-              <p>📞 <a href="tel:+302101234567">+30 210 123 4567</a></p>
-            </div>
-          </div>
-          <div class="footer-bottom">
-            <small>© <span id="currentYear"></span> Nerali. Όλα τα δικαιώματα κατοχυρωμένα.</small>
-            <div class="footer-links">
-              <a href="/nomimotita/privacy-policy.html">Πολιτική Απορρήτου</a>
-              <a href="/nomimotita/terms-of-use.html">Όροι Χρήσης</a>
-            </div>
-          </div>
-        </div>
-      </footer>
-    `;
-
     try {
       const currentPath = window.location.pathname;
       const isInSubfolder = this.isInSubfolder(currentPath);
@@ -187,18 +155,15 @@ class NeraliApp {
         throw new Error(`Failed to load footer: ${response.status}`);
       }
     } catch (error) {
-      console.warn('Using fallback footer:', error.message);
-      footerEl.innerHTML = footerHtml;
+      console.warn('Footer loading failed:', error.message);
     }
 
     // Set current year
-    const yearEl = document.getElementById('currentYear');
+    const yearEl = document.getElementById('y');
     if (yearEl) {
       yearEl.textContent = new Date().getFullYear();
     }
   }
-
-
 
   initializeNavigation() {
     // Load navigation module instead of duplicating code
@@ -211,13 +176,9 @@ class NeraliApp {
       script.src = basePath + 'js/navigation.js';
       script.onload = () => {
         console.log('🧭 Navigation module loaded');
-        // Initialize navigation after module loads
-        if (window.NavigationManager) {
-          new NavigationManager();
-        }
       };
       script.onerror = () => {
-        console.warn('⚠️ Navigation module not loaded - basic functionality only');
+        console.warn('⚠️ Navigation module not loaded');
       };
       document.head.appendChild(script);
     } catch (error) {
@@ -226,7 +187,6 @@ class NeraliApp {
   }
 
   initializeChatWidget() {
-    // Load chat widget JavaScript module
     try {
       const currentPath = window.location.pathname;
       const isInSubfolder = this.isInSubfolder(currentPath);
@@ -238,89 +198,38 @@ class NeraliApp {
         console.log('💬 Chat widget module loaded');
       };
       script.onerror = () => {
-        console.log('⚠️ Chat widget module not loaded - basic functionality only');
+        console.warn('⚠️ Chat widget not loaded');
       };
       document.head.appendChild(script);
     } catch (error) {
-      console.log('⚠️ Chat widget initialization failed:', error);
+      console.error('Chat widget initialization failed:', error);
     }
   }
 
   initializeCalculators() {
-    // Initialize calculator if on calculator page
-    if (window.location.pathname.includes('calculator')) {
-      console.log('Calculator page detected');
-    }
+    // Calculator initialization would go here
+    console.log('🧮 Calculator modules ready');
   }
 
   initializePerformanceOptimizations() {
-    // Lazy loading for images
-    if ('IntersectionObserver' in window) {
-      this.setupLazyLoading();
-    }
-    
-    // Service worker registration (if available)
-    this.registerServiceWorker();
+    this.setupLazyLoading();
   }
 
   setupLazyLoading() {
-    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-    
-    if (lazyImages.length === 0) return;
-    
-    const imageObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          if (img.dataset.src) {
+    if ('IntersectionObserver' in window) {
+      const lazyImages = document.querySelectorAll('[data-src]');
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
             img.src = img.dataset.src;
             img.removeAttribute('data-src');
+            observer.unobserve(img);
           }
-          imageObserver.unobserve(img);
-        }
+        });
       });
-    });
-    
-    lazyImages.forEach(img => imageObserver.observe(img));
-  }
 
-  async registerServiceWorker() {
-    if ('serviceWorker' in navigator && window.location.protocol === 'https:') {
-      try {
-        // Service worker implementation would go here
-        console.log('Service worker support detected');
-      } catch (error) {
-        console.log('Service worker registration failed:', error);
-      }
-    }
-  }
-
-  isInSubfolder(currentPath) {
-    return currentPath.includes('/arthra/') || 
-           currentPath.includes('/etairia/') || 
-           currentPath.includes('/ipiresies/') || 
-           currentPath.includes('/efarmoges/') || 
-           currentPath.includes('/epikoinonia/') || 
-           currentPath.includes('/nomimotita/') || 
-           (currentPath.split('/').length > 2 && !currentPath.endsWith('/'));
-  }
-
-  showSimpleError() {
-    // Simple error message if header fails to load
-    const headerEl = document.getElementById("site-header");
-    if (headerEl) {
-      headerEl.innerHTML = `
-        <header class="site-header">
-          <div class="header-row">
-            <a class="brand" href="/" aria-label="Nerali Home">
-              <span class="name">Nerali</span>
-            </a>
-            <nav class="primary">
-              <p style="color: #999; font-size: 0.9rem;">Φόρτωση μενού...</p>
-            </nav>
-          </div>
-        </header>
-      `;
+      lazyImages.forEach(img => imageObserver.observe(img));
     }
   }
 
@@ -354,7 +263,140 @@ class NeraliApp {
     // Minimal fallback security
     const token = Math.random().toString(36).substr(2, 9);
     sessionStorage.setItem('csrf_token', token);
-    console.log('� Basic security fallback active');
+    console.log('🔒 Basic security fallback active');
+  }
+
+  initializeErrorHandler() {
+    try {
+      const currentPath = window.location.pathname;
+      const isInSubfolder = this.isInSubfolder(currentPath);
+      const basePath = isInSubfolder ? "../" : "./";
+      
+      const script = document.createElement('script');
+      script.src = basePath + 'js/error-handler.js';
+      script.onload = () => {
+        console.log('🚨 Error handler module loaded');
+        if (window.ErrorHandler) {
+          new ErrorHandler();
+        }
+      };
+      script.onerror = () => {
+        console.warn('⚠️ Error handler not loaded - using basic error handling');
+      };
+      document.head.appendChild(script);
+    } catch (error) {
+      console.error('Error handler initialization failed:', error);
+    }
+  }
+
+  initializeImageOptimizer() {
+    try {
+      const currentPath = window.location.pathname;
+      const isInSubfolder = this.isInSubfolder(currentPath);
+      const basePath = isInSubfolder ? "../" : "./";
+      
+      const script = document.createElement('script');
+      script.src = basePath + 'js/image-optimizer.js';
+      script.onload = () => {
+        console.log('🖼️ Image optimizer module loaded');
+        if (window.ImageOptimizer) {
+          new ImageOptimizer();
+        }
+      };
+      script.onerror = () => {
+        console.warn('⚠️ Image optimizer not loaded');
+      };
+      document.head.appendChild(script);
+    } catch (error) {
+      console.error('Image optimizer initialization failed:', error);
+    }
+  }
+
+  initializePerformanceMonitor() {
+    try {
+      const currentPath = window.location.pathname;
+      const isInSubfolder = this.isInSubfolder(currentPath);
+      const basePath = isInSubfolder ? "../" : "./";
+      
+      const script = document.createElement('script');
+      script.src = basePath + 'js/performance-monitor.js';
+      script.onload = () => {
+        console.log('📊 Performance monitor module loaded');
+        if (window.PerformanceMonitor) {
+          new PerformanceMonitor();
+        }
+      };
+      script.onerror = () => {
+        console.warn('⚠️ Performance monitor not loaded');
+      };
+      document.head.appendChild(script);
+    } catch (error) {
+      console.error('Performance monitor initialization failed:', error);
+    }
+  }
+
+  initializeSchemaManager() {
+    try {
+      const currentPath = window.location.pathname;
+      const isInSubfolder = this.isInSubfolder(currentPath);
+      const basePath = isInSubfolder ? "../" : "./";
+      
+      const script = document.createElement('script');
+      script.src = basePath + 'js/schema-manager.js';
+      script.onload = () => {
+        console.log('🏷️ Schema manager module loaded');
+        if (window.SchemaManager) {
+          new SchemaManager();
+        }
+      };
+      script.onerror = () => {
+        console.warn('⚠️ Schema manager not loaded');
+      };
+      document.head.appendChild(script);
+    } catch (error) {
+      console.error('Schema manager initialization failed:', error);
+    }
+  }
+
+  initializeServiceWorker() {
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', async () => {
+        try {
+          const currentPath = window.location.pathname;
+          const isInSubfolder = this.isInSubfolder(currentPath);
+          const swPath = isInSubfolder ? '../sw.js' : './sw.js';
+          
+          const registration = await navigator.serviceWorker.register(swPath);
+          console.log('🔄 Service Worker registered successfully:', registration);
+          
+          // Listen for updates
+          registration.addEventListener('updatefound', () => {
+            console.log('🔄 Service Worker update found');
+          });
+          
+        } catch (error) {
+          console.warn('⚠️ Service Worker registration failed:', error);
+        }
+      });
+    } else {
+      console.warn('⚠️ Service Worker not supported');
+    }
+  }
+
+  isInSubfolder(currentPath) {
+    return currentPath.includes('/arthra/') || 
+           currentPath.includes('/etairia/') || 
+           currentPath.includes('/ipiresies/') || 
+           currentPath.includes('/efarmoges/') || 
+           currentPath.includes('/epikoinonia/') || 
+           currentPath.includes('/nomimotita/') || 
+           currentPath.includes('/css/') || 
+           currentPath.includes('/js/') ||
+           (currentPath.split('/').length > 2 && !currentPath.endsWith('/'));
+  }
+
+  showSimpleError() {
+    console.warn('Using minimal fallback for critical component');
   }
 
   showError(message) {
