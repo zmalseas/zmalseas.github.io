@@ -10,6 +10,7 @@ class PerformanceMonitor {
       ttfb: null      // Time to First Byte
     };
     
+    console.log('📊 Performance Monitor initialized (local mode - no server logging)');
     this.init();
   }
 
@@ -196,8 +197,8 @@ class PerformanceMonitor {
   }
 
   shouldSendToServer() {
-    // Only send a sample of metrics to avoid overwhelming the server
-    return Math.random() < 0.1; // 10% sampling rate
+    // Disabled for static site - no backend endpoint available
+    return false; // Set to true when you have a metrics API endpoint
   }
 
   logPerformanceSummary() {
