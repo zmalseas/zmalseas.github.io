@@ -3,12 +3,15 @@ async function injectPartials() {
   const headerEl = document.getElementById("site-header");
   const footerEl = document.getElementById("site-footer");
   const chatEl = document.getElementById("chat-widget");
-  // Use relative paths for better compatibility
+  // Determine path based on current location
   const currentPath = window.location.pathname;
-  const isInSubfolder = currentPath.includes('/') && !currentPath.endsWith('index.html') && currentPath !== '/' && !currentPath.endsWith('/');
-  const logoPath = isInSubfolder ? "../images/logo.png" : "./images/logo.png";
-  const homePath = isInSubfolder ? "../index.html" : "./index.html";
-  const basePath = isInSubfolder ? "../" : "./";
+  // Check if we're in a subfolder (not root, not index.html)
+  const pathSegments = currentPath.split('/').filter(segment => segment.length > 0);
+  const isInSubfolder = pathSegments.length > 0 && !currentPath.endsWith('index.html') && currentPath !== '/';
+  
+  const logoPath = isInSubfolder ? "../images/logo.png" : "images/logo.png";
+  const homePath = isInSubfolder ? "../index.html" : "index.html";
+  const basePath = isInSubfolder ? "../" : "";
   
   const HEADER_FALLBACK = `
 <header class="site-header">
@@ -89,11 +92,24 @@ async function injectPartials() {
 `;
   try {
     // Use the same path detection logic as above
-    const partialsPath = isInSubfolder ? "../partials/" : "./partials/";
+    const partialsPath = isInSubfolder ? "../partials/" : "partials/";
+    
+    // Debug logging for path resolution
+    console.log("Current path:", currentPath);
+    console.log("Is in subfolder:", isInSubfolder);
+    console.log("Partials path:", partialsPath);
+    console.log("Base URL:", window.location.origin);
+    console.log("Full partials URL:", window.location.origin + "/" + partialsPath);
     
     const promises = [
-      fetch(partialsPath + "header.html").then(r => r.text()),
-      fetch(partialsPath + "footer.html").then(r => r.text()),
+      fetch(partialsPath + "header.html").then(r => {
+        if (!r.ok) throw new Error(`Failed to fetch header: ${r.status}`);
+        return r.text();
+      }),
+      fetch(partialsPath + "footer.html").then(r => {
+        if (!r.ok) throw new Error(`Failed to fetch footer: ${r.status}`);
+        return r.text();
+      }),
     ];
     
     // Only load chat widget if not on contact page
@@ -105,8 +121,22 @@ async function injectPartials() {
     const results = await Promise.all(promises);
     const [h, f, c] = results;
     
-    if (headerEl) headerEl.innerHTML = h;
-    if (footerEl) footerEl.innerHTML = f;
+    // Replace absolute paths in loaded HTML with relative paths
+    let processedHeader = h;
+    let processedFooter = f;
+    
+    if (isInSubfolder) {
+      // Replace absolute paths with relative paths for subfolders
+      processedHeader = h.replace(/href="\/([^"]*)/g, 'href="../$1').replace(/src="([^\/][^"]*)/g, `src="../$1`);
+      processedFooter = f.replace(/href="\/([^"]*)/g, 'href="../$1').replace(/src="([^\/][^"]*)/g, `src="../$1`);
+    } else {
+      // For root directory, remove leading slashes but keep relative structure
+      processedHeader = h.replace(/href="\/([^"]*)/g, 'href="$1').replace(/src="images/g, 'src="images/');
+      processedFooter = f.replace(/href="\/([^"]*)/g, 'href="$1').replace(/src="images/g, 'src="images/');
+    }
+    
+    if (headerEl) headerEl.innerHTML = processedHeader;
+    if (footerEl) footerEl.innerHTML = processedFooter;
     if (chatEl && !isContactPage && c) {
       chatEl.innerHTML = c;
       initChatWidget();
@@ -114,6 +144,7 @@ async function injectPartials() {
     
     initHeaderInteractions();
   } catch (e) {
+    console.warn("Failed to load partials, using fallback:", e);
     if (headerEl) headerEl.innerHTML = HEADER_FALLBACK;
     if (footerEl) footerEl.innerHTML = FOOTER_FALLBACK;
     initHeaderInteractions();
