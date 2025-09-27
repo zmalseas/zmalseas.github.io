@@ -20,7 +20,7 @@ input[type="reset"],
 }
 
 /* Enhanced Link Targets */
-a:not(.legal-link) {
+a:not(.legal-link):not(.social-link) {
   min-height: 44px;
   display: inline-flex;
   align-items: center;
@@ -33,6 +33,13 @@ a:not(.legal-link) {
 .legal-link {
   min-height: auto !important;
   display: inline-block !important;
+}
+
+/* Social links - maintain accessibility with padding instead of min-height */
+.social-link {
+  padding: 4px; /* Creates 44px total touch area (36px + 8px padding) */
+  min-height: auto !important;
+  min-width: auto !important;
 }
 
 /* Override for dropdown submenu - keep left aligned */
