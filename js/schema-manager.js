@@ -69,12 +69,12 @@ class SchemaManager {
 
   getBusinessData() {
     return {
-      name: "Nerali - Λογιστικό Γραφείο",
-      alternateName: "Nerali Accounting Services",
+      name: "Nerally - Λογιστικό Γραφείο",
+      alternateName: "Nerally Accounting Services",
       description: "Λογιστικές υπηρεσίες, φοροτεχνικά, συμβουλευτικές υπηρεσίες και ψηφιακές λύσεις για επιχειρήσεις στην Ελλάδα.",
-      url: "https://nerali.gr",
+      url: "https://nerally.gr",
       telephone: "+30-210-1234567",
-      email: "info@nerali.gr",
+      email: "info@nerally.gr",
       address: {
         streetAddress: "Λεωφόρος Κηφισίας 123",
         addressLocality: "Αθήνα",
@@ -98,7 +98,7 @@ class SchemaManager {
     const schema = {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      "@id": "https://nerali.gr/#organization",
+      "@id": "https://nerally.gr/#organization",
       "name": this.businessData.name,
       "alternateName": this.businessData.alternateName,
       "description": this.businessData.description,
@@ -160,8 +160,8 @@ class SchemaManager {
         ]
       },
       "sameAs": [
-        "https://www.linkedin.com/company/nerali",
-        "https://www.facebook.com/nerali.gr"
+        "https://www.linkedin.com/company/nerally",
+        "https://www.facebook.com/nerally.gr"
       ]
     };
 
@@ -172,19 +172,19 @@ class SchemaManager {
     const schema = {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "@id": "https://nerali.gr/#website",
-      "url": "https://nerali.gr",
+      "@id": "https://nerally.gr/#website",
+      "url": "https://nerally.gr",
       "name": this.businessData.name,
       "description": this.businessData.description,
       "publisher": {
-        "@id": "https://nerali.gr/#organization"
+        "@id": "https://nerally.gr/#organization"
       },
       "inLanguage": "el-GR",
       "potentialAction": {
         "@type": "SearchAction",
         "target": {
           "@type": "EntryPoint",
-          "urlTemplate": "https://nerali.gr/search?q={search_term_string}"
+          "urlTemplate": "https://nerally.gr/search?q={search_term_string}"
         },
         "query-input": "required name=search_term_string"
       }
@@ -215,7 +215,7 @@ class SchemaManager {
     const path = window.location.pathname;
     const segments = path.split('/').filter(Boolean);
     const breadcrumbs = [
-      { name: "Αρχική", url: "https://nerali.gr" }
+      { name: "Αρχική", url: "https://nerally.gr" }
     ];
 
     // Define breadcrumb mappings
@@ -236,7 +236,7 @@ class SchemaManager {
       'contact.html': 'Επικοινωνία'
     };
 
-    let currentPath = 'https://nerali.gr';
+    let currentPath = 'https://nerally.gr';
     
     segments.forEach(segment => {
       currentPath += '/' + segment;
@@ -278,18 +278,18 @@ class SchemaManager {
     const schema = {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "@id": "https://nerali.gr/#webpage",
-      "url": "https://nerali.gr",
-      "name": "Nerali - Λογιστικό Γραφείο | Λογιστικές & Φοροτεχνικές Υπηρεσίες",
+      "@id": "https://nerally.gr/#webpage",
+      "url": "https://nerally.gr",
+      "name": "Nerally - Λογιστικό Γραφείο | Λογιστικές & Φοροτεχνικές Υπηρεσίες",
       "description": this.businessData.description,
       "isPartOf": {
-        "@id": "https://nerali.gr/#website"
+        "@id": "https://nerally.gr/#website"
       },
       "about": {
-        "@id": "https://nerali.gr/#organization"
+        "@id": "https://nerally.gr/#organization"
       },
       "mainEntity": {
-        "@id": "https://nerali.gr/#organization"
+        "@id": "https://nerally.gr/#organization"
       }
     };
 
@@ -300,8 +300,8 @@ class SchemaManager {
     const schema = {
       "@context": "https://schema.org",
       "@type": "ContactPage",
-      "name": "Επικοινωνία - Nerali",
-      "description": "Επικοινωνήστε με το λογιστικό γραφείο Nerali για περισσότερες πληροφορίες",
+      "name": "Επικοινωνία - Nerally",
+      "description": "Επικοινωνήστε με το λογιστικό γραφείο Nerally για περισσότερες πληροφορίες",
       "mainEntity": {
         "@type": "ContactPoint",
         "telephone": this.businessData.telephone,
@@ -330,7 +330,7 @@ class SchemaManager {
       "name": serviceName,
       "description": serviceDescription,
       "provider": {
-        "@id": "https://nerali.gr/#organization"
+        "@id": "https://nerally.gr/#organization"
       },
       "serviceType": "Professional Service",
       "hasOfferCatalog": {
@@ -406,7 +406,7 @@ class SchemaManager {
       "applicationCategory": "FinanceApplication",
       "operatingSystem": "Web Browser",
       "author": {
-        "@id": "https://nerali.gr/#organization"
+        "@id": "https://nerally.gr/#organization"
       },
       "offers": {
         "@type": "Offer",
@@ -469,7 +469,7 @@ class SchemaManager {
     const schema = {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "@id": "https://nerali.gr/#localbusiness",
+      "@id": "https://nerally.gr/#localbusiness",
       "name": this.businessData.name,
       "description": this.businessData.description,
       "url": this.businessData.url,
@@ -507,25 +507,25 @@ class SchemaManager {
       {
         name: "Λογιστικές Υπηρεσίες",
         description: "Πλήρης λογιστική παρακολούθηση επιχειρήσεων",
-        url: "https://nerali.gr/ipiresies/logistiki.html"
+        url: "https://nerally.gr/ipiresies/logistiki.html"
       },
       {
         name: "Μισθοδοσία",
         description: "Υπηρεσίες μισθοδοσίας και ανθρωπίνων πόρων",
-        url: "https://nerali.gr/ipiresies/misthodosia.html"
+        url: "https://nerally.gr/ipiresies/misthodosia.html"
       },
       {
         name: "Συμβουλευτικές Υπηρεσίες",
         description: "Επιχειρηματική συμβουλευτική και στρατηγική",
-        url: "https://nerali.gr/ipiresies/consulting.html"
+        url: "https://nerally.gr/ipiresies/consulting.html"
       }
     ];
 
     const schema = {
       "@context": "https://schema.org",
       "@type": "ItemList",
-      "name": "Υπηρεσίες Nerali",
-      "description": "Πλήρης κατάλογος υπηρεσιών του λογιστικού γραφείου Nerali",
+      "name": "Υπηρεσίες Nerally",
+      "description": "Πλήρης κατάλογος υπηρεσιών του λογιστικού γραφείου Nerally",
       "itemListElement": services.map((service, index) => ({
         "@type": "ListItem",
         "position": index + 1,
@@ -535,7 +535,7 @@ class SchemaManager {
           "description": service.description,
           "url": service.url,
           "provider": {
-            "@id": "https://nerali.gr/#organization"
+            "@id": "https://nerally.gr/#organization"
           }
         }
       }))

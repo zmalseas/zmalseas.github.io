@@ -28,7 +28,7 @@ class PerformanceMonitor {
   shouldMonitor() {
     // Enable monitoring on production or when debug flag is set
     return window.location.hostname !== 'localhost' || 
-           window.localStorage.getItem('nerali-debug-performance') === 'true';
+           window.localStorage.getItem('nerally-debug-performance') === 'true';
   }
 
   observeWebVitals() {
@@ -158,7 +158,7 @@ class PerformanceMonitor {
   reportMetric(name, value) {
     // In production, you would send this to your analytics service
     // For now, we'll just log it
-    if (window.localStorage.getItem('nerali-debug-performance') === 'true') {
+    if (window.localStorage.getItem('nerally-debug-performance') === 'true') {
       console.log(`🚀 Performance Metric - ${name}:`, Math.round(value * 100) / 100, 'ms');
     }
     
@@ -202,8 +202,8 @@ class PerformanceMonitor {
   }
 
   logPerformanceSummary() {
-    if (window.localStorage.getItem('nerali-debug-performance') === 'true') {
-      console.group('📊 Nerali Performance Summary');
+    if (window.localStorage.getItem('nerally-debug-performance') === 'true') {
+      console.group('📊 Nerally Performance Summary');
       console.log('First Contentful Paint:', this.metrics.fcp ? `${Math.round(this.metrics.fcp)}ms` : 'Not measured');
       console.log('Largest Contentful Paint:', this.metrics.lcp ? `${Math.round(this.metrics.lcp)}ms` : 'Not measured');
       console.log('First Input Delay:', this.metrics.fid ? `${Math.round(this.metrics.fid)}ms` : 'Not measured');
@@ -252,13 +252,13 @@ class PerformanceMonitor {
 
   // Public method to enable debug mode
   enableDebugMode() {
-    window.localStorage.setItem('nerali-debug-performance', 'true');
+    window.localStorage.setItem('nerally-debug-performance', 'true');
     console.log('🔧 Performance debugging enabled. Reload the page to see metrics.');
   }
 
   // Public method to disable debug mode
   disableDebugMode() {
-    window.localStorage.removeItem('nerali-debug-performance');
+    window.localStorage.removeItem('nerally-debug-performance');
     console.log('🔧 Performance debugging disabled.');
   }
 }
@@ -267,7 +267,7 @@ class PerformanceMonitor {
 const performanceMonitor = new PerformanceMonitor();
 
 // Make debug methods available globally
-window.neraliPerformance = {
+window.nerallyPerformance = {
   enable: () => performanceMonitor.enableDebugMode(),
   disable: () => performanceMonitor.disableDebugMode(),
   metrics: () => performanceMonitor.metrics

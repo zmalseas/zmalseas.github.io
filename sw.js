@@ -1,7 +1,7 @@
-// Service Worker for Nerali Website
+// Service Worker for Nerally Website
 // Provides offline functionality and caching
 
-const CACHE_NAME = 'nerali-v1.0.0';
+const CACHE_NAME = 'nerally-v1.0.0';
 const OFFLINE_URL = '/404.html';
 
 const CACHE_RESOURCES = [
@@ -244,4 +244,4 @@ self.addEventListener('message', (event) => {
   }
 });
 
-console.log('🎯 Nerali Service Worker loaded');
+console.log('🎯 Nerally Service Worker loaded');

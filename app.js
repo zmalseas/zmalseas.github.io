@@ -1,7 +1,7 @@
 // Modern App.js with integrated modules
 
 // Main App Class
-class NeraliApp {
+class NerallyApp {
   constructor() {
     this.isInitialized = false;
     this.init();
@@ -9,7 +9,7 @@ class NeraliApp {
 
   async init() {
     try {
-      console.log('🚀 Initializing Nerali App...');
+      console.log('🚀 Initializing Nerally App...');
       
       // Wait for DOM to be ready
       if (document.readyState === 'loading') {
@@ -42,10 +42,10 @@ class NeraliApp {
       this.initializeServiceWorker();
       
       this.isInitialized = true;
-      console.log('✅ Nerali App initialized successfully');
+      console.log('✅ Nerally App initialized successfully');
       
       // Dispatch custom event for other scripts
-      document.dispatchEvent(new CustomEvent('nerali:app:ready'));
+      document.dispatchEvent(new CustomEvent('nerally:app:ready'));
       
     } catch (error) {
       console.error('❌ App bootstrap failed:', error);
@@ -414,7 +414,7 @@ class NeraliApp {
 }
 
 // Initialize the app
-const app = new NeraliApp();
+const app = new NerallyApp();
 
 // Export for global access if needed
-window.NeraliApp = app;
+window.NerallyApp = app;

@@ -314,7 +314,7 @@ class SecurityManager {
     // We can infer this by checking if we're on a GitHub Pages domain or
     // by detecting typical CSP behavior patterns
     const isGitHubPages = window.location.hostname.includes('github.io') || 
-                         window.location.hostname.includes('nerali.gr');
+                         window.location.hostname.includes('nerally.gr');
     
     // If this is a GitHub Pages site or our domain, assume .htaccess CSP is active
     // This prevents false warnings when CSP IS configured server-side
@@ -405,12 +405,12 @@ class SecurityManager {
     const whitelist = [
       '/js/',
       'app.js',
-      'nerali.gr'
+      'nerally.gr'
     ];
     
     const src = script.src || '';
     return whitelist.some(allowed => src.includes(allowed)) || 
-           (script.textContent && script.textContent.includes('// Nerali'));
+           (script.textContent && script.textContent.includes('// Nerally'));
   }
 
   showSecurityError(message) {
