@@ -176,6 +176,14 @@ class NeraliApp {
       script.src = basePath + 'js/navigation.js';
       script.onload = () => {
         console.log('🧭 Navigation module loaded');
+        // Initialize NavigationManager after loading
+        if (typeof NavigationManager !== 'undefined' && !window.navigationInitialized) {
+          new NavigationManager();
+          window.navigationInitialized = true;
+          console.log('🧭 NavigationManager initialized');
+        } else {
+          console.warn('NavigationManager class not found or already initialized');
+        }
       };
       script.onerror = () => {
         console.warn('⚠️ Navigation module not loaded');

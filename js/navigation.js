@@ -53,17 +53,23 @@ class NavigationManager {
     const hamburger = document.querySelector('.hamburger');
     const overlay = document.querySelector('.overlay');
     
-    if (!hamburger || !overlay) return;
+    if (!hamburger || !overlay) {
+      console.log('Missing mobile menu elements:', { hamburger: !!hamburger, overlay: !!overlay });
+      return;
+    }
     
     // Setup dynamic navigation overflow detection
     this.setupNavigationOverflow();
     
     try {
       // Toggle mobile menu
-      hamburger.addEventListener('click', () => {
+      hamburger.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log('Hamburger clicked');
         hamburger.classList.toggle('active');
         overlay.classList.toggle('open');
         document.body.classList.toggle('menu-open');
+        console.log('Menu toggled. Open:', overlay.classList.contains('open'));
       });
 
       // Close menu when clicking outside
@@ -116,22 +122,35 @@ class NavigationManager {
     const checkNavigationOverflow = () => {
       const header = document.querySelector('.site-header');
       const navLinks = document.querySelector('.nav-links');
-      const logo = document.querySelector('.logo');
+      const brand = document.querySelector('.brand'); // Fixed selector
       
-      if (!header || !navLinks || !logo) return;
+      if (!header || !navLinks || !brand) {
+        console.log('Missing elements:', { header: !!header, navLinks: !!navLinks, brand: !!brand });
+        return;
+      }
       
       const headerWidth = header.offsetWidth;
-      const logoWidth = logo.offsetWidth;
+      const brandWidth = brand.offsetWidth;
       const navLinksWidth = navLinks.scrollWidth;
       const hamburgerWidth = 60; // Account for hamburger button space
       const padding = 40; // Extra padding for safety
       
-      const availableSpace = headerWidth - logoWidth - hamburgerWidth - padding;
+      const availableSpace = headerWidth - brandWidth - hamburgerWidth - padding;
+      
+      console.log('Navigation check:', {
+        headerWidth,
+        brandWidth,
+        navLinksWidth,
+        availableSpace,
+        needsOverflow: navLinksWidth > availableSpace
+      });
       
       if (navLinksWidth > availableSpace) {
         header.classList.add('nav-overflow');
+        console.log('Added nav-overflow class');
       } else {
         header.classList.remove('nav-overflow');
+        console.log('Removed nav-overflow class');
         // Close menu if it was open and now there's space
         if (document.querySelector('.overlay.open')) {
           this.closeMobileMenu();
@@ -155,9 +174,10 @@ if (typeof module !== 'undefined' && module.exports) {
   window.NavigationManager = NavigationManager;
 }
 
-// Auto-initialize when loaded directly
-if (typeof window !== 'undefined' && !window.APP_LOADED) {
+// Auto-initialize when loaded directly (not via app.js)
+if (typeof window !== 'undefined' && !window.APP_LOADED && !window.navigationInitialized) {
   document.addEventListener('DOMContentLoaded', () => {
     new NavigationManager();
+    window.navigationInitialized = true;
   });
 }

@@ -105,11 +105,11 @@ nav.primary{display:flex;align-items:center;gap:16px}
 .hamburger.active .bar::before{transform:rotate(-90deg) translateX(-8px); background:var(--brand) !important; opacity:1}
 .hamburger.active .bar::after{opacity:0}
 /* Dynamic navigation visibility controlled by JavaScript */
-.nav-overflow .nav-links { display: none; }
-.nav-overflow .hamburger { display: flex; }
+.nav-overflow .nav-links { display: none !important; }
+.nav-overflow .hamburger { display: flex !important; }
 
-/* Fallback media query for very small screens */
-@media (max-width: 480px) { 
-  .nav-links { display: none; } 
-  .hamburger { display: flex; } 
-}
+/* Ensure hamburger is hidden by default */
+.hamburger { display: none; }
+
+/* Only show hamburger when overflow detected */
+.site-header.nav-overflow .hamburger { display: flex; }
