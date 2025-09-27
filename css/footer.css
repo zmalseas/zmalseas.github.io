@@ -88,12 +88,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  min-height: 36px !important;
+  max-width: 36px !important;
+  max-height: 36px !important;
+  border-radius: 50% !important;
   transition: all 0.3s ease;
   color: #666;
   flex-shrink: 0;
+  padding: 4px;
+  box-sizing: border-box;
 }
 
 .social-link svg {
@@ -103,23 +109,29 @@
 }
 
 .social-link.tiktok:hover {
-  background: #ff0050;
+  background: #ff0050 !important;
   color: #fff;
   border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
   transform: translateY(-2px);
 }
 
 .social-link.instagram:hover {
-  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
   color: #fff;
   border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
   transform: translateY(-2px);
 }
 
 .social-link.linkedin:hover {
-  background: #0077b5;
+  background: #0077b5 !important;
   color: #fff;
   border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
   transform: translateY(-2px);
 }
 
