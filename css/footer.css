@@ -5,7 +5,7 @@
   background: #000;
   border-top: none;
   margin: 0;
-  padding: 15px 0 12px 0;
+  padding: 6px 0 4px 0;
   color: #d6d6d6;
   width: 100%;
   position: relative;
@@ -105,18 +105,21 @@
 .social-link.tiktok:hover {
   background: #ff0050;
   color: #fff;
+  border-radius: 50% !important;
   transform: translateY(-2px);
 }
 
 .social-link.instagram:hover {
   background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
   color: #fff;
+  border-radius: 50% !important;
   transform: translateY(-2px);
 }
 
 .social-link.linkedin:hover {
   background: #0077b5;
   color: #fff;
+  border-radius: 50% !important;
   transform: translateY(-2px);
 }
 
