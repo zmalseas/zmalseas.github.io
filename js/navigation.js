@@ -7,8 +7,16 @@ class NavigationManager {
 
   init() {
     try {
-      this.setupEventListeners();
-      this.setupMobileMenu();
+      // Wait for DOM to be fully ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+          this.setupEventListeners();
+          this.setupMobileMenu();
+        });
+      } else {
+        this.setupEventListeners();
+        this.setupMobileMenu();
+      }
     } catch (error) {
       console.error('Navigation initialization failed:', error);
     }
@@ -116,54 +124,37 @@ class NavigationManager {
     if (hamburger) hamburger.classList.remove('active');
     if (overlay) overlay.classList.remove('open');
     document.body.classList.remove('menu-open');
+    
+    // Restore body scroll
+    document.body.style.removeProperty('position');
+    document.body.style.removeProperty('width');
+    document.body.style.removeProperty('height');
   }
 
   setupNavigationOverflow() {
-    const checkNavigationOverflow = () => {
+    const checkOverflow = () => {
       const header = document.querySelector('.site-header');
       const navLinks = document.querySelector('.nav-links');
-      const brand = document.querySelector('.brand'); // Fixed selector
       
-      if (!header || !navLinks || !brand) {
-        console.log('Missing elements:', { header: !!header, navLinks: !!navLinks, brand: !!brand });
-        return;
-      }
+      if (!header || !navLinks) return;
       
-      const headerWidth = header.offsetWidth;
-      const brandWidth = brand.offsetWidth;
-      const navLinksWidth = navLinks.scrollWidth;
-      const hamburgerWidth = 60; // Account for hamburger button space
-      const padding = 40; // Extra padding for safety
+      // ΑΠΛΗ ΛΟΓΙΚΗ: Αν το παράθυρο < 1100px, δείξε hamburger
+      const windowWidth = window.innerWidth;
       
-      const availableSpace = headerWidth - brandWidth - hamburgerWidth - padding;
-      
-      console.log('Navigation check:', {
-        headerWidth,
-        brandWidth,
-        navLinksWidth,
-        availableSpace,
-        needsOverflow: navLinksWidth > availableSpace
-      });
-      
-      if (navLinksWidth > availableSpace) {
+      if (windowWidth < 1100) {
         header.classList.add('nav-overflow');
-        console.log('Added nav-overflow class');
+        console.log('📱 Small screen detected - showing hamburger');
       } else {
         header.classList.remove('nav-overflow');
-        console.log('Removed nav-overflow class');
-        // Close menu if it was open and now there's space
-        if (document.querySelector('.overlay.open')) {
-          this.closeMobileMenu();
-        }
+        console.log('🖥️ Large screen detected - showing nav links');
       }
     };
     
-    // Check on load and resize
-    checkNavigationOverflow();
-    window.addEventListener('resize', checkNavigationOverflow);
+    // Έλεγχος στο resize
+    window.addEventListener('resize', checkOverflow);
     
-    // Also check after fonts load
-    document.fonts.ready.then(checkNavigationOverflow);
+    // Άμεσος έλεγχος
+    checkOverflow();
   }
 }
 

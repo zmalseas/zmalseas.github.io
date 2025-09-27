@@ -357,50 +357,10 @@
       }
     }
   </style>
-  
-  <script>
-    // Initialize floating labels for contact page
-    function initContactFloatingLabels() {
-      const floatingInputs = document.querySelectorAll('.floating-label input, .floating-label textarea');
-      
-      floatingInputs.forEach(input => {
-        // Handle input events
-        input.addEventListener('input', function() {
-          if (this.value.trim() !== '') {
-            this.classList.add('has-value');
-          } else {
-            this.classList.remove('has-value');
-          }
-        });
-        
-        // Handle focus events
-        input.addEventListener('focus', function() {
-          this.classList.add('is-focused');
-        });
-        
-        // Handle blur events
-        input.addEventListener('blur', function() {
-          this.classList.remove('is-focused');
-          if (this.value.trim() !== '') {
-            this.classList.add('has-value');
-          } else {
-            this.classList.remove('has-value');
-          }
-        });
-        
-        // Check initial state
-        if (input.value.trim() !== '') {
-          input.classList.add('has-value');
-        }
-      });
-    }
-    
-    // Initialize when DOM is loaded
-    document.addEventListener('DOMContentLoaded', initContactFloatingLabels);
-  </script>
 
   <div id="site-footer"></div>
   
+  <script src="../js/floating-labels.js"></script>
   <script src="../app.js"></script>
 </body>
 </html>

@@ -315,16 +315,7 @@ main,
 }
 
 /* ===== Animation Keyframes ===== */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* fadeInUp animation removed - scroll animations disabled */
 
 /* ===== Hero Animation Only ===== */
 .hero-content {
@@ -339,8 +330,7 @@ main,
   position: relative;
   z-index: 10;
   margin-top: 100vh;
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out 0.2s forwards;
+  opacity: 1;
 }
 
 .about-content {
@@ -385,8 +375,7 @@ main,
   color: #ffffff;
   position: relative;
   z-index: 11;
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out 0.4s forwards;
+  opacity: 1;
 }
 
 .services-header {
@@ -561,8 +550,7 @@ main,
   color: #333;
   position: relative;
   z-index: 12;
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out 0.6s forwards;
+  opacity: 1;
 }
 
 .section-header {
@@ -651,8 +639,7 @@ main,
   color: #333;
   position: relative;
   z-index: 13;
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out 0.8s forwards;
+  opacity: 1;
 }
 
 .apps-preview-grid {
@@ -723,8 +710,7 @@ main,
   border: none;
   position: relative;
   z-index: 14;
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out 1s forwards;
+  opacity: 1;
   display: block;
   line-height: 1;
 }

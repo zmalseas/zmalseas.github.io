@@ -77,11 +77,12 @@
   font-weight: 500;
 }
 
-/* Form Security Indicators */
+/* Form Security Indicators - Lock icon removed */
 form[data-protected="true"] {
   position: relative;
 }
 
+/* Lock icon disabled - security is still active but not visually indicated
 form[data-protected="true"]::before {
   content: "🔒";
   position: absolute;
@@ -99,6 +100,7 @@ form[data-protected="true"]::before {
   z-index: 100;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+*/
 
 /* Enhanced Focus States for Security */
 input:focus,

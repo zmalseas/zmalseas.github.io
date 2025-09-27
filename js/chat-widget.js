@@ -78,6 +78,9 @@ class ChatWidget {
       console.warn('Using fallback chat widget:', error.message);
       chatEl.innerHTML = CHAT_FALLBACK;
     }
+    
+    // Initialize floating labels after HTML is loaded
+    this.initializeFloatingLabels();
   }
 
   setupEventListeners() {
@@ -253,6 +256,33 @@ class ChatWidget {
     window.addEventListener('scroll', checkCollision);
     window.addEventListener('resize', checkCollision);
     checkCollision(); // Initial check
+  }
+
+  initializeFloatingLabels() {
+    // Initialize floating labels for chat widget
+    const chatFloatingFields = document.querySelectorAll('#chatModal .floating-label input, #chatModal .floating-label textarea');
+    
+    chatFloatingFields.forEach(function(field) {
+      
+      function updateLabelState() {
+        // Check if field has content
+        const hasContent = field.value.trim().length > 0;
+        
+        if (hasContent) {
+          field.classList.add('has-content');
+        } else {
+          field.classList.remove('has-content');
+        }
+      }
+      
+      // Event listeners
+      field.addEventListener('input', updateLabelState);
+      field.addEventListener('blur', updateLabelState);
+      field.addEventListener('change', updateLabelState);
+      
+      // Check initial state
+      updateLabelState();
+    });
   }
 
   isInSubfolder(currentPath) {

@@ -6,8 +6,6 @@ button,
 input[type="submit"],
 input[type="button"],
 input[type="reset"],
-.nav-links a,
-.hamburger,
 .chat-button,
 .service-card,
 .menu-toggle {
@@ -17,6 +15,12 @@ input[type="reset"],
   align-items: center;
   justify-content: center;
   touch-action: manipulation; /* Prevents zoom on double-tap */
+}
+
+/* Navigation links - separate rules to avoid conflicts */
+.nav-links a {
+  min-height: 44px;
+  touch-action: manipulation;
 }
 
 /* Enhanced Link Targets */
@@ -68,22 +72,7 @@ a:not(.legal-link):not(.social-link) {
   }
 }
 
-/* Mobile Navigation Improvements */
-.hamburger {
-  padding: var(--spacing-md);
-  border-radius: var(--radius-md);
-  transition: background-color var(--transition-base);
-}
-
-.hamburger:hover,
-.hamburger:focus {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.hamburger:active {
-  transform: scale(0.95);
-  transition: transform 0.1s ease;
-}
+/* Mobile Navigation Improvements - hamburger styles moved to header.css */
 
 /* Enhanced Mobile Menu */
 @media (max-width: 768px) {
@@ -252,7 +241,6 @@ html {
 /* Prevent Text Selection on UI Elements */
 .btn,
 .nav-links,
-.hamburger,
 .service-card {
   user-select: none;
   -webkit-user-select: none;

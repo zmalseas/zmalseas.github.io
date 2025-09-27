@@ -93,8 +93,21 @@ nav.primary{display:flex;align-items:center;gap:16px}
 .submenu a.clicked{color:var(--brand)}
 .submenu a.clicked .sm-arrow{opacity:1;transform:translateX(0)}
 
-/* Hamburger */
-.hamburger{display:none;align-items:center;justify-content:center;width:48px;height:48px;border:none;background:transparent;cursor:pointer;position:relative;z-index:101;padding:8px}
+/* Hamburger - SINGLE CONSOLIDATED RULE */
+.hamburger {
+  display: none; /* Hidden by default - no !important to allow JS override */
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: none;
+  background: transparent !important;
+  cursor: pointer;
+  position: relative;
+  z-index: 101;
+  padding: 8px;
+}
+
 .hamburger:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
 .hamburger .bar,.hamburger .bar::before,.hamburger .bar::after{content:"";display:block;width:26px;height:2px;background:var(--white);border-radius:2px;transition:transform var(--speed) ease,opacity var(--speed) ease,background var(--speed) ease}
 .hamburger .bar{position:relative}
@@ -104,12 +117,16 @@ nav.primary{display:flex;align-items:center;gap:16px}
 .hamburger.active .bar{transform:rotate(45deg); background:var(--brand) !important}
 .hamburger.active .bar::before{transform:rotate(-90deg) translateX(-8px); background:var(--brand) !important; opacity:1}
 .hamburger.active .bar::after{opacity:0}
+
 /* Dynamic navigation visibility controlled by JavaScript */
-.nav-overflow .nav-links { display: none !important; }
-.nav-overflow .hamburger { display: flex !important; }
+.site-header.nav-overflow .nav-links { display: none !important; }
+.site-header.nav-overflow .hamburger { display: flex !important; }
 
-/* Ensure hamburger is hidden by default */
-.hamburger { display: none; }
+/* ΑΠΛΟΣ ΚΑΝΟΝΑΣ: Όταν έχει nav-overflow κλάση */
+.site-header.nav-overflow .hamburger { 
+  display: flex !important; 
+}
 
-/* Only show hamburger when overflow detected */
-.site-header.nav-overflow .hamburger { display: flex; }
+.site-header.nav-overflow .nav-links { 
+  display: none !important; 
+}
