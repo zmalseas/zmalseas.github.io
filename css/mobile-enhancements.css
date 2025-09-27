@@ -36,10 +36,25 @@ a:not(.legal-link):not(.social-link) {
 }
 
 /* Social links - maintain accessibility with padding instead of min-height */
+.social-links .social-link,
+.site-footer .social-link,
+.overlay-footer .social-link,
 .social-link {
-  padding: 4px; /* Creates 44px total touch area (36px + 8px padding) */
+  padding: 4px !important; /* Creates 44px total touch area (36px + 8px padding) */
   min-height: auto !important;
   min-width: auto !important;
+  width: 36px !important;
+  height: 36px !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure social links maintain circular shape on hover */
+.social-links .social-link:hover,
+.site-footer .social-link:hover,
+.overlay-footer .social-link:hover {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
 }
 
 /* Override for dropdown submenu - keep left aligned */
