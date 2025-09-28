@@ -97,22 +97,13 @@ ErrorDocument 404 404.html
     </IfModule>
 </Files>
 
-# Protect sensitive files
+# Protect sensitive files (Apache 2.2/2.4 compatible)
 <Files "config.php">
-    <RequireAll>
-        Require all denied
-    </RequireAll>
+    Order allow,deny
+    Deny from all
 </Files>
 
 <FilesMatch "\.(log|bak|backup|old)$">
-    <RequireAll>
-        Require all denied
-    </RequireAll>
+    Order allow,deny
+    Deny from all
 </FilesMatch>
-
-# Protect logs directory
-<Directory "logs">
-    <RequireAll>
-        Require all denied
-    </RequireAll>
-</Directory>
