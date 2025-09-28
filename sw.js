@@ -1,36 +1,20 @@
 // Service Worker for Nerally Website
 // Provides offline functionality and caching
 
-const CACHE_NAME = 'nerally-v1.0.0';
+const CACHE_NAME = 'nerally-v1.0.1';
 const OFFLINE_URL = '/404.html';
 
 const CACHE_RESOURCES = [
-  '/',
-  '/index.html',
+  // Only static assets (avoid HTML to prevent stale headers)
   '/main.css',
   '/app.js',
   '/images/logo.png',
   '/images/Hero1.png',
   '/404.html',
-  
-  // Key service pages
-  '/ipiresies/logistiki.html',
-  '/ipiresies/misthodosia.html',
-  '/ipiresies/consulting.html',
-  '/ipiresies/cyber-security.html',
-  
-  // Applications
-  '/efarmoges/income-tax-calculator.html',
-  '/efarmoges/rent-tax-calculator.html',
-  
-  // Contact
-  '/epikoinonia/contact.html',
-  
   // CSS modules
   '/css/base.css',
   '/css/components.css',
   '/css/loading-states.css',
-  
   // JS modules
   '/js/navigation.js',
   '/js/chat-widget.js',
@@ -83,6 +67,17 @@ self.addEventListener('activate', (event) => {
 
 // Fetch events - serve from cache, fallback to network
 self.addEventListener('fetch', (event) => {
+  // Network-first for HTML/documents to avoid stale or wrong headers
+  try {
+    const accept = event.request.headers && (event.request.headers.get('accept') || '');
+    const isHTML = event.request.mode === 'navigate' || (accept && accept.indexOf('text/html') !== -1);
+    if (isHTML) {
+      event.respondWith(
+        fetch(event.request).catch(() => caches.match(OFFLINE_URL))
+      );
+      return;
+    }
+  } catch (_) {}
   // Skip non-GET requests
   if (event.request.method !== 'GET') {
     return;
