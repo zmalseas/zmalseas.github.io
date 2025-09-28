@@ -30,3 +30,19 @@
 /* 10. Calculator applications */
 @import url('css/rent-tax-calculator.css');
 @import url('css/income-tax-calculator.css');
+
+/* 11. Global overrides */
+/* reCAPTCHA badge: move to bottom-left and a bit higher */
+.grecaptcha-badge {
+  left: 20px !important;
+  right: auto !important;
+  bottom: 96px !important; /* λίγο πιο ψηλά */
+  z-index: 10000;
+}
+
+@media (max-width: 480px) {
+  .grecaptcha-badge {
+    left: 14px !important;
+    bottom: 80px !important;
+  }
+}
