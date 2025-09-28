@@ -2,8 +2,8 @@
 <Files ".env">
     Require all denied
 </Files>
-# Parse .html through PHP (for server-side includes)
-AddType application/x-httpd-php .php .html .htm
+# Ensure index.php takes precedence if present
+DirectoryIndex index.php index.html
 # Security Headers
 <IfModule mod_headers.c>
     # HSTS (HTTP Strict Transport Security)
@@ -37,6 +37,19 @@ AddType application/x-httpd-php .php .html .htm
     RewriteEngine On
     RewriteCond %{HTTPS} off
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Keep .html URLs visible but serve the corresponding .php internally
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # Do not rewrite existing files or directories
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    # Exclude the custom 404 page
+    RewriteCond %{REQUEST_URI} !/404\.html$
+    # If a .php file exists for the requested .html, serve it
+    RewriteCond %{DOCUMENT_ROOT}/$1.php -f
+    RewriteRule ^(.+)\.html$ $1.php [L]
 </IfModule>
 
 # Gzip Compression
