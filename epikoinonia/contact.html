@@ -6,6 +6,7 @@
   <title>Επικοινωνία - Nerally</title>
   <link rel="icon" type="image/png" href="../images/logo.png" />
   <link rel="stylesheet" href="../main.css">
+  <link rel="stylesheet" href="../css/contact-form.css">
   
   <!-- Google Analytics --><!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -61,7 +62,7 @@
           <div class="contact-form-wrapper">
             <div class="contact-form">
               <h3>Στείλτε μας μήνυμα</h3>
-              <form id="contactForm" action="#" method="POST">
+              <form id="contactForm" class="contact-form" action="../contact-handler.php" method="POST">
                 <div class="form-group floating-label">
                   <input type="text" id="name" name="name" required>
                   <label for="name">Ονοματεπώνυμο *</label>
@@ -119,6 +120,12 @@
                 </div>
 
                 <button type="submit" class="submit-btn">Αποστολή Μηνύματος</button>
+                
+                <div class="recaptcha-info">
+                  Αυτός ο ιστότοπος προστατεύεται από το reCAPTCHA και ισχύουν η 
+                  <a href="https://policies.google.com/privacy" target="_blank">Πολιτική Απορρήτου</a> και οι 
+                  <a href="https://policies.google.com/terms" target="_blank">Όροι Χρήσης</a> της Google.
+                </div>
               </form>
             </div>
           </div>
@@ -371,6 +378,7 @@
   <div id="site-footer"></div>
   
   <script src="../js/floating-labels.js"></script>
+  <script src="../js/contact-form.js"></script>
   <script src="../app.js"></script>
 </body>
 </html>

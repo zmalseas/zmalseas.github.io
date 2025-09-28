@@ -87,3 +87,32 @@
 
 # Error Pages
 ErrorDocument 404 404.html
+
+# Contact Form Security
+<Files "contact-handler.php">
+    <IfModule mod_headers.c>
+        Header always set Access-Control-Allow-Origin "https://nerally.gr"
+        Header always set Access-Control-Allow-Methods "POST, OPTIONS"
+        Header always set Access-Control-Allow-Headers "Content-Type"
+    </IfModule>
+</Files>
+
+# Protect sensitive files
+<Files "config.php">
+    <RequireAll>
+        Require all denied
+    </RequireAll>
+</Files>
+
+<FilesMatch "\.(log|bak|backup|old)$">
+    <RequireAll>
+        Require all denied
+    </RequireAll>
+</FilesMatch>
+
+# Protect logs directory
+<Directory "logs">
+    <RequireAll>
+        Require all denied
+    </RequireAll>
+</Directory>
