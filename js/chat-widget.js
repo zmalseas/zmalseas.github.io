@@ -176,53 +176,83 @@ class ChatWidget {
 
   async handleFormSubmission(e) {
     e.preventDefault();
-    
-    const submitBtn = e.target.querySelector('button[type="submit"]');
+    const form = e.target;
+    const submitBtn = form.querySelector('button[type="submit"]');
     const btnText = submitBtn.querySelector('.btn-text');
     const btnLoading = submitBtn.querySelector('.btn-loading');
-    
+    this.resetFormState();
     try {
       // Show loading state
       if (btnText) btnText.style.display = 'none';
       if (btnLoading) btnLoading.style.display = 'inline';
       submitBtn.disabled = true;
-      
-      // Simulate form submission (replace with actual endpoint)
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // Show success message
-      this.showSuccessMessage();
-      
-      // Close modal after success
-      setTimeout(() => this.closeChat(), 2000);
-      
+
+      // Validate required fields
+      const name = form.querySelector('[name="firstName"]').value.trim() + ' ' + form.querySelector('[name="lastName"]').value.trim();
+      const email = form.querySelector('[name="email"]').value.trim();
+      const message = form.querySelector('[name="message"]').value.trim();
+      if (!name || !email || !message) {
+        this.showErrorMessage('Συμπληρώστε όλα τα υποχρεωτικά πεδία.');
+        return;
+      }
+
+      // reCAPTCHA v3 integration (αν υπάρχει grecaptcha)
+      let recaptchaToken = '';
+      if (window.grecaptcha && typeof grecaptcha.execute === 'function') {
+        recaptchaToken = await grecaptcha.execute('6Lcd7dcrAAAAADzfwDc4AG_kN6jKU0-0Fo78NmYx', { action: 'chat_widget' });
+      }
+
+      // Prepare data
+      const data = {
+        name: name,
+        email: email,
+        phone: form.querySelector('[name="phone"]').value.trim(),
+        message: message,
+        recaptcha_token: recaptchaToken,
+        source: 'chat-widget'
+      };
+
+      // Send to contact-handler.php
+      const response = await fetch('/contact-handler.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      if (!response.ok) throw new Error('Network error');
+      const result = await response.json();
+      if (result.success) {
+        this.showSuccessMessage(result.message || 'Το μήνυμά σας στάλθηκε επιτυχώς!');
+        setTimeout(() => this.closeChat(), 2000);
+      } else {
+        this.showErrorMessage(result.error || 'Παρουσιάστηκε σφάλμα. Παρακαλώ δοκιμάστε ξανά.');
+      }
     } catch (error) {
       console.error('Form submission failed:', error);
-      this.showErrorMessage();
+      this.showErrorMessage('Παρουσιάστηκε σφάλμα. Παρακαλώ δοκιμάστε ξανά.');
     } finally {
-      // Reset button state
       if (btnText) btnText.style.display = 'inline';
       if (btnLoading) btnLoading.style.display = 'none';
       submitBtn.disabled = false;
     }
   }
 
-  showSuccessMessage() {
+  showSuccessMessage(msg) {
     const chatBody = document.querySelector('.chat-body');
     if (chatBody) {
       const successMsg = document.createElement('div');
       successMsg.className = 'success-message';
-      successMsg.innerHTML = '✅ Το μήνυμά σας στάλθηκε επιτυχώς!';
+      successMsg.innerHTML = '✅ ' + (msg || 'Το μήνυμά σας στάλθηκε επιτυχώς!');
       chatBody.appendChild(successMsg);
     }
   }
 
-  showErrorMessage() {
+  showErrorMessage(msg) {
     const chatBody = document.querySelector('.chat-body');
     if (chatBody) {
       const errorMsg = document.createElement('div');
       errorMsg.className = 'error-message';
-      errorMsg.innerHTML = '❌ Παρουσιάστηκε σφάλμα. Παρακαλώ δοκιμάστε ξανά.';
+      errorMsg.innerHTML = '❌ ' + (msg || 'Παρουσιάστηκε σφάλμα. Παρακαλώ δοκιμάστε ξανά.');
       chatBody.appendChild(errorMsg);
     }
   }

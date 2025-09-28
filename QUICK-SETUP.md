@@ -1,4 +1,3 @@
-# 🚀 Γρήγορο Setup Guide για το Contact Form
 
 ## ✅ Τι έχεις ήδη:
 - ✅ reCAPTCHA keys configured
