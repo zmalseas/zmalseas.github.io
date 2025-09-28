@@ -1,3 +1,7 @@
+# Block access to .env file (security)
+<Files ".env">
+    Require all denied
+</Files>
 # Security Headers
 <IfModule mod_headers.c>
     # HSTS (HTTP Strict Transport Security)

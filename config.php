@@ -7,8 +7,8 @@
 return [
     // reCAPTCHA Settings
     'recaptcha' => [
-        'site_key' => '6Lcd7dcrAAAAADzfwDc4AG_kN6jKU0-0Fo78NmYx',    // Replace with your site key
-        'secret_key' => '6Lcd7dcrAAAAAGCx5z-UJeuAK9g9Sa7zRjz6BXTc' // Replace with your secret key
+        'site_key' => getenv('RECAPTCHA_SITE'),
+        'secret_key' => getenv('RECAPTCHA_SECRET')
     ],
     
     // Email Settings
@@ -16,14 +16,13 @@ return [
         'to' => 'info@nerally.gr',                       // Where to send emails
         'from' => 'noreply@nerally.gr',                  // From address
         'subject_prefix' => '[Nerally Contact] ',        // Subject prefix
-        
-        // SMTP Settings for nerally.gr webmail (based on hosting DNS records)
-        'smtp_host' => 'mail.nerally.gr',               // Your domain SMTP server
-        'smtp_port' => 465,                              // SSL port (from your hosting)
-        'smtp_username' => 'info@nerally.gr',           // Your webmail account
-        'smtp_password' => 'Neralock1!',                 // Your webmail password
-        'smtp_secure' => 'ssl',                          // SSL encryption (port 465)
-        'use_smtp' => true                               // Enable SMTP
+        // SMTP Settings from .env
+        'smtp_host' => getenv('SMTP_HOST'),
+        'smtp_port' => 465,
+        'smtp_username' => getenv('SMTP_USER'),
+        'smtp_password' => getenv('SMTP_PASS'),
+        'smtp_secure' => 'ssl',
+        'use_smtp' => true
     ],
     
     // Security Settings
