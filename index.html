@@ -10,8 +10,7 @@
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://nerally.gr/" />
   
-  <!-- Content Security Policy (SEO-friendly) -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' *.googletagmanager.com *.google.com *.gstatic.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com *.google.com; img-src 'self' data: https:; font-src 'self' fonts.gstatic.com; connect-src 'self' *.google.com *.googletagmanager.com *.google-analytics.com; frame-src *.googletagmanager.com *.google.com; base-uri 'self'; form-action 'self';">
+  <!-- CSP is set via server headers in .htaccess -->
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
@@ -29,9 +28,15 @@
   <meta property="twitter:image" content="https://nerally.gr/images/logo.png" />
   <link rel="icon" type="image/png" href="images/logo.png" />
   <link rel="stylesheet" href="main.css?v=2.1" />
-  <link rel="preload" as="image" href="images/Hero1.png" />
+  <link rel="preload" as="image" href="images/Hero1_enhanced.webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="images/Hero1.png" fetchpriority="high" />
   <link rel="dns-prefetch" href="//fonts.googleapis.com" />
   <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Optional: preconnects for analytics when consent is granted -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
   
   <!-- Cookie Consent CSS -->
   <link rel="stylesheet" href="/css/cookie-consent.css">
@@ -48,6 +53,10 @@
 
   <main>
     <section class="hero-fullscreen" role="banner" aria-labelledby="hero-title">
+      <picture class="hero-bg" aria-hidden="true">
+        <source type="image/webp" srcset="images/Hero1_enhanced.webp" />
+        <img src="images/Hero1.png" alt="" loading="eager" decoding="async" fetchpriority="high" width="1920" height="1080" />
+      </picture>
       <div class="hero-content">
         <h1 id="hero-title" class="hero-title">Nerally – Το επιχειρηματικό σου οικοσύστημα.</h1>
         <p class="hero-subtitle">Ένα δίκτυο υπηρεσιών και συνεργασιών στο πλευρό της επιχείρησής σου.</p>

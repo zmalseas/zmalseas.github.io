@@ -28,18 +28,28 @@ class NavigationManager {
   }
 
   setupEventListeners() {
-    // Smooth scrolling for anchor links
+    // Smooth scrolling for anchor links (guard against href="#")
     document.addEventListener('click', (e) => {
-      if (e.target.matches('a[href^="#"]')) {
+      const link = e.target.closest && e.target.closest('a[href^="#"]');
+      if (!link) return;
+
+      const href = link.getAttribute('href');
+      if (!href || href === '#' || href === '#!') return; // invalid/placeholder anchors
+
+      // Only handle same-page hash links
+      if (href.startsWith('#')) {
         e.preventDefault();
-        const targetId = e.target.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
+        let targetElement = null;
+        try {
+          // Prefer querySelector with a valid id selector
+          targetElement = document.querySelector(href) || document.getElementById(href.slice(1));
+        } catch (_) {
+          // Fallback if selector is invalid
+          targetElement = document.getElementById(href.slice(1));
+        }
+
         if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       }
     });
