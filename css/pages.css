@@ -519,3 +519,63 @@
 .apply-btn:hover {
   background: #ff6b6b;
 }
+
+/* Privacy Policy - Cookie Management Styles */
+.privacy-note {
+  background: linear-gradient(135deg, #e8f4fd 0%, #f0f9ff 100%);
+  border: 1px solid #b3d7f7;
+  border-left: 4px solid #4a90e2;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+}
+
+.privacy-note h4 {
+  color: #2c5aa0;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.privacy-note p {
+  margin-bottom: 0;
+  color: #2c5aa0;
+  line-height: 1.6;
+}
+
+.cookie-management {
+  text-align: center;
+  margin: 25px 0;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.manage-cookies-btn {
+  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(74, 144, 226, 0.3);
+}
+
+.manage-cookies-btn:hover {
+  background: linear-gradient(135deg, #357abd 0%, #2968a3 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.4);
+}
+
+.content-section h3 {
+  color: #2c5aa0;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 8px;
+}
