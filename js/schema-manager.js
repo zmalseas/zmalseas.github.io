@@ -5,6 +5,7 @@ class SchemaManager {
     this.schemas = new Map();
     this.currentPage = this.getCurrentPageType();
     this.businessData = this.getBusinessData();
+    this.origin = window.location.origin || 'https://nerally.gr';
     this.init();
   }
 
@@ -98,7 +99,7 @@ class SchemaManager {
     const schema = {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      "@id": "https://nerally.gr/#organization",
+      "@id": this.origin + "/#organization",
       "name": this.businessData.name,
       "alternateName": this.businessData.alternateName,
       "description": this.businessData.description,
@@ -172,19 +173,19 @@ class SchemaManager {
     const schema = {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "@id": "https://nerally.gr/#website",
-      "url": "https://nerally.gr",
+      "@id": this.origin + "/#website",
+      "url": this.origin,
       "name": this.businessData.name,
       "description": this.businessData.description,
       "publisher": {
-        "@id": "https://nerally.gr/#organization"
+        "@id": this.origin + "/#organization"
       },
       "inLanguage": "el-GR",
       "potentialAction": {
         "@type": "SearchAction",
         "target": {
           "@type": "EntryPoint",
-          "urlTemplate": "https://nerally.gr/search?q={search_term_string}"
+          "urlTemplate": this.origin + "/search?q={search_term_string}"
         },
         "query-input": "required name=search_term_string"
       }

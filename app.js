@@ -26,6 +26,8 @@ class NerallyApp {
     try {
       // Initialize error handling first
       this.initializeErrorHandler();
+      // Ensure main element has an id for accessibility (skip-link target)
+      this.ensureMainId();
       
       // Initialize core modules
       await this.loadPartials();
@@ -51,6 +53,15 @@ class NerallyApp {
       console.error('❌ App bootstrap failed:', error);
       this.showError('Παρουσιάστηκε πρόβλημα κατά τη φόρτωση της εφαρμογής.');
     }
+  }
+
+  ensureMainId() {
+    try {
+      const main = document.querySelector('main');
+      if (main && !main.id) {
+        main.id = 'main-content';
+      }
+    } catch (_) {}
   }
 
   async loadPartials() {

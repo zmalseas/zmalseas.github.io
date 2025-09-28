@@ -10,10 +10,12 @@ class NavigationManager {
       // Wait for DOM to be fully ready
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () => {
+          this.enhanceAccessibility();
           this.setupEventListeners();
           this.setupMobileMenu();
         });
       } else {
+        this.enhanceAccessibility();
         this.setupEventListeners();
         this.setupMobileMenu();
       }
@@ -71,13 +73,18 @@ class NavigationManager {
     
     try {
       // Toggle mobile menu
-      hamburger.addEventListener('click', (e) => {
+      const toggleMenu = (e) => {
         e.preventDefault();
         console.log('Hamburger clicked');
         hamburger.classList.toggle('active');
         overlay.classList.toggle('open');
         document.body.classList.toggle('menu-open');
+        hamburger.setAttribute('aria-expanded', overlay.classList.contains('open') ? 'true' : 'false');
         console.log('Menu toggled. Open:', overlay.classList.contains('open'));
+      };
+      hamburger.addEventListener('click', toggleMenu);
+      hamburger.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') toggleMenu(e);
       });
 
       // Close menu when clicking outside
@@ -93,15 +100,18 @@ class NavigationManager {
           e.preventDefault();
           const currentMenuItem = btn.closest('.menu-item');
           const isCurrentlyOpen = currentMenuItem.classList.contains('open');
-          
+
           // Close all menu items first
           overlay.querySelectorAll('.menu-item').forEach(item => {
             item.classList.remove('open');
+            const t = item.querySelector('.menu-toggle');
+            if (t) t.setAttribute('aria-expanded', 'false');
           });
-          
+
           // If the clicked item wasn't open, open it
           if (!isCurrentlyOpen) {
             currentMenuItem.classList.add('open');
+            btn.setAttribute('aria-expanded', 'true');
           }
         });
       });
@@ -120,10 +130,11 @@ class NavigationManager {
   closeMobileMenu() {
     const hamburger = document.querySelector('.hamburger');
     const overlay = document.querySelector('.overlay');
-    
+
     if (hamburger) hamburger.classList.remove('active');
     if (overlay) overlay.classList.remove('open');
     document.body.classList.remove('menu-open');
+    if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
     
     // Restore body scroll
     document.body.style.removeProperty('position');
@@ -155,6 +166,27 @@ class NavigationManager {
     
     // Άμεσος έλεγχος
     checkOverflow();
+  }
+
+  enhanceAccessibility() {
+    try {
+      const nav = document.querySelector('nav.primary');
+      const hamburger = document.querySelector('.hamburger');
+      if (nav) nav.setAttribute('role', 'navigation');
+      if (hamburger) {
+        hamburger.setAttribute('role', 'button');
+        hamburger.setAttribute('aria-controls', 'mobile-overlay-menu');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+      const overlay = document.querySelector('.overlay');
+      if (overlay) overlay.setAttribute('id', 'mobile-overlay-menu');
+
+      // Dropdown toggles
+      document.querySelectorAll('.dropdown > a, .menu-toggle').forEach(el => {
+        el.setAttribute('aria-haspopup', 'true');
+        el.setAttribute('aria-expanded', 'false');
+      });
+    } catch (_) { /* no-op */ }
   }
 }
 

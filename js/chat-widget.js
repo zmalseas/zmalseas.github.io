@@ -4,7 +4,7 @@ class ChatWidget {
   constructor() {
     this.isInitialized = false;
     this.recaptchaLoaded = false;
-    this.siteKey = '6Lcd7dcrAAAAADzfwDc4AG_kN6jKU0-0Fo78NmYx';
+    this.siteKey = (window.SITE_CONFIG && window.SITE_CONFIG.RECAPTCHA_SITE) || '6Lcd7dcrAAAAADzfwDc4AG_kN6jKU0-0Fo78NmYx';
     this.init();
   }
 

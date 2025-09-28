@@ -5,7 +5,8 @@
 
 class ContactFormHandler {
   constructor(options = {}) {
-    this.siteKey = options.siteKey || '6Lcd7dcrAAAAADzfwDc4AG_kN6jKU0-0Fo78NmYx';
+    const defaultKey = (window.SITE_CONFIG && window.SITE_CONFIG.RECAPTCHA_SITE) || '6Lcd7dcrAAAAADzfwDc4AG_kN6jKU0-0Fo78NmYx';
+    this.siteKey = options.siteKey || defaultKey;
     this.apiUrl = options.apiUrl || '/contact-handler.php';
     this.formSelector = options.formSelector || '.contact-form';
     this.recaptchaLoaded = false;
