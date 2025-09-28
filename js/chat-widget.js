@@ -88,32 +88,33 @@ class ChatWidget {
     const chatModal = document.getElementById('chatModal');
     const chatClose = document.getElementById('chatClose');
     const chatBackdrop = document.getElementById('chatBackdrop');
-    const chatForm = document.getElementById('chatForm');
+    // Διορθώνω το id της φόρμας ώστε να ταιριάζει με το partial
+    const chatForm = document.getElementById('chat-contact-form');
     const chatCancel = document.getElementById('chatCancel');
-    
+
     if (!chatButton || !chatModal) return;
-    
+
     // Open chat modal
     chatButton.addEventListener('click', () => this.openChat());
-    
+
     // Close chat modal
     if (chatClose) {
       chatClose.addEventListener('click', () => this.closeChat());
     }
-    
+
     if (chatCancel) {
       chatCancel.addEventListener('click', () => this.closeChat());
     }
-    
+
     if (chatBackdrop) {
       chatBackdrop.addEventListener('click', () => this.closeChat());
     }
-    
+
     // Handle form submission
     if (chatForm) {
       chatForm.addEventListener('submit', (e) => this.handleFormSubmission(e));
     }
-    
+
     // Escape key to close
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && chatModal.classList.contains('active')) {
@@ -178,21 +179,20 @@ class ChatWidget {
     e.preventDefault();
     const form = e.target;
     const submitBtn = form.querySelector('button[type="submit"]');
-    const btnText = submitBtn.querySelector('.btn-text');
-    const btnLoading = submitBtn.querySelector('.btn-loading');
     this.resetFormState();
     try {
       // Show loading state
-      if (btnText) btnText.style.display = 'none';
-      if (btnLoading) btnLoading.style.display = 'inline';
-      submitBtn.disabled = true;
+      if (submitBtn) submitBtn.disabled = true;
 
       // Validate required fields
-      const name = form.querySelector('[name="firstName"]').value.trim() + ' ' + form.querySelector('[name="lastName"]').value.trim();
+      const firstName = form.querySelector('[name="firstName"]').value.trim();
+      const lastName = form.querySelector('[name="lastName"]').value.trim();
+      const name = firstName + (lastName ? ' ' + lastName : '');
       const email = form.querySelector('[name="email"]').value.trim();
       const message = form.querySelector('[name="message"]').value.trim();
-      if (!name || !email || !message) {
+      if (!firstName || !lastName || !email || !message) {
         this.showErrorMessage('Συμπληρώστε όλα τα υποχρεωτικά πεδία.');
+        if (submitBtn) submitBtn.disabled = false;
         return;
       }
 
@@ -231,9 +231,7 @@ class ChatWidget {
       console.error('Form submission failed:', error);
       this.showErrorMessage('Παρουσιάστηκε σφάλμα. Παρακαλώ δοκιμάστε ξανά.');
     } finally {
-      if (btnText) btnText.style.display = 'inline';
-      if (btnLoading) btnLoading.style.display = 'none';
-      submitBtn.disabled = false;
+      if (submitBtn) submitBtn.disabled = false;
     }
   }
 
