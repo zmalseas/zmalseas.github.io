@@ -35,3 +35,9 @@
   <script>document.getElementById("y").textContent=new Date().getFullYear()</script>
 </footer>
 
+<?php
+// Load chat widget container on all pages except the contact page
+if (strpos($_SERVER['REQUEST_URI'] ?? '', '/epikoinonia/contact') === false) {
+  echo '<div id="chat-widget"></div>';
+}
+?>
