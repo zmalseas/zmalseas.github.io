@@ -271,6 +271,22 @@ class SchemaManager {
       case 'calculator':
         this.addCalculatorSchema();
         break;
+      case 'team':
+        this.addTeamPageSchema();
+        break;
+      case 'careers':
+        this.addCareersPageSchema();
+        break;
+      case 'blog':
+        this.addBlogPageSchema();
+        break;
+      case 'legal':
+        this.addLegalPageSchema();
+        break;
+      default:
+        // For generic pages, add basic WebPage schema
+        this.addGenericPageSchema();
+        break;
     }
   }
 
@@ -318,6 +334,152 @@ class SchemaManager {
     };
 
     this.schemas.set('contact', schema);
+  }
+
+  addAboutPageSchema() {
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "mainEntity": {
+        "@id": "https://nerally.gr/#organization"
+      },
+      "url": "https://nerally.gr/etairia/company.html",
+      "name": "Σχετικά με την Nerally",
+      "description": "Μάθετε περισσότερα για την Nerally - Λογιστικές Υπηρεσίες, Φοροτεχνικά, Consulting & Cyber Security. Η ιστορία μας, το όραμά μας και η ομάδα μας.",
+      "about": {
+        "@id": "https://nerally.gr/#organization"
+      },
+      "inLanguage": "el-GR",
+      "isPartOf": {
+        "@id": "https://nerally.gr/#website"
+      },
+      "publisher": {
+        "@id": "https://nerally.gr/#organization"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@id": "https://nerally.gr/",
+              "name": "Αρχική"
+            }
+          },
+          {
+            "@type": "ListItem", 
+            "position": 2,
+            "item": {
+              "@id": "https://nerally.gr/etairia/company.html",
+              "name": "Εταιρία"
+            }
+          }
+        ]
+      }
+    };
+
+    this.schemas.set('about', schema);
+  }
+
+  addTeamPageSchema() {
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Η Ομάδα μας - Nerally",
+      "description": "Γνωρίστε την επαγγελματική ομάδα της Nerally. Έμπειροι λογιστές, φοροτεχνικοί και σύμβουλοι στην υπηρεσία σας.",
+      "url": window.location.href,
+      "inLanguage": "el-GR",
+      "isPartOf": {
+        "@id": "https://nerally.gr/#website"
+      },
+      "about": {
+        "@id": "https://nerally.gr/#organization"
+      }
+    };
+
+    this.schemas.set('team', schema);
+  }
+
+  addCareersPageSchema() {
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Καριέρα - Nerally",
+      "description": "Ενταχθείτε στην ομάδα της Nerally. Ανακαλύψτε τις διαθέσιμες θέσεις εργασίας και τις ευκαιρίες καριέρας.",
+      "url": window.location.href,
+      "inLanguage": "el-GR",
+      "isPartOf": {
+        "@id": "https://nerally.gr/#website"
+      },
+      "about": {
+        "@id": "https://nerally.gr/#organization"
+      }
+    };
+
+    this.schemas.set('careers', schema);
+  }
+
+  addBlogPageSchema() {
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Άρθρα - Nerally",
+      "description": "Διαβάστε άρθρα και συμβουλές για λογιστικά, φοροτεχνικά και επιχειρηματικά θέματα από τους ειδικούς της Nerally.",
+      "url": window.location.href,
+      "inLanguage": "el-GR",
+      "isPartOf": {
+        "@id": "https://nerally.gr/#website"
+      },
+      "publisher": {
+        "@id": "https://nerally.gr/#organization"
+      }
+    };
+
+    this.schemas.set('blog', schema);
+  }
+
+  addLegalPageSchema() {
+    const pageName = document.title || "Νομικές Πληροφορίες - Nerally";
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": pageName,
+      "description": "Νομικές πληροφορίες, πολιτικές και όροι χρήσης της Nerally.",
+      "url": window.location.href,
+      "inLanguage": "el-GR",
+      "isPartOf": {
+        "@id": "https://nerally.gr/#website"
+      },
+      "publisher": {
+        "@id": "https://nerally.gr/#organization"
+      }
+    };
+
+    this.schemas.set('legal', schema);
+  }
+
+  addGenericPageSchema() {
+    const pageName = document.title || "Nerally";
+    const pageDescription = document.querySelector('meta[name="description"]')?.content || 
+      "Nerally - Λογιστικές Υπηρεσίες, Φοροτεχνικά, Consulting & Cyber Security";
+
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": pageName,
+      "description": pageDescription,
+      "url": window.location.href,
+      "inLanguage": "el-GR",
+      "isPartOf": {
+        "@id": "https://nerally.gr/#website"
+      },
+      "publisher": {
+        "@id": "https://nerally.gr/#organization"
+      }
+    };
+
+    this.schemas.set('generic', schema);
   }
 
   addServicePageSchema() {
