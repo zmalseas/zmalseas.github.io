@@ -1,6 +1,6 @@
 <?php
 // Simple .env loader (φορτώνει secrets από .env)
-$env = @parse_ini_file(__DIR__ . '/../.env', false, INI_SCANNER_RAW);
+$env = @parse_ini_file(__DIR__ . '/.env', false, INI_SCANNER_RAW);
 if ($env) foreach ($env as $k => $v) { $_ENV[$k] = $v; putenv("$k=$v"); }
 /**
  * Nerally Contact Form Handler
