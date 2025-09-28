@@ -8,6 +8,8 @@ class CookieConsent {
     this.consentKey = 'nerally-cookie-consent';
     this.analyticsKey = 'nerally-analytics-consent';
     this.banner = null;
+    this.gtmLoaded = false;
+    this.gtmContainerId = 'GTM-MN565XBX';
     this.init();
   }
 
@@ -19,6 +21,10 @@ class CookieConsent {
       this.showBanner();
     } else {
       this.handleConsent(consent);
+      // If analytics already granted from previous visit, load GTM
+      if (consent.analytics === true) {
+        this.loadGTM();
+      }
     }
   }
 
@@ -215,6 +221,7 @@ class CookieConsent {
   handleConsent(consent) {
     if (consent.analytics) {
       this.enableAnalytics();
+      this.loadGTM();
     } else {
       this.disableAnalytics();
     }
@@ -223,6 +230,24 @@ class CookieConsent {
     document.dispatchEvent(new CustomEvent('cookieConsentUpdated', {
       detail: consent
     }));
+  }
+
+  // Loads Google Tag Manager when consent is granted
+  loadGTM() {
+    if (this.gtmLoaded) return;
+    if (!this.gtmContainerId) return;
+
+    // Create dataLayer if not exists
+    window.dataLayer = window.dataLayer || [];
+
+    // Inject GTM script
+    const f = document.getElementsByTagName('script')[0];
+    const j = document.createElement('script');
+    j.async = true;
+    j.src = 'https://www.googletagmanager.com/gtm.js?id=' + this.gtmContainerId + (window.dataLayer !== 'dataLayer' ? '&l=dataLayer' : '');
+    f.parentNode.insertBefore(j, f);
+
+    this.gtmLoaded = true;
   }
 
   enableAnalytics() {

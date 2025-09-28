@@ -36,45 +36,10 @@
   <!-- Cookie Consent CSS -->
   <link rel="stylesheet" href="/css/cookie-consent.css">
   
-  <!-- Conditional Google Tag Manager -->
-  <script>
-    // Initialize dataLayer
-    window.dataLayer = window.dataLayer || [];
-    
-    // Function to load GTM
-    function loadGTM() {
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-MN565XBX');
-    }
-    
-    // Check if user has already consented to analytics
-    const analyticsConsent = localStorage.getItem('nerally-analytics-consent');
-    if (analyticsConsent === 'true') {
-      loadGTM();
-    }
-    
-    // Listen for cookie consent updates
-    document.addEventListener('cookieConsentUpdated', function(event) {
-      if (event.detail.analytics && analyticsConsent !== 'true') {
-        loadGTM();
-      }
-    });
-  </script>
-  <!-- End Conditional Google Tag Manager -->
+  <!-- Google Tag Manager loads via Cookie Consent script when analytics consent is granted -->
 </head>
 <body class="has-fullscreen-hero">
-  <!-- Conditional Google Tag Manager (noscript) -->
-  <script>
-    // Add noscript GTM only if analytics consent is given
-    const noscriptConsent = localStorage.getItem('nerally-analytics-consent');
-    if (noscriptConsent === 'true') {
-      document.write('<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MN565XBX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>');
-    }
-  </script>
-  <!-- End Conditional Google Tag Manager (noscript) -->
+  <!-- GTM noscript fallback omitted intentionally; GTM is injected post-consent by cookie-consent.js -->
   
   <div id="site-header"></div>
 

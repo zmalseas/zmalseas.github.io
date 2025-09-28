@@ -92,14 +92,7 @@
 # Error Pages
 ErrorDocument 404 404.html
 
-# Contact Form Security
-<Files "contact-handler.php">
-    <IfModule mod_headers.c>
-        Header always set Access-Control-Allow-Origin "https://nerally.gr"
-        Header always set Access-Control-Allow-Methods "POST, OPTIONS"
-        Header always set Access-Control-Allow-Headers "Content-Type"
-    </IfModule>
-</Files>
+# Contact Form Security handled dynamically in PHP (CORS set per allowed origin)
 
 # Protect sensitive files (Apache 2.2/2.4 compatible)
 <Files "config.php">

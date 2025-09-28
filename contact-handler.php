@@ -24,6 +24,7 @@ if (in_array($origin, $config['security']['allowed_origins'])) {
     header('Access-Control-Allow-Methods: POST, OPTIONS');
     header('Access-Control-Allow-Headers: Content-Type');
     header('Access-Control-Max-Age: 86400');
+    header('Vary: Origin');
 }
 
 // Handle preflight requests
@@ -61,30 +62,43 @@ function validateEmail($email) {
  */
 function verifyRecaptcha($token, $secretKey) {
     $url = 'https://www.google.com/recaptcha/api/siteverify';
-    $data = [
+    $postFields = http_build_query([
         'secret' => $secretKey,
         'response' => $token,
         'remoteip' => $_SERVER['REMOTE_ADDR'] ?? ''
-    ];
-    
-    $options = [
-        'http' => [
-            'header' => "Content-type: application/x-www-form-urlencoded\r\n",
-            'method' => 'POST',
-            'content' => http_build_query($data),
-            'timeout' => 10
-        ]
-    ];
-    
-    $context = stream_context_create($options);
-    $result = file_get_contents($url, false, $context);
-    
-    if ($result === false) {
-        return false;
+    ]);
+
+    if (function_exists('curl_init')) {
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $postFields);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/x-www-form-urlencoded']);
+        $result = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        if ($result === false || $httpCode !== 200) {
+            return ['success' => false, 'error' => 'recaptcha_http_error'];
+        }
+    } else {
+        $context = stream_context_create([
+            'http' => [
+                'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+                'method' => 'POST',
+                'content' => $postFields,
+                'timeout' => 10
+            ]
+        ]);
+        $result = @file_get_contents($url, false, $context);
+        if ($result === false) {
+            return ['success' => false, 'error' => 'recaptcha_request_failed'];
+        }
     }
-    
-    $response = json_decode($result, true);
-    return $response['success'] ?? false;
+
+    $response = json_decode($result, true) ?: [];
+    $response['success'] = $response['success'] ?? false;
+    return $response;
 }
 
 /**
@@ -283,13 +297,20 @@ try {
     }
     
     // Verify reCAPTCHA
-    if (!verifyRecaptcha($input['recaptcha_token'], $config['recaptcha']['secret_key'])) {
+    $recaptcha = verifyRecaptcha($input['recaptcha_token'], $config['recaptcha']['secret_key']);
+    $minScore = $config['recaptcha']['min_score'] ?? 0.5;
+    $expectedActions = $config['recaptcha']['expected_actions'] ?? [];
+    $actionOk = true;
+    if (!empty($recaptcha['action']) && !empty($expectedActions)) {
+        $actionOk = in_array($recaptcha['action'], $expectedActions, true);
+    }
+    if (empty($recaptcha['success']) || (isset($recaptcha['score']) && $recaptcha['score'] < $minScore) || !$actionOk) {
         http_response_code(400);
         echo json_encode([
             'success' => false,
             'error' => 'reCAPTCHA verification failed. Παρακαλώ δοκιμάστε ξανά.'
         ]);
-        logSecurityEvent('recaptcha_failed', ['ip' => $ip]);
+        logSecurityEvent('recaptcha_failed', ['ip' => $ip, 'score' => $recaptcha['score'] ?? null, 'action' => $recaptcha['action'] ?? null]);
         exit;
     }
     
