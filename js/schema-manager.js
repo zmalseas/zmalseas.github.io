@@ -73,13 +73,13 @@ class SchemaManager {
       alternateName: "Nerally Accounting Services",
       description: "Λογιστικές υπηρεσίες, φοροτεχνικά, συμβουλευτικές υπηρεσίες και ψηφιακές λύσεις για επιχειρήσεις στην Ελλάδα.",
       url: "https://nerally.gr",
-      telephone: "+30-210-1234567",
+      telephone: "+30-694-636-5798",
       email: "info@nerally.gr",
       address: {
-        streetAddress: "Λεωφόρος Κηφισίας 123",
+        streetAddress: "",
         addressLocality: "Αθήνα",
-        addressRegion: "Αττική",
-        postalCode: "11526",
+        addressRegion: "Αττική", 
+        postalCode: "",
         addressCountry: "GR"
       },
       openingHours: [
