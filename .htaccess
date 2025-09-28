@@ -39,21 +39,14 @@ DirectoryIndex index.php index.html
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
 
-# Ensure .html files are parsed by PHP so inline includes work
-# This covers cases where a .php wrapper does not exist.
-<IfModule mime_module>
-    AddType application/x-httpd-php .php .html .htm
-</IfModule>
-
-# Keep .html URLs visible; use .php wrapper only when it exists
+# Keep .html URLs visible but serve the corresponding .php internally
 <IfModule mod_rewrite.c>
     RewriteEngine On
     # Do not rewrite real HTML partials/templates
     RewriteCond %{REQUEST_URI} !^/partials/
     # Exclude the custom 404 page
     RewriteCond %{REQUEST_URI} !/404\.html$
-    # Only rewrite .html to .php if the wrapper file exists
-    RewriteCond %{REQUEST_FILENAME}\.php -f
+    # Internally rewrite .html to .php (wrappers created)
     RewriteRule ^(.+)\.html$ $1.php [L]
 </IfModule>
 
