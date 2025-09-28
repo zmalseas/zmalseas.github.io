@@ -10,6 +10,7 @@ class CookieConsent {
     this.banner = null;
     this.gtmLoaded = false;
     this.gtmContainerId = 'GTM-MN565XBX';
+    this.fab = null;
     this.init();
   }
 
@@ -26,6 +27,8 @@ class CookieConsent {
         this.loadGTM();
       }
     }
+    // Create floating privacy button (always available)
+    this.createFab();
   }
 
   getConsent() {
@@ -99,6 +102,9 @@ class CookieConsent {
     setTimeout(() => {
       this.banner.classList.add('show');
     }, 100);
+
+    // Dim or hide FAB while banner is visible
+    if (this.fab) this.fab.classList.add('hide');
   }
 
   addEventListeners() {
@@ -216,6 +222,7 @@ class CookieConsent {
         this.banner = null;
       }, 300);
     }
+    if (this.fab) this.fab.classList.remove('hide');
   }
 
   handleConsent(consent) {
@@ -230,6 +237,9 @@ class CookieConsent {
     document.dispatchEvent(new CustomEvent('cookieConsentUpdated', {
       detail: consent
     }));
+
+    // Ensure FAB exists for changing preferences later
+    this.createFab();
   }
 
   // Loads Google Tag Manager when consent is granted
@@ -248,6 +258,33 @@ class CookieConsent {
     f.parentNode.insertBefore(j, f);
 
     this.gtmLoaded = true;
+  }
+
+  // Create the floating cookie settings button
+  createFab() {
+    try {
+      if (this.fab && document.body.contains(this.fab)) return; // Already present
+      const btn = document.createElement('button');
+      btn.id = 'cookie-fab';
+      btn.className = 'cookie-fab';
+      btn.setAttribute('aria-label', 'Ρυθμίσεις cookies');
+      btn.innerHTML = `
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <path fill="currentColor" d="M19.5 12.1c-1.2 0-2.3-.5-3.1-1.3-.8-.8-1.3-1.9-1.3-3.1 0-.3 0-.6.1-.9-1-.5-2.1-.8-3.2-.8-4.1 0-7.5 3.3-7.5 7.5s3.3 7.5 7.5 7.5c3.8 0 6.9-2.9 7.4-6.6-.1 0-.1 0-.2 0zm-9.9 3.9c-.6 0-1.1-.5-1.1-1.1s.5-1.1 1.1-1.1 1.1.5 1.1 1.1-.5 1.1-1.1 1.1zm-2.2-4.3c-.6 0-1.1-.5-1.1-1.1S6.8 9.4 7.4 9.4s1.1.5 1.1 1.1-.5 1.2-1.1 1.2zm6.6 4.3c-.6 0-1.1-.5-1.1-1.1s.5-1.1 1.1-1.1 1.1.5 1.1 1.1-.5 1.1-1.1 1.1zm2.2-6.6c-.6 0-1.1-.5-1.1-1.1S16.6 6.1 17.2 6.1s1.1.5 1.1 1.1-.5 1.1-1.1 1.1z"/>
+        </svg>`;
+      btn.addEventListener('click', () => {
+        const consent = this.getConsent();
+        if (consent === null) {
+          this.showBanner();
+        } else {
+          this.showCustomizeModal();
+        }
+      });
+      document.body.appendChild(btn);
+      this.fab = btn;
+    } catch (e) {
+      // no-op
+    }
   }
 
   enableAnalytics() {

@@ -462,3 +462,45 @@
     color: #a0a0b0;
   }
 }
+
+/* Floating Cookie Button (FAB) */
+.cookie-fab {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #4a90e2 0%, #00b8cc 100%);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  cursor: pointer;
+  z-index: 10001;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.cookie-fab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.28);
+}
+
+.cookie-fab.hide {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.95) translateY(4px);
+}
+
+.cookie-fab svg { display: block; }
+
+@media (max-width: 480px) {
+  .cookie-fab {
+    right: 14px;
+    bottom: 14px;
+    width: 44px;
+    height: 44px;
+  }
+}
