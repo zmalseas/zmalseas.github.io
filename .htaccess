@@ -42,6 +42,8 @@ DirectoryIndex index.php index.html
 # Keep .html URLs visible but serve the corresponding .php internally
 <IfModule mod_rewrite.c>
     RewriteEngine On
+    # Do not rewrite real HTML partials/templates
+    RewriteCond %{REQUEST_URI} !^/partials/
     # Exclude the custom 404 page
     RewriteCond %{REQUEST_URI} !/404\.html$
     # Internally rewrite .html to .php (wrappers created)

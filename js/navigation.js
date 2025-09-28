@@ -13,11 +13,14 @@ class NavigationManager {
           this.enhanceAccessibility();
           this.setupEventListeners();
           this.setupMobileMenu();
+          // Ensure we start in a closed state
+          this.closeMobileMenu();
         });
       } else {
         this.enhanceAccessibility();
         this.setupEventListeners();
         this.setupMobileMenu();
+        this.closeMobileMenu();
       }
     } catch (error) {
       console.error('Navigation initialization failed:', error);
@@ -118,7 +121,7 @@ class NavigationManager {
       
       // Close overlay when window resizes above mobile breakpoint
       window.addEventListener('resize', () => {
-        if (window.innerWidth > 768 && overlay.classList.contains('open')) {
+        if (window.innerWidth > 1100 && overlay.classList.contains('open')) {
           this.closeMobileMenu();
         }
       });
