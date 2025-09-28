@@ -167,9 +167,10 @@ class PerformanceMonitor {
   }
 
   sendToAnalytics(metricName, value) {
-    // Example implementation - replace with your analytics service
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'performance_metric', {
+    // Send to Google Tag Manager dataLayer
+    if (typeof window.dataLayer !== 'undefined') {
+      window.dataLayer.push({
+        'event': 'performance_metric',
         'metric_name': metricName,
         'metric_value': Math.round(value),
         'page_path': window.location.pathname

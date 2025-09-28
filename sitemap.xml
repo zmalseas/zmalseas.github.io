@@ -3,7 +3,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://nerally.gr/</loc>
-    <lastmod>2025-09-26</lastmod>
+    <lastmod>2025-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,21 +11,21 @@
   <!-- Company Pages -->
   <url>
     <loc>https://nerally.gr/etairia/company.html</loc>
-    <lastmod>2025-09-26</lastmod>
+    <lastmod>2025-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://nerally.gr/etairia/team.html</loc>
-    <lastmod>2025-09-26</lastmod>
+    <lastmod>2025-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://nerally.gr/etairia/join-us.html</loc>
-    <lastmod>2025-09-26</lastmod>
+    <lastmod>2025-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -33,56 +33,56 @@
   <!-- Services Pages -->
   <url>
     <loc>https://nerally.gr/ipiresies/logistiki.html</loc>
-    <lastmod>2025-09-26</lastmod>
+    <lastmod>2025-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://nerally.gr/ipiresies/misthodosia.html</loc>
-    <lastmod>2025-09-26</lastmod>
+    <lastmod>2025-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://nerally.gr/ipiresies/assurance.html</loc>
-    <lastmod>2025-09-26</lastmod>
+    <lastmod>2025-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://nerally.gr/ipiresies/consulting.html</loc>
-    <lastmod>2025-09-26</lastmod>
+    <lastmod>2025-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://nerally.gr/ipiresies/cyber-security.html</loc>
-    <lastmod>2025-09-26</lastmod>
+    <lastmod>2025-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://nerally.gr/ipiresies/social-media.html</loc>
-    <lastmod>2025-09-26</lastmod>
+    <lastmod>2025-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://nerally.gr/ipiresies/epixorigiseis.html</loc>
-    <lastmod>2025-09-26</lastmod>
+    <lastmod>2025-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://nerally.gr/ipiresies/symvoulos-mixanikos.html</loc>
-    <lastmod>2025-09-26</lastmod>
+    <lastmod>2025-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -90,14 +90,14 @@
   <!-- Applications -->
   <url>
     <loc>https://nerally.gr/efarmoges/income-tax-calculator.html</loc>
-    <lastmod>2025-09-26</lastmod>
+    <lastmod>2025-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://nerally.gr/efarmoges/rent-tax-calculator.html</loc>
-    <lastmod>2025-09-26</lastmod>
+    <lastmod>2025-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -105,7 +105,7 @@
   <!-- Articles -->
   <url>
     <loc>https://nerally.gr/arthra/articles.html</loc>
-    <lastmod>2025-09-26</lastmod>
+    <lastmod>2025-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -113,7 +113,7 @@
   <!-- Contact -->
   <url>
     <loc>https://nerally.gr/epikoinonia/contact.html</loc>
-    <lastmod>2025-09-26</lastmod>
+    <lastmod>2025-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -121,29 +121,30 @@
   <!-- Legal Pages -->
   <url>
     <loc>https://nerally.gr/nomimotita/privacy-policy.html</loc>
-    <lastmod>2025-09-26</lastmod>
+    <lastmod>2025-09-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   
   <url>
     <loc>https://nerally.gr/nomimotita/terms-of-use.html</loc>
-    <lastmod>2025-09-26</lastmod>
+    <lastmod>2025-09-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   
   <url>
     <loc>https://nerally.gr/nomimotita/cookies-policy.html</loc>
-    <lastmod>2025-09-26</lastmod>
+    <lastmod>2025-09-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   
   <url>
     <loc>https://nerally.gr/nomimotita/gdpr.html</loc>
-    <lastmod>2025-09-26</lastmod>
+    <lastmod>2025-09-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 </urlset>
+
