@@ -44,7 +44,7 @@
 <body class="has-fullscreen-hero">
   <!-- GTM noscript fallback omitted intentionally; GTM is injected post-consent by cookie-consent.js -->
   
-  <div id="site-header"></div>
+  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/header.php'; ?>
 
   <main>
     <section class="hero-fullscreen" role="banner" aria-labelledby="hero-title">
@@ -360,7 +360,7 @@
   }
   </script>
 
-  <div id="site-footer"></div>
+  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>
   <div id="chat-widget"></div>
   
   <script src="app.js"></script>

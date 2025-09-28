@@ -2,6 +2,8 @@
 <Files ".env">
     Require all denied
 </Files>
+# Parse .html through PHP (for server-side includes)
+AddType application/x-httpd-php .php .html .htm
 # Security Headers
 <IfModule mod_headers.c>
     # HSTS (HTTP Strict Transport Security)

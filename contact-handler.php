@@ -27,6 +27,86 @@ if (in_array($origin, $config['security']['allowed_origins'])) {
     header('Vary: Origin');
 }
 
+/**
+ * Simple SMTP sender using stream sockets
+ */
+function smtpSend($to, $subject, $body, $headers, $config) {
+    $crlf = "\r\n";
+    $host = $config['email']['smtp_host'] ?? '';
+    $port = (int)($config['email']['smtp_port'] ?? 465);
+    $user = $config['email']['smtp_username'] ?? '';
+    $pass = $config['email']['smtp_password'] ?? '';
+    $secure = strtolower($config['email']['smtp_secure'] ?? 'ssl');
+    $from = $config['email']['from'] ?? $user;
+
+    if (!$host) return false;
+
+    $transport = ($secure === 'ssl' || $port === 465) ? 'ssl://' : '';
+    $errno = 0; $errstr = '';
+    $socket = @stream_socket_client($transport.$host.':'.$port, $errno, $errstr, 10, STREAM_CLIENT_CONNECT);
+    if (!$socket) { return false; }
+    stream_set_timeout($socket, 10);
+
+    $read = function() use ($socket) {
+        $data = '';
+        while ($str = fgets($socket, 515)) {
+            $data .= $str;
+            if (substr($str, 3, 1) === ' ') break;
+        }
+        return $data;
+    };
+    $write = function($cmd) use ($socket, $crlf) { fwrite($socket, $cmd.$crlf); };
+    $expect = function($code) use ($read) {
+        $resp = $read();
+        return (int)substr($resp,0,3) === $code;
+    };
+
+    if (!$expect(220)) { fclose($socket); return false; }
+    $domain = $_SERVER['SERVER_NAME'] ?? 'localhost';
+    $write('EHLO '.$domain);
+    if (!$expect(250)) { fclose($socket); return false; }
+
+    if ($secure === 'tls' || $port === 587) {
+        $write('STARTTLS');
+        if (!$expect(220)) { fclose($socket); return false; }
+        if (!@stream_socket_enable_crypto($socket, true, STREAM_CRYPTO_METHOD_TLS_CLIENT)) { fclose($socket); return false; }
+        $write('EHLO '.$domain);
+        if (!$expect(250)) { fclose($socket); return false; }
+    }
+
+    if ($user && $pass) {
+        $write('AUTH LOGIN');
+        if (!$expect(334)) { fclose($socket); return false; }
+        $write(base64_encode($user));
+        if (!$expect(334)) { fclose($socket); return false; }
+        $write(base64_encode($pass));
+        if (!$expect(235)) { fclose($socket); return false; }
+    }
+
+    $write('MAIL FROM:<'.preg_replace('/[\r\n].*/','',$from).'>');
+    if (!$expect(250)) { fclose($socket); return false; }
+    $write('RCPT TO:<'.preg_replace('/[\r\n].*/','',$to).'>');
+    if (!$expect(250) && !$expect(251)) { fclose($socket); return false; }
+
+    $write('DATA');
+    if (!$expect(354)) { fclose($socket); return false; }
+
+    $date = date('r');
+    $messageId = '<'.uniqid('', true).'@'.$domain.'>';
+    $headerLines = [];
+    $headerLines[] = 'Date: '.$date;
+    $headerLines[] = 'Message-ID: '.$messageId;
+    $headerLines[] = 'To: '.$to;
+    $headerLines[] = 'Subject: '.$subject;
+    foreach ($headers as $h) { $headerLines[] = $h; }
+
+    $data = implode($crlf, $headerLines).$crlf.$crlf.$body.$crlf.'.';
+    $write($data);
+    if (!$expect(250)) { fclose($socket); return false; }
+    $write('QUIT');
+    fclose($socket);
+    return true;
+}
 // Handle preflight requests
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
@@ -223,6 +303,9 @@ function sendEmail($data, $config) {
     </body>
     </html>';
     
+    if (!empty($config['email']['use_smtp'])) {
+        return smtpSend($to, $subject, $body, $headers, $config);
+    }
     return mail($to, $subject, $body, implode("\r\n", $headers));
 }
 

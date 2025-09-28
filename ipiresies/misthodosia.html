@@ -33,7 +33,7 @@
 <body>
   
   
-  <div id="site-header"></div>
+  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/header.php'; ?>
 
   <main>
     <section class="hero">
@@ -161,13 +161,14 @@
   }
   </script>
 
-  <div id="site-footer"></div>
+  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>
   <div id="chat-widget"></div>
   
   <script src="/js/cookie-consent.js"></script>
   <script src="../app.js" defer></script>
 </body>
 </html>
+
 
 
 

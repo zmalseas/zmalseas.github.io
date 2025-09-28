@@ -65,116 +65,17 @@ class NerallyApp {
   }
 
   async loadPartials() {
-    const tasks = [
-      this.injectHeader(),
-      this.injectFooter()
-    ];
-    
-    await Promise.allSettled(tasks);
+    // Server-side includes now handle header/footer. No client fetch needed.
+    return;
   }
 
-  async injectHeader() {
-    const headerEl = document.getElementById("site-header");
-    if (!headerEl) return;
+  async injectHeader() { return; }
 
-    const currentPath = window.location.pathname;
-    const isInSubfolder = this.isInSubfolder(currentPath);
-    const basePath = isInSubfolder ? "../" : "";
+  fixHeaderPaths() { return; }
 
-    try {
-      const response = await fetch(`${basePath}partials/header.html`);
-      if (response.ok) {
-        headerEl.innerHTML = await response.text();
-        // Fix paths after loading header
-        this.fixHeaderPaths(isInSubfolder);
-      } else {
-        throw new Error(`Failed to load header: ${response.status}`);
-      }
-    } catch (error) {
-      console.warn('Header loading failed:', error.message);
-      this.showSimpleError();
-    }
-  }
+  fixFooterPaths() { return; }
 
-  fixHeaderPaths(isInSubfolder) {
-    if (!isInSubfolder) return; // No need to fix if we're at root
-    
-    const headerEl = document.getElementById("site-header");
-    if (!headerEl) return;
-    
-    // Fix all relative links to add ../
-    const links = headerEl.querySelectorAll('a[href]');
-    links.forEach(link => {
-      const href = link.getAttribute('href');
-      // Skip external links, anchors, and already fixed links
-      if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('../') && !href.startsWith('/')) {
-        link.setAttribute('href', '../' + href);
-      }
-    });
-    
-    // Fix image sources
-    const images = headerEl.querySelectorAll('img[src]');
-    images.forEach(img => {
-      const src = img.getAttribute('src');
-      if (src && !src.startsWith('http') && !src.startsWith('../') && !src.startsWith('/')) {
-        img.setAttribute('src', '../' + src);
-      }
-    });
-  }
-
-  fixFooterPaths(isInSubfolder) {
-    if (!isInSubfolder) return; // No need to fix if we're at root
-    
-    const footerEl = document.getElementById("site-footer");
-    if (!footerEl) return;
-    
-    // Fix all relative links to add ../
-    const links = footerEl.querySelectorAll('a[href]');
-    links.forEach(link => {
-      const href = link.getAttribute('href');
-      // Skip external links, anchors, and already fixed links
-      if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('../') && !href.startsWith('/')) {
-        link.setAttribute('href', '../' + href);
-      }
-    });
-    
-    // Fix image sources if any
-    const images = footerEl.querySelectorAll('img[src]');
-    images.forEach(img => {
-      const src = img.getAttribute('src');
-      if (src && !src.startsWith('http') && !src.startsWith('../') && !src.startsWith('/')) {
-        img.setAttribute('src', '../' + src);
-      }
-    });
-  }
-
-  async injectFooter() {
-    const footerEl = document.getElementById("site-footer");
-    if (!footerEl) return;
-
-    try {
-      const currentPath = window.location.pathname;
-      const isInSubfolder = this.isInSubfolder(currentPath);
-      const basePath = isInSubfolder ? "../" : "";
-      
-      const response = await fetch(`${basePath}partials/footer.html`);
-      if (response.ok) {
-        footerEl.innerHTML = await response.text();
-        // Fix paths after loading footer
-        this.fixFooterPaths(isInSubfolder);
-      } else {
-        throw new Error(`Failed to load footer: ${response.status}`);
-      }
-    } catch (error) {
-      console.warn('Footer loading failed:', error.message);
-    }
-
-    // Set current year
-    const yearEl = document.getElementById('y');
-    if (yearEl) {
-      yearEl.textContent = new Date().getFullYear();
-    }
-  }
+  async injectFooter() { return; }
 
   initializeNavigation() {
     // Load navigation module instead of duplicating code
