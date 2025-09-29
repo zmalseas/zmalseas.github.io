@@ -19,7 +19,7 @@ class CookieConsent {
     const consent = this.getConsent();
     
     if (consent === null) {
-      this.showBanner();
+      this.showSettingsPanel(true);
     } else {
       this.handleConsent(consent);
       // If analytics already granted from previous visit, load GTM
@@ -215,13 +215,8 @@ class CookieConsent {
   }
 
   hideBanner() {
-    if (this.banner) {
-      this.banner.classList.add('hide');
-      setTimeout(() => {
-        this.banner?.remove();
-        this.banner = null;
-      }, 300);
-    }
+    if (this.banner) { this.banner.remove(); this.banner = null; }
+    if (this.panel) { this.panel.remove(); this.panel = null; }
     if (this.fab) this.fab.classList.remove('hide');
   }
 
@@ -266,25 +261,77 @@ class CookieConsent {
       if (this.fab && document.body.contains(this.fab)) return; // Already present
       const btn = document.createElement('button');
       btn.id = 'cookie-fab';
-      btn.className = 'cookie-fab';
+      btn.className = 'cookie-fab chat-like';
       btn.setAttribute('aria-label', 'Ρυθμίσεις cookies');
       btn.innerHTML = `
         <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
           <path fill="currentColor" d="M19.5 12.1c-1.2 0-2.3-.5-3.1-1.3-.8-.8-1.3-1.9-1.3-3.1 0-.3 0-.6.1-.9-1-.5-2.1-.8-3.2-.8-4.1 0-7.5 3.3-7.5 7.5s3.3 7.5 7.5 7.5c3.8 0 6.9-2.9 7.4-6.6-.1 0-.1 0-.2 0zm-9.9 3.9c-.6 0-1.1-.5-1.1-1.1s.5-1.1 1.1-1.1 1.1.5 1.1 1.1-.5 1.1-1.1 1.1zm-2.2-4.3c-.6 0-1.1-.5-1.1-1.1S6.8 9.4 7.4 9.4s1.1.5 1.1 1.1-.5 1.2-1.1 1.2zm6.6 4.3c-.6 0-1.1-.5-1.1-1.1s.5-1.1 1.1-1.1 1.1.5 1.1 1.1-.5 1.1-1.1 1.1zm2.2-6.6c-.6 0-1.1-.5-1.1-1.1S16.6 6.1 17.2 6.1s1.1.5 1.1 1.1-.5 1.1-1.1 1.1z"/>
         </svg>`;
       btn.addEventListener('click', () => {
-        const consent = this.getConsent();
-        if (consent === null) {
-          this.showBanner();
-        } else {
-          this.showCustomizeModal();
-        }
+        if (this.panel) { this.hideBanner(); }
+        else { this.showSettingsPanel(false); }
       });
       document.body.appendChild(btn);
       this.fab = btn;
     } catch (e) {
       // no-op
     }
+  }
+
+  // Compact bottom-left settings panel
+  showSettingsPanel(initial = false) {
+    this.hideBanner();
+    const panel = document.createElement('div');
+    panel.className = 'cookie-panel';
+    panel.setAttribute('role', 'dialog');
+    panel.setAttribute('aria-label', 'Ρυθμίσεις cookies');
+    panel.innerHTML = `
+      <div class="panel-header">
+        <span>Ρυθμίσεις Cookies</span>
+        <button class="panel-close" aria-label="Κλείσιμο">×</button>
+      </div>
+      <div class="panel-body">
+        <div class="cookie-row">
+          <div class="cookie-info">
+            <strong>Απαραίτητα</strong>
+            <small>Πάντα ενεργά για βασικές λειτουργίες.</small>
+          </div>
+          <div class="cookie-switch locked" title="Πάντα ενεργό">ON</div>
+        </div>
+        <div class="cookie-row">
+          <div class="cookie-info">
+            <strong>Analytics</strong>
+            <small>Βοηθούν να βελτιώνουμε την εμπειρία.</small>
+          </div>
+          <label class="switch">
+            <input id="cc-analytics" type="checkbox">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+      <div class="panel-actions">
+        <button class="cc-accept btn-primary">Αποδοχή</button>
+        <button class="cc-reject btn-secondary">Απόρριψη</button>
+      </div>
+      <div class="panel-footer">
+        <a href="/nomimotita/privacy-policy.html" target="_blank">Πολιτική Απορρήτου</a> ·
+        <a href="/nomimotita/cookies-policy.html" target="_blank">Πολιτική Cookies</a>
+      </div>`;
+
+    document.body.appendChild(panel);
+    this.panel = panel;
+
+    // Prefill analytics based on stored consent
+    const stored = this.getConsent();
+    const sw = panel.querySelector('#cc-analytics');
+    if (sw && stored && typeof stored.analytics === 'boolean') sw.checked = !!stored.analytics;
+
+    const close = () => { if (!this.panel) return; this.panel.classList.remove('show'); setTimeout(()=>{ this.panel?.remove(); this.panel=null; }, 160); };
+    panel.querySelector('.panel-close')?.addEventListener('click', close);
+    panel.querySelector('.cc-accept')?.addEventListener('click', () => { this.setConsent(true); close(); });
+    panel.querySelector('.cc-reject')?.addEventListener('click', () => { this.setConsent(false); close(); });
+
+    requestAnimationFrame(() => panel.classList.add('show'));
   }
 
   enableAnalytics() {
