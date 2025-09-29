@@ -50,8 +50,9 @@ class CookieConsent {
   }
 
   showBanner() {
-    // Remove any existing banner
-    this.hideBanner();
+    // Legacy banner disabled — use compact panel instead
+    this.showSettingsPanel(true);
+    return;
 
     // Create banner HTML
     this.banner = document.createElement('div');
@@ -321,14 +322,21 @@ class CookieConsent {
     document.body.appendChild(panel);
     this.panel = panel;
 
-    // Prefill analytics based on stored consent
+    // Prefill analytics switch
     const stored = this.getConsent();
     const sw = panel.querySelector('#cc-analytics');
-    if (sw && stored && typeof stored.analytics === 'boolean') sw.checked = !!stored.analytics;
+    if (sw) {
+      if (stored && typeof stored.analytics === 'boolean') {
+        sw.checked = !!stored.analytics;
+      } else {
+        // First visit default: ON, but GTM still blocked until Accept
+        sw.checked = true;
+      }
+    }
 
     const close = () => { if (!this.panel) return; this.panel.classList.remove('show'); setTimeout(()=>{ this.panel?.remove(); this.panel=null; }, 160); };
     panel.querySelector('.panel-close')?.addEventListener('click', close);
-    panel.querySelector('.cc-accept')?.addEventListener('click', () => { this.setConsent(true); close(); });
+    panel.querySelector('.cc-accept')?.addEventListener('click', () => { const allow = sw ? !!sw.checked : true; this.setConsent(allow); close(); });
     panel.querySelector('.cc-reject')?.addEventListener('click', () => { this.setConsent(false); close(); });
 
     requestAnimationFrame(() => panel.classList.add('show'));
@@ -391,7 +399,7 @@ class CookieConsent {
     localStorage.removeItem(this.consentKey);
     localStorage.removeItem(this.analyticsKey);
     this.clearAnalyticsCookies();
-    this.showBanner();
+    this.showSettingsPanel(true);
   }
 
   // Public method to check if analytics is enabled

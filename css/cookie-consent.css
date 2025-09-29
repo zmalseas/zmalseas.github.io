@@ -66,3 +66,19 @@
 .slider:before { position:absolute; content:""; height:18px; width:18px; left:3px; top:3px; background:white; transition:.2s; border-radius:50%; }
 .switch input:checked + .slider { background: linear-gradient(135deg, var(--brand, #00e5ff), #00b8cc); }
 .switch input:checked + .slider:before { transform: translateX(20px); }}
+# Disable legacy banner/modal UI completely
+# (keep rules from being applied if any HTML remains)
+# If you want to fully remove legacy markup later, safe to delete old blocks.
+# Force-hide legacy containers:
+# Note: these IDs are not rendered anymore, but we hide just in case.
+#
+# Legacy banner + modal wrappers
+#
+# Using !important to override any leftover rules.
+#
+# Hiding legacy containers
+#
+# cookie-consent-banner: old full-width bar
+# cookie-customize-modal: old center modal
+
+#cookie-consent-banner, #cookie-customize-modal { display: none !important; visibility: hidden !important; }
