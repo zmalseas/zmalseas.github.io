@@ -1,4 +1,5 @@
 <a class="skip-link" href="#main-content">Μετάβαση στο περιεχόμενο</a>
+<?php if (is_file(__DIR__.'/env-boot.php')) { include __DIR__.'/env-boot.php'; } ?>
 <header class="site-header">
   <div class="header-row">
       <a class="brand" href="/" aria-label="Nerally Home">
@@ -150,4 +151,3 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
-

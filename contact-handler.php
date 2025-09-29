@@ -17,22 +17,9 @@ header('X-Content-Type-Options: nosniff');
 header('X-Frame-Options: DENY');
 header('X-XSS-Protection: 1; mode=block');
 
-// Test mode (from .env CONTACT_TEST_MODE/TEST_MODE)
-$__test_mode_env = getenv('CONTACT_TEST_MODE') ?: getenv('TEST_MODE') ?: '';
-$__test_mode = in_array(strtolower($__test_mode_env), ['1','true','yes','on'], true);
-if ($__test_mode) {
-    header('X-Handler-Mode: test');
-}
-
 // CORS handling
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
-if ($__test_mode) {
-    header('Access-Control-Allow-Origin: *');
-    header('Access-Control-Allow-Methods: POST, OPTIONS');
-    header('Access-Control-Allow-Headers: Content-Type');
-    header('Access-Control-Max-Age: 86400');
-    header('X-Handler-Mode: test');
-} elseif (in_array($origin, $config['security']['allowed_origins'])) {
+if (in_array($origin, $config['security']['allowed_origins'])) {
     header("Access-Control-Allow-Origin: $origin");
     header('Access-Control-Allow-Methods: POST, OPTIONS');
     header('Access-Control-Allow-Headers: Content-Type');
@@ -327,12 +314,25 @@ function sendEmail($data, $config) {
             </div>';
     }
     
+    if (!empty($data['service'])) {
+        $body .= '\n'
+            . '            <div class="field">\n'
+            . '                <strong>Service:</strong><br>\n'
+            . '                ' . sanitizeInput($data['service']) . '\n'
+            . '            </div>';
+    }
+    
     $body .= '
             <div class="field">
                 <strong>💬 Μήνυμα:</strong><br>
                 <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #4a90e2; margin-top: 10px;">
                     ' . nl2br(sanitizeInput($data['message'])) . '
                 </div>
+            </div>
+            <div class="field">
+                <strong>Consent:</strong><br>
+                Newsletter opt-in: ' . (!empty($data['newsletter']) ? 'Yes' : 'No') . '<br>
+                Privacy accepted: ' . (!empty($data['privacy']) ? 'Yes' : 'No') . '
             </div>
         </div>
         <div class="footer">
@@ -358,7 +358,7 @@ try {
     $ip = getClientIp();
     
     // Rate limiting
-    if (!$__test_mode && !checkRateLimit($ip, $config['security']['rate_limit_minutes'])) {
+    if (!checkRateLimit($ip, $config['security']['rate_limit_minutes'])) {
         http_response_code(429);
         echo json_encode([
             'success' => false,
@@ -390,7 +390,7 @@ try {
     if (!is_array($input)) { $input = []; }
     
     // Check honeypot field (should be empty)
-    if (!$__test_mode && !empty($input[$config['security']['honeypot_field']])) {
+    if (!empty($input[$config['security']['honeypot_field']])) {
         logSecurityEvent('honeypot_triggered', ['ip' => $ip, 'honeypot_value' => $input[$config['security']['honeypot_field']]]);
         // Return success to confuse bots
         echo json_encode(['success' => true, 'message' => 'Το μήνυμά σας στάλθηκε επιτυχώς!']);
@@ -429,21 +429,21 @@ try {
         }
     }
     
-    if (!empty($errors) && !$__test_mode) {
+    if (!empty($errors)) {
         http_response_code(400);
         echo json_encode(['success' => false, 'errors' => $errors]);
         exit;
     }
     
-    // Verify reCAPTCHA (bypassed in test mode)
-    $recaptcha = $__test_mode ? ['success' => true, 'score' => 0.9, 'action' => 'test_bypass'] : verifyRecaptcha($input['recaptcha_token'], $config['recaptcha']['secret_key']);
+    // Verify reCAPTCHA
+    $recaptcha = verifyRecaptcha($input['recaptcha_token'], $config['recaptcha']['secret_key']);
     $minScore = $config['recaptcha']['min_score'] ?? 0.5;
     $expectedActions = $config['recaptcha']['expected_actions'] ?? [];
     $actionOk = true;
     if (!empty($recaptcha['action']) && !empty($expectedActions)) {
         $actionOk = in_array($recaptcha['action'], $expectedActions, true);
     }
-    if (!$__test_mode && (empty($recaptcha['success']) || (isset($recaptcha['score']) && $recaptcha['score'] < $minScore) || !$actionOk)) {
+    if (empty($recaptcha['success']) || (isset($recaptcha['score']) && $recaptcha['score'] < $minScore) || !$actionOk) {
         http_response_code(400);
         echo json_encode([
             'success' => false,

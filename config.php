@@ -33,7 +33,7 @@ return [
     // Security Settings
     'security' => [
         'max_message_length' => 5000,                    // Maximum message length
-        'rate_limit_minutes' => 5,                       // Rate limit window in minutes
+        'rate_limit_minutes' => 1,                       // Rate limit window in minutes (reduced for UX)
         'allowed_origins' => [                           // Allowed domains for CORS
             'https://nerally.gr',
             'https://www.nerally.gr'

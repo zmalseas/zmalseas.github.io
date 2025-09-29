@@ -4,7 +4,7 @@ class ChatWidget {
   constructor() {
     this.isInitialized = false;
     this.recaptchaLoaded = false;
-    this.siteKey = (window.SITE_CONFIG && window.SITE_CONFIG.RECAPTCHA_SITE) || '6Lcd7dcrAAAAADzfwDc4AG_kN6jKU0-0Fo78NmYx';
+    this.siteKey = (window.SITE_CONFIG && window.SITE_CONFIG.RECAPTCHA_SITE) || '';
     this.init();
   }
 
@@ -234,6 +234,7 @@ class ChatWidget {
         email: email,
         phone: form.querySelector('[name="phone"]').value.trim(),
         message: message,
+        newsletter: (form.querySelector('[name="newsletter"]') && form.querySelector('[name="newsletter"]').checked) ? '1' : '',
         recaptcha_token: recaptchaToken,
         source: 'chat-widget'
       };
