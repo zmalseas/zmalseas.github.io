@@ -38,6 +38,8 @@ function smtpSend($to, $subject, $body, $headers, $config) {
     $pass = $config['email']['smtp_password'] ?? '';
     $secure = strtolower($config['email']['smtp_secure'] ?? 'ssl');
     $from = $config['email']['from'] ?? $user;
+    // Envelope sender (MAIL FROM) should often match the authenticated user to satisfy SMTP policies
+    $envelopeFrom = $config['email']['smtp_envelope_from'] ?? $user ?: $from;
 
     if (!$host) return false;
 
@@ -83,7 +85,7 @@ function smtpSend($to, $subject, $body, $headers, $config) {
         if (!$expect(235)) { fclose($socket); return false; }
     }
 
-    $write('MAIL FROM:<'.preg_replace('/[\r\n].*/','',$from).'>');
+    $write('MAIL FROM:<'.preg_replace('/[\r\n].*/','',$envelopeFrom).'>');
     if (!$expect(250)) { fclose($socket); return false; }
     $write('RCPT TO:<'.preg_replace('/[\r\n].*/','',$to).'>');
     if (!$expect(250) && !$expect(251)) { fclose($socket); return false; }
@@ -304,7 +306,11 @@ function sendEmail($data, $config) {
     </html>';
     
     if (!empty($config['email']['use_smtp'])) {
-        return smtpSend($to, $subject, $body, $headers, $config);
+        $ok = smtpSend($to, $subject, $body, $headers, $config);
+        if (!$ok && !empty($config['email']['allow_mail_fallback'])) {
+            return mail($to, $subject, $body, implode("\r\n", $headers));
+        }
+        return $ok;
     }
     return mail($to, $subject, $body, implode("\r\n", $headers));
 }
@@ -324,14 +330,26 @@ try {
         exit;
     }
     
-    // Get JSON input
-    $input = json_decode(file_get_contents('php://input'), true);
-    
-    if (json_last_error() !== JSON_ERROR_NONE) {
-        http_response_code(400);
-        echo json_encode(['success' => false, 'error' => 'Invalid JSON']);
-        exit;
+    // Read input (accept JSON or form-encoded)
+    $rawBody = file_get_contents('php://input');
+    $contentType = $_SERVER['CONTENT_TYPE'] ?? $_SERVER['HTTP_CONTENT_TYPE'] ?? '';
+    $input = [];
+    if (stripos($contentType, 'application/json') !== false) {
+        $input = json_decode($rawBody, true);
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            // Fallback to form data
+            $input = $_POST ?: [];
+        }
+    } else {
+        $input = $_POST ?: [];
+        if (!$input && $rawBody) {
+            $tmp = json_decode($rawBody, true);
+            if (json_last_error() === JSON_ERROR_NONE && is_array($tmp)) {
+                $input = $tmp;
+            }
+        }
     }
+    if (!is_array($input)) { $input = []; }
     
     // Check honeypot field (should be empty)
     if (!empty($input[$config['security']['honeypot_field']])) {

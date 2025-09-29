@@ -204,12 +204,15 @@ class ContactFormHandler {
    * Submit form data
    */
   async submitForm(data) {
+    // Use URL-encoded to avoid WAF rules that block JSON to PHP endpoints
+    const body = new URLSearchParams(data).toString();
     const response = await fetch(this.apiUrl, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        'Accept': 'application/json'
       },
-      body: JSON.stringify(data)
+      body
     });
 
     if (!response.ok) {

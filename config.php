@@ -20,11 +20,14 @@ return [
         'subject_prefix' => '[Nerally Contact] ',        // Subject prefix
         // SMTP Settings from .env
         'smtp_host' => getenv('SMTP_HOST'),
-        'smtp_port' => 465,
+        'smtp_port' => getenv('SMTP_PORT') ?: 587,
         'smtp_username' => getenv('SMTP_USER'),
         'smtp_password' => getenv('SMTP_PASS'),
-        'smtp_secure' => 'ssl',
-        'use_smtp' => true
+        'smtp_secure' => getenv('SMTP_SECURE') ?: 'tls',
+        // Envelope sender often must match smtp_username. Override via SMTP_ENVELOPE_FROM if needed.
+        'smtp_envelope_from' => getenv('SMTP_ENVELOPE_FROM') ?: getenv('SMTP_USER'),
+        'use_smtp' => true,
+        'allow_mail_fallback' => true
     ],
     
     // Security Settings

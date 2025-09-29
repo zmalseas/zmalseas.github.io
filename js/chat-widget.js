@@ -238,11 +238,15 @@ class ChatWidget {
         source: 'chat-widget'
       };
 
-      // Send to contact-handler.php
+      // Send to contact-handler.php (URL-encoded to avoid WAF JSON rules)
+      const body = new URLSearchParams(data).toString();
       const response = await fetch('/contact-handler.php', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+          'Accept': 'application/json'
+        },
+        body
       });
 
       let result;
