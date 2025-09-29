@@ -17,14 +17,52 @@ header('X-Content-Type-Options: nosniff');
 header('X-Frame-Options: DENY');
 header('X-XSS-Protection: 1; mode=block');
 
+// Test mode (from .env CONTACT_TEST_MODE/TEST_MODE)
+$__test_mode_env = getenv('CONTACT_TEST_MODE') ?: getenv('TEST_MODE') ?: '';
+$__test_mode = in_array(strtolower($__test_mode_env), ['1','true','yes','on'], true);
+if ($__test_mode) {
+    header('X-Handler-Mode: test');
+}
+
 // CORS handling
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
-if (in_array($origin, $config['security']['allowed_origins'])) {
+if ($__test_mode) {
+    header('Access-Control-Allow-Origin: *');
+    header('Access-Control-Allow-Methods: POST, OPTIONS');
+    header('Access-Control-Allow-Headers: Content-Type');
+    header('Access-Control-Max-Age: 86400');
+    header('X-Handler-Mode: test');
+} elseif (in_array($origin, $config['security']['allowed_origins'])) {
     header("Access-Control-Allow-Origin: $origin");
     header('Access-Control-Allow-Methods: POST, OPTIONS');
     header('Access-Control-Allow-Headers: Content-Type');
     header('Access-Control-Max-Age: 86400');
     header('Vary: Origin');
+}
+
+/**
+ * Resolve client IP behind proxies (Cloudflare/Nginx/etc.).
+ */
+function getClientIp() {
+    $candidates = [
+        'HTTP_CF_CONNECTING_IP',
+        'HTTP_X_REAL_IP',
+        'HTTP_X_FORWARDED_FOR',
+        'REMOTE_ADDR'
+    ];
+    foreach ($candidates as $key) {
+        if (!empty($_SERVER[$key])) {
+            $val = $_SERVER[$key];
+            if ($key === 'HTTP_X_FORWARDED_FOR') {
+                $parts = array_map('trim', explode(',', $val));
+                $val = $parts[0] ?? $val;
+            }
+            // basic sanitize
+            $val = preg_replace('/[^0-9a-fA-F:\.]/', '', $val);
+            if ($val) return $val;
+        }
+    }
+    return 'unknown';
 }
 
 /**
@@ -147,7 +185,7 @@ function verifyRecaptcha($token, $secretKey) {
     $postFields = http_build_query([
         'secret' => $secretKey,
         'response' => $token,
-        'remoteip' => $_SERVER['REMOTE_ADDR'] ?? ''
+        'remoteip' => getClientIp()
     ]);
 
     if (function_exists('curl_init')) {
@@ -317,10 +355,10 @@ function sendEmail($data, $config) {
 
 try {
     // Get IP address
-    $ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
+    $ip = getClientIp();
     
     // Rate limiting
-    if (!checkRateLimit($ip, $config['security']['rate_limit_minutes'])) {
+    if (!$__test_mode && !checkRateLimit($ip, $config['security']['rate_limit_minutes'])) {
         http_response_code(429);
         echo json_encode([
             'success' => false,
@@ -352,7 +390,7 @@ try {
     if (!is_array($input)) { $input = []; }
     
     // Check honeypot field (should be empty)
-    if (!empty($input[$config['security']['honeypot_field']])) {
+    if (!$__test_mode && !empty($input[$config['security']['honeypot_field']])) {
         logSecurityEvent('honeypot_triggered', ['ip' => $ip, 'honeypot_value' => $input[$config['security']['honeypot_field']]]);
         // Return success to confuse bots
         echo json_encode(['success' => true, 'message' => 'Το μήνυμά σας στάλθηκε επιτυχώς!']);
@@ -391,27 +429,27 @@ try {
         }
     }
     
-    if (!empty($errors)) {
+    if (!empty($errors) && !$__test_mode) {
         http_response_code(400);
         echo json_encode(['success' => false, 'errors' => $errors]);
         exit;
     }
     
-    // Verify reCAPTCHA
-    $recaptcha = verifyRecaptcha($input['recaptcha_token'], $config['recaptcha']['secret_key']);
+    // Verify reCAPTCHA (bypassed in test mode)
+    $recaptcha = $__test_mode ? ['success' => true, 'score' => 0.9, 'action' => 'test_bypass'] : verifyRecaptcha($input['recaptcha_token'], $config['recaptcha']['secret_key']);
     $minScore = $config['recaptcha']['min_score'] ?? 0.5;
     $expectedActions = $config['recaptcha']['expected_actions'] ?? [];
     $actionOk = true;
     if (!empty($recaptcha['action']) && !empty($expectedActions)) {
         $actionOk = in_array($recaptcha['action'], $expectedActions, true);
     }
-    if (empty($recaptcha['success']) || (isset($recaptcha['score']) && $recaptcha['score'] < $minScore) || !$actionOk) {
+    if (!$__test_mode && (empty($recaptcha['success']) || (isset($recaptcha['score']) && $recaptcha['score'] < $minScore) || !$actionOk)) {
         http_response_code(400);
         echo json_encode([
             'success' => false,
             'error' => 'reCAPTCHA verification failed. Παρακαλώ δοκιμάστε ξανά.'
         ]);
-        logSecurityEvent('recaptcha_failed', ['ip' => $ip, 'score' => $recaptcha['score'] ?? null, 'action' => $recaptcha['action'] ?? null]);
+        logSecurityEvent('recaptcha_failed', ['ip' => $ip, 'score' => $recaptcha['score'] ?? null, 'action' => $recaptcha['action'] ?? null, 'errors' => $recaptcha['error-codes'] ?? null, 'hostname' => $recaptcha['hostname'] ?? null]);
         exit;
     }
     

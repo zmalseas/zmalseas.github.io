@@ -337,7 +337,7 @@ class ContactFormHandler {
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize contact form handler
   window.contactFormHandler = new ContactFormHandler({
-    siteKey: '6Lcd7dcrAAAAADzfwDc4AG_kN6jKU0-0Fo78NmYx', // Replace with your site key
+    siteKey: (window.SITE_CONFIG && window.SITE_CONFIG.RECAPTCHA_SITE) || undefined,
     apiUrl: '/contact-handler.php',
     formSelector: '.contact-form'
   });
