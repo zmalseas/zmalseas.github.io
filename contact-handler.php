@@ -523,11 +523,27 @@ try {
         $logsDir = __DIR__ . '/logs';
         if (!is_dir($logsDir)) { @mkdir($logsDir, 0755, true); }
         $tokenVal = $input['recaptcha_token'] ?? null;
+        $serverSiteKey = $config['recaptcha']['site_key'] ?? '';
+        $serverSecretKey = $config['recaptcha']['secret_key'] ?? '';
+        $serverSiteSuffix = is_string($serverSiteKey) ? substr($serverSiteKey, -4) : null;
+        $serverSecretSuffix = is_string($serverSecretKey) ? substr($serverSecretKey, -4) : null;
+        $clientSiteSuffix = isset($input['recaptcha_site_suffix']) && is_string($input['recaptcha_site_suffix'])
+            ? substr($input['recaptcha_site_suffix'], -4)
+            : null;
+        $siteKeyMatch = ($clientSiteSuffix && $serverSiteSuffix) ? ($clientSiteSuffix === $serverSiteSuffix) : null;
         $diag = [
             'token_present' => !empty($tokenVal),
             'token_length' => is_string($tokenVal) ? strlen($tokenVal) : null,
             'token_prefix' => is_string($tokenVal) ? substr($tokenVal, 0, 15) : null,
             'verify_response' => $recaptcha,
+            'keys' => [
+                'server_site_suffix' => $serverSiteSuffix,
+                'server_secret_suffix' => $serverSecretSuffix,
+                'client_site_suffix' => $clientSiteSuffix,
+                'server_site_length' => is_string($serverSiteKey) ? strlen($serverSiteKey) : null,
+                'server_secret_length' => is_string($serverSecretKey) ? strlen($serverSecretKey) : null,
+                'site_key_match' => $siteKeyMatch
+            ]
         ];
         @file_put_contents($logsDir . '/recaptcha_verification_debug.log', json_encode($diag, JSON_PRETTY_PRINT) . "\n", FILE_APPEND | LOCK_EX);
         // minimal headers capture without getallheaders dependency
