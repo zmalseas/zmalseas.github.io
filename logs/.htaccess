@@ -4,3 +4,10 @@
 <IfModule !mod_authz_core.c>
   Deny from all
 </IfModule>
+
+# Allow server-side write access
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} -f
+  RewriteRule ^ - [L]
+</IfModule>
