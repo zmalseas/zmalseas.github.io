@@ -99,18 +99,30 @@ class ContactFormHandler {
       const formData = this.getFormData(form);
       formData.recaptcha_token = recaptchaToken;
 
-      // Submit form
-      const response = await this.submitForm(formData);
-      
-      if (response.success) {
-        this.showSuccess(response.message || 'Το μήνυμά σας στάλθηκε επιτυχώς!');
-        form.reset();
-        this.clearErrors(form);
-      } else {
-        this.showError(response.error || 'Σφάλμα κατά την αποστολή.');
-        if (response.errors) {
-          this.showFieldErrors(form, response.errors);
+      // Debugging reCAPTCHA token and response
+      console.log('reCAPTCHA token:', recaptchaToken);
+      console.log('Form data:', formData);
+
+      // Debugging form submission
+      try {
+        const response = await this.submitForm(formData);
+        console.log('Form submission response:', response);
+
+        if (response.success) {
+          this.showSuccess(response.message || 'Το μήνυμά σας στάλθηκε επιτυχώς!');
+          form.reset();
+          this.clearErrors(form);
+        } else {
+          this.showError(response.error || 'Σφάλμα κατά την αποστολή.');
+          if (response.errors) {
+            this.showFieldErrors(form, response.errors);
+          }
         }
+      } catch (error) {
+        console.error('Form submission error:', error);
+        this.showError('Σφάλμα δικτύου. Παρακαλώ δοκιμάστε ξανά.');
+      } finally {
+        this.setButtonState(submitButton, false);
       }
       
     } catch (error) {

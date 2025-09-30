@@ -501,6 +501,18 @@ try {
         }
     }
 
+    // Debugging reCAPTCHA verification
+    $recaptchaDebugLogFile = $logsDir . '/recaptcha_verification_debug.log';
+    if (!@file_put_contents($recaptchaDebugLogFile, json_encode(['token' => $input['recaptcha_token'] ?? null, 'response' => $recaptcha], JSON_PRETTY_PRINT) . "\n", FILE_APPEND | LOCK_EX)) {
+        error_log('Failed to write to recaptcha_verification_debug.log');
+    }
+
+    // Debugging form data
+    $formDataDebugLogFile = $logsDir . '/form_data_debug.log';
+    if (!@file_put_contents($formDataDebugLogFile, json_encode($input, JSON_PRETTY_PRINT) . "\n", FILE_APPEND | LOCK_EX)) {
+        error_log('Failed to write to form_data_debug.log');
+    }
+
     // Send email
     if (sendEmail($input, $config)) {
         // Log successful submission
