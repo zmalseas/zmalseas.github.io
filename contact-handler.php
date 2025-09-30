@@ -475,6 +475,18 @@ try {
         error_log('Failed to write to test_log.log');
     }
     
+    // Log reCAPTCHA token and response to security.log
+    $securityLogFile = $logsDir . '/security.log';
+    $logEntry = [
+        'timestamp' => date('Y-m-d H:i:s'),
+        'event' => 'recaptcha_debug',
+        'details' => [
+            'token' => $input['recaptcha_token'] ?? null,
+            'response' => $recaptcha
+        ]
+    ];
+    file_put_contents($securityLogFile, json_encode($logEntry, JSON_PRETTY_PRINT) . "\n", FILE_APPEND | LOCK_EX);
+    
     // Send email
     if (sendEmail($input, $config)) {
         // Log successful submission
