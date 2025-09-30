@@ -496,6 +496,12 @@ try {
         if (!@file_put_contents($formDataDebugLogFile, json_encode($input, JSON_PRETTY_PRINT) . "\n", FILE_APPEND | LOCK_EX)) {
             error_log('Failed to write to form_data_debug.log');
         }
+
+        // Debugging request headers
+        $requestHeadersLogFile = $logsDir . '/request_headers_debug.log';
+        if (!@file_put_contents($requestHeadersLogFile, json_encode(getallheaders(), JSON_PRETTY_PRINT) . "\n", FILE_APPEND | LOCK_EX)) {
+            error_log('Failed to write to request_headers_debug.log');
+        }
     }
 
     // Send email
