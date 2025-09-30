@@ -46,7 +46,7 @@ return [
     'recaptcha' => [
         'site_key' => $__site,
         'secret_key' => $__secret,
-        'min_score' => 0.0,
+        'min_score' => 0.3,
         'expected_actions' => ['contact_form', 'chat_widget']
     ],
     
@@ -102,6 +102,11 @@ return [
             'seo', 'backlink', 'loan', 'cryptocurrency'
         ],
         'max_links' => 2                                 // Maximum links allowed in message
+    ],
+
+    // Debug Settings
+    'debug' => [
+        'recaptcha_verbose' => false                     // Extra reCAPTCHA diagnostic logs
     ]
 ];
 ?>

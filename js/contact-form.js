@@ -98,13 +98,6 @@ class ContactFormHandler {
       // Prepare form data
       const formData = this.getFormData(form);
       formData.recaptcha_token = recaptchaToken;
-      // Send the last 4 chars of the site key to help server-side diagnostics
-      try {
-        const siteSuffix = (typeof this.siteKey === 'string' && this.siteKey.length >= 4)
-          ? this.siteKey.slice(-4)
-          : '';
-        formData.recaptcha_site_suffix = siteSuffix;
-      } catch (_) {}
 
       // Debugging reCAPTCHA token and response
       console.log('reCAPTCHA token:', recaptchaToken);

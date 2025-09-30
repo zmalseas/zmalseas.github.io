@@ -548,7 +548,7 @@ try {
     }
 
     // Pre-exit debug logging for reCAPTCHA verification
-    if (!empty($config['security']['enable_logging'])) {
+    if (!empty($config['security']['enable_logging']) && !empty($config['debug']['recaptcha_verbose'])) {
         $logsDir = __DIR__ . '/logs';
         if (!is_dir($logsDir)) { @mkdir($logsDir, 0755, true); }
         $tokenVal = $input['recaptcha_token'] ?? null;
@@ -629,26 +629,28 @@ try {
             }
         }
 
-        // Debugging reCAPTCHA verification
-        $recaptchaDebugLogFile = $logsDir . '/recaptcha_verification_debug.log';
-        if (!@file_put_contents($recaptchaDebugLogFile, json_encode(['token' => $input['recaptcha_token'] ?? null, 'response' => $recaptcha], JSON_PRETTY_PRINT) . "\n", FILE_APPEND | LOCK_EX)) {
-            error_log('Failed to write to recaptcha_verification_debug.log');
-        }
+        if (!empty($config['debug']['recaptcha_verbose'])) {
+            // Debugging reCAPTCHA verification
+            $recaptchaDebugLogFile = $logsDir . '/recaptcha_verification_debug.log';
+            if (!@file_put_contents($recaptchaDebugLogFile, json_encode(['token' => $input['recaptcha_token'] ?? null, 'response' => $recaptcha], JSON_PRETTY_PRINT) . "\n", FILE_APPEND | LOCK_EX)) {
+                error_log('Failed to write to recaptcha_verification_debug.log');
+            }
 
-        // Debugging form data
-        $formDataDebugLogFile = $logsDir . '/form_data_debug.log';
-        if (!@file_put_contents($formDataDebugLogFile, json_encode($input, JSON_PRETTY_PRINT) . "\n", FILE_APPEND | LOCK_EX)) {
-            error_log('Failed to write to form_data_debug.log');
-        }
+            // Debugging form data
+            $formDataDebugLogFile = $logsDir . '/form_data_debug.log';
+            if (!@file_put_contents($formDataDebugLogFile, json_encode($input, JSON_PRETTY_PRINT) . "\n", FILE_APPEND | LOCK_EX)) {
+                error_log('Failed to write to form_data_debug.log');
+            }
 
-        // Debugging request headers (portable without getallheaders)
-        $requestHeadersLogFile = $logsDir . '/request_headers_debug.log';
-        $hdrs2 = [];
-        foreach ($_SERVER as $k => $v) {
-            if (strpos($k, 'HTTP_') === 0) { $hdrs2[$k] = $v; }
-        }
-        if (!@file_put_contents($requestHeadersLogFile, json_encode($hdrs2, JSON_PRETTY_PRINT) . "\n", FILE_APPEND | LOCK_EX)) {
-            error_log('Failed to write to request_headers_debug.log');
+            // Debugging request headers (portable without getallheaders)
+            $requestHeadersLogFile = $logsDir . '/request_headers_debug.log';
+            $hdrs2 = [];
+            foreach ($_SERVER as $k => $v) {
+                if (strpos($k, 'HTTP_') === 0) { $hdrs2[$k] = $v; }
+            }
+            if (!@file_put_contents($requestHeadersLogFile, json_encode($hdrs2, JSON_PRETTY_PRINT) . "\n", FILE_APPEND | LOCK_EX)) {
+                error_log('Failed to write to request_headers_debug.log');
+            }
         }
     }
 
