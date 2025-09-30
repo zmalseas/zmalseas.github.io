@@ -454,10 +454,20 @@ try {
     }
     
     // Debugging reCAPTCHA response
-    file_put_contents(__DIR__ . '/logs/recaptcha_debug.log', json_encode($recaptcha, JSON_PRETTY_PRINT) . "\n", FILE_APPEND | LOCK_EX);
-    
+    $logsDir = __DIR__ . '/logs';
+    if (!is_dir($logsDir)) {
+        mkdir($logsDir, 0755, true);
+    }
+    $recaptchaLogFile = $logsDir . '/recaptcha_debug.log';
+    if (!@file_put_contents($recaptchaLogFile, json_encode($recaptcha, JSON_PRETTY_PRINT) . "\n", FILE_APPEND | LOCK_EX)) {
+        error_log('Failed to write to recaptcha_debug.log');
+    }
+
     // Debugging reCAPTCHA token
-    file_put_contents(__DIR__ . '/logs/recaptcha_token_debug.log', json_encode(['token' => $input['recaptcha_token'] ?? null], JSON_PRETTY_PRINT) . "\n", FILE_APPEND | LOCK_EX);
+    $recaptchaTokenLogFile = $logsDir . '/recaptcha_token_debug.log';
+    if (!@file_put_contents($recaptchaTokenLogFile, json_encode(['token' => $input['recaptcha_token'] ?? null], JSON_PRETTY_PRINT) . "\n", FILE_APPEND | LOCK_EX)) {
+        error_log('Failed to write to recaptcha_token_debug.log');
+    }
     
     // Send email
     if (sendEmail($input, $config)) {
