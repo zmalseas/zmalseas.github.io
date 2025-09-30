@@ -453,6 +453,9 @@ try {
         exit;
     }
     
+    // Debugging reCAPTCHA response
+    file_put_contents(__DIR__ . '/logs/recaptcha_debug.log', json_encode($recaptcha, JSON_PRETTY_PRINT) . "\n", FILE_APPEND | LOCK_EX);
+    
     // Send email
     if (sendEmail($input, $config)) {
         // Log successful submission
