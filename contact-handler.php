@@ -436,8 +436,7 @@ try {
     }
     
     // Verify reCAPTCHA
-    // Temporarily disable reCAPTCHA verification
-    $recaptcha = ['success' => true];
+    $recaptcha = verifyRecaptcha($input['recaptcha_token'], $config['recaptcha']['secret_key']);
     $minScore = $config['recaptcha']['min_score'] ?? 0.5;
     $expectedActions = $config['recaptcha']['expected_actions'] ?? [];
     $actionOk = true;
