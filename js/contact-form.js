@@ -143,7 +143,19 @@ class ContactFormHandler {
     }
 
     try {
-      const token = await grecaptcha.execute(this.siteKey, { action: 'contact_form' });
+      const token = await new Promise((resolve) => {
+        if (typeof grecaptcha.ready === 'function') {
+          grecaptcha.ready(() => {
+            grecaptcha.execute(this.siteKey, { action: 'contact_form' })
+              .then(t => resolve(t))
+              .catch(err => { console.error('reCAPTCHA error:', err); resolve(null); });
+          });
+        } else {
+          grecaptcha.execute(this.siteKey, { action: 'contact_form' })
+            .then(t => resolve(t))
+            .catch(err => { console.error('reCAPTCHA error:', err); resolve(null); });
+        }
+      });
       console.log('reCAPTCHA token:', token); // Debug: log the reCAPTCHA token
       return token;
     } catch (error) {

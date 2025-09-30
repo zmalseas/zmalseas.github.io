@@ -517,6 +517,27 @@ try {
     if (!empty($recaptcha['action']) && !empty($expectedActions)) {
         $actionOk = in_array($recaptcha['action'], $expectedActions, true);
     }
+
+    // Pre-exit debug logging for reCAPTCHA verification
+    if (!empty($config['security']['enable_logging'])) {
+        $logsDir = __DIR__ . '/logs';
+        if (!is_dir($logsDir)) { @mkdir($logsDir, 0755, true); }
+        $tokenVal = $input['recaptcha_token'] ?? null;
+        $diag = [
+            'token_present' => !empty($tokenVal),
+            'token_length' => is_string($tokenVal) ? strlen($tokenVal) : null,
+            'token_prefix' => is_string($tokenVal) ? substr($tokenVal, 0, 15) : null,
+            'verify_response' => $recaptcha,
+        ];
+        @file_put_contents($logsDir . '/recaptcha_verification_debug.log', json_encode($diag, JSON_PRETTY_PRINT) . "\n", FILE_APPEND | LOCK_EX);
+        // minimal headers capture without getallheaders dependency
+        $hdrs = [];
+        foreach ($_SERVER as $k => $v) {
+            if (strpos($k, 'HTTP_') === 0) { $hdrs[$k] = $v; }
+        }
+        @file_put_contents($logsDir . '/request_headers_debug.log', json_encode($hdrs, JSON_PRETTY_PRINT) . "\n", FILE_APPEND | LOCK_EX);
+        @file_put_contents($logsDir . '/form_data_debug.log', json_encode($input, JSON_PRETTY_PRINT) . "\n", FILE_APPEND | LOCK_EX);
+    }
     if (empty($recaptcha['success']) || (isset($recaptcha['score']) && $recaptcha['score'] < $minScore) || !$actionOk) {
         http_response_code(400);
         echo json_encode([
@@ -566,9 +587,13 @@ try {
             error_log('Failed to write to form_data_debug.log');
         }
 
-        // Debugging request headers
+        // Debugging request headers (portable without getallheaders)
         $requestHeadersLogFile = $logsDir . '/request_headers_debug.log';
-        if (!@file_put_contents($requestHeadersLogFile, json_encode(getallheaders(), JSON_PRETTY_PRINT) . "\n", FILE_APPEND | LOCK_EX)) {
+        $hdrs2 = [];
+        foreach ($_SERVER as $k => $v) {
+            if (strpos($k, 'HTTP_') === 0) { $hdrs2[$k] = $v; }
+        }
+        if (!@file_put_contents($requestHeadersLogFile, json_encode($hdrs2, JSON_PRETTY_PRINT) . "\n", FILE_APPEND | LOCK_EX)) {
             error_log('Failed to write to request_headers_debug.log');
         }
     }
