@@ -2,6 +2,35 @@
 // Simple .env loader (φορτώνει secrets από .env)
 $env = @parse_ini_file(__DIR__ . '/.env', false, INI_SCANNER_RAW);
 if ($env) foreach ($env as $k => $v) { $_ENV[$k] = $v; putenv("$k=$v"); }
+// Fallback manual env load if parse_ini_file failed or returned empty keys
+if (!$env || !is_array($env) || (empty($env['RECAPTCHA_SITE']) && empty(getenv('RECAPTCHA_SITE')))) {
+    if (!function_exists('__manual_env_parse')) {
+        function __manual_env_parse($path) {
+            $out = [];
+            if (!@is_readable($path)) return $out;
+            $lines = @file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+            if (!$lines) return $out;
+            foreach ($lines as $line) {
+                $line = trim($line);
+                if ($line === '' || $line[0] === '#' || $line[0] === ';') continue;
+                $pos = strpos($line, '=');
+                if ($pos === false) continue;
+                $key = trim(substr($line, 0, $pos));
+                $val = trim(substr($line, $pos + 1));
+                if ($val !== '' && ($val[0] === '"' || $val[0] === "'")) {
+                    $q = $val[0];
+                    if (substr($val, -1) === $q) $val = substr($val, 1, -1);
+                }
+                if ($key !== '') $out[$key] = $val;
+            }
+            return $out;
+        }
+    }
+    $envManual = __manual_env_parse(__DIR__ . '/.env');
+    if ($envManual) {
+        foreach ($envManual as $k => $v) { $_ENV[$k] = $v; @putenv("$k=$v"); }
+    }
+}
 /**
  * Nerally Contact Form Handler
  * Handles contact form submissions with reCAPTCHA verification
