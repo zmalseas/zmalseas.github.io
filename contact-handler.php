@@ -469,6 +469,12 @@ try {
         error_log('Failed to write to recaptcha_token_debug.log');
     }
     
+    // Test file creation in logs directory
+    $testLogFile = $logsDir . '/test_log.log';
+    if (!@file_put_contents($testLogFile, "Test log entry\n", FILE_APPEND | LOCK_EX)) {
+        error_log('Failed to write to test_log.log');
+    }
+    
     // Send email
     if (sendEmail($input, $config)) {
         // Log successful submission
