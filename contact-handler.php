@@ -543,6 +543,15 @@ try {
                 'server_site_length' => is_string($serverSiteKey) ? strlen($serverSiteKey) : null,
                 'server_secret_length' => is_string($serverSecretKey) ? strlen($serverSecretKey) : null,
                 'site_key_match' => $siteKeyMatch
+            ],
+            'env' => [
+                'getenv_site_len' => strlen(getenv('RECAPTCHA_SITE') ?: ''),
+                'getenv_secret_len' => strlen(getenv('RECAPTCHA_SECRET') ?: ''),
+                'env_file_dir' => __DIR__ . '/.env',
+                'env_file_dir_exists' => @is_file(__DIR__ . '/.env'),
+                'env_file_docroot' => (isset($_SERVER['DOCUMENT_ROOT']) ? $_SERVER['DOCUMENT_ROOT'] . '/.env' : null),
+                'env_file_docroot_exists' => (isset($_SERVER['DOCUMENT_ROOT']) ? @is_file($_SERVER['DOCUMENT_ROOT'] . '/.env') : null),
+                'cwd' => @getcwd()
             ]
         ];
         @file_put_contents($logsDir . '/recaptcha_verification_debug.log', json_encode($diag, JSON_PRETTY_PRINT) . "\n", FILE_APPEND | LOCK_EX);
