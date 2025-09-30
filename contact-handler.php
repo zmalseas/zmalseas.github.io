@@ -229,6 +229,11 @@ function checkRateLimit($ip, $minutes = 5) {
  * Log security events
  */
 function logSecurityEvent($event, $details = []) {
+    global $config;
+    if (empty($config['security']['enable_logging'])) {
+        return;
+    }
+    
     $logFile = __DIR__ . '/logs/security.log';
     $logDir = dirname($logFile);
     
@@ -453,40 +458,49 @@ try {
         exit;
     }
     
-    // Debugging reCAPTCHA response
-    $logsDir = __DIR__ . '/logs';
-    if (!is_dir($logsDir)) {
-        mkdir($logsDir, 0755, true);
-    }
-    $recaptchaLogFile = $logsDir . '/recaptcha_debug.log';
-    if (!@file_put_contents($recaptchaLogFile, json_encode($recaptcha, JSON_PRETTY_PRINT) . "\n", FILE_APPEND | LOCK_EX)) {
-        error_log('Failed to write to recaptcha_debug.log');
+    // Ensure logging is enabled based on configuration
+    if (!empty($config['security']['enable_logging'])) {
+        $logsDir = __DIR__ . '/logs';
+        if (!is_dir($logsDir)) {
+            if (!mkdir($logsDir, 0755, true)) {
+                error_log('Failed to create logs directory');
+                exit;
+            }
+        }
+
+        // Debugging reCAPTCHA response
+        $recaptchaLogFile = $logsDir . '/recaptcha_debug.log';
+        if (!@file_put_contents($recaptchaLogFile, json_encode($recaptcha, JSON_PRETTY_PRINT) . "\n", FILE_APPEND | LOCK_EX)) {
+            error_log('Failed to write to recaptcha_debug.log');
+        }
+
+        // Debugging reCAPTCHA token
+        $recaptchaTokenLogFile = $logsDir . '/recaptcha_token_debug.log';
+        if (!@file_put_contents($recaptchaTokenLogFile, json_encode(['token' => $input['recaptcha_token'] ?? null], JSON_PRETTY_PRINT) . "\n", FILE_APPEND | LOCK_EX)) {
+            error_log('Failed to write to recaptcha_token_debug.log');
+        }
+
+        // Test file creation in logs directory
+        $testLogFile = $logsDir . '/test_log.log';
+        if (!@file_put_contents($testLogFile, "Test log entry\n", FILE_APPEND | LOCK_EX)) {
+            error_log('Failed to write to test_log.log');
+        }
+
+        // Log reCAPTCHA token and response to security.log
+        $securityLogFile = $logsDir . '/security.log';
+        $logEntry = [
+            'timestamp' => date('Y-m-d H:i:s'),
+            'event' => 'recaptcha_debug',
+            'details' => [
+                'token' => $input['recaptcha_token'] ?? null,
+                'response' => $recaptcha
+            ]
+        ];
+        if (!@file_put_contents($securityLogFile, json_encode($logEntry, JSON_PRETTY_PRINT) . "\n", FILE_APPEND | LOCK_EX)) {
+            error_log('Failed to write to security.log');
+        }
     }
 
-    // Debugging reCAPTCHA token
-    $recaptchaTokenLogFile = $logsDir . '/recaptcha_token_debug.log';
-    if (!@file_put_contents($recaptchaTokenLogFile, json_encode(['token' => $input['recaptcha_token'] ?? null], JSON_PRETTY_PRINT) . "\n", FILE_APPEND | LOCK_EX)) {
-        error_log('Failed to write to recaptcha_token_debug.log');
-    }
-    
-    // Test file creation in logs directory
-    $testLogFile = $logsDir . '/test_log.log';
-    if (!@file_put_contents($testLogFile, "Test log entry\n", FILE_APPEND | LOCK_EX)) {
-        error_log('Failed to write to test_log.log');
-    }
-    
-    // Log reCAPTCHA token and response to security.log
-    $securityLogFile = $logsDir . '/security.log';
-    $logEntry = [
-        'timestamp' => date('Y-m-d H:i:s'),
-        'event' => 'recaptcha_debug',
-        'details' => [
-            'token' => $input['recaptcha_token'] ?? null,
-            'response' => $recaptcha
-        ]
-    ];
-    file_put_contents($securityLogFile, json_encode($logEntry, JSON_PRETTY_PRINT) . "\n", FILE_APPEND | LOCK_EX);
-    
     // Send email
     if (sendEmail($input, $config)) {
         // Log successful submission
