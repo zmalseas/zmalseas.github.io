@@ -166,46 +166,88 @@ function validateEmail($email) {
 
 /**
  * Verify reCAPTCHA
+ * - Adds diagnostics and fallback to recaptcha.net if google.com is unreachable
  */
 function verifyRecaptcha($token, $secretKey) {
-    $url = 'https://www.google.com/recaptcha/api/siteverify';
+    $endpoints = [
+        'https://www.google.com/recaptcha/api/siteverify',
+        'https://www.recaptcha.net/recaptcha/api/siteverify'
+    ];
+
     $postFields = http_build_query([
         'secret' => $secretKey,
         'response' => $token,
         'remoteip' => getClientIp()
     ]);
 
-    if (function_exists('curl_init')) {
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $postFields);
-        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/x-www-form-urlencoded']);
-        $result = curl_exec($ch);
-        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        curl_close($ch);
-        if ($result === false || $httpCode !== 200) {
-            return ['success' => false, 'error' => 'recaptcha_http_error'];
+    $lastError = null;
+    foreach ($endpoints as $endpoint) {
+        $result = false;
+        $httpCode = 0;
+        $transport = 'stream';
+        $curlErrNo = null;
+        $curlErr = null;
+
+        if (function_exists('curl_init')) {
+            $transport = 'curl';
+            $ch = curl_init($endpoint);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $postFields);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/x-www-form-urlencoded']);
+            // Keep default SSL verification; if host CA store is broken, this can fail
+            $result = curl_exec($ch);
+            if ($result === false) {
+                $curlErrNo = curl_errno($ch);
+                $curlErr = curl_error($ch);
+            }
+            $httpCode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            curl_close($ch);
+        } else {
+            $context = stream_context_create([
+                'http' => [
+                    'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+                    'method' => 'POST',
+                    'content' => $postFields,
+                    'timeout' => 10
+                ]
+            ]);
+            $result = @file_get_contents($endpoint, false, $context);
+            // Best-effort HTTP code extraction for streams (not always available)
+            if (isset($http_response_header) && is_array($http_response_header)) {
+                foreach ($http_response_header as $h) {
+                    if (preg_match('/^HTTP\/\S+\s+(\d{3})/', $h, $m)) { $httpCode = (int)$m[1]; break; }
+                }
+            }
         }
-    } else {
-        $context = stream_context_create([
-            'http' => [
-                'header' => "Content-type: application/x-www-form-urlencoded\r\n",
-                'method' => 'POST',
-                'content' => $postFields,
-                'timeout' => 10
-            ]
-        ]);
-        $result = @file_get_contents($url, false, $context);
-        if ($result === false) {
-            return ['success' => false, 'error' => 'recaptcha_request_failed'];
+
+        if ($result !== false && $httpCode === 200) {
+            $response = json_decode($result, true) ?: [];
+            $response['success'] = $response['success'] ?? false;
+            // Attach diagnostics (non-sensitive) for server logs
+            $response['_diagnostics'] = [
+                'endpoint' => $endpoint,
+                'transport' => $transport,
+                'http_code' => $httpCode
+            ];
+            return $response;
         }
+
+        // Save last error for logging and try next endpoint
+        $lastError = [
+            'success' => false,
+            'error' => 'recaptcha_http_error',
+            'http_code' => $httpCode,
+            'endpoint' => $endpoint,
+            'transport' => $transport,
+            'curl_errno' => $curlErrNo,
+            'curl_error' => $curlErr
+        ];
     }
 
-    $response = json_decode($result, true) ?: [];
-    $response['success'] = $response['success'] ?? false;
-    return $response;
+    // All endpoints failed
+    return $lastError ?: ['success' => false, 'error' => 'recaptcha_request_failed'];
 }
 
 /**

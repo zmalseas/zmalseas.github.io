@@ -9,7 +9,7 @@ return [
     'recaptcha' => [
         'site_key' => getenv('RECAPTCHA_SITE'),
         'secret_key' => getenv('RECAPTCHA_SECRET'),
-        'min_score' => 0.5,
+        'min_score' => 0.0,
         'expected_actions' => ['contact_form', 'chat_widget']
     ],
     
