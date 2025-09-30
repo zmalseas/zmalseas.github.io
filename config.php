@@ -4,11 +4,25 @@
  * Update these settings as needed
  */
 
+// Robust env loading for reCAPTCHA keys (fallback to local .env if getenv() empty)
+$__site = getenv('RECAPTCHA_SITE') ?: '';
+$__secret = getenv('RECAPTCHA_SECRET') ?: '';
+if (!($__site && $__secret)) {
+    $envFile = __DIR__ . '/.env';
+    if (@is_file($envFile)) {
+        $envArr = @parse_ini_file($envFile, false, INI_SCANNER_RAW);
+        if (is_array($envArr)) {
+            if (!$__site && !empty($envArr['RECAPTCHA_SITE'])) { $__site = $envArr['RECAPTCHA_SITE']; }
+            if (!$__secret && !empty($envArr['RECAPTCHA_SECRET'])) { $__secret = $envArr['RECAPTCHA_SECRET']; }
+        }
+    }
+}
+
 return [
     // reCAPTCHA Settings
     'recaptcha' => [
-        'site_key' => getenv('RECAPTCHA_SITE'),
-        'secret_key' => getenv('RECAPTCHA_SECRET'),
+        'site_key' => $__site,
+        'secret_key' => $__secret,
         'min_score' => 0.0,
         'expected_actions' => ['contact_form', 'chat_widget']
     ],
