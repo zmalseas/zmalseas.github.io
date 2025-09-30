@@ -253,6 +253,33 @@ function logSecurityEvent($event, $details = []) {
 }
 
 /**
+ * Log token events
+ */
+function logTokenEvent($event, $details = []) {
+    global $config;
+    if (empty($config['security']['enable_logging'])) {
+        return;
+    }
+
+    $logFile = __DIR__ . '/logs/token_events.log';
+    $logDir = dirname($logFile);
+
+    if (!is_dir($logDir)) {
+        mkdir($logDir, 0755, true);
+    }
+
+    $logEntry = [
+        'timestamp' => date('Y-m-d H:i:s'),
+        'ip' => $_SERVER['REMOTE_ADDR'] ?? 'unknown',
+        'user_agent' => $_SERVER['HTTP_USER_AGENT'] ?? 'unknown',
+        'event' => $event,
+        'details' => $details
+    ];
+
+    file_put_contents($logFile, json_encode($logEntry) . "\n", FILE_APPEND | LOCK_EX);
+}
+
+/**
  * Send email notification
  */
 function sendEmail($data, $config) {
