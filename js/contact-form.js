@@ -132,6 +132,7 @@ class ContactFormHandler {
 
     try {
       const token = await grecaptcha.execute(this.siteKey, { action: 'contact_form' });
+      console.log('reCAPTCHA token:', token); // Debug: log the reCAPTCHA token
       return token;
     } catch (error) {
       console.error('reCAPTCHA error:', error);
