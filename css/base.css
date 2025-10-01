@@ -92,6 +92,8 @@ body {
 main,
 .main-content {
   flex: 1 0 auto;
+  min-height: 0; /* Allow shrinking */
+  overflow: visible; /* Remove any overflow constraints */
 }
 
 /* Footer stays at the bottom */
@@ -153,6 +155,9 @@ main,
   position: relative;
   width: 100%;
   max-width: 100vw;
+  min-height: 0; /* Allow shrinking and prevent overflow */
+  overflow: visible; /* Ensure content can flow naturally */
+  height: auto; /* Let height be determined by content */
 }
 
 /* Specific styling for pages with main-content class */

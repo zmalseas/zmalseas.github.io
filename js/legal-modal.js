@@ -89,11 +89,17 @@ class LegalModal {
     try {
       const contentContainer = document.getElementById('legal-content-container');
       if (contentContainer) {
+        // Show immediate loading content without any delay
+        contentContainer.innerHTML = '<div class="loading-placeholder">Φόρτωση περιεχομένου...</div>';
+        
         const contentPanels = await this.getContentPanels();
         contentContainer.innerHTML = contentPanels;
         
         // Re-setup tabs after content is loaded
         this.setupTabElements();
+        
+        // Initialize event listeners after tabs are setup
+        this.initEventListeners();
       }
     } catch (error) {
       console.error('Error loading legal content:', error);
@@ -222,7 +228,6 @@ class LegalModal {
     // Create modal if it doesn't exist
     if (!this.backdrop || !this.modal) {
       await this.createModal();
-      this.initEventListeners();
     }
     
     this.lastActive = document.activeElement;
@@ -362,30 +367,39 @@ class LegalModal {
   }
 
   async getContentPanels() {
-    // Content files mapping - use absolute paths from root
+    // Content files mapping - use relative paths from current location
     const contentFiles = {
-      privacy: '/nomimotita/privacy-policy-content.html',
-      terms: '/nomimotita/terms-of-use-content.html',
-      cookies: '/nomimotita/cookies-policy-content.html',
-      gdpr: '/nomimotita/gdpr-content.html'
+      privacy: './nomimotita/privacy-policy-content.html',
+      terms: './nomimotita/terms-of-use-content.html',
+      cookies: './nomimotita/cookies-policy-content.html',
+      gdpr: './nomimotita/gdpr-content.html'
     };
 
-    // Load content from external files
+    // Load content from external files with better error handling
     const loadedContent = {};
-    for (const [key, file] of Object.entries(contentFiles)) {
+    const loadPromises = Object.entries(contentFiles).map(async ([key, file]) => {
       try {
-        const response = await fetch(file);
+        const response = await fetch(file, {
+          cache: 'no-cache',
+          headers: {
+            'Content-Type': 'text/html'
+          }
+        });
         if (response.ok) {
-          loadedContent[key] = await response.text();
+          const content = await response.text();
+          loadedContent[key] = content.trim();
         } else {
-          console.warn(`Could not load ${file}, using fallback content`);
+          console.warn(`HTTP ${response.status} for ${file}, using fallback content`);
           loadedContent[key] = this.getFallbackContent(key);
         }
       } catch (error) {
-        console.warn(`Error loading ${file}:`, error);
+        console.warn(`Network error loading ${file}:`, error);
         loadedContent[key] = this.getFallbackContent(key);
       }
-    }
+    });
+
+    // Wait for all content to load
+    await Promise.all(loadPromises);
 
     return `
       <!-- Privacy Policy Panel -->
@@ -412,12 +426,28 @@ class LegalModal {
 
   getFallbackContent(type) {
     const fallbacks = {
-      privacy: '<div class="meta">Περιεχόμενο μη διαθέσιμο</div><p>Προσπάθεια φόρτωσης περιεχομένου...</p>',
-      terms: '<div class="meta">Περιεχόμενο μη διαθέσιμο</div><p>Προσπάθεια φόρτωσης περιεχομένου...</p>',
-      cookies: '<div class="meta">Περιεχόμενο μη διαθέσιμο</div><p>Προσπάθεια φόρτωσης περιεχομένου...</p>',
-      gdpr: '<div class="meta">Περιεχόμενο μη διαθέσιμο</div><p>Προσπάθεια φόρτωσης περιεχομένου...</p>'
+      privacy: `
+        <div class="meta">Πολιτική Απορρήτου</div>
+        <p>Η Nerally σέβεται την ιδιωτικότητά σας και εφαρμόζει όλες τις απαραίτητες τεχνικές και οργανωτικές μέτρα για την προστασία των προσωπικών σας δεδομένων σύμφωνα με τον GDPR.</p>
+        <p>Για λεπτομερείς πληροφορίες, επικοινωνήστε μαζί μας στο <a href="mailto:info@nerally.gr">info@nerally.gr</a>.</p>
+      `,
+      terms: `
+        <div class="meta">Όροι Χρήσης</div>
+        <p>Η χρήση του ιστότοπου υπόκειται στους παρόντες όρους. Παρακαλούμε διαβάστε προσεκτικά πριν από τη χρήση των υπηρεσιών μας.</p>
+        <p>Για περισσότερες πληροφορίες, επικοινωνήστε μαζί μας στο <a href="mailto:info@nerally.gr">info@nerally.gr</a>.</p>
+      `,
+      cookies: `
+        <div class="meta">Πολιτική Cookies</div>
+        <p>Χρησιμοποιούμε cookies μόνο για τη βελτιστοποίηση της εμπειρίας σας στον ιστότοπό μας. Μπορείτε να διαχειριστείτε τις προτιμήσεις σας ανά πάσα στιγμή.</p>
+        <p>Για περισσότερες πληροφορίες, επικοινωνήστε μαζί μας στο <a href="mailto:info@nerally.gr">info@nerally.gr</a>.</p>
+      `,
+      gdpr: `
+        <div class="meta">GDPR</div>
+        <p>Εφαρμόζουμε πλήρως τον Γενικό Κανονισμό Προστασίας Δεδομένων (GDPR). Έχετε δικαίωμα πρόσβασης, διόρθωσης, διαγραφής και φορητότητας των δεδομένων σας.</p>
+        <p>Για άσκηση των δικαιωμάτων σας, επικοινωνήστε μαζί μας στο <a href="mailto:info@nerally.gr">info@nerally.gr</a>.</p>
+      `
     };
-    return fallbacks[type] || '<div class="meta">Σφάλμα φόρτωσης</div>';
+    return fallbacks[type] || '<div class="meta">Σφάλμα φόρτωσης</div><p>Παρακαλούμε επικοινωνήστε μαζί μας για υποστήριξη.</p>';
   }
 }
 
