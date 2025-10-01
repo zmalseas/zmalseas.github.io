@@ -6,98 +6,102 @@
   <title>Επικοινωνία - Nerally</title>
   <link rel="icon" type="image/png" href="../images/logo.png" />
   <link rel="stylesheet" href="../main.css">
-  <link rel="stylesheet" href="../css/contact-form.css">
-  <link rel="stylesheet" href="/css/cookie-consent.css">
+  <link rel="stylesheet" href="../css/contact-modern.css">
   <link rel="stylesheet" href="/css/legal-modal.css">
   <script src="/js/site-config.js"></script>
   
   <!-- GTM loads via cookie-consent.js after analytics consent -->
 </head>
-<body>
+<body class="contact-page">
   
-  
-  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/header.php'; ?>
+  <!-- Header με navigation -->
+  <header id="header-placeholder"></header>
 
-  <main class="main-content">
-    <div class="container">
-      <div class="page-header">
-        <h1>Επικοινωνήστε μαζί μας</h1>
-        <p>Είμαστε εδώ για να σας βοηθήσουμε με τις λογιστικές και φοροτεχνικές σας ανάγκες</p>
-      </div>
-
-      <div class="contact-section">
-        <div class="contact-content">
-          <div class="contact-info">
-            <h2>Γιατί να επιλέξετε τη Nerally;</h2>
-            <p>Η Nerally αποτελεί την αξιόπιστη επιλογή σας για ολοκληρωμένες λογιστικές και φοροτεχνικές υπηρεσίες. Με χρόνια εμπειρίας και εξειδίκευσης, προσφέρουμε:</p>
-            
-            <ul class="benefits-list">
-              <li><strong>Εξειδικευμένο προσωπικό</strong> με πιστοποιήσεις και συνεχή εκπαίδευση</li>
-              <li><strong>Προσωποποιημένη εξυπηρέτηση</strong> για κάθε πελάτη</li>
-              <li><strong>Σύγχρονες τεχνολογίες</strong> για ασφάλεια και αποδοτικότητα</li>
-              <li><strong>Συμβουλευτικές υπηρεσίες</strong> για βέλτιστη φορολογική διαχείριση</li>
-              <li><strong>Διαφάνεια και αξιοπιστία</strong> σε κάθε συναλλαγή</li>
-            </ul>
-
-            <div class="contact-details">
-              <h3>Στοιχεία Επικοινωνίας</h3>
-              <div class="detail-item">
-                <strong>Τηλέφωνο:</strong> +30 694 636 5798
-              </div>
-              <div class="detail-item">
-                <strong>Email:</strong> info@nerally.gr
-              </div>
-              <div class="detail-item">
-                <strong>Ωράριο:</strong> Δευτέρα - Παρασκευή, 9:00 - 17:00
-              </div>
-            </div>
+  <!-- Hero Section -->
+  <section class="contact-hero">
+    <div class="hero-background">
+      <div class="hero-gradient"></div>
+    </div>
+    <div class="hero-content">
+      <div class="container">
+        <h1 class="hero-title">Ας συνεργαστούμε</h1>
+        <p class="hero-subtitle">Είμαστε εδώ για να σας βοηθήσουμε με τις λογιστικές και φοροτεχνικές σας ανάγκες</p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Χρόνια εμπειρίας</span>
           </div>
+          <div class="stat-item">
+            <span class="stat-number">500+</span>
+            <span class="stat-label">Ικανοποιημένοι πελάτες</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Υποστήριξη</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <div class="contact-form-wrapper">
-            <div class="contact-form">
-              <h3>Στείλτε μας μήνυμα</h3>
-              <form id="contactForm" class="contact-form" action="../contact-handler.php" method="POST">
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Contact Form Section -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Contact Form -->
+          <div class="contact-form-area">
+            <div class="form-header">
+              <h2>Στείλτε μας μήνυμα</h2>
+              <p>Συμπληρώστε τη φόρμα και θα σας απαντήσουμε άμεσα</p>
+            </div>
+
+            <form id="contactForm" class="modern-form" action="../contact-handler.php" method="POST">
+              <div class="form-row">
                 <div class="form-group floating-label">
                   <input type="text" id="name" name="name" required>
                   <label for="name">Ονοματεπώνυμο *</label>
                 </div>
-
                 <div class="form-group floating-label">
                   <input type="email" id="email" name="email" required>
                   <label for="email">Email *</label>
                 </div>
+              </div>
 
+              <div class="form-row">
                 <div class="form-group floating-label">
                   <input type="tel" id="phone" name="phone">
                   <label for="phone">Τηλέφωνο</label>
                 </div>
-
                 <div class="form-group floating-label">
                   <input type="text" id="company" name="company">
                   <label for="company">Εταιρεία</label>
                 </div>
+              </div>
 
-                <div class="form-group">
-                  <label for="service">Υπηρεσία Ενδιαφέροντος</label>
-                  <select id="service" name="service">
-                    <option value="">Επιλέξτε υπηρεσία</option>
-                    <option value="logistiki">Λογιστική</option>
-                    <option value="misthodosia">Μισθοδοσία</option>
-                    <option value="assurance">Assurance</option>
-                    <option value="consulting">Consulting</option>
-                    <option value="cyber-security">Cyber Security</option>
-                    <option value="social-media">Social Media</option>
-                    <option value="epixorigiseis">Επιχορηγήσεις</option>
-                    <option value="symvoulos-mixanikos">Σύμβουλος Μηχανικός</option>
-                  </select>
-                </div>
+              <div class="form-group">
+                <label for="service">Υπηρεσία Ενδιαφέροντος</label>
+                <select id="service" name="service">
+                  <option value="">Επιλέξτε υπηρεσία</option>
+                  <option value="logistiki">Λογιστική</option>
+                  <option value="misthodosia">Μισθοδοσία</option>
+                  <option value="assurance">Assurance</option>
+                  <option value="consulting">Consulting</option>
+                  <option value="cyber-security">Cyber Security</option>
+                  <option value="social-media">Social Media</option>
+                  <option value="epixorigiseis">Επιχορηγήσεις</option>
+                  <option value="symvoulos-mixanikos">Σύμβουλος Μηχανικός</option>
+                </select>
+              </div>
 
-                <div class="form-group floating-label">
-                  <textarea id="message" name="message" rows="5" required></textarea>
-                  <label for="message">Μήνυμα *</label>
-                </div>
+              <div class="form-group floating-label full-width">
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <label for="message">Μήνυμα *</label>
+              </div>
 
-                <div class="form-group checkbox-group">
+              <div class="form-checkboxes">
+                <div class="checkbox-group">
                   <label class="checkbox-label">
                     <input type="checkbox" id="privacy" name="privacy" required>
                     <span class="checkmark"></span>
@@ -105,276 +109,141 @@
                   </label>
                 </div>
 
-                <div class="form-group checkbox-group">
+                <div class="checkbox-group">
                   <label class="checkbox-label">
                     <input type="checkbox" id="newsletter" name="newsletter">
                     <span class="checkmark"></span>
                     Θέλω να λαμβάνω ενημερώσεις και προσφορές
                   </label>
                 </div>
+              </div>
 
-                <button type="submit" class="submit-btn">Αποστολή Μηνύματος</button>
-                
-                <div class="recaptcha-info">
-                  Αυτός ο ιστότοπος προστατεύεται από το reCAPTCHA και ισχύουν η 
-                  <a href="https://policies.google.com/privacy" target="_blank">Πολιτική Απορρήτου</a> και οι 
-                  <a href="https://policies.google.com/terms" target="_blank">Όροι Χρήσης</a> της Google.
+              <button type="submit" class="submit-btn">
+                <span class="btn-text">Αποστολή Μηνύματος</span>
+                <span class="btn-icon">→</span>
+              </button>
+              
+              <div class="recaptcha-info">
+                Αυτός ο ιστότοπος προστατεύεται από το reCAPTCHA και ισχύουν η 
+                <a href="https://policies.google.com/privacy" target="_blank">Πολιτική Απορρήτου</a> και οι 
+                <a href="https://policies.google.com/terms" target="_blank">Όροι Χρήσης</a> της Google.
+              </div>
+            </form>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="contact-info-area">
+            <div class="info-card">
+              <h3>Γιατί να επιλέξετε τη Nerally;</h3>
+              <p>Η Nerally αποτελεί την αξιόπιστη επιλογή σας για ολοκληρωμένες λογιστικές και φοροτεχνικές υπηρεσίες.</p>
+              
+              <ul class="benefits-list">
+                <li>
+                  <div class="benefit-icon">🎓</div>
+                  <div class="benefit-text">
+                    <strong>Εξειδικευμένο προσωπικό</strong>
+                    <span>με πιστοποιήσεις και συνεχή εκπαίδευση</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="benefit-icon">👥</div>
+                  <div class="benefit-text">
+                    <strong>Προσωποποιημένη εξυπηρέτηση</strong>
+                    <span>για κάθε πελάτη</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="benefit-icon">🔒</div>
+                  <div class="benefit-text">
+                    <strong>Σύγχρονες τεχνολογίες</strong>
+                    <span>για ασφάλεια και αποδοτικότητα</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="benefit-icon">💡</div>
+                  <div class="benefit-text">
+                    <strong>Συμβουλευτικές υπηρεσίες</strong>
+                    <span>για βέλτιστη φορολογική διαχείριση</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="benefit-icon">✨</div>
+                  <div class="benefit-text">
+                    <strong>Διαφάνεια και αξιοπιστία</strong>
+                    <span>σε κάθε συναλλαγή</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="contact-details-card">
+              <h4>Στοιχεία Επικοινωνίας</h4>
+              <div class="contact-items">
+                <div class="contact-item">
+                  <div class="contact-icon">📞</div>
+                  <div class="contact-text">
+                    <span class="contact-label">Τηλέφωνο</span>
+                    <a href="tel:+306946365798" class="contact-value">+30 694 636 5798</a>
+                  </div>
                 </div>
-              </form>
+                <div class="contact-item">
+                  <div class="contact-icon">✉️</div>
+                  <div class="contact-text">
+                    <span class="contact-label">Email</span>
+                    <a href="mailto:info@nerally.gr" class="contact-value">info@nerally.gr</a>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-icon">🕐</div>
+                  <div class="contact-text">
+                    <span class="contact-label">Ωράριο</span>
+                    <span class="contact-value">Δευτέρα - Παρασκευή<br>9:00 - 17:00</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Έτοιμοι να ξεκινήσουμε;</h2>
+          <p>Επικοινωνήστε μαζί μας σήμερα και ανακαλύψτε πώς μπορούμε να βοηθήσουμε την επιχείρησή σας να αναπτυχθεί.</p>
+          <div class="cta-buttons">
+            <a href="tel:+306946365798" class="cta-btn primary">📞 Κάλεσέ μας τώρα</a>
+            <a href="mailto:info@nerally.gr" class="cta-btn secondary">✉️ Στείλε Email</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
   
-  <style>
-    .contact-section {
-      margin: 40px 0;
-    }
-    
-    .contact-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: start;
-    }
-    
-    .contact-info h2 {
-      color: var(--brand);
-      margin-bottom: 20px;
-      font-size: 1.8rem;
-    }
-    
-    .contact-info h3 {
-      color: var(--brand);
-      margin: 30px 0 15px 0;
-      font-size: 1.4rem;
-    }
-    
-    .contact-info p {
-      margin-bottom: 20px;
-      line-height: 1.6;
-      color: #333;
-    }
-    
-    .benefits-list {
-      list-style: none;
-      padding: 0;
-      margin: 20px 0;
-    }
-    
-    .benefits-list li {
-      padding: 10px 0;
-      padding-left: 25px;
-      position: relative;
-      line-height: 1.5;
-    }
-    
-    .benefits-list li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: var(--brand);
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
-    
-    .contact-details {
-      background: #f8f9fa;
-      padding: 25px;
-      border-radius: 10px;
-      margin-top: 30px;
-    }
-    
-    .detail-item {
-      margin: 12px 0;
-      padding: 5px 0;
-    }
-    
-    .contact-form-wrapper {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      padding: 40px;
-    }
-    
-    .contact-form h3 {
-      color: var(--brand);
-      margin-bottom: 25px;
-      font-size: 1.5rem;
-      text-align: center;
-    }
-    
-    .form-group {
-      margin-bottom: 20px;
-    }
-    
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 600;
-      color: #333;
-    }
-    
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 12px 15px;
-      border: 2px solid #e1e5e9;
-      border-radius: 8px;
-      font-size: 1rem;
-      transition: border-color 0.3s ease;
-      font-family: inherit;
-    }
-    
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--brand);
-    }
-    
-    .form-group textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-    
-    /* Floating Label Styles για Contact Page */
-    .floating-label {
-      position: relative;
-      margin-bottom: 24px;
-    }
+  <!-- Footer -->
+  <footer id="footer-placeholder"></footer>
+  <!-- Scripts -->
+  <script>
+    // Load header and footer
+    fetch('../partials/header.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('header-placeholder').innerHTML = html;
+        // Re-initialize any header scripts if needed
+        if (window.initHeaderScripts) window.initHeaderScripts();
+      });
 
-    .floating-label input,
-    .floating-label textarea {
-      width: 100%;
-      padding: 16px 15px 6px 15px;
-      border: 2px solid #e1e5e9;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-family: inherit;
-      transition: border-color 0.3s ease;
-      background: #ffffff;
-      outline: none;
-    }
-
-    .floating-label textarea {
-      resize: vertical;
-      min-height: 120px;
-      line-height: 1.5;
-      overflow-y: auto;
-    }
-
-    .floating-label label {
-      position: absolute;
-      left: 15px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 1rem;
-      color: #6c757d;
-      pointer-events: none;
-      transition: all 0.3s ease;
-      background: transparent;
-      padding: 0;
-      z-index: 1;
-      font-weight: 600;
-    }
-
-    .floating-label textarea + label {
-      top: 32px;
-      transform: translateY(-50%);
-    }
-
-    /* Active state - label πάνω */
-    .floating-label input:focus + label,
-    .floating-label input.has-value + label,
-    .floating-label input.is-focused + label,
-    .floating-label textarea:focus + label,
-    .floating-label textarea.has-value + label,
-    .floating-label textarea.is-focused + label {
-      top: 0;
-      transform: translateY(-50%);
-      font-size: 0.8rem;
-      color: var(--brand);
-      font-weight: 600;
-      background: #ffffff;
-      padding: 0 4px;
-    }
-
-    /* Focus states */
-    .floating-label input:focus,
-    .floating-label textarea:focus {
-      border-color: var(--brand);
-    }
-    
-    .checkbox-group {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-    }
-    
-    .checkbox-label {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      cursor: pointer;
-      font-size: 0.9rem;
-      line-height: 1.4;
-    }
-    
-    .checkbox-label input[type="checkbox"] {
-      width: auto;
-      margin: 0;
-    }
-    
-    .checkbox-label a {
-      color: var(--brand);
-      text-decoration: underline;
-    }
-    
-    .submit-btn {
-      width: 100%;
-      background: linear-gradient(135deg, var(--brand) 0%, #ff6b6b 100%);
-      color: white;
-      border: none;
-      padding: 15px 25px;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      margin-top: 10px;
-    }
-    
-    .submit-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(0,229,255,0.3);
-    }
-    
-    @media (max-width: 768px) {
-      .contact-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-      
-      .contact-form-wrapper {
-        padding: 25px;
-      }
-      
-      .contact-details {
-        padding: 20px;
-      }
-    }
-  </style>
-
-  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>
-  
+    fetch('../partials/footer.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('footer-placeholder').innerHTML = html;
+      });
+  </script>
   <script src="../js/floating-labels.js"></script>
   <script src="../js/contact-form.js"></script>
   <script src="/js/legal-modal.js"></script>
-  <script src="/js/cookie-consent.js"></script>
   <script src="../app.js"></script>
 </body>
 </html>

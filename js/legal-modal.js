@@ -24,7 +24,7 @@ class LegalModal {
     this.handleHashNavigation();
   }
 
-  createModal() {
+  async createModal() {
     // Check if modal already exists
     if (document.getElementById('legal-modal')) {
       this.setupElements();
@@ -68,8 +68,8 @@ class LegalModal {
               <button class="legal-close" id="legal-close" aria-label="Κλείσιμο">×</button>
             </div>
           </header>
-          <div class="legal-scroll">
-            ${this.getContentPanels()}
+          <div class="legal-scroll" id="legal-content-container">
+            <div class="loading-placeholder">Φόρτωση περιεχομένου...</div>
           </div>
         </section>
       </div>
@@ -80,15 +80,31 @@ class LegalModal {
     document.body.appendChild(modal);
 
     this.setupElements();
+
+    // Load content asynchronously
+    await this.loadContent();
   }
 
-  setupElements() {
-    this.backdrop = document.getElementById('legal-backdrop');
-    this.modal = document.getElementById('legal-modal');
-    this.dialog = this.modal.querySelector('.legal-dialog');
-    this.closeBtn = document.getElementById('legal-close');
-    this.panelTitle = document.getElementById('panel-title');
+  async loadContent() {
+    try {
+      const contentContainer = document.getElementById('legal-content-container');
+      if (contentContainer) {
+        const contentPanels = await this.getContentPanels();
+        contentContainer.innerHTML = contentPanels;
+        
+        // Re-setup tabs after content is loaded
+        this.setupTabElements();
+      }
+    } catch (error) {
+      console.error('Error loading legal content:', error);
+      const contentContainer = document.getElementById('legal-content-container');
+      if (contentContainer) {
+        contentContainer.innerHTML = '<div class="error-placeholder">Σφάλμα φόρτωσης περιεχομένου. Παρακαλώ δοκιμάστε ξανά.</div>';
+      }
+    }
+  }
 
+  setupTabElements() {
     this.tabs = [
       {
         btn: document.getElementById('btn-privacy'),
@@ -111,6 +127,17 @@ class LegalModal {
         title: 'GDPR'
       }
     ];
+  }
+
+  setupElements() {
+    this.backdrop = document.getElementById('legal-backdrop');
+    this.modal = document.getElementById('legal-modal');
+    this.dialog = this.modal ? this.modal.querySelector('.legal-dialog') : null;
+    this.closeBtn = document.getElementById('legal-close');
+    this.panelTitle = document.getElementById('panel-title');
+
+    // Initialize empty tabs array, will be populated after content loads
+    this.tabs = [];
   }
 
   initEventListeners() {
@@ -184,17 +211,17 @@ class LegalModal {
       else if (href && href.includes('gdpr')) section = 'gdpr';
 
       link.setAttribute('data-legal-open', section);
-      link.addEventListener('click', (e) => {
+      link.addEventListener('click', async (e) => {
         e.preventDefault();
-        this.openModal(section);
+        await this.openModal(section);
       });
     });
   }
 
-  openModal(which = 'privacy') {
+  async openModal(which = 'privacy') {
     // Create modal if it doesn't exist
     if (!this.backdrop || !this.modal) {
-      this.createModal();
+      await this.createModal();
       this.initEventListeners();
     }
     
@@ -216,15 +243,17 @@ class LegalModal {
     
     document.body.style.overflow = 'hidden';
     document.body.classList.add('modal-open');
-    this.selectTab(which);
     
-    // Focus first control for accessibility
+    // Wait a bit for content to be loaded before selecting tab
     setTimeout(() => {
+      this.selectTab(which);
+      
+      // Focus first control for accessibility
       const targetTab = this.tabs.find(t => t.btn && t.btn.id === 'btn-' + which);
       if (targetTab && targetTab.btn) {
         targetTab.btn.focus();
       }
-    }, 100);
+    }, 200);
   }
 
   closeModal() {
@@ -332,91 +361,63 @@ class LegalModal {
     });
   }
 
-  getContentPanels() {
+  async getContentPanels() {
+    // Content files mapping
+    const contentFiles = {
+      privacy: 'nomimotita/privacy-policy-content.html',
+      terms: 'nomimotita/terms-of-use-content.html',
+      cookies: 'nomimotita/cookies-policy-content.html',
+      gdpr: 'nomimotita/gdpr-content.html'
+    };
+
+    // Load content from external files
+    const loadedContent = {};
+    for (const [key, file] of Object.entries(contentFiles)) {
+      try {
+        const response = await fetch(file);
+        if (response.ok) {
+          loadedContent[key] = await response.text();
+        } else {
+          console.warn(`Could not load ${file}, using fallback content`);
+          loadedContent[key] = this.getFallbackContent(key);
+        }
+      } catch (error) {
+        console.warn(`Error loading ${file}:`, error);
+        loadedContent[key] = this.getFallbackContent(key);
+      }
+    }
+
     return `
       <!-- Privacy Policy Panel -->
       <article id="tab-privacy" class="legal-panel" role="tabpanel" aria-labelledby="btn-privacy">
-        <div class="meta">Τελευταία ενημέρωση: 1 Οκτωβρίου 2025</div>
-        <p>
-          Η <strong>Nerally</strong> ενεργεί ως <em>Υπεύθυνος Επεξεργασίας</em> για δεδομένα προσωπικού χαρακτήρα
-          που συλλέγονται νόμιμα μέσω του ιστότοπου και στο πλαίσιο παροχής υπηρεσιών (πελάτες, συνεργάτες, υποψήφιοι).
-          Η ιδιωτικότητα και η ακεραιότητά σας είναι κρίσιμες για εμάς· εφαρμόζουμε την ισχύουσα νομοθεσία (GDPR,
-          Ν. 4624/2019, Ν. 3471/2006).
-        </p>
-        <h3>Τι δεδομένα συλλέγουμε</h3>
-        <ul>
-          <li>Στοιχεία επικοινωνίας (όνομα, email, τηλέφωνο, περιεχόμενο μηνυμάτων).</li>
-          <li>Στοιχεία συνεργασίας/τιμολόγησης (επωνυμία, ΑΦΜ, έδρα, στοιχεία εκπροσώπου).</li>
-          <li>Τεχνικά δεδομένα (IP, browser/OS, χρονικές σημάνσεις, σελίδες/σφάλματα).</li>
-          <li>Cookies: μόνο όσα είναι απολύτως απαραίτητα για διαχείριση ετικετών (GTM).</li>
-        </ul>
-        <p><strong>Δεν</strong> ζητούμε <em>ειδικές κατηγορίες δεδομένων</em>. Παρακαλούμε μην μας αποστέλλετε τέτοια.</p>
-
-        <h3>Σκοποί &amp; νομικές βάσεις</h3>
-        <ul>
-          <li>Επικοινωνία/παροχή υπηρεσιών — εκτέλεση σύμβασης ή προσυμβατικά μέτρα (άρ. 6(1)(β)).</li>
-          <li>Τιμολόγηση/συμμόρφωση — έννομη υποχρέωση (άρ. 6(1)(γ)).</li>
-          <li>Ασφάλεια συστημάτων — έννομο συμφέρον (άρ. 6(1)(στ)).</li>
-          <li>Ενημερωτικά/marketing — συγκατάθεση (άρ. 6(1)(α)) όπου απαιτείται.</li>
-        </ul>
-
-        <h3>Κοινή χρήση &amp; εκτελούντες</h3>
-        <p>Δεδομένα διαβιβάζονται μόνο σε παρόχους (hosting, email κ.ά.) με συμβάσεις άρθ. 28 GDPR. Εκτός ΕΟΧ: SCCs/κατάλληλες εγγυήσεις.</p>
-
-        <h3>Διατήρηση</h3>
-        <ul>
-          <li>Συμβατικά/φορολογικά: έως 10 έτη.</li>
-          <li>Αιτήματα επικοινωνίας: έως 24 μήνες.</li>
-          <li>Τεχνικά logs: έως 12 μήνες.</li>
-        </ul>
-
-        <h3>Δικαιώματα</h3>
-        <p>Πρόσβαση, διόρθωση, διαγραφή, περιορισμός, φορητότητα, εναντίωση, ανάκληση συγκατάθεσης· καταγγελία στην ΑΠΔΠΧ (www.dpa.gr).
-           Αιτήματα στο <a href="mailto:info@nerally.gr">info@nerally.gr</a>.</p>
-
-        <h3>Ασφάλεια</h3>
-        <p>RBAC, ελάχιστα δικαιώματα, κρυπτογράφηση σε μεταφορά, καταγραφή συμβάντων, περιοδικοί έλεγχοι.</p>
+        ${loadedContent.privacy}
       </article>
 
       <!-- Terms Panel -->
       <article id="tab-terms" class="legal-panel" role="tabpanel" aria-labelledby="btn-terms" hidden>
-        <div class="meta">Τελευταία ενημέρωση: 1 Οκτωβρίου 2025</div>
-        <p>Με την πρόσβαση στο nerally.gr αποδέχεστε τους παρόντες όρους. Οι πληροφορίες είναι γενικής φύσης και
-           δεν αποτελούν συμβουλή. Πνευματική ιδιοκτησία: προστασία από ελληνικό/ευρωπαϊκό δίκαιο· απαγορεύεται
-           αναπαραγωγή χωρίς άδεια.</p>
-        <h3>Αποδεκτή χρήση</h3>
-        <ul>
-          <li>Απαγορεύεται παράνομη χρήση, παρεμβολή στη λειτουργία ή μη εξουσιοδοτημένη πρόσβαση.</li>
-          <li>Σεβασμός δικαιωμάτων τρίτων και προσωπικών δεδομένων.</li>
-        </ul>
-        <h3>Περιορισμός ευθύνης</h3>
-        <p>Δεν φέρουμε ευθύνη για έμμεσες/παρεπόμενες ζημίες στο μέτρο που ο νόμος επιτρέπει. Δίκαιο: ελληνικό — αρμόδια Δικαστήρια Αθηνών.</p>
+        ${loadedContent.terms}
       </article>
 
       <!-- Cookies Panel -->
       <article id="tab-cookies" class="legal-panel" role="tabpanel" aria-labelledby="btn-cookies" hidden>
-        <div class="meta">Τελευταία ενημέρωση: 1 Οκτωβρίου 2025</div>
-        <h3>Τι είναι cookie</h3>
-        <p>Μικρό αρχείο κειμένου που βοηθά τη λειτουργία ιστοσελίδων. Μπορείτε να τα απενεργοποιήσετε από τον φυλλομετρητή σας.</p>
-        <h3>Τι χρησιμοποιούμε</h3>
-        <ul>
-          <li><strong>Google Tag Manager (GTM):</strong> εργαλείο διαχείρισης ετικετών. Δεν τοποθετεί cookies από μόνο του.</li>
-        </ul>
-        <p>Αν προστεθούν στο μέλλον analytics/marketing cookies, θα ζητήσουμε συγκατάθεση βάσει ePrivacy/Ν.3471/2006.</p>
+        ${loadedContent.cookies}
       </article>
 
       <!-- GDPR Panel -->
       <article id="tab-gdpr" class="legal-panel" role="tabpanel" aria-labelledby="btn-gdpr" hidden>
-        <div class="meta">Τελευταία ενημέρωση: 1 Οκτωβρίου 2025</div>
-        <h3>Δικαιώματα υποκειμένων</h3>
-        <ul>
-          <li>Πρόσβαση, διόρθωση, διαγραφή, περιορισμός, φορητότητα, εναντίωση, ανάκληση συγκατάθεσης.</li>
-          <li>Καταγγελία στην ΑΠΔΠΧ — Κηφισίας 1–3, 115 23 Αθήνα, τηλ. +30 210 6475600, complaints@dpa.gr.</li>
-        </ul>
-        <h3>Παραβιάσεις &amp; συμμόρφωση</h3>
-        <p>Κοινοποίηση παραβιάσεων στην ΑΠΔΠΧ εντός 72 ωρών όπου απαιτείται· ενημέρωση υποκειμένων όταν υπάρχει υψηλός κίνδυνος.</p>
+        ${loadedContent.gdpr}
       </article>
     `;
+  }
+
+  getFallbackContent(type) {
+    const fallbacks = {
+      privacy: '<div class="meta">Περιεχόμενο μη διαθέσιμο</div><p>Προσπάθεια φόρτωσης περιεχομένου...</p>',
+      terms: '<div class="meta">Περιεχόμενο μη διαθέσιμο</div><p>Προσπάθεια φόρτωσης περιεχομένου...</p>',
+      cookies: '<div class="meta">Περιεχόμενο μη διαθέσιμο</div><p>Προσπάθεια φόρτωσης περιεχομένου...</p>',
+      gdpr: '<div class="meta">Περιεχόμενο μη διαθέσιμο</div><p>Προσπάθεια φόρτωσης περιεχομένου...</p>'
+    };
+    return fallbacks[type] || '<div class="meta">Σφάλμα φόρτωσης</div>';
   }
 }
 

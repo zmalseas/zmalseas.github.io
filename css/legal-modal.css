@@ -48,6 +48,33 @@
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
 }
 
+/* Loading and error states */
+.loading-placeholder,
+.error-placeholder {
+  padding: 3rem 2rem;
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
+
+.loading-placeholder::before {
+  content: "⏳";
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.error-placeholder {
+  color: #d73027;
+}
+
+.error-placeholder::before {
+  content: "⚠️";
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
 @media (max-width: 780px) {
   .legal-dialog {
     grid-template-columns: 1fr;
@@ -335,8 +362,8 @@
 /* Additional mobile optimizations */
 @media (max-width: 480px) {
   .legal-dialog {
-    width: 95vw;
-    height: 95vh;
+    width: 90vw;
+    height: 85vh;
     margin: 0;
     grid-template-columns: 1fr;
   }

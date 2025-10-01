@@ -21,8 +21,8 @@ body.menu-open .chat-widget {
 .overlay-header a{display:flex;align-items:center;gap:10px;color:var(--white);text-decoration:none}
 .overlay-header img{width:42px;height:42px}
 .overlay-header .title{font-weight:900;letter-spacing:.2px;font-size:1.5rem;color:var(--white)}
-.menu-wrap{position:absolute;inset:0;display:flex;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding-bottom:150px}
-.menu-list{width:min(90vw,560px);padding:96px 28px 150px 28px;display:flex;flex-direction:column !important;gap:8px;align-items:flex-start;box-sizing:border-box}
+.menu-wrap{position:absolute;top:0;left:0;right:0;bottom:120px;display:flex;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.menu-list{width:min(90vw,560px);padding:96px 28px 40px 28px;display:flex;flex-direction:column !important;gap:8px;align-items:flex-start;box-sizing:border-box}
 
 /* Overlay expandable */
 .menu-item{width:100%;display:block !important}
@@ -50,6 +50,7 @@ body.menu-open .chat-widget {
   bottom: 0;
   left: 0;
   right: 0;
+  height: 120px;
   background: #000;
   border-top: 1px solid #333;
   padding: 20px 28px;
@@ -57,6 +58,7 @@ body.menu-open .chat-widget {
   justify-content: center;
   align-items: center;
   z-index: 70;
+  box-sizing: border-box;
 }
 
 .overlay-footer-content {
@@ -183,7 +185,7 @@ body.menu-open .chat-widget {
   }
   
   .menu-list {
-    padding-bottom: 150px; /* Space for footer */
+    padding-bottom: 40px; /* Consistent padding */
     min-height: auto; /* Let it size naturally */
     display: flex !important;
     flex-direction: column !important;
@@ -198,6 +200,15 @@ body.menu-open .chat-widget {
 
 /* Responsive adjustments for overlay footer */
 @media (max-width: 768px) {
+  .menu-wrap {
+    bottom: 140px; /* Adjust for mobile footer height */
+  }
+  
+  .overlay-footer {
+    height: 140px; /* Taller on mobile */
+    padding: 16px 20px;
+  }
+  
   .menu-list {
     display: flex !important;
     flex-direction: column !important;
@@ -210,10 +221,6 @@ body.menu-open .chat-widget {
     width: 100% !important;
     display: block !important;
     flex: none !important;
-  }
-  
-  .overlay-footer {
-    padding: 16px 20px;
   }
   
   .overlay-footer-content {
