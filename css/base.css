@@ -162,7 +162,7 @@ main,
 
 /* Specific styling for pages with main-content class */
 .main-content {
-  padding: 90px 0 40px 0;
+  padding: 0; /* Remove padding that causes scrollbar issues */
 }
 
 /* Ensure no gap between main-content and footer */
