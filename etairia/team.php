@@ -6,7 +6,8 @@
   <title>Η Ομάδα μας - Nerally</title>
   <link rel="icon" type="image/png" href="../images/logo.png" />
   <link rel="stylesheet" href="../main.css">
-  <link rel="stylesheet" href="/css/cookie-consent.css">`n  <link rel="stylesheet" href="/css/legal-modal.css">
+  <link rel="stylesheet" href="/css/cookie-consent.css">
+  <link rel="stylesheet" href="/css/legal-modal.css">
   
   <!-- GTM loads via cookie-consent.js after analytics consent -->
 </head>
@@ -57,8 +58,9 @@
   <div id="site-footer"></div>
     
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>
-    <script src="/js/legal-modal.js"></script>`n  <script src="/js/cookie-consent.js"></script>
-  <script src="../app.js"></script>
+    <script src="/js/legal-modal.js"></script>
+    <script src="/js/cookie-consent.js"></script>
+    <script src="../app.js"></script>
 </body>
 </html>
 

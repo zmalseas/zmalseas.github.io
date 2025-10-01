@@ -27,6 +27,7 @@
   <link rel="icon" type="image/png" href="../images/logo.png" />
   <link rel="stylesheet" href="../main.css" />
   <link rel="stylesheet" href="/css/cookie-consent.css" />
+  <link rel="stylesheet" href="/css/legal-modal.css" />
   
   <!-- GTM loads via cookie-consent.js after analytics consent -->
 </head>
@@ -106,8 +107,9 @@
   <div id="site-footer"></div>
   
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>
-    <script src="/js/legal-modal.js"></script>`n  <script src="/js/cookie-consent.js"></script>
-  <script src="../app.js" defer></script>
+    <script src="/js/legal-modal.js"></script>
+    <script src="/js/cookie-consent.js"></script>
+    <script src="../app.js" defer></script>
 </body>
 </html>
 
