@@ -367,12 +367,12 @@ class LegalModal {
   }
 
   async getContentPanels() {
-    // Content files mapping - use relative paths from current location
+    // Content files mapping - use absolute paths from root
     const contentFiles = {
-      privacy: './nomimotita/privacy-policy-content.html',
-      terms: './nomimotita/terms-of-use-content.html',
-      cookies: './nomimotita/cookies-policy-content.html',
-      gdpr: './nomimotita/gdpr-content.html'
+      privacy: '/nomimotita/privacy-policy-content.html',
+      terms: '/nomimotita/terms-of-use-content.html',
+      cookies: '/nomimotita/cookies-policy-content.html',
+      gdpr: '/nomimotita/gdpr-content.html'
     };
 
     // Load content from external files with better error handling
