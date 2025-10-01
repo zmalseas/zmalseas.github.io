@@ -14,8 +14,8 @@
 </head>
 <body class="contact-page">
   
-  <!-- Header με navigation -->
-  <header id="header-placeholder"></header>
+  <!-- Include header directly -->
+  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/header.php'; ?>
 
   <!-- Hero Section -->
   <section class="contact-hero">
@@ -50,7 +50,80 @@
     <section class="contact-section">
       <div class="container">
         <div class="contact-grid">
-          <!-- Contact Form -->
+          <!-- Contact Info - Now on Left -->
+          <div class="contact-info-area">
+            <div class="info-card">
+              <h2>Γιατί να επιλέξετε τη Nerally;</h2>
+              <p>Η Nerally αποτελεί την αξιόπιστη επιλογή σας για ολοκληρωμένες λογιστικές και φοροτεχνικές υπηρεσίες.</p>
+              
+              <ul class="benefits-list">
+                <li>
+                  <div class="benefit-icon">🎓</div>
+                  <div class="benefit-text">
+                    <strong>Εξειδικευμένο προσωπικό</strong>
+                    <span>με πιστοποιήσεις και συνεχή εκπαίδευση</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="benefit-icon">👥</div>
+                  <div class="benefit-text">
+                    <strong>Προσωποποιημένη εξυπηρέτηση</strong>
+                    <span>για κάθε πελάτη</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="benefit-icon">🔒</div>
+                  <div class="benefit-text">
+                    <strong>Σύγχρονες τεχνολογίες</strong>
+                    <span>για ασφάλεια και αποδοτικότητα</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="benefit-icon">💡</div>
+                  <div class="benefit-text">
+                    <strong>Συμβουλευτικές υπηρεσίες</strong>
+                    <span>για βέλτιστη φορολογική διαχείριση</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="benefit-icon">✨</div>
+                  <div class="benefit-text">
+                    <strong>Διαφάνεια και αξιοπιστία</strong>
+                    <span>σε κάθε συναλλαγή</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="contact-details-card">
+              <h4>Στοιχεία Επικοινωνίας</h4>
+              <div class="contact-items">
+                <div class="contact-item">
+                  <div class="contact-icon">📞</div>
+                  <div class="contact-text">
+                    <span class="contact-label">Τηλέφωνο</span>
+                    <a href="tel:+306946365798" class="contact-value">+30 694 636 5798</a>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-icon">✉️</div>
+                  <div class="contact-text">
+                    <span class="contact-label">Email</span>
+                    <a href="mailto:info@nerally.gr" class="contact-value">info@nerally.gr</a>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-icon">🕐</div>
+                  <div class="contact-text">
+                    <span class="contact-label">Ωράριο</span>
+                    <span class="contact-value">Δευτέρα - Παρασκευή<br>9:00 - 17:00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form - Now on Right -->
           <div class="contact-form-area">
             <div class="form-header">
               <h2>Στείλτε μας μήνυμα</h2>
@@ -130,79 +203,6 @@
               </div>
             </form>
           </div>
-
-          <!-- Contact Info -->
-          <div class="contact-info-area">
-            <div class="info-card">
-              <h3>Γιατί να επιλέξετε τη Nerally;</h3>
-              <p>Η Nerally αποτελεί την αξιόπιστη επιλογή σας για ολοκληρωμένες λογιστικές και φοροτεχνικές υπηρεσίες.</p>
-              
-              <ul class="benefits-list">
-                <li>
-                  <div class="benefit-icon">🎓</div>
-                  <div class="benefit-text">
-                    <strong>Εξειδικευμένο προσωπικό</strong>
-                    <span>με πιστοποιήσεις και συνεχή εκπαίδευση</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="benefit-icon">👥</div>
-                  <div class="benefit-text">
-                    <strong>Προσωποποιημένη εξυπηρέτηση</strong>
-                    <span>για κάθε πελάτη</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="benefit-icon">🔒</div>
-                  <div class="benefit-text">
-                    <strong>Σύγχρονες τεχνολογίες</strong>
-                    <span>για ασφάλεια και αποδοτικότητα</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="benefit-icon">💡</div>
-                  <div class="benefit-text">
-                    <strong>Συμβουλευτικές υπηρεσίες</strong>
-                    <span>για βέλτιστη φορολογική διαχείριση</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="benefit-icon">✨</div>
-                  <div class="benefit-text">
-                    <strong>Διαφάνεια και αξιοπιστία</strong>
-                    <span>σε κάθε συναλλαγή</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-
-            <div class="contact-details-card">
-              <h4>Στοιχεία Επικοινωνίας</h4>
-              <div class="contact-items">
-                <div class="contact-item">
-                  <div class="contact-icon">📞</div>
-                  <div class="contact-text">
-                    <span class="contact-label">Τηλέφωνο</span>
-                    <a href="tel:+306946365798" class="contact-value">+30 694 636 5798</a>
-                  </div>
-                </div>
-                <div class="contact-item">
-                  <div class="contact-icon">✉️</div>
-                  <div class="contact-text">
-                    <span class="contact-label">Email</span>
-                    <a href="mailto:info@nerally.gr" class="contact-value">info@nerally.gr</a>
-                  </div>
-                </div>
-                <div class="contact-item">
-                  <div class="contact-icon">🕐</div>
-                  <div class="contact-text">
-                    <span class="contact-label">Ωράριο</span>
-                    <span class="contact-value">Δευτέρα - Παρασκευή<br>9:00 - 17:00</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -223,24 +223,7 @@
   </main>
   
   <!-- Footer -->
-  <footer id="footer-placeholder"></footer>
-  <!-- Scripts -->
-  <script>
-    // Load header and footer
-    fetch('../partials/header.html')
-      .then(response => response.text())
-      .then(html => {
-        document.getElementById('header-placeholder').innerHTML = html;
-        // Re-initialize any header scripts if needed
-        if (window.initHeaderScripts) window.initHeaderScripts();
-      });
-
-    fetch('../partials/footer.html')
-      .then(response => response.text())
-      .then(html => {
-        document.getElementById('footer-placeholder').innerHTML = html;
-      });
-  </script>
+  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>
   <script src="../js/floating-labels.js"></script>
   <script src="../js/contact-form.js"></script>
   <script src="/js/legal-modal.js"></script>

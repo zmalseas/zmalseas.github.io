@@ -1,0 +1,97 @@
+/* Additional Blog-specific CSS για το Nerally WordPress theme */
+
+/* Εδώ μπορείτε να προσθέσετε extra CSS rules που είναι specific για το blog */
+
+/* Example: Custom post type styling */
+.post-type-article .entry-header {
+    margin-bottom: 2rem;
+}
+
+.post-type-guide .entry-header {
+    background: linear-gradient(135deg, var(--blog-accent) 0%, var(--blog-secondary) 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+/* Category-specific styling */
+.category-tax-blog .article-card {
+    border-left: 4px solid var(--blog-accent);
+}
+
+.category-cyber-security .article-card {
+    border-left: 4px solid #ff6b6b;
+}
+
+.category-accounting .article-card {
+    border-left: 4px solid #4ecdc4;
+}
+
+/* Author box styling */
+.author-box {
+    background: var(--blog-bg-light);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    border: 1px solid var(--blog-border);
+}
+
+.author-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 1rem;
+}
+
+.author-info h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--blog-text);
+}
+
+.author-bio {
+    color: var(--blog-muted);
+    line-height: 1.6;
+}
+
+/* Custom widgets styling */
+.widget {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border: 1px solid var(--blog-border);
+}
+
+.widget-title {
+    color: var(--blog-text);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--blog-accent);
+    font-size: 1.2rem;
+}
+
+/* Newsletter signup form */
+.newsletter-widget input[type="email"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--blog-border);
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+.newsletter-widget button {
+    width: 100%;
+    background: var(--blog-accent);
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.newsletter-widget button:hover {
+    background: var(--blog-secondary);
+}
