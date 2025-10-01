@@ -1,68 +1,75 @@
-# Nerally Blog - WordPress Installation
+# Nerally WordPress Theme
 
-Αυτός ο φάκελος περιέχει όλα τα απαραίτητα αρχεία για την εγκατάσταση WordPress στο `/arthra` subdirectory του Nerally website.
+## 🎨 Οδηγίες Εγκατάστασης Theme
 
-## 📁 Δομή Αρχείων
+### Μέθοδος 1: Upload μέσω WordPress Admin (Συνιστάται)
+
+1. **Δημιουργία ZIP αρχείου:**
+   - Επιλέξτε όλα τα αρχεία σε αυτόν τον φάκελο
+   - Δημιουργήστε ZIP με όνομα `nerally-theme.zip`
+
+2. **Upload στο WordPress:**
+   - Μπείτε στο WordPress Admin Dashboard
+   - Πηγαίνετε σε **Εμφάνιση → Θέματα**
+   - Κάντε κλικ **Προσθήκη Νέου → Μεταφόρτωση Θέματος**
+   - Επιλέξτε το `nerally-theme.zip`
+   - Κάντε κλικ **Εγκατάσταση**
+   - Κάντε κλικ **Ενεργοποίηση**
+
+### Μέθοδος 2: FTP Upload
+
+1. Upload όλα τα αρχεία στο:
+   ```
+   /wp-content/themes/nerally-theme/
+   ```
+
+2. Ενεργοποίηση από WordPress Admin
+
+## 📁 Αρχεία Theme
 
 ```
-arthra/
-├── .htaccess                           # Apache configuration & security
-├── index.php                          # WordPress entry point  
-├── wp-config-sample.php                # WordPress configuration template
-├── wp-content/                         # WordPress content directory
-│   └── themes/
-│       └── nerally-theme/              # Custom Nerally theme
-│           ├── style.css               # Main theme stylesheet
-│           ├── functions.php           # Theme functionality
-│           ├── index.php               # Blog listing template
-│           ├── single.php              # Single post template
-│           ├── header.php              # Header template
-│           └── footer.php              # Footer template
-├── INSTALLATION_GUIDE.md               # Detailed setup instructions
-├── WORDPRESS_INTEGRATION_PLAN.md       # Architecture planning document
-└── README.md                          # This file
+nerally-theme/
+├── style.css          # Main theme stylesheet & theme info
+├── functions.php      # Theme functionality & WordPress hooks
+├── index.php         # Blog listing page
+├── single.php        # Individual blog post page
+├── header.php        # Header template
+├── footer.php        # Footer template
+└── css/
+    └── blog.css      # Additional blog styling
 ```
 
-## 🚀 Quick Setup
+## 🎯 Χαρακτηριστικά
 
-### 1. WordPress Core Installation
-Download και extract WordPress core files σε αυτόν τον φάκελο:
-- Όλα τα core WordPress files (wp-admin/, wp-includes/, etc.)
-- Χρήση του `wp-config-sample.php` ως βάση για το `wp-config.php`
+- ✅ Πλήρης ενοποίηση με Nerally brand
+- ✅ Custom post types (Articles, Guides)
+- ✅ SEO optimized με meta fields
+- ✅ Responsive design
+- ✅ Integration με main site (header/footer)
+- ✅ Legal modals support
+- ✅ Social sharing
+- ✅ Related articles
+- ✅ Categories και tags
 
-### 2. Database Configuration
-- Δημιουργήστε βάση δεδομένων: `nerally_blog`
-- Ενημερώστε το `wp-config.php` με τα στοιχεία της βάσης
+## ⚡ Post-Installation Steps
 
-### 3. Theme Activation
-- Το Nerally custom theme είναι ήδη έτοιμο στο `wp-content/themes/nerally-theme/`
-- Activate από το WordPress admin
+1. **Ενεργοποίηση Theme**
+2. **Δημιουργία Categories:**
+   - Φορολογία
+   - Λογιστική 
+   - Κυβερνοασφάλεια
+   - Επιχορηγήσεις
+   - Νομοθεσία
 
-### 4. SSL & Security
-- Ενεργοποιήστε SSL certificate
-- Το `.htaccess` έχει security configurations
+3. **Δημιουργία Difficulty Levels:**
+   - Αρχάριο
+   - Ενδιάμεσο  
+   - Προχωρημένο
 
-## 📋 Checklist πριν το Upload
-
-- [ ] WordPress core files downloaded και extracted
-- [ ] `wp-config.php` configured με database settings
-- [ ] SSL certificate εγκαταστημένο
-- [ ] File permissions ρυθμισμένα (755 για directories, 644 για files)
-- [ ] Custom theme tested
-
-## 🔗 Integration με Main Site
-
-Το theme είναι σχεδιασμένο να integrates seamlessly με το main Nerally site:
-- Shared CSS/JS resources
-- Consistent branding και design
-- Cross-site navigation
-- Legal modals integration
-
-## 📞 Support
-
-Για τεχνική υποστήριξη ή ερωτήσεις, δείτε το `INSTALLATION_GUIDE.md` για detailed instructions.
+4. **Δημιουργία Sample Content**
 
 ---
 
-**Last Updated**: October 1, 2025  
-**Version**: 1.0.0
+**Version:** 1.0.0  
+**Compatibility:** WordPress 5.0+  
+**Author:** Nerally Team
