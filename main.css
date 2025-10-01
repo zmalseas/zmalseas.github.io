@@ -27,9 +27,8 @@
 /* 9. Security styles and error states */
 @import url('css/security.css');
 
-/* 10. Calculator applications */
-@import url('css/rent-tax-calculator.css');
-@import url('css/income-tax-calculator.css');
+/* 10. Calculator applications - Consolidated */
+@import url('css/calculators.css');
 
 /* 11. Global overrides */
 /* Hide reCAPTCHA badge completely */

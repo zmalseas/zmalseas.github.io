@@ -5,7 +5,13 @@
 button,
 input[type="submit"],
 input[type="button"],
-input[type="reset"],
+input[type="reset"] {
+  min-height: 44px;
+  min-width: 44px;
+  touch-action: manipulation; /* Prevents zoom on double-tap */
+  /* Keep existing display properties from base.css - don't override */
+}
+
 .chat-button,
 .service-card,
 .menu-toggle {
@@ -14,7 +20,7 @@ input[type="reset"],
   display: flex;
   align-items: center;
   justify-content: center;
-  touch-action: manipulation; /* Prevents zoom on double-tap */
+  touch-action: manipulation;
 }
 
 /* Navigation links - separate rules to avoid conflicts */

@@ -242,8 +242,7 @@
 }
 h1{margin:0 0 12px 0;font-size:2rem}
 p{margin:0 0 12px 0;line-height:1.6;color:#222}
-.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:800;border-radius:10px;padding:12px 16px;border:1px solid #222;color:#0b0b0b;background:#fff}
-.btn:hover{border-color:#0b0b0b;transform:translateY(-1px);transition:transform var(--speed) ease}
+/* Button styles moved to base.css to avoid conflicts */
 
 /* ===== Chat Widget ===== */
 .chat-widget {

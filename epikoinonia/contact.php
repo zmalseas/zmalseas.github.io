@@ -4,11 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Επικοινωνία - Nerally</title>
-  <link rel="icon" type="image/png" href="../images/logo.png" />
+  <link r  <!-- Footer -->
+  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>
+  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/floating-labels-inline.php'; ?>
+  <script src="../js/contact-form.js"></script>icon" type="image/png" href="../images/logo.png" />
   <link rel="stylesheet" href="../main.css">
-  <link rel="stylesheet" href="../css/contact-modern.css">
   <link rel="stylesheet" href="/css/legal-modal.css">
-  <script src="/js/site-config.js"></script>
+  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/site-config-inline.php'; ?></script>
   
   <!-- GTM loads via cookie-consent.js after analytics consent -->
 </head>

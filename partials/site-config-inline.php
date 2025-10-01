@@ -1,3 +1,8 @@
+<?php
+// Inline JavaScript - Site Configuration
+// Replaces js/site-config.js (10 lines)
+?>
+<script>
 // Global Site Configuration (no secrets here)
 // Attach to window so legacy scripts can read it without modules
 (function () {
@@ -8,4 +13,4 @@
     RECAPTCHA_SITE: '6Lcd7dcrAAAAADzfwDc4AG_kN6jKU0-0Fo78NmYx'
   };
 })();
-
+</script>
