@@ -1,2 +1,53 @@
-<?php include __DIR__ . '/company.html'; ?>
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Εταιρεία - Nerally</title>
+  <link rel="icon" type="image/png" href="../images/logo.png" />
+  <link rel="stylesheet" href="../main.css">
+  <link rel="stylesheet" href="/css/cookie-consent.css">`n  <link rel="stylesheet" href="/css/legal-modal.css">
+  
+  <!-- GTM loads via cookie-consent.js after analytics consent -->
+</head>
+<body>
+  
+  
+  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/header.php'; ?>
+
+  <main class="main-content">
+    <div class="container">
+      <div class="page-header">
+        <h1>Η Εταιρεία μας</h1>
+        <p>Μάθετε περισσότερα για την ιστορία και το όραμά μας</p>
+      </div>
+
+      <div class="content-section">
+        <h2>Ποιοι Είμαστε</h2>
+        <p>Η Nerally είναι μια καινοτόμος εταιρεία που ειδικεύεται στην παροχή ολοκληρωμένων λογιστικών και συμβουλευτικών υπηρεσιών. Με έδρα την Αθήνα, εξυπηρετούμε επιχειρήσεις κάθε μεγέθους.</p>
+
+        <h2>Η Αποστολή μας</h2>
+        <p>Στόχος μας είναι να παρέχουμε υπηρεσίες υψηλής ποιότητας που συνδυάζουν την παραδοσιακή λογιστική εμπειρία με τις σύγχρονες τεχνολογικές λύσεις.</p>
+
+        <h2>Οι Αξίες μας</h2>
+        <ul>
+          <li><strong>Ακρίβεια:</strong> Κάθε λεπτομέρεια μετράει</li>
+          <li><strong>Καινοτομία:</strong> Χρησιμοποιούμε τις πιο σύγχρονες τεχνολογίες</li>
+          <li><strong>Εμπιστοσύνη:</strong> Χτίζουμε μακροχρόνιες σχέσεις</li>
+          <li><strong>Ανάπτυξη:</strong> Στηρίζουμε την ανάπτυξη των επιχειρήσεών σας</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>
+  
+    <script src="/js/legal-modal.js"></script>`n  <script src="/js/cookie-consent.js"></script>
+  <script src="../app.js"></script>
+</body>
+</html>
+
+
+
+
 

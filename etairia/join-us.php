@@ -1,2 +1,83 @@
-<?php include __DIR__ . '/join-us.html'; ?>
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Γίνε Μέλος - Nerally</title>
+  <link rel="icon" type="image/png" href="../images/logo.png" />
+  <link rel="stylesheet" href="../main.css">
+  <link rel="stylesheet" href="/css/cookie-consent.css">`n  <link rel="stylesheet" href="/css/legal-modal.css">
+  
+  <!-- GTM loads via cookie-consent.js after analytics consent -->
+</head>
+<body>
+  
+  
+  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/header.php'; ?>
+
+  <main class="main-content">
+    <div class="container">
+      <div class="page-header">
+        <h1>Γίνε Μέλος της Ομάδας μας</h1>
+        <p>Ένωσε τις δυνάμεις σου με την ομάδα της Nerally</p>
+      </div>
+
+      <div class="content-section">
+        <h2>Γιατί να Επιλέξεις τη Nerally;</h2>
+        <ul>
+          <li>🚀 <strong>Καινοτόμο Περιβάλλον:</strong> Εργάσου με τις πιο σύγχρονες τεχνολογίες</li>
+          <li>📚 <strong>Συνεχής Εκπαίδευση:</strong> Πιστοποιήσεις και training programs</li>
+          <li>💼 <strong>Επαγγελματική Ανάπτυξη:</strong> Ευκαιρίες εξέλιξης στην καριέρα σου</li>
+          <li>🤝 <strong>Team Spirit:</strong> Συνεργατικό και φιλικό περιβάλλον εργασίας</li>
+          <li>💰 <strong>Ανταγωνιστικές Αμοιβές:</strong> Αξιοκρατία και δίκαιη αμοιβή</li>
+        </ul>
+
+        <h2>Ανοιχτές Θέσεις Εργασίας</h2>
+        <div class="job-listings">
+          
+          <div class="job-card">
+            <h3>Λογιστής/ρια</h3>
+            <p><strong>Απαιτήσεις:</strong> Πτυχίο Λογιστικής, 2+ χρόνια εμπειρίας</p>
+            <p><strong>Τοποθεσία:</strong> Αθήνα</p>
+            <a href="mailto:careers@nerally.gr" class="apply-btn">Αίτηση</a>
+          </div>
+
+          <div class="job-card">
+            <h3>Digital Marketing Specialist</h3>
+            <p><strong>Απαιτήσεις:</strong> Εμπειρία σε SEO, SEM, Social Media</p>
+            <p><strong>Τοποθεσία:</strong> Remote/Αθήνα</p>
+            <a href="mailto:careers@nerally.gr" class="apply-btn">Αίτηση</a>
+          </div>
+
+          <div class="job-card">
+            <h3>Cyber Security Expert</h3>
+            <p><strong>Απαιτήσεις:</strong> Πιστοποιήσεις ασφάλειας, εμπειρία σε penetration testing</p>
+            <p><strong>Τοποθεσία:</strong> Αθήνα</p>
+            <a href="mailto:careers@nerally.gr" class="apply-btn">Αίτηση</a>
+          </div>
+
+        </div>
+
+        <h2>Στείλε το CV σου</h2>
+        <p>Ακόμα και αν δεν υπάρχει κάποια ανοιχτή θέση που σε ενδιαφέρει, στείλε μας το βιογραφικό σου στο <a href="mailto:careers@nerally.gr"><strong>careers@nerally.gr</strong></a> και θα επικοινωνήσουμε μαζί σου όταν προκύψει κάτι κατάλληλο!</p>
+
+        <div class="contact-info">
+          <h3>📧 Επικοινωνία για Καριέρα</h3>
+          <p>Email: <a href="mailto:careers@nerally.gr">careers@nerally.gr</a></p>
+          <p>Τηλέφωνο: <a href="tel:+306946365798">694 636 5798</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>
+    
+    <script src="/js/legal-modal.js"></script>`n  <script src="/js/cookie-consent.js"></script>
+  <script src="../app.js"></script>
+</body>
+</html>
+
+
+
+
 
