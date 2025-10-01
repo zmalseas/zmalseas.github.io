@@ -113,19 +113,27 @@ class LegalModal {
   initEventListeners() {
     // Close modal events
     if (this.backdrop) {
-      this.backdrop.addEventListener('click', () => this.closeModal());
+      this.backdrop.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.closeModal();
+      });
     }
     
     if (this.closeBtn) {
-      this.closeBtn.addEventListener('click', () => this.closeModal());
+      this.closeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.closeModal();
+      });
     }
 
     // ESC key to close
-    document.addEventListener('keydown', (e) => {
+    this.escKeyHandler = (e) => {
       if (this.modal && this.modal.getAttribute('aria-hidden') === 'false' && e.key === 'Escape') {
+        e.preventDefault();
         this.closeModal();
       }
-    });
+    };
+    document.addEventListener('keydown', this.escKeyHandler);
 
     // Tab navigation
     this.tabs.forEach(tab => {
@@ -180,8 +188,14 @@ class LegalModal {
     
     this.lastActive = document.activeElement;
     
-    if (this.backdrop) this.backdrop.setAttribute('aria-hidden', 'false');
-    if (this.modal) this.modal.setAttribute('aria-hidden', 'false');
+    if (this.backdrop) {
+      this.backdrop.setAttribute('aria-hidden', 'false');
+      this.backdrop.style.display = 'block';
+    }
+    if (this.modal) {
+      this.modal.setAttribute('aria-hidden', 'false');
+      this.modal.style.pointerEvents = 'auto';
+    }
     
     document.body.style.overflow = 'hidden';
     this.selectTab(which);
@@ -196,13 +210,20 @@ class LegalModal {
   }
 
   closeModal() {
-    if (this.backdrop) this.backdrop.setAttribute('aria-hidden', 'true');
-    if (this.modal) this.modal.setAttribute('aria-hidden', 'true');
+    if (this.backdrop) {
+      this.backdrop.setAttribute('aria-hidden', 'true');
+      this.backdrop.style.display = 'none';
+    }
+    if (this.modal) {
+      this.modal.setAttribute('aria-hidden', 'true');
+      this.modal.style.pointerEvents = 'none';
+    }
     
     document.body.style.overflow = '';
     
     if (this.lastActive) {
       this.lastActive.focus();
+      this.lastActive = null;
     }
   }
 

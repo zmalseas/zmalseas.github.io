@@ -587,16 +587,45 @@ main,
   
   .service-card-front,
   .service-card-back {
-    padding: 30px 25px;
+    padding: 25px 20px;
+  }
+  
+  .service-card h3 {
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 1.3;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  .service-card p {
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
   
   .about-text {
     text-align: center;
   }
   
-  /* Mobile touch - show flip on tap */
-  .service-card:active .service-card-inner {
-    transform: rotateY(180deg);
+  /* Mobile touch - enhanced flip behavior */
+  .service-card {
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .service-card-inner {
+    transition: transform 0.6s ease-in-out;
+  }
+  
+  /* Remove hover flip for touch devices */
+  @media (hover: none) {
+    .service-card:hover .service-card-inner {
+      transform: none;
+    }
   }
 }
 

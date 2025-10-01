@@ -8,6 +8,11 @@ body.menu-open {
   height: 100% !important;
 }
 
+/* Hide chat widget when overlay menu is open */
+body.menu-open .chat-widget {
+  display: none !important;
+}
+
 /* ===== Overlay (full screen) ===== */
 .overlay{position:fixed;inset:0;background:#000;display:none;z-index:60;overflow:hidden}
 .overlay.open{display:block;animation:fadeIn var(--speed) ease forwards}
@@ -16,21 +21,21 @@ body.menu-open {
 .overlay-header a{display:flex;align-items:center;gap:10px;color:var(--white);text-decoration:none}
 .overlay-header img{width:42px;height:42px}
 .overlay-header .title{font-weight:900;letter-spacing:.2px;font-size:1.5rem;color:var(--white)}
-.menu-wrap{position:absolute;inset:0;display:flex;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
-.menu-list{width:min(90vw,560px);padding:96px 28px 120px 28px;display:flex;flex-direction:column !important;gap:8px;align-items:flex-start;min-height:100vh;box-sizing:border-box}
+.menu-wrap{position:absolute;inset:0;display:flex;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding-bottom:120px}
+.menu-list{width:min(90vw,560px);padding:96px 28px 20px 28px;display:flex;flex-direction:column !important;gap:8px;align-items:flex-start;min-height:calc(100vh - 120px);box-sizing:border-box}
 
 /* Overlay expandable */
 .menu-item{width:100%;display:block !important}
 .menu-list > *{width:100%;display:block !important}
-.menu-toggle{display:inline-flex;align-items:center;justify-content:flex-start;gap:6px;color:var(--white);background:transparent;border:none;cursor:pointer;font-weight:700;font-size:1.06rem;padding:10px 0;text-align:left;line-height:1;text-decoration:none;position:relative}
+.menu-toggle{display:inline-flex;align-items:center;justify-content:flex-start;gap:6px;color:var(--white);background:transparent;border:none;cursor:pointer;font-weight:700;font-size:1.06rem;padding:10px 0;text-align:left;line-height:1;text-decoration:none;position:relative;width:fit-content}
 .menu-toggle::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--brand);transition:width var(--speed) ease}
-.menu-toggle:hover::after,.menu-toggle:focus-visible::after{width:100%}
+.menu-toggle:hover::after,.menu-toggle:focus-visible::after{width:calc(100% - 20px)}
 .menu-toggle .exp-caret{display:inline-block;transition:transform var(--speed) ease,color var(--speed) ease}
 .menu-item.open .menu-toggle .exp-caret{transform:rotate(90deg);color:var(--brand)}
 .menu-toggle:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
-.menu-sub{overflow:hidden;max-height:0;opacity:.0;transform:translateY(-4px);transition:max-height var(--speed) ease,opacity var(--speed) ease,transform var(--speed) ease;padding-left:30px}
+.menu-sub{overflow:hidden;max-height:0;opacity:.0;transform:translateY(-4px);transition:max-height var(--speed) ease,opacity var(--speed) ease,transform var(--speed) ease;padding-left:30px;display:flex;flex-direction:column;gap:4px}
 .menu-item.open .menu-sub{max-height:400px;opacity:1;transform:translateY(0)}
-.menu-sub a{display:block;color:var(--white);text-decoration:none;font-weight:700;font-size:1rem;padding:8px 0;position:relative;transition:all 0.4s ease;transform:scale(1);width:fit-content}
+.menu-sub a{display:block;color:var(--white);text-decoration:none;font-weight:700;font-size:1rem;padding:8px 0;position:relative;transition:all 0.4s ease;transform:scale(1);width:100%;margin-bottom:4px}
 .menu-sub a:hover,.menu-sub a:focus-visible{color:var(--brand);transform:scale(1.05);text-shadow:0 0 8px rgba(0,229,255,0.3)}
 .menu-sub a .sm-arrow{opacity:0;transform:translateX(-6px);transition:transform var(--speed) ease,opacity var(--speed) ease;color:var(--brand)}
 .menu-sub a.clicked{color:var(--brand)}
@@ -38,7 +43,7 @@ body.menu-open {
 
 /* Overlay footer */
 .overlay-footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
@@ -48,7 +53,7 @@ body.menu-open {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10;
+  z-index: 70;
 }
 
 .overlay-footer-content {
