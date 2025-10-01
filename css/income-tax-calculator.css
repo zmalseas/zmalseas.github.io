@@ -3,6 +3,23 @@
 .content-section {
   margin: 0;
   padding: 0;
+  min-height: 0; /* Allow natural sizing */
+  overflow: visible; /* Prevent internal scrollbars */
+  height: auto; /* Let content determine height */
+}
+
+/* Fix calculator container scrolling issues */
+.calculator-container {
+  min-height: 0; /* Allow natural sizing */
+  overflow: visible; /* Remove any scroll constraints */
+  height: auto; /* Auto height based on content */
+}
+
+.calculator-form {
+  min-height: 0; /* Allow natural sizing */
+  overflow: visible; /* Remove scroll constraints */
+  height: auto; /* Auto height */
+  max-height: none; /* Remove any height limits */
 }
 
 .page-header {

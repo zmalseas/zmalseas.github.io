@@ -6,6 +6,9 @@
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   margin-bottom: 40px;
+  min-height: 0; /* Prevent scrollbar issues */
+  overflow: visible; /* Allow natural content flow */
+  height: auto; /* Auto size based on content */
 }
 
 .calculator-form {
@@ -13,6 +16,10 @@
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  min-height: 0; /* Prevent scrollbar issues */
+  overflow: visible; /* Allow natural content flow */
+  height: auto; /* Auto size based on content */
+  max-height: none; /* Remove height constraints */
 }
 
 .calculator-form h2 {

@@ -377,29 +377,31 @@ class LegalModal {
 
     // Load content from external files with better error handling
     const loadedContent = {};
-    const loadPromises = Object.entries(contentFiles).map(async ([key, file]) => {
+    for (const [key, file] of Object.entries(contentFiles)) {
       try {
+        console.log(`Loading ${key} from ${file}`);
         const response = await fetch(file, {
-          cache: 'no-cache',
-          headers: {
-            'Content-Type': 'text/html'
-          }
+          method: 'GET',
+          cache: 'no-cache'
         });
+        
+        console.log(`Response for ${key}:`, response.status, response.statusText);
+        
         if (response.ok) {
           const content = await response.text();
+          console.log(`Content loaded for ${key}:`, content.length, 'characters');
           loadedContent[key] = content.trim();
         } else {
-          console.warn(`HTTP ${response.status} for ${file}, using fallback content`);
+          console.error(`Failed to load ${file}: ${response.status} ${response.statusText}`);
           loadedContent[key] = this.getFallbackContent(key);
         }
       } catch (error) {
-        console.warn(`Network error loading ${file}:`, error);
+        console.error(`Error loading ${file}:`, error);
         loadedContent[key] = this.getFallbackContent(key);
       }
-    });
+    }
 
-    // Wait for all content to load
-    await Promise.all(loadPromises);
+
 
     return `
       <!-- Privacy Policy Panel -->
