@@ -17,11 +17,8 @@ class LegalModal {
   }
 
   init() {
-    // Create modal elements if they don't exist
-    this.createModal();
-    
-    // Initialize event listeners
-    this.initEventListeners();
+    // Only setup footer triggers initially
+    this.setupFooterTriggers();
     
     // Handle hash navigation (optional)
     this.handleHashNavigation();
@@ -175,6 +172,12 @@ class LegalModal {
   }
 
   openModal(which = 'privacy') {
+    // Create modal if it doesn't exist
+    if (!this.backdrop || !this.modal) {
+      this.createModal();
+      this.initEventListeners();
+    }
+    
     this.lastActive = document.activeElement;
     
     if (this.backdrop) this.backdrop.setAttribute('aria-hidden', 'false');
