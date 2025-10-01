@@ -148,6 +148,28 @@
   font-size: 15px;
   font-weight: 800;
   color: var(--legal-ink);
+  flex: 1;
+}
+
+.legal-header-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legal-nav-toggle {
+  appearance: none;
+  border: 1px solid var(--legal-line);
+  background: #fff;
+  color: var(--legal-ink);
+  border-radius: 8px;
+  width: 34px;
+  height: 30px;
+  font-size: 16px;
+  line-height: 28px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: none;
 }
 
 .legal-close {
@@ -164,7 +186,8 @@
   transition: all 0.2s ease;
 }
 
-.legal-close:hover {
+.legal-close:hover,
+.legal-nav-toggle:hover {
   background: #f5f5f5;
 }
 
@@ -255,6 +278,60 @@
   }
 }
 
+/* Mobile navigation overlay */
+.legal-nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 10001;
+  display: none;
+}
+
+.legal-nav-overlay.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.legal-nav-menu {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 300px;
+  width: 90%;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+}
+
+.legal-nav-menu h3 {
+  margin: 0 0 15px 0;
+  font-size: 16px;
+  color: var(--legal-ink);
+}
+
+.legal-nav-menu button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: 12px 0;
+  font-size: 14px;
+  color: var(--legal-ink);
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.legal-nav-menu button:hover {
+  color: var(--brand);
+}
+
+.legal-nav-menu button:last-child {
+  border-bottom: none;
+}
+
 /* Additional mobile optimizations */
 @media (max-width: 480px) {
   .legal-dialog {
@@ -265,14 +342,15 @@
   }
   
   .legal-sidebar {
-    border-right: 0 !important;
-    border-bottom: 1px solid var(--legal-line);
-    max-height: 30vh;
-    overflow-y: auto;
+    display: none;
+  }
+  
+  .legal-nav-toggle {
+    display: block !important;
   }
   
   .legal-content {
-    height: 65vh;
+    height: 100%;
     overflow: hidden;
   }
   
@@ -282,17 +360,6 @@
     -webkit-overflow-scrolling: touch;
     font-size: 12px;
     padding: 10px 12px;
-  }
-  
-  .legal-header {
-    position: relative;
-  }
-  
-  .legal-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 10;
   }
   
   .legal-brand h1 {
@@ -312,6 +379,13 @@
 /* Smooth scrolling for content */
 .legal-scroll {
   scroll-behavior: smooth;
+  overscroll-behavior: contain;
+}
+
+/* Prevent background scroll when modal is open */
+body.modal-open {
+  overflow: hidden !important;
+  touch-action: none;
 }
 
 /* Focus styles for better accessibility */

@@ -419,6 +419,7 @@ p{margin:0 0 12px 0;line-height:1.6;color:#222}
   background: transparent;
   border-radius: 8px;
   overflow: hidden;
+  overscroll-behavior: contain;
 }
 
 .chat-header {
@@ -618,6 +619,22 @@ p{margin:0 0 12px 0;line-height:1.6;color:#222}
   line-height: 1.4;
   max-width: calc(100% - 24px);
   hyphens: auto;
+}
+
+.recaptcha-info {
+  margin: 12px 0;
+  padding: 8px 0;
+  color: #666;
+  font-size: 11px;
+  line-height: 1.4;
+  text-align: center;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.recaptcha-info a {
+  color: #666;
+  text-decoration: underline;
 }
 
 .form-actions {

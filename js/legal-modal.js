@@ -63,7 +63,10 @@ class LegalModal {
         <section class="legal-content">
           <header class="legal-header">
             <h2 class="legal-title" id="panel-title">Πολιτική Απορρήτου</h2>
-            <button class="legal-close" id="legal-close" aria-label="Κλείσιμο">×</button>
+            <div class="legal-header-controls">
+              <button class="legal-nav-toggle" id="legal-nav-toggle" aria-label="Πλοήγηση">☰</button>
+              <button class="legal-close" id="legal-close" aria-label="Κλείσιμο">×</button>
+            </div>
           </header>
           <div class="legal-scroll">
             ${this.getContentPanels()}
@@ -123,6 +126,15 @@ class LegalModal {
       this.closeBtn.addEventListener('click', (e) => {
         e.preventDefault();
         this.closeModal();
+      });
+    }
+    
+    // Mobile navigation toggle
+    const navToggle = document.getElementById('legal-nav-toggle');
+    if (navToggle) {
+      navToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.showMobileNavigation();
       });
     }
 
@@ -191,13 +203,19 @@ class LegalModal {
     if (this.backdrop) {
       this.backdrop.setAttribute('aria-hidden', 'false');
       this.backdrop.style.display = 'block';
+      this.backdrop.style.visibility = 'visible';
+      this.backdrop.style.opacity = '1';
     }
     if (this.modal) {
       this.modal.setAttribute('aria-hidden', 'false');
       this.modal.style.pointerEvents = 'auto';
+      this.modal.style.display = 'grid';
+      this.modal.style.visibility = 'visible';
+      this.modal.style.opacity = '1';
     }
     
     document.body.style.overflow = 'hidden';
+    document.body.classList.add('modal-open');
     this.selectTab(which);
     
     // Focus first control for accessibility
@@ -210,20 +228,48 @@ class LegalModal {
   }
 
   closeModal() {
-    if (this.backdrop) {
-      this.backdrop.setAttribute('aria-hidden', 'true');
-      this.backdrop.style.display = 'none';
-    }
-    if (this.modal) {
-      this.modal.setAttribute('aria-hidden', 'true');
-      this.modal.style.pointerEvents = 'none';
-    }
-    
-    document.body.style.overflow = '';
-    
-    if (this.lastActive) {
-      this.lastActive.focus();
-      this.lastActive = null;
+    // Force close with multiple methods
+    try {
+      if (this.backdrop) {
+        this.backdrop.setAttribute('aria-hidden', 'true');
+        this.backdrop.style.display = 'none';
+        this.backdrop.style.visibility = 'hidden';
+        this.backdrop.style.opacity = '0';
+      }
+      if (this.modal) {
+        this.modal.setAttribute('aria-hidden', 'true');
+        this.modal.style.pointerEvents = 'none';
+        this.modal.style.display = 'none';
+        this.modal.style.visibility = 'hidden';
+        this.modal.style.opacity = '0';
+      }
+      
+      document.body.style.overflow = '';
+      document.body.classList.remove('modal-open');
+      
+      if (this.lastActive) {
+        this.lastActive.focus();
+        this.lastActive = null;
+      }
+      
+      // Remove modal from DOM completely to ensure it's closed
+      setTimeout(() => {
+        if (this.backdrop && this.backdrop.parentNode) {
+          this.backdrop.parentNode.removeChild(this.backdrop);
+        }
+        if (this.modal && this.modal.parentNode) {
+          this.modal.parentNode.removeChild(this.modal);
+        }
+        this.backdrop = null;
+        this.modal = null;
+        this.closeBtn = null;
+        this.tabs = [];
+      }, 300);
+      
+    } catch (error) {
+      console.error('Error closing modal:', error);
+      // Force page refresh if all else fails
+      location.reload();
     }
   }
 
@@ -249,6 +295,41 @@ class LegalModal {
     if (['privacy', 'terms', 'cookies', 'gdpr'].includes(hash)) {
       this.openModal(hash);
     }
+  }
+
+  showMobileNavigation() {
+    // Create mobile navigation overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'legal-nav-overlay active';
+    
+    const menu = document.createElement('div');
+    menu.className = 'legal-nav-menu';
+    
+    menu.innerHTML = `
+      <h3>Επιλέξτε ενότητα</h3>
+      <button data-section="privacy">Πολιτική Απορρήτου</button>
+      <button data-section="terms">Όροι Χρήσης</button>
+      <button data-section="cookies">Cookies</button>
+      <button data-section="gdpr">GDPR</button>
+    `;
+    
+    overlay.appendChild(menu);
+    document.body.appendChild(overlay);
+    
+    // Add event listeners
+    menu.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const section = e.target.getAttribute('data-section');
+        this.selectTab(section);
+        overlay.remove();
+      });
+    });
+    
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) {
+        overlay.remove();
+      }
+    });
   }
 
   getContentPanels() {
