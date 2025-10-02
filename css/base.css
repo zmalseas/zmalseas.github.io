@@ -1,30 +1,30 @@
 /* Base styles - CSS Variables, Resets & Fundamentals */
 
 :root {
-  /* New Unified Color Palette */
-  --color-dark-green: #61892F;
-  --color-bright-green: #86C232;
-  --color-dark-gray: #222629;
-  --color-medium-gray: #474B4F;
-  --color-light-gray: #6B6E70;
+  /* New Color Palette from Image */
+  --color-primary-green: #3BBA9C;
+  --color-dark-navy: #2E3047;
+  --color-medium-navy: #43455C;
+  --color-medium-gray: #3C3F58;
+  --color-light-gray: #707793;
   --color-white: #ffffff;
   --color-light-bg: #f8f9fa;
   
   /* Semantic Color Mapping */
-  --primary: var(--color-bright-green);
-  --primary-dark: var(--color-dark-green);
-  --primary-hover: var(--color-dark-green);
+  --primary: var(--color-primary-green);
+  --primary-dark: #2F9F85;
+  --primary-hover: #2F9F85;
   --secondary: var(--color-light-gray);
   --background: var(--color-light-bg);
   --surface: var(--color-white);
-  --text-primary: var(--color-dark-gray);
-  --text-secondary: var(--color-medium-gray);
+  --text-primary: var(--color-dark-navy);
+  --text-secondary: var(--color-medium-navy);
   --text-muted: var(--color-light-gray);
   --border: var(--color-light-gray);
-  --success: var(--color-bright-green);
+  --success: var(--color-primary-green);
   --warning: #f59e0b;
   --error: #ef4444;
-  --info: var(--color-bright-green);
+  --info: var(--color-primary-green);
   
   /* Unified Typography System */
   --font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
