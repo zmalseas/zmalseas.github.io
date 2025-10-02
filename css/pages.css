@@ -217,6 +217,69 @@
   color: #ff6b6b;
 }
 
+/* Contact Page split layout */
+.contact-section {
+  padding: 40px 0 60px;
+}
+
+.contact-grid.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.contact-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--brand) 0%, #ff6b6b 100%);
+  border-radius: 16px;
+  min-height: 420px;
+  color: #fff;
+  text-align: center;
+}
+
+.contact-hero {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.contact-right {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+}
+
+/* Form messages */
+.form-message {
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+}
+.form-message.success { background: #e7f6ec; color: #0a8f3e; border: 1px solid #bde5c8; }
+.form-message.error { background: #fdecea; color: #b3261e; border: 1px solid #f5c2c0; }
+.form-message .message-content { display: flex; gap: 8px; align-items: center; }
+.form-message .message-icon { font-size: 1.1rem; }
+
+/* Field-level errors */
+.field-error {
+  color: #b3261e;
+  font-size: 0.85rem;
+}
+.form-group .error { border-color: #b3261e !important; }
+
+@media (max-width: 900px) {
+  .contact-grid.two-col {
+    grid-template-columns: 1fr;
+  }
+  .contact-left { min-height: 240px; }
+}
+
 .newsletter-section {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;

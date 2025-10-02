@@ -221,6 +221,11 @@ class ContactFormHandler {
     for (const [key, value] of formData.entries()) {
       data[key] = value;
     }
+    // Add metadata similar to chat widget
+    data.source = data.source || 'contact-form';
+    if (this.siteKey && typeof this.siteKey === 'string') {
+      data.recaptcha_site_suffix = this.siteKey.slice(-4);
+    }
     
     return data;
   }
