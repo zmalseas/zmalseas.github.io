@@ -397,12 +397,13 @@ main,
 
 .btn > * {
   position: relative;
-  z-index: 1;
+  z-index: 10 !important;
+  color: inherit !important;
 }
 
 .btn-primary {
   background: var(--primary);
-  color: var(--text-white);
+  color: var(--text-white) !important;
   box-shadow: 0 2px 8px rgba(0, 229, 255, 0.3);
   border-color: var(--primary);
 }
@@ -412,17 +413,18 @@ main,
   box-shadow: 0 8px 25px rgba(0, 229, 255, 0.4);
   background: var(--primary-hover);
   border-color: var(--primary-hover);
+  color: var(--text-white) !important;
 }
 
 .btn-secondary {
   background: transparent;
-  color: var(--primary);
+  color: var(--primary) !important;
   border-color: var(--primary);
 }
 
 .btn-secondary:hover {
   background: var(--primary);
-  color: var(--text-white);
+  color: var(--text-white) !important;
   transform: translateY(-2px) scale(1.02);
   box-shadow: 0 8px 25px rgba(0, 229, 255, 0.4);
 }
@@ -646,8 +648,8 @@ main,
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(135deg, var(--brand) 0%, #00b8cc 100%);
-  color: #ffffff;
+  background: var(--primary);
+  color: var(--text-white) !important;
   text-decoration: none;
   padding: 12px 24px;
   border-radius: 8px;
@@ -661,7 +663,8 @@ main,
 .service-more-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 229, 255, 0.4);
-  background: linear-gradient(135deg, #00b8cc 0%, var(--brand) 100%);
+  background: var(--primary-hover);
+  color: var(--text-white) !important;
 }
 
 .service-more-btn::after {
