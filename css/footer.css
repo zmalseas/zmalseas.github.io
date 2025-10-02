@@ -2,16 +2,18 @@
 
 /* Footer - Simple & Clean */
 .site-footer {
-  background: #000;
+  background: var(--color-dark-gray);
   border-top: none;
   margin: 0;
   padding: 10px 0 8px 0;
-  color: #d6d6d6;
+  color: var(--color-light-gray);
   width: 100%;
   position: relative;
   z-index: 5;
   display: block;
   line-height: 1;
+  font-family: var(--font-family);
+  font-size: var(--font-size-small);
 }
 
 /* When it doesn't fit in one line - 3 centered lines */
@@ -59,8 +61,10 @@
 
 .copyright p {
   margin: 0;
-  font-size: 0.9rem;
-  color: #d6d6d6;
+  font-family: var(--font-family);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-light-gray);
 }
 
 .social-section {
@@ -71,9 +75,10 @@
 }
 
 .connect-text {
-  font-size: 0.9rem;
-  color: #d6d6d6;
-  font-weight: 500;
+  font-family: var(--font-family);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-light-gray);
 }
 
 .social-links {
@@ -142,9 +147,11 @@
 }
 
 .legal-link {
-  color: #999;
+  font-family: var(--font-family);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-normal);
+  color: var(--text-muted);
   text-decoration: none;
-  font-size: 0.75rem;
   padding: 3px 6px;
   border: 1px solid #444;
   border-radius: 3px;
