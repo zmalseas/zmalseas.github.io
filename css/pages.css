@@ -6,22 +6,19 @@
   margin-bottom: 50px;
   margin-top: 20px;
   padding: 25px 0;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-  color: var(--color-white);
+  background: linear-gradient(135deg, var(--brand) 0%, #ff6b6b 100%);
+  color: white;
   border-radius: 10px;
 }
 
 .page-header h1 {
-  font-family: var(--font-family);
-  font-size: var(--font-size-heading);
-  font-weight: var(--font-weight-bold);
+  font-size: 2.5rem;
   margin-bottom: 15px;
+  font-weight: 700;
 }
 
 .page-header p {
-  font-family: var(--font-family);
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-normal);
+  font-size: 1.1rem;
   opacity: 0.9;
   max-width: 600px;
   margin: 0 auto;
@@ -34,30 +31,23 @@
 }
 
 .content-section h2 {
-  font-family: var(--font-family);
-  font-size: var(--font-size-large);
-  font-weight: var(--font-weight-bold);
-  color: var(--primary);
+  color: var(--brand);
+  font-size: 1.8rem;
   margin: 40px 0 20px;
   padding-bottom: 10px;
-  border-bottom: 2px solid var(--primary);
+  border-bottom: 2px solid var(--brand);
 }
 
 .content-section h3 {
-  font-family: var(--font-family);
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-bold);
-  color: var(--text-primary);
+  color: #333;
+  font-size: 1.3rem;
   margin: 25px 0 15px;
 }
 
 .content-section p {
-  font-family: var(--font-family);
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-normal);
   line-height: 1.7;
   margin-bottom: 20px;
-  color: var(--text-secondary);
+  color: #555;
 }
 
 .content-section ul {
@@ -66,24 +56,20 @@
 }
 
 .content-section ul li {
-  font-family: var(--font-family);
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-normal);
   margin-bottom: 10px;
   line-height: 1.6;
-  color: var(--text-secondary);
+  color: #555;
 }
 
 .content-section a {
-  color: var(--primary);
+  color: var(--brand);
   text-decoration: none;
-  font-family: var(--font-family);
-  font-weight: var(--font-weight-bold);
+  font-weight: 600;
   transition: color 0.3s ease;
 }
 
 .content-section a:hover {
-  color: var(--primary-hover);
+  color: #ff6b6b;
   text-decoration: underline;
 }
 
@@ -105,10 +91,10 @@
 }
 
 .value-item {
-  background: var(--surface);
+  background: white;
   padding: 30px;
   border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(34, 38, 41, 0.08);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
