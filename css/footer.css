@@ -101,7 +101,7 @@
   max-height: 36px !important;
   border-radius: 50% !important;
   transition: all 0.3s ease;
-  color: #666;
+  color: var(--text-white);
   flex-shrink: 0;
   padding: 4px;
   box-sizing: border-box;

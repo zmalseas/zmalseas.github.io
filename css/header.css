@@ -77,7 +77,7 @@ nav.primary{display:flex;align-items:center;gap:16px}
   bottom: -8px;
   height: 2px;
   width: 100%;
-  background: var(--primary);
+  background: var(--primary) !important;
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.3s ease;
@@ -86,7 +86,7 @@ nav.primary{display:flex;align-items:center;gap:16px}
 .caret{display:inline-block;font-size:.85rem;transform-origin:center;transition:transform var(--speed) ease}
 .nav-item>a:hover .text::after,
 .nav-item:focus-within>a .text::after{transform:scaleX(1)}
-.nav-item>a:hover{color: var(--primary);}
+.nav-item>a:hover{color: var(--primary) !important;}
 
 /* Dropdown */
 .submenu{position:absolute;top:100%;left:0;min-width:220px;background:var(--color-black);border:1px solid #333;border-radius:12px;
