@@ -38,9 +38,6 @@ class NerallyApp {
       this.initializeSecurity();
       
       // Initialize advanced modules
-      this.initializeImageOptimizer();
-      this.initializePerformanceMonitor();
-      this.initializeSchemaManager();
       this.initializeServiceCards();
       this.initializeServiceWorker();
       
@@ -210,74 +207,7 @@ class NerallyApp {
     }
   }
 
-  initializeImageOptimizer() {
-    try {
-      const currentPath = window.location.pathname;
-      const isInSubfolder = this.isInSubfolder(currentPath);
-      const basePath = isInSubfolder ? "../" : "./";
-      
-      const script = document.createElement('script');
-      script.src = basePath + 'js/image-optimizer.js';
-      script.onload = () => {
-        console.log('🖼️ Image optimizer module loaded');
-        if (window.ImageOptimizer) {
-          new ImageOptimizer();
-        }
-      };
-      script.onerror = () => {
-        console.warn('⚠️ Image optimizer not loaded');
-      };
-      document.head.appendChild(script);
-    } catch (error) {
-      console.error('Image optimizer initialization failed:', error);
-    }
-  }
 
-  initializePerformanceMonitor() {
-    try {
-      const currentPath = window.location.pathname;
-      const isInSubfolder = this.isInSubfolder(currentPath);
-      const basePath = isInSubfolder ? "../" : "./";
-      
-      const script = document.createElement('script');
-      script.src = basePath + 'js/performance-monitor.js';
-      script.onload = () => {
-        console.log('📊 Performance monitor module loaded');
-        if (window.PerformanceMonitor) {
-          new PerformanceMonitor();
-        }
-      };
-      script.onerror = () => {
-        console.warn('⚠️ Performance monitor not loaded');
-      };
-      document.head.appendChild(script);
-    } catch (error) {
-      console.error('Performance monitor initialization failed:', error);
-    }
-  }
-
-  initializeSchemaManager() {
-    try {
-      const currentPath = window.location.pathname;
-      const isInSubfolder = this.isInSubfolder(currentPath);
-      const basePath = isInSubfolder ? "../" : "./";
-      
-      const script = document.createElement('script');
-      script.src = basePath + 'js/schema-manager.js';
-      script.onload = () => {
-        console.log('🏷️ Schema manager module loaded');
-        if (window.SchemaManager) {
-          new SchemaManager();
-        }
-      };
-      script.onerror = () => {
-        console.warn('⚠️ Schema manager not loaded');
-      };
-      document.head.appendChild(script);
-    } catch (error) {
-      console.error('Schema manager initialization failed:', error);
-    }
-  }
 
   initializeServiceWorker() {
     if ('serviceWorker' in navigator) {
