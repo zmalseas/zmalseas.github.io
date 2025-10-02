@@ -1,30 +1,33 @@
 /* Base styles - CSS Variables, Resets & Fundamentals */
 
 :root {
-  /* New Color Palette from Image */
-  --color-primary-green: #3BBA9C;
-  --color-dark-navy: #2E3047;
-  --color-medium-navy: #43455C;
-  --color-medium-gray: #3C3F58;
-  --color-light-gray: #707793;
+  /* Professional Black/White/Cyan Color Palette */
+  --color-black: #000000;
   --color-white: #ffffff;
-  --color-light-bg: #f8f9fa;
+  --color-cyan: #00e5ff;
+  --color-cyan-dark: #00b8cc;
+  --color-cyan-light: #4df7ff;
+  --color-gray-light: #f8f9fa;
+  --color-gray-medium: #6c757d;
+  --color-gray-dark: #343a40;
   
   /* Semantic Color Mapping */
-  --primary: var(--color-primary-green);
-  --primary-dark: #2F9F85;
-  --primary-hover: #2F9F85;
-  --secondary: var(--color-light-gray);
-  --background: var(--color-light-bg);
+  --primary: var(--color-cyan);
+  --primary-dark: var(--color-cyan-dark);
+  --primary-hover: var(--color-cyan-dark);
+  --primary-light: var(--color-cyan-light);
+  --secondary: var(--color-gray-medium);
+  --background: var(--color-gray-light);
   --surface: var(--color-white);
-  --text-primary: var(--color-dark-navy);
-  --text-secondary: var(--color-medium-navy);
-  --text-muted: var(--color-light-gray);
-  --border: var(--color-light-gray);
-  --success: var(--color-primary-green);
-  --warning: #f59e0b;
-  --error: #ef4444;
-  --info: var(--color-primary-green);
+  --text-primary: var(--color-black);
+  --text-secondary: var(--color-gray-dark);
+  --text-muted: var(--color-gray-medium);
+  --text-white: var(--color-white);
+  --border: #e9ecef;
+  --success: #28a745;
+  --warning: #ffc107;
+  --error: #dc3545;
+  --info: var(--color-cyan);
   
   /* Unified Typography System */
   --font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -165,8 +168,8 @@ main,
   position: absolute;
   top: -40px;
   left: 10px;
-  background: #000;
-  color: #fff;
+  background: var(--color-black);
+  color: var(--text-white);
   padding: 8px 12px;
   border-radius: 6px;
   z-index: 9999;
@@ -235,7 +238,7 @@ main,
 /* Special handling for homepage with contact section */
 .has-fullscreen-hero .site-footer {
   margin-top: 0;
-  background: #000;
+  background: var(--color-black);
   border-top: none;
 }
 
@@ -256,7 +259,7 @@ main,
   left: 0;
   height: 100vh;
   width: 100%;
-  background: #000; /* image provided by <picture> */
+  background: var(--color-black); /* image provided by <picture> */
   background-attachment: fixed;
   display: flex;
   align-items: center;
@@ -367,38 +370,55 @@ main,
   font-size: var(--font-size-base);
   border-radius: 8px;
   padding: 14px 28px;
-  transition: all 0.25s ease;
-  border: 1px solid transparent;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
   cursor: pointer;
   white-space: nowrap;
   letter-spacing: 0.3px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+  left: 100%;
 }
 
 .btn-primary {
   background: var(--primary);
-  color: var(--color-white);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border: 1px solid var(--primary);
+  color: var(--text-white);
+  box-shadow: 0 2px 8px rgba(0, 229, 255, 0.3);
+  border-color: var(--primary);
 }
 
 .btn-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 229, 255, 0.4);
   background: var(--primary-hover);
   border-color: var(--primary-hover);
 }
 
 .btn-secondary {
   background: transparent;
-  color: var(--text-primary);
-  border: 1px solid var(--primary);
+  color: var(--primary);
+  border-color: var(--primary);
 }
 
 .btn-secondary:hover {
   background: var(--primary);
-  color: var(--color-white);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(134, 194, 50, 0.3);
+  color: var(--text-white);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 229, 255, 0.4);
 }
 
 /* Responsive Hero */
@@ -453,9 +473,9 @@ main,
 
 /* ===== About Section (White) ===== */
 .about-section {
-  background: #ffffff;
+  background: var(--surface);
   padding: 100px 0;
-  color: #333;
+  color: var(--text-primary);
   position: relative;
   z-index: 10;
   margin-top: 100vh;

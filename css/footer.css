@@ -2,11 +2,11 @@
 
 /* Footer - Simple & Clean */
 .site-footer {
-  background: var(--color-dark-gray);
+  background: var(--color-black);
   border-top: none;
   margin: 0;
   padding: 10px 0 8px 0;
-  color: var(--color-light-gray);
+  color: var(--text-white);
   width: 100%;
   position: relative;
   z-index: 5;
@@ -64,7 +64,7 @@
   font-family: var(--font-family);
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-normal);
-  color: var(--color-light-gray);
+  color: var(--text-white);
 }
 
 .social-section {
@@ -78,7 +78,7 @@
   font-family: var(--font-family);
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-normal);
-  color: var(--color-light-gray);
+  color: var(--text-white);
 }
 
 .social-links {
@@ -150,7 +150,7 @@
   font-family: var(--font-family);
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-normal);
-  color: var(--text-muted);
+  color: var(--text-white);
   text-decoration: none;
   padding: 3px 6px;
   border: 1px solid #444;
