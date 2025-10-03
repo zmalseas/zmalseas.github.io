@@ -40,12 +40,11 @@
           margin: 40px 0 20px; /* Increased spacing between sections */
           text-align: center; /* Center alignment */
           position: relative;
-          padding-bottom: 8px; /* Space for underline */
         }
         .rent-left h2::after {
           content: '';
           position: absolute;
-          bottom: 0;
+          bottom: -10px; /* Position the line below the heading */
           left: 0; /* Start from the left position */
           width: 50%; /* Half-width underline */
           height: 2px;
