@@ -69,7 +69,7 @@
           padding: 12px 16px;
           text-align: left; /* Adjusted alignment */
           font-weight: 600;
-          border-bottom: 2px solid #ccc; /* Added line below headers */
+          border-bottom: 2px solid #2c2b2bff; /* Added line below headers */
         }
         .tax-table td {
           padding: 10px 16px;
