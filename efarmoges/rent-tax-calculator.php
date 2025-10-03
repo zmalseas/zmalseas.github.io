@@ -114,9 +114,14 @@
         @media (max-width: 960px) { 
           .rent-wrap { grid-template-columns: 1fr; } 
           .rent-right{ padding:28px 18px; }
-          .rent-left h2::before,
+          .rent-left h2 {
+            text-align: center; /* Center alignment for small screens */
+            padding-left: 0; /* Remove left padding */
+          }
           .rent-left h2::after {
-            width: 40px;
+            left: 50%; /* Center the line */
+            transform: translateX(-50%); /* Adjust position */
+            width: 100%; /* Full-width underline */
           }
         }
       </style>
