@@ -38,8 +38,9 @@
           color: var(--accent);
           font-size: 20px;
           margin: 40px 0 20px; /* Increased spacing between sections */
-          text-align: center; /* Center alignment */
+          text-align: left; /* Align text to the left */
           position: relative;
+          padding-left: 50px; /* Align text with the left blue line */
         }
         .rent-left h2::after {
           content: '';
