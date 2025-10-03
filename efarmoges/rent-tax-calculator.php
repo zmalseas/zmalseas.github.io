@@ -14,7 +14,10 @@
           --rent-gap: 0; 
           --accent: #00e5ff; /* Cyan color for titles and highlights */
         }
-        body { margin: 0; }
+        body { 
+          margin: 0; 
+          overflow-x: hidden; /* Removed horizontal scroll */
+        }
         .rent-wrap { display: grid; grid-template-columns: 1fr 1fr; min-height: calc(100vh - 120px); }
         .rent-left { background:#fff; padding:40px 32px; overflow:auto; }
         .rent-right { 
@@ -54,9 +57,9 @@
         .tax-table {
           width: auto; /* Adjusted width to fit content */
           margin: 0 auto; /* Centered table */
+          border: 2px solid var(--accent); /* Added border around the table */
           border-collapse: collapse;
           background: #fff;
-          border: 2px solid var(--accent);
           border-radius: 8px;
           overflow: hidden;
         }
@@ -64,14 +67,15 @@
           background-color: var(--accent);
           color: white;
           padding: 12px 16px;
-          text-align: center;
+          text-align: left; /* Adjusted alignment */
           font-weight: 600;
+          border-bottom: 2px solid #ccc; /* Added line below headers */
         }
         .tax-table td {
           padding: 10px 16px;
           text-align: center;
-          border: 1px solid #ccc; /* Added borders */
-          color: #000; /* Changed text color to black */
+          border: none; /* Removed existing borders */
+          color: #000; /* Text color remains black */
         }
         .tax-table tr:last-child td {
           border-bottom: none;
