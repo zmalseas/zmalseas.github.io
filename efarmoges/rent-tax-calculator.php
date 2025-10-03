@@ -1,27 +1,19 @@
-<!DOCTYPE html><!DOCTYPE html><!DOCTYPE html><!DOCTYPE html><!DOCTYPE html><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="el">
-<head><html lang="el">
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" /><head><html lang="el">
-  <title>Φόρος Ενοικίων — Υπολογιστής Nerally</title>
-  <link rel="icon" type="image/png" href="../images/logo.png" />  <meta charset="UTF-8">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ΦΟΡΟΛΟΓΙΑ ΕΝΟΙΚΙΩΝ – ΦΥΣΙΚΑ ΠΡΟΣΩΠΑ | Nerally</title>
+  <link rel="icon" type="image/png" href="../images/logo.png" />
   <link rel="stylesheet" href="../main.css" />
-  <link rel="stylesheet" href="/css/cookie-consent.css" />  <meta name="viewport" content="width=device-width, initial-scale=1.0"><head><html lang="el">
+  <link rel="stylesheet" href="/css/cookie-consent.css" />
   <link rel="stylesheet" href="/css/legal-modal.css" />
-  <style>  <title>Φόρος Ενοικίων — Υπολογιστής Nerally</title>
-    <!DOCTYPE html>
-    <html lang="el">
-    <head>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>ΦΟΡΟΛΟΓΙΑ ΕΝΟΙΚΙΩΝ – ΦΥΣΙΚΑ ΠΡΟΣΩΠΑ | Nerally</title>
-      <link rel="icon" type="image/png" href="../images/logo.png" />
-      <link rel="stylesheet" href="../main.css" />
-      <link rel="stylesheet" href="/css/cookie-consent.css" />
-      <link rel="stylesheet" href="/css/legal-modal.css" />
       <style>
         /* Page-local, scoped layout so global CSS can't break it */
-        :root { --rent-gap: 0; }
+        :root { 
+          --rent-gap: 0; 
+          --accent: #00e5ff; /* Cyan color for titles and highlights */
+        }
         body { margin: 0; }
         .rent-wrap { display: grid; grid-template-columns: 1fr 1fr; min-height: calc(100vh - 120px); }
         .rent-left { background:#fff; padding:40px 32px; overflow:auto; }
@@ -31,11 +23,83 @@
           background-size: cover; background-position: center;
         }
         .rent-left h1 { color: var(--accent); font-size: 28px; margin: 0 0 20px; text-align:center; }
-        .rent-left h2 { color: var(--accent); font-size: 20px; margin: 22px 0 10px; }
+        .rent-left h2 { 
+          color: var(--accent); 
+          font-size: 20px; 
+          margin: 32px 0 16px; 
+          text-align: center;
+          position: relative;
+          padding: 0 20px;
+        }
+        .rent-left h2::before,
+        .rent-left h2::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          width: 60px;
+          height: 2px;
+          background-color: var(--accent);
+        }
+        .rent-left h2::before {
+          left: 0;
+        }
+        .rent-left h2::after {
+          right: 0;
+        }
         .rent-left p { font-size: 15px; line-height: 1.7; margin: 0 0 14px; text-align: justify; }
         .rent-note { font-size: 13px; color: #555; background: #f6f7f8; border-radius: 6px; padding: 10px; margin-top: 6px; }
         .calc-slab { width:100%; max-width:540px; }
-        @media (max-width: 960px) { .rent-wrap { grid-template-columns: 1fr; } .rent-right{ padding:28px 18px; } }
+        
+        /* Tax brackets table styling */
+        .tax-table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 16px 0;
+          background: #fff;
+          border: 2px solid var(--accent);
+          border-radius: 8px;
+          overflow: hidden;
+        }
+        .tax-table th {
+          background-color: var(--accent);
+          color: white;
+          padding: 12px 16px;
+          text-align: center;
+          font-weight: 600;
+        }
+        .tax-table td {
+          padding: 10px 16px;
+          text-align: center;
+          border-bottom: 1px solid #e0e0e0;
+        }
+        .tax-table tr:last-child td {
+          border-bottom: none;
+        }
+        
+        /* Highlighted text styling */
+        .highlight-cyan {
+          color: var(--accent);
+          font-weight: 600;
+        }
+        
+        /* Special section styling */
+        .special-cases {
+          background: linear-gradient(135deg, #f0fdff 0%, #e6faff 100%);
+          border-left: 4px solid var(--accent);
+          padding: 20px;
+          margin: 24px 0;
+          border-radius: 8px;
+          box-shadow: 0 2px 8px rgba(0, 229, 255, 0.1);
+        }
+        
+        @media (max-width: 960px) { 
+          .rent-wrap { grid-template-columns: 1fr; } 
+          .rent-right{ padding:28px 18px; }
+          .rent-left h2::before,
+          .rent-left h2::after {
+            width: 40px;
+          }
+        }
       </style>
     </head>
     <body>
@@ -54,17 +118,40 @@
 
             <h2>Πώς φορολογούνται τα ενοίκια</h2>
             <p>Τα καθαρά εισοδήματα από ενοίκια (μετά την αφαίρεση των επιτρεπόμενων δαπανών) φορολογούνται αυτοτελώς, δηλαδή ξεχωριστά από τα λοιπά εισοδήματα του φυσικού προσώπου, με την ακόλουθη κλίμακα συντελεστών:</p>
-            <p><strong>• Κάτω από 12.000€:</strong> 15%<br>
-               <strong>• 12.001€ – 35.000€:</strong> 35%<br>
-               <strong>• Πάνω από 35.001€:</strong> 45%</p>
+            
+            <table class="tax-table">
+              <thead>
+                <tr>
+                  <th>Εισόδημα από Ενοίκια (€)</th>
+                  <th>Συντελεστής %</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>&lt; 12.000</td>
+                  <td>15%</td>
+                </tr>
+                <tr>
+                  <td>12.001 - 35.000</td>
+                  <td>35%</td>
+                </tr>
+                <tr>
+                  <td>&gt; 35.001</td>
+                  <td>45%</td>
+                </tr>
+              </tbody>
+            </table>
 
             <h2>Δαπάνες μείωσης φόρου από ακίνητα</h2>
-            <p>Όσα ακίνητα αποφέρουν φορολογητέο εισόδημα, ανεξάρτητα από το είδος και τη χρήση τους, έχουν έκπτωση <strong>5% επί του ακαθάριστου εισοδήματος</strong> που θα φορολογηθεί.</p>
+            <p>Όσα ακίνητα αποφέρουν φορολογητέο εισόδημα, ανεξάρτητα από το είδος και τη χρήση τους, έχουν <span class="highlight-cyan">έκπτωση 5% επί του ακαθάριστου εισοδήματος</span> που θα φορολογηθεί.</p>
             <p class="rent-note"><strong>Σημείωση:</strong> Από την έκπτωση αυτή εξαιρούνται οι περιπτώσεις υπεκμίσθωσης, το τεκμαρτό εισόδημα από ιδιοχρησιμοποίηση καθώς και η δωρεάν παραχώρηση χρήσης ακινήτων.</p>
 
             <h2>Λειτουργία της εφαρμογής</h2>
-            <p>Η συγκεκριμένη εφαρμογή αναπτύχθηκε από τη <strong style="color: var(--accent);">Nerally</strong> και καλύπτει τις περιπτώσεις φορολόγησης εισοδήματος που αποκτά φυσικό πρόσωπο από τη μίσθωση ακίνητης περιουσίας.</p>
-            <p>Για ειδικές περιπτώσεις όπως <strong>Βραχυχρόνιες μισθώσεις</strong>, <strong>Υπεκμισθώσεις</strong>, <strong>Εταιρικές Μισθώσεις</strong>, <strong>Ανείσπραχτα ενοίκια</strong>, <strong>Αναγνώριση δαπανών</strong> κ.ά., μπορείτε να <a href="/epikoinonia/contact.php" style="color: var(--accent); text-decoration: underline; font-weight: 600;">επικοινωνήσετε μαζί μας</a>.</p>
+            <p>Η συγκεκριμένη εφαρμογή αναπτύχθηκε από τη <a href="/" class="highlight-cyan" style="text-decoration: underline;">Nerally</a> και καλύπτει τις περιπτώσεις φορολόγησης εισοδήματος που αποκτά φυσικό πρόσωπο από τη μίσθωση ακίνητης περιουσίας.</p>
+            <div class="special-cases">
+              <p>Για ειδικές περιπτώσεις όπως <strong>Βραχυχρόνιες μισθώσεις</strong>, <strong>Υπεκμισθώσεις</strong>, <strong>Εταιρικές Μισθώσεις</strong>, <strong>Ανείσπραχτα ενοίκια</strong>, <strong>Αναγνώριση δαπανών</strong> κ.ά., μπορείτε να <a href="/epikoinonia/contact.php" class="highlight-cyan" style="text-decoration: underline;">επικοινωνήσετε μαζί μας</a>.</p>
+              <p><strong>Διαβάσετε τις σχετικές μελέτες στο blog μας</strong> στην κατηγορία <a href="/blog/forologika" class="highlight-cyan" style="text-decoration: underline;">Φορολογικά</a>.</p>
+            </div>
           </article>
 
           <!-- Right: calculator on image background -->
