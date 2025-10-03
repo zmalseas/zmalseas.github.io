@@ -7,9 +7,9 @@
   --white: #fff;
   --muted: #a8a8a8;
   --ring: #7aa2ff;
-  --brand: #003366;
-  --brand-dark: #002244;
-  --brand-light: #004488;
+  --brand: #E74C3C;
+  --brand-dark: #C0392B;
+  --brand-light: #EC7063;
   
   /* Semantic Colors */
   --primary: var(--brand);
@@ -509,7 +509,7 @@ main,
 .service-card-back {
   transform: rotateY(180deg);
   background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(0, 51, 102, 0.3);
+  border-color: rgba(231, 76, 60, 0.3);
 }
 
 .service-icon {
@@ -556,12 +556,12 @@ main,
   font-size: 0.95rem;
   transition: all 0.3s ease;
   margin-top: 15px;
-  box-shadow: 0 4px 15px rgba(0, 51, 102, 0.3);
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
 }
 
 .service-more-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 51, 102, 0.4);
+  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
   background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand) 100%);
 }
 
@@ -753,7 +753,7 @@ main,
 .app-preview-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-  border-color: rgba(0, 51, 102, 0.2);
+  border-color: rgba(231, 76, 60, 0.2);
 }
 
 .app-icon {
