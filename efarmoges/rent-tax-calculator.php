@@ -12,7 +12,7 @@
         /* Page-local, scoped layout so global CSS can't break it */
         :root { 
           --rent-gap: 0; 
-          --accent: #00e5ff; /* Cyan color for titles and highlights */
+          --accent: #ff6600; /* Updated to orange color */
         }
         body { 
           margin: 0; 
@@ -69,7 +69,7 @@
           padding: 12px 16px;
           text-align: left; /* Adjusted alignment */
           font-weight: 600;
-          border-bottom: 2px solid #2c2b2bff; /* Added line below headers */
+          border-bottom: 2px solid #ff6600; /* Updated line below headers */
         }
         .tax-table td {
           padding: 10px 16px;
@@ -83,18 +83,18 @@
         
         /* Highlighted text styling */
         .highlight-cyan {
-          color: var(--accent);
+          color: var(--accent); /* Updated to orange */
           font-weight: 600;
         }
         
         /* Special section styling */
         .special-cases {
-          background: linear-gradient(135deg, #f0fdff 0%, #e6faff 100%);
+          background: linear-gradient(135deg, #fff4e6 0%, #ffe6cc 100%); /* Updated gradient to match orange theme */
           border-left: 4px solid var(--accent);
           padding: 24px; /* Increased padding */
           margin: 32px 0; /* Adjusted margin */
           border-radius: 12px; /* Increased border radius */
-          box-shadow: 0 4px 12px rgba(0, 229, 255, 0.2); /* Enhanced shadow */
+          box-shadow: 0 4px 12px rgba(255, 102, 0, 0.2); /* Enhanced shadow */
           font-size: 16px; /* Slightly larger text */
           line-height: 1.8; /* Improved readability */
         }
