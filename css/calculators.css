@@ -611,6 +611,18 @@ body:has(.calculator-layout) .main-content {
   }
 }
 
+@media (max-width: 768px) {
+  .calculator-layout {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .left-section,
+  .right-section {
+    padding: 20px;
+    min-height: auto;
+  }
+}
+
 @media (max-width: 480px) {
   .left-section,
   .right-section {
