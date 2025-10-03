@@ -38,25 +38,11 @@
           color: var(--accent);
           font-size: 20px;
           margin: 40px 0 20px; /* Increased spacing between sections */
-          text-align: center; /* Center alignment */
+          text-align: left; /* Left alignment like in the image */
           position: relative;
-          white-space: nowrap; /* Ensure single line */
-          padding: 0 20px; /* Space around text */
-        }
-        .rent-left h2::before,
-        .rent-left h2::after {
-          content: '';
-          position: absolute;
-          top: 50%;
-          width: 60px; /* Short decorative lines */
-          height: 2px;
-          background-color: var(--accent);
-        }
-        .rent-left h2::before {
-          left: 0;
-        }
-        .rent-left h2::after {
-          right: 0;
+          padding-bottom: 8px; /* Space for underline */
+          border-bottom: 2px solid var(--accent); /* Full-width underline */
+          font-weight: 600; /* Slightly bolder text */
         }
         .rent-left p {
           font-size: 15px;
