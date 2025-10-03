@@ -611,9 +611,11 @@ body:has(.calculator-layout) .main-content {
   }
 }
 
+/* Mobile responsive for rent calculator split layout */
 @media (max-width: 768px) {
-  .calculator-layout {
-    grid-template-columns: 1fr !important;
+  .calculator-layout,
+  div[style*="grid-template-columns: 1fr 1fr"] {
+    display: block !important;
   }
   
   .left-section,
