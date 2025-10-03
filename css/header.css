@@ -69,7 +69,7 @@ nav.primary{display:flex;align-items:center;gap:16px}
   bottom: -8px;
   height: 2px;
   width: 100%;
-  background: #00e5ff;
+  background: var(--brand);
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.3s ease;

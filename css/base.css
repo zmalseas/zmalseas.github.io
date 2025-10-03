@@ -6,10 +6,10 @@
   --black-2: #0b0b0b;
   --white: #fff;
   --muted: #a8a8a8;
-  --ring: #7aa2ff;
-  --brand: #00e5ff;
-  --brand-dark: #00b8cc;
-  --brand-light: #4df7ff;
+  --ring: #2980B9;
+  --brand: #2980B9;
+  --brand-dark: #1f5f8b;
+  --brand-light: #3498db;
   
   /* Semantic Colors */
   --primary: var(--brand);
@@ -19,6 +19,7 @@
   --warning: #f59e0b;
   --error: #ef4444;
   --info: var(--ring);
+  --accent: #2980B9;
   
   /* Typography */
   --font-family: Inter, system-ui, -apple-system, "SF Pro Display", "Segoe UI", Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
@@ -547,7 +548,7 @@ main,
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(135deg, var(--brand) 0%, #00b8cc 100%);
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
   color: #ffffff;
   text-decoration: none;
   padding: 12px 24px;
@@ -556,13 +557,13 @@ main,
   font-size: 0.95rem;
   transition: all 0.3s ease;
   margin-top: 15px;
-  box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(41, 128, 185, 0.3);
 }
 
 .service-more-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 229, 255, 0.4);
-  background: linear-gradient(135deg, #00b8cc 0%, var(--brand) 100%);
+  box-shadow: 0 6px 20px rgba(41, 128, 185, 0.4);
+  background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand) 100%);
 }
 
 .service-more-btn::after {
@@ -686,7 +687,7 @@ main,
 
 .article-category {
   display: inline-block;
-  background: linear-gradient(135deg, var(--brand) 0%, #00b8cc 100%);
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
   color: #ffffff;
   padding: 6px 16px;
   border-radius: 20px;
@@ -719,7 +720,7 @@ main,
 }
 
 .read-more-link:hover {
-  color: #00b8cc;
+  color: var(--brand-dark);
   text-decoration: underline;
 }
 
@@ -784,7 +785,7 @@ main,
 }
 
 .app-link:hover {
-  color: #00b8cc;
+  color: var(--brand-dark);
   text-decoration: underline;
 }
 

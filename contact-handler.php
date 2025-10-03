@@ -376,10 +376,10 @@ function sendEmail($data, $config) {
         <meta charset="UTF-8">
         <style>
             body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-            .header { background: #4a90e2; color: white; padding: 20px; text-align: center; }
+            .header { background: #2980B9; color: white; padding: 20px; text-align: center; }
             .content { padding: 20px; }
             .field { margin-bottom: 15px; }
-            .field strong { color: #4a90e2; }
+            .field strong { color: #2980B9; }
             .footer { background: #f8f9fa; padding: 15px; text-align: center; font-size: 12px; color: #666; }
         </style>
     </head>
@@ -428,7 +428,7 @@ function sendEmail($data, $config) {
     $body .= '
             <div class="field">
                 <strong>💬 Μήνυμα:</strong><br>
-                <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #4a90e2; margin-top: 10px;">
+                <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #2980B9; margin-top: 10px;">
                     ' . nl2br(sanitizeInput($data['message'])) . '
                 </div>
             </div>

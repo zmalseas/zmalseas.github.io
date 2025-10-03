@@ -12,7 +12,7 @@
         /* Page-local, scoped layout so global CSS can't break it */
         :root { 
           --rent-gap: 0; 
-          --accent: #003366; /* Updated to blue color */
+          --accent: #2980B9; /* Updated to blue color */
         }
         body { 
           margin: 0; 
@@ -37,12 +37,26 @@
         .rent-left h2 { 
           color: var(--accent);
           font-size: 20px;
-          margin: 16px 0 8px; /* Adjusted spacing */
-          text-align: left; /* Left alignment */
-          border-bottom: 2px solid var(--accent); /* Extended underline */
-          padding-bottom: 4px; /* Space for underline */
-          width: 500px; /* Extended width */
+          margin: 40px 0 20px; /* Increased spacing between sections */
+          text-align: center; /* Center alignment */
+          position: relative;
           white-space: nowrap; /* Ensure single line */
+          padding: 0 20px; /* Space around text */
+        }
+        .rent-left h2::before,
+        .rent-left h2::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          width: 60px; /* Short decorative lines */
+          height: 2px;
+          background-color: var(--accent);
+        }
+        .rent-left h2::before {
+          left: 0;
+        }
+        .rent-left h2::after {
+          right: 0;
         }
         .rent-left p {
           font-size: 15px;
@@ -57,7 +71,7 @@
         .tax-table {
           width: auto; /* Adjusted width to fit content */
           margin: 0 auto; /* Centered table */
-          border: 2px solid #003366; /* Added external border */
+          border: 2px solid #2980B9; /* Added external border */
           border-collapse: collapse;
           background: #fff;
           border-radius: 8px;
@@ -69,12 +83,12 @@
           padding: 12px 16px;
           text-align: left; /* Adjusted alignment */
           font-weight: 600;
-          border-bottom: 2px solid #003366; /* Updated line below headers */
+          border-bottom: 2px solid #2980B9; /* Updated line below headers */
         }
         .tax-table td {
           padding: 10px 16px;
           text-align: center;
-          border: 1px solid #003366; /* Added borders */
+          border: 1px solid #2980B9; /* Added borders */
           color: #000; /* Text color remains black */
         }
         .tax-table tr:last-child td {
@@ -94,7 +108,7 @@
           padding: 24px; /* Increased padding */
           margin: 32px 0; /* Adjusted margin */
           border-radius: 12px; /* Increased border radius */
-          box-shadow: 0 4px 12px rgba(0, 51, 102, 0.2); /* Enhanced shadow */
+          box-shadow: 0 4px 12px rgba(41, 128, 185, 0.2); /* Enhanced shadow */
           font-size: 16px; /* Slightly larger text */
           line-height: 1.8; /* Improved readability */
         }

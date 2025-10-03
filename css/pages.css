@@ -587,7 +587,7 @@
 .privacy-note {
   background: linear-gradient(135deg, #e8f4fd 0%, #f0f9ff 100%);
   border: 1px solid #b3d7f7;
-  border-left: 4px solid #4a90e2;
+  border-left: 4px solid #2980B9;
   padding: 20px;
   margin: 20px 0;
   border-radius: 8px;
@@ -616,7 +616,7 @@
 }
 
 .manage-cookies-btn {
-  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+  background: linear-gradient(135deg, #2980B9 0%, #1f5f8b 100%);
   color: white;
   border: none;
   padding: 12px 24px;
@@ -625,7 +625,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(74, 144, 226, 0.3);
+  box-shadow: 0 2px 8px rgba(41, 128, 185, 0.3);
 }
 
 .manage-cookies-btn:hover {
