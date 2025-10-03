@@ -25,7 +25,23 @@
           background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url('../images/Foros_enoikiwn_enhanced.webp');
           background-size: cover; background-position: center;
         }
-        .rent-left h1 { color: var(--accent); font-size: 28px; margin: 0 0 20px; text-align:center; }
+        .rent-left h1 {
+          color: #000; /* Changed to black */
+          font-size: 28px;
+          margin: 0 0 20px; /* Adjusted spacing */
+          text-align: left; /* Moved heading to the right */
+          padding-left: 20px; /* Added padding to move right */
+          position: relative;
+        }
+        .rent-left h1::after {
+          content: '';
+          position: absolute;
+          bottom: -4px; /* Adjusted spacing */
+          left: 20px; /* Aligned with heading */
+          width: 120px; /* Shortened underline */
+          height: 2px;
+          background-color: #000; /* Black underline */
+        }
         .rent-left h2 { 
           color: var(--accent);
           font-size: 20px;
