@@ -38,11 +38,19 @@
           color: var(--accent);
           font-size: 20px;
           margin: 40px 0 20px; /* Increased spacing between sections */
-          text-align: left; /* Left alignment like in the image */
+          text-align: center; /* Center alignment */
           position: relative;
           padding-bottom: 8px; /* Space for underline */
-          border-bottom: 2px solid var(--accent); /* Full-width underline */
-          font-weight: 600; /* Slightly bolder text */
+        }
+        .rent-left h2::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 50%; /* Half-width underline */
+          height: 2px;
+          background-color: var(--accent);
         }
         .rent-left p {
           font-size: 15px;
