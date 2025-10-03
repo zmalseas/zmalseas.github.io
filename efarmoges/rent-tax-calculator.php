@@ -46,8 +46,7 @@
           content: '';
           position: absolute;
           bottom: 0;
-          left: 50%;
-          transform: translateX(-50%);
+          right: 0; /* Start from the same right position */
           width: 50%; /* Half-width underline */
           height: 2px;
           background-color: var(--accent);
