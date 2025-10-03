@@ -46,7 +46,7 @@
           content: '';
           position: absolute;
           bottom: 0;
-          right: 0; /* Start from the same right position */
+          left: 0; /* Start from the left position */
           width: 50%; /* Half-width underline */
           height: 2px;
           background-color: var(--accent);
