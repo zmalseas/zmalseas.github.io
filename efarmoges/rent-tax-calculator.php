@@ -27,29 +27,19 @@
         }
         .rent-left h1 { color: var(--accent); font-size: 28px; margin: 0 0 20px; text-align:center; }
         .rent-left h2 { 
-          color: var(--accent); 
-          font-size: 20px; 
+          color: var(--accent);
+          font-size: 20px;
           margin: 16px 0 8px; /* Adjusted spacing */
-          text-align: center;
-          position: relative;
-          padding: 0 20px;
+          text-align: left; /* Changed alignment */
+          border-bottom: 2px solid var(--accent); /* Added subtle underline */
+          padding-bottom: 4px; /* Space for underline */
         }
-        .rent-left h2::before,
-        .rent-left h2::after {
-          content: '';
-          position: absolute;
-          top: 50%;
-          width: 40px; /* Reduced width */
-          height: 2px;
-          background-color: var(--accent);
+        .rent-left p {
+          font-size: 15px;
+          line-height: 1.7;
+          margin: 0 0 24px; /* Increased spacing after paragraphs */
+          text-align: justify;
         }
-        .rent-left h2::before {
-          left: -50px; /* Moved closer */
-        }
-        .rent-left h2::after {
-          right: -50px; /* Moved closer */
-        }
-        .rent-left p { font-size: 15px; line-height: 1.7; margin: 0 0 14px; text-align: justify; }
         .rent-note { font-size: 13px; color: #555; background: #f6f7f8; border-radius: 6px; padding: 10px; margin-top: 6px; }
         .calc-slab { width:100%; max-width:540px; }
         
@@ -195,7 +185,7 @@
                   <div class="kpi"><div class="label">Φόρος</div><div id="tax" class="val">—</div></div>
                 </div>
                 <div>
-                  <div class="brackets-title">Κλιμάκια φόρου</div>
+                  <div class="brackets-title">Κλιμάκιο φόρου</div>
                   <div class="calc-row" style="padding:0;">
                     <div class="table-wrapper">
                       <table class="calc-table">
