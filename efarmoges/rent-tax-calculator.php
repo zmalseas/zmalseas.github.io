@@ -41,7 +41,7 @@
           text-align: left; /* Left alignment */
           border-bottom: 2px solid var(--accent); /* Extended underline */
           padding-bottom: 4px; /* Space for underline */
-          width: 200px; /* Extended width */
+          width: 500px; /* Extended width */
           white-space: nowrap; /* Ensure single line */
         }
         .rent-left p {
