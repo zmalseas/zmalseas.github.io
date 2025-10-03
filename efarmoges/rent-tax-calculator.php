@@ -26,29 +26,22 @@
           background-size: cover; background-position: center;
         }
         .rent-left h1 {
-          color: #000; /* Changed to black */
+          color: #000; /* Black color */
           font-size: 28px;
           margin: 0 0 20px; /* Adjusted spacing */
-          text-align: left; /* Moved heading to the right */
-          padding-left: 20px; /* Added padding to move right */
-          position: relative;
+          text-align: center; /* Centered heading */
         }
         .rent-left h1::after {
-          content: '';
-          position: absolute;
-          bottom: -4px; /* Adjusted spacing */
-          left: 20px; /* Aligned with heading */
-          width: 120px; /* Shortened underline */
-          height: 2px;
-          background-color: #000; /* Black underline */
+          display: none; /* Removed underline */
         }
         .rent-left h2 { 
           color: var(--accent);
           font-size: 20px;
           margin: 16px 0 8px; /* Adjusted spacing */
-          text-align: left; /* Changed alignment */
-          border-bottom: 2px solid var(--accent); /* Added subtle underline */
+          text-align: left; /* Left alignment */
+          border-bottom: 1px solid var(--accent); /* Shortened underline */
           padding-bottom: 4px; /* Space for underline */
+          width: 120px; /* Shortened width */
         }
         .rent-left p {
           font-size: 15px;
@@ -80,7 +73,7 @@
         .tax-table td {
           padding: 10px 16px;
           text-align: center;
-          border: none; /* Removed existing borders */
+          border: 1px solid #003366; /* Added borders */
           color: #000; /* Text color remains black */
         }
         .tax-table tr:last-child td {
