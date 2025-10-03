@@ -1,35 +1,9 @@
 /* Consolidated Calculator Styles - Replaces income-tax-calculator.css + rent-tax-calculator.css */
 
 /* ===== SHARED CALCULATOR STYLES ===== */
-.content-section,
-.calculator-layout {
+.content-section {
   margin: 0;
-  padding: 0;
-  min-height: 0;
-  overflow: visible;
-  height: auto;
-  width: 100%;
-}
-
-/* Ensure full-width layout for calculator pages */
-body:has(.calculator-layout) {
-  margin: 0;
-  padding: 0;
-}
-
-body:has(.calculator-layout) .main-content {
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  max-width: none;
-}
-
-/* Override container constraints for calculator layouts */
-.calculator-layout .container {
-  max-width: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
+  padding: 20px;
 }
 
 .calculator-container {
@@ -251,41 +225,7 @@ body:has(.calculator-layout) .main-content {
   font-size: 0.9rem;
 }
 
-/* ===== RENT TAX CALCULATOR SPECIFIC ===== */
-.calculator-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  min-height: 100vh;
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-}
-
-.left-section {
-  background: #f8f9fa;
-  color: #333333;
-  padding: 40px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin: 0;
-  min-height: 100vh;
-  width: 100%;
-}
-
-.right-section {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/Foros_enoikiwn.png');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  padding: 40px;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100vh;
-}
+/* ===== RENT TAX CALCULATOR - STYLES CLEANED ===== */
 
 /* Calculator Card Styles */
 .calc-card {
