@@ -1,38 +1,7 @@
 <!DOCTYPE html>
 <html lang="el">
-<        .rent-left h2 {
-          color: var(--accent);
-          font-size: 20px;
-         .special-cases {
-          background: linear-gradient(135deg, #e8f4fd 0%, #d1e7f5 100%); /* Updated gradient to match blue theme */
-          border-left: 4px solid var(--accent);
-          padding: 24px; /* Increased padding */
-          margin: 50px 0; /* Increased margin for more spacing */
-          border-radius: 12px; /* Increased border radius */
-          box-shadow: 0 4px 12px rgba(41, 128, 185, 0.2); /* Enhanced shadow */
-          font-size: 16px; /* Slightly larger text */
-          line-height: 1.8; /* Improved readability */
-        }argin: 40px 0 20px; /* Increased spacing between sections */
-          text-align: center; /* Center alignment */
-          position: relative;
-          white-space: nowrap; /* Ensure single line */
-          padding: 0 20px; /* Space around text */
-        }
-        .rent-left h2::before,
-        .rent-left h2::after {
-          content: '';
-          position: absolute;
-          top: 50%;
-          width: 60px; /* Short decorative lines */
-          height: 2px;
-          background-color: var(--accent);
-        }
-        .rent-left h2::before {
-          left: 0;
-        }
-        .rent-left h2::after {
-          right: 0;
-        }meta charset="UTF-8">
+<head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ΦΟΡΟΛΟΓΙΑ ΕΝΟΙΚΙΩΝ – ΦΥΣΙΚΑ ΠΡΟΣΩΠΑ | Nerally</title>
   <link rel="icon" type="image/png" href="../images/logo.png" />
@@ -43,7 +12,7 @@
         /* Page-local, scoped layout so global CSS can't break it */
         :root { 
           --rent-gap: 0; 
-          --accent: #2980B9; /* Updated to balanced blue color */
+          --accent: #003366; /* Updated to blue color */
         }
         body { 
           margin: 0; 
@@ -78,7 +47,7 @@
         .rent-left p {
           font-size: 15px;
           line-height: 1.7;
-          margin: 0 0 30px; /* Increased spacing after paragraphs */
+          margin: 0 0 24px; /* Increased spacing after paragraphs */
           text-align: justify;
         }
         .rent-note { font-size: 13px; color: #555; background: #f6f7f8; border-radius: 6px; padding: 10px; margin-top: 6px; }
@@ -87,37 +56,26 @@
         /* Tax brackets table styling */
         .tax-table {
           width: auto; /* Adjusted width to fit content */
-          margin: 20px auto; /* Centered table with more spacing */
-          border: 2px solid var(--accent); /* External border around entire table */
+          margin: 0 auto; /* Centered table */
+          border: 2px solid #003366; /* Added external border */
           border-collapse: collapse;
           background: #fff;
           border-radius: 8px;
           overflow: hidden;
-          box-shadow: 0 2px 8px rgba(41, 128, 185, 0.1); /* Subtle shadow to separate from background */
         }
         .tax-table th {
           background-color: var(--accent);
           color: white;
           padding: 12px 16px;
-          text-align: center;
+          text-align: left; /* Adjusted alignment */
           font-weight: 600;
-          border-right: 1px solid rgba(255, 255, 255, 0.3); /* Separator between headers */
-        }
-        .tax-table th:last-child {
-          border-right: none; /* No border on last header */
+          border-bottom: 2px solid #003366; /* Updated line below headers */
         }
         .tax-table td {
           padding: 10px 16px;
           text-align: center;
-          border-right: 1px solid var(--accent); /* Vertical separators */
-          border-bottom: 1px solid var(--accent); /* Horizontal separators */
+          border: 1px solid #003366; /* Added borders */
           color: #000; /* Text color remains black */
-        }
-        .tax-table td:last-child {
-          border-right: none; /* No border on last column */
-        }
-        .tax-table tr:last-child td {
-          border-bottom: none; /* No border on last row */
         }
         .tax-table tr:last-child td {
           border-bottom: none;
@@ -136,7 +94,7 @@
           padding: 24px; /* Increased padding */
           margin: 32px 0; /* Adjusted margin */
           border-radius: 12px; /* Increased border radius */
-          box-shadow: 0 4px 12px rgba(231, 76, 60, 0.2); /* Enhanced shadow */
+          box-shadow: 0 4px 12px rgba(0, 51, 102, 0.2); /* Enhanced shadow */
           font-size: 16px; /* Slightly larger text */
           line-height: 1.8; /* Improved readability */
         }
@@ -151,10 +109,7 @@
           .rent-right{ padding:28px 18px; }
           .rent-left h2::before,
           .rent-left h2::after {
-            width: 40px; /* Smaller decorative lines on mobile */
-          }
-          .rent-left h2 {
-            margin: 30px 0 15px; /* Adjusted spacing for mobile */
+            width: 40px;
           }
         }
       </style>
