@@ -39,7 +39,7 @@ body.menu-open .chat-widget {
 .menu-sub{overflow:hidden;max-height:0;opacity:.0;transform:translateY(-4px);transition:max-height var(--speed) ease,opacity var(--speed) ease,transform var(--speed) ease;padding-left:30px;display:flex;flex-direction:column;gap:4px}
 .menu-item.open .menu-sub{max-height:400px;opacity:1;transform:translateY(0)}
 .menu-sub a{display:block;color:var(--white);text-decoration:none;font-weight:700;font-size:1rem;padding:8px 0;position:relative;transition:all 0.4s ease;transform:scale(1);width:100%;margin-bottom:4px}
-.menu-sub a:hover,.menu-sub a:focus-visible{color:var(--brand);transform:scale(1.05);text-shadow:0 0 8px rgba(0,229,255,0.3)}
+.menu-sub a:hover,.menu-sub a:focus-visible{color:var(--brand);transform:scale(1.05);text-shadow:0 0 8px rgba(0,51,102,0.3)}
 .menu-sub a .sm-arrow{opacity:0;transform:translateX(-6px);transition:transform var(--speed) ease,opacity var(--speed) ease;color:var(--brand)}
 .menu-sub a.clicked{color:var(--brand)}
 .menu-sub a.clicked .sm-arrow{opacity:1;transform:translateX(0)}

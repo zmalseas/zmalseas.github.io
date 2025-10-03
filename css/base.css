@@ -7,9 +7,9 @@
   --white: #fff;
   --muted: #a8a8a8;
   --ring: #7aa2ff;
-  --brand: #00e5ff;
-  --brand-dark: #00b8cc;
-  --brand-light: #4df7ff;
+  --brand: #003366;
+  --brand-dark: #002244;
+  --brand-light: #004488;
   
   /* Semantic Colors */
   --primary: var(--brand);
@@ -509,7 +509,7 @@ main,
 .service-card-back {
   transform: rotateY(180deg);
   background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(0, 229, 255, 0.3);
+  border-color: rgba(0, 51, 102, 0.3);
 }
 
 .service-icon {
@@ -547,7 +547,7 @@ main,
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(135deg, var(--brand) 0%, #00b8cc 100%);
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
   color: #ffffff;
   text-decoration: none;
   padding: 12px 24px;
@@ -556,13 +556,13 @@ main,
   font-size: 0.95rem;
   transition: all 0.3s ease;
   margin-top: 15px;
-  box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 51, 102, 0.3);
 }
 
 .service-more-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 229, 255, 0.4);
-  background: linear-gradient(135deg, #00b8cc 0%, var(--brand) 100%);
+  box-shadow: 0 6px 20px rgba(0, 51, 102, 0.4);
+  background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand) 100%);
 }
 
 .service-more-btn::after {
@@ -686,7 +686,7 @@ main,
 
 .article-category {
   display: inline-block;
-  background: linear-gradient(135deg, var(--brand) 0%, #00b8cc 100%);
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
   color: #ffffff;
   padding: 6px 16px;
   border-radius: 20px;
@@ -719,7 +719,7 @@ main,
 }
 
 .read-more-link:hover {
-  color: #00b8cc;
+  color: var(--brand-dark);
   text-decoration: underline;
 }
 
@@ -753,7 +753,7 @@ main,
 .app-preview-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-  border-color: rgba(0, 229, 255, 0.2);
+  border-color: rgba(0, 51, 102, 0.2);
 }
 
 .app-icon {
@@ -784,7 +784,7 @@ main,
 }
 
 .app-link:hover {
-  color: #00b8cc;
+  color: var(--brand-dark);
   text-decoration: underline;
 }
 
