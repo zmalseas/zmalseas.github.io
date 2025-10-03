@@ -39,9 +39,10 @@
           font-size: 20px;
           margin: 16px 0 8px; /* Adjusted spacing */
           text-align: left; /* Left alignment */
-          border-bottom: 1px solid var(--accent); /* Shortened underline */
+          border-bottom: 2px solid var(--accent); /* Extended underline */
           padding-bottom: 4px; /* Space for underline */
-          width: 120px; /* Shortened width */
+          width: 200px; /* Extended width */
+          white-space: nowrap; /* Ensure single line */
         }
         .rent-left p {
           font-size: 15px;
@@ -56,7 +57,7 @@
         .tax-table {
           width: auto; /* Adjusted width to fit content */
           margin: 0 auto; /* Centered table */
-          border: 2px solid var(--accent); /* Added border around the table */
+          border: 2px solid #003366; /* Added external border */
           border-collapse: collapse;
           background: #fff;
           border-radius: 8px;
