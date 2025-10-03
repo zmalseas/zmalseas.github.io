@@ -1,136 +1,270 @@
-<!DOCTYPE html><!DOCTYPE html><!DOCTYPE html><!DOCTYPE html><!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html><!DOCTYPE html><!DOCTYPE html><!DOCTYPE html><!DOCTYPE html>
 
 <html lang="el">
 
 <head><html lang="el">
 
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><head><html lang="el">
+  <meta name="viewport" content="width=device-width, initial-scale=1" /><head><html lang="el">
 
   <title>Φόρος Ενοικίων — Υπολογιστής Nerally</title>
 
   <link rel="icon" type="image/png" href="../images/logo.png" />  <meta charset="UTF-8">
 
-  <link rel="stylesheet" href="../main.css">
+  <link rel="stylesheet" href="../main.css" />
 
-  <link rel="stylesheet" href="/css/cookie-consent.css">  <meta name="viewport" content="width=device-width, initial-scale=1.0"><head><html lang="el"><html lang="el">
+  <link rel="stylesheet" href="/css/cookie-consent.css" />  <meta name="viewport" content="width=device-width, initial-scale=1.0"><head><html lang="el">
 
-  <link rel="stylesheet" href="/css/legal-modal.css">
+  <link rel="stylesheet" href="/css/legal-modal.css" />
 
-</head>  <title>Φόρος Ενοικίων — Υπολογιστής Nerally</title>
+  <style>  <title>Φόρος Ενοικίων — Υπολογιστής Nerally</title>
+
+    /* Page-local styles to avoid global interference */
+
+    .rent-split {  <link rel="icon" type="image/png" href="../images/logo.png" />  <meta charset="UTF-8">
+
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;  <link rel="stylesheet" href="../main.css">
+
+      min-height: calc(100vh - 120px);
+
+      margin: 0;  <link rel="stylesheet" href="/css/cookie-consent.css">  <meta name="viewport" content="width=device-width, initial-scale=1.0"><head><html lang="el"><html lang="el">
+
+    }
+
+    .rent-left {  <link rel="stylesheet" href="/css/legal-modal.css">
+
+      background: #fff;
+
+      padding: 40px 32px;</head>  <title>Φόρος Ενοικίων — Υπολογιστής Nerally</title>
+
+      overflow: auto;
+
+    }<body>
+
+    .rent-right {
+
+      background: linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)), url('../images/Foros_enoikiwn_enhanced.webp');    <link rel="icon" type="image/png" href="../images/logo.png" />  <meta charset="utf-8" />
+
+      background-size: cover;
+
+      background-position: center;  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/header.php'; ?>
+
+      padding: 40px 24px;
+
+      display: flex;  <link rel="stylesheet" href="../main.css">
+
+      align-items: center;
+
+      justify-content: center;  <!-- COMPLETELY CUSTOM LAYOUT - NO OLD CSS INTERFERENCE -->
+
+    }
+
+    .rent-left h1 { color: var(--accent); font-size: 28px; margin: 0 0 24px; text-align: center; }  <div style="  <link rel="stylesheet" href="/css/cookie-consent.css">  <meta name="viewport" content="width=device-width, initial-scale=1" /><head><head>            <h            
+
+    .rent-left h2 { color: var(--accent); font-size: 20px; margin: 22px 0 10px; }
+
+    .rent-left p { font-size: 14px; line-height: 1.65; margin: 0 0 14px; text-align: justify; }    display: grid; 
+
+    .rent-note { font-size: 13px; color: #666; background: #f6f7f8; border-radius: 6px; padding: 10px; }
+
+    @media (max-width: 900px) { .rent-split { grid-template-columns: 1fr; } }    grid-template-columns: 1fr 1fr;   <link rel="stylesheet" href="/css/legal-modal.css">
+
+  </style>
+
+</head>    min-height: calc(100vh - 140px);
 
 <body>
 
-    <link rel="icon" type="image/png" href="../images/logo.png" />  <meta charset="utf-8" />
+  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/header.php'; ?>    margin: 0;    <title>Φόρος Ενοικίων — Υπολογιστής Nerally</title>
 
-  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/header.php'; ?>
 
-  <link rel="stylesheet" href="../main.css">
 
-  <!-- COMPLETELY CUSTOM LAYOUT - NO OLD CSS INTERFERENCE -->
+  <main class="main-content" style="margin:0; padding:0; max-width:none; width:100vw;">    padding: 0;
 
-  <div style="  <link rel="stylesheet" href="/css/cookie-consent.css">  <meta name="viewport" content="width=device-width, initial-scale=1" /><head><head>            <h            
+    <div class="rent-split">
 
-    display: grid; 
+      <!-- Left: White text content -->  ">  <!-- Custom CSS for split layout -->
 
-    grid-template-columns: 1fr 1fr;   <link rel="stylesheet" href="/css/legal-modal.css">
+      <section class="rent-left">
 
-    min-height: calc(100vh - 140px);
+        <h1>ΦΟΡΟΛΟΓΙΑ ΕΝΟΙΚΙΩΝ – ΦΥΣΙΚΑ ΠΡΟΣΩΠΑ</h1>    
 
-    margin: 0;    <title>Φόρος Ενοικίων — Υπολογιστής Nerally</title>
 
-    padding: 0;
 
-  ">  <!-- Custom CSS for split layout -->
+        <h2>📋 Εισοδήματα από ενοίκια</h2>    <!-- LEFT: White text area -->  <style>  <link rel="icon" type="image/png" href="../images/logo.png" />  <meta charset="utf-8" />            <h3 style="color: var(--accent); font-size: 1.4em; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid rgba(var(--accent-rgb), 0.2);">
 
-    
+        <p>Σύμφωνα με τα όσα προβλέπει ο Κώδικας Φορολογίας Εισοδήματος (Ν.4172/13), εισόδημα από ακίνητη περιουσία, είναι το εισόδημα που προέρχεται από εκμίσθωση ή υπεκμίσθωση καθώς επίσης και το τεκμαρτό εισόδημα από ιδιοχρησιμοποίηση ακινήτων ή από δωρεάν παραχώρηση της χρήσης ακινήτων σε τρίτους.</p>
 
-    <!-- LEFT: White text area -->  <style>  <link rel="icon" type="image/png" href="../images/logo.png" />  <meta charset="utf-8" />            <h3 style="color: var(--accent); font-size: 1.4em; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid rgba(var(--accent-rgb), 0.2);">
+        <p>Επιπρόσθετα, εισόδημα από ακίνητη περιουσία θεωρείται και κάθε ποσό που προέρχεται από εκμίσθωση ή υπεκμίσθωση ή δωρεάν παραχώρηση χρήσης χώρων τοποθέτησης επιγραφών και κοινόχρηστων χώρων. Επίσης το ποσό της αποζημίωσης για την πρόωρη λήξη της μίσθωσης που καταβλήθηκε από το μισθωτή (ενοικιαστή).</p>    <div style="
 
-    <div style="
 
-      background: white;    /* Remove default margins and ensure full viewport usage */
 
-      padding: 40px;
+        <h2>💰 Πώς φορολογούνται τα ενοίκια</h2>      background: white;    /* Remove default margins and ensure full viewport usage */
 
-      overflow-y: auto;    .main-content {  <link rel="stylesheet" href="../main.css" />
+        <p>Τα καθαρά εισοδήματα από ενοίκια, δηλαδή τα ποσά που προκύπτουν από την αφαίρεση των δαπανών που εκπίπτουν από τα ακαθάριστα ποσά εισοδημάτων από ακίνητα, φορολογούνται αυτοτελώς δηλαδή ξεχωριστά από τα υπόλοιπά εισοδήματα του Φυσικού Προσώπου, με κλίμακα στην οποία ισχύουν συντελεστές φόρου:</p>
 
-    ">
+        <p><strong>• Κάτω από 12.000€:</strong> 15%<br/>      padding: 40px;
 
-      <h1 style="color: var(--accent); font-size: 28px; font-weight: 700; margin-bottom: 30px; text-align: center;">      margin: 0 !important;
+           <strong>• 12.001€ - 35.000€:</strong> 35%<br/>
+
+           <strong>• Πάνω από 35.001€:</strong> 45%</p>      overflow-y: auto;    .main-content {  <link rel="stylesheet" href="../main.css" />
+
+
+
+        <h2>📊 Δαπάνες μείωσης φόρου από ακίνητα</h2>    ">
+
+        <p>Όσα ακίνητα αποφέρουν φορολογητέο εισόδημα, ανεξάρτητα από το είδος και τη χρήση αυτών έχουν έκπτωση <strong>5% επί του ακαθάριστου εισοδήματος</strong> που θα φορολογηθεί.</p>
+
+        <p>Η αναγνώριση της έκπτωσης αυτής, γίνεται αυτόματα με την εκκαθάριση της Φορολογικής Δήλωσης του φυσικού προσώπου, άνευ δικαιολογητικών, ως τεκμαρτή αναγνώριση εξόδων που χρειάστηκαν να γίνουν για επισκευή, συντήρηση, ανακαίνιση ή άλλες πάγιες και λειτουργικές δαπάνες.</p>      <h1 style="color: var(--accent); font-size: 28px; font-weight: 700; margin-bottom: 30px; text-align: center;">      margin: 0 !important;
+
+        <p class="rent-note"><strong>Σημείωση:</strong> Από την έκπτωση αυτή, εξαιρούνται οι περιπτώσεις που το εισόδημα αποκτήθηκε από υπεκμίσθωση καθώς επίσης και το τεκμαρτό εισόδημα από ιδιοχρησιμοποίηση ακινήτων ή από δωρεάν παραχώρηση της χρήσης ακινήτων σε τρίτους.</p>
 
         ΦΟΡΟΛΟΓΙΑ ΕΝΟΙΚΙΩΝ – ΦΥΣΙΚΑ ΠΡΟΣΩΠΑ
 
-      </h1>      padding: 0 !important;  <link rel="stylesheet" href="/css/cookie-consent.css" />  <meta name="viewport" content="width=device-width, initial-scale=1" />              📊 Δαπάνες μείωσης φόρου από ακίνητα
+        <h2>🛠️ Λειτουργία της Εφαρμογής</h2>
 
-      
+        <p>Η συγκεκριμένη εφαρμογή, αναπτύχθηκε από την <strong style="color: var(--accent);">Nerally</strong> και καλύπτει τις περιπτώσεις φορολόγησης του εισοδήματος που ένα φυσικό πρόσωπο αποκτά από την μίσθωση της ακίνητης περιουσίας του.</p>      </h1>      padding: 0 !important;  <link rel="stylesheet" href="/css/cookie-consent.css" />  <meta name="viewport" content="width=device-width, initial-scale=1" />              📊 Δαπάνες μείωσης φόρου από ακίνητα
 
-      <h2 style="color: var(--accent); font-size: 20px; margin-bottom: 15px;">      width: 100vw !important;
+        <p>Για ειδικές περιπτώσεις όπως <strong>Βραχυχρόνιες μισθώσεις</strong>, <strong>Υπεκμισθώσεις</strong>, <strong>Εταιρικές Μισθώσεις</strong>, <strong>Ανείσπραχτα ενοίκια</strong>, <strong>Αναγνώριση δαπανών</strong> κ.α. μπορείτε να διαβάσετε τις μελέτες μας ή να <a href="/epikoinonia/contact.php" style="color: var(--accent); text-decoration: underline; font-weight: 600;">επικοινωνήσετε μαζί μας</a>.</p>
 
-        📋 Εισοδήματα από ενοίκια
+      </section>      
 
-      </h2>      max-width: none !important;  <link rel="stylesheet" href="/css/legal-modal.css" />
 
-      <p style="font-size: 14px; line-height: 1.6; margin-bottom: 15px; text-align: justify;">
 
-        Σύμφωνα με τα όσα προβλέπει ο Κώδικας Φορολογίας Εισοδήματος (Ν.4172/13), εισόδημα από ακίνητη περιουσία, είναι το εισόδημα που προέρχεται από εκμίσθωση ή υπεκμίσθωση καθώς επίσης και το τεκμαρτό εισόδημα από ιδιοχρησιμοποίηση ακινήτων ή από δωρεάν παραχώρηση της χρήσης ακινήτων σε τρίτους.    }
+      <!-- Right: Calculator on image -->      <h2 style="color: var(--accent); font-size: 20px; margin-bottom: 15px;">      width: 100vw !important;
 
-      </p>
+      <section class="rent-right">
 
-      <p style="font-size: 14px; line-height: 1.6; margin-bottom: 25px; text-align: justify;">        <title>Φόρος Ενοικίων — Υπολογιστής Nerally</title>            </h3>
+        <div class="calculator-container" style="max-width:520px; width:100%;">        📋 Εισοδήματα από ενοίκια
 
-        Επιπρόσθετα, εισόδημα από ακίνητη περιουσία θεωρείται και κάθε ποσό που προέρχεται από εκμίσθωση ή υπεκμίσθωση ή δωρεάν παραχώρηση χρήσης χώρων τοποθέτησης επιγραφών και κοινόχρηστων χώρων. Επίσης το ποσό της αποζημίωσης για την πρόωρη λήξη της μίσθωσης που καταβλήθηκε από το μισθωτή (ενοικιαστή).
+          <section class="calc-card">
 
-      </p>    .split-layout {
+            <div class="calc-header">      </h2>      max-width: none !important;  <link rel="stylesheet" href="/css/legal-modal.css" />
 
-      
+              <h2 class="calc-title-in-card">Φόρος Ενοικίων — Υπολογισμός & Κλιμάκια</h2>
 
-      <h2 style="color: var(--accent); font-size: 20px; margin-bottom: 15px;">      display: grid;  <!-- GTM loads via cookie-consent.js after analytics consent -->
+            </div>      <p style="font-size: 14px; line-height: 1.6; margin-bottom: 15px; text-align: justify;">
+
+            <div class="calc-grid">
+
+              <div>        Σύμφωνα με τα όσα προβλέπει ο Κώδικας Φορολογίας Εισοδήματος (Ν.4172/13), εισόδημα από ακίνητη περιουσία, είναι το εισόδημα που προέρχεται από εκμίσθωση ή υπεκμίσθωση καθώς επίσης και το τεκμαρτό εισόδημα από ιδιοχρησιμοποίηση ακινήτων ή από δωρεάν παραχώρηση της χρήσης ακινήτων σε τρίτους.    }
+
+                <label class="calc-label" for="count">Αριθμός ακινήτων (1–5)</label>
+
+                <input class="calc-input" id="count" type="number" min="1" max="5" step="1" value="1" />      </p>
+
+              </div>
+
+              <div class="calc-muted" style="align-self:end; font-size: 12px;">      <p style="font-size: 14px; line-height: 1.6; margin-bottom: 25px; text-align: justify;">        <title>Φόρος Ενοικίων — Υπολογιστής Nerally</title>            </h3>
+
+                Συμπλήρωσε μίσθωμα/μήνες για κάθε ακίνητο και πάτησε <strong>Υπολογισμός</strong>.
+
+              </div>        Επιπρόσθετα, εισόδημα από ακίνητη περιουσία θεωρείται και κάθε ποσό που προέρχεται από εκμίσθωση ή υπεκμίσθωση ή δωρεάν παραχώρηση χρήσης χώρων τοποθέτησης επιγραφών και κοινόχρηστων χώρων. Επίσης το ποσό της αποζημίωσης για την πρόωρη λήξη της μίσθωσης που καταβλήθηκε από το μισθωτή (ενοικιαστή).
+
+            </div>
+
+            <div id="props" class="calc-grid" style="margin-top:12px;"></div>      </p>    .split-layout {
+
+            <div class="calc-controls">
+
+              <button id="calcBtn" class="calc-button primary" type="button">Υπολογισμός</button>      
+
+              <button id="resetBtn" class="calc-button" type="button">Επαναφορά</button>
+
+            </div>      <h2 style="color: var(--accent); font-size: 20px; margin-bottom: 15px;">      display: grid;  <!-- GTM loads via cookie-consent.js after analytics consent -->
+
+          </section>
 
         💰 Πώς φορολογούνται τα ενοίκια
 
-      </h2>      grid-template-columns: 1fr 1fr;
+          <section class="calc-card">
 
-      <p style="font-size: 14px; line-height: 1.6; margin-bottom: 15px; text-align: justify;">
+            <h2 class="results-title">Αποτελέσματα</h2>      </h2>      grid-template-columns: 1fr 1fr;
 
-        Τα καθαρά εισοδήματα από ενοίκια, δηλαδή τα ποσά που προκύπτουν από την αφαίρεση των δαπανών που εκπίπτουν από τα ακαθάριστα ποσά εισοδημάτων από ακίνητα, φορολογούνται αυτοτελώς δηλαδή ξεχωριστά από τα υπόλοιπά εισοδήματα του Φυσικού Προσώπου, με κλίμακα στην οποία ισχύουν συντελεστές φόρου:      min-height: calc(100vh - 120px);</head>  <link rel="icon" type="image/png" href="../images/logo.png" />            <p style="line-height: 1.7; margin-bottom: 16px;">
+            <div class="kpis">
 
-      </p>
+              <div class="kpi"><div class="label">Συνολικά έσοδα</div><div id="gross" class="val">—</div></div>      <p style="font-size: 14px; line-height: 1.6; margin-bottom: 15px; text-align: justify;">
 
-          }
+              <div class="kpi"><div class="label">Φορολογητέο (95%)</div><div id="taxable" class="val">—</div></div>
 
-      <div style="background: #f8f9fa; padding: 15px; border-radius: 6px; margin-bottom: 25px; border-left: 3px solid var(--accent);">
+              <div class="kpi"><div class="label">Φόρος</div><div id="tax" class="val">—</div></div>        Τα καθαρά εισοδήματα από ενοίκια, δηλαδή τα ποσά που προκύπτουν από την αφαίρεση των δαπανών που εκπίπτουν από τα ακαθάριστα ποσά εισοδημάτων από ακίνητα, φορολογούνται αυτοτελώς δηλαδή ξεχωριστά από τα υπόλοιπά εισοδήματα του Φυσικού Προσώπου, με κλίμακα στην οποία ισχύουν συντελεστές φόρου:      min-height: calc(100vh - 120px);</head>  <link rel="icon" type="image/png" href="../images/logo.png" />            <p style="line-height: 1.7; margin-bottom: 16px;">
 
-        <p style="margin: 5px 0; font-size: 14px;"><strong>Εισόδημα κάτω από 12.000€:</strong> Φορολογείται με συντελεστή <span style="color: var(--accent); font-weight: bold;">15%</span></p>    <body>
+            </div>
 
-        <p style="margin: 5px 0; font-size: 14px;"><strong>Εισόδημα 12.001€ - 35.000€:</strong> Φορολογείται με συντελεστή <span style="color: var(--accent); font-weight: bold;">35%</span></p>
+            <div>      </p>
 
-        <p style="margin: 5px 0; font-size: 14px;"><strong>Εισόδημα πάνω από 35.001€:</strong> Φορολογείται με συντελεστή <span style="color: var(--accent); font-weight: bold;">45%</span></p>    .text-section {
+              <div class="brackets-title">Κλιμάκια φόρου</div>
 
-      </div>
+              <div class="calc-row" style="padding:0;">          }
 
-            background: white;    <link rel="stylesheet" href="../main.css" />              Όσα ακίνητα αποφέρουν φορολογητέο εισόδημα, ανεξάρτητα από το είδος και τη χρήση αυτών έχουν έκπτωση <span style="color: var(--accent); font-weight: bold;">5% επί του ακαθάριστου εισοδήματος</span> που θα φορολογηθεί.
+                <div class="table-wrapper">
 
-      <h2 style="color: var(--accent); font-size: 20px; margin-bottom: 15px;">
+                  <table class="calc-table">      <div style="background: #f8f9fa; padding: 15px; border-radius: 6px; margin-bottom: 25px; border-left: 3px solid var(--accent);">
 
-        📊 Δαπάνες μείωσης φόρου από ακίνητα      padding: 40px;
+                    <thead>
 
-      </h2>
+                      <tr>        <p style="margin: 5px 0; font-size: 14px;"><strong>Εισόδημα κάτω από 12.000€:</strong> Φορολογείται με συντελεστή <span style="color: var(--accent); font-weight: bold;">15%</span></p>    <body>
 
-      <p style="font-size: 14px; line-height: 1.6; margin-bottom: 15px; text-align: justify;">      overflow-y: auto;  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/header.php'; ?>
+                        <th>Κλιμάκιο</th>
 
-        Όσα ακίνητα αποφέρουν φορολογητέο εισόδημα, ανεξάρτητα από το είδος και τη χρήση αυτών έχουν έκπτωση <span style="color: var(--accent); font-weight: bold;">5% επί του ακαθάριστου εισοδήματος</span> που θα φορολογηθεί.
+                        <th class="r">Ποσό</th>        <p style="margin: 5px 0; font-size: 14px;"><strong>Εισόδημα 12.001€ - 35.000€:</strong> Φορολογείται με συντελεστή <span style="color: var(--accent); font-weight: bold;">35%</span></p>
 
-      </p>    }
+                        <th class="r">Συντελεστής</th>
 
-      <p style="font-size: 14px; line-height: 1.6; margin-bottom: 15px; text-align: justify;">
+                        <th class="r">Φόρος</th>        <p style="margin: 5px 0; font-size: 14px;"><strong>Εισόδημα πάνω από 35.001€:</strong> Φορολογείται με συντελεστή <span style="color: var(--accent); font-weight: bold;">45%</span></p>    .text-section {
 
-        Η αναγνώριση της έκπτωσης αυτής, γίνεται αυτόματα με την εκκαθάριση της Φορολογικής Δήλωσης του φυσικού προσώπου, άνευ δικαιολογητικών, ως τεκμαρτή αναγνώριση εξόδων που χρειάστηκαν να γίνουν για επισκευή, συντήρηση, ανακαίνιση ή άλλες πάγιες και λειτουργικές δαπάνες.        <link rel="stylesheet" href="/css/cookie-consent.css" />            </p>
+                      </tr>
 
-      </p>
+                    </thead>      </div>
 
-      <p style="font-size: 13px; color: #666; font-style: italic; padding: 10px; background: #f8f9fa; border-radius: 4px; margin-bottom: 25px;">    .calculator-section {
+                    <tbody id="bracketRows">
+
+                      <tr><td colspan="4" class="calc-muted" style="text-align:center; padding:16px;">Δεν υπάρχουν υπολογισμοί ακόμη.</td></tr>            background: white;    <link rel="stylesheet" href="../main.css" />              Όσα ακίνητα αποφέρουν φορολογητέο εισόδημα, ανεξάρτητα από το είδος και τη χρήση αυτών έχουν έκπτωση <span style="color: var(--accent); font-weight: bold;">5% επί του ακαθάριστου εισοδήματος</span> που θα φορολογηθεί.
+
+                    </tbody>
+
+                    <tfoot id="bracketFoot"></tfoot>      <h2 style="color: var(--accent); font-size: 20px; margin-bottom: 15px;">
+
+                  </table>
+
+                </div>        📊 Δαπάνες μείωσης φόρου από ακίνητα      padding: 40px;
+
+              </div>
+
+              <div class="disclaimer"><p>* Ο υπολογισμός είναι ενδεικτικός και βασίζεται στις ισχύουσες φορολογικές διατάξεις</p></div>      </h2>
+
+            </div>
+
+          </section>      <p style="font-size: 14px; line-height: 1.6; margin-bottom: 15px; text-align: justify;">      overflow-y: auto;  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/header.php'; ?>
+
+        </div>
+
+      </section>        Όσα ακίνητα αποφέρουν φορολογητέο εισόδημα, ανεξάρτητα από το είδος και τη χρήση αυτών έχουν έκπτωση <span style="color: var(--accent); font-weight: bold;">5% επί του ακαθάριστου εισοδήματος</span> που θα φορολογηθεί.
+
+    </div>
+
+  </main>      </p>    }
+
+
+
+  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>      <p style="font-size: 14px; line-height: 1.6; margin-bottom: 15px; text-align: justify;">
+
+
+
+  <script src="/js/legal-modal.js"></script>        Η αναγνώριση της έκπτωσης αυτής, γίνεται αυτόματα με την εκκαθάριση της Φορολογικής Δήλωσης του φυσικού προσώπου, άνευ δικαιολογητικών, ως τεκμαρτή αναγνώριση εξόδων που χρειάστηκαν να γίνουν για επισκευή, συντήρηση, ανακαίνιση ή άλλες πάγιες και λειτουργικές δαπάνες.        <link rel="stylesheet" href="/css/cookie-consent.css" />            </p>
+
+  <script src="/js/cookie-consent.js"></script>
+
+  <script src="../app.js" defer></script>      </p>
+
+  <script src="../js/rent-tax-calculator.js" defer></script>
+
+</body>      <p style="font-size: 13px; color: #666; font-style: italic; padding: 10px; background: #f8f9fa; border-radius: 4px; margin-bottom: 25px;">    .calculator-section {
+
+</html>
 
         <strong>Σημείωση:</strong> Από την έκπτωση αυτή, εξαιρούνται οι περιπτώσεις που το εισόδημα αποκτήθηκε από υπεκμίσθωση καθώς επίσης και το τεκμαρτό εισόδημα από ιδιοχρησιμοποίηση ακινήτων ή από δωρεάν παραχώρηση της χρήσης ακινήτων σε τρίτους.
 
