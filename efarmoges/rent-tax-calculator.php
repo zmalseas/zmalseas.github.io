@@ -26,7 +26,7 @@
         .rent-left h2 { 
           color: var(--accent); 
           font-size: 20px; 
-          margin: 32px 0 16px; 
+          margin: 16px 0 8px; /* Adjusted spacing */
           text-align: center;
           position: relative;
           padding: 0 20px;
@@ -36,15 +36,15 @@
           content: '';
           position: absolute;
           top: 50%;
-          width: 60px;
+          width: 40px; /* Reduced width */
           height: 2px;
           background-color: var(--accent);
         }
         .rent-left h2::before {
-          left: 0;
+          left: -50px; /* Moved closer */
         }
         .rent-left h2::after {
-          right: 0;
+          right: -50px; /* Moved closer */
         }
         .rent-left p { font-size: 15px; line-height: 1.7; margin: 0 0 14px; text-align: justify; }
         .rent-note { font-size: 13px; color: #555; background: #f6f7f8; border-radius: 6px; padding: 10px; margin-top: 6px; }
@@ -52,9 +52,9 @@
         
         /* Tax brackets table styling */
         .tax-table {
-          width: 100%;
+          width: auto; /* Adjusted width to fit content */
+          margin: 0 auto; /* Centered table */
           border-collapse: collapse;
-          margin: 16px 0;
           background: #fff;
           border: 2px solid var(--accent);
           border-radius: 8px;
@@ -70,7 +70,8 @@
         .tax-table td {
           padding: 10px 16px;
           text-align: center;
-          border-bottom: 1px solid #e0e0e0;
+          border: 1px solid #ccc; /* Added borders */
+          color: #000; /* Changed text color to black */
         }
         .tax-table tr:last-child td {
           border-bottom: none;
@@ -86,10 +87,17 @@
         .special-cases {
           background: linear-gradient(135deg, #f0fdff 0%, #e6faff 100%);
           border-left: 4px solid var(--accent);
-          padding: 20px;
-          margin: 24px 0;
-          border-radius: 8px;
-          box-shadow: 0 2px 8px rgba(0, 229, 255, 0.1);
+          padding: 24px; /* Increased padding */
+          margin: 32px 0; /* Adjusted margin */
+          border-radius: 12px; /* Increased border radius */
+          box-shadow: 0 4px 12px rgba(0, 229, 255, 0.2); /* Enhanced shadow */
+          font-size: 16px; /* Slightly larger text */
+          line-height: 1.8; /* Improved readability */
+        }
+        .special-cases a {
+          color: var(--accent);
+          text-decoration: underline;
+          font-weight: bold;
         }
         
         @media (max-width: 960px) { 
