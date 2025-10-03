@@ -12,7 +12,7 @@
         /* Page-local, scoped layout so global CSS can't break it */
         :root { 
           --rent-gap: 0; 
-          --accent: #E74C3C; /* Updated to coral red color */
+          --accent: #2980B9; /* Updated to balanced blue color */
         }
         body { 
           margin: 0; 
@@ -57,7 +57,7 @@
         .tax-table {
           width: auto; /* Adjusted width to fit content */
           margin: 0 auto; /* Centered table */
-          border: 2px solid #E74C3C; /* Added external border */
+          border: 2px solid #2980B9; /* Added external border */
           border-collapse: collapse;
           background: #fff;
           border-radius: 8px;
@@ -69,12 +69,12 @@
           padding: 12px 16px;
           text-align: left; /* Adjusted alignment */
           font-weight: 600;
-          border-bottom: 2px solid #E74C3C; /* Updated line below headers */
+          border-bottom: 2px solid #2980B9; /* Updated line below headers */
         }
         .tax-table td {
           padding: 10px 16px;
           text-align: center;
-          border: 1px solid #E74C3C; /* Added borders */
+          border: 1px solid #2980B9; /* Added borders */
           color: #000; /* Text color remains black */
         }
         .tax-table tr:last-child td {
