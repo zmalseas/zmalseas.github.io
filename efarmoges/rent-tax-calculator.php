@@ -56,18 +56,21 @@
           line-height: 1.7;
           margin: 0 0 24px; /* Increased spacing after paragraphs */
           text-align: justify;
+          color: #000 !important; /* Ensure text is black */
         }
         .rent-left ul {
           font-size: 15px;
           line-height: 1.7;
           margin: 0 0 24px;
           padding-left: 24px;
+          color: #000 !important; /* Ensure text is black */
         }
         .rent-left li {
           margin-bottom: 8px;
+          color: #000 !important; /* Ensure text is black */
         }
         .rent-left li strong {
-          color: #000; /* Ensure bold text is black */
+          color: #000 !important; /* Ensure bold text is black */
         }
         .rent-note { font-size: 13px; color: #555; background: #f6f7f8; border-radius: 6px; padding: 10px; margin-top: 6px; }
         .calc-slab { width:100%; max-width:540px; }
@@ -94,7 +97,7 @@
           padding: 10px 16px;
           text-align: center;
           border: 1px solid #2980B9; /* Added borders */
-          color: #000; /* Text color remains black */
+          color: #000 !important; /* Text color remains black */
         }
         .tax-table tr:last-child td {
           border-bottom: none;
@@ -106,16 +109,7 @@
           font-weight: 600;
         }
         
-        /* Blue boxes for highlighted terms */
-        .blue-box {
-          background-color: #2980B9 !important;
-          color: white !important;
-          padding: 2px 6px;
-          border-radius: 4px;
-          font-weight: bold;
-          display: inline-block;
-          margin: 1px;
-        }
+
         
         /* Special section styling */
         .special-cases {
@@ -162,10 +156,10 @@
             <h2>Εισοδήματα από ενοίκια</h2>
             <p>Σύμφωνα με τον Κώδικα Φορολογίας Εισοδήματος (Ν.4172/2013), εισόδημα από ακίνητη περιουσία είναι:</p>
             <ul>
-              <li>το εισόδημα που προέρχεται από <span class="blue-box">εκμίσθωση ή υπεκμίσθωση</span>,</li>
-              <li>Το <span class="blue-box">τεκμαρτό εισόδημα</span> από ιδιοχρησιμοποίηση ακινήτων ή από δωρεάν παραχώρηση της χρήσης τους σε τρίτους.</li>
+              <li>το εισόδημα που προέρχεται από <span class="highlight-cyan">εκμίσθωση ή υπεκμίσθωση</span>,</li>
+              <li>Το <span class="highlight-cyan">τεκμαρτό εισόδημα</span> από ιδιοχρησιμοποίηση ακινήτων ή από δωρεάν παραχώρηση της χρήσης τους σε τρίτους.</li>
               <li>Κάθε ποσό από εκμίσθωση, υπεκμίσθωση ή δωρεάν παραχώρηση χρήσης χώρων τοποθέτησης επιγραφών, κοινόχρηστων χώρων),</li>
-              <li>Το ποσό της <span class="blue-box">αποζημίωσης</span> για πρόωρη λήξη μίσθωσης που καταβάλλεται από τον μισθωτή.</li>
+              <li>Το ποσό της <span class="highlight-cyan">αποζημίωσης</span> για πρόωρη λήξη μίσθωσης που καταβάλλεται από τον μισθωτή.</li>
             </ul>
 
             <h2>Πώς φορολογούνται τα ενοίκια</h2>
@@ -197,12 +191,12 @@
             <h2>Δαπάνες μείωσης φόρου από ακίνητα</h2>
             <p>Όσα ακίνητα αποφέρουν φορολογητέο εισόδημα, ανεξάρτητα από το είδος και τη χρήση τους, έχουν <span class="highlight-cyan"><strong>έκπτωση 5%</strong></span> επί του ακαθάριστου εισοδήματος που θα φορολογηθεί.</p>
             
-            <p><strong>Σημείωση:</strong> Από την έκπτωση <span class="blue-box">εξαιρούνται</span>:</p>
+            <p><strong>Σημείωση:</strong> Από την έκπτωση <span class="highlight-cyan">εξαιρούνται</span>:</p>
             <ul>
-              <li><span class="blue-box">οι περιπτώσεις υπεκμίσθωσης</span></li>
-              <li><span class="blue-box">το τεκμαρτό εισόδημα</span> από ιδιοχρησιμοποίηση ακινήτων ή από δωρεάν παραχώρηση της χρήσης τους σε τρίτους.</li>
+              <li><span class="highlight-cyan">οι περιπτώσεις υπεκμίσθωσης</span></li>
+              <li><span class="highlight-cyan">το τεκμαρτό εισόδημα</span> από ιδιοχρησιμοποίηση ακινήτων ή από δωρεάν παραχώρηση της χρήσης τους σε τρίτους.</li>
               <li>Κάθε ποσό από εκμίσθωση, υπεκμίσθωση ή δωρεάν παραχώρηση χρήσης χώρων τοποθέτησης επιγραφών, κοινόχρηστων χώρων),</li>
-              <li>Το ποσό της <span class="blue-box">αποζημίωσης</span> για πρόωρη λήξη μίσθωσης που καταβάλλεται από τον μισθωτή.</li>
+              <li>Το ποσό της <span class="highlight-cyan">αποζημίωσης</span> για πρόωρη λήξη μίσθωσης που καταβάλλεται από τον μισθωτή.</li>
             </ul>
 
             <h2>Λειτουργία της εφαρμογής</h2>
