@@ -128,9 +128,29 @@
           font-weight: bold;
         }
         
+        /* Force calculator table text to be black */
+        .calc-table td {
+          color: #000 !important;
+        }
+        
+        /* Force KPI values to be black */
+        .kpi .val {
+          color: #000 !important;
+        }
+        
         @media (max-width: 960px) { 
-          .rent-wrap { grid-template-columns: 1fr; } 
-          .rent-right{ padding:28px 18px; }
+          .rent-wrap { 
+            grid-template-columns: 1fr; 
+            display: flex;
+            flex-direction: column;
+          } 
+          .rent-right { 
+            padding:28px 18px; 
+            order: 1; /* Calculator appears first on mobile */
+          }
+          .rent-left { 
+            order: 2; /* Text appears second on mobile */
+          }
           .rent-left h2 {
             text-align: center; /* Center alignment for small screens */
             padding-left: 0; /* Remove left padding */
