@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nerally|ΦΟΡΟΛΟΓΙΑ ΕΝΟΙΚΙΩΝ</title>
+  <title>Nerally | Υπολογισμος Φορου Ενοικίων</title>
   <link rel="icon" type="image/png" href="../images/logo.png" />
   <link rel="stylesheet" href="../main.css" />
   <link rel="stylesheet" href="/css/cookie-consent.css" />
