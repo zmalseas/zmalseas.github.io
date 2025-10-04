@@ -108,8 +108,8 @@
         
         /* Blue boxes for highlighted terms */
         .blue-box {
-          background-color: var(--accent);
-          color: white;
+          background-color: #2980B9 !important;
+          color: white !important;
           padding: 2px 6px;
           border-radius: 4px;
           font-weight: bold;
