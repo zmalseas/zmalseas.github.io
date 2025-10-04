@@ -202,8 +202,7 @@
             <h2>Λειτουργία της εφαρμογής</h2>
             <p>Η συγκεκριμένη εφαρμογή αναπτύχθηκε από τη <a href="/" class="highlight-cyan" style="text-decoration: underline;">Nerally</a> και καλύπτει τις περιπτώσεις φορολόγησης εισοδήματος που αποκτά φυσικό πρόσωπο από τη μίσθωση ακίνητης περιουσίας.</p>
             <div class="special-cases">
-              <p>Για ειδικές περιπτώσεις όπως <strong>Βραχυχρόνιες μισθώσεις</strong>, <strong>Υπεκμισθώσεις</strong>, <strong>Εταιρικές Μισθώσεις</strong>, <strong>Ανείσπραχτα ενοίκια</strong>, <strong>Αναγνώριση δαπανών</strong> κ.ά., μπορείτε να <strong>διαβάσετε τις σχετικές μελέτες στο blog μας</strong> στην κατηγορία <a href="/blog/forologika" class="highlight-cyan" style="text-decoration: underline;">Φορολογικά->Μισθώσεις</a></p>
-              <p><a href="/epikoinonia/contact.php" class="highlight-cyan" style="text-decoration: underline;">επικοινωνήσετε μαζί μας</a>.</p>
+              <p>Για ειδικές περιπτώσεις όπως <strong>Βραχυχρόνιες μισθώσεις</strong>, <strong>Υπεκμισθώσεις</strong>, <strong>Εταιρικές Μισθώσεις</strong>, <strong>Ανείσπραχτα ενοίκια</strong>, <strong>Αναγνώριση δαπανών</strong> κ.ά., μπορείτε να <strong>διαβάσετε τις σχετικές μελέτες στο blog μας</strong> στην κατηγορία <a href="/blog/forologika" class="highlight-cyan" style="text-decoration: underline;">Φορολογικά->Μισθώσεις</a> ή να <a href="/epikoinonia/contact.php" class="highlight-cyan" style="text-decoration: underline;">επικοινωνήσετε μαζί μας</a>.</p>
             </div>
           </article>
 
