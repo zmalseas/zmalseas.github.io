@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ΦΟΡΟΛΟΓΙΑ ΕΝΟΙΚΙΩΝ – ΦΥΣΙΚΑ ΠΡΟΣΩΠΑ | Nerally</title>
+  <title>Nerally|ΦΟΡΟΛΟΓΙΑ ΕΝΟΙΚΙΩΝ</title>
   <link rel="icon" type="image/png" href="../images/logo.png" />
   <link rel="stylesheet" href="../main.css" />
   <link rel="stylesheet" href="/css/cookie-consent.css" />
@@ -151,7 +151,7 @@
 
           <!-- Left: plain white prose, no tables/boxes -->
           <article class="rent-left">
-            <h1>ΦΟΡΟΛΟΓΙΑ ΕΝΟΙΚΙΩΝ – ΦΥΣΙΚΑ ΠΡΟΣΩΠΑ</h1>
+            <h1>ΦΟΡΟΛΟΓΙΑ ΕΝΟΙΚΙΩΝ</h1>
 
             <h2>Εισοδήματα από ενοίκια</h2>
             <p>Σύμφωνα με τον Κώδικα Φορολογίας Εισοδήματος (Ν.4172/2013), εισόδημα από ακίνητη περιουσία είναι:</p>
@@ -202,8 +202,8 @@
             <h2>Λειτουργία της εφαρμογής</h2>
             <p>Η συγκεκριμένη εφαρμογή αναπτύχθηκε από τη <a href="/" class="highlight-cyan" style="text-decoration: underline;">Nerally</a> και καλύπτει τις περιπτώσεις φορολόγησης εισοδήματος που αποκτά φυσικό πρόσωπο από τη μίσθωση ακίνητης περιουσίας.</p>
             <div class="special-cases">
-              <p>Για ειδικές περιπτώσεις όπως <strong>Βραχυχρόνιες μισθώσεις</strong>, <strong>Υπεκμισθώσεις</strong>, <strong>Εταιρικές Μισθώσεις</strong>, <strong>Ανείσπραχτα ενοίκια</strong>, <strong>Αναγνώριση δαπανών</strong> κ.ά., μπορείτε να <a href="/epikoinonia/contact.php" class="highlight-cyan" style="text-decoration: underline;">επικοινωνήσετε μαζί μας</a>.</p>
-              <p><strong>Διαβάσετε τις σχετικές μελέτες στο blog μας</strong> στην κατηγορία <a href="/blog/forologika" class="highlight-cyan" style="text-decoration: underline;">Φορολογικά</a>.</p>
+              <p>Για ειδικές περιπτώσεις όπως <strong>Βραχυχρόνιες μισθώσεις</strong>, <strong>Υπεκμισθώσεις</strong>, <strong>Εταιρικές Μισθώσεις</strong>, <strong>Ανείσπραχτα ενοίκια</strong>, <strong>Αναγνώριση δαπανών</strong> κ.ά., μπορείτε να <strong>διαβάσετε τις σχετικές μελέτες στο blog μας</strong> στην κατηγορία <a href="/blog/forologika" class="highlight-cyan" style="text-decoration: underline;">Φορολογικά->Μισθώσεις</a></p>
+              <p><a href="/epikoinonia/contact.php" class="highlight-cyan" style="text-decoration: underline;">επικοινωνήσετε μαζί μας</a>.</p>
             </div>
           </article>
 
