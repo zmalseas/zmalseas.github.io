@@ -32,8 +32,8 @@ class NerallyApp {
       
       // Initialize core modules
       await this.loadPartials();
-      this.initializeNavigation(); // will only init if script already enqueued
-      this.initializeChatWidget(); // chat script is enqueued by WP
+      this.initializeNavigation(); // ensure nav module present everywhere
+      this.initializeChatWidget(); // ensure chat module present everywhere
       this.initializeCalculators();
       this.initializePerformanceOptimizations();
       this.initializeSecurity();
@@ -77,12 +77,30 @@ class NerallyApp {
   async injectFooter() { return; }
 
   initializeNavigation() {
-    // Do NOT inject script tag; WordPress already enqueues /js/navigation.js
+    // Load navigation.js if missing (static pages), otherwise just init
     try {
-      if (typeof NavigationManager !== 'undefined' && !window.navigationInitialized) {
-        new NavigationManager();
-        window.navigationInitialized = true;
-        console.log('🧭 NavigationManager initialized');
+      const ensureLoaded = () => {
+        if (typeof NavigationManager !== 'undefined' && !window.navigationInitialized) {
+          new NavigationManager();
+          window.navigationInitialized = true;
+          console.log('🧭 NavigationManager initialized');
+        }
+      };
+
+      if (typeof NavigationManager === 'undefined') {
+        const src = this.origin + '/js/navigation.js';
+        if (!document.querySelector(`script[src="${src}"]`)) {
+          const s = document.createElement('script');
+          s.src = src;
+          s.onload = ensureLoaded;
+          s.onerror = () => console.warn('⚠️ navigation.js failed to load');
+          document.head.appendChild(s);
+        } else {
+          // script tag exists; wait a tick
+          setTimeout(ensureLoaded, 0);
+        }
+      } else {
+        ensureLoaded();
       }
     } catch (error) {
       console.error('Navigation initialization failed:', error);
@@ -90,8 +108,36 @@ class NerallyApp {
   }
 
   initializeChatWidget() {
-    // Chat widget auto-initializes on load; nothing to do here
-    return;
+    // Ensure chat-widget.js is present on static pages too
+    try {
+      const ensureLoaded = () => {
+        // chat-widget.js auto-initializes itself; set a flag to avoid duplicates
+        if (!window.chatInitialized) {
+          window.chatInitialized = true;
+          console.log('💬 Chat widget script ensured');
+        }
+      };
+
+      // If chat container exists but widget class not present, load script
+      const hasContainer = !!document.getElementById('chat-widget');
+      if (hasContainer && typeof window.ChatWidget === 'undefined') {
+        const src = this.origin + '/js/chat-widget.js';
+        if (!document.querySelector(`script[src="${src}"]`)) {
+          const s = document.createElement('script');
+          s.src = src;
+          s.defer = true;
+          s.onload = ensureLoaded;
+          s.onerror = () => console.warn('⚠️ chat-widget.js failed to load');
+          document.head.appendChild(s);
+        } else {
+          setTimeout(ensureLoaded, 0);
+        }
+      } else {
+        ensureLoaded();
+      }
+    } catch (error) {
+      console.error('Chat widget initialization check failed:', error);
+    }
   }
 
   initializeCalculators() {
