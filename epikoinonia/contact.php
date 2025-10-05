@@ -30,7 +30,7 @@
     <!-- Contact Form Section -->
     <section class="contact-section">
       <div class="container">
-        <div class="contact-grid">
+  <div class="contact-grid two-col">
           <!-- Contact Info - Now on Left -->
           <div class="contact-info-area">
             <div class="info-card">

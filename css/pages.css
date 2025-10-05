@@ -254,6 +254,61 @@
   box-shadow: 0 8px 30px rgba(0,0,0,0.06);
 }
 
+/* Contact page markup used in epikoinonia/contact.php */
+.contact-page .simple-header h1,
+.contact-page .simple-header p {
+  color: #111827;
+}
+
+.contact-page .info-card,
+.contact-page .contact-details-card,
+.contact-page .contact-form-area {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  padding: 20px;
+}
+
+.contact-page .info-card h2,
+.contact-page .contact-details-card h4,
+.contact-page .form-header h2 {
+  color: #111827;
+  margin: 0 0 12px 0;
+}
+
+.contact-page .info-card p,
+.contact-page .benefits-list span,
+.contact-page .contact-details-card,
+.contact-page .form-header p {
+  color: #374151;
+}
+
+.contact-page .benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  display: grid;
+  gap: 10px;
+}
+
+.contact-page .benefits-list li {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 10px;
+  align-items: start;
+}
+
+.contact-page .benefit-icon { font-size: 18px; }
+.contact-page .benefit-text strong { color: #111827; }
+.contact-page .benefit-text span { color: #4b5563; font-size: 0.95rem; }
+
+.contact-page .contact-items { display: grid; gap: 12px; }
+.contact-page .contact-item { display: grid; grid-template-columns: 24px 1fr; gap: 10px; align-items: start; }
+.contact-page .contact-icon { font-size: 18px; }
+.contact-page .contact-label { display: block; font-size: 0.85rem; color: #6b7280; }
+.contact-page .contact-value { color: var(--brand); text-decoration: none; }
+.contact-page .contact-value:hover { text-decoration: underline; }
+
 /* Form messages */
 .form-message {
   border-radius: 8px;
