@@ -77,77 +77,178 @@
     .why li{display:flex;gap:14px;align-items:flex-start;font-size:17px;line-height:1.6;color:#000}
     .check{flex:0 0 26px;height:26px;border-radius:8px;background:var(--brand);color:#fff;display:grid;place-items:center;font-weight:800;font-size:16px;box-shadow:0 4px 10px rgba(41,128,185,.3)}
 
-    /* Hero Section with subtle animation */
-    .hero.animated-hero {
+    /* Hero Section - Full Animation Style */
+    .hero-animated {
+      height: 200px;
+      background: #09090f;
+      color: #f6f8fb;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, "Helvetica Neue", Arial;
+      overflow: hidden;
       position: relative;
-      background: linear-gradient(135deg, var(--brand), #3498db);
-      color: white;
-      text-align: left;
-      padding: 50px 20px;
       border-radius: 0 0 40px 40px;
       box-shadow: var(--shadow-lg);
-      display: flex;
-      align-items: center;
-      min-height: 250px;
+    }
+    
+    .hero-animated .bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
       overflow: hidden;
     }
     
-    .animated-bg {
+    .hero-animated svg {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0.3;
-      z-index: 1;
+      width: 160%;
+      height: 160%;
+      left: -30%;
+      top: -30%;
     }
     
-    .animated-bg .layer {
-      position: absolute;
-      width: 100%;
-      height: 100%;
+    .hero-animated .layer {
+      mix-blend-mode: screen;
     }
-    
-    .hero-content {
+
+    /* content */
+    .hero-animated .stage {
       position: relative;
-      z-index: 2;
+      z-index: 1;
+      height: 100%;
       display: flex;
       align-items: center;
-      gap: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-      width: 100%;
+      justify-content: flex-start;
     }
     
-    .hero img {
-      width: 80px;
-      height: 80px;
-      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
-      flex-shrink: 0;
+    .hero-animated .stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      align-items: flex-start;
+      padding: 1.5rem 2.5rem;
+      max-width: min(1200px, 92vw);
     }
     
-    .hero h1 {
-      font-size: clamp(28px,3.5vw,42px);
-      margin: 0;
-      font-weight: 700;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    .hero-animated .headline {
+      font-weight: 900;
+      letter-spacing: .045em;
+      line-height: 1.05;
+      text-align: left;
+      font-size: clamp(1.8rem, 5.5vw, 3.5rem);
+      text-shadow: 0 0 24px rgba(255,255,255,.22);
+      white-space: nowrap;
     }
     
-    .dynamic-text {
+    .hero-animated .headline b {
+      background: linear-gradient(90deg, #4cc9f0, #7209b7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .hero-animated .row {
+      display: flex;
+      align-items: baseline;
+      gap: clamp(.4rem, 1.2vw, .8rem);
       opacity: 1;
-      transition: opacity 0.5s ease;
+    }
+    
+    .hero-animated .left {
+      font-weight: 900;
+      letter-spacing: .045em;
+      line-height: 1;
+      font-size: clamp(1.2rem, 3.8vw, 2.8rem);
+      text-shadow: 0 0 14px rgba(255,255,255,.22);
+    }
+    
+    .hero-animated .right {
+      font-weight: 900;
+      letter-spacing: .045em;
+      line-height: 1;
+      font-size: clamp(1.2rem, 3.8vw, 2.8rem);
+      min-width: 8ch;
+      text-align: left;
+      color: #e8f6ff;
+    }
+    
+    .hero-animated .flip {
+      display: inline-block;
+      transform-origin: 50% 80%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transform-style: preserve-3d;
+      will-change: transform, opacity;
+    }
+    
+    .hero-animated .flip.enter {
+      animation: flipIn .7s cubic-bezier(.2,.8,.2,1) forwards;
+    }
+    
+    @keyframes flipIn {
+      0% { transform: rotateX(90deg); opacity: 0; filter: blur(6px); }
+      60% { opacity: 1; }
+      100% { transform: rotateX(0); opacity: 1; filter: blur(0); }
+    }
+
+    .hero-animated .hint {
+      font-size: clamp(.8rem, 1.6vw, .9rem);
+      color: #a9b2be;
+      text-align: left;
+    }
+    
+    .hero-animated .chips {
+      display: flex;
+      gap: .4rem;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+    
+    .hero-animated .chip {
+      border: 1px solid rgba(255,255,255,.18);
+      color: #f6f8fb;
+      padding: .3rem .5rem;
+      border-radius: 999px;
+      font-size: .7rem;
+      opacity: .9;
+      backdrop-filter: blur(4px);
+    }
+
+    .hero-animated .gap {
+      display: inline-block;
+      width: 0;
+      vertical-align: baseline;
+    }
+    
+    .hero-animated .gap.g1 { width: 3ch; }
+    .hero-animated .gap.g2 { width: 2ch; }
+    
+    .hero-animated .rise {
+      display: inline-block;
+      transform: translateY(.9em);
+      opacity: 0;
+      animation: riseIn .7s ease forwards;
+    }
+    
+    @keyframes riseIn {
+      to { transform: translateY(0); opacity: 1; }
     }
     
     @media(max-width:768px){
-      .hero-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
+      .hero-animated {
+        height: 150px;
       }
-      .hero.animated-hero {
-        text-align: center;
-        min-height: 200px;
-        padding: 40px 20px;
+      .hero-animated .stack {
+        padding: 1rem 1.5rem;
+        gap: 0.6rem;
+      }
+      .hero-animated .headline {
+        font-size: clamp(1.4rem, 4.5vw, 2.5rem);
+      }
+      .hero-animated .left,
+      .hero-animated .right {
+        font-size: clamp(1rem, 3.2vw, 2rem);
+      }
+      .hero-animated .chip {
+        font-size: .6rem;
+        padding: .25rem .4rem;
       }
     }
     
@@ -169,31 +270,76 @@
   
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/header.php'; ?>
 
-  <!-- Hero Section -->
-  <div class="hero animated-hero">
-    <div class="animated-bg">
-      <svg class="layer" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <!-- Hero Section with Full Animation -->
+  <div class="hero-animated">
+    <div class="bg" aria-hidden="true">
+      <!-- Turbulence-based displacement for complex living gradients -->
+      <svg class="layer" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" style="opacity:.9">
         <defs>
           <linearGradient id="sg1" x1="0" x2="1" y1="0" y2="0">
-            <stop offset="0" stop-color="#2980b9"/>
-            <stop offset="1" stop-color="#3498db"/>
+            <stop offset="0" stop-color="#4cc9f0"/>
+            <stop offset="1" stop-color="#7209b7"/>
           </linearGradient>
           <filter id="dis1" x="-50%" y="-50%" width="200%" height="200%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.003 0.008" numOctaves="1" seed="2" result="turb">
-              <animate attributeName="baseFrequency" dur="30s" values="0.003 0.008; 0.004 0.009; 0.003 0.008" repeatCount="indefinite"/>
+            <feTurbulence type="fractalNoise" baseFrequency="0.005 0.012" numOctaves="2" seed="2" result="turb">
+              <animate attributeName="baseFrequency" dur="22s" values="0.004 0.011; 0.006 0.013; 0.0045 0.012; 0.004 0.011" repeatCount="indefinite"/>
             </feTurbulence>
-            <feDisplacementMap in="SourceGraphic" in2="turb" scale="30" xChannelSelector="R" yChannelSelector="G"/>
-            <feGaussianBlur stdDeviation="8"/>
+            <feDisplacementMap in="SourceGraphic" in2="turb" scale="60" xChannelSelector="R" yChannelSelector="G"/>
+            <feGaussianBlur stdDeviation="14"/>
           </filter>
         </defs>
-        <path fill="url(#sg1)" filter="url(#dis1)" opacity="0.7"
-          d="M0,200 C300,180 600,220 900,200 C1200,180 1400,160 1600,180 L1600,900 L0,900 Z"></path>
+        <path fill="url(#sg1)" filter="url(#dis1)"
+          d="M0,540 C220,520 420,700 720,660 C980,630 1160,500 1420,560 C1520,580 1600,520 1600,520 L1600,900 L0,900 Z"></path>
+      </svg>
+
+      <svg class="layer" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" style="opacity:.8">
+        <defs>
+          <linearGradient id="sg2" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color="#00c2a8"/>
+            <stop offset="1" stop-color="#4cc9f0"/>
+          </linearGradient>
+          <filter id="dis2" x="-50%" y="-50%" width="200%" height="200%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.006 0.01" numOctaves="2" seed="7" result="turb">
+              <animate attributeName="baseFrequency" dur="28s" values="0.006 0.010; 0.007 0.012; 0.005 0.009; 0.006 0.010" repeatCount="indefinite"/>
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="turb" scale="80" xChannelSelector="B" yChannelSelector="G"/>
+            <feGaussianBlur stdDeviation="18"/>
+          </filter>
+        </defs>
+        <path fill="url(#sg2)" filter="url(#dis2)"
+          d="M0,660 C260,640 480,820 760,780 C1040,740 1240,600 1480,640 C1560,660 1600,620 1600,620 L1600,900 L0,900 Z"></path>
+      </svg>
+
+      <svg class="layer" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" style="opacity:.65">
+        <defs>
+          <linearGradient id="sg3" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color="#4cc9f0"/>
+            <stop offset="1" stop-color="#00c2a8"/>
+          </linearGradient>
+          <filter id="dis3" x="-50%" y="-50%" width="200%" height="200%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.004 0.012" numOctaves="2" seed="11" result="turb">
+              <animate attributeName="baseFrequency" dur="34s" values="0.004 0.012; 0.005 0.014; 0.0035 0.011; 0.004 0.012" repeatCount="indefinite"/>
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="turb" scale="70" xChannelSelector="R" yChannelSelector="A"/>
+            <feGaussianBlur stdDeviation="24"/>
+          </filter>
+        </defs>
+        <path fill="url(#sg3)" filter="url(#dis3)"
+          d="M0,760 C240,720 440,880 800,840 C1060,810 1300,700 1500,740 C1560,750 1600,720 1600,720 L1600,900 L0,900 Z"></path>
       </svg>
     </div>
-    <div class="hero-content">
-      <img src="../images/logo.png" alt="Nerally Logo">
-      <h1 id="animated-title">Nerally — <span class="dynamic-text">Σύμμαχος Νέας Εποχής</span></h1>
-    </div>
+
+    <main class="stage">
+      <div class="stack">
+        <div id="headline" class="headline" aria-live="polite"></div>
+        <div class="row" id="row">
+          <div class="left">NERA</div>
+          <div class="right"><span id="flip" class="flip">LLY</span></div>
+        </div>
+        <div id="hint" class="hint"></div>
+        <div id="chips" class="chips"></div>
+      </div>
+    </main>
   </div>
 
   <main class="company-container">
@@ -290,30 +436,49 @@
   <script src="/js/cookie-consent.js"></script>
   <script src="../app.js"></script>
   <script>
-    // Subtle text animation for hero section
-    const dynamicText = document.querySelector('.dynamic-text');
-    const phrases = [
-      'Σύμμαχος Νέας Εποχής',
-      'Στρατηγικός Συνεργάτης',
-      'Εταίρος Ανάπτυξης',
-      'Σύμβουλος Εμπιστοσύνης'
-    ];
+    // Full animation script from the original file
+    const headline = document.getElementById('headline');
+    const row = document.getElementById('row');
+    const flipEl = document.getElementById('flip');
+    const hint = document.getElementById('hint');
+    const chips = document.getElementById('chips');
+
+    // Add service chips in Greek
+    ['Λογιστικά • Μισθοδοσία','Χρηματοδότηση • ΕΣΠΑ','Έλεγχος • Συμμόρφωση','Ψηφιακά • Social Media','Ασφάλεια • Μηχανικός']
+      .forEach(t => {
+        const c = document.createElement('div');
+        c.className = 'chip';
+        c.textContent = t;
+        chips.appendChild(c);
+      });
+
+    function wait(ms) { return new Promise(r => setTimeout(r, ms)); }
     
-    let currentIndex = 0;
-    
-    function changeText() {
-      if (dynamicText) {
-        dynamicText.style.opacity = '0';
-        setTimeout(() => {
-          currentIndex = (currentIndex + 1) % phrases.length;
-          dynamicText.textContent = phrases[currentIndex];
-          dynamicText.style.opacity = '1';
-        }, 500);
-      }
+    function flipTo(text) {
+      flipEl.classList.remove('enter');
+      void flipEl.offsetWidth;
+      flipEl.textContent = text;
+      flipEl.classList.add('enter');
     }
-    
-    // Change text every 4 seconds
-    setInterval(changeText, 4000);
+
+    (async function run() {
+      headline.textContent = 'NERALLY';
+      await wait(1200);
+      headline.innerHTML = 'N' + '<span class="gap g1"></span>' + 'ER' + '<span class="gap g2"></span>' + 'ALLY';
+      await wait(1600);
+      headline.querySelector('.g1').innerHTML = '<span class="rise">EW&nbsp;</span>';
+      await wait(600);
+      headline.querySelector('.g2').innerHTML = '<span class="rise">A&nbsp;</span>';
+      await wait(1400);
+      headline.innerHTML = '<b>NEW ERA</b> ALLY';
+
+      const words = ['LLY', 'ΑΝΠΤΥΞΗ', 'ΟΙΚΟΝΟΜΙΚΑ', 'ΣΤΡΑΤΗΓΙΚΗ', 'ΧΡΗΜΑΤΟΔΟΤΗΣΗ', 'ΑΣΦΑΛΕΙΑ', 'ΚΑΙΝΟΤΟΜΙΑ', 'ΨΗΦΙΑΚΑ', 'ΕΜΠΙΣΤΟΣΥΝΗ'];
+      let i = 0;
+      flipTo(words[i++ % words.length]);
+      setInterval(() => flipTo(words[i++ % words.length]), 1900);
+
+      hint.textContent = 'Σύμμαχος Νέας Εποχής';
+    })();
   </script>
 </body>
 </html>
