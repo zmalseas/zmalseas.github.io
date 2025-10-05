@@ -77,21 +77,40 @@
     .why li{display:flex;gap:14px;align-items:flex-start;font-size:17px;line-height:1.6;color:#000}
     .check{flex:0 0 26px;height:26px;border-radius:8px;background:var(--brand);color:#fff;display:grid;place-items:center;font-weight:800;font-size:16px;box-shadow:0 4px 10px rgba(41,128,185,.3)}
 
-    /* Hero Section with background image */
-    .hero {
-      background: url('../images/etairia.webp');
-      background-size: cover;
-      background-position: center;
-      color:white;
-      text-align:left;
-      padding:60px 20px;
-      border-radius:0 0 40px 40px;
-      box-shadow:var(--shadow-lg);
+    /* Hero Section with subtle animation */
+    .hero.animated-hero {
+      position: relative;
+      background: linear-gradient(135deg, var(--brand), #3498db);
+      color: white;
+      text-align: left;
+      padding: 50px 20px;
+      border-radius: 0 0 40px 40px;
+      box-shadow: var(--shadow-lg);
       display: flex;
       align-items: center;
-      min-height: 400px;
+      min-height: 250px;
+      overflow: hidden;
     }
+    
+    .animated-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.3;
+      z-index: 1;
+    }
+    
+    .animated-bg .layer {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    
     .hero-content {
+      position: relative;
+      z-index: 2;
       display: flex;
       align-items: center;
       gap: 20px;
@@ -99,26 +118,36 @@
       margin: 0 auto;
       width: 100%;
     }
+    
     .hero img {
-      width:80px;
+      width: 80px;
       height: 80px;
-      filter:drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
       flex-shrink: 0;
     }
+    
     .hero h1 {
-      font-size:clamp(28px,3.5vw,42px);
-      margin:0;
-      font-weight:700;
+      font-size: clamp(28px,3.5vw,42px);
+      margin: 0;
+      font-weight: 700;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
+    
+    .dynamic-text {
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+    
     @media(max-width:768px){
       .hero-content {
         flex-direction: column;
         text-align: center;
         gap: 15px;
       }
-      .hero {
+      .hero.animated-hero {
         text-align: center;
+        min-height: 200px;
+        padding: 40px 20px;
       }
     }
     
@@ -131,40 +160,7 @@
     .quote-box p{font-size:18px;color:var(--brand);margin:0}
     .quote-box p:last-child{color:#475569}
 
-    /* Hero Section Animation */
-    .hero-section {
-      position: relative;
-      overflow: hidden;
-      height: 60vh;
-    }
-    .hero-section .bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-    .hero-section .layer {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0.9;
-    }
-    .hero-section .content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-    }
-    .hero-section .headline {
-      font-size: 3rem;
-      color: white;
-      text-shadow: 0 0 24px rgba(255, 255, 255, 0.22);
-    }
+
   </style>
   
   <!-- GTM loads via cookie-consent.js after analytics consent -->
@@ -174,30 +170,29 @@
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/header.php'; ?>
 
   <!-- Hero Section -->
-  <div class="hero-section" style="height: 60vh; position: relative; overflow: hidden;">
-    <div class="bg" aria-hidden="true">
-      <!-- Turbulence-based displacement for complex living gradients -->
-      <svg class="layer" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" style="opacity:.9">
+  <div class="hero animated-hero">
+    <div class="animated-bg">
+      <svg class="layer" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
         <defs>
           <linearGradient id="sg1" x1="0" x2="1" y1="0" y2="0">
-            <stop offset="0" stop-color="#4cc9f0"/>
-            <stop offset="1" stop-color="#7209b7"/>
+            <stop offset="0" stop-color="#2980b9"/>
+            <stop offset="1" stop-color="#3498db"/>
           </linearGradient>
           <filter id="dis1" x="-50%" y="-50%" width="200%" height="200%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.005 0.012" numOctaves="2" seed="2" result="turb">
-              <animate attributeName="baseFrequency" dur="22s" values="0.004 0.011; 0.006 0.013; 0.0045 0.012; 0.004 0.011" repeatCount="indefinite"/>
+            <feTurbulence type="fractalNoise" baseFrequency="0.003 0.008" numOctaves="1" seed="2" result="turb">
+              <animate attributeName="baseFrequency" dur="30s" values="0.003 0.008; 0.004 0.009; 0.003 0.008" repeatCount="indefinite"/>
             </feTurbulence>
-            <feDisplacementMap in="SourceGraphic" in2="turb" scale="60" xChannelSelector="R" yChannelSelector="G"/>
-            <feGaussianBlur stdDeviation="14"/>
+            <feDisplacementMap in="SourceGraphic" in2="turb" scale="30" xChannelSelector="R" yChannelSelector="G"/>
+            <feGaussianBlur stdDeviation="8"/>
           </filter>
         </defs>
-        <path fill="url(#sg1)" filter="url(#dis1)"
-          d="M0,540 C220,520 420,700 720,660 C980,630 1160,500 1420,560 C1520,580 1600,520 1600,520 L1600,900 L0,900 Z"></path>
+        <path fill="url(#sg1)" filter="url(#dis1)" opacity="0.7"
+          d="M0,200 C300,180 600,220 900,200 C1200,180 1400,160 1600,180 L1600,900 L0,900 Z"></path>
       </svg>
     </div>
-
-    <div class="content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
-      <h1 class="headline" style="font-size: 3rem; color: white; text-shadow: 0 0 24px rgba(255, 255, 255, 0.22);">Nerally — Σύμμαχος Νέας Εποχής</h1>
+    <div class="hero-content">
+      <img src="../images/logo.png" alt="Nerally Logo">
+      <h1 id="animated-title">Nerally — <span class="dynamic-text">Σύμμαχος Νέας Εποχής</span></h1>
     </div>
   </div>
 
@@ -295,14 +290,30 @@
   <script src="/js/cookie-consent.js"></script>
   <script src="../app.js"></script>
   <script>
-    const headline = document.querySelector('.headline');
-    headline.innerHTML = '<b>NEW ERA</b> ALLY';
-    const words = ['ALLY', 'GROWTH', 'FINANCE', 'STRATEGY', 'FUNDING', 'SECURITY', 'INNOVATION', 'DIGITAL', 'TRUST'];
-    let i = 0;
-    function flipTo(text) {
-      headline.textContent = text;
+    // Subtle text animation for hero section
+    const dynamicText = document.querySelector('.dynamic-text');
+    const phrases = [
+      'Σύμμαχος Νέας Εποχής',
+      'Στρατηγικός Συνεργάτης',
+      'Εταίρος Ανάπτυξης',
+      'Σύμβουλος Εμπιστοσύνης'
+    ];
+    
+    let currentIndex = 0;
+    
+    function changeText() {
+      if (dynamicText) {
+        dynamicText.style.opacity = '0';
+        setTimeout(() => {
+          currentIndex = (currentIndex + 1) % phrases.length;
+          dynamicText.textContent = phrases[currentIndex];
+          dynamicText.style.opacity = '1';
+        }, 500);
+      }
     }
-    setInterval(() => flipTo(words[i++ % words.length]), 1900);
+    
+    // Change text every 4 seconds
+    setInterval(changeText, 4000);
   </script>
 </body>
 </html>
