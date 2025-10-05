@@ -4,6 +4,7 @@
 class NerallyApp {
   constructor() {
     this.isInitialized = false;
+    this.origin = (typeof window !== 'undefined' && window.location && window.location.origin) ? window.location.origin : '';
     this.init();
   }
 
@@ -78,12 +79,8 @@ class NerallyApp {
   initializeNavigation() {
     // Load navigation module instead of duplicating code
     try {
-      const currentPath = window.location.pathname;
-      const isInSubfolder = this.isInSubfolder(currentPath);
-      const basePath = isInSubfolder ? "../" : "./";
-      
       const script = document.createElement('script');
-      script.src = basePath + 'js/navigation.js';
+      script.src = this.origin + '/js/navigation.js';
       script.onload = () => {
         console.log('🧭 Navigation module loaded');
         // Initialize NavigationManager after loading
@@ -106,12 +103,8 @@ class NerallyApp {
 
   initializeChatWidget() {
     try {
-      const currentPath = window.location.pathname;
-      const isInSubfolder = this.isInSubfolder(currentPath);
-      const basePath = isInSubfolder ? "../" : "./";
-      
       const script = document.createElement('script');
-      script.src = basePath + 'js/chat-widget.js';
+      script.src = this.origin + '/js/chat-widget.js';
       script.onload = () => {
         console.log('💬 Chat widget module loaded');
       };
@@ -154,12 +147,8 @@ class NerallyApp {
   initializeSecurity() {
     // Load security manager module for advanced protection
     try {
-      const currentPath = window.location.pathname;
-      const isInSubfolder = this.isInSubfolder(currentPath);
-      const basePath = isInSubfolder ? "../" : "./";
-      
       const script = document.createElement('script');
-      script.src = basePath + 'js/security-manager.js';
+      script.src = this.origin + '/js/security-manager.js';
       script.onload = () => {
         console.log('🔒 Security manager module loaded');
         if (window.SecurityManager) {
@@ -186,12 +175,8 @@ class NerallyApp {
 
   initializeErrorHandler() {
     try {
-      const currentPath = window.location.pathname;
-      const isInSubfolder = this.isInSubfolder(currentPath);
-      const basePath = isInSubfolder ? "../" : "./";
-      
       const script = document.createElement('script');
-      script.src = basePath + 'js/error-handler.js';
+      script.src = this.origin + '/js/error-handler.js';
       script.onload = () => {
         console.log('🚨 Error handler module loaded');
         if (window.ErrorHandler) {
@@ -213,11 +198,7 @@ class NerallyApp {
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', async () => {
         try {
-          const currentPath = window.location.pathname;
-          const isInSubfolder = this.isInSubfolder(currentPath);
-          const swPath = isInSubfolder ? '../sw.js' : './sw.js';
-          
-          const registration = await navigator.serviceWorker.register(swPath);
+          const registration = await navigator.serviceWorker.register('/sw.js');
           console.log('🔄 Service Worker registered successfully:', registration);
           
           // Listen for updates
