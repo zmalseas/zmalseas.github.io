@@ -26,107 +26,107 @@
           background-size: cover; background-position: center;
         }
         .rent-left h1 {
-          color: #000; /* Black color */
+          color: #000;
           font-size: 28px;
-          margin: 0 0 20px; /* Adjusted spacing */
-          text-align: center; /* Centered heading */
+          margin: 0 0 20px;
+          text-align: center;
         }
         .rent-left h1::after {
-          display: none; /* Removed underline */
+          display: none;
         }
-        .rent-left h2 { 
-          color: var(--accent);
-          font-size: 20px;
-          margin: 40px 0 20px; /* Increased spacing between sections */
-          text-align: left; /* Align text to the left */
+        .rent-left h2, .rent-left h3 { 
+          color: var(--brand);
+          font-weight: 800;
           position: relative;
-          padding-left: 50px; /* Align text with the left blue line */
+          margin-bottom: 20px;
         }
-        .rent-left h2::after {
-          content: '';
-          position: absolute;
-          bottom: -10px; /* Position the line below the heading */
-          left: 0; /* Start from the left position */
-          width: 50%; /* Half-width underline */
-          height: 2px;
-          background-color: var(--accent);
+        .rent-left h2 {
+          font-size: clamp(28px, 3vw, 38px);
+        }
+        .rent-left h3 {
+          font-size: clamp(20px, 2vw, 24px);
+          margin-top: 40px;
+        }
+        .rent-left h2::after, .rent-left h3::after {
+          content: "";
+          display: block;
+          width: 70px;
+          height: 4px;
+          background: var(--brand);
+          border-radius: 6px;
+          margin-top: 10px;
         }
         .rent-left p {
-          font-size: 15px;
-          line-height: 1.7;
-          margin: 0 0 24px; /* Increased spacing after paragraphs */
-          text-align: justify;
-          color: #000 !important; /* Ensure text is black */
+          font-size: 18px;
+          color: #111827;
+          margin-bottom: 18px;
+          line-height: 1.8;
         }
         .rent-left ul {
-          font-size: 15px;
-          line-height: 1.7;
-          margin: 0 0 24px;
-          padding-left: 24px;
-          color: #000 !important; /* Ensure text is black */
+          list-style-type: disc;
+          padding-left: 20px;
+          color: #111827;
         }
-        .rent-left li {
-          margin-bottom: 8px;
-          color: #000 !important; /* Ensure text is black */
+        .rent-left ul li {
+          margin-bottom: 10px;
+          font-size: 17px;
         }
-        .rent-left li strong {
-          color: #000 !important; /* Ensure bold text is black */
+        .rent-left ul li strong {
+          color: var(--brand);
         }
         .rent-note { font-size: 13px; color: #555; background: #f6f7f8; border-radius: 6px; padding: 10px; margin-top: 6px; }
         .calc-slab { width:100%; max-width:540px; }
-        
-        /* Tax brackets table styling */
-        .tax-table {
-          width: auto; /* Adjusted width to fit content */
-          margin: 0 auto; /* Centered table */
-          border: 2px solid #2980B9; /* Added external border */
-          border-collapse: collapse;
+
+        /* New layout styles from φορος.html */
+        .two-col {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+          gap: 40px;
+          align-items: start;
+          margin-top: 40px;
+        }
+
+        .modern-table {
+          max-width: 500px;
+          margin: 0 auto;
+          border-collapse: separate;
+          border-spacing: 0;
           background: #fff;
-          border-radius: 8px;
+          border: 1px solid #e5e7eb;
+          border-radius: 12px;
+          box-shadow: 0 8px 20px rgba(0,0,0,.06);
           overflow: hidden;
-        }
-        .tax-table th {
-          background-color: var(--accent);
-          color: white;
-          padding: 12px 16px;
-          text-align: left; /* Adjusted alignment */
-          font-weight: 600;
-          border-bottom: 2px solid #2980B9; /* Updated line below headers */
-        }
-        .tax-table td {
-          padding: 10px 16px;
           text-align: center;
-          border: 1px solid #2980B9; /* Added borders */
-          color: #000 !important; /* Text color remains black */
         }
-        .tax-table tr:last-child td {
-          border-bottom: none;
+
+        .modern-table thead th {
+          background: #1f2937;
+          color: #fff;
+          text-align: center;
+          padding: 14px 18px;
         }
-        
-        /* Highlighted text styling */
-        .highlight-cyan {
-          color: var(--accent); /* Updated to blue */
-          font-weight: 600;
+
+        .modern-table tbody td {
+          padding: 14px 18px;
+          border-top: 1px solid #eef2f7;
+          color: #111827;
+          text-align: center;
+        }
+
+        .modern-table tbody tr:hover td {
+          background: #f9fbff;
+        }
+
+        .quote {
+          background: #fff;
+          border-radius: 12px;
+          padding: 24px;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+          margin-top: 40px;
+          font-size: 17px;
         }
         
 
-        
-        /* Special section styling */
-        .special-cases {
-          background: linear-gradient(135deg, #e6f2ff 0%, #cce0ff 100%); /* Updated gradient to match blue theme */
-          border-left: 4px solid var(--accent);
-          padding: 24px; /* Increased padding */
-          margin: 32px 0; /* Adjusted margin */
-          border-radius: 12px; /* Increased border radius */
-          box-shadow: 0 4px 12px rgba(41, 128, 185, 0.2); /* Enhanced shadow */
-          font-size: 16px; /* Slightly larger text */
-          line-height: 1.8; /* Improved readability */
-        }
-        .special-cases a {
-          color: var(--accent);
-          text-decoration: underline;
-          font-weight: bold;
-        }
         
         /* Force calculator table text to be black */
         .calc-table td {
@@ -151,14 +151,12 @@
           .rent-left { 
             order: 2; /* Text appears second on mobile */
           }
-          .rent-left h2 {
-            text-align: center; /* Center alignment for small screens */
-            padding-left: 0; /* Remove left padding */
+          .two-col {
+            gap: 20px;
           }
-          .rent-left h2::after {
-            left: 50%; /* Center the line */
-            transform: translateX(-50%); /* Adjust position */
-            width: 100%; /* Full-width underline */
+          .modern-table {
+            margin: 0 auto;
+            max-width: 480px;
           }
         }
       </style>
@@ -169,60 +167,65 @@
       <main class="main-content" style="margin:0; padding:0; max-width:none; width:100%;">
         <section class="rent-wrap">
 
-          <!-- Left: plain white prose, no tables/boxes -->
+          <!-- Left: enhanced content with new design -->
           <article class="rent-left">
-            <h1>ΦΟΡΟΛΟΓΙΑ ΕΝΟΙΚΙΩΝ</h1>
+            <section id="rent-income">
+              <h2>Εισοδήματα από ενοίκια</h2>
+              <p>Σύμφωνα με τον Κώδικα Φορολογίας Εισοδήματος (Ν.4172/2013), εισόδημα από ακίνητη περιουσία είναι:</p>
+              <ul>
+                <li>το εισόδημα που προέρχεται από <strong>εκμίσθωση ή υπεκμίσθωση</strong>,</li>
+                <li>το <strong>τεκμαρτό εισόδημα</strong> από ιδιοχρησιμοποίηση ακινήτων ή από δωρεάν παραχώρηση της χρήσης τους σε τρίτους,</li>
+                <li>κάθε ποσό από εκμίσθωση υπεκείμενο ή δυνάμενο παρεχόμενη χρήση χώρων (τοποθέτηση επιγραφών, κοινόχρηστοι χώροι),</li>
+                <li>το ποσό της <strong>αποζημίωσης</strong> για πρόωρη λύση μίσθωσης που καταβάλλεται από τον μισθωτή.</li>
+              </ul>
 
-            <h2>Εισοδήματα από ενοίκια</h2>
-            <p>Σύμφωνα με τον Κώδικα Φορολογίας Εισοδήματος (Ν.4172/2013), εισόδημα από ακίνητη περιουσία είναι:</p>
-            <ul>
-              <li>το εισόδημα που προέρχεται από <span class="highlight-cyan">εκμίσθωση ή υπεκμίσθωση</span>,</li>
-              <li>Το <span class="highlight-cyan">τεκμαρτό εισόδημα</span> από ιδιοχρησιμοποίηση ακινήτων ή από δωρεάν παραχώρηση της χρήσης τους σε τρίτους.</li>
-              <li>Κάθε ποσό από εκμίσθωση, υπεκμίσθωση ή δωρεάν παραχώρηση χρήσης χώρων τοποθέτησης επιγραφών, κοινόχρηστων χώρων),</li>
-              <li>Το ποσό της <span class="highlight-cyan">αποζημίωσης</span> για πρόωρη λήξη μίσθωσης που καταβάλλεται από τον μισθωτή.</li>
-            </ul>
+              <div class="two-col">
+                <div>
+                  <h3>Πώς φορολογούνται τα ενοίκια</h3>
+                  <p>Τα καθαρά εισοδήματα από ενοίκια (μετά την αφαίρεση των επιτρεπόμενων δαπανών) φορολογούνται <strong>αυτοτελώς</strong>, δηλαδή ξεχωριστά από τα λοιπά εισοδήματα του φυσικού προσώπου με τις παρακάτω κλίμακες συντελεστών:</p>
+                  <table class="modern-table">
+                    <thead>
+                      <tr>
+                        <th>Εισόδημα από Ενοίκια (€)</th>
+                        <th>Συντελεστής %</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>&lt; 12.000</td>
+                        <td>15%</td>
+                      </tr>
+                      <tr>
+                        <td>12.001 - 35.000</td>
+                        <td>35%</td>
+                      </tr>
+                      <tr>
+                        <td>&gt; 35.001</td>
+                        <td>45%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
 
-            <h2>Πώς φορολογούνται τα ενοίκια</h2>
-            <p>Τα καθαρά εισοδήματα από ενοίκια (μετά την αφαίρεση των επιτρεπόμενων δαπανών) φορολογούνται <strong>αυτοτελώς</strong>, δηλαδή ξεχωριστά από τα λοιπά εισοδήματα του φυσικού προσώπου με τις παρακάτω <strong>κλίμακες συντελεστών</strong>:</p>
-            
-            <table class="tax-table">
-              <thead>
-                <tr>
-                  <th>Εισόδημα από Ενοίκια (€)</th>
-                  <th>Συντελεστής %</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>&lt; 12.000</td>
-                  <td>15%</td>
-                </tr>
-                <tr>
-                  <td>12.001 - 35.000</td>
-                  <td>35%</td>
-                </tr>
-                <tr>
-                  <td>&gt; 35.001</td>
-                  <td>45%</td>
-                </tr>
-              </tbody>
-            </table>
+                <div>
+                  <h3>Δαπάνες μείωσης φόρου από ακίνητα</h3>
+                  <p>Όσα ακίνητα αποφέρουν φορολογητέο εισόδημα, ανεξάρτητα από το είδος και τη χρήση τους, έχουν <strong>έκπτωση 5%</strong> επί του ακαθάριστου εισοδήματος που θα φορολογηθεί.</p>
+                  <p><em>Σημείωση: Από την έκπτωση εξαιρούνται:</em></p>
+                  <ul>
+                    <li>οι περιπτώσεις <strong>υπεκμίσθωσης</strong>,</li>
+                    <li>το <strong>τεκμαρτό εισόδημα</strong> από ιδιοχρησιμοποίηση,</li>
+                    <li>η <strong>δωρεάν παραχώρηση</strong> χρήσης ακινήτων.</li>
+                  </ul>
+                </div>
+              </div>
 
-            <h2>Δαπάνες μείωσης φόρου από ακίνητα</h2>
-            <p>Όσα ακίνητα αποφέρουν φορολογητέο εισόδημα, ανεξάρτητα από το είδος και τη χρήση τους, έχουν <span class="highlight-cyan"><strong>έκπτωση 5%</strong></span> επί του ακαθάριστου εισοδήματος που θα φορολογηθεί.</p>
-            
-            <p><span class="highlight-cyan">Σημείωση:</span> Από την έκπτωση <span class="highlight-cyan">εξαιρούνται</span>:</p>
-            <ul>
-              <li>οι περιπτώσεις υπεκμίσθωσης</li>
-              <li>το τεκμαρτό εισόδημα από ιδιοχρησιμοποίηση</li>
-              <li>η δωρεάν παραχώρηση χρήσης ακινήτων</li>
-            </ul>
+              <h3>Λειτουργία της εφαρμογής</h3>
+              <p>Η συγκεκριμένη εφαρμογή αναπτύχθηκε από τη <strong>Nerally</strong> και καλύπτει τις περιπτώσεις φορολόγησης εισοδήματος που αποκτά φυσικό πρόσωπο από τη μίσθωση ακίνητης περιουσίας.</p>
 
-            <h2>Λειτουργία της εφαρμογής</h2>
-            <p>Η συγκεκριμένη εφαρμογή αναπτύχθηκε από τη <a href="/" class="highlight-cyan" style="text-decoration: underline;">Nerally</a> και καλύπτει τις περιπτώσεις φορολόγησης εισοδήματος που αποκτά φυσικό πρόσωπο από τη μίσθωση ακίνητης περιουσίας.</p>
-            <div class="special-cases">
-              <p>Για ειδικές περιπτώσεις όπως <strong>Βραχυχρόνιες μισθώσεις</strong>, <strong>Υπεκμισθώσεις</strong>, <strong>Εταιρικές Μισθώσεις</strong>, <strong>Ανείσπραχτα ενοίκια</strong>, <strong>Αναγνώριση δαπανών</strong> κ.ά., μπορείτε να <strong>διαβάσετε τις σχετικές μελέτες στο blog μας</strong> στην κατηγορία <a href="/blog/forologika" class="highlight-cyan" style="text-decoration: underline;">Φορολογικά->Μισθώσεις</a> ή να <a href="/epikoinonia/contact.php" class="highlight-cyan" style="text-decoration: underline;">επικοινωνήσετε μαζί μας</a>.</p>
-            </div>
+              <div class="quote">
+                Για ειδικές περιπτώσεις όπως <strong>Βραχυχρόνιες μισθώσεις</strong>, <strong>Υπεκμισθώσεις</strong>, <strong>Εταιρικές Μισθώσεις</strong>, <strong>Ανείσπρακτα ενοίκια</strong>, <strong>Αναγνώριση δαπανών</strong> κ.ά., μπορείτε να διαβάσετε τις σχετικές μελέτες στο blog μας στην κατηγορία <strong>Φορολογικά → Μισθώσεις</strong> ή να <strong>επικοινωνήσετε μαζί μας</strong>.
+              </div>
+            </section>
           </article>
 
           <!-- Right: calculator on image background -->
