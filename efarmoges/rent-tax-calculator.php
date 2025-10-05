@@ -34,11 +34,18 @@
         .rent-left h1::after {
           display: none;
         }
+        @keyframes fadeSlideIn {
+          from {opacity:0; transform: translateY(20px);}
+          to {opacity:1; transform: translateY(0);}
+        }
+        
         .rent-left h2, .rent-left h3 { 
           color: var(--brand);
           font-weight: 800;
           position: relative;
           margin-bottom: 20px;
+          opacity: 0;
+          animation: fadeSlideIn 0.8s ease forwards;
         }
         .rent-left h2 {
           font-size: clamp(28px, 3vw, 38px);
@@ -124,6 +131,17 @@
           box-shadow: 0 4px 20px rgba(0,0,0,0.06);
           margin-top: 40px;
           font-size: 17px;
+          color: #111827;
+        }
+        
+        .quote strong {
+          color: var(--brand);
+        }
+        
+        .quote a {
+          color: var(--brand);
+          text-decoration: underline;
+          font-weight: 600;
         }
         
 
@@ -220,10 +238,10 @@
               </div>
 
               <h3>Λειτουργία της εφαρμογής</h3>
-              <p>Η συγκεκριμένη εφαρμογή αναπτύχθηκε από τη <strong>Nerally</strong> και καλύπτει τις περιπτώσεις φορολόγησης εισοδήματος που αποκτά φυσικό πρόσωπο από τη μίσθωση ακίνητης περιουσίας.</p>
+              <p>Η συγκεκριμένη εφαρμογή αναπτύχθηκε από τη <a href="/" style="color: var(--brand); text-decoration: underline; font-weight: 600;">Nerally</a> και καλύπτει τις περιπτώσεις φορολόγησης εισοδήματος που αποκτά φυσικό πρόσωπο από τη μίσθωση ακίνητης περιουσίας.</p>
 
               <div class="quote">
-                Για ειδικές περιπτώσεις όπως <strong>Βραχυχρόνιες μισθώσεις</strong>, <strong>Υπεκμισθώσεις</strong>, <strong>Εταιρικές Μισθώσεις</strong>, <strong>Ανείσπρακτα ενοίκια</strong>, <strong>Αναγνώριση δαπανών</strong> κ.ά., μπορείτε να διαβάσετε τις σχετικές μελέτες στο blog μας στην κατηγορία <strong>Φορολογικά → Μισθώσεις</strong> ή να <strong>επικοινωνήσετε μαζί μας</strong>.
+                Για ειδικές περιπτώσεις όπως <strong>Βραχυχρόνιες μισθώσεις</strong>, <strong>Υπεκμισθώσεις</strong>, <strong>Εταιρικές Μισθώσεις</strong>, <strong>Ανείσπρακτα ενοίκια</strong>, <strong>Αναγνώριση δαπανών</strong> κ.ά., μπορείτε να διαβάσετε τις σχετικές μελέτες στο blog μας στην κατηγορία <strong>Φορολογικά → Μισθώσεις</strong> ή να <a href="/epikoinonia/contact.php">επικοινωνήσετε μαζί μας</a>.
               </div>
             </section>
           </article>
