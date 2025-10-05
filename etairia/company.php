@@ -193,23 +193,6 @@
       color: #a9b2be;
       text-align: left;
     }
-    
-    .hero-animated .chips {
-      display: flex;
-      gap: .4rem;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-    }
-    
-    .hero-animated .chip {
-      border: 1px solid rgba(255,255,255,.18);
-      color: #f6f8fb;
-      padding: .3rem .5rem;
-      border-radius: 999px;
-      font-size: .7rem;
-      opacity: .9;
-      backdrop-filter: blur(4px);
-    }
 
     .hero-animated .gap {
       display: inline-block;
@@ -246,9 +229,8 @@
       .hero-animated .right {
         font-size: clamp(1rem, 3.2vw, 2rem);
       }
-      .hero-animated .chip {
-        font-size: .6rem;
-        padding: .25rem .4rem;
+      .hero-animated .hint {
+        font-size: clamp(.7rem, 1.4vw, .8rem);
       }
     }
     
@@ -337,7 +319,6 @@
           <div class="right"><span id="flip" class="flip">LLY</span></div>
         </div>
         <div id="hint" class="hint"></div>
-        <div id="chips" class="chips"></div>
       </div>
     </main>
   </div>
@@ -436,21 +417,11 @@
   <script src="/js/cookie-consent.js"></script>
   <script src="../app.js"></script>
   <script>
-    // Full animation script from the original file
+    // Clean animation script without chips
     const headline = document.getElementById('headline');
     const row = document.getElementById('row');
     const flipEl = document.getElementById('flip');
     const hint = document.getElementById('hint');
-    const chips = document.getElementById('chips');
-
-    // Add service chips in Greek
-    ['Λογιστικά • Μισθοδοσία','Χρηματοδότηση • ΕΣΠΑ','Έλεγχος • Συμμόρφωση','Ψηφιακά • Social Media','Ασφάλεια • Μηχανικός']
-      .forEach(t => {
-        const c = document.createElement('div');
-        c.className = 'chip';
-        c.textContent = t;
-        chips.appendChild(c);
-      });
 
     function wait(ms) { return new Promise(r => setTimeout(r, ms)); }
     
@@ -472,7 +443,7 @@
       await wait(1400);
       headline.innerHTML = '<b>NEW ERA</b> ALLY';
 
-      const words = ['LLY', 'ΑΝΠΤΥΞΗ', 'ΟΙΚΟΝΟΜΙΚΑ', 'ΣΤΡΑΤΗΓΙΚΗ', 'ΧΡΗΜΑΤΟΔΟΤΗΣΗ', 'ΑΣΦΑΛΕΙΑ', 'ΚΑΙΝΟΤΟΜΙΑ', 'ΨΗΦΙΑΚΑ', 'ΕΜΠΙΣΤΟΣΥΝΗ'];
+      const words = ['LLY', 'ΑΝΑΠΤΥΞΗ', 'ΟΙΚΟΝΟΜΙΚΑ', 'ΣΤΡΑΤΗΓΙΚΗ', 'ΧΡΗΜΑΤΟΔΟΤΗΣΗ', 'ΑΣΦΑΛΕΙΑ', 'ΚΑΙΝΟΤΟΜΙΑ', 'ΨΗΦΙΑΚΑ', 'ΕΜΠΙΣΤΟΣΥΝΗ'];
       let i = 0;
       flipTo(words[i++ % words.length]);
       setInterval(() => flipTo(words[i++ % words.length]), 1900);
