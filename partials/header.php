@@ -34,7 +34,7 @@
             </div>
           </li>
 
-          <li class="nav-item"><a href="/arthra/articles.html"><span class="text">Άρθρα</span></a></li>
+          <li class="nav-item"><a href="/arthra/"><span class="text">Άρθρα</span></a></li>
           
           <li class="nav-item dropdown">
             <a href="#"><span class="text">Εφαρμογές</span><span class="caret">▾</span></a>
@@ -90,7 +90,7 @@
         </div>
       </div>
       
-      <a class="menu-toggle" href="/arthra/articles.html">Άρθρα</a>
+  <a class="menu-toggle" href="/arthra/">Άρθρα</a>
       
       <div class="menu-item">
         <button class="menu-toggle">Εφαρμογές <span class="exp-caret">▾</span></button>
