@@ -79,14 +79,15 @@
 
     /* Hero Section - Clean Animation Style */
     .hero-animated {
-      height: 200px;
-      background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
+      height: 170px;
+      background: #000;
       color: #f6f8fb;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, "Helvetica Neue", Arial;
       overflow: hidden;
-      position: relative;
-      border-radius: 0 0 40px 40px;
-      box-shadow: var(--shadow-lg);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid #333;
     }
 
     /* content */
@@ -193,7 +194,7 @@
     
     @media(max-width:768px){
       .hero-animated {
-        height: 150px;
+        height: 120px;
       }
       .hero-animated .stack {
         padding: 1rem 1.5rem;
@@ -240,7 +241,7 @@
     </main>
   </div>
 
-  <main class="company-container">
+  <main class="company-container" style="margin-top: 0;">
 
     <section class="company-section">
       <p style="font-size:14px;color:#64748b;margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;">Ποιοι είμαστε</p>
