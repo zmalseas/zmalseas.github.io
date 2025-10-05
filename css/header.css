@@ -123,10 +123,4 @@ nav.primary{display:flex;align-items:center;gap:16px}
 .site-header.nav-overflow .hamburger { display: flex !important; }
 
 /* ΑΠΛΟΣ ΚΑΝΟΝΑΣ: Όταν έχει nav-overflow κλάση */
-.site-header.nav-overflow .hamburger { 
-  display: flex !important; 
-}
-
-.site-header.nav-overflow .nav-links { 
-  display: none !important; 
-}
+/* duplicate nav-overflow rules removed (kept canonical set above) */
