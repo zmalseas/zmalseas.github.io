@@ -32,8 +32,8 @@ class NerallyApp {
       
       // Initialize core modules
       await this.loadPartials();
-      this.initializeNavigation();
-      this.initializeChatWidget();
+      this.initializeNavigation(); // will only init if script already enqueued
+      this.initializeChatWidget(); // chat script is enqueued by WP
       this.initializeCalculators();
       this.initializePerformanceOptimizations();
       this.initializeSecurity();
@@ -77,44 +77,21 @@ class NerallyApp {
   async injectFooter() { return; }
 
   initializeNavigation() {
-    // Load navigation module instead of duplicating code
+    // Do NOT inject script tag; WordPress already enqueues /js/navigation.js
     try {
-      const script = document.createElement('script');
-      script.src = this.origin + '/js/navigation.js';
-      script.onload = () => {
-        console.log('🧭 Navigation module loaded');
-        // Initialize NavigationManager after loading
-        if (typeof NavigationManager !== 'undefined' && !window.navigationInitialized) {
-          new NavigationManager();
-          window.navigationInitialized = true;
-          console.log('🧭 NavigationManager initialized');
-        } else {
-          console.warn('NavigationManager class not found or already initialized');
-        }
-      };
-      script.onerror = () => {
-        console.warn('⚠️ Navigation module not loaded');
-      };
-      document.head.appendChild(script);
+      if (typeof NavigationManager !== 'undefined' && !window.navigationInitialized) {
+        new NavigationManager();
+        window.navigationInitialized = true;
+        console.log('🧭 NavigationManager initialized');
+      }
     } catch (error) {
       console.error('Navigation initialization failed:', error);
     }
   }
 
   initializeChatWidget() {
-    try {
-      const script = document.createElement('script');
-      script.src = this.origin + '/js/chat-widget.js';
-      script.onload = () => {
-        console.log('💬 Chat widget module loaded');
-      };
-      script.onerror = () => {
-        console.warn('⚠️ Chat widget not loaded');
-      };
-      document.head.appendChild(script);
-    } catch (error) {
-      console.error('Chat widget initialization failed:', error);
-    }
+    // Chat widget auto-initializes on load; nothing to do here
+    return;
   }
 
   initializeCalculators() {
