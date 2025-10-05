@@ -18,8 +18,8 @@
           margin: 0; 
           overflow-x: hidden; /* Removed horizontal scroll */
         }
-        .rent-wrap { display: grid; grid-template-columns: 1fr 1fr; min-height: calc(100vh - 120px); }
-  .rent-left { background:#fff; padding:40px 32px; overflow:auto; }
+  .rent-wrap { display: grid; grid-template-columns: 1fr 1fr; min-height: calc(100vh - 120px); }
+  .rent-left { background:#fff; padding:40px 32px; overflow:auto; animation: contentFade 0.5s ease-out 0.06s both; }
         .rent-right { 
           padding:40px 24px; display:flex; align-items:center; justify-content:center;
           background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url('../images/Foros_enoikiwn_enhanced.webp');
@@ -34,9 +34,9 @@
         .rent-left h1::after {
           display: none;
         }
-        @keyframes fadeSlideIn {
-          from {opacity:0; transform: translateY(20px);}
-          to {opacity:1; transform: translateY(0);}
+        @keyframes contentFade {
+          from { opacity: 0; transform: translateY(8px); }
+          to { opacity: 1; transform: translateY(0); }
         }
         
         .rent-left h2, .rent-left h3 { 
@@ -44,8 +44,6 @@
           font-weight: 800;
           position: relative;
           margin-bottom: 20px;
-          opacity: 0;
-          animation: fadeSlideIn 0.8s ease forwards;
         }
         .rent-left h2 {
           font-size: clamp(28px, 3vw, 38px);
@@ -66,8 +64,8 @@
         .rent-left p {
           font-size: 18px;
           color: #111827;
-          margin-bottom: 20px;
-          line-height: 1.85;
+          margin-bottom: 22px;
+          line-height: 1.9;
         }
         .rent-left ul {
           list-style-type: disc;
@@ -75,12 +73,12 @@
           color: #111827;
         }
         .rent-left ul li {
-          margin-bottom: 12px;
+          margin-bottom: 14px;
           font-size: 17px;
         }
-        /* Make emphasized words in main text black + bold instead of blue */
+        /* Make emphasized words in main text black + lighter bold */
         .rent-left p strong,
-        .rent-left ul li strong { color: #000; font-weight: 800; }
+        .rent-left ul li strong { color: #000; font-weight: 600; }
         .rent-note { font-size: 13px; color: #555; background: #f6f7f8; border-radius: 6px; padding: 10px; margin-top: 6px; }
         .calc-slab { width:100%; max-width:540px; }
 
@@ -127,7 +125,7 @@
         .quote {
           background: #fff;
           border-radius: 12px;
-          padding: 24px;
+          padding: 24px 24px 88px 24px; /* leave extra space for bottom-right button */
           box-shadow: 0 4px 20px rgba(0,0,0,0.06);
           margin-top: 40px;
           font-size: 17px;
@@ -189,11 +187,11 @@
 
         /* Desktop-only slightly increased spacing */
         @media (min-width: 1024px) {
-          .rent-left { padding: 48px 40px; }
-          .rent-left h3 { margin-top: 48px; }
-          .two-col { gap: 48px; }
-          .rent-left p { margin-bottom: 22px; }
-          .rent-left ul li { margin-bottom: 14px; }
+          .rent-left { padding: 52px 44px; }
+          .rent-left h3 { margin-top: 52px; }
+          .two-col { gap: 56px; }
+          .rent-left p { margin-bottom: 26px; }
+          .rent-left ul li { margin-bottom: 16px; }
         }
       </style>
     </head>
