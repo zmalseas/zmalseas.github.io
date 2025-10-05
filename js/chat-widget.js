@@ -24,9 +24,7 @@ class ChatWidget {
     const chatEl = document.getElementById("chat-widget");
     if (!chatEl) return;
 
-    const currentPath = window.location.pathname;
-    const isInSubfolder = this.isInSubfolder(currentPath);
-    const basePath = isInSubfolder ? "../" : "";
+  const origin = window.location.origin;
 
     const CHAT_FALLBACK = `
       <div class="chat-widget" role="complementary" aria-label="Chat Widget">
@@ -71,7 +69,7 @@ class ChatWidget {
     `;
 
     try {
-      const response = await fetch(`${basePath}partials/chat.html`);
+  const response = await fetch(`${origin}/partials/chat.html`);
       if (response.ok) {
         chatEl.innerHTML = await response.text();
       } else {
