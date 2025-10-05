@@ -19,7 +19,7 @@
           overflow-x: hidden; /* Removed horizontal scroll */
         }
         .rent-wrap { display: grid; grid-template-columns: 1fr 1fr; min-height: calc(100vh - 120px); }
-        .rent-left { background:#fff; padding:40px 32px; overflow:auto; }
+  .rent-left { background:#fff; padding:40px 32px; overflow:auto; }
         .rent-right { 
           padding:40px 24px; display:flex; align-items:center; justify-content:center;
           background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url('../images/Foros_enoikiwn_enhanced.webp');
@@ -66,8 +66,8 @@
         .rent-left p {
           font-size: 18px;
           color: #111827;
-          margin-bottom: 18px;
-          line-height: 1.8;
+          margin-bottom: 20px;
+          line-height: 1.85;
         }
         .rent-left ul {
           list-style-type: disc;
@@ -75,12 +75,12 @@
           color: #111827;
         }
         .rent-left ul li {
-          margin-bottom: 10px;
+          margin-bottom: 12px;
           font-size: 17px;
         }
-        .rent-left ul li strong {
-          color: var(--brand);
-        }
+        /* Make emphasized words in main text black + bold instead of blue */
+        .rent-left p strong,
+        .rent-left ul li strong { color: #000; font-weight: 800; }
         .rent-note { font-size: 13px; color: #555; background: #f6f7f8; border-radius: 6px; padding: 10px; margin-top: 6px; }
         .calc-slab { width:100%; max-width:540px; }
 
@@ -132,17 +132,24 @@
           margin-top: 40px;
           font-size: 17px;
           color: #111827;
+          position: relative;
         }
         
         .quote strong {
           color: var(--brand);
         }
         
-        .quote a {
-          color: var(--brand);
-          text-decoration: underline;
-          font-weight: 600;
+        .quote a { color: var(--brand); text-decoration: underline; font-weight: 600; }
+        /* CTA button bottom-right inside quote card */
+        .quote .quote-cta {
+          position: absolute;
+          right: 16px; bottom: 16px;
+          display: inline-flex; align-items: center; justify-content: center;
+          padding: 10px 16px; border-radius: 8px; text-decoration: none;
+          background: var(--brand); color: #fff; font-weight: 700; box-shadow: 0 4px 12px rgba(0,0,0,.08);
+          transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
         }
+        .quote .quote-cta:hover { background: #1f5f8b; transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,0,0,.12); }
         
 
         
@@ -176,6 +183,17 @@
             margin: 0 auto;
             max-width: 480px;
           }
+          .quote { padding-bottom: 64px; }
+          .quote .quote-cta { position: static; display: inline-flex; margin-top: 12px; }
+        }
+
+        /* Desktop-only slightly increased spacing */
+        @media (min-width: 1024px) {
+          .rent-left { padding: 48px 40px; }
+          .rent-left h3 { margin-top: 48px; }
+          .two-col { gap: 48px; }
+          .rent-left p { margin-bottom: 22px; }
+          .rent-left ul li { margin-bottom: 14px; }
         }
       </style>
     </head>
@@ -241,7 +259,8 @@
               <p>Η συγκεκριμένη εφαρμογή αναπτύχθηκε από τη <a href="/" style="color: var(--brand); text-decoration: underline; font-weight: 600;">Nerally</a> και καλύπτει τις περιπτώσεις φορολόγησης εισοδήματος που αποκτά φυσικό πρόσωπο από τη μίσθωση ακίνητης περιουσίας.</p>
 
               <div class="quote">
-                Για ειδικές περιπτώσεις όπως <strong>Βραχυχρόνιες μισθώσεις</strong>, <strong>Υπεκμισθώσεις</strong>, <strong>Εταιρικές Μισθώσεις</strong>, <strong>Ανείσπρακτα ενοίκια</strong>, <strong>Αναγνώριση δαπανών</strong> κ.ά., μπορείτε να διαβάσετε τις σχετικές μελέτες στο blog μας στην κατηγορία <strong>Φορολογικά → Μισθώσεις</strong> ή να <a href="/epikoinonia/contact.php">επικοινωνήσετε μαζί μας</a>.
+                Για ειδικές περιπτώσεις όπως <strong>Βραχυχρόνιες μισθώσεις</strong>, <strong>Υπεκμισθώσεις</strong>, <strong>Εταιρικές Μισθώσεις</strong>, <strong>Ανείσπρακτα ενοίκια</strong>, <strong>Αναγνώριση δαπανών</strong> κ.ά.
+                <a class="quote-cta" href="/epikoinonia/contact.php">Επικοινωνήστε μαζί μας</a>
               </div>
             </section>
           </article>
