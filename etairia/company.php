@@ -77,35 +77,16 @@
     .why li{display:flex;gap:14px;align-items:flex-start;font-size:17px;line-height:1.6;color:#000}
     .check{flex:0 0 26px;height:26px;border-radius:8px;background:var(--brand);color:#fff;display:grid;place-items:center;font-weight:800;font-size:16px;box-shadow:0 4px 10px rgba(41,128,185,.3)}
 
-    /* Hero Section - Full Animation Style */
+    /* Hero Section - Clean Animation Style */
     .hero-animated {
       height: 200px;
-      background: #09090f;
+      background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
       color: #f6f8fb;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, "Helvetica Neue", Arial;
       overflow: hidden;
       position: relative;
       border-radius: 0 0 40px 40px;
       box-shadow: var(--shadow-lg);
-    }
-    
-    .hero-animated .bg {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      overflow: hidden;
-    }
-    
-    .hero-animated svg {
-      position: absolute;
-      width: 160%;
-      height: 160%;
-      left: -30%;
-      top: -30%;
-    }
-    
-    .hero-animated .layer {
-      mix-blend-mode: screen;
     }
 
     /* content */
@@ -138,7 +119,7 @@
     }
     
     .hero-animated .headline b {
-      background: linear-gradient(90deg, #4cc9f0, #7209b7);
+      background: linear-gradient(90deg, var(--brand), #3498db);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -188,11 +169,7 @@
       100% { transform: rotateX(0); opacity: 1; filter: blur(0); }
     }
 
-    .hero-animated .hint {
-      font-size: clamp(.8rem, 1.6vw, .9rem);
-      color: #a9b2be;
-      text-align: left;
-    }
+
 
     .hero-animated .gap {
       display: inline-block;
@@ -229,9 +206,6 @@
       .hero-animated .right {
         font-size: clamp(1rem, 3.2vw, 2rem);
       }
-      .hero-animated .hint {
-        font-size: clamp(.7rem, 1.4vw, .8rem);
-      }
     }
     
     /* Quote section */
@@ -252,64 +226,8 @@
   
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/header.php'; ?>
 
-  <!-- Hero Section with Full Animation -->
+  <!-- Hero Section with Text Animation -->
   <div class="hero-animated">
-    <div class="bg" aria-hidden="true">
-      <!-- Turbulence-based displacement for complex living gradients -->
-      <svg class="layer" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" style="opacity:.9">
-        <defs>
-          <linearGradient id="sg1" x1="0" x2="1" y1="0" y2="0">
-            <stop offset="0" stop-color="#4cc9f0"/>
-            <stop offset="1" stop-color="#7209b7"/>
-          </linearGradient>
-          <filter id="dis1" x="-50%" y="-50%" width="200%" height="200%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.005 0.012" numOctaves="2" seed="2" result="turb">
-              <animate attributeName="baseFrequency" dur="22s" values="0.004 0.011; 0.006 0.013; 0.0045 0.012; 0.004 0.011" repeatCount="indefinite"/>
-            </feTurbulence>
-            <feDisplacementMap in="SourceGraphic" in2="turb" scale="60" xChannelSelector="R" yChannelSelector="G"/>
-            <feGaussianBlur stdDeviation="14"/>
-          </filter>
-        </defs>
-        <path fill="url(#sg1)" filter="url(#dis1)"
-          d="M0,540 C220,520 420,700 720,660 C980,630 1160,500 1420,560 C1520,580 1600,520 1600,520 L1600,900 L0,900 Z"></path>
-      </svg>
-
-      <svg class="layer" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" style="opacity:.8">
-        <defs>
-          <linearGradient id="sg2" x1="0" x2="1" y1="0" y2="0">
-            <stop offset="0" stop-color="#00c2a8"/>
-            <stop offset="1" stop-color="#4cc9f0"/>
-          </linearGradient>
-          <filter id="dis2" x="-50%" y="-50%" width="200%" height="200%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.006 0.01" numOctaves="2" seed="7" result="turb">
-              <animate attributeName="baseFrequency" dur="28s" values="0.006 0.010; 0.007 0.012; 0.005 0.009; 0.006 0.010" repeatCount="indefinite"/>
-            </feTurbulence>
-            <feDisplacementMap in="SourceGraphic" in2="turb" scale="80" xChannelSelector="B" yChannelSelector="G"/>
-            <feGaussianBlur stdDeviation="18"/>
-          </filter>
-        </defs>
-        <path fill="url(#sg2)" filter="url(#dis2)"
-          d="M0,660 C260,640 480,820 760,780 C1040,740 1240,600 1480,640 C1560,660 1600,620 1600,620 L1600,900 L0,900 Z"></path>
-      </svg>
-
-      <svg class="layer" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" style="opacity:.65">
-        <defs>
-          <linearGradient id="sg3" x1="0" x2="1" y1="0" y2="0">
-            <stop offset="0" stop-color="#4cc9f0"/>
-            <stop offset="1" stop-color="#00c2a8"/>
-          </linearGradient>
-          <filter id="dis3" x="-50%" y="-50%" width="200%" height="200%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.004 0.012" numOctaves="2" seed="11" result="turb">
-              <animate attributeName="baseFrequency" dur="34s" values="0.004 0.012; 0.005 0.014; 0.0035 0.011; 0.004 0.012" repeatCount="indefinite"/>
-            </feTurbulence>
-            <feDisplacementMap in="SourceGraphic" in2="turb" scale="70" xChannelSelector="R" yChannelSelector="A"/>
-            <feGaussianBlur stdDeviation="24"/>
-          </filter>
-        </defs>
-        <path fill="url(#sg3)" filter="url(#dis3)"
-          d="M0,760 C240,720 440,880 800,840 C1060,810 1300,700 1500,740 C1560,750 1600,720 1600,720 L1600,900 L0,900 Z"></path>
-      </svg>
-    </div>
 
     <main class="stage">
       <div class="stack">
@@ -318,7 +236,6 @@
           <div class="left">NERA</div>
           <div class="right"><span id="flip" class="flip">LLY</span></div>
         </div>
-        <div id="hint" class="hint"></div>
       </div>
     </main>
   </div>
@@ -417,11 +334,10 @@
   <script src="/js/cookie-consent.js"></script>
   <script src="../app.js"></script>
   <script>
-    // Clean animation script without chips
+    // Clean animation script
     const headline = document.getElementById('headline');
     const row = document.getElementById('row');
     const flipEl = document.getElementById('flip');
-    const hint = document.getElementById('hint');
 
     function wait(ms) { return new Promise(r => setTimeout(r, ms)); }
     
@@ -447,8 +363,6 @@
       let i = 0;
       flipTo(words[i++ % words.length]);
       setInterval(() => flipTo(words[i++ % words.length]), 1900);
-
-      hint.textContent = 'Σύμμαχος Νέας Εποχής';
     })();
   </script>
 </body>
