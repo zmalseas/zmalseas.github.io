@@ -74,40 +74,57 @@
     .why{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:10px}
     @media(max-width:900px){.why{grid-template-columns:1fr}}
     .why ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
-    .why li{display:flex;gap:14px;align-items:flex-start;font-size:17px;line-height:1.6}
+    .why li{display:flex;gap:14px;align-items:flex-start;font-size:17px;line-height:1.6;color:#000}
     .check{flex:0 0 26px;height:26px;border-radius:8px;background:var(--brand);color:#fff;display:grid;place-items:center;font-weight:800;font-size:16px;box-shadow:0 4px 10px rgba(41,128,185,.3)}
 
     /* Hero Section with background image */
     .hero {
-      background: linear-gradient(rgba(41, 128, 185, 0.85), rgba(41, 128, 185, 0.85)), url('../images/etairia.webp');
+      background: url('../images/etairia.webp');
       background-size: cover;
       background-position: center;
       color:white;
-      text-align:center;
-      padding:100px 20px;
+      text-align:left;
+      padding:60px 20px;
       border-radius:0 0 40px 40px;
       box-shadow:var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      min-height: 400px;
+    }
+    .hero-content {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
     }
     .hero img {
-      width:120px;
-      margin-bottom:20px;
-      filter:drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+      width:80px;
+      height: 80px;
+      filter:drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+      flex-shrink: 0;
     }
     .hero h1 {
-      font-size:clamp(32px,4vw,50px);
-      margin:10px 0;
+      font-size:clamp(28px,3.5vw,42px);
+      margin:0;
       font-weight:700;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
-    .hero p {
-      font-size:20px;
-      max-width:700px;
-      margin:0 auto;
-      opacity:0.9;
+    @media(max-width:768px){
+      .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+      }
+      .hero {
+        text-align: center;
+      }
     }
     
     /* Quote section */
     .quote{margin-top:20px;padding:24px;background:#fff;border:1px solid var(--muted);border-radius:var(--radius-xl);box-shadow:var(--shadow-md)}
-    .quote blockquote{margin:0;font-size:20px;line-height:1.7;color:var(--brand)}
+    .quote blockquote{margin:0;font-size:20px;line-height:1.7;color:#000}
     .quote cite{display:block;margin-top:6px;font-size:14px;color:#64748b}
     
     .quote-box{background:radial-gradient(circle at top left,#eef4ff,#fff);border-radius:var(--radius-xl);padding:40px;box-shadow:var(--shadow-md)}
@@ -122,9 +139,10 @@
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/header.php'; ?>
 
   <header class="hero">
-    <img src="../images/logo.png" alt="Nerally Logo">
-    <h1>Nerally — Σύμμαχος Νέας Εποχής</h1>
-    <p>Σύγχρονες λύσεις, ενιαία υποστήριξη, μία ομάδα δίπλα σε κάθε επιχείρηση.</p>
+    <div class="hero-content">
+      <img src="../images/logo.png" alt="Nerally Logo">
+      <h1>Nerally — Σύμμαχος Νέας Εποχής</h1>
+    </div>
   </header>
 
   <main class="company-container">
