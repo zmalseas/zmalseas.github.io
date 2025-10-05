@@ -130,6 +130,41 @@
     .quote-box{background:radial-gradient(circle at top left,#eef4ff,#fff);border-radius:var(--radius-xl);padding:40px;box-shadow:var(--shadow-md)}
     .quote-box p{font-size:18px;color:var(--brand);margin:0}
     .quote-box p:last-child{color:#475569}
+
+    /* Hero Section Animation */
+    .hero-section {
+      position: relative;
+      overflow: hidden;
+      height: 60vh;
+    }
+    .hero-section .bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .hero-section .layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.9;
+    }
+    .hero-section .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .hero-section .headline {
+      font-size: 3rem;
+      color: white;
+      text-shadow: 0 0 24px rgba(255, 255, 255, 0.22);
+    }
   </style>
   
   <!-- GTM loads via cookie-consent.js after analytics consent -->
@@ -138,12 +173,33 @@
   
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/header.php'; ?>
 
-  <header class="hero">
-    <div class="hero-content">
-      <img src="../images/logo.png" alt="Nerally Logo">
-      <h1>Nerally — Σύμμαχος Νέας Εποχής</h1>
+  <!-- Hero Section -->
+  <div class="hero-section" style="height: 60vh; position: relative; overflow: hidden;">
+    <div class="bg" aria-hidden="true">
+      <!-- Turbulence-based displacement for complex living gradients -->
+      <svg class="layer" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" style="opacity:.9">
+        <defs>
+          <linearGradient id="sg1" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color="#4cc9f0"/>
+            <stop offset="1" stop-color="#7209b7"/>
+          </linearGradient>
+          <filter id="dis1" x="-50%" y="-50%" width="200%" height="200%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.005 0.012" numOctaves="2" seed="2" result="turb">
+              <animate attributeName="baseFrequency" dur="22s" values="0.004 0.011; 0.006 0.013; 0.0045 0.012; 0.004 0.011" repeatCount="indefinite"/>
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="turb" scale="60" xChannelSelector="R" yChannelSelector="G"/>
+            <feGaussianBlur stdDeviation="14"/>
+          </filter>
+        </defs>
+        <path fill="url(#sg1)" filter="url(#dis1)"
+          d="M0,540 C220,520 420,700 720,660 C980,630 1160,500 1420,560 C1520,580 1600,520 1600,520 L1600,900 L0,900 Z"></path>
+      </svg>
     </div>
-  </header>
+
+    <div class="content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+      <h1 class="headline" style="font-size: 3rem; color: white; text-shadow: 0 0 24px rgba(255, 255, 255, 0.22);">Nerally — Σύμμαχος Νέας Εποχής</h1>
+    </div>
+  </div>
 
   <main class="company-container">
 
@@ -238,6 +294,16 @@
   <script src="/js/legal-modal.js"></script>
   <script src="/js/cookie-consent.js"></script>
   <script src="../app.js"></script>
+  <script>
+    const headline = document.querySelector('.headline');
+    headline.innerHTML = '<b>NEW ERA</b> ALLY';
+    const words = ['ALLY', 'GROWTH', 'FINANCE', 'STRATEGY', 'FUNDING', 'SECURITY', 'INNOVATION', 'DIGITAL', 'TRUST'];
+    let i = 0;
+    function flipTo(text) {
+      headline.textContent = text;
+    }
+    setInterval(() => flipTo(words[i++ % words.length]), 1900);
+  </script>
 </body>
 </html>
 
