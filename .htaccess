@@ -1,3 +1,5 @@
+Options -Indexes
+
 # Block access to .env file (security)
 <Files ".env">
     Require all denied
@@ -39,14 +41,12 @@ DirectoryIndex index.php index.html
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
 
-# Keep .html URLs visible but serve the corresponding .php internally
+# Keep .html URLs visible but serve the corresponding .php internally (exclude WordPress dir)
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    # Do not rewrite real HTML partials/templates
     RewriteCond %{REQUEST_URI} !^/partials/
-    # Exclude the custom 404 page
+    RewriteCond %{REQUEST_URI} !^/arthra/ [NC]
     RewriteCond %{REQUEST_URI} !/404\.html$
-    # Internally rewrite .html to .php (wrappers created)
     RewriteRule ^(.+)\.html$ $1.php [L]
 </IfModule>
 
@@ -108,12 +108,12 @@ AddDefaultCharset utf-8
 
 <IfModule mod_headers.c>
     # Strong cache for static assets
-    <FilesMatch "\.(?:css|js|png|jpe?g|webp|svg|gif|ico|woff2?|ttf)$">
+    <FilesMatch ".*\.(css|js|png|jpe?g|webp|svg|gif|ico|woff2?|ttf)$">
         Header set Cache-Control "public, max-age=31536000, immutable"
     </FilesMatch>
 
     # Conservative cache for HTML
-    <FilesMatch "\.(?:html|php)$">
+    <FilesMatch ".*\.(html|php)$">
         Header set Cache-Control "no-cache, no-store, must-revalidate"
         Header set Pragma "no-cache"
         Header set Expires "0"
@@ -125,13 +125,11 @@ ErrorDocument 404 404.html
 
 # Contact Form Security handled dynamically in PHP (CORS set per allowed origin)
 
-# Protect sensitive files (Apache 2.2/2.4 compatible)
+# Protect sensitive files (Apache 2.4 syntax)
 <Files "config.php">
-    Order allow,deny
-    Deny from all
+    Require all denied
 </Files>
 
 <FilesMatch "\.(log|bak|backup|old)$">
-    Order allow,deny
-    Deny from all
+    Require all denied
 </FilesMatch>
