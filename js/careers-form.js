@@ -35,6 +35,7 @@ class CareersFormHandler {
     const dz = form.querySelector('#cvDrop');
     const fileInput = form.querySelector('#cv');
     const fileName = form.querySelector('#cvFileName');
+    const clearBtn = form.querySelector('#cvClear');
     if (dz && fileInput) {
       dz.addEventListener('click', () => fileInput.click());
       dz.addEventListener('dragover', (e) => { e.preventDefault(); dz.classList.add('dragover'); });
@@ -44,11 +45,25 @@ class CareersFormHandler {
         if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]) {
           fileInput.files = e.dataTransfer.files;
           if (fileName) fileName.textContent = e.dataTransfer.files[0].name;
+          dz.classList.add('has-file');
         }
       });
       fileInput.addEventListener('change', () => {
-        if (fileInput.files && fileInput.files[0] && fileName) fileName.textContent = fileInput.files[0].name;
+        if (fileInput.files && fileInput.files[0] && fileName) {
+          fileName.textContent = fileInput.files[0].name;
+          dz.classList.add('has-file');
+        } else {
+          fileName.textContent = '';
+          dz.classList.remove('has-file');
+        }
       });
+      if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+          fileInput.value = '';
+          if (fileName) fileName.textContent = '';
+          dz.classList.remove('has-file');
+        });
+      }
     }
   }
   async getToken() {

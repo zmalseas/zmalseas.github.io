@@ -9,6 +9,25 @@
   <link rel="stylesheet" href="/css/cookie-consent.css">
   <link rel="stylesheet" href="/css/legal-modal.css">
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/site-config-inline.php'; ?>
+  <style>
+    /* Careers hero animation (based on company.php) */
+    .hero-animated { height: 170px; background:#000; color:#f6f8fb; overflow:hidden; position: sticky; top:0; z-index:50; border-bottom:1px solid #333; }
+    .hero-animated .stage{position:relative;z-index:1;height:100%;display:flex;align-items:center;justify-content:flex-start}
+    .hero-animated .stack{display:flex;flex-direction:column;gap:.8rem;align-items:flex-start;padding:1.5rem 2.5rem;max-width:min(1200px,92vw)}
+    .hero-animated .headline{font-weight:900;letter-spacing:.045em;line-height:1.05;text-align:left;font-size:clamp(1.8rem,5.5vw,3.5rem);text-shadow:0 0 24px rgba(255,255,255,.22);white-space:nowrap}
+    .hero-animated .headline b{background:linear-gradient(90deg,var(--brand),#3498db);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero-animated .row{display:flex;align-items:baseline;gap:clamp(.4rem,1.2vw,.8rem)}
+    .hero-animated .left,.hero-animated .right{font-weight:900;letter-spacing:.045em;line-height:1;font-size:clamp(1.2rem,3.8vw,2.8rem)}
+    .hero-animated .right{min-width:10ch;text-align:left;color:#e8f6ff}
+    .hero-animated .flip{display:inline-block;transform-origin:50% 80%;-webkit-backface-visibility:hidden;backface-visibility:hidden;transform-style:preserve-3d;will-change:transform,opacity}
+    .hero-animated .flip.enter{animation:flipIn .7s cubic-bezier(.2,.8,.2,1) forwards}
+    @keyframes flipIn{0%{transform:rotateX(90deg);opacity:0;filter:blur(6px)}60%{opacity:1}100%{transform:rotateX(0);opacity:1;filter:blur(0)}}
+    .hero-animated .gap{display:inline-block;width:0;vertical-align:baseline}
+    .hero-animated .gap.g1{width:3ch}.hero-animated .gap.g2{width:2ch}
+    .hero-animated .rise{display:inline-block;transform:translateY(.9em);opacity:0;animation:riseIn .7s ease forwards}
+    @keyframes riseIn{to{transform:translateY(0);opacity:1}}
+    @media(max-width:768px){.hero-animated{height:120px}.hero-animated .stack{padding:1rem 1.5rem;gap:.6rem}.hero-animated .headline{font-size:clamp(1.4rem,4.5vw,2.5rem)}.hero-animated .left,.hero-animated .right{font-size:clamp(1rem,3.2vw,2rem)}}
+  </style>
   
   <!-- GTM loads via cookie-consent.js after analytics consent -->
 </head>
@@ -17,7 +36,20 @@
   
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/header.php'; ?>
 
-  <main class="main-content careers-page">
+  <!-- Hero Section with Text Animation (CAREERS variant) -->
+  <div class="hero-animated">
+    <main class="stage">
+      <div class="stack">
+        <div id="headline-careers" class="headline" aria-live="polite"></div>
+        <div class="row" id="row-careers">
+          <div class="left">NERA</div>
+          <div class="right"><span id="flip-careers" class="flip">CAREERS</span></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <main class="main-content careers-page" style="margin-top:0;">
     <section class="careers-section">
       <div class="careers-bg"></div>
       <div class="container">
@@ -64,33 +96,26 @@
           <!-- Δεξιά: φόρμα -->
           <div class="careers-right">
             <form id="careersForm" class="careers-form careers-card" action="/careers-handler.php" method="POST" enctype="multipart/form-data">
-              <h3 class="form-title">Φόρμα Υποψηφίου</h3>
+              <h3 class="form-title" style="text-align:center;">Φόρμα Υποψηφίου</h3>
 
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="name">Ονοματεπώνυμο</label>
-                  <input type="text" id="name" name="name" required placeholder="π.χ. Μαρία Παπαδοπούλου" />
-                </div>
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="email" id="email" name="email" required placeholder="name@domain.gr" />
-                </div>
+              <div class="form-group">
+                <label for="name">Ονοματεπώνυμο</label>
+                <input type="text" id="name" name="name" required />
               </div>
 
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="phone">Τηλέφωνο</label>
-                  <input type="tel" id="phone" name="phone" required placeholder="69xxxxxxxx" />
-                </div>
-                <div class="form-group">
-                  <label for="company">Εταιρεία (προαιρετικό)</label>
-                  <input type="text" id="company" name="company" placeholder="" />
-                </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Τηλέφωνο</label>
+                <input type="tel" id="phone" name="phone" required />
               </div>
 
               <div class="form-group full-width">
                 <label for="about">Σύντομη Περιγραφή</label>
-                <textarea id="about" name="about" rows="4" required placeholder="Γράψε λίγα λόγια για σένα, εμπειρία, ενδιαφέροντα…"></textarea>
+                <textarea id="about" name="about" rows="5" required></textarea>
               </div>
 
               <div class="form-group">
@@ -98,9 +123,9 @@
                 <label for="cv" class="file-dropzone" id="cvDrop">
                   <input type="file" id="cv" name="cv" accept="application/pdf,image/png,image/jpeg" required hidden />
                   <span class="dz-icon" aria-hidden="true">⬆️</span>
-                  <span class="dz-title">Σύρε & άφησε ή πάτησε για επιλογή</span>
-                  <span class="dz-sub">PDF, JPG, PNG — έως 5MB</span>
+                  <span class="dz-title">Σύρε & άφησε ή πάτησε για επιλογή PDF, JPG, PNG — έως 5MB</span>
                   <span class="dz-file" id="cvFileName" aria-live="polite"></span>
+                  <button type="button" class="dz-clear" id="cvClear" aria-label="Καθαρισμός αρχείου" title="Καθαρισμός">×</button>
                 </label>
               </div>
 
@@ -118,10 +143,12 @@
                 </label>
               </div>
 
+              <div class="form-actions">
               <button type="submit" class="submit-btn">
                 <span class="btn-icon" aria-hidden="true">✉️</span>
                 <span class="btn-text">Αποστολή Αίτησης</span>
               </button>
+              </div>
 
               <div class="recaptcha-info">
                 Αυτός ο ιστότοπος προστατεύεται από το reCAPTCHA και ισχύουν η 
@@ -142,6 +169,35 @@
   <script src="/js/cookie-consent.js"></script>
   <script src="/js/careers-form.js"></script>
   <script src="../app.js"></script>
+  <script>
+    // Careers hero animation controller
+    (function(){
+      const headline = document.getElementById('headline-careers');
+      const flipEl = document.getElementById('flip-careers');
+      if (!headline || !flipEl) return;
+      const wait = (ms) => new Promise(r=>setTimeout(r,ms));
+      function flipTo(text){
+        flipEl.classList.remove('enter');
+        void flipEl.offsetWidth;
+        flipEl.textContent = text;
+        flipEl.classList.add('enter');
+      }
+      (async function run(){
+        headline.textContent = 'NERALLY';
+        await wait(1000);
+        headline.innerHTML = 'N' + '<span class="gap g1"></span>' + 'ER' + '<span class="gap g2"></span>' + 'ALLY';
+        await wait(1200);
+        headline.querySelector('.g1').innerHTML = '<span class="rise">EW&nbsp;</span>';
+        await wait(500);
+        headline.querySelector('.g2').innerHTML = '<span class="rise">A&nbsp;</span>';
+        await wait(1200);
+        headline.innerHTML = '<b>NEW ERA</b> ALLY';
+        const words = ['CAREERS','ΕΥΚΑΙΡΙΕΣ','ΑΝΑΠΤΥΞΗ','ΟΜΑΔΑ','ΠΡΟΟΔΟΣ'];
+        let i = 0; flipTo(words[i++ % words.length]);
+        setInterval(()=> flipTo(words[i++ % words.length]), 1900);
+      })();
+    })();
+  </script>
 </body>
 </html>
 
