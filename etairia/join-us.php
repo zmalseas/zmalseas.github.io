@@ -63,7 +63,7 @@
 
             <div class="positions-card">
               <div class="card-header">
-                <span class="card-icon" aria-hidden="true">📄</span>
+                <span class="card-icon" aria-hidden="true"></span>
                 <h3>Διαθέσιμες Θέσεις</h3>
               </div>
               <div class="positions-box">
