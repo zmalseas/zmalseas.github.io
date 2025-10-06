@@ -43,7 +43,220 @@
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/header.php'; ?>
 
   <!-- Hero Section with Text Animation (CONTACT variant) -->
-          <div class="contact-info-area">
+  <div class="hero-animated">
+    <div class="stage">
+      <div class="stack">
+        <div class="headline" id="headline-contact">NERALLY</div>
+        <div class="row">
+          <div class="left"></div>
+          <div class="right" id="flip-contact">ΕΠΙΚΟΙΝΩΝΙΑ</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="main-content contact-page" style="margin-top:0; background: linear-gradient(to bottom, #ffffff, #f4f6fb, #f0f2f5);">
+    <!-- Contact Section with new layout -->
+    <section class="contact-section" style="padding: 4rem 0;">
+      <div class="container" style="max-width: min(1200px, 92%);">
+        <div class="contact-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;">
+          
+          <!-- Left content -->
+          <div class="contact-left" style="padding-right: 1rem;">
+            <div class="contact-intro" style="margin-bottom: 2rem;">
+              <div class="intro-title-row" style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                <svg class="intro-icon" style="height: 2rem; width: 2rem; color: #1f2937;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 5 17 10"></polyline>
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                </svg>
+                <h2 class="intro-title" style="font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 600; color: #1f2937; margin: 0; letter-spacing: -0.025em;">Φόρμα Επικοινωνίας</h2>
+              </div>
+              <p class="intro-text" style="color: #6b7280; font-size: 1rem; line-height: 1.625; margin: 0;">Είστε επιχείρηση ή επαγγελματίας και θέλετε να συνεργαστούμε; Επικοινωνήστε μαζί μας για συνεργασίες, προτάσεις ή πληροφορίες σχετικά με τις υπηρεσίες μας.</p>
+            </div>
+
+            <!-- Contact info card -->
+            <div class="contact-info-card" style="padding: 1.5rem; border-radius: 1rem; border: 1px solid #e5e7eb; background: white; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); transition: box-shadow 0.3s ease;">
+              <h3 style="font-size: 1rem; font-weight: 600; margin: 0 0 0.75rem 0; color: #1f2937;">Στοιχεία Επικοινωνίας</h3>
+              <ul class="contact-info-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem;">
+                <li class="contact-info-item" style="display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.875rem; color: #374151;">
+                  <svg class="contact-icon" style="height: 1rem; width: 1rem; margin-top: 0.125rem; flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 3.1 4.18 2 2 0 0 1 5.05 2h3a2 2 0 0 1 2 1.72c.12.81.3 1.6.57 2.36a2 2 0 0 1-.45 2.11L9 9a16 16 0 0 0 6 6l.81-1.17a2 2 0 0 1 2.11-.45c.76.27 1.55.45 2.36.57A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                  Τηλ.: <a href="tel:+306946365798" style="color: inherit; text-decoration: underline; text-decoration-color: #d1d5db;">+30 694 636 5798</a>
+                </li>
+                <li class="contact-info-item" style="display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.875rem; color: #374151;">
+                  <svg class="contact-icon" style="height: 1rem; width: 1rem; margin-top: 0.125rem; flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                  Email: <a href="mailto:info@nerally.gr" style="color: inherit; text-decoration: underline; text-decoration-color: #d1d5db;">info@nerally.gr</a>
+                </li>
+                <li class="contact-info-item" style="display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.875rem; color: #374151;">
+                  <svg class="contact-icon" style="height: 1rem; width: 1rem; margin-top: 0.125rem; flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                  Διεύθυνση: Εξ αποστάσεως σε όλη την Ελλάδα
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Right: Contact Form -->
+          <div class="contact-right">
+            <form id="contactForm" class="contact-form" action="../contact-handler.php" method="POST" style="background: white; border: 1px solid #e5e7eb; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); transition: box-shadow 0.3s ease; max-width: 32rem; margin: 0 auto; width: 100%;">
+              <h3 class="form-title" style="font-size: 1.5rem; font-weight: 600; text-align: center; margin: 0 0 1rem 0; color: #1f2937;">Φόρμα Επικοινωνίας</h3>
+
+              <div class="form-group" style="margin-bottom: 1.25rem;">
+                <label for="name" style="display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.25rem; color: #1f2937;">Ονοματεπώνυμο</label>
+                <input type="text" id="name" name="name" autocomplete="name" placeholder="π.χ. Μαρία Παπαδοπούλου" required style="width: 100%; border: 1px solid #d1d5db; border-radius: 0.75rem; padding: 0.625rem 1rem; font-size: 1rem; outline: none; transition: all 0.2s ease; box-sizing: border-box;">
+              </div>
+
+              <div class="form-group" style="margin-bottom: 1.25rem;">
+                <label for="email" style="display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.25rem; color: #1f2937;">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email" placeholder="name@domain.gr" required style="width: 100%; border: 1px solid #d1d5db; border-radius: 0.75rem; padding: 0.625rem 1rem; font-size: 1rem; outline: none; transition: all 0.2s ease; box-sizing: border-box;">
+              </div>
+
+              <div class="form-group" style="margin-bottom: 1.25rem;">
+                <label for="phone" style="display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.25rem; color: #1f2937;">Τηλέφωνο</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="69xxxxxxxx" required style="width: 100%; border: 1px solid #d1d5db; border-radius: 0.75rem; padding: 0.625rem 1rem; font-size: 1rem; outline: none; transition: all 0.2s ease; box-sizing: border-box;">
+              </div>
+
+              <div class="form-group" style="margin-bottom: 1.25rem;">
+                <label for="message" style="display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.25rem; color: #1f2937;">Μήνυμα</label>
+                <textarea id="message" name="message" rows="5" placeholder="Γράψε εδώ το μήνυμά σου…" required style="width: 100%; border: 1px solid #d1d5db; border-radius: 0.75rem; padding: 0.625rem 1rem; font-size: 1rem; outline: none; transition: all 0.2s ease; box-sizing: border-box; resize: vertical; min-height: 120px;"></textarea>
+              </div>
+
+              <div class="form-checkboxes" style="margin-bottom: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem;">
+                <label class="checkbox-wrapper" style="display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.875rem; color: #374151; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1rem; cursor: pointer;">
+                  <input type="checkbox" id="privacy" name="privacy" required style="margin-top: 0.125rem; height: 1rem; width: 1rem; border-radius: 0.25rem; border: 1px solid #d1d5db; cursor: pointer;">
+                  <span>Συμφωνώ με την <a href="#privacy" data-legal-open="privacy" class="privacy-link" style="text-decoration: underline; color: inherit;"><strong>Πολιτική Απορρήτου*</strong></a></span>
+                </label>
+
+                <label class="checkbox-wrapper" style="display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.875rem; color: #374151; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1rem; cursor: pointer;">
+                  <input type="checkbox" id="newsletter" name="newsletter" style="margin-top: 0.125rem; height: 1rem; width: 1rem; border-radius: 0.25rem; border: 1px solid #d1d5db; cursor: pointer;">
+                  <span>Θέλω να λαμβάνω ενημερώσεις και προσφορές</span>
+                </label>
+              </div>
+
+              <div class="form-actions" style="display: flex; justify-content: flex-end;">
+                <button type="submit" class="submit-button" style="display: inline-flex; align-items: center; gap: 0.5rem; border-radius: 0.75rem; background: #1f2937; color: white; padding: 0.625rem 1.5rem; border: none; cursor: pointer; font-size: 1rem; font-weight: 500; transition: background-color 0.2s ease;">
+                  <svg class="submit-icon" style="height: 1rem; width: 1rem;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 2L11 13"/>
+                    <path d="M22 2l-7 20-4-9-9-4 20-7z"/>
+                  </svg>
+                  Αποστολή Μηνύματος
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  
+  <!-- Footer -->
+  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>
+  <script src="../js/contact-form.js"></script>
+  <script src="/js/cookie-consent.js"></script>
+  <script src="/js/legal-modal.js"></script>
+  <script src="../app.js"></script>
+  <script>
+    // Hero animation controller for contact
+    (function(){
+      const headline = document.getElementById('headline-contact');
+      const flipEl = document.getElementById('flip-contact');
+      if (!headline || !flipEl) return;
+      const wait = (ms) => new Promise(r=>setTimeout(r,ms));
+      function flipTo(text){
+        flipEl.classList.remove('enter');
+        void flipEl.offsetWidth; // restart animation
+        flipEl.textContent = text;
+        flipEl.classList.add('enter');
+      }
+      (async function run(){
+        headline.textContent = 'NERALLY';
+        await wait(1000);
+        headline.innerHTML = 'N' + '<span class="gap g1"></span>' + 'ER' + '<span class="gap g2"></span>' + 'ALLY';
+        await wait(1200);
+        headline.querySelector('.g1').innerHTML = '<span class="rise">EW&nbsp;</span>';
+        await wait(500);
+        headline.querySelector('.g2').innerHTML = '<span class="rise">A&nbsp;</span>';
+        await wait(1200);
+        headline.innerHTML = '<b>NEW ERA</b> ALLY';
+        const words = ['ΕΠΙΚΟΙΝΩΝΙΑ','ΣΥΝΕΡΓΑΣΙΑ','ΑΞΙΟΠΙΣΤΙΑ','ΣΤΗΡΙΞΗ'];
+        let i = 0; flipTo(words[i++ % words.length]);
+        setInterval(()=> flipTo(words[i++ % words.length]), 1900);
+      })();
+    })();
+
+    // Enhanced form styling and responsiveness
+    document.addEventListener('DOMContentLoaded', function() {
+      const inputs = document.querySelectorAll('input, textarea');
+      inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+          this.style.borderColor = '#d1d5db';
+          this.style.boxShadow = '0 0 0 2px rgba(209, 213, 219, 0.3)';
+        });
+        input.addEventListener('blur', function() {
+          this.style.borderColor = '#d1d5db';
+          this.style.boxShadow = 'none';
+        });
+      });
+
+      const submitBtn = document.querySelector('.submit-button');
+      if (submitBtn) {
+        submitBtn.addEventListener('mouseenter', function() {
+          this.style.backgroundColor = '#000000';
+        });
+        submitBtn.addEventListener('mouseleave', function() {
+          this.style.backgroundColor = '#1f2937';
+        });
+      }
+
+      const contactCard = document.querySelector('.contact-info-card');
+      if (contactCard) {
+        contactCard.addEventListener('mouseenter', function() {
+          this.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+        });
+        contactCard.addEventListener('mouseleave', function() {
+          this.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+        });
+      }
+
+      const form = document.querySelector('.contact-form');
+      if (form) {
+        form.addEventListener('mouseenter', function() {
+          this.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+        });
+        form.addEventListener('mouseleave', function() {
+          this.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+        });
+      }
+    });
+
+    // Media query adjustments
+    function handleResize() {
+      const grid = document.querySelector('.contact-grid');
+      if (window.innerWidth <= 768 && grid) {
+        grid.style.gridTemplateColumns = '1fr';
+        grid.style.gap = '2rem';
+      } else if (grid) {
+        grid.style.gridTemplateColumns = '1fr 1fr';
+        grid.style.gap = '2.5rem';
+      }
+    }
+    
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Call once on load
+  </script>
+</body>
+</html>
+
+</div>
             <div class="contact-hero-info">
               <div class="contact-hero-title-row">
                 <span class="contact-hero-icon" aria-hidden="true">📤</span>
