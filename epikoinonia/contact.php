@@ -188,7 +188,8 @@
         await wait(1200);
         headline.innerHTML = '<b>NEW ERA</b> ALLY';
         const words = ['ΕΠΙΚΟΙΝΩΝΙΑ','ΣΥΝΕΡΓΑΣΙΑ','ΑΞΙΟΠΙΣΤΙΑ','ΣΤΗΡΙΞΗ'];
-        let i = 0; flipTo(words[i++ % words.length]);
+        let i = 0;
+        flipTo(words[i++ % words.length]);
         setInterval(()=> flipTo(words[i++ % words.length]), 1900);
       })();
     })();
