@@ -31,6 +31,25 @@ class CareersFormHandler {
     const form = document.querySelector(this.formSelector);
     if (!form) return;
     form.addEventListener('submit', (e) => this.handleSubmit(e));
+    // Dropzone enhancements
+    const dz = form.querySelector('#cvDrop');
+    const fileInput = form.querySelector('#cv');
+    const fileName = form.querySelector('#cvFileName');
+    if (dz && fileInput) {
+      dz.addEventListener('click', () => fileInput.click());
+      dz.addEventListener('dragover', (e) => { e.preventDefault(); dz.classList.add('dragover'); });
+      dz.addEventListener('dragleave', () => dz.classList.remove('dragover'));
+      dz.addEventListener('drop', (e) => {
+        e.preventDefault(); dz.classList.remove('dragover');
+        if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]) {
+          fileInput.files = e.dataTransfer.files;
+          if (fileName) fileName.textContent = e.dataTransfer.files[0].name;
+        }
+      });
+      fileInput.addEventListener('change', () => {
+        if (fileInput.files && fileInput.files[0] && fileName) fileName.textContent = fileInput.files[0].name;
+      });
+    }
   }
   async getToken() {
     if (!this.recaptchaLoaded || typeof grecaptcha === 'undefined') return null;
