@@ -139,270 +139,9 @@
       }
     }
 
-    /* Contact page specific styles */
-    .contact-container {
-      background: linear-gradient(to bottom, #ffffff, #f8fafc, #f1f5f9);
-      margin-top: 0;
-      min-height: 100vh;
-    }
-
-    .contact-section {
-      padding: 4rem 2rem;
-      max-width: min(1200px, 92%);
-      margin: 0 auto;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: start;
-    }
-
-    @media (max-width: 768px) {
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      .contact-section {
-        padding: 2rem 1rem;
-      }
-    }
-
-    /* Left column - Contact intro */
-    .contact-intro .intro-header {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-    }
-
-    .contact-intro .intro-icon {
-      width: 2rem;
-      height: 2rem;
-      color: #374151;
-    }
-
-    .contact-intro h1 {
-      font-size: clamp(1.5rem, 4vw, 2rem);
-      font-weight: 600;
-      color: #1f2937;
-      margin: 0;
-      letter-spacing: -0.025em;
-    }
-
-    .contact-intro p {
-      color: #6b7280;
-      font-size: 1rem;
-      line-height: 1.625;
-      margin: 0 0 2rem 0;
-    }
-
-    /* Contact info card */
-    .contact-info-card {
-      background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 1rem;
-      padding: 1.5rem;
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    }
-
-    .contact-info-card h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      color: #1f2937;
-      margin: 0 0 0.75rem 0;
-    }
-
-    .contact-info-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .contact-info-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      font-size: 0.875rem;
-      color: #374151;
-    }
-
-    .contact-info-item svg {
-      width: 1rem;
-      height: 1rem;
-      margin-top: 0.125rem;
-      flex-shrink: 0;
-    }
-
-    .contact-info-item a {
-      color: inherit;
-      text-decoration: underline;
-      text-decoration-color: #d1d5db;
-    }
-
-    .contact-info-item a:hover {
-      text-decoration-color: #6b7280;
-    }
-
-    /* Social media section (if needed later) */
-    .social-section {
-      margin-top: 1.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid #e5e7eb;
-    }
-
-    .social-section h4 {
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: #1f2937;
-      margin: 0 0 0.5rem 0;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .social-links a {
-      color: #6b7280;
-      transition: color 0.2s ease;
-    }
-
-    .social-links a:hover {
-      color: #374151;
-    }
-
-    /* Right column - Contact form */
-    .contact-form {
-      background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 1rem;
-      padding: 2rem;
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-      max-width: 32rem;
-      margin: 0 auto;
-      transition: box-shadow 0.3s ease;
-    }
-
-    .contact-form:hover {
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    }
-
-    .form-title {
-      font-size: 1.5rem;
-      font-weight: 600;
-      text-align: center;
-      color: #1f2937;
-      margin: 0 0 1.5rem 0;
-    }
-
-    .form-group {
-      margin-bottom: 1.25rem;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: #374151;
-      margin-bottom: 0.25rem;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      border: 1px solid #d1d5db;
-      border-radius: 0.75rem;
-      padding: 0.625rem 1rem;
-      font-size: 1rem;
-      color: #1f2937;
-      background-color: white;
-      transition: all 0.2s ease;
-      box-sizing: border-box;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: #3b82f6;
-      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .form-checkboxes {
-      margin-bottom: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .checkbox-wrapper {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      padding: 1rem;
-      background: #f9fafb;
-      border: 1px solid #e5e7eb;
-      border-radius: 0.75rem;
-      font-size: 0.875rem;
-      color: #374151;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-    }
-
-    .checkbox-wrapper:hover {
-      background: #f3f4f6;
-    }
-
-    .checkbox-wrapper input[type="checkbox"] {
-      width: 1rem;
-      height: 1rem;
-      margin-top: 0.125rem;
-      cursor: pointer;
-    }
-
-    .privacy-link {
-      text-decoration: underline;
-      color: inherit;
-      font-weight: 600;
-    }
-
-    .form-actions {
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    .submit-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: #1f2937;
-      color: white;
-      border: none;
-      border-radius: 0.75rem;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-    }
-
-    .submit-button:hover {
-      background: #111827;
-    }
-
-    .submit-button svg {
-      width: 1rem;
-      height: 1rem;
-    }
+    /* Use existing contact page classes and minimal overrides */
+    .contact-page .main-content { margin-top: 0; }
+    .contact-form textarea { resize: vertical; min-height: 120px; }
 
   </style>
   
@@ -426,56 +165,43 @@
     </main>
   </div>
 
-  <main class="contact-container">
+  <!-- Main Content -->
+  <main class="main-content contact-page">
     <section class="contact-section">
-      <div class="contact-grid">
-        
-        <!-- Left content - Contact intro and info -->
-        <div class="contact-left">
-          <div class="contact-intro">
-            <div class="intro-header">
-              <svg class="intro-icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 5 17 10"></polyline>
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-              </svg>
-              <h1>Φόρμα Επικοινωνίας</h1>
+      <div class="container">
+        <div class="contact-grid two-col">
+          
+          <!-- Left content - Contact intro and info -->
+          <div class="contact-left">
+            <div class="contact-hero-info">
+              <div class="contact-hero-title-row">
+                <span class="contact-hero-icon" aria-hidden="true">📤</span>
+                <h2 class="contact-hero-title">Φόρμα Επικοινωνίας</h2>
+              </div>
+              <p class="contact-hero-sub">Είστε επιχείρηση ή επαγγελματίας και θέλετε να συνεργαστούμε; Επικοινωνήστε μαζί μας για συνεργασίες, προτάσεις ή πληροφορίες σχετικά με τις υπηρεσίες μας.</p>
             </div>
-            <p>Είστε επιχείρηση ή επαγγελματίας και θέλετε να συνεργαστούμε; Επικοινωνήστε μαζί μας για συνεργασίες, προτάσεις ή πληροφορίες σχετικά με τις υπηρεσίες μας.</p>
-          </div>
 
-          <!-- Contact info card -->
-          <div class="contact-info-card">
-            <h3>Στοιχεία Επικοινωνίας</h3>
-            <ul class="contact-info-list">
-              <li class="contact-info-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 3.1 4.18 2 2 0 0 1 5.05 2h3a2 2 0 0 1 2 1.72c.12.81.3 1.6.57 2.36a2 2 0 0 1-.45 2.11L9 9a16 16 0 0 0 6 6l.81-1.17a2 2 0 0 1 2.11-.45c.76.27 1.55.45 2.36.57A2 2 0 0 1 22 16.92z"/>
-                </svg>
-                Τηλ.: <a href="tel:+306946365798">+30 694 636 5798</a>
-              </li>
-              <li class="contact-info-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6c0-1.1.9-2 2-2z"/>
-                  <polyline points="22,6 12,13 2,6"/>
-                </svg>
-                Email: <a href="mailto:info@nerally.gr">info@nerally.gr</a>
-              </li>
-              <li class="contact-info-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/>
-                  <circle cx="12" cy="10" r="3"/>
-                </svg>
-                Διεύθυνση: Εξ αποστάσεως σε όλη την Ελλάδα
-              </li>
-            </ul>
+            <!-- Contact info card -->
+            <div class="contact-info-card">
+              <h3>Στοιχεία Επικοινωνίας</h3>
+              <ul class="contact-list">
+                <li class="contact-li">
+                  <span class="li-ico">📞</span> Τηλ.: <a href="tel:+306946365798">+30 694 636 5798</a>
+                </li>
+                <li class="contact-li">
+                  <span class="li-ico">✉️</span> Email: <a href="mailto:info@nerally.gr">info@nerally.gr</a>
+                </li>
+                <li class="contact-li">
+                  <span class="li-ico">📍</span> Διεύθυνση: Εξ αποστάσεως σε όλη την Ελλάδα
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
 
           <!-- Right: Contact Form -->
-          <div class="contact-right">
-            <form id="contactForm" class="contact-form" action="../contact-handler.php" method="POST">
-              <h3 class="form-title">Φόρμα Επικοινωνίας</h3>
+          <div class="contact-form-area">
+            <form id="contactForm" class="modern-form" action="../contact-handler.php" method="POST">
+              <h3 style="text-align: center; margin-bottom: 20px; color: #111827;">Φόρμα Επικοινωνίας</h3>
 
               <div class="form-group">
                 <label for="name">Ονοματεπώνυμο</label>
@@ -498,28 +224,32 @@
               </div>
 
               <div class="form-checkboxes">
-                <label class="checkbox-wrapper">
+                <label class="checkbox-label">
                   <input type="checkbox" id="privacy" name="privacy" required>
-                  <span>Συμφωνώ με την <a href="#privacy" data-legal-open="privacy" class="privacy-link">Πολιτική Απορρήτου*</a></span>
+                  <span class="checkmark"></span>
+                  Συμφωνώ με την <a href="#privacy" data-legal-open="privacy">Πολιτική Απορρήτου</a> *
                 </label>
 
-                <label class="checkbox-wrapper">
+                <label class="checkbox-label">
                   <input type="checkbox" id="newsletter" name="newsletter">
-                  <span>Θέλω να λαμβάνω ενημερώσεις και προσφορές</span>
+                  <span class="checkmark"></span>
+                  Θέλω να λαμβάνω ενημερώσεις και προσφορές
                 </label>
               </div>
 
-              <div class="form-actions">
-                <button type="submit" class="submit-button">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 2L11 13"/>
-                    <path d="M22 2l-7 20-4-9-9-4 20-7z"/>
-                  </svg>
-                  Αποστολή Μηνύματος
-                </button>
+              <button type="submit" class="submit-btn">
+                <span class="btn-text">Αποστολή Μηνύματος</span>
+                <span class="btn-icon">→</span>
+              </button>
+              
+              <div class="recaptcha-info">
+                Αυτός ο ιστότοπος προστατεύεται από το reCAPTCHA και ισχύουν η 
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Πολιτική Απορρήτου</a> και οι 
+                <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Όροι Χρήσης</a> της Google.
               </div>
             </form>
           </div>
+        </div>
       </div>
     </section>
   </main>
