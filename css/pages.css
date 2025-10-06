@@ -415,10 +415,12 @@
 }
 .careers-left { display: grid; gap: 20px; align-content: start; }
 .careers-title {
-  font-size: clamp(1.75rem, 3vw, 2.25rem);
-  font-weight: 700; color: #111827; letter-spacing: 0.2px;
-  margin-bottom: 8px;
+  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+  font-weight: 700; color: var(--brand); letter-spacing: 0.2px;
+  margin: 0 0 6px 0;
+  position: relative;
 }
+.careers-title::after{content:"";display:block;width:64px;height:3px;background:var(--brand);margin-top:6px;border-radius:2px}
 .careers-subtitle { color: #4b5563; line-height: 1.7; }
 
 .careers-card {
@@ -428,13 +430,16 @@
 }
 .positions-card .card-header { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
 .positions-card .card-icon { font-size: 18px; color: #374151; }
-.positions-card h3 { font-size: 1.1rem; margin: 0; color: #111827; }
-.positions-card p { color: #374151; line-height: 1.7; }
+.positions-card h3 { font-size: 1.1rem; margin: 0; color: var(--brand); position: relative; }
+.positions-card h3::after{content:"";display:block;width:48px;height:2px;background:var(--brand);margin-top:4px}
+.positions-card p { color: #111827; line-height: 1.7; background:#fff; border:1px solid #111827; padding:10px; border-radius:0; }
 
 .faq-card h3 { font-size: 1rem; margin: 0 0 8px 0; color: #111827; }
 .faq-list { display: grid; gap: 8px; }
 .faq-item { border: 1px solid #e5e7eb; border-radius: 12px; padding: 10px 12px; background: #fff; }
-.faq-item summary { cursor: pointer; font-weight: 600; color: #111827; list-style: none; }
+.faq-item summary { cursor: pointer; font-weight: 600; color: #111827; list-style: none; position:relative; padding-right:24px; }
+.faq-item summary::after{content:"+"; position:absolute; right:8px; top:0; font-weight:700;}
+.faq-item[open] summary::after{content:"-";}
 .faq-item summary::-webkit-details-marker { display: none; }
 .faq-item[open] { border-color: var(--brand); box-shadow: 0 4px 14px rgba(41,128,185,0.12); }
 .faq-item p { margin-top: 8px; color: #4b5563; font-size: 0.95rem; }
@@ -464,12 +469,12 @@
 .file-dropzone {
   display: grid; justify-items: center; gap: 6px; text-align: center;
   background: #f9fafb; border: 2px solid #111827; color: #111827;
-  padding: 12px; border-radius: 0; cursor: pointer; transition: background var(--transition-base), border-color var(--transition-base);
+  padding: 16px; min-height: 96px; border-radius: 0; cursor: pointer; transition: background var(--transition-base), border-color var(--transition-base); position:relative;
 }
 .file-dropzone:hover { background: #f3f4f6; border-color: #111827; }
 .file-dropzone:focus-within { border-color: var(--brand); box-shadow: 0 0 0 4px rgba(41,128,185,0.12); }
 .file-dropzone .dz-icon { opacity: 0.7; font-size: 14px; }
-.file-dropzone .dz-title { font-size: 0.9rem; }
+.file-dropzone .dz-title { font-size: 0.95rem; }
 .file-dropzone .dz-sub { font-size: 0.8rem; color: #6b7280; }
 .file-dropzone .dz-file { font-size: 0.85rem; color: #111827; }
 .file-dropzone .dz-clear{ position:absolute; right:10px; top:10px; border:none; background:#e5e7eb; color:#111827; border-radius:4px; padding:0 8px; cursor:pointer; display:none }
@@ -478,12 +483,16 @@
 
 /* Checkboxes reuse existing .checkbox-label from components.css */
 .careers-check { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 12px; }
+.form-checkboxes{ display:grid; gap: 12px; }
 .careers-check .text-content a { color: var(--brand); }
 
 /* Submit button: reuse .submit-btn base with slight layout */
 .careers-form .submit-btn { display:inline-flex; align-items:center; gap:8px; }
 .careers-form .btn-icon { font-size: 16px; }
 .careers-form .form-actions{ display:flex; justify-content:flex-end; }
+
+/* Compact reCAPTCHA note for careers page */
+.careers-form .recaptcha-info { font-size: 10px; margin: 8px 0 0; padding: 6px 0 0; border: none; color: #6b7280; }
 
 @media (max-width: 900px) {
   .careers-grid { grid-template-columns: 1fr; }

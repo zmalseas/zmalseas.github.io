@@ -58,7 +58,8 @@ class CareersFormHandler {
         }
       });
       if (clearBtn) {
-        clearBtn.addEventListener('click', () => {
+        clearBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
           fileInput.value = '';
           if (fileName) fileName.textContent = '';
           dz.classList.remove('has-file');
