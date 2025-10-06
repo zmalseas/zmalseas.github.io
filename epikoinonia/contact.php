@@ -44,15 +44,16 @@
 
   <!-- Hero Section with Text Animation (CONTACT variant) -->
   <div class="hero-animated">
-    <div class="stage">
+
+    <main class="stage">
       <div class="stack">
-        <div class="headline" id="headline-contact">NERALLY</div>
-        <div class="row">
-          <div class="left"></div>
-          <div class="right" id="flip-contact">ΕΠΙΚΟΙΝΩΝΙΑ</div>
+        <div id="headline" class="headline" aria-live="polite"></div>
+        <div class="row" id="row">
+          <div class="left">NERA</div>
+          <div class="right"><span id="flip" class="flip">LLY</span></div>
         </div>
       </div>
-    </div>
+    </main>
   </div>
 
   <!-- Main Content -->

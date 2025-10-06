@@ -360,7 +360,7 @@
       await wait(1400);
       headline.innerHTML = '<b>NEW ERA</b> ALLY';
 
-      const words = ['LLY', 'ΑΝΑΠΤΥΞΗ', 'ΟΙΚΟΝΟΜΙΚΑ', 'ΣΤΡΑΤΗΓΙΚΗ', 'ΧΡΗΜΑΤΟΔΟΤΗΣΗ', 'ΑΣΦΑΛΕΙΑ', 'ΚΑΙΝΟΤΟΜΙΑ', 'ΨΗΦΙΑΚΑ', 'ΕΜΠΙΣΤΟΣΥΝΗ'];
+      const words = ['LLY', 'ΑΝΑΠΤΥΞΗ', 'ΟΙΚΟΝΟΜΙΚΑ', 'ΣΤΡΑΤΗΓΙΚΗ', 'ΧΡΗΜΑΤΟΔΟΤΗΣΗ', 'ΑΣΦΑΛΕΙΑ', 'ΚΑΙΝΟΤΟΜΙΑ', 'ΕΜΠΙΣΤΟΣΥΝΗ'];
       let i = 0;
       flipTo(words[i++ % words.length]);
       setInterval(() => flipTo(words[i++ % words.length]), 1900);
