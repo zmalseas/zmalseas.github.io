@@ -61,17 +61,19 @@
               <p class="careers-subtitle">Συμπλήρωσε τη φόρμα δεξιά με τα στοιχεία σου και επισύναψε το <strong>βιογραφικό</strong> σου (PDF/JPG/PNG).</p>
             </div>
 
-            <div class="careers-card positions-card">
+            <div class="positions-card">
               <div class="card-header">
                 <span class="card-icon" aria-hidden="true">📄</span>
                 <h3>Διαθέσιμες Θέσεις</h3>
               </div>
+              <div class="positions-box">
               <p>
                 Αυτή τη στιγμή <strong>δεν υπάρχουν ανοιχτές θέσεις εργασίας</strong>.<br>
                 Μπορείς να στείλεις το <strong>βιογραφικό σου</strong> για το αρχείο μας·
                 εφόσον το επιθυμείς, θα μπορούμε να το <strong>προωθήσουμε σε συνεργαζόμενους πελάτες</strong>
                 όταν υπάρξει ανάγκη που ταιριάζει στο προφίλ σου.
               </p>
+              </div>
             </div>
 
             <div class="careers-card faq-card">

@@ -405,22 +405,18 @@
   padding: 48px 0 64px;
 }
 .careers-section .container { position: relative; }
-.careers-bg {
-  position: absolute; inset: 0; z-index: 0;
-  background: linear-gradient(180deg, #fff 0%, #fff 40%, #f4f6fb 100%);
-}
+.careers-bg { position:absolute; inset:0; z-index:0; background:#f4f6fb; }
 .careers-grid { 
   position: relative; z-index: 1;
   display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;
 }
 .careers-left { display: grid; gap: 20px; align-content: start; }
-.careers-title {
-  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
-  font-weight: 700; color: var(--brand); letter-spacing: 0.2px;
-  margin: 0 0 6px 0;
-  position: relative;
+@keyframes fadeSlideIn { from {opacity:0; transform: translateY(20px);} to {opacity:1; transform: translateY(0);} }
+.careers-title{
+  margin:0 0 20px; font-size:clamp(26px,2.6vw,38px); line-height:1.15;
+  color:var(--brand); position:relative; opacity:0; animation: fadeSlideIn .8s ease forwards;
 }
-.careers-title::after{content:"";display:block;width:64px;height:3px;background:var(--brand);margin-top:6px;border-radius:2px}
+.careers-title::after{content:"";display:block;width:60px;height:4px;background:var(--brand);margin-top:10px;border-radius:4px}
 .careers-subtitle { color: #4b5563; line-height: 1.7; }
 
 .careers-card {
@@ -429,10 +425,11 @@
   padding: 20px;
 }
 .positions-card .card-header { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
-.positions-card .card-icon { font-size: 18px; color: #374151; }
-.positions-card h3 { font-size: 1.1rem; margin: 0; color: var(--brand); position: relative; }
-.positions-card h3::after{content:"";display:block;width:48px;height:2px;background:var(--brand);margin-top:4px}
-.positions-card p { color: #111827; line-height: 1.7; background:#fff; border:1px solid #111827; padding:10px; border-radius:0; }
+.positions-card .card-icon { font-size: 18px; color: var(--brand); }
+.positions-card h3 { margin:0 0 20px; font-size:clamp(26px,2.6vw,38px); line-height:1.15; color:var(--brand); position:relative; opacity:0; animation: fadeSlideIn .8s ease forwards; }
+.positions-card h3::after{content:"";display:block;width:60px;height:4px;background:var(--brand);margin-top:10px;border-radius:4px}
+.positions-card p { color:#111827; line-height:1.7; }
+.positions-box{ background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:14px; box-shadow: 0 2px 8px rgba(0,0,0,.03); }
 
 .faq-card h3 { font-size: 1rem; margin: 0 0 8px 0; color: #111827; }
 .faq-list { display: grid; gap: 8px; }
@@ -468,18 +465,18 @@
 /* Dropzone */
 .file-dropzone {
   display: grid; justify-items: center; gap: 6px; text-align: center;
-  background: #f9fafb; border: 2px solid #111827; color: #111827;
-  padding: 16px; min-height: 96px; border-radius: 0; cursor: pointer; transition: background var(--transition-base), border-color var(--transition-base); position:relative;
+  background: #f9fafb; border: 2px dashed #9099a3; color: #111827;
+  padding: 18px; min-height: 110px; border-radius: 12px; cursor: pointer; transition: background var(--transition-base), border-color var(--transition-base); position:relative;
 }
-.file-dropzone:hover { background: #f3f4f6; border-color: #111827; }
+.file-dropzone:hover { background:#f3f4f6; border-color:#7b8794; }
 .file-dropzone:focus-within { border-color: var(--brand); box-shadow: 0 0 0 4px rgba(41,128,185,0.12); }
 .file-dropzone .dz-icon { opacity: 0.7; font-size: 14px; }
 .file-dropzone .dz-title { font-size: 0.95rem; }
 .file-dropzone .dz-sub { font-size: 0.8rem; color: #6b7280; }
 .file-dropzone .dz-file { font-size: 0.85rem; color: #111827; }
-.file-dropzone .dz-clear{ position:absolute; right:10px; top:10px; border:none; background:#e5e7eb; color:#111827; border-radius:4px; padding:0 8px; cursor:pointer; display:none }
+.file-dropzone .dz-clear{ position:absolute; right:10px; top:10px; border:none; background:#e5e7eb; color:#111827; border-radius:8px; padding:0 8px; cursor:pointer; display:none }
 .file-dropzone.has-file .dz-clear{ display:inline-block }
-.file-dropzone.dragover{ outline:2px dashed var(--brand); outline-offset:2px }
+.file-dropzone.dragover{ outline:2px dashed var(--brand); outline-offset:2px; border-color: var(--brand); }
 
 /* Checkboxes reuse existing .checkbox-label from components.css */
 .careers-check { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 12px; }
