@@ -309,6 +309,21 @@
 .contact-page .contact-value { color: var(--brand); text-decoration: none; }
 .contact-page .contact-value:hover { text-decoration: underline; }
 
+/* Contact mockup-alike styles */
+.contact-hero-info{ background:#fff; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,.06); padding:20px; margin-bottom:16px; border:1px solid #eef2f7 }
+.contact-hero-title-row{ display:flex; align-items:center; gap:12px; margin-bottom:6px }
+.contact-hero-icon{ font-size:22px }
+.contact-hero-title{ margin:0; font-size:clamp(22px,2.2vw,26px); font-weight:800; color:#111827 }
+.contact-hero-sub{ color:#374151; line-height:1.7 }
+
+.contact-info-card{ background:#fff; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,.06); padding:20px; border:1px solid #eef2f7 }
+.contact-info-card h3{ margin:0 0 10px 0; font-size:16px; font-weight:700; color:#111827 }
+.contact-list{ list-style:none; padding:0; margin:0; display:grid; gap:10px }
+.contact-li{ display:flex; gap:10px; align-items:flex-start; color:#111827 }
+.contact-li a{ color:var(--brand); text-decoration:none }
+.contact-li a:hover{ text-decoration:underline }
+.li-ico{ width:20px; display:inline-block; opacity:.9 }
+
 /* Form messages */
 .form-message {
   border-radius: 8px;

@@ -43,77 +43,24 @@
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/header.php'; ?>
 
   <!-- Hero Section with Text Animation (CONTACT variant) -->
-  <div class="hero-animated">
-    <main class="stage">
-      <div class="stack">
-        <div id="headline-contact" class="headline" aria-live="polite"></div>
-        <div class="row" id="row-contact">
-          <div class="left">NERA</div>
-          <div class="right"><span id="flip-contact" class="flip">ΕΠΙΚΟΙΝΩΝΙΑ</span></div>
-        </div>
-      </div>
-    </main>
-  </div>
-
-  <!-- Main Content -->
-  <main class="main-content">
-    <!-- Simple Page Header -->
-    <section class="simple-header">
-      <div class="container">
-  <h1>Επικοινωνία</h1>
-  <p>Επικοινωνήστε μαζί μας για συνεργασίες, προτάσεις ή πληροφορίες σχετικά με τις υπηρεσίες μας.</p>
-      </div>
-    </section>
-
-    <!-- Contact Form Section -->
-    <section class="contact-section">
-      <div class="container">
-  <div class="contact-grid two-col">
-          <!-- Contact Info - Now on Left -->
           <div class="contact-info-area">
-            <div class="info-card">
-              <h2>Γιατί να επιλέξετε τη Nerally;</h2>
-              <p>Η Nerally αποτελεί την αξιόπιστη επιλογή σας για ολοκληρωμένες λογιστικές και φοροτεχνικές υπηρεσίες.</p>
-              
-              <ul class="benefits-list">
-                <li>
-                  <div class="benefit-icon">🎓</div>
-                  <div class="benefit-text">
-                    <strong>Εξειδικευμένο προσωπικό</strong>
-                    <span>με πιστοποιήσεις και συνεχή εκπαίδευση</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="benefit-icon">👥</div>
-                  <div class="benefit-text">
-                    <strong>Προσωποποιημένη εξυπηρέτηση</strong>
-                    <span>για κάθε πελάτη</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="benefit-icon">🔒</div>
-                  <div class="benefit-text">
-                    <strong>Σύγχρονες τεχνολογίες</strong>
-                    <span>για ασφάλεια και αποδοτικότητα</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="benefit-icon">💡</div>
-                  <div class="benefit-text">
-                    <strong>Συμβουλευτικές υπηρεσίες</strong>
-                    <span>για βέλτιστη φορολογική διαχείριση</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="benefit-icon">✨</div>
-                  <div class="benefit-text">
-                    <strong>Διαφάνεια και αξιοπιστία</strong>
-                    <span>σε κάθε συναλλαγή</span>
-                  </div>
-                </li>
-              </ul>
+            <div class="contact-hero-info">
+              <div class="contact-hero-title-row">
+                <span class="contact-hero-icon" aria-hidden="true">📤</span>
+                <h2 class="contact-hero-title">Φόρμα Επικοινωνίας</h2>
+              </div>
+              <p class="contact-hero-sub">Είστε επιχείρηση ή επαγγελματίας και θέλετε να συνεργαστούμε; Επικοινωνήστε μαζί μας για συνεργασίες, προτάσεις ή πληροφορίες σχετικά με τις υπηρεσίες μας.</p>
             </div>
 
+            <div class="contact-info-card">
+              <h3>Στοιχεία Επικοινωνίας</h3>
+              <ul class="contact-list">
+                <li class="contact-li"><span class="li-ico">�</span> Τηλ.: <a href="tel:+306946365798">+30 694 636 5798</a></li>
+                <li class="contact-li"><span class="li-ico">✉️</span> Email: <a href="mailto:info@nerally.gr">info@nerally.gr</a></li>
+                <li class="contact-li"><span class="li-ico">📍</span> Διεύθυνση: Εξ αποστάσεως σε όλη την Ελλάδα</li>
+              </ul>
+            </div>
+          </div>
             <div class="contact-details-card">
               <h4>Στοιχεία Επικοινωνίας</h4>
               <div class="contact-items">
