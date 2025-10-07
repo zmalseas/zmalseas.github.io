@@ -102,11 +102,16 @@
     kpiTaxBefore.textContent = '—';
     kpiCredit.textContent = '—';
     kpiFinalTax.textContent = '—';
-    incomeEl.focus();
+    if(incomeEl) incomeEl.focus();
   }
 
-  calcBtn?.addEventListener('click', render);
-  resetBtn?.addEventListener('click', reset);
+  // Safe event listeners with error handling
+  calcBtn?.addEventListener('click', () => {
+    try { render(); } catch(e) { console.error('Calculation error:', e); }
+  });
+  resetBtn?.addEventListener('click', () => {
+    try { reset(); } catch(e) { console.error('Reset error:', e); }
+  });
   childrenEl?.addEventListener('input', () => {
     let v = parseInt(childrenEl.value,10);
     if(isNaN(v)) v = 0;

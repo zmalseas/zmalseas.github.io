@@ -39,8 +39,8 @@
           <li class="nav-item dropdown">
             <a href="#"><span class="text">Εφαρμογές</span><span class="caret">▾</span></a>
             <div class="submenu" role="menu">
-              <a href="/efarmoges/rent-tax-calculator.html">Φόρος Ενοικίων <span class="sm-arrow">›</span></a>
-              <a href="/efarmoges/income-tax-calculator.html">Φόρος Εισοδήματος <span class="sm-arrow">›</span></a>
+              <a href="/efarmoges/rent-tax-calculator.php">Φόρος Ενοικίων <span class="sm-arrow">›</span></a>
+              <a href="/efarmoges/income-tax-calculator.php">Φόρος Εισοδήματος <span class="sm-arrow">›</span></a>
             </div>
           </li>
           
