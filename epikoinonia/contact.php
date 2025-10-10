@@ -262,7 +262,7 @@
                   <span class="li-ico">✉️</span> Email: <a href="mailto:info@nerally.gr">info@nerally.gr</a>
                 </li>
                 <li class="contact-li">
-                  <span class="li-ico">📍</span> Διεύθυνση: Θεσσαλονίκη αλλα και εξ αποστάσεως σε όλη την Ελλάδα!
+                  <span class="li-ico">📍</span> Διεύθυνση: Θεσσαλονίκη & εξ αποστάσεως σε όλη την Ελλάδα!
                 </li>
               </ul>
 
