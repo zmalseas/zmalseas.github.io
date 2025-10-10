@@ -150,13 +150,44 @@
       border-radius: 12px; 
       padding: 12px; 
     }
+    .careers-check .text-content { 
+      color: #111827 !important; 
+    }
     .careers-check .text-content a { 
-      color: var(--brand); 
+      color: var(--brand) !important; 
     }
     .form-checkboxes { 
       display: grid; 
       gap: 12px; 
       margin-bottom: 20px; 
+    }
+    
+    /* Fix contact list alignment */
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+    .contact-li {
+      display: grid;
+      grid-template-columns: 20px 1fr;
+      gap: 10px;
+      align-items: center;
+      color: #111827;
+    }
+    .li-ico {
+      width: 20px;
+      text-align: center;
+      opacity: 0.9;
+    }
+    .contact-li a {
+      color: var(--brand);
+      text-decoration: none;
+    }
+    .contact-li a:hover {
+      text-decoration: underline;
     }
 
   </style>
