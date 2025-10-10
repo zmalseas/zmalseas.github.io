@@ -171,15 +171,14 @@
       gap: 10px;
     }
     .contact-li {
-      display: grid;
-      grid-template-columns: 20px 1fr;
+      display: flex;
       gap: 10px;
-      align-items: center;
+      align-items: flex-start;
       color: #111827;
     }
     .li-ico {
       width: 20px;
-      text-align: center;
+      display: inline-block;
       opacity: 0.9;
     }
     .contact-li a {
@@ -187,6 +186,23 @@
       text-decoration: none;
     }
     .contact-li a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Override recaptcha-info to match careers style */
+    #contactForm .recaptcha-info {
+      margin: 12px 0;
+      padding: 8px 0;
+      color: #666;
+      font-size: 11px;
+      line-height: 1.4;
+      text-align: center;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+    }
+    
+    #contactForm .recaptcha-info a {
+      color: #666;
       text-decoration: underline;
     }
 
@@ -319,7 +335,7 @@
               </div>
             </form>
           </div>
-          
+
         </div>
       </div>
     </section>
