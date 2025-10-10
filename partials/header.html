@@ -110,7 +110,6 @@
           <a href="/legal/privacy.php" class="legal-link">Πολιτική Απορρήτου</a>
           <a href="/legal/terms.php" class="legal-link">Όροι Χρήσης</a>
           <a href="/legal/cookies.php" class="legal-link">Cookies</a>
-          <a href="/legal/privacy.php" class="legal-link">GDPR</a>
         </div>
         
         <div class="social-section">
