@@ -208,7 +208,7 @@
     }
     
     /* Override recaptcha-info to match careers style */
-    #contactForm .recaptcha-info {
+    #contactForm .recaptcha-inf2o {
       margin: 12px 0;
       padding: 8px 0;
       color: #666;
