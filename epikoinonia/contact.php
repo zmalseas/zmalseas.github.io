@@ -166,36 +166,35 @@
   </div>
 
   <!-- Main Content -->
-  <main class="main-content contact-page">
-    <section class="contact-section">
-      <div class="container">
-        <div class="contact-grid two-col">
+  <main class="main-content contact-page" style="margin-top:0;">
+    <section class="contact-section" style="position: relative; padding: 48px 0 64px;">
+      <div style="position:absolute; inset:0; z-index:0; background:#f4f6fb;"></div>
+      <div class="container" style="position: relative;">
+        <div style="position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;">
           
           <!-- Left content - Contact intro and info -->
-          <div class="contact-left">
-            <div class="contact-hero-info">
-              <div class="contact-hero-title-row">
-                <span class="contact-hero-icon" aria-hidden="true">📤</span>
-                <h2 class="contact-hero-title">Φόρμα Επικοινωνίας</h2>
-              </div>
-              <p class="contact-hero-sub">Είστε επιχείρηση ή επαγγελματίας και θέλετε να συνεργαστούμε; Επικοινωνήστε μαζί μας για συνεργασίες, προτάσεις ή πληροφορίες σχετικά με τις υπηρεσίες μας.</p>
+          <div style="display: grid; gap: 20px; align-content: start;">
+            <div class="contact-intro">
+              <h2 style="margin:0 0 20px; font-size:clamp(26px,2.6vw,38px); line-height:1.15; color:var(--brand); position:relative;">Φόρμα Επικοινωνίας</h2>
+              <div style="content:'';display:block;width:60px;height:4px;background:var(--brand);margin-top:10px;border-radius:4px; margin-bottom: 20px;"></div>
+              <p style="color: #4b5563; line-height: 1.7;">Είστε επιχείρηση ή επαγγελματίας και θέλετε να συνεργαστούμε; Επικοινωνήστε μαζί μας για συνεργασίες, προτάσεις ή πληροφορίες σχετικά με τις υπηρεσίες μας.</p>
             </div>
 
             <!-- Contact info card -->
-            <div class="contact-info-card">
-              <h3>Στοιχεία Επικοινωνίας</h3>
-              <ul class="contact-list">
-                <li class="contact-li">
-                  <span class="li-ico">📞</span> Τηλ.: <a href="tel:+306946365798">+30 694 636 5798</a>
+            <div style="background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.06); padding: 20px;">
+              <h3 style="margin:0 0 20px; font-size: 1rem; color: #111827;">Στοιχεία Επικοινωνίας</h3>
+              <ul style="list-style:none; padding:0; margin:0; display:grid; gap:10px;">
+                <li style="display:flex; gap:10px; align-items:flex-start; color:#111827;">
+                  <span style="width:20px; display:inline-block; opacity:.9;">📞</span> Τηλ.: <a href="tel:+306946365798" style="color:var(--brand); text-decoration:none;">+30 694 636 5798</a>
                 </li>
-                <li class="contact-li">
-                  <span class="li-ico">✉️</span> Email: <a href="mailto:info@nerally.gr">info@nerally.gr</a>
+                <li style="display:flex; gap:10px; align-items:flex-start; color:#111827;">
+                  <span style="width:20px; display:inline-block; opacity:.9;">✉️</span> Email: <a href="mailto:info@nerally.gr" style="color:var(--brand); text-decoration:none;">info@nerally.gr</a>
                 </li>
-                <li class="contact-li">
-                  <span class="li-ico">📍</span> Διεύθυνση: Εξ αποστάσεως σε όλη την Ελλάδα
+                <li style="display:flex; gap:10px; align-items:flex-start; color:#111827;">
+                  <span style="width:20px; display:inline-block; opacity:.9;">📍</span> Διεύθυνση: Εξ αποστάσεως σε όλη την Ελλάδα
                 </li>
-                <li class="contact-li">
-                  <span class="li-ico">🕒</span> Ώρες: Δευ–Παρ 09:00–17:00
+                <li style="display:flex; gap:10px; align-items:flex-start; color:#111827;">
+                  <span style="width:20px; display:inline-block; opacity:.9;">🕒</span> Ώρες: Δευ–Παρ 09:00–17:00
                 </li>
               </ul>
 
@@ -218,38 +217,38 @@
           </div>
 
           <!-- Right: Contact Form -->
-          <div class="contact-form-area">
-            <form id="contactForm" class="modern-form" action="../contact-handler.php" method="POST">
-              <h3 style="text-align: center; margin-bottom: 20px; color: #111827;">Φόρμα Επικοινωνίας</h3>
+          <div style="background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.06); padding: 24px;">
+            <form id="contactForm" action="../contact-handler.php" method="POST">
+              <h3 style="text-align: center; font-size: 1.2rem; margin: 0 0 12px 0; color: #111827;">Φόρμα Επικοινωνίας</h3>
 
-              <div class="form-group">
-                <label for="name">Ονοματεπώνυμο</label>
-                <input type="text" id="name" name="name" autocomplete="name" placeholder="π.χ. Μαρία Παπαδοπούλου" required>
+              <div style="display: grid; gap: 6px; margin-bottom: 12px;">
+                <label style="font-size: 0.9rem; color: #374151; font-weight: 600;">Ονοματεπώνυμο</label>
+                <input type="text" id="name" name="name" autocomplete="name" placeholder="π.χ. Μαρία Παπαδοπούλου" style="width: 100%; padding: 10px 12px; border: 2px solid #1f2937; border-radius: 0; font-size: 1rem; background:#fff; color:#111827; transition: border-color 0.2s, box-shadow 0.2s;" required>
               </div>
 
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" autocomplete="email" placeholder="name@domain.gr" required>
+              <div style="display: grid; gap: 6px; margin-bottom: 12px;">
+                <label style="font-size: 0.9rem; color: #374151; font-weight: 600;">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email" placeholder="name@domain.gr" style="width: 100%; padding: 10px 12px; border: 2px solid #1f2937; border-radius: 0; font-size: 1rem; background:#fff; color:#111827; transition: border-color 0.2s, box-shadow 0.2s;" required>
               </div>
 
-              <div class="form-group">
-                <label for="phone">Τηλέφωνο</label>
-                <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="69xxxxxxxx" required>
+              <div style="display: grid; gap: 6px; margin-bottom: 12px;">
+                <label style="font-size: 0.9rem; color: #374151; font-weight: 600;">Τηλέφωνο</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="69xxxxxxxx" style="width: 100%; padding: 10px 12px; border: 2px solid #1f2937; border-radius: 0; font-size: 1rem; background:#fff; color:#111827; transition: border-color 0.2s, box-shadow 0.2s;" required>
               </div>
 
-              <div class="form-group">
-                <label for="message">Μήνυμα</label>
-                <textarea id="message" name="message" rows="5" placeholder="Γράψε εδώ το μήνυμά σου…" required></textarea>
+              <div style="display: grid; gap: 6px; margin-bottom: 12px;">
+                <label style="font-size: 0.9rem; color: #374151; font-weight: 600;">Μήνυμα</label>
+                <textarea id="message" name="message" rows="5" placeholder="Γράψε εδώ το μήνυμά σου…" style="width: 100%; padding: 10px 12px; border: 2px solid #1f2937; border-radius: 0; font-size: 1rem; background:#fff; color:#111827; transition: border-color 0.2s, box-shadow 0.2s; resize: vertical; min-height: 120px;" required></textarea>
               </div>
 
-              <div class="form-checkboxes">
-                <label class="checkbox-label">
+              <div style="display:grid; gap: 12px; margin-bottom: 20px;">
+                <label class="checkbox-label" style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 12px;">
                   <input type="checkbox" id="privacy" name="privacy" required>
                   <span class="checkmark"></span>
-                  Συμφωνώ με την <a href="#privacy" data-legal-open="privacy">Πολιτική Απορρήτου</a> *
+                  Συμφωνώ με την <a href="#privacy" data-legal-open="privacy" style="color: var(--brand);">Πολιτική Απορρήτου</a> *
                 </label>
 
-                <label class="checkbox-label">
+                <label class="checkbox-label" style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 12px;">
                   <input type="checkbox" id="newsletter" name="newsletter">
                   <span class="checkmark"></span>
                   Θέλω να λαμβάνω ενημερώσεις και προσφορές
@@ -260,8 +259,8 @@
               <div id="feedback" style="display: none; text-align: center; padding: 8px; border-radius: 12px; font-size: 14px; font-weight: 500; margin: 16px 0;"></div>
 
               <button type="submit" class="submit-btn">
+                <span class="btn-icon" aria-hidden="true">✉️</span>
                 <span class="btn-text">Αποστολή Μηνύματος</span>
-                <span class="btn-icon">→</span>
               </button>
               
               <div class="recaptcha-info">
@@ -283,6 +282,22 @@
   <script src="/js/legal-modal.js"></script>
   <script src="../app.js"></script>
   <script>
+    // Add focus styles for form inputs
+    document.addEventListener('DOMContentLoaded', function() {
+      const inputs = document.querySelectorAll('#contactForm input, #contactForm textarea');
+      inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+          this.style.borderColor = 'var(--brand)';
+          this.style.boxShadow = '0 0 0 4px rgba(41,128,185,0.12)';
+          this.style.outline = 'none';
+        });
+        input.addEventListener('blur', function() {
+          this.style.borderColor = '#1f2937';
+          this.style.boxShadow = 'none';
+        });
+      });
+    });
+
     // Hero animation controller for contact - copy from company.php
     (function(){
       const headline = document.getElementById('headline');
@@ -326,6 +341,19 @@
       feedback.style.border = '1px solid #bbf7d0';
       setTimeout(() => feedback.style.display = 'none', 4000);
     }
+
+    // Responsive design for mobile
+    function handleResponsive() {
+      const grid = document.querySelector('[style*="grid-template-columns: 1fr 1fr"]');
+      if (window.innerWidth <= 900 && grid) {
+        grid.style.gridTemplateColumns = '1fr';
+      } else if (grid) {
+        grid.style.gridTemplateColumns = '1fr 1fr';
+      }
+    }
+    
+    window.addEventListener('resize', handleResponsive);
+    handleResponsive();
   </script>
 </body>
 </html>
