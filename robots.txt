@@ -17,4 +17,4 @@ Allow: /ipiresies/
 Allow: /efarmoges/
 Allow: /epikoinonia/
 Allow: /arthra/
-Allow: /nomimotita/
+Allow: /legal/

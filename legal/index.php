@@ -349,8 +349,8 @@
   
   <!-- Footer -->
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>
-  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/chat.html'; ?>
   <script src="/js/cookie-consent.js"></script>
+  <script src="/js/chat-widget.js"></script>
   <script src="../app.js"></script>
   <script>
     // Set current year

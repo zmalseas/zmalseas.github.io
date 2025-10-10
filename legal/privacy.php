@@ -262,6 +262,12 @@
       color: #0b1222;
     }
     
+    /* Styled headings */
+    .legal-heading {
+      color: var(--brand) !important;
+      font-weight: 700;
+    }
+    
     .legal-footer {
       color: #6b7280;
       font-size: 13px;
@@ -414,12 +420,23 @@ H επεξεργασία των δεδομένων σας προσωπικού �
   
   <!-- Footer -->
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>
-  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/chat.html'; ?>
   <script src="/js/cookie-consent.js"></script>
+  <script src="/js/chat-widget.js"></script>
   <script src="../app.js"></script>
   <script>
     // Set current year
     document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Style legal headings
+    document.addEventListener('DOMContentLoaded', function() {
+      const legalDoc = document.querySelector('.legal-doc pre');
+      if (legalDoc) {
+        let content = legalDoc.innerHTML;
+        // Match numbered headings like "1.", "2.1", "10. ΓΕΝΙΚΑ", "8.5. ΧΡΗΣΗ COOKIES", etc.
+        content = content.replace(/^(\d+(?:\.\d+)*\.?\s*[Α-ΩΆΈΉΊΌΎΏ\s]*)/gm, '<span class="legal-heading">$1</span>');
+        legalDoc.innerHTML = content;
+      }
+    });
 
     // Hero animation controller for legal
     (function(){

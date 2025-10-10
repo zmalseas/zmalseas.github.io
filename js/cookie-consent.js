@@ -86,7 +86,7 @@ class CookieConsent {
         πιο προσωποποιημένη εμπειρία. Τα προαιρετικά cookies Ανάλυσης/Απόδοσης 
         (Google Tag Manager) μας βοηθούν να βελτιώνουμε τον ιστότοπο. Τα απολύτως 
         απαραίτητα cookies είναι πάντα ενεργά. Διαβάστε την 
-        <a href="/nomimotita/cookies-policy.html" target="_blank" rel="noopener">Πολιτική Cookies</a>.
+        <a href="/legal/cookies.php" target="_blank" rel="noopener">Πολιτική Cookies</a>.
       </p>
       <div class="cc-actions">
         <button class="cc-btn cc-accept-all">Αποδοχή όλων των προαιρετικών</button>

@@ -107,10 +107,10 @@
     <div class="overlay-footer">
       <div class="overlay-footer-content">
         <div class="legal-links">
-          <a href="/nomimotita/privacy-policy.html" class="legal-link">Πολιτική Απορρήτου</a>
-          <a href="/nomimotita/terms-of-use.html" class="legal-link">Όροι Χρήσης</a>
-          <a href="/nomimotita/cookies-policy.html" class="legal-link">Cookies</a>
-          <a href="/nomimotita/gdpr.html" class="legal-link">GDPR</a>
+          <a href="/legal/privacy.php" class="legal-link">Πολιτική Απορρήτου</a>
+          <a href="/legal/terms.php" class="legal-link">Όροι Χρήσης</a>
+          <a href="/legal/cookies.php" class="legal-link">Cookies</a>
+          <a href="/legal/privacy.php" class="legal-link">GDPR</a>
         </div>
         
         <div class="social-section">

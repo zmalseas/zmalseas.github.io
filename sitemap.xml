@@ -120,28 +120,28 @@
   
   <!-- Legal Pages -->
   <url>
-    <loc>https://nerally.gr/nomimotita/privacy-policy.html</loc>
+    <loc>https://nerally.gr/legal/privacy.php</loc>
     <lastmod>2025-09-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   
   <url>
-    <loc>https://nerally.gr/nomimotita/terms-of-use.html</loc>
+    <loc>https://nerally.gr/legal/terms.php</loc>
     <lastmod>2025-09-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   
   <url>
-    <loc>https://nerally.gr/nomimotita/cookies-policy.html</loc>
+    <loc>https://nerally.gr/legal/cookies.php</loc>
     <lastmod>2025-09-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   
   <url>
-    <loc>https://nerally.gr/nomimotita/gdpr.html</loc>
+    <loc>https://nerally.gr/legal/privacy.php</loc>
     <lastmod>2025-09-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

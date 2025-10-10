@@ -244,7 +244,7 @@ class NerallyApp {
            currentPath.includes('/ipiresies/') || 
            currentPath.includes('/efarmoges/') || 
            currentPath.includes('/epikoinonia/') || 
-           currentPath.includes('/nomimotita/') || 
+           currentPath.includes('/legal/') || 
            currentPath.includes('/css/') || 
            currentPath.includes('/js/') ||
            (currentPath.split('/').length > 2 && !currentPath.endsWith('/'));
