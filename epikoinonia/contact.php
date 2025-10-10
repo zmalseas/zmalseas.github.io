@@ -149,9 +149,24 @@
       border: 1px solid #e5e7eb; 
       border-radius: 12px; 
       padding: 12px; 
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .careers-check input[type="checkbox"] {
+      margin: 0;
+      margin-top: 2px;
+      flex-shrink: 0;
+      width: 16px;
+      height: 16px;
+    }
+    .careers-check .checkmark {
+      display: none;
     }
     .careers-check .text-content { 
       color: #111827 !important; 
+      line-height: 1.4;
+      flex: 1;
     }
     .careers-check .text-content a { 
       color: var(--brand) !important; 
@@ -173,13 +188,16 @@
     .contact-li {
       display: flex;
       gap: 10px;
-      align-items: flex-start;
+      align-items: center;
       color: #111827;
+      line-height: 1.5;
     }
     .li-ico {
       width: 20px;
       display: inline-block;
       opacity: 0.9;
+      text-align: center;
+      flex-shrink: 0;
     }
     .contact-li a {
       color: var(--brand);
