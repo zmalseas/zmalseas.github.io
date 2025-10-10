@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../main.css" />
   <link rel="stylesheet" href="/css/cookie-consent.css" />
   <link rel="stylesheet" href="/css/legal-modal.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/site-config-inline.php'; ?>
   <style>
     /* Hero Section - Exact copy from company.php */
@@ -166,93 +167,97 @@
   </div>
 
   <!-- Main Content -->
-  <main class="main-content contact-page">
-    <section class="contact-section">
-      <div class="container">
-        <div class="contact-grid two-col">
-          
-          <!-- Left content - Contact intro and info -->
-          <div class="contact-left">
-            <div class="contact-hero-info">
-              <div class="contact-hero-title-row">
-                <span class="contact-hero-icon" aria-hidden="true">📤</span>
-                <h2 class="contact-hero-title">Φόρμα Επικοινωνίας</h2>
-              </div>
-              <p class="contact-hero-sub">Είστε επιχείρηση ή επαγγελματίας και θέλετε να συνεργαστούμε; Επικοινωνήστε μαζί μας για συνεργασίες, προτάσεις ή πληροφορίες σχετικά με τις υπηρεσίες μας.</p>
-            </div>
+  <section class="relative overflow-hidden" style="min-height: 100vh; background: linear-gradient(to bottom, white, #fafafa, #f5f5f5);">
+    <div class="relative max-w-6xl mx-auto px-4 py-16">
+      <div class="grid md:grid-cols-2 gap-10 items-start">
 
-            <!-- Contact info card -->
-            <div class="contact-info-card">
-              <h3>Στοιχεία Επικοινωνίας</h3>
-              <ul class="contact-list">
-                <li class="contact-li">
-                  <span class="li-ico">📞</span> Τηλ.: <a href="tel:+306946365798">+30 694 636 5798</a>
-                </li>
-                <li class="contact-li">
-                  <span class="li-ico">✉️</span> Email: <a href="mailto:info@nerally.gr">info@nerally.gr</a>
-                </li>
-                <li class="contact-li">
-                  <span class="li-ico">📍</span> Διεύθυνση: Εξ αποστάσεως σε όλη την Ελλάδα
-                </li>
-              </ul>
-            </div>
+        <!-- Left content -->
+        <div class="space-y-8">
+          <div class="flex items-center gap-3">
+            <svg class="h-8 w-8 text-neutral-800" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 5 17 10"></polyline><line x1="12" y1="5" x2="12" y2="19"></line></svg>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Φόρμα Επικοινωνίας</h2>
           </div>
+          <p class="text-neutral-600 text-base leading-relaxed">
+            Είστε επιχείρηση ή επαγγελματίας και θέλετε να συνεργαστούμε; Επικοινωνήστε μαζί μας για συνεργασίες, προτάσεις ή πληροφορίες σχετικά με τις υπηρεσίες μας.
+          </p>
 
-          <!-- Right: Contact Form -->
-          <div class="contact-form-area">
-            <form id="contactForm" class="modern-form" action="../contact-handler.php" method="POST">
-              <h3 style="text-align: center; margin-bottom: 20px; color: #111827;">Φόρμα Επικοινωνίας</h3>
+          <!-- Contact info card -->
+          <div class="p-6 rounded-2xl border border-neutral-200 bg-white shadow-lg hover:shadow-xl transition">
+            <h3 class="text-base font-semibold mb-3">Στοιχεία Επικοινωνίας</h3>
+            <ul class="space-y-2 text-sm text-neutral-700">
+              <li class="flex items-start gap-3"><svg class="h-4 w-4 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 3.1 4.18 2 2 0 0 1 5.05 2h3a2 2 0 0 1 2 1.72c.12.81.3 1.6.57 2.36a2 2 0 0 1-.45 2.11L9 9a16 16 0 0 0 6 6l.81-1.17a2 2 0 0 1 2.11-.45c.76.27 1.55.45 2.36.57A2 2 0 0 1 22 16.92z"/></svg> Τηλ.: <a href="tel:+306946365798" class="underline decoration-neutral-300 hover:decoration-neutral-500">+30 694 636 5798</a></li>
+              <li class="flex items-start gap-3"><svg class="h-4 w-4 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Email: <a href="mailto:info@nerally.gr" class="underline decoration-neutral-300 hover:decoration-neutral-500">info@nerally.gr</a></li>
+              <li class="flex items-start gap-3"><svg class="h-4 w-4 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Διεύθυνση: Εξ αποστάσεως σε όλη την Ελλάδα</li>
+              <li class="flex items-start gap-3"><svg class="h-4 w-4 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Ώρες: Δευ–Παρ 09:00–17:00</li>
+            </ul>
 
-              <div class="form-group">
-                <label for="name">Ονοματεπώνυμο</label>
-                <input type="text" id="name" name="name" autocomplete="name" placeholder="π.χ. Μαρία Παπαδοπούλου" required>
+            <!-- Social media -->
+            <div class="mt-6">
+              <h4 class="font-semibold text-sm mb-2">Connect with us</h4>
+              <div class="flex gap-4 text-neutral-600">
+                <a href="#" aria-label="LinkedIn" class="hover:text-[#0077B5] transition"><svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                <a href="#" aria-label="Instagram" class="hover:text-[#E4405F] transition"><svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3h10z"/><circle cx="12" cy="12" r="3.5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+                <a href="#" aria-label="TikTok" class="hover:text-[#010101] transition"><svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2c1.1 1.8 3.3 3 5.5 3v3.1c-1.3 0-2.5-.4-3.5-1v7.9a5.5 5.5 0 1 1-5.5-5.5v3a2.5 2.5 0 1 0 2.5 2.5V2z"/></svg></a>
               </div>
-
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" autocomplete="email" placeholder="name@domain.gr" required>
-              </div>
-
-              <div class="form-group">
-                <label for="phone">Τηλέφωνο</label>
-                <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="69xxxxxxxx" required>
-              </div>
-
-              <div class="form-group">
-                <label for="message">Μήνυμα</label>
-                <textarea id="message" name="message" rows="5" placeholder="Γράψε εδώ το μήνυμά σου…" required></textarea>
-              </div>
-
-              <div class="form-checkboxes">
-                <label class="checkbox-label">
-                  <input type="checkbox" id="privacy" name="privacy" required>
-                  <span class="checkmark"></span>
-                  Συμφωνώ με την <a href="#privacy" data-legal-open="privacy">Πολιτική Απορρήτου</a> *
-                </label>
-
-                <label class="checkbox-label">
-                  <input type="checkbox" id="newsletter" name="newsletter">
-                  <span class="checkmark"></span>
-                  Θέλω να λαμβάνω ενημερώσεις και προσφορές
-                </label>
-              </div>
-
-              <button type="submit" class="submit-btn">
-                <span class="btn-text">Αποστολή Μηνύματος</span>
-                <span class="btn-icon">→</span>
-              </button>
-              
-              <div class="recaptcha-info">
-                Αυτός ο ιστότοπος προστατεύεται από το reCAPTCHA και ισχύουν η 
-                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Πολιτική Απορρήτου</a> και οι 
-                <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Όροι Χρήσης</a> της Google.
-              </div>
-            </form>
+            </div>
           </div>
         </div>
+
+        <!-- Right: Contact Form -->
+        <form id="contactForm" class="space-y-5 bg-white border border-neutral-200 rounded-2xl p-8 shadow-lg hover:shadow-xl transition w-full max-w-lg mx-auto" action="../contact-handler.php" method="POST">
+          <h3 class="text-2xl font-semibold text-center mb-4">Φόρμα Επικοινωνίας</h3>
+
+          <div>
+            <label class="block text-sm font-medium mb-1">Ονοματεπώνυμο</label>
+            <input type="text" name="name" autocomplete="name" class="w-full border border-neutral-300 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-neutral-300" placeholder="π.χ. Μαρία Παπαδοπούλου" required>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium mb-1">Email</label>
+            <input type="email" name="email" autocomplete="email" class="w-full border border-neutral-300 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-neutral-300" placeholder="name@domain.gr" required>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium mb-1">Τηλέφωνο</label>
+            <input type="tel" name="phone" autocomplete="tel" class="w-full border border-neutral-300 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-neutral-300" placeholder="69xxxxxxxx" required>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium mb-1">Μήνυμα</label>
+            <textarea rows="5" name="message" class="w-full border border-neutral-300 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-neutral-300" placeholder="Γράψε εδώ το μήνυμά σου…" required></textarea>
+          </div>
+
+          <div class="space-y-3">
+            <label class="flex items-start gap-3 text-sm text-neutral-700 bg-neutral-50 border border-neutral-200 rounded-xl p-4">
+              <input type="checkbox" name="privacy" class="mt-1 h-4 w-4 rounded border-neutral-300" required>
+              <span>Συμφωνώ με την <a href="#privacy" data-legal-open="privacy" class="font-bold underline">Πολιτική Απορρήτου*</a></span>
+            </label>
+
+            <label class="flex items-start gap-3 text-sm text-neutral-700 bg-neutral-50 border border-neutral-200 rounded-xl p-4">
+              <input type="checkbox" name="newsletter" class="mt-1 h-4 w-4 rounded border-neutral-300">
+              <span>Θέλω να λαμβάνω ενημερώσεις και προσφορές</span>
+            </label>
+          </div>
+
+          <!-- Feedback message placeholder -->
+          <div id="feedback" class="hidden text-sm font-medium text-center py-2 rounded-xl"></div>
+
+          <div class="flex justify-end">
+            <button type="submit" class="inline-flex items-center gap-2 rounded-xl bg-neutral-900 text-white px-6 py-2.5 hover:bg-black transition-colors">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+              Αποστολή Μηνύματος
+            </button>
+          </div>
+          
+          <div class="text-xs text-neutral-500 text-center mt-4">
+            Αυτός ο ιστότοπος προστατεύεται από το reCAPTCHA και ισχύουν η 
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="underline">Πολιτική Απορρήτου</a> και οι 
+            <a href="https://policies.google.com/terms" target="_blank" rel="noopener" class="underline">Όροι Χρήσης</a> της Google.
+          </div>
+        </form>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
   
   <!-- Footer -->
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>
@@ -293,6 +298,15 @@
         setInterval(() => flipTo(words[i++ % words.length]), 1900);
       })();
     })();
+
+    // Feedback function for contact form
+    function showFeedback() {
+      const feedback = document.getElementById('feedback');
+      feedback.classList.remove('hidden');
+      feedback.textContent = '✅ Το μήνυμά σας στάλθηκε επιτυχώς!';
+      feedback.classList.add('bg-green-100', 'text-green-800');
+      setTimeout(() => feedback.classList.add('hidden'), 4000);
+    }
   </script>
 </body>
 </html>
