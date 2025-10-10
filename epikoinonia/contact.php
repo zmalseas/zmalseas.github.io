@@ -208,16 +208,6 @@
     }
     
     /* Override recaptcha-info to match careers style */
-    #contactForm .recaptcha-inf2o {
-      margin: 12px 0;
-      padding: 8px 0;
-      color: #666;
-      font-size: 11px;
-      line-height: 1.4;
-      text-align: center;
-      border-top: 1px solid #eee;
-      border-bottom: 1px solid #eee;
-    }
     
     #contactForm .recaptcha-info a {
       color: #666;
