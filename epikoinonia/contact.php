@@ -256,7 +256,7 @@
           <!-- Left content - Contact intro and info -->
           <div style="display: grid; gap: 20px; align-content: start;">
             <div class="contact-intro">
-              <h2 style="margin:0 0 20px; font-size:clamp(26px,2.6vw,38px); line-height:1.15; color:var(--brand); position:relative;">Φόρμα Επικοινωνίας</h2>
+              <h2 style="margin:0 0 20px; font-size:clamp(26px,2.6vw,38px); line-height:1.15; color:var(--brand); position:relative;">Στείλτε μας μήνυμα!</h2>
               <div style="content:'';display:block;width:60px;height:4px;background:var(--brand);margin-top:10px;border-radius:4px; margin-bottom: 20px;"></div>
               <p style="color: #4b5563; line-height: 1.7;">Είστε επιχείρηση ή επαγγελματίας και θέλετε να συνεργαστούμε; Επικοινωνήστε μαζί μας για συνεργασίες, προτάσεις ή πληροφορίες σχετικά με τις υπηρεσίες μας.</p>
             </div>
