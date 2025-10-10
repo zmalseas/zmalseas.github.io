@@ -139,9 +139,25 @@
       }
     }
 
-    /* Use existing contact page classes and minimal overrides */
+    /* Contact page using careers styling */
     .contact-page .main-content { margin-top: 0; }
     .contact-form textarea { resize: vertical; min-height: 120px; }
+    
+    /* Careers-style checkboxes */
+    .careers-check { 
+      background: #f9fafb; 
+      border: 1px solid #e5e7eb; 
+      border-radius: 12px; 
+      padding: 12px; 
+    }
+    .careers-check .text-content a { 
+      color: var(--brand); 
+    }
+    .form-checkboxes { 
+      display: grid; 
+      gap: 12px; 
+      margin-bottom: 20px; 
+    }
 
   </style>
   
@@ -183,18 +199,18 @@
             <!-- Contact info card -->
             <div style="background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.06); padding: 20px;">
               <h3 style="margin:0 0 20px; font-size: 1rem; color: #111827;">Στοιχεία Επικοινωνίας</h3>
-              <ul style="list-style:none; padding:0; margin:0; display:grid; gap:10px;">
-                <li style="display:flex; gap:10px; align-items:flex-start; color:#111827;">
-                  <span style="width:20px; display:inline-block; opacity:.9;">📞</span> Τηλ.: <a href="tel:+306946365798" style="color:var(--brand); text-decoration:none;">+30 694 636 5798</a>
+              <ul class="contact-list">
+                <li class="contact-li">
+                  <span class="li-ico">📞</span> Τηλ.: <a href="tel:+306946365798">+30 694 636 5798</a>
                 </li>
-                <li style="display:flex; gap:10px; align-items:flex-start; color:#111827;">
-                  <span style="width:20px; display:inline-block; opacity:.9;">✉️</span> Email: <a href="mailto:info@nerally.gr" style="color:var(--brand); text-decoration:none;">info@nerally.gr</a>
+                <li class="contact-li">
+                  <span class="li-ico">✉️</span> Email: <a href="mailto:info@nerally.gr">info@nerally.gr</a>
                 </li>
-                <li style="display:flex; gap:10px; align-items:flex-start; color:#111827;">
-                  <span style="width:20px; display:inline-block; opacity:.9;">📍</span> Διεύθυνση: Εξ αποστάσεως σε όλη την Ελλάδα
+                <li class="contact-li">
+                  <span class="li-ico">📍</span> Διεύθυνση: Εξ αποστάσεως σε όλη την Ελλάδα
                 </li>
-                <li style="display:flex; gap:10px; align-items:flex-start; color:#111827;">
-                  <span style="width:20px; display:inline-block; opacity:.9;">🕒</span> Ώρες: Δευ–Παρ 09:00–17:00
+                <li class="contact-li">
+                  <span class="li-ico">🕒</span> Ώρες: Δευ–Παρ 09:00–17:00
                 </li>
               </ul>
 
@@ -221,47 +237,49 @@
             <form id="contactForm" action="../contact-handler.php" method="POST">
               <h3 style="text-align: center; font-size: 1.2rem; margin: 0 0 12px 0; color: #111827;">Φόρμα Επικοινωνίας</h3>
 
-              <div style="display: grid; gap: 6px; margin-bottom: 12px;">
-                <label style="font-size: 0.9rem; color: #374151; font-weight: 600;">Ονοματεπώνυμο</label>
-                <input type="text" id="name" name="name" autocomplete="name" placeholder="π.χ. Μαρία Παπαδοπούλου" style="width: 100%; padding: 10px 12px; border: 2px solid #1f2937; border-radius: 0; font-size: 1rem; background:#fff; color:#111827; transition: border-color 0.2s, box-shadow 0.2s;" required>
+              <div class="form-group">
+                <label for="name">Ονοματεπώνυμο</label>
+                <input type="text" id="name" name="name" autocomplete="name" placeholder="π.χ. Μαρία Παπαδοπούλου" required>
               </div>
 
-              <div style="display: grid; gap: 6px; margin-bottom: 12px;">
-                <label style="font-size: 0.9rem; color: #374151; font-weight: 600;">Email</label>
-                <input type="email" id="email" name="email" autocomplete="email" placeholder="name@domain.gr" style="width: 100%; padding: 10px 12px; border: 2px solid #1f2937; border-radius: 0; font-size: 1rem; background:#fff; color:#111827; transition: border-color 0.2s, box-shadow 0.2s;" required>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email" placeholder="name@domain.gr" required>
               </div>
 
-              <div style="display: grid; gap: 6px; margin-bottom: 12px;">
-                <label style="font-size: 0.9rem; color: #374151; font-weight: 600;">Τηλέφωνο</label>
-                <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="69xxxxxxxx" style="width: 100%; padding: 10px 12px; border: 2px solid #1f2937; border-radius: 0; font-size: 1rem; background:#fff; color:#111827; transition: border-color 0.2s, box-shadow 0.2s;" required>
+              <div class="form-group">
+                <label for="phone">Τηλέφωνο</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="69xxxxxxxx" required>
               </div>
 
-              <div style="display: grid; gap: 6px; margin-bottom: 12px;">
-                <label style="font-size: 0.9rem; color: #374151; font-weight: 600;">Μήνυμα</label>
-                <textarea id="message" name="message" rows="5" placeholder="Γράψε εδώ το μήνυμά σου…" style="width: 100%; padding: 10px 12px; border: 2px solid #1f2937; border-radius: 0; font-size: 1rem; background:#fff; color:#111827; transition: border-color 0.2s, box-shadow 0.2s; resize: vertical; min-height: 120px;" required></textarea>
+              <div class="form-group">
+                <label for="message">Μήνυμα</label>
+                <textarea id="message" name="message" rows="5" placeholder="Γράψε εδώ το μήνυμά σου…" required></textarea>
               </div>
 
-              <div style="display:grid; gap: 12px; margin-bottom: 20px;">
-                <label class="checkbox-label" style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 12px;">
+              <div class="form-checkboxes">
+                <label class="checkbox-label careers-check">
                   <input type="checkbox" id="privacy" name="privacy" required>
                   <span class="checkmark"></span>
-                  Συμφωνώ με την <a href="#privacy" data-legal-open="privacy" style="color: var(--brand);">Πολιτική Απορρήτου</a> *
+                  <span class="text-content">Συμφωνώ με την <a href="#privacy" data-legal-open="privacy">Πολιτική Απορρήτου</a> *</span>
                 </label>
 
-                <label class="checkbox-label" style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 12px;">
+                <label class="checkbox-label careers-check">
                   <input type="checkbox" id="newsletter" name="newsletter">
                   <span class="checkmark"></span>
-                  Θέλω να λαμβάνω ενημερώσεις και προσφορές
+                  <span class="text-content">Θέλω να λαμβάνω ενημερώσεις και προσφορές</span>
                 </label>
               </div>
 
               <!-- Feedback message placeholder -->
               <div id="feedback" style="display: none; text-align: center; padding: 8px; border-radius: 12px; font-size: 14px; font-weight: 500; margin: 16px 0;"></div>
 
-              <button type="submit" class="submit-btn">
-                <span class="btn-icon" aria-hidden="true">✉️</span>
-                <span class="btn-text">Αποστολή Μηνύματος</span>
-              </button>
+              <div class="form-actions">
+                <button type="submit" class="submit-btn">
+                  <span class="btn-icon" aria-hidden="true">✉️</span>
+                  <span class="btn-text">Αποστολή Μηνύματος</span>
+                </button>
+              </div>
               
               <div class="recaptcha-info">
                 Αυτός ο ιστότοπος προστατεύεται από το reCAPTCHA και ισχύουν η 
@@ -282,22 +300,6 @@
   <script src="/js/legal-modal.js"></script>
   <script src="../app.js"></script>
   <script>
-    // Add focus styles for form inputs
-    document.addEventListener('DOMContentLoaded', function() {
-      const inputs = document.querySelectorAll('#contactForm input, #contactForm textarea');
-      inputs.forEach(input => {
-        input.addEventListener('focus', function() {
-          this.style.borderColor = 'var(--brand)';
-          this.style.boxShadow = '0 0 0 4px rgba(41,128,185,0.12)';
-          this.style.outline = 'none';
-        });
-        input.addEventListener('blur', function() {
-          this.style.borderColor = '#1f2937';
-          this.style.boxShadow = 'none';
-        });
-      });
-    });
-
     // Hero animation controller for contact - copy from company.php
     (function(){
       const headline = document.getElementById('headline');
