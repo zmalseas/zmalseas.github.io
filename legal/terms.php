@@ -455,7 +455,7 @@ H χρήση του λογισμικού που φορτώνεται (download) 
         await wait(1200);
         headline.innerHTML = '<b>NEW ERA</b> ALLY';
         
-        const words = ['LEGAL','ΝΟΜΙΚΑ','ΟΡΟΙ','ΔΙΑΦΑΝΕΙΑ'];
+        const words = ['LEGAL','ΟΡΟΙ','ΔΙΑΦΑΝΕΙΑ'];
         let i = 0;
         flipTo(words[i++ % words.length]);
         setInterval(() => flipTo(words[i++ % words.length]), 1900);
