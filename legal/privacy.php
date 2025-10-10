@@ -328,7 +328,6 @@
           <div class="legal-main">
             <header class="legal-header">
               <h1>Πολιτική Προστασίας Προσωπικών Δεδομένων</h1>
-              <span class="legal-meta">Προβολή πλήρους κειμένου</span>
             </header>
             
             <div class="legal-doc">
