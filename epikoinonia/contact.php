@@ -274,9 +274,6 @@
                 <li class="contact-li">
                   <span class="li-ico">📍</span> Διεύθυνση: Εξ αποστάσεως σε όλη την Ελλάδα
                 </li>
-                <li class="contact-li">
-                  <span class="li-ico">🕒</span> Ώρες: Δευ–Παρ 09:00–17:00
-                </li>
               </ul>
 
               <!-- Social media -->
