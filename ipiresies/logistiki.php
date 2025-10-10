@@ -27,7 +27,7 @@
   <link rel="icon" type="image/png" href="../images/logo.png" />
   <link rel="stylesheet" href="../main.css">
   <link rel="stylesheet" href="/css/cookie-consent.css">
-  <link rel="stylesheet" href="/css/legal-modal.css">
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <style>
@@ -375,7 +375,7 @@
   </main>
 
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>
-  <script src="/js/legal-modal.js"></script>
+
   <script src="/js/cookie-consent.js"></script>
   <script src="../app.js" defer></script>
 

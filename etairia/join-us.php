@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="../images/logo.png" />
   <link rel="stylesheet" href="../main.css">
   <link rel="stylesheet" href="/css/cookie-consent.css">
-  <link rel="stylesheet" href="/css/legal-modal.css">
+
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/site-config-inline.php'; ?>
   <style>
     /* Careers hero animation (based on company.php) */
@@ -141,7 +141,7 @@
                 <label class="checkbox-label careers-check">
                   <input type="checkbox" id="privacy" name="privacy" required />
                   <span class="checkmark"></span>
-                  <span class="text-content">Συμφωνώ με την επεξεργασία των δεδομένων μου και αποδέχομαι την <a href="#privacy" data-legal-open="privacy">πολιτική απορρήτου</a>.</span>
+                  <span class="text-content">Συμφωνώ με την επεξεργασία των δεδομένων μου και αποδέχομαι την <a href="/legal/privacy.php" target="_blank">πολιτική απορρήτου</a>.</span>
                 </label>
               </div>
 
@@ -167,7 +167,7 @@
 
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>
     
-  <script src="/js/legal-modal.js"></script>
+
   <script src="/js/cookie-consent.js"></script>
   <script src="/js/careers-form.js"></script>
   <script src="../app.js"></script>

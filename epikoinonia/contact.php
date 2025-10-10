@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="../images/logo.png" />
   <link rel="stylesheet" href="../main.css" />
   <link rel="stylesheet" href="/css/cookie-consent.css" />
-  <link rel="stylesheet" href="/css/legal-modal.css" />
+
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/site-config-inline.php'; ?>
   <style>
     /* Hero Section - Exact copy from company.php */
@@ -313,7 +313,7 @@
                 <label class="checkbox-label careers-check">
                   <input type="checkbox" id="privacy" name="privacy" required>
                   <span class="checkmark"></span>
-                  <span class="text-content">Συμφωνώ με την <a href="#privacy" data-legal-open="privacy">Πολιτική Απορρήτου</a> *</span>
+                  <span class="text-content">Συμφωνώ με την <a href="/legal/privacy.php" target="_blank">Πολιτική Απορρήτου</a> *</span>
                 </label>
 
                 <label class="checkbox-label careers-check">
@@ -350,7 +350,7 @@
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>
   <script src="../js/contact-form.js"></script>
   <script src="/js/cookie-consent.js"></script>
-  <script src="/js/legal-modal.js"></script>
+
   <script src="../app.js"></script>
   <script>
     // Hero animation controller for contact - copy from company.php
