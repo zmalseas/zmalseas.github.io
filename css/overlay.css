@@ -14,6 +14,8 @@ body.menu-open .chat-widget {
 }
 
 /* ===== Overlay (full screen) ===== */
+/* CSS variable to control footer-safe area consistently */
+:root { --overlay-footer-height: 160px; }
 .overlay{position:fixed;inset:0;background:#000;display:none;z-index:60;overflow:hidden}
 .overlay.open{display:block;animation:fadeIn var(--speed) ease forwards}
 @keyframes fadeIn{from{opacity:0} to{opacity:1}}
@@ -21,8 +23,8 @@ body.menu-open .chat-widget {
 .overlay-header a{display:flex;align-items:center;gap:10px;color:var(--white);text-decoration:none}
 .overlay-header img{width:42px;height:42px}
 .overlay-header .title{font-weight:900;letter-spacing:.2px;font-size:1.5rem;color:var(--white)}
-.menu-wrap{position:absolute;top:0;left:0;right:0;bottom:160px;display:flex;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;scroll-behavior:smooth}
-.menu-list{width:min(90vw,560px);padding:96px 28px 60px 28px;display:flex;flex-direction:column !important;gap:8px;align-items:flex-start;box-sizing:border-box;min-height:calc(100vh - 200px)}
+.menu-wrap{position:absolute;top:0;left:0;right:0;bottom:var(--overlay-footer-height);display:flex;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;scroll-behavior:smooth}
+.menu-list{width:min(90vw,560px);padding:96px 28px 40px 28px;display:flex;flex-direction:column !important;gap:8px;align-items:flex-start;box-sizing:border-box;min-height:calc(100vh - var(--overlay-footer-height))}
 
 /* Overlay expandable */
 .menu-item{width:100%;display:block !important}
@@ -50,10 +52,10 @@ body.menu-open .chat-widget {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 140px;
+  height: var(--overlay-footer-height);
   background: #000;
   border-top: 1px solid #333;
-  padding: 24px 28px;
+  padding: 20px 28px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,19 +84,16 @@ body.menu-open .chat-widget {
 }
 
 .overlay-footer .legal-link {
+  /* Match footer .legal-link exactly */
   color: #999;
   text-decoration: none;
-  font-size: 0.9rem;
-  padding: 8px 12px;
+  font-size: 0.75rem;
+  padding: 3px 6px;
   border: 1px solid #444;
-  border-radius: 6px;
+  border-radius: 3px;
   background: transparent;
   transition: all 0.3s ease;
   white-space: nowrap;
-  min-height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .overlay-footer .legal-link:hover {
@@ -204,14 +203,7 @@ body.menu-open .chat-widget {
 
 /* Responsive adjustments for overlay footer */
 @media (max-width: 768px) {
-  .menu-wrap {
-    bottom: 180px; /* Extra space for mobile footer */
-  }
-  
-  .overlay-footer {
-    height: 160px; /* Taller on mobile */
-    padding: 20px;
-  }
+  :root { --overlay-footer-height: 180px; }
   
   .menu-list {
     display: flex !important;
@@ -231,18 +223,7 @@ body.menu-open .chat-widget {
     gap: 12px;
   }
   
-  .overlay-footer .legal-links {
-    gap: 12px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .overlay-footer .legal-link {
-    font-size: 0.8rem;
-    padding: 10px 14px;
-    min-height: 48px;
-    border-radius: 8px;
-  }
+  .overlay-footer .legal-links { gap: 12px; flex-wrap: wrap; justify-content: center; }
   
   .overlay-footer .social-section {
     gap: 16px;
