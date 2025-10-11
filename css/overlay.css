@@ -14,8 +14,6 @@ body.menu-open .chat-widget {
 }
 
 /* ===== Overlay (full screen) ===== */
-/* CSS variable to control footer-safe area consistently */
-:root { --overlay-footer-height: 160px; }
 .overlay{position:fixed;inset:0;background:#000;display:none;z-index:60;overflow:hidden}
 .overlay.open{display:block;animation:fadeIn var(--speed) ease forwards}
 @keyframes fadeIn{from{opacity:0} to{opacity:1}}
@@ -23,8 +21,8 @@ body.menu-open .chat-widget {
 .overlay-header a{display:flex;align-items:center;gap:10px;color:var(--white);text-decoration:none}
 .overlay-header img{width:42px;height:42px}
 .overlay-header .title{font-weight:900;letter-spacing:.2px;font-size:1.5rem;color:var(--white)}
-.menu-wrap{position:absolute;top:0;left:0;right:0;bottom:var(--overlay-footer-height);display:flex;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;scroll-behavior:smooth;scroll-padding-bottom:calc(var(--overlay-footer-height) + 16px)}
-.menu-list{width:min(90vw,560px);padding:96px 28px calc(var(--overlay-footer-height) + 24px) 28px;display:flex;flex-direction:column !important;gap:8px;align-items:flex-start;box-sizing:border-box;min-height:calc(100vh - var(--overlay-footer-height))}
+.menu-wrap{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;scroll-behavior:smooth}
+.menu-list{width:min(90vw,560px);padding:96px 28px 40px 28px;display:flex;flex-direction:column !important;gap:8px;align-items:flex-start;box-sizing:border-box;min-height:100%}
 
 /* Overlay expandable */
 .menu-item{width:100%;display:block !important}
@@ -46,131 +44,7 @@ body.menu-open .chat-widget {
 .menu-sub a.clicked{color:var(--brand)}
 .menu-sub a.clicked .sm-arrow{opacity:1;transform:translateX(0)}
 
-/* Overlay footer */
-.overlay-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: var(--overlay-footer-height);
-  background: #000;
-  border-top: 1px solid #333;
-  padding: 20px 28px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 70;
-  box-sizing: border-box;
-}
-
-.overlay-footer-content {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  text-align: center;
-  max-width: 100%;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-}
-
-.overlay-footer .legal-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.overlay-footer .legal-link {
-  /* Match footer .legal-link exactly */
-  color: #999;
-  text-decoration: none;
-  font-size: 0.75rem;
-  padding: 3px 6px;
-  border: 1px solid #444;
-  border-radius: 3px;
-  background: transparent;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-}
-
-.overlay-footer .legal-link:hover {
-  color: #fff;
-  border-color: #666;
-  transform: translateY(-1px);
-}
-
-.overlay-footer .social-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  width: 100%;
-}
-
-.overlay-footer .connect-text {
-  font-size: 0.9rem;
-  color: #d6d6d6;
-  font-weight: 500;
-}
-
-.overlay-footer .social-links {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: nowrap;
-}
-
-.overlay-footer .social-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-  color: #666;
-  flex-shrink: 0;
-}
-
-.overlay-footer .social-link svg {
-  width: 20px;
-  height: 20px;
-  transition: all 0.3s ease;
-}
-
-.overlay-footer .social-link.tiktok:hover {
-  background: #ff0050;
-  color: #fff;
-  transform: translateY(-2px);
-}
-
-.overlay-footer .social-link.instagram:hover {
-  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-  color: #fff;
-  transform: translateY(-2px);
-}
-
-.overlay-footer .social-link.linkedin:hover {
-  background: #0077b5;
-  color: #fff;
-  transform: translateY(-2px);
-}
-
-.overlay-footer .copyright {
-  width: 100%;
-  text-align: center;
-}
-
-.overlay-footer .copyright p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: #d6d6d6;
-  text-align: center;
-}
+/* Overlay footer removed per request */
 
 /* Mobile scrolling enhancements */
 @media (max-width: 1100px) {
@@ -188,7 +62,7 @@ body.menu-open .chat-widget {
   }
   
   .menu-list {
-    padding-bottom: calc(var(--overlay-footer-height) + 24px); /* Reserve space for footer */
+    padding-bottom: 40px; /* Consistent bottom spacing */
     min-height: auto; /* Let it size naturally */
     display: flex !important;
     flex-direction: column !important;
@@ -203,7 +77,6 @@ body.menu-open .chat-widget {
 
 /* Responsive adjustments for overlay footer */
 @media (max-width: 768px) {
-  :root { --overlay-footer-height: 180px; }
   
   .menu-list {
     display: flex !important;

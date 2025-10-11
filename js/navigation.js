@@ -77,8 +77,7 @@ class NavigationManager {
   setupMobileMenu() {
     const hamburger = document.querySelector('.hamburger');
     const overlay = document.querySelector('.overlay');
-    const menuWrap = document.querySelector('.overlay .menu-wrap');
-    const overlayFooter = document.querySelector('.overlay .overlay-footer');
+  const menuWrap = document.querySelector('.overlay .menu-wrap');
     
     if (!hamburger || !overlay) {
       console.log('Missing mobile menu elements:', { hamburger: !!hamburger, overlay: !!overlay });
@@ -89,16 +88,6 @@ class NavigationManager {
     this.setupNavigationOverflow();
     
     try {
-      // Helper: update CSS var to match actual footer height
-      const updateOverlayFooterVar = () => {
-        try {
-          if (!overlayFooter) return;
-          const h = overlayFooter.getBoundingClientRect().height;
-          // Apply to overlay root to avoid global side-effects
-          overlay.style.setProperty('--overlay-footer-height', `${Math.round(h)}px`);
-        } catch (_) { /* no-op */ }
-      };
-
       // Toggle mobile menu
       const toggleMenu = (e) => {
         e.preventDefault();
@@ -110,8 +99,7 @@ class NavigationManager {
         console.log('Menu toggled. Open:', overlay.classList.contains('open'));
 
         if (overlay.classList.contains('open')) {
-          // Update footer var on open and ensure scroll starts at top
-          updateOverlayFooterVar();
+          // Ensure scroll starts at top
           if (menuWrap) menuWrap.scrollTop = 0;
           // Focus first item for accessibility
           const firstToggle = overlay.querySelector('.menu-list .menu-toggle');
@@ -151,7 +139,7 @@ class NavigationManager {
             currentMenuItem.classList.add('open');
             btn.setAttribute('aria-expanded', 'true');
 
-            // Auto-scroll so the entire expanded submenu becomes visible above the footer
+            // Auto-scroll so the expanded submenu becomes visible in the scroll container
             const submenu = currentMenuItem.querySelector('.menu-sub');
             const container = menuWrap || overlay;
             if (submenu && container) {
@@ -160,9 +148,7 @@ class NavigationManager {
                 try {
                   const subRect = submenu.getBoundingClientRect();
                   const contRect = container.getBoundingClientRect();
-                  const footerHeight = overlayFooter ? overlayFooter.getBoundingClientRect().height : 0;
-
-                  const overflowBelow = subRect.bottom - (contRect.bottom - footerHeight - 12);
+                  const overflowBelow = subRect.bottom - (contRect.bottom - 12);
                   if (overflowBelow > 0) {
                     container.scrollTop += overflowBelow;
                   } else {
@@ -185,14 +171,7 @@ class NavigationManager {
         if (window.innerWidth > 1100 && overlay.classList.contains('open')) {
           this.closeMobileMenu();
         }
-        // Keep footer-safe area accurate on orientation/resize
-        updateOverlayFooterVar();
       });
-
-      // Update footer var on orientation changes as well
-      window.addEventListener('orientationchange', updateOverlayFooterVar);
-      // Initial compute once DOM ready in case menu opens via code
-      updateOverlayFooterVar();
     } catch (error) {
       console.error('Mobile menu setup failed:', error);
     }
