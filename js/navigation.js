@@ -13,6 +13,7 @@ class NavigationManager {
           this.enhanceAccessibility();
           this.setupEventListeners();
           this.setupMobileMenu();
+          this.setupServiceCards();
           // Ensure we start in a closed state
           this.closeMobileMenu();
         });
@@ -20,6 +21,7 @@ class NavigationManager {
         this.enhanceAccessibility();
         this.setupEventListeners();
         this.setupMobileMenu();
+        this.setupServiceCards();
         this.closeMobileMenu();
       }
     } catch (error) {
@@ -200,6 +202,47 @@ class NavigationManager {
         el.setAttribute('aria-expanded', 'false');
       });
     } catch (_) { /* no-op */ }
+  }
+  
+  // Service Cards Click Handler
+  setupServiceCards() {
+    try {
+      const serviceCards = document.querySelectorAll('.service-card');
+      
+      serviceCards.forEach((card, index) => {
+        const serviceUrls = [
+          '/ipiresies/logistiki.html',
+          '/ipiresies/misthodosia.html', 
+          '/ipiresies/cyber-security.html',
+          '/ipiresies/consulting.html',
+          '/ipiresies/epixorigiseis.html',
+          '/ipiresies/social-media.html'
+        ];
+        
+        if (serviceUrls[index]) {
+          card.style.cursor = 'pointer';
+          card.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.location.href = serviceUrls[index];
+          });
+          
+          // Add keyboard support
+          card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              window.location.href = serviceUrls[index];
+            }
+          });
+          
+          // Make focusable for accessibility
+          if (!card.hasAttribute('tabindex')) {
+            card.setAttribute('tabindex', '0');
+          }
+        }
+      });
+    } catch (error) {
+      console.error('Service cards setup failed:', error);
+    }
   }
 }
 
