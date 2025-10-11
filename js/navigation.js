@@ -77,6 +77,8 @@ class NavigationManager {
   setupMobileMenu() {
     const hamburger = document.querySelector('.hamburger');
     const overlay = document.querySelector('.overlay');
+    const menuWrap = document.querySelector('.overlay .menu-wrap');
+    const overlayFooter = document.querySelector('.overlay .overlay-footer');
     
     if (!hamburger || !overlay) {
       console.log('Missing mobile menu elements:', { hamburger: !!hamburger, overlay: !!overlay });
@@ -87,6 +89,16 @@ class NavigationManager {
     this.setupNavigationOverflow();
     
     try {
+      // Helper: update CSS var to match actual footer height
+      const updateOverlayFooterVar = () => {
+        try {
+          if (!overlayFooter) return;
+          const h = overlayFooter.getBoundingClientRect().height;
+          // Apply to overlay root to avoid global side-effects
+          overlay.style.setProperty('--overlay-footer-height', `${Math.round(h)}px`);
+        } catch (_) { /* no-op */ }
+      };
+
       // Toggle mobile menu
       const toggleMenu = (e) => {
         e.preventDefault();
@@ -96,6 +108,17 @@ class NavigationManager {
         document.body.classList.toggle('menu-open');
         hamburger.setAttribute('aria-expanded', overlay.classList.contains('open') ? 'true' : 'false');
         console.log('Menu toggled. Open:', overlay.classList.contains('open'));
+
+        if (overlay.classList.contains('open')) {
+          // Update footer var on open and ensure scroll starts at top
+          updateOverlayFooterVar();
+          if (menuWrap) menuWrap.scrollTop = 0;
+          // Focus first item for accessibility
+          const firstToggle = overlay.querySelector('.menu-list .menu-toggle');
+          if (firstToggle) {
+            setTimeout(() => firstToggle.focus(), 10);
+          }
+        }
       };
       hamburger.addEventListener('click', toggleMenu);
       hamburger.addEventListener('keydown', (e) => {
@@ -109,7 +132,7 @@ class NavigationManager {
         }
       });
 
-      // Handle submenu toggles
+      // Handle submenu toggles with auto-scroll into view
       overlay.querySelectorAll('.menu-item .menu-toggle').forEach(btn => {
         btn.addEventListener('click', (e) => {
           e.preventDefault();
@@ -127,6 +150,32 @@ class NavigationManager {
           if (!isCurrentlyOpen) {
             currentMenuItem.classList.add('open');
             btn.setAttribute('aria-expanded', 'true');
+
+            // Auto-scroll so the entire expanded submenu becomes visible above the footer
+            const submenu = currentMenuItem.querySelector('.menu-sub');
+            const container = menuWrap || overlay;
+            if (submenu && container) {
+              // Ensure styles are applied before measurement
+              requestAnimationFrame(() => {
+                try {
+                  const subRect = submenu.getBoundingClientRect();
+                  const contRect = container.getBoundingClientRect();
+                  const footerHeight = overlayFooter ? overlayFooter.getBoundingClientRect().height : 0;
+
+                  const overflowBelow = subRect.bottom - (contRect.bottom - footerHeight - 12);
+                  if (overflowBelow > 0) {
+                    container.scrollTop += overflowBelow;
+                  } else {
+                    // If the toggle button is above view, align it nicely
+                    const btnRect = btn.getBoundingClientRect();
+                    const overflowAbove = contRect.top + 16 - btnRect.top;
+                    if (overflowAbove > 0) {
+                      container.scrollTop -= overflowAbove;
+                    }
+                  }
+                } catch (_) { /* no-op */ }
+              });
+            }
           }
         });
       });
@@ -136,7 +185,14 @@ class NavigationManager {
         if (window.innerWidth > 1100 && overlay.classList.contains('open')) {
           this.closeMobileMenu();
         }
+        // Keep footer-safe area accurate on orientation/resize
+        updateOverlayFooterVar();
       });
+
+      // Update footer var on orientation changes as well
+      window.addEventListener('orientationchange', updateOverlayFooterVar);
+      // Initial compute once DOM ready in case menu opens via code
+      updateOverlayFooterVar();
     } catch (error) {
       console.error('Mobile menu setup failed:', error);
     }

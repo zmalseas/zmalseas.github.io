@@ -23,8 +23,8 @@ body.menu-open .chat-widget {
 .overlay-header a{display:flex;align-items:center;gap:10px;color:var(--white);text-decoration:none}
 .overlay-header img{width:42px;height:42px}
 .overlay-header .title{font-weight:900;letter-spacing:.2px;font-size:1.5rem;color:var(--white)}
-.menu-wrap{position:absolute;top:0;left:0;right:0;bottom:var(--overlay-footer-height);display:flex;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;scroll-behavior:smooth}
-.menu-list{width:min(90vw,560px);padding:96px 28px 40px 28px;display:flex;flex-direction:column !important;gap:8px;align-items:flex-start;box-sizing:border-box;min-height:calc(100vh - var(--overlay-footer-height))}
+.menu-wrap{position:absolute;top:0;left:0;right:0;bottom:var(--overlay-footer-height);display:flex;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;scroll-behavior:smooth;scroll-padding-bottom:calc(var(--overlay-footer-height) + 16px)}
+.menu-list{width:min(90vw,560px);padding:96px 28px calc(var(--overlay-footer-height) + 24px) 28px;display:flex;flex-direction:column !important;gap:8px;align-items:flex-start;box-sizing:border-box;min-height:calc(100vh - var(--overlay-footer-height))}
 
 /* Overlay expandable */
 .menu-item{width:100%;display:block !important}
@@ -39,7 +39,7 @@ body.menu-open .chat-widget {
 .menu-item.open .menu-toggle .exp-caret{transform:rotate(90deg);color:var(--brand)}
 .menu-toggle:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
 .menu-sub{overflow:hidden;max-height:0;opacity:.0;transform:translateY(-4px);transition:max-height var(--speed) ease,opacity var(--speed) ease,transform var(--speed) ease;padding-left:30px;display:flex;flex-direction:column;gap:4px}
-.menu-item.open .menu-sub{max-height:400px;opacity:1;transform:translateY(0)}
+.menu-item.open .menu-sub{max-height:800px;opacity:1;transform:translateY(0)}
 .menu-sub a{display:block;color:var(--white);text-decoration:none;font-weight:700;font-size:1rem;padding:8px 0;position:relative;transition:all 0.4s ease;transform:scale(1);width:100%;margin-bottom:4px}
 .menu-sub a:hover,.menu-sub a:focus-visible{color:var(--brand);transform:scale(1.05);text-shadow:0 0 8px rgba(0,229,255,0.3)}
 .menu-sub a .sm-arrow{opacity:0;transform:translateX(-6px);transition:transform var(--speed) ease,opacity var(--speed) ease;color:var(--brand)}
@@ -188,7 +188,7 @@ body.menu-open .chat-widget {
   }
   
   .menu-list {
-    padding-bottom: 40px; /* Consistent padding */
+    padding-bottom: calc(var(--overlay-footer-height) + 24px); /* Reserve space for footer */
     min-height: auto; /* Let it size naturally */
     display: flex !important;
     flex-direction: column !important;
