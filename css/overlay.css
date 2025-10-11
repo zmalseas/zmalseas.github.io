@@ -21,7 +21,7 @@ body.menu-open .chat-widget {
 .overlay-header a{display:flex;align-items:center;gap:10px;color:var(--white);text-decoration:none}
 .overlay-header img{width:42px;height:42px}
 .overlay-header .title{font-weight:900;letter-spacing:.2px;font-size:1.5rem;color:var(--white)}
-.menu-wrap{position:absolute;top:0;left:0;right:0;bottom:120px;display:flex;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.menu-wrap{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding-bottom:160px;scroll-behavior:smooth}
 .menu-list{width:min(90vw,560px);padding:96px 28px 40px 28px;display:flex;flex-direction:column !important;gap:8px;align-items:flex-start;box-sizing:border-box}
 
 /* Overlay expandable */
@@ -50,10 +50,10 @@ body.menu-open .chat-widget {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 120px;
+  height: 140px;
   background: #000;
   border-top: 1px solid #333;
-  padding: 20px 28px;
+  padding: 24px 28px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,13 +84,17 @@ body.menu-open .chat-widget {
 .overlay-footer .legal-link {
   color: #999;
   text-decoration: none;
-  font-size: 0.75rem;
-  padding: 3px 6px;
+  font-size: 0.9rem;
+  padding: 8px 12px;
   border: 1px solid #444;
-  border-radius: 3px;
+  border-radius: 6px;
   background: transparent;
   transition: all 0.3s ease;
   white-space: nowrap;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .overlay-footer .legal-link:hover {
@@ -201,12 +205,12 @@ body.menu-open .chat-widget {
 /* Responsive adjustments for overlay footer */
 @media (max-width: 768px) {
   .menu-wrap {
-    bottom: 140px; /* Adjust for mobile footer height */
+    padding-bottom: 180px; /* Extra space for mobile footer */
   }
   
   .overlay-footer {
-    height: 140px; /* Taller on mobile */
-    padding: 16px 20px;
+    height: 160px; /* Taller on mobile */
+    padding: 20px;
   }
   
   .menu-list {
@@ -228,12 +232,16 @@ body.menu-open .chat-widget {
   }
   
   .overlay-footer .legal-links {
-    gap: 8px;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   
   .overlay-footer .legal-link {
-    font-size: 0.55rem;
-    padding: 1px 3px;
+    font-size: 0.8rem;
+    padding: 10px 14px;
+    min-height: 48px;
+    border-radius: 8px;
   }
   
   .overlay-footer .social-section {
