@@ -11,7 +11,7 @@
   };
 })();
 </script>
-<?php if (is_file(__DIR__.'/env-boot.php')) { include __DIR__.'/env-boot.php'; ?>
+<?php if (is_file(__DIR__.'/env-boot.php')) { include __DIR__.'/env-boot.php'; } ?>
 <header class="site-header">
   <div class="header-row">
       <a class="brand" href="/" aria-label="Nerally Home">
