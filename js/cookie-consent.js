@@ -152,6 +152,14 @@ class CookieConsent {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ event: 'cookie_consent_update', analytics_consent: 'granted' });
     localStorage.setItem(this.analyticsKey, 'true');
+    
+    // Debug logging
+    console.log('🟢 Analytics enabled, GTM loaded:', this.gtmLoaded);
+    
+    // Ensure GTM is loaded after consent
+    if (!this.gtmLoaded) {
+      this.loadGTM();
+    }
   }
 
   disableAnalytics() {
@@ -162,11 +170,27 @@ class CookieConsent {
   }
 
   loadGTM() {
-    if (this.gtmLoaded || !this.gtmContainerId) return;
+    if (this.gtmLoaded || !this.gtmContainerId) {
+      console.log('⚠️ GTM load skipped - already loaded:', this.gtmLoaded, 'or no container ID:', this.gtmContainerId);
+      return;
+    }
+    
+    console.log('🚀 Loading GTM container:', this.gtmContainerId);
     window.dataLayer = window.dataLayer || [];
+    
     const s = document.createElement('script');
     s.async = true;
     s.src = 'https://www.googletagmanager.com/gtm.js?id=' + this.gtmContainerId;
+    
+    s.onload = () => {
+      console.log('✅ GTM script loaded successfully');
+      window.dataLayer.push({ event: 'gtm_loaded' });
+    };
+    
+    s.onerror = () => {
+      console.error('❌ GTM script failed to load');
+    };
+    
     const first = document.getElementsByTagName('script')[0];
     first.parentNode.insertBefore(s, first);
     this.gtmLoaded = true;
