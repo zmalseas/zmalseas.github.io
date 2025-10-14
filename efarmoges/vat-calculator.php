@@ -111,7 +111,7 @@
           <section class="vat-card" aria-labelledby="vat-calc-title">
             <h2 id="vat-calc-title">Υπολογισμός ΦΠΑ</h2>
             <label class="vat-label" for="amount">Ποσό</label>
-            <input id="amount" class="vat-input" type="text" inputmode="decimal" placeholder="π.χ. 1.234,56" />
+            <input id="amount" class="vat-input" type="text" inputmode="decimal" placeholder="π.χ. 1.000,00" />
             <label class="vat-label">Το ποσό που δίνω είναι…</label>
             <div class="seg">
               <input type="radio" id="typeGross" name="type" value="gross" checked><label for="typeGross">Με ΦΠΑ</label>
