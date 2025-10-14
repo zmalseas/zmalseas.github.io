@@ -175,9 +175,13 @@ class CookieConsent {
       return;
     }
     
-    console.log('🚀 Loading GTM container:', this.gtmContainerId);
+    console.log('🚀 Loading analytics (GTM + GA4)');
     window.dataLayer = window.dataLayer || [];
     
+    // Load GA4 directly
+    this.loadGA4();
+    
+    // Load GTM
     const s = document.createElement('script');
     s.async = true;
     s.src = 'https://www.googletagmanager.com/gtm.js?id=' + this.gtmContainerId;
@@ -194,6 +198,30 @@ class CookieConsent {
     const first = document.getElementsByTagName('script')[0];
     first.parentNode.insertBefore(s, first);
     this.gtmLoaded = true;
+  }
+
+  loadGA4() {
+    const measurementId = (window.SITE_CONFIG && window.SITE_CONFIG.GA4_ID) || 'G-84CY5EBJJX';
+    console.log('📊 Loading GA4:', measurementId);
+    
+    // Load gtag script
+    const gtagScript = document.createElement('script');
+    gtagScript.async = true;
+    gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+    document.head.appendChild(gtagScript);
+    
+    // Initialize gtag
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){window.dataLayer.push(arguments);}
+    window.gtag = gtag;
+    
+    gtag('js', new Date());
+    gtag('config', measurementId, {
+      page_title: document.title,
+      page_location: window.location.href
+    });
+    
+    console.log('✅ GA4 initialized with ID:', measurementId);
   }
 
   clearAnalyticsCookies() {

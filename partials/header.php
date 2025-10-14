@@ -1,5 +1,17 @@
 <a class="skip-link" href="#main-content">Μετάβαση στο περιεχόμενο</a>
-<?php if (is_file(__DIR__.'/env-boot.php')) { include __DIR__.'/env-boot.php'; } ?>
+<script>
+// Global Site Configuration
+(function () {
+  if (window.SITE_CONFIG) return;
+  window.SITE_CONFIG = {
+    BASE_URL: window.location.origin || '',
+    GTM_ID: 'GTM-MN565XBX',
+    GA4_ID: 'G-84CY5EBJJX',
+    RECAPTCHA_SITE: '6Lcd7dcrAAAAADzfwDc4AG_kN6jKU0-0Fo78NmYx'
+  };
+})();
+</script>
+<?php if (is_file(__DIR__.'/env-boot.php')) { include __DIR__.'/env-boot.php'; ?>
 <header class="site-header">
   <div class="header-row">
       <a class="brand" href="/" aria-label="Nerally Home">

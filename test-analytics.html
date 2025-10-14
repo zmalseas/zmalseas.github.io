@@ -20,6 +20,7 @@
     
     <h2>Tests</h2>
     <button onclick="testGTMLoad()">Test GTM Loading</button>
+    <button onclick="testGA4Load()">Test GA4 Loading</button>
     <button onclick="testDataLayer()">Test DataLayer</button>
     <button onclick="testCookieConsent()">Test Cookie Consent</button>
     <button onclick="clearResults()">Clear Results</button>
@@ -29,6 +30,7 @@
     window.SITE_CONFIG = {
         BASE_URL: window.location.origin || '',
         GTM_ID: 'GTM-MN565XBX',
+        GA4_ID: 'G-84CY5EBJJX',
         RECAPTCHA_SITE: '6Lcd7dcrAAAAADzfwDc4AG_kN6jKU0-0Fo78NmYx'
     };
 
@@ -75,6 +77,40 @@
         };
 
         testLoad();
+    }
+
+    function testGA4Load() {
+        addResult('Testing GA4 loading...', 'info');
+        
+        // Check if gtag scripts exist
+        const gtagScripts = Array.from(document.scripts).filter(s => 
+            s.src && s.src.includes('googletagmanager.com/gtag/js')
+        );
+        
+        if (gtagScripts.length > 0) {
+            addResult(`✅ GA4 gtag script found: ${gtagScripts[0].src}`, 'success');
+        } else {
+            addResult('❌ GA4 gtag script not found', 'error');
+        }
+
+        // Check if gtag function exists
+        if (typeof window.gtag === 'function') {
+            addResult('✅ gtag function is available', 'success');
+            
+            // Send test event
+            gtag('event', 'test_event', {
+                'event_category': 'analytics_test',
+                'event_label': 'manual_test_from_diagnostic_page'
+            });
+            
+            addResult('✅ Test event sent via gtag', 'success');
+        } else {
+            addResult('❌ gtag function not available', 'error');
+        }
+
+        // Test GA4 measurement ID
+        const expectedId = window.SITE_CONFIG.GA4_ID;
+        addResult(`ℹ️ Expected GA4 ID: ${expectedId}`, 'info');
     }
 
     function testDataLayer() {
