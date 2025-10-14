@@ -27,7 +27,8 @@
     body { margin:0; overflow-x:hidden; }
     .rent-wrap { display:grid; grid-template-columns:1fr 1fr; min-height:calc(100vh - 120px); }
     .rent-left { background:#f4f6fb; padding:40px 32px; overflow:auto; animation:fadeIn .5s ease-out .06s both; }
-    .rent-right { padding:40px 24px; display:flex; align-items:center; justify-content:center; background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url('../images/Hero1_enhanced.webp'); background-size:cover; background-position:center; }
+  /* Darker overlay & new background image (replace filename if you upload the provided art as e.g. vat-bg.webp) */
+  .rent-right { padding:40px 24px; display:flex; align-items:center; justify-content:center; background: linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.72)), url('../images/vat-bg.webp'); background-size:cover; background-position:center; }
     @keyframes fadeIn { from {opacity:0; transform:translateY(8px);} to {opacity:1; transform:translateY(0);} }
     .rent-left h2, .rent-left h3 { color: var(--brand); font-weight:800; position:relative; margin-bottom:20px; }
     .rent-left h2 { font-size:clamp(28px,3vw,38px); }
@@ -55,12 +56,15 @@
     .btn-vat { border:none; padding:12px 18px; border-radius:10px; font-weight:600; cursor:pointer; font-size:15px; display:inline-flex; align-items:center; justify-content:center; gap:6px; }
     .btn-vat.primary { background:var(--brand); color:#fff; }
     .btn-vat.secondary { background:#e2e8f0; color:#111827; }
-    .equation { display:flex; flex-wrap:wrap; gap:12px; margin-top:24px; justify-content:space-between; }
-    .result-box { flex:1 1 140px; background:#f1f5f9; border-radius:12px; padding:16px; text-align:center; }
+  /* Stack results vertically */
+  .equation { display:flex; flex-direction:column; gap:14px; margin-top:26px; }
+  .result-box { width:100%; background:#f1f5f9; border-radius:12px; padding:18px 18px 20px; text-align:center; position:relative; }
+  .result-box + .op { display:none; }
+  .op { display:none !important; }
     .result-box h3 { margin:0 0 6px; font-size:.75rem; letter-spacing:.5px; font-weight:600; color:#475569; }
     .value { font-weight:700; font-size:1.2rem; color:#0f172a; }
     .op { font-size:1.6rem; font-weight:700; color:var(--brand); align-self:center; }
-    .disclaimer { background:#fff; border-left:4px solid var(--brand); padding:12px 14px; border-radius:8px; margin-top:20px; font-size:14px; }
+  /* Disclaimer removed per request */
     @media (max-width:960px){ .rent-wrap { grid-template-columns:1fr; display:flex; flex-direction:column; } .rent-right { order:1; padding:28px 18px; } .rent-left { order:2; } .quote { padding-bottom:64px; } .quote .quote-cta { position:static; margin-top:12px; } }
   </style>
 </head>
@@ -86,7 +90,7 @@
             <li>Επίλεξε συντελεστή (24%, 13%, 6% ή προσαρμοσμένο).</li>
             <li>Πάτησε <strong>Υπολογισμός</strong> για καθαρή αξία, ΦΠΑ και τελικό.</li>
           </ol>
-          <div class="quote">Για περιπτώσεις όπως ενδοκοινοτικές συναλλαγές, απαλλασσόμενες δραστηριότητες ή OSS/IOSS,<a class="quote-cta" href="/epikoinonia/contact.php">Επικοινωνήστε μαζί μας</a></div>
+          <!-- Quote moved to bottom of page -->
         </section>
       </article>
       <section class="rent-right">
@@ -119,10 +123,17 @@
               <div class="op">=</div>
               <div class="result-box" id="rightBox"><h3>Ποσό με ΦΠΑ</h3><div class="value" id="rightOut">—</div></div>
             </div>
-            <div class="disclaimer"><strong>Σημείωση:</strong> Ενδεικτικός υπολογισμός. Δεν λαμβάνει υπόψη ειδικά καθεστώτα/εξαιρέσεις.</div>
           </section>
         </div>
       </section>
+    </section>
+    <section style="background:#fafbff; border-top:1px solid #e5e7eb; padding:40px 24px;">
+      <div style="max-width:1000px; margin:0 auto;">
+        <div class="quote" style="margin-top:0; padding-bottom:64px;">
+          Για περιπτώσεις όπως <strong>ενδοκοινοτικές συναλλαγές</strong>, <strong>απαλλασσόμενες δραστηριότητες</strong> ή <strong>OSS / IOSS</strong>,
+          <a class="quote-cta" href="/epikoinonia/contact.php">Επικοινωνήστε μαζί μας</a>
+        </div>
+      </div>
     </section>
   </main>
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>

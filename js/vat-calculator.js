@@ -77,12 +77,11 @@
       } else {
         customVatEl.style.display='none';
       }
-      calculate();
     });
   });
-  customVatEl.addEventListener('input', () => { calculate(); });
-  document.querySelectorAll('input[name="type"]').forEach(r => r.addEventListener('change', calculate));
-  amountEl.addEventListener('input', calculate);
+  customVatEl.addEventListener('input', () => {}); // no auto calc
+  document.querySelectorAll('input[name="type"]').forEach(r => r.addEventListener('change', () => {}));
+  amountEl.addEventListener('input', () => {});
   calcBtn.addEventListener('click', calculate);
   resetBtn.addEventListener('click', reset);
 
