@@ -41,6 +41,7 @@
             <div class="submenu" role="menu">
               <a href="/efarmoges/rent-tax-calculator.php">Φόρος Ενοικίων <span class="sm-arrow">›</span></a>
               <a href="/efarmoges/income-tax-calculator.php">Φόρος Εισοδήματος <span class="sm-arrow">›</span></a>
+              <a href="/efarmoges/vat-calculator.php">Υπολογισμός ΦΠΑ <span class="sm-arrow">›</span></a>
             </div>
           </li>
           
@@ -97,6 +98,7 @@
         <div class="menu-sub">
           <a href="/efarmoges/rent-tax-calculator.html">Φόρος Ενοικίων</a>
           <a href="/efarmoges/income-tax-calculator.html">Φόρος Εισοδήματος</a>
+          <a href="/efarmoges/vat-calculator.php">Υπολογισμός ΦΠΑ</a>
         </div>
       </div>
       
