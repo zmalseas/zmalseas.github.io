@@ -99,10 +99,9 @@
               <li>Επίλεξε συντελεστή (24% προεπιλογή) ή "Άλλος..." για δικό σου %.</li>
               <li>Πάτησε Υπολογισμός για να δεις καθαρή αξία, ΦΠΑ και το τελικό ποσό.</li>
             </ol>
-            <p>Για ειδικές περιπτώσεις όπως δηλώσεις ΦΠΑ, ενδοκοινοτικές συναλλαγές, απαλλασσόμενες δραστηριότητες , OSS / IOSS κ.α.</p>
         </section>
         <div class="quote quote-bottom" style="padding-bottom:44px;">
-          Για περιπτώσεις όπως <strong>ενδοκοινοτικές συναλλαγές</strong>, <strong>απαλλασσόμενες δραστηριότητες</strong> ή <strong>OSS / IOSS</strong>,
+          Για περιπτώσεις όπως <strong>δηλώσεις ΦΠΑ & VIES</strong>, <strong>ενδοκοινοτικές συναλλαγές</strong>, <strong>απαλλασσόμενες δραστηριότητες</strong> ή <strong>OSS/IOSS</strong>,
           <a class="quote-cta" href="/epikoinonia/contact.php">Επικοινωνήστε μαζί μας</a>
         </div>
       </article>
