@@ -62,8 +62,7 @@
   .calc-controls { display:flex; gap:10px; margin-top:10px; flex-wrap:wrap; }
   .calc-button { border:none; padding:12px 18px; border-radius:10px; font-weight:600; cursor:pointer; font-size:15px; display:inline-flex; align-items:center; justify-content:center; gap:6px; background:#e2e8f0; color:#111827; transition:all .2s ease; }
   .calc-button.primary { background:var(--brand); color:#fff; }
-  .calc-button:disabled { opacity:0.7; cursor:not-allowed; background:#9ca3af !important; color:#fff !important; }
-  .calc-button:hover:not(:disabled) { transform:translateY(-1px); box-shadow:0 4px 12px rgba(0,0,0,.15); }
+  .calc-button:hover { transform:translateY(-1px); box-shadow:0 4px 12px rgba(0,0,0,.15); }
   /* Stack results vertically */
   .equation { display:flex; flex-direction:column; gap:14px; margin-top:26px; }
   .result-box { width:100%; background:#f1f5f9; border-radius:12px; padding:18px 18px 20px; text-align:center; position:relative; }

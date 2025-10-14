@@ -16,7 +16,12 @@
 
   function parseAmount(raw){
     if(!raw) return 0;
-    const cleaned = String(raw).replace(/€/g,'').replace(/\s+/g,'').replace(/\./g,'').replace(/,/g,'.');
+    // Handle Greek number format: 1.234,56 -> 1234.56
+    const cleaned = String(raw)
+      .replace(/€/g,'')
+      .replace(/\s+/g,'')
+      .replace(/\./g,'') // Remove thousands separators
+      .replace(/,/g,'.'); // Convert decimal comma to dot
     const n = Number(cleaned);
     return isNaN(n)?0:n;
   }
@@ -35,50 +40,34 @@
     if(isCalculating) return;
     isCalculating = true;
     
-    // Show loading state
-    calcBtn.textContent = 'Υπολογίζω...';
-    calcBtn.disabled = true;
-    leftOut.textContent = '⏳';
-    vatOut.textContent = '⏳';
-    rightOut.textContent = '⏳';
+    const baseInput = parseAmount(amountEl.value);
+    const type = document.querySelector('input[name="type"]:checked')?.value || 'gross';
+    const rate = activeVatRate();
     
-    // Simulate brief calculation delay for UX
-    setTimeout(() => {
-      const baseInput = parseAmount(amountEl.value);
-      const type = document.querySelector('input[name="type"]:checked')?.value || 'gross';
-      const rate = activeVatRate();
-      
-      if(rate < 0 || rate > 99){
-        vatOut.textContent = '—'; leftOut.textContent = '—'; rightOut.textContent = '—';
-        finishCalculation();
-        return;
-      }
-      
-      const r = rate / 100;
-      let net=0, vat=0, gross=0;
-      if(type === 'gross'){
-        gross = baseInput;
-        net = gross / (1 + r);
-        vat = gross - net;
-        op1.textContent = '=';
-      } else {
-        net = baseInput;
-        vat = net * r;
-        gross = net + vat;
-        op1.textContent = '+';
-      }
-      
-      leftOut.textContent = net>0?fmt.format(net):'—';
-      vatOut.textContent = vat>0?fmt.format(vat):'—';
-      rightOut.textContent = gross>0?fmt.format(gross):'—';
-      
-      finishCalculation();
-    }, 400); // 400ms delay for loading effect
-  }
-
-  function finishCalculation(){
-    calcBtn.textContent = 'Υπολογισμός';
-    calcBtn.disabled = false;
+    if(rate < 0 || rate > 99){
+      vatOut.textContent = '—'; leftOut.textContent = '—'; rightOut.textContent = '—';
+      isCalculating = false;
+      return;
+    }
+    
+    const r = rate / 100;
+    let net=0, vat=0, gross=0;
+    if(type === 'gross'){
+      gross = baseInput;
+      net = gross / (1 + r);
+      vat = gross - net;
+      op1.textContent = '=';
+    } else {
+      net = baseInput;
+      vat = net * r;
+      gross = net + vat;
+      op1.textContent = '+';
+    }
+    
+    leftOut.textContent = net>0?fmt.format(net):'—';
+    vatOut.textContent = vat>0?fmt.format(vat):'—';
+    rightOut.textContent = gross>0?fmt.format(gross):'—';
+    
     isCalculating = false;
   }
 
@@ -95,21 +84,36 @@
     amountEl.focus();
   }
 
+  function formatNumberInput(input){
+    let value = input.value.replace(/[^\d,.-]/g, ''); // Keep only digits, commas, dots, minus
+    if(!value) return;
+    
+    // Convert to number and format back
+    const number = parseAmount(value);
+    if(number && number > 0){
+      // Format as Greek number (1.234,56)
+      const formatted = new Intl.NumberFormat('el-GR', { 
+        minimumFractionDigits: 2, 
+        maximumFractionDigits: 2 
+      }).format(number);
+      input.value = formatted;
+    }
+  }
+
   function copyToClipboard(text, element){
     if(!text || text === '—') return;
     
     navigator.clipboard.writeText(text.replace('€', '').trim()).then(() => {
-      // Visual feedback
-      const original = element.textContent;
-      element.textContent = '✓ Αντιγράφηκε';
-      element.style.background = '#10b981';
-      element.style.color = '#fff';
-      
-      setTimeout(() => {
-        element.textContent = original;
-        element.style.background = '';
-        element.style.color = '';
-      }, 1500);
+      // Show copy icon with checkmark
+      const copyIcon = element.querySelector('.copy-icon');
+      if(copyIcon){
+        copyIcon.innerHTML = '✓';
+        copyIcon.style.color = '#10b981';
+        setTimeout(() => {
+          copyIcon.innerHTML = '📋';
+          copyIcon.style.color = '';
+        }, 1500);
+      }
     }).catch(() => {
       // Fallback for older browsers
       const textArea = document.createElement('textarea');
@@ -120,9 +124,11 @@
       document.body.removeChild(textArea);
       
       // Visual feedback
-      const original = element.textContent;
-      element.textContent = '✓ Αντιγράφηκε';
-      setTimeout(() => element.textContent = original, 1500);
+      const copyIcon = element.querySelector('.copy-icon');
+      if(copyIcon){
+        copyIcon.innerHTML = '✓';
+        setTimeout(() => copyIcon.innerHTML = '📋', 1500);
+      }
     });
   }
 
@@ -149,11 +155,36 @@
     }
   });
   
+  // Auto-format input on blur
+  amountEl.addEventListener('blur', () => formatNumberInput(amountEl));
+  customVatEl.addEventListener('blur', () => {
+    if(customVatEl.value && !isNaN(customVatEl.value)){
+      customVatEl.value = parseFloat(customVatEl.value).toFixed(1);
+    }
+  });
+
   // Copy-to-clipboard for results
   [leftOut, vatOut, rightOut].forEach(element => {
+    // Add copy icon
+    const copyIcon = document.createElement('span');
+    copyIcon.className = 'copy-icon';
+    copyIcon.innerHTML = '📋';
+    copyIcon.style.cssText = 'position:absolute; top:4px; right:4px; font-size:12px; opacity:0; transition:opacity .2s;';
+    element.style.position = 'relative';
+    element.appendChild(copyIcon);
+    
     element.addEventListener('click', () => {
       copyToClipboard(element.textContent, element);
     });
+    
+    element.addEventListener('mouseenter', () => {
+      copyIcon.style.opacity = '0.7';
+    });
+    
+    element.addEventListener('mouseleave', () => {
+      copyIcon.style.opacity = '0';
+    });
+    
     element.style.cursor = 'pointer';
     element.title = 'Κλικ για αντιγραφή';
   });
