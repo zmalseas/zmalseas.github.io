@@ -25,7 +25,7 @@
   <style>
     :root { --accent:#2980B9; }
     body { margin:0; overflow-x:hidden; }
-    .rent-wrap { display:grid; grid-template-columns:1fr 1fr; min-height:calc(100vh - 120px); }
+    .rent-wrap { display:grid; grid-template-columns:1fr 1fr; min-height:100vh; }
   .rent-left { background:#f4f6fb; padding:40px 32px; overflow:auto; animation:fadeIn .5s ease-out .06s both; display:flex; flex-direction:column; }
   .vat-text { flex:1 0 auto; }
   .quote-bottom { flex-shrink:0; margin-top:32px; }
@@ -46,10 +46,10 @@
     .rent-left ul, .rent-left ol { padding-left:20px; color:#111827; }
     .rent-left ul li, .rent-left ol li { margin-bottom:12px; font-size:16px; }
     .rent-left p strong, .rent-left li strong { color:#000; font-weight:600; }
-    .quote { background:#fff; border-radius:12px; padding:24px 24px 88px 24px; box-shadow:0 4px 20px rgba(0,0,0,.06); margin-top:40px; font-size:17px; color:#111827; position:relative; }
+    .quote { background:#fff; border-radius:12px; padding:24px; box-shadow:0 4px 20px rgba(0,0,0,.06); margin-top:40px; font-size:17px; color:#111827; }
     .quote strong { color:var(--brand); }
     .quote a { color: var(--brand); text-decoration: underline; font-weight:600; }
-    .quote .quote-cta { position:absolute; right:16px; bottom:16px; display:inline-flex; align-items:center; justify-content:center; padding:10px 16px; border-radius:8px; text-decoration:none; background:var(--brand); color:#fff; font-weight:700; box-shadow:0 4px 12px rgba(0,0,0,.08); transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
+    .quote .quote-cta { display:inline-flex; align-items:center; justify-content:center; padding:10px 16px; border-radius:8px; text-decoration:none; background:var(--brand); color:#fff; font-weight:700; box-shadow:0 4px 12px rgba(0,0,0,.08); transition: transform .2s ease, box-shadow .2s ease, background .2s ease; margin-top:12px; }
     .quote .quote-cta:hover { background:#1f5f8b; transform:translateY(-1px); box-shadow:0 6px 16px rgba(0,0,0,.12); }
     .calc-slab { width:100%; max-width:540px; }
     .vat-card { background:rgba(255,255,255,.9); border-radius:16px; padding:28px 26px 34px; box-shadow:0 8px 24px rgba(0,0,0,.12); backdrop-filter:blur(6px); margin-bottom:28px; }
@@ -72,7 +72,7 @@
     .value { font-weight:700; font-size:1.2rem; color:#0f172a; }
     .op { font-size:1.6rem; font-weight:700; color:var(--brand); align-self:center; }
   /* Disclaimer removed per request */
-    @media (max-width:960px){ .rent-wrap { grid-template-columns:1fr; display:flex; flex-direction:column; } .rent-right { order:1; padding:28px 18px; } .rent-left { order:2; } .quote { padding-bottom:64px; } .quote .quote-cta { position:static; margin-top:12px; } }
+    @media (max-width:960px){ .rent-wrap { grid-template-columns:1fr; display:flex; flex-direction:column; } .rent-right { order:1; padding:28px 18px; } .rent-left { order:2; } }
   </style>
 </head>
 <body>
@@ -100,8 +100,8 @@
               <li>Πάτησε Υπολογισμός για να δεις καθαρή αξία, ΦΠΑ και το τελικό ποσό.</li>
             </ol>
         </section>
-        <div class="quote quote-bottom" style="padding-bottom:44px;">
-          Για περιπτώσεις όπως <strong>δηλώσεις ΦΠΑ & VIES</strong>, <strong>ενδοκοινοτικές συναλλαγές</strong>, <strong>απαλλασσόμενες δραστηριότητες</strong> ή <strong>OSS/IOSS</strong>,
+        <div class="quote quote-bottom">
+          <p>Για περιπτώσεις όπως <strong>δηλώσεις ΦΠΑ & VIES</strong>, <strong>ενδοκοινοτικές συναλλαγές</strong>, <strong>απαλλασσόμενες δραστηριότητες</strong> ή <strong>OSS/IOSS</strong>:</p>
           <a class="quote-cta" href="/epikoinonia/contact.php">Επικοινωνήστε μαζί μας</a>
         </div>
       </article>
