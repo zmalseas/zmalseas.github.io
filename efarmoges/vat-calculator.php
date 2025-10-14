@@ -35,7 +35,7 @@
         linear-gradient(rgba(0,0,0,.82), rgba(0,0,0,.82)),
         url('../images/vat-colorful.webp'),
         url('../images/vat-bg.webp'),
-        url('../images/ypologismos_fpa.webp');
+        url('../images/ypologismos_fpa .webp');
       background-size:cover; background-position:center; }
     @keyframes fadeIn { from {opacity:0; transform:translateY(8px);} to {opacity:1; transform:translateY(0);} }
     .rent-left h2, .rent-left h3 { color: var(--brand); font-weight:800; position:relative; margin-bottom:20px; }
@@ -60,10 +60,9 @@
     .seg input[type=radio]{ display:none; }
     .seg label { padding:10px 14px; background:#f1f5f9; border:2px solid #cbd5e1; border-radius:999px; cursor:pointer; color:#334155; user-select:none; font-weight:500; font-size:14px; transition:all .2s; }
     .seg input[type=radio]:checked + label { background:var(--brand); color:#fff; border-color:var(--brand); }
-    .actions { display:flex; gap:10px; margin-top:6px; flex-wrap:wrap; }
-    .btn-vat { border:none; padding:12px 18px; border-radius:10px; font-weight:600; cursor:pointer; font-size:15px; display:inline-flex; align-items:center; justify-content:center; gap:6px; }
-    .btn-vat.primary { background:var(--brand); color:#fff; }
-    .btn-vat.secondary { background:#e2e8f0; color:#111827; }
+  .calc-controls { display:flex; gap:10px; margin-top:10px; flex-wrap:wrap; }
+  .calc-button { border:none; padding:12px 18px; border-radius:10px; font-weight:600; cursor:pointer; font-size:15px; display:inline-flex; align-items:center; justify-content:center; gap:6px; background:#e2e8f0; color:#111827; }
+  .calc-button.primary { background:var(--brand); color:#fff; }
   /* Stack results vertically */
   .equation { display:flex; flex-direction:column; gap:14px; margin-top:26px; }
   .result-box { width:100%; background:#f1f5f9; border-radius:12px; padding:18px 18px 20px; text-align:center; position:relative; }
@@ -98,6 +97,24 @@
             <li>Επίλεξε συντελεστή (24%, 13%, 6% ή προσαρμοσμένο).</li>
             <li>Πάτησε <strong>Υπολογισμός</strong> για καθαρή αξία, ΦΠΑ και τελικό.</li>
           </ol>
+            <h2>Τι είναι ο ΦΠΑ</h2>
+            <p>Ο ΦΠΑ (Φόρος Προστιθέμενης Αξίας) είναι ένας φόρος πάνω στην “προστιθέμενη αξία” που δημιουργείται καθώς τα αγαθά και οι υπηρεσίες περνούν μέσα από την εφοδιαστική αλυσίδα μέχρι να φτάσουν στον τελικό καταναλωτή. Το τελικό βάρος του φόρου το επωμίζεται ο καταναλωτής. Τον ΦΠΑ τον εισπράττεται μια επιχείρηση από τον αγοραστή και στη συνέχεια τον αποδίδεται στο κράτος αφού αφαιρεθεί ο ΦΠΑ που η ίδια η επιχείρηση πλήρωσε στους προμηθευτές της. Έτσι, σε κάθε στάδιο της αλυσίδας, το κράτος εισπράττει μέρος του φόρου. Ο ΦΠΑ είναι έμμεση μορφή φορολογίας που χρησιμοποιείται παγκοσμίως.</p>
+            <h3>Νομικό πλαίσιο στην Ελλάδα</h3>
+            <ul>
+              <li>Κώδικας ΦΠΑ: Ν. 2859/2000.</li>
+              <li>Βασικοί συντελεστές: 24% (γενικός), 13% (τροφές, ενέργεια, τουρισμός), 6% (φάρμακα, βιβλία, πολιτισμός).</li>
+              <li>Μειωμένοι κατά 30% οι συντελεστές σε ορισμένα νησιά του Αιγαίου (Λέρο, Λέσβο, Σάμο, Κω και Χίο).</li>
+            </ul>
+            <h3>Λειτουργία της εφαρμογής</h3>
+            <p>Η εφαρμογή σχεδιάστηκε από τη Nerally για να προσφέρει έναν απλό, γρήγορο και κατανοητό υπολογισμό ΦΠΑ για καθημερινή χρήση.</p>
+            <h3>Οδηγίες χρήσης</h3>
+            <ol>
+              <li>Πληκτρολόγησε το ποσό στο επάνω πεδίο (δέχεται 1.234,56).</li>
+              <li>Διάλεξε αν το ποσό είναι Με ΦΠΑ ή Χωρίς ΦΠΑ.</li>
+              <li>Επίλεξε συντελεστή (24% προεπιλογή) ή "Άλλος..." για δικό σου %.</li>
+              <li>Πάτησε Υπολογισμός για να δεις καθαρή αξία, ΦΠΑ και το τελικό ποσό.</li>
+            </ol>
+            <p>Για ειδικές περιπτώσεις όπως δηλώσεις ΦΠΑ, ενδοκοινοτικές συναλλαγές, απαλλασσόμενες δραστηριότητες , OSS / IOSS κ.α.</p>
         </section>
         <div class="quote quote-bottom" style="padding-bottom:44px;">
           Για περιπτώσεις όπως <strong>ενδοκοινοτικές συναλλαγές</strong>, <strong>απαλλασσόμενες δραστηριότητες</strong> ή <strong>OSS / IOSS</strong>,
@@ -123,9 +140,9 @@
               <input type="radio" id="vatCustom" name="vat" value="custom"><label for="vatCustom">Άλλος...</label>
             </div>
             <input type="number" id="customVat" class="vat-input" placeholder="Πληκτρολόγησε % ΦΠΑ" style="display:none;margin-bottom:10px;" min="0" max="99" />
-            <div class="actions">
-              <button class="btn-vat primary" id="calcBtn" type="button">Υπολογισμός</button>
-              <button class="btn-vat secondary" id="resetBtn" type="button">Επαναφορά</button>
+            <div class="calc-controls">
+              <button class="calc-button primary" id="calcBtn" type="button">Υπολογισμός</button>
+              <button class="calc-button" id="resetBtn" type="button">Επαναφορά</button>
             </div>
             <div class="equation">
               <div class="result-box" id="leftBox"><h3>Ποσό χωρίς ΦΠΑ</h3><div class="value" id="leftOut">—</div></div>
