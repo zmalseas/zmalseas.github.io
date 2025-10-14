@@ -26,13 +26,16 @@
     :root { --accent:#2980B9; }
     body { margin:0; overflow-x:hidden; }
     .rent-wrap { display:grid; grid-template-columns:1fr 1fr; min-height:calc(100vh - 120px); }
-    .rent-left { background:#f4f6fb; padding:40px 32px; overflow:auto; animation:fadeIn .5s ease-out .06s both; }
-  /* Darker overlay & new background image (replace filename if you upload the provided art as e.g. vat-bg.webp) */
+  .rent-left { background:#f4f6fb; padding:40px 32px; overflow:auto; animation:fadeIn .5s ease-out .06s both; display:flex; flex-direction:column; }
+  .vat-text { flex:1 0 auto; }
+  .quote-bottom { flex-shrink:0; margin-top:32px; }
+    /* Darker overlay & correct colorful image with fallbacks */
     .rent-right { padding:40px 24px; display:flex; align-items:center; justify-content:center; 
       background:
-        linear-gradient(rgba(0,0,0,.78), rgba(0,0,0,.78)),
+        linear-gradient(rgba(0,0,0,.82), rgba(0,0,0,.82)),
+        url('../images/vat-colorful.webp'),
         url('../images/vat-bg.webp'),
-        url('../images/Hero1_enhanced.webp'); /* fallback chain */
+        url('../images/Hero1_enhanced.webp');
       background-size:cover; background-position:center; }
     @keyframes fadeIn { from {opacity:0; transform:translateY(8px);} to {opacity:1; transform:translateY(0);} }
     .rent-left h2, .rent-left h3 { color: var(--brand); font-weight:800; position:relative; margin-bottom:20px; }
@@ -78,7 +81,7 @@
   <main class="main-content" style="margin:0; padding:0; max-width:none; width:100%;">
     <section class="rent-wrap">
       <article class="rent-left">
-        <section id="vat-info">
+        <section id="vat-info" class="vat-text">
           <h2>Τι είναι ο ΦΠΑ</h2>
           <p>Ο <strong>Φόρος Προστιθέμενης Αξίας (ΦΠΑ)</strong> είναι έμμεσος φόρος κατανάλωσης που επιβάλλεται στην προστιθέμενη αξία κάθε προϊόντος ή υπηρεσίας. Τον επιβαρύνεται ο τελικός καταναλωτής, ενώ οι επιχειρήσεις τον εισπράττουν και τον αποδίδουν στο Δημόσιο.</p>
           <h3>Νομικό πλαίσιο (Ελλάδα)</h3>
@@ -95,11 +98,11 @@
             <li>Επίλεξε συντελεστή (24%, 13%, 6% ή προσαρμοσμένο).</li>
             <li>Πάτησε <strong>Υπολογισμός</strong> για καθαρή αξία, ΦΠΑ και τελικό.</li>
           </ol>
-          <div class="quote" style="margin-top:48px; padding-bottom:64px;">
-            Για περιπτώσεις όπως <strong>ενδοκοινοτικές συναλλαγές</strong>, <strong>απαλλασσόμενες δραστηριότητες</strong> ή <strong>OSS / IOSS</strong>,
-            <a class="quote-cta" href="/epikoinonia/contact.php">Επικοινωνήστε μαζί μας</a>
-          </div>
         </section>
+        <div class="quote quote-bottom" style="padding-bottom:44px;">
+          Για περιπτώσεις όπως <strong>ενδοκοινοτικές συναλλαγές</strong>, <strong>απαλλασσόμενες δραστηριότητες</strong> ή <strong>OSS / IOSS</strong>,
+          <a class="quote-cta" href="/epikoinonia/contact.php">Επικοινωνήστε μαζί μας</a>
+        </div>
       </article>
       <section class="rent-right">
         <div class="calc-slab">
