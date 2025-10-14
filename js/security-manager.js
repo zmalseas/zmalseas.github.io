@@ -348,7 +348,7 @@ class SecurityManager {
   }
 
   sanitizeDataAttributes() {
-    document.querySelectorAll('[data-*]').forEach(element => {
+    document.querySelectorAll('*').forEach(element => {
       Array.from(element.attributes).forEach(attr => {
         if (attr.name.startsWith('data-') && this.containsMaliciousCode(attr.value)) {
           element.removeAttribute(attr.name);

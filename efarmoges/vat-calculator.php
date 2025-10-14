@@ -33,9 +33,8 @@
     .rent-right { padding:40px 24px; display:flex; align-items:center; justify-content:center; 
       background:
         linear-gradient(rgba(0,0,0,.82), rgba(0,0,0,.82)),
-        url('../images/vat-colorful.webp'),
-        url('../images/vat-bg.webp'),
-        url('../images/ypologismos_fpa.webp');
+        url('../images/ypologismos_fpa.webp'),
+        url('../images/Hero1_enhanced.webp');
       background-size:cover; background-position:center; }
     @keyframes fadeIn { from {opacity:0; transform:translateY(8px);} to {opacity:1; transform:translateY(0);} }
     .rent-left h2, .rent-left h3 { color: var(--brand); font-weight:800; position:relative; margin-bottom:20px; }
@@ -61,15 +60,18 @@
     .seg label { padding:10px 14px; background:#f1f5f9; border:2px solid #cbd5e1; border-radius:999px; cursor:pointer; color:#334155; user-select:none; font-weight:500; font-size:14px; transition:all .2s; }
     .seg input[type=radio]:checked + label { background:var(--brand); color:#fff; border-color:var(--brand); }
   .calc-controls { display:flex; gap:10px; margin-top:10px; flex-wrap:wrap; }
-  .calc-button { border:none; padding:12px 18px; border-radius:10px; font-weight:600; cursor:pointer; font-size:15px; display:inline-flex; align-items:center; justify-content:center; gap:6px; background:#e2e8f0; color:#111827; }
+  .calc-button { border:none; padding:12px 18px; border-radius:10px; font-weight:600; cursor:pointer; font-size:15px; display:inline-flex; align-items:center; justify-content:center; gap:6px; background:#e2e8f0; color:#111827; transition:all .2s ease; }
   .calc-button.primary { background:var(--brand); color:#fff; }
+  .calc-button:disabled { opacity:0.7; cursor:not-allowed; background:#9ca3af !important; color:#fff !important; }
+  .calc-button:hover:not(:disabled) { transform:translateY(-1px); box-shadow:0 4px 12px rgba(0,0,0,.15); }
   /* Stack results vertically */
   .equation { display:flex; flex-direction:column; gap:14px; margin-top:26px; }
   .result-box { width:100%; background:#f1f5f9; border-radius:12px; padding:18px 18px 20px; text-align:center; position:relative; }
   .result-box + .op { display:none; }
   .op { display:none !important; }
     .result-box h3 { margin:0 0 6px; font-size:.75rem; letter-spacing:.5px; font-weight:600; color:#475569; }
-    .value { font-weight:700; font-size:1.2rem; color:#0f172a; }
+    .value { font-weight:700; font-size:1.2rem; color:#0f172a; transition:all .2s ease; user-select:none; }
+    .value:hover { background:#f8fafc; border-radius:6px; padding:4px 8px; margin:-4px -8px; transform:scale(1.02); }
     .op { font-size:1.6rem; font-weight:700; color:var(--brand); align-self:center; }
   /* Disclaimer removed per request */
     @media (max-width:960px){ .rent-wrap { grid-template-columns:1fr; display:flex; flex-direction:column; } .rent-right { order:1; padding:28px 18px; } .rent-left { order:2; } }
@@ -125,8 +127,11 @@
             </div>
             <input type="number" id="customVat" class="vat-input" placeholder="Πληκτρολόγησε % ΦΠΑ" style="display:none;margin-bottom:10px;" min="0" max="99" />
             <div class="calc-controls">
-              <button class="calc-button primary" id="calcBtn" type="button">Υπολογισμός</button>
-              <button class="calc-button" id="resetBtn" type="button">Επαναφορά</button>
+              <button class="calc-button primary" id="calcBtn" type="button" title="Πάτα Enter για γρήγορο υπολογισμό">Υπολογισμός</button>
+              <button class="calc-button" id="resetBtn" type="button" title="Πάτα Escape για επαναφορά">Επαναφορά</button>
+            </div>
+            <div style="font-size:12px; color:#64748b; margin-top:8px; text-align:center;">
+              💡 <strong>Συντομεύσεις:</strong> Enter για υπολογισμό, Escape για επαναφορά. Κλικ στα αποτελέσματα για αντιγραφή.
             </div>
             <div class="equation">
               <div class="result-box" id="leftBox"><h3>Ποσό χωρίς ΦΠΑ</h3><div class="value" id="leftOut">—</div></div>
