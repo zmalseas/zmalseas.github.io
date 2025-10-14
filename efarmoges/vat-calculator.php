@@ -35,7 +35,7 @@
         linear-gradient(rgba(0,0,0,.82), rgba(0,0,0,.82)),
         url('../images/vat-colorful.webp'),
         url('../images/vat-bg.webp'),
-        url('../images/Hero1_enhanced.webp');
+        url('../images/ypologismos_fpa.webp');
       background-size:cover; background-position:center; }
     @keyframes fadeIn { from {opacity:0; transform:translateY(8px);} to {opacity:1; transform:translateY(0);} }
     .rent-left h2, .rent-left h3 { color: var(--brand); font-weight:800; position:relative; margin-bottom:20px; }
