@@ -60,6 +60,15 @@ class RentTaxCalculator {
     if (countEl) {
       countEl.addEventListener('input', () => this.syncPropertyCount());
       countEl.addEventListener('change', () => this.syncPropertyCount());
+      countEl.addEventListener('blur', () => {
+        // Ensure valid value when user leaves the field
+        let n = parseInt(countEl.value, 10);
+        if (isNaN(n) || n < 1) {
+          n = 1;
+          countEl.value = String(n);
+          this.renderProps(n);
+        }
+      });
     }
 
     if (calcBtn) {
@@ -93,10 +102,20 @@ class RentTaxCalculator {
   syncPropertyCount() {
     const countEl = document.getElementById('count');
     let n = parseInt(countEl.value, 10);
-    if (isNaN(n)) n = 1;
-    n = Math.max(1, Math.min(5, n));
-    countEl.value = String(n);
-    this.renderProps(n);
+    
+    // Allow 0 temporarily for editing, but don't render props
+    if (isNaN(n) || n < 0) {
+      n = 1;
+      countEl.value = String(n);
+    } else if (n > 5) {
+      n = 5;
+      countEl.value = String(n);
+    }
+    
+    // Only render properties if we have a valid count (1-5)
+    if (n >= 1 && n <= 5) {
+      this.renderProps(n);
+    }
   }
 
   createPropCard(i) {
@@ -182,7 +201,16 @@ class RentTaxCalculator {
       await new Promise(resolve => setTimeout(resolve, 300));
       
       const countEl = document.getElementById('count');
-      const n = Math.max(1, Math.min(5, Number(countEl?.value || 0)));
+      let n = Number(countEl?.value || 0);
+      
+      // Validate property count
+      if (n < 1 || n > 5 || isNaN(n)) {
+        this.showError('Παρακαλώ εισάγετε έναν έγκυρο αριθμό ακινήτων (1-5).');
+        this.showLoadingState(false);
+        return;
+      }
+      
+      n = Math.max(1, Math.min(5, n));
       
       let gross = 0;
       let hasValidInput = false;
