@@ -58,15 +58,40 @@ class RentTaxCalculator {
     const resetBtn = document.getElementById('resetBtn');
 
     if (countEl) {
-      countEl.addEventListener('input', () => this.syncPropertyCount());
-      countEl.addEventListener('change', () => this.syncPropertyCount());
-      countEl.addEventListener('blur', () => {
-        // Ensure valid value when user leaves the field
-        let n = parseInt(countEl.value, 10);
-        if (isNaN(n) || n < 1) {
-          n = 1;
-          countEl.value = String(n);
+      let lastValidValue = countEl.value;
+      
+      countEl.addEventListener('input', (e) => {
+        const value = e.target.value;
+        
+        // Allow empty or partial typing
+        if (value === '' || value === '0') {
+          return; // Allow user to delete/type
+        }
+        
+        const n = parseInt(value, 10);
+        
+        if (n >= 1 && n <= 5) {
+          lastValidValue = value;
           this.renderProps(n);
+        } else if (n > 5) {
+          // Auto-correct if over limit
+          e.target.value = '5';
+          lastValidValue = '5';
+          this.renderProps(5);
+        }
+      });
+      
+      countEl.addEventListener('blur', () => {
+        const value = countEl.value;
+        let n = parseInt(value, 10);
+        
+        if (!value || isNaN(n) || n < 1) {
+          // Restore to last valid or default to 1
+          countEl.value = lastValidValue || '1';
+          this.renderProps(parseInt(lastValidValue || '1', 10));
+        } else if (n > 5) {
+          countEl.value = '5';
+          this.renderProps(5);
         }
       });
     }
@@ -99,24 +124,7 @@ class RentTaxCalculator {
     });
   }
 
-  syncPropertyCount() {
-    const countEl = document.getElementById('count');
-    let n = parseInt(countEl.value, 10);
-    
-    // Allow 0 temporarily for editing, but don't render props
-    if (isNaN(n) || n < 0) {
-      n = 1;
-      countEl.value = String(n);
-    } else if (n > 5) {
-      n = 5;
-      countEl.value = String(n);
-    }
-    
-    // Only render properties if we have a valid count (1-5)
-    if (n >= 1 && n <= 5) {
-      this.renderProps(n);
-    }
-  }
+
 
   createPropCard(i) {
     const wrap = document.createElement('div');
