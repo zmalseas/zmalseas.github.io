@@ -130,7 +130,7 @@
               <button class="calc-button" id="resetBtn" type="button" title="Πάτα Escape για επαναφορά">Επαναφορά</button>
             </div>
             <div style="font-size:12px; color:#64748b; margin-top:8px; text-align:center;">
-              💡 <strong>Συντομεύσεις:</strong> Enter για υπολογισμό, Escape για επαναφορά. Κλικ στα αποτελέσματα για αντιγραφή.
+              Κλικ στα αποτελέσματα για αντιγραφή.
             </div>
             <div class="equation">
               <div class="result-box" id="leftBox"><h3>Ποσό χωρίς ΦΠΑ</h3><div class="value" id="leftOut">—</div></div>
