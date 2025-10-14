@@ -28,7 +28,12 @@
     .rent-wrap { display:grid; grid-template-columns:1fr 1fr; min-height:calc(100vh - 120px); }
     .rent-left { background:#f4f6fb; padding:40px 32px; overflow:auto; animation:fadeIn .5s ease-out .06s both; }
   /* Darker overlay & new background image (replace filename if you upload the provided art as e.g. vat-bg.webp) */
-  .rent-right { padding:40px 24px; display:flex; align-items:center; justify-content:center; background: linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.72)), url('../images/vat-bg.webp'); background-size:cover; background-position:center; }
+    .rent-right { padding:40px 24px; display:flex; align-items:center; justify-content:center; 
+      background:
+        linear-gradient(rgba(0,0,0,.78), rgba(0,0,0,.78)),
+        url('../images/vat-bg.webp'),
+        url('../images/Hero1_enhanced.webp'); /* fallback chain */
+      background-size:cover; background-position:center; }
     @keyframes fadeIn { from {opacity:0; transform:translateY(8px);} to {opacity:1; transform:translateY(0);} }
     .rent-left h2, .rent-left h3 { color: var(--brand); font-weight:800; position:relative; margin-bottom:20px; }
     .rent-left h2 { font-size:clamp(28px,3vw,38px); }
@@ -90,7 +95,10 @@
             <li>Επίλεξε συντελεστή (24%, 13%, 6% ή προσαρμοσμένο).</li>
             <li>Πάτησε <strong>Υπολογισμός</strong> για καθαρή αξία, ΦΠΑ και τελικό.</li>
           </ol>
-          <!-- Quote moved to bottom of page -->
+          <div class="quote" style="margin-top:48px; padding-bottom:64px;">
+            Για περιπτώσεις όπως <strong>ενδοκοινοτικές συναλλαγές</strong>, <strong>απαλλασσόμενες δραστηριότητες</strong> ή <strong>OSS / IOSS</strong>,
+            <a class="quote-cta" href="/epikoinonia/contact.php">Επικοινωνήστε μαζί μας</a>
+          </div>
         </section>
       </article>
       <section class="rent-right">
@@ -126,14 +134,6 @@
           </section>
         </div>
       </section>
-    </section>
-    <section style="background:#fafbff; border-top:1px solid #e5e7eb; padding:40px 24px;">
-      <div style="max-width:1000px; margin:0 auto;">
-        <div class="quote" style="margin-top:0; padding-bottom:64px;">
-          Για περιπτώσεις όπως <strong>ενδοκοινοτικές συναλλαγές</strong>, <strong>απαλλασσόμενες δραστηριότητες</strong> ή <strong>OSS / IOSS</strong>,
-          <a class="quote-cta" href="/epikoinonia/contact.php">Επικοινωνήστε μαζί μας</a>
-        </div>
-      </div>
     </section>
   </main>
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>
