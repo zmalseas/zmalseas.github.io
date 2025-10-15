@@ -288,10 +288,27 @@ if (typeof module !== 'undefined' && module.exports) {
   window.NavigationManager = NavigationManager;
 }
 
-// Auto-initialize when loaded directly (not via app.js)
-if (typeof window !== 'undefined' && !window.APP_LOADED && !window.navigationInitialized) {
-  document.addEventListener('DOMContentLoaded', () => {
-    new NavigationManager();
-    window.navigationInitialized = true;
-  });
-}
+// Robust auto-initialization: run on DOMContentLoaded, load, and next tick
+(function(){
+  if (typeof window === 'undefined') return;
+
+  const safeInit = () => {
+    if (window.navigationInitialized) return;
+    try {
+      new NavigationManager();
+      window.navigationInitialized = true;
+      console.log('🧭 NavigationManager auto-initialized');
+    } catch (e) {
+      console.error('Navigation auto-init failed:', e);
+    }
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', safeInit, { once: true });
+  } else {
+    // DOM already interactive/complete
+    setTimeout(safeInit, 0);
+  }
+  // Fallback on full load
+  window.addEventListener('load', safeInit, { once: true });
+})();
