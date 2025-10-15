@@ -175,6 +175,13 @@ class NavigationManager {
         });
       });
       
+      // Close with Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && overlay.classList.contains('open')) {
+          this.closeMobileMenu();
+        }
+      });
+
       // Close overlay when window resizes above mobile breakpoint
       window.addEventListener('resize', () => {
         if (window.innerWidth > 1100 && overlay.classList.contains('open')) {
@@ -255,12 +262,12 @@ class NavigationManager {
       
       serviceCards.forEach((card, index) => {
         const serviceUrls = [
-          '/ipiresies/logistiki.html',
-          '/ipiresies/misthodosia.html', 
-          '/ipiresies/cyber-security.html',
-          '/ipiresies/consulting.html',
-          '/ipiresies/epixorigiseis.html',
-          '/ipiresies/social-media.html'
+          '/ipiresies/logistiki.php',
+          '/ipiresies/misthodosia.php', 
+          '/ipiresies/cyber-security.php',
+          '/ipiresies/consulting.php',
+          '/ipiresies/epixorigiseis.php',
+          '/ipiresies/social-media.php'
         ];
         
         if (serviceUrls[index]) {

@@ -45,7 +45,7 @@
             </div>
           </li>
           
-          <li class="nav-item"><a href="/epikoinonia/contact.html"><span class="text">Επικοινωνία</span></a></li>
+          <li class="nav-item"><a href="/epikoinonia/contact.php"><span class="text">Επικοινωνία</span></a></li>
         </ul>
 
         <button class="hamburger" aria-label="Άνοιγμα μενού">
@@ -107,7 +107,7 @@
         </div>
       </div>
       
-      <a class="menu-toggle" href="/epikoinonia/contact.html">Επικοινωνία</a>
+  <a class="menu-toggle" href="/epikoinonia/contact.php">Επικοινωνία</a>
     </div>
     
   </div>

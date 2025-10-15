@@ -11,7 +11,8 @@ class ChatWidget {
   async init() {
     try {
       await this.loadChatWidget();
-      await this.loadRecaptcha();
+      // Don't load reCAPTCHA immediately to avoid unnecessary requests.
+      // We'll lazy-load it when the user opens the chat or submits the form.
       this.setupEventListeners();
       this.handleFooterCollision();
       this.isInitialized = true;
@@ -112,8 +113,11 @@ class ChatWidget {
 
     if (!chatButton || !chatModal) return;
 
-    // Open chat modal
-    chatButton.addEventListener('click', () => this.openChat());
+    // Open chat modal (lazy-load reCAPTCHA when chat is opened)
+    chatButton.addEventListener('click', async () => {
+      await this.loadRecaptcha();
+      this.openChat();
+    });
 
     // Close chat modal
     if (chatClose) {
@@ -130,7 +134,10 @@ class ChatWidget {
 
     // Handle form submission
     if (chatForm) {
-      chatForm.addEventListener('submit', (e) => this.handleFormSubmission(e));
+      chatForm.addEventListener('submit', async (e) => {
+        await this.loadRecaptcha();
+        this.handleFormSubmission(e);
+      });
     }
 
     // Escape key to close
