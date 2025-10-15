@@ -332,6 +332,7 @@
 
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>
   
+  <script src="/js/navigation.js"></script>
   <script src="/js/cookie-consent.js"></script>
   <script src="/js/chat-widget.js"></script>
   <script>

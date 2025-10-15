@@ -145,7 +145,9 @@
     </section>
   </main>
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>
+  <script src="/js/navigation.js"></script>
   <script src="/js/cookie-consent.js"></script>
+  <script src="/js/chat-widget.js"></script>
   <script src="../app.js" defer></script>
   <script src="../js/vat-calculator.js" defer></script>
 </body>
