@@ -242,7 +242,7 @@
         </div>
       </article>
       <article class="team-card">
-        <img class="avatar" src="/images/team-ioannis.jpg" alt="Ιωάννης Λάμπης">
+        <img class="avatar" src="/images/team-ioannis.webp" alt="Ιωάννης Λάμπης">
         <h4>Ιωάννης Λαμπής</h4>
         <p class="role">Μισθοδοσία – Εργατικά</p>
         <div class="contact"><a href="tel:+306951302516"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.11 5.18 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.72c.12.9.3 1.77.57 2.6a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.83.27 1.7.45 2.6.57A2 2 0 0 1 22 16.92z"/></svg>695 130 2516</a></div>
