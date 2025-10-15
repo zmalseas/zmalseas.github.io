@@ -314,7 +314,7 @@
     </div>
 
     <!-- Σύμβουλος Μηχανικός & Επιχορηγήσεις (1) -->
-    <div class="cat"><div class="bar"></div><h3>Σύμβουλος Μηχανικός & Επιχορηγήσεις</h3></div>
+    <div class="cat"><div class="bar"></div><h3>Σύμβουλος Μηχανικός</h3></div>
     <div class="team-grid cols-3">
       <article class="team-card">
         <img class="avatar" src="/images/team-avramidis.jpg" alt="Αναστάσιος Αβραμίδης">
