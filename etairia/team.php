@@ -1,4 +1,4 @@
-<!DOCTYPE html><!DOCTYPE html><!DOCTYPE html><!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html><!DOCTYPE html><!DOCTYPE html><!DOCTYPE html>
 
 <html lang="el">
 
@@ -6,7 +6,7 @@
 
   <meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><head><html lang="el"><html lang="el">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><head><html lang="el">
 
   <title>Ομάδα — Nerally</title>
 
@@ -14,7 +14,7 @@
 
   <link rel="stylesheet" href="../main.css">
 
-  <link rel="stylesheet" href="/css/cookie-consent.css">  <meta name="viewport" content="width=device-width, initial-scale=1.0"><head><head>
+  <link rel="stylesheet" href="/css/cookie-consent.css">  <meta name="viewport" content="width=device-width, initial-scale=1.0"><head><html lang="el"><html lang="el">
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -22,7 +22,7 @@
 
   <style>
 
-    /* Hero Section - Copy από company.php */  <link rel="icon" type="image/png" href="../images/logo.png" />  <meta charset="UTF-8">  <meta charset="UTF-8">
+    /* Hero Section - από company.php */  <link rel="icon" type="image/png" href="../images/logo.png" />  <meta charset="UTF-8">
 
     .hero-animated {
 
@@ -30,7 +30,7 @@
 
       background: #000;
 
-      color: #f6f8fb;  <link rel="stylesheet" href="/css/cookie-consent.css">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      color: #f6f8fb;  <link rel="stylesheet" href="/css/cookie-consent.css">  <meta name="viewport" content="width=device-width, initial-scale=1.0"><head><head>
 
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, "Helvetica Neue", Arial;
 
@@ -38,7 +38,7 @@
 
       position: sticky;
 
-      top: 0;    <title>Ομάδα — Nerally</title>  <title>Η Ομάδα μας - Nerally</title>
+      top: 0;    <title>Ομάδα — Nerally</title>
 
       z-index: 50;
 
@@ -46,7 +46,7 @@
 
     }
 
-    /* Hero Section - Exact copy from company.php */  <link rel="icon" type="image/png" href="../images/logo.png" />  <link rel="icon" type="image/png" href="../images/logo.png" />
+    /* Hero Section - Copy από company.php */  <link rel="icon" type="image/png" href="../images/logo.png" />  <meta charset="UTF-8">  <meta charset="UTF-8">
 
     .hero-animated .stage {
 
@@ -54,7 +54,7 @@
 
       z-index: 1;
 
-      height: 100%;      height: 170px;  <link rel="stylesheet" href="../main.css">  <link rel="stylesheet" href="../main.css">
+      height: 100%;      height: 170px;  <link rel="stylesheet" href="../main.css">
 
       display: flex;
 
@@ -62,7 +62,7 @@
 
       justify-content: flex-start;
 
-    }      color: #f6f8fb;  <link rel="stylesheet" href="/css/cookie-consent.css">  <link rel="stylesheet" href="/css/cookie-consent.css">
+    }      color: #f6f8fb;  <link rel="stylesheet" href="/css/cookie-consent.css">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     
 
@@ -78,7 +78,7 @@
 
       padding: 1.5rem 2.5rem;
 
-      max-width: min(1200px, 92vw);      top: 0;    
+      max-width: min(1200px, 92vw);      top: 0;    <title>Ομάδα — Nerally</title>  <title>Η Ομάδα μας - Nerally</title>
 
     }
 
@@ -86,7 +86,7 @@
 
     .hero-animated .headline {
 
-      font-weight: 900;      border-bottom: 1px solid #333;  <style>  <!-- GTM loads via cookie-consent.js after analytics consent -->
+      font-weight: 900;      border-bottom: 1px solid #333;  <style>
 
       letter-spacing: .045em;
 
@@ -94,7 +94,7 @@
 
       text-align: left;
 
-      font-size: clamp(1.8rem, 5.5vw, 3.5rem);    /* Hero Section - Exact copy from company.php */</head>
+      font-size: clamp(1.8rem, 5.5vw, 3.5rem);    /* Hero Section - Exact copy from company.php */  <link rel="icon" type="image/png" href="../images/logo.png" />  <link rel="icon" type="image/png" href="../images/logo.png" />
 
       text-shadow: 0 0 24px rgba(255,255,255,.22);
 
@@ -102,7 +102,7 @@
 
     }
 
-          position: relative;    .hero-animated {<body>
+          position: relative;    .hero-animated {
 
     .hero-animated .headline b {
 
@@ -110,7 +110,7 @@
 
       -webkit-background-clip: text;
 
-      -webkit-text-fill-color: transparent;      height: 100%;      height: 170px;  
+      -webkit-text-fill-color: transparent;      height: 100%;      height: 170px;  <link rel="stylesheet" href="../main.css">  <link rel="stylesheet" href="../main.css">
 
       background-clip: text;
 
@@ -118,7 +118,7 @@
 
     
 
-    .hero-animated .row {      align-items: center;      background: #000;  
+    .hero-animated .row {      align-items: center;      background: #000;
 
       display: flex;
 
@@ -126,7 +126,7 @@
 
       gap: clamp(.4rem, 1.2vw, .8rem);
 
-      opacity: 1;    }      color: #f6f8fb;  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/header.php'; ?>
+      opacity: 1;    }      color: #f6f8fb;  <link rel="stylesheet" href="/css/cookie-consent.css">  <link rel="stylesheet" href="/css/cookie-consent.css">
 
     }
 
@@ -142,7 +142,7 @@
 
       font-size: clamp(1.2rem, 3.8vw, 2.8rem);
 
-      text-shadow: 0 0 14px rgba(255,255,255,.22);      flex-direction: column;      overflow: hidden;  <main class="main-content">
+      text-shadow: 0 0 14px rgba(255,255,255,.22);      flex-direction: column;      overflow: hidden;  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     }
 
@@ -150,7 +150,7 @@
 
     .hero-animated .right {
 
-      font-weight: 900;      align-items: flex-start;      position: sticky;    <div class="container">
+      font-weight: 900;      align-items: flex-start;      position: sticky;
 
       letter-spacing: .045em;
 
@@ -158,7 +158,7 @@
 
       font-size: clamp(1.2rem, 3.8vw, 2.8rem);
 
-      min-width: 8ch;      max-width: min(1200px, 92vw);      top: 0;      <div class="page-header">
+      min-width: 8ch;      max-width: min(1200px, 92vw);      top: 0;    
 
       text-align: left;
 
@@ -166,7 +166,7 @@
 
     }
 
-              z-index: 50;        <h1>Η Ομάδα μας</h1>
+              z-index: 50;
 
     .hero-animated .flip {
 
@@ -174,7 +174,7 @@
 
       transform-origin: 50% 80%;
 
-      -webkit-backface-visibility: hidden;      font-weight: 900;      border-bottom: 1px solid #333;        <p>Γνωρίστε τους ειδικούς που κάνουν τη διαφορά</p>
+      -webkit-backface-visibility: hidden;      font-weight: 900;      border-bottom: 1px solid #333;  <style>  <!-- GTM loads via cookie-consent.js after analytics consent -->
 
       backface-visibility: hidden;
 
@@ -182,7 +182,7 @@
 
       will-change: transform, opacity;
 
-    }      line-height: 1.05;    }      </div>
+    }      line-height: 1.05;    }
 
     
 
@@ -190,7 +190,7 @@
 
       animation: flipIn .7s cubic-bezier(.2,.8,.2,1) forwards;
 
-    }      font-size: clamp(1.8rem, 5.5vw, 3.5rem);
+    }      font-size: clamp(1.8rem, 5.5vw, 3.5rem);    /* Hero Section - Exact copy from company.php */</head>
 
     
 
@@ -198,7 +198,7 @@
 
       0% { transform: rotateX(90deg); opacity: 0; filter: blur(6px); }
 
-      60% { opacity: 1; }      white-space: nowrap;    .hero-animated .stage {      <div class="content-section">
+      60% { opacity: 1; }      white-space: nowrap;    .hero-animated .stage {
 
       100% { transform: rotateX(0); opacity: 1; filter: blur(0); }
 
@@ -206,7 +206,7 @@
 
 
 
-    .hero-animated .gap {          position: relative;        <h2>Έμπειροι Επαγγελματίες</h2>
+    .hero-animated .gap {          position: relative;    .hero-animated {<body>
 
       display: inline-block;
 
@@ -214,7 +214,7 @@
 
       vertical-align: baseline;
 
-    }      background: linear-gradient(90deg, var(--brand), #3498db);      z-index: 1;        <p>Η ομάδα της Nerally αποτελείται από έμπειρους επαγγελματίες με εξειδίκευση σε διάφορους τομείς:</p>
+    }      background: linear-gradient(90deg, var(--brand), #3498db);      z-index: 1;
 
     
 
@@ -222,7 +222,7 @@
 
     .hero-animated .gap.g2 { width: 2ch; }
 
-          -webkit-text-fill-color: transparent;      height: 100%;
+          -webkit-text-fill-color: transparent;      height: 100%;      height: 170px;  
 
     .hero-animated .rise {
 
@@ -230,7 +230,7 @@
 
       transform: translateY(.9em);
 
-      opacity: 0;    }      display: flex;        <div class="team-grid">
+      opacity: 0;    }      display: flex;
 
       animation: riseIn .7s ease forwards;
 
@@ -238,7 +238,7 @@
 
     
 
-    @keyframes riseIn {    .hero-animated .row {      align-items: center;          <div class="team-member">
+    @keyframes riseIn {    .hero-animated .row {      align-items: center;      background: #000;  
 
       to { transform: translateY(0); opacity: 1; }
 
@@ -246,7 +246,7 @@
 
 
 
-    @media (max-width: 768px) {      align-items: baseline;      justify-content: flex-start;            <h3>Πιστοποιημένοι Λογιστές</h3>
+    @media(max-width:768px){      align-items: baseline;      justify-content: flex-start;
 
       .hero-animated {
 
@@ -254,7 +254,7 @@
 
       }
 
-      .hero-animated .stack {      opacity: 1;    }            <p>Με πολυετή εμπειρία στη λογιστική και φορολογία</p>
+      .hero-animated .stack {      opacity: 1;    }      color: #f6f8fb;  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/header.php'; ?>
 
         padding: 1rem 1.5rem;
 
@@ -262,126 +262,509 @@
 
       }
 
-    }                  </div>
+    }        
 
 
 
-    /* Team page content */    .hero-animated .left {
+    /* Team content - χρησιμοποιώντας brand colors */    .hero-animated .left {
 
-    .team-content {
+    .wrap{max-width:1140px;margin:0 auto;padding:56px 20px 96px}
 
-      max-width: 1200px;      font-weight: 900;    .hero-animated .stack {
+          font-weight: 900;    .hero-animated .stack {      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, "Helvetica Neue", Arial;
 
-      margin: 0 auto;
+    .eyebrow{color:var(--brand);font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px}
 
-      padding: 60px 32px;      letter-spacing: .045em;
+          letter-spacing: .045em;
 
-    }
+    h2{font-size:2rem;line-height:1.2;color:var(--brand);margin:0 0 8px;font-weight:800}
 
-          line-height: 1;      display: flex;          <div class="team-member">
+          line-height: 1;      display: flex;
 
-    .team-header h1 {
+    .lead{font-weight:600;margin:0 0 24px;font-size:18px;line-height:1.6}
 
-      font-size: 2.5rem;      font-size: clamp(1.2rem, 3.8vw, 2.8rem);
+          font-size: clamp(1.2rem, 3.8vw, 2.8rem);
 
-      color: var(--brand);
+    p{color:#5b6b7a;line-height:1.75;margin:0 0 14px;font-size:16px}
 
-      margin-bottom: 16px;      text-shadow: 0 0 14px rgba(255,255,255,.22);      flex-direction: column;            <h3>Φορολογικοί Σύμβουλοι</h3>
+          text-shadow: 0 0 14px rgba(255,255,255,.22);      flex-direction: column;      overflow: hidden;  <main class="main-content">
 
-    }
+    .section{margin-top:48px}
 
         }
 
-    .team-header p {
+    .divider{height:3px;width:48px;background:var(--brand);border-radius:8px;margin:0 0 18px}
+
+          gap: 0.8rem;
+
+    /* Team grid */
+
+    .team-grid{display:grid;gap:20px}    .hero-animated .right {
+
+    @media(min-width:900px){.team-grid.cols-3{grid-template-columns:repeat(3,1fr)}}
+
+          font-weight: 900;      align-items: flex-start;      position: sticky;    <div class="container">
+
+    .team-card{background:#ffffff;border:1px solid #dee6ef;border-radius:16px;box-shadow:0 12px 28px rgba(15,23,42,.08);padding:18px;text-align:center;transition:transform .25s}
+
+    .team-card:hover{transform:translateY(-4px)}      letter-spacing: .045em;
+
+    
+
+    .team-card .avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;margin:6px auto 10px;border:3px solid #e5effd}      line-height: 1;      padding: 1.5rem 2.5rem;
+
+    
+
+    .team-card h4{margin:8px 0 4px;font-size:18px;color:var(--brand);font-weight:700}      font-size: clamp(1.2rem, 3.8vw, 2.8rem);
+
+    
+
+    .team-card .role{color:#5b6b7a;margin:0 0 8px;font-size:14px}      min-width: 8ch;      max-width: min(1200px, 92vw);      top: 0;      <div class="page-header">
+
+    
+
+    .contact{display:flex;justify-content:center;gap:12px;align-items:center;margin-top:10px}      text-align: left;
+
+    .contact a{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid #dee6ef;border-radius:12px;text-decoration:none;color:#0f172a;font-weight:700;font-size:12px;transition:all 0.2s ease}
+
+    .contact a:hover{border-color:var(--brand);color:var(--brand)}      color: #e8f6ff;    }
+
+    
+
+    .icon{width:18px;height:18px;display:inline-block}    }
+
+    
+
+    .social{display:flex;justify-content:center;gap:10px;margin-top:8px}              z-index: 50;        <h1>Η Ομάδα μας</h1>
+
+    .social a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid #dee6ef;border-radius:999px;text-decoration:none;transition:all 0.2s ease}
+
+    .social a:hover{background:#f1f6ff;border-color:var(--brand);color:var(--brand)}    .hero-animated .flip {
+
+
+
+    /* Category headers */      display: inline-block;    .hero-animated .headline {
+
+    .cat{display:flex;align-items:center;gap:10px;margin:34px 0 14px}
+
+    .cat h3{margin:0;font-size:1.2rem;color:var(--brand);font-weight:700}      transform-origin: 50% 80%;
+
+    .cat .bar{height:3px;width:32px;background:var(--brand);border-radius:8px}
+
+      -webkit-backface-visibility: hidden;      font-weight: 900;      border-bottom: 1px solid #333;        <p>Γνωρίστε τους ειδικούς που κάνουν τη διαφορά</p>
+
+    /* Quote card */
+
+    .quote-card{background:#ffffff;border:1px solid #dee6ef;border-radius:16px;box-shadow:0 12px 28px rgba(15,23,42,.08);padding:22px}      backface-visibility: hidden;
+
+    .quote-card .quote-text{font-weight:700;color:var(--brand);font-size:16px;margin-bottom:12px;line-height:1.4}
+
+    .quote-card .quote-caption{margin:0;color:#5b6b7a;font-size:15px;line-height:1.6}      transform-style: preserve-3d;      letter-spacing: .045em;
+
+
+
+    @media(max-width:900px){      will-change: transform, opacity;
+
+      .team-intro{grid-template-columns:1fr !important}
+
+    }    }      line-height: 1.05;    }      </div>
+
+  </style>
+
+      
+
+  <!-- GTM loads via cookie-consent.js after analytics consent -->
+
+</head>    .hero-animated .flip.enter {      text-align: left;
+
+<body>
+
+        animation: flipIn .7s cubic-bezier(.2,.8,.2,1) forwards;
+
+  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/header.php'; ?>
+
+    }      font-size: clamp(1.8rem, 5.5vw, 3.5rem);
+
+  <!-- Hero Section with Text Animation -->
+
+  <div class="hero-animated">    
+
+    <main class="stage">
+
+      <div class="stack">    @keyframes flipIn {      text-shadow: 0 0 24px rgba(255,255,255,.22);
+
+        <div id="headline" class="headline" aria-live="polite"></div>
+
+        <div class="row" id="row">      0% { transform: rotateX(90deg); opacity: 0; filter: blur(6px); }
+
+          <div class="left">NERA</div>
+
+          <div class="right"><span id="flip" class="flip">LLY</span></div>      60% { opacity: 1; }      white-space: nowrap;    .hero-animated .stage {      <div class="content-section">
+
+        </div>
+
+      </div>      100% { transform: rotateX(0); opacity: 1; filter: blur(0); }
+
+    </main>
+
+  </div>    }    }
+
+
+
+  <!-- Main Content -->
+
+  <main class="wrap">
+
+    <div class="eyebrow">Ποιοι είμαστε</div>    .hero-animated .gap {          position: relative;        <h2>Έμπειροι Επαγγελματίες</h2>
+
+    <h2>Ομάδα</h2>
+
+    <p class="lead">Η δύναμή μας είναι οι άνθρωποί μας — γιατί πίσω από κάθε επιτυχημένο αποτέλεσμα υπάρχει μια ομάδα που συνεργάζεται, εμπνέεται και εξελίσσεται.</p>      display: inline-block;
+
+
+
+    <section class="section" style="margin-top:24px;">      width: 0;    .hero-animated .headline b {
+
+      <div class="team-intro" style="display:grid;grid-template-columns:1.4fr .9fr;gap:28px;">
+
+        <div>      vertical-align: baseline;
+
+          <p>Στη Nerally, πιστεύουμε πως η επιτυχία μιας επιχείρησης εξαρτάται από τους ανθρώπους που βρίσκονται γύρω της. Για αυτό και η δική μας ομάδα αποτελεί την καρδιά της φιλοσοφίας μας. Είμαστε μια ομάδα επαγγελματιών που προερχόμαστε από διαφορετικούς κλάδους, φέρνοντας μαζί μας εμπειρία, γνώση και εξειδίκευση — αλλά πάνω απ' όλα, κοινό όραμα.</p>
+
+          <p>Ο καθένας μας έχει διανύσει μια πορεία μέσα στον χώρο του: άλλοι στην επιχειρηματική στρατηγική, άλλοι στο digital marketing, στα οικονομικά, στη νομική καθοδήγηση, στην οργάνωση ή στο σχεδιασμό επιχειρησιακών διαδικασιών. Όλοι όμως μοιραζόμαστε τον ίδιο στόχο: να είμαστε δίπλα στον επαγγελματία, να του προσφέρουμε λύσεις που είναι πρακτικές, εφαρμόσιμες και σύγχρονες.</p>    }      background: linear-gradient(90deg, var(--brand), #3498db);      z-index: 1;        <p>Η ομάδα της Nerally αποτελείται από έμπειρους επαγγελματίες με εξειδίκευση σε διάφορους τομείς:</p>
+
+          <p>Μας ενώνει η πεποίθηση πως η συνεργασία είναι το κλειδί. Δεν λειτουργούμε ως μεμονωμένοι σύμβουλοι, αλλά ως ένα ενιαίο οικοσύστημα γνώσης. Κάθε έργο είναι μια ευκαιρία να ενώσουμε τις δυνάμεις μας, να ανταλλάξουμε ιδέες, να συνθέσουμε στρατηγικές και να δημιουργήσουμε αξία. Η διαφορετικότητα στις δεξιότητές μας δεν μας χωρίζει — μας συμπληρώνει.</p>
+
+          <p>Η ομάδα της Nerally χαρακτηρίζεται από συνέπεια, δημιουργικότητα και συνεχή εξέλιξη. Παρακολουθούμε τις τάσεις της αγοράς, εξερευνούμε νέες τεχνολογίες, επενδύουμε στη δια βίου μάθηση. Θέλουμε να είμαστε πάντα ένα βήμα μπροστά, ώστε να μπορούμε να καθοδηγούμε αποτελεσματικά τους πελάτες μας στο διαρκώς μεταβαλλόμενο επιχειρηματικό τοπίο.</p>    
+
+          <p>Κάθε μέλος της ομάδας μας αντιμετωπίζει τον ρόλο του με προσωπική ευθύνη και επαγγελματισμό. Δίνουμε αξία στη συνεργασία, στην εμπιστοσύνη και στη διαφάνεια — στοιχεία που θεωρούμε απαραίτητα για κάθε υγιή επαγγελματική σχέση. Όταν αναλαμβάνουμε μια επιχείρηση, τη βλέπουμε σαν δική μας. Εμπλεκόμαστε ουσιαστικά, κατανοούμε τις ανάγκες της, και σχεδιάζουμε μαζί τα επόμενα βήματα.</p>
+
+        </div>    .hero-animated .gap.g1 { width: 3ch; }      -webkit-background-clip: text;
+
+        <aside class="quote-card">
+
+          <div class="quote-text">«Πίσω από κάθε επιχείρηση που εξελίσσεται, υπάρχει μια ομάδα που πιστεύει σε αυτήν.»</div>    .hero-animated .gap.g2 { width: 2ch; }
+
+          <p class="quote-caption">Η επιτυχία δεν είναι ατομική — είναι συλλογική.</p>
+
+        </aside>          -webkit-text-fill-color: transparent;      height: 100%;
+
+      </div>
+
+    </section>    .hero-animated .rise {
+
+
+
+    <div class="section"><div class="divider"></div></div>      display: inline-block;      background-clip: text;
+
+    <h2>Τα άτομά μας</h2>
+
+    <p class="lead">Δείτε ποιος είναι ποιος. Κάντε κλικ σε ένα μέλος για σύντομο προφίλ.</p>      transform: translateY(.9em);
+
+
+
+    <!-- Λογιστική (3 μέλη) -->      opacity: 0;    }      display: flex;        <div class="team-grid">
+
+    <div class="cat"><div class="bar"></div><h3>Λογιστική</h3></div>
+
+    <div class="team-grid cols-3">      animation: riseIn .7s ease forwards;
+
+      <article class="team-card">
+
+        <img class="avatar" src="/images/team-xristos.jpg" alt="Χρήστος Γκουτούλας">    }    
+
+        <h4>Χρήστος Γκουτούλας</h4>
+
+        <p class="role">Λογιστής – Φοροτεχνικός</p>    
+
+        <div class="contact"><a href="tel:+306946365798"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.11 5.18 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.72c.12.9.3 1.77.57 2.6a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.83.27 1.7.45 2.6.57A2 2 0 0 1 22 16.92z"/></svg>694 636 5798</a></div>
+
+        <div class="social">    @keyframes riseIn {    .hero-animated .row {      align-items: center;          <div class="team-member">
+
+          <a aria-label="LinkedIn" href="#" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8.98h5V24H0zM8.5 8.98H13v2.05h.07c.63-1.2 2.17-2.46 4.47-2.46 4.78 0 5.66 3.15 5.66 7.25V24h-5v-6.67c0-1.59-.03-3.63-2.21-3.63-2.21 0-2.55 1.73-2.55 3.52V24h-5z"/></svg></a>
+
+          <a aria-label="Instagram" href="#" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>      to { transform: translateY(0); opacity: 1; }
+
+        </div>
+
+      </article>    }      display: flex;
+
+      <article class="team-card">
+
+        <img class="avatar" src="/images/team-aris.jpg" alt="Άρης Χαραλαμπίδης">
+
+        <h4>Άρης Χαραλαμπίδης</h4>
+
+        <p class="role">Λογιστής – Φοροτεχνικός</p>    @media (max-width: 768px) {      align-items: baseline;      justify-content: flex-start;            <h3>Πιστοποιημένοι Λογιστές</h3>
+
+        <div class="contact"><a href="tel:+30697400944"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.11 5.18 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.72c.12.9.3 1.77.57 2.6a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.83.27 1.7.45 2.6.57A2 2 0 0 1 22 16.92z"/></svg>697 400 944</a></div>
+
+        <div class="social">      .hero-animated {
+
+          <a aria-label="LinkedIn" href="#" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8.98h5V24H0zM8.5 8.98H13v2.05h.07c.63-1.2 2.17-2.46 4.47-2.46 4.78 0 5.66 3.15 5.66 7.25V24h-5v-6.67c0-1.59-.03-3.63-2.21-3.63-2.21 0-2.55 1.73-2.55 3.52V24h-5z"/></svg></a>
+
+          <a aria-label="Instagram" href="#" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>        height: 120px;      gap: clamp(.4rem, 1.2vw, .8rem);
+
+        </div>
+
+      </article>      }
+
+      <article class="team-card">
+
+        <img class="avatar" src="/images/team-ioannis.jpg" alt="Ιωάννης Λάμπης">      .hero-animated .stack {      opacity: 1;    }            <p>Με πολυετή εμπειρία στη λογιστική και φορολογία</p>
+
+        <h4>Ιωάννης Λαμπής</h4>
+
+        <p class="role">Μισθοδοσία – Εργατικά</p>        padding: 1rem 1.5rem;
+
+        <div class="contact"><a href="tel:+306951302516"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.11 5.18 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.72c.12.9.3 1.77.57 2.6a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.83.27 1.7.45 2.6.57A2 2 0 0 1 22 16.92z"/></svg>695 130 2516</a></div>
+
+        <div class="social">        gap: 0.6rem;    }
+
+          <a aria-label="LinkedIn" href="#" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8.98h5V24H0zM8.5 8.98H13v2.05h.07c.63-1.2 2.17-2.46 4.47-2.46 4.78 0 5.66 3.15 5.66 7.25V24h-5v-6.67c0-1.59-.03-3.63-2.21-3.63-2.21 0-2.55 1.73-2.55 3.52V24h-5z"/></svg></a>
+
+          <a aria-label="Instagram" href="#" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>      }
+
+        </div>
+
+      </article>    }                  </div>
+
+    </div>
+
+
+
+    <!-- Consulting (1) -->
+
+    <div class="cat"><div class="bar"></div><h3>Consulting</h3></div>    /* Team page content */    .hero-animated .left {
+
+    <div class="team-grid cols-3">
+
+      <article class="team-card">    .team-content {
+
+        <img class="avatar" src="/images/team-charalampos.jpg" alt="Χαράλαμπος Ζυγκιρίδης">
+
+        <h4>Χαράλαμπος Ζυγκιρίδης</h4>      max-width: 1200px;      font-weight: 900;    .hero-animated .stack {
+
+        <p class="role">Σύμβουλος Επιχειρήσεων</p>
+
+        <div class="contact"><a href="tel:+306945793486"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.11 5.18 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.72c.12.9.3 1.77.57 2.6a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.83.27 1.7.45 2.6.57A2 2 0 0 1 22 16.92z"/></svg>694 579 3486</a></div>      margin: 0 auto;
+
+        <div class="social">
+
+          <a aria-label="LinkedIn" href="#" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8.98h5V24H0zM8.5 8.98H13v2.05h.07c.63-1.2 2.17-2.46 4.47-2.46 4.78 0 5.66 3.15 5.66 7.25V24h-5v-6.67c0-1.59-.03-3.63-2.21-3.63-2.21 0-2.55 1.73-2.55 3.52V24h-5z"/></svg></a>      padding: 60px 32px;      letter-spacing: .045em;
+
+          <a aria-label="Instagram" href="#" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>
+
+        </div>    }
+
+      </article>
+
+    </div>          line-height: 1;      display: flex;          <div class="team-member">
+
+
+
+    <!-- Cyber Security (placeholder) -->    .team-header h1 {
+
+    <div class="cat"><div class="bar"></div><h3>Cyber Security</h3></div>
+
+    <div class="team-grid cols-3">      font-size: 2.5rem;      font-size: clamp(1.2rem, 3.8vw, 2.8rem);
+
+      <article class="team-card">
+
+        <img class="avatar" src="/images/placeholder-cyber.jpg" alt="Προσθήκη σύντομα">      color: var(--brand);
+
+        <h4>—</h4>
+
+        <p class="role">Προσθήκη σύντομα</p>      margin-bottom: 16px;      text-shadow: 0 0 14px rgba(255,255,255,.22);      flex-direction: column;            <h3>Φορολογικοί Σύμβουλοι</h3>
+
+        <div class="contact"><a href="tel:"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.11 5.18 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.72c.12.9.3 1.77.57 2.6a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.83.27 1.7.45 2.6.57A2 2 0 0 1 22 16.92z"/></svg>—</a></div>
+
+        <div class="social">    }
+
+          <a aria-label="LinkedIn" href="#" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8.98h5V24H0zM8.5 8.98H13v2.05h.07c.63-1.2 2.17-2.46 4.47-2.46 4.78 0 5.66 3.15 5.66 7.25V24h-5v-6.67c0-1.59-.03-3.63-2.21-3.63-2.21 0-2.55 1.73-2.55 3.52V24h-5z"/></svg></a>
+
+          <a aria-label="Instagram" href="#" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>        }
+
+        </div>
+
+      </article>    .team-header p {
+
+    </div>
 
       font-size: 1.2rem;          gap: 0.8rem;            <p>Ειδικοί σε φορολογικά θέματα και νομοθεσία</p>
 
-      color: #666;
+    <!-- Επιχορηγήσεις (placeholder) -->
 
-      margin-bottom: 40px;    .hero-animated .right {
+    <div class="cat"><div class="bar"></div><h3>Επιχορηγήσεις</h3></div>      color: #666;
 
-    }
+    <div class="team-grid cols-3">
 
-          font-weight: 900;      align-items: flex-start;          </div>
+      <article class="team-card">      margin-bottom: 40px;    .hero-animated .right {
 
-    .team-intro {
+        <img class="avatar" src="/images/placeholder-grants.jpg" alt="Προσθήκη σύντομα">
 
-      display: grid;      letter-spacing: .045em;
+        <h4>—</h4>    }
 
-      grid-template-columns: 2fr 1fr;
+        <p class="role">Προσθήκη σύντομα</p>
 
-      gap: 40px;      line-height: 1;      padding: 1.5rem 2.5rem;
+        <div class="contact"><a href="tel:"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.11 5.18 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.72c.12.9.3 1.77.57 2.6a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.83.27 1.7.45 2.6.57A2 2 0 0 1 22 16.92z"/></svg>—</a></div>          font-weight: 900;      align-items: flex-start;          </div>
 
-      margin-bottom: 60px;
+        <div class="social">
 
-    }      font-size: clamp(1.2rem, 3.8vw, 2.8rem);
+          <a aria-label="LinkedIn" href="#" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8.98h5V24H0zM8.5 8.98H13v2.05h.07c.63-1.2 2.17-2.46 4.47-2.46 4.78 0 5.66 3.15 5.66 7.25V24h-5v-6.67c0-1.59-.03-3.63-2.21-3.63-2.21 0-2.55 1.73-2.55 3.52V24h-5z"/></svg></a>    .team-intro {
 
-    
+          <a aria-label="Instagram" href="#" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>
 
-    .team-intro p {      min-width: 8ch;      max-width: min(1200px, 92vw);          <div class="team-member">
+        </div>      display: grid;      letter-spacing: .045em;
 
-      line-height: 1.7;
+      </article>
 
-      margin-bottom: 20px;      text-align: left;
+    </div>      grid-template-columns: 2fr 1fr;
 
-    }
 
-          color: #e8f6ff;    }            <h3>Ειδικοί Κυβερνοασφάλειας</h3>
 
-    .team-quote {
+    <!-- Social Media Management (1) -->      gap: 40px;      line-height: 1;      padding: 1.5rem 2.5rem;
 
-      background: #f8fafc;    }
+    <div class="cat"><div class="bar"></div><h3>Social Media Management</h3></div>
 
-      padding: 30px;
+    <div class="team-grid cols-3">      margin-bottom: 60px;
 
-      border-radius: 12px;                    <p>Προστασία των δεδομένων σας είναι προτεραιότητά μας</p>
+      <article class="team-card">
 
-      border-left: 4px solid var(--brand);
+        <img class="avatar" src="/images/team-sotiris.jpg" alt="Σωτήρης Θυμιανίδης">    }      font-size: clamp(1.2rem, 3.8vw, 2.8rem);
 
-    }    .hero-animated .flip {
+        <h4>Σωτήρης Θυμιανίδης</h4>
 
-    
+        <p class="role">Social Media Expert</p>    
 
-    .team-quote .quote-text {      display: inline-block;    .hero-animated .headline {          </div>
+        <div class="contact"><a href="tel:+306978424022"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.11 5.18 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.72c.12.9.3 1.77.57 2.6a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.83.27 1.7.45 2.6.57A2 2 0 0 1 22 16.92z"/></svg>697 842 4022</a></div>
 
-      font-size: 1.1rem;
+        <div class="social">    .team-intro p {      min-width: 8ch;      max-width: min(1200px, 92vw);          <div class="team-member">
 
-      font-weight: 600;      transform-origin: 50% 80%;
+          <a aria-label="LinkedIn" href="#" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8.98h5V24H0zM8.5 8.98H13v2.05h.07c.63-1.2 2.17-2.46 4.47-2.46 4.78 0 5.66 3.15 5.66 7.25V24h-5v-6.67c0-1.59-.03-3.63-2.21-3.63-2.21 0-2.55 1.73-2.55 3.52V24h-5z"/></svg></a>
 
-      color: var(--brand);
+          <a aria-label="Instagram" href="#" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>      line-height: 1.7;
 
-      margin-bottom: 15px;      -webkit-backface-visibility: hidden;      font-weight: 900;
+        </div>
 
-    }
+      </article>      margin-bottom: 20px;      text-align: left;
 
-          backface-visibility: hidden;
-
-    .team-quote .quote-caption {
-
-      color: #666;      transform-style: preserve-3d;      letter-spacing: .045em;          <div class="team-member">
-
-      font-size: 1rem;
-
-    }      will-change: transform, opacity;
-
-    
-
-    .team-grid {    }      line-height: 1.05;            <h3>Digital Marketing Experts</h3>
-
-      display: grid;
-
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));    
-
-      gap: 30px;
-
-      margin-top: 40px;    .hero-animated .flip.enter {      text-align: left;            <p>Προώθηση της επιχείρησής σας στο διαδίκτυο</p>
+    </div>
 
     }
 
-          animation: flipIn .7s cubic-bezier(.2,.8,.2,1) forwards;
+    <!-- Σύμβουλος Μηχανικός & Επιχορηγήσεις (1) -->
 
-    .team-member {
+    <div class="cat"><div class="bar"></div><h3>Σύμβουλος Μηχανικός & Επιχορηγήσεις</h3></div>          color: #e8f6ff;    }            <h3>Ειδικοί Κυβερνοασφάλειας</h3>
 
+    <div class="team-grid cols-3">
+
+      <article class="team-card">    .team-quote {
+
+        <img class="avatar" src="/images/team-avramidis.jpg" alt="Αναστάσιος Αβραμίδης">
+
+        <h4>Αναστάσιος Αβραμίδης</h4>      background: #f8fafc;    }
+
+        <p class="role">Αρχιτέκτονας Μηχανικός</p>
+
+        <div class="contact"><a href="tel:+306940420695"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.11 5.18 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.72c.12.9.3 1.77.57 2.6a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.83.27 1.7.45 2.6.57A2 2 0 0 1 22 16.92z"/></svg>694 042 0695</a></div>      padding: 30px;
+
+        <div class="social">
+
+          <a aria-label="LinkedIn" href="#" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8.98h5V24H0zM8.5 8.98H13v2.05h.07c.63-1.2 2.17-2.46 4.47-2.46 4.78 0 5.66 3.15 5.66 7.25V24h-5v-6.67c0-1.59-.03-3.63-2.21-3.63-2.21 0-2.55 1.73-2.55 3.52V24h-5z"/></svg></a>      border-radius: 12px;                    <p>Προστασία των δεδομένων σας είναι προτεραιότητά μας</p>
+
+          <a aria-label="Instagram" href="#" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>
+
+        </div>      border-left: 4px solid var(--brand);
+
+      </article>
+
+    </div>    }    .hero-animated .flip {
+
+
+
+  </main>    
+
+
+
+  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>    .team-quote .quote-text {      display: inline-block;    .hero-animated .headline {          </div>
+
+  
+
+  <script src="/js/cookie-consent.js"></script>      font-size: 1.1rem;
+
+  <script src="/js/chat-widget.js"></script>
+
+  <script>      font-weight: 600;      transform-origin: 50% 80%;
+
+    // Hero animation controller
+
+    (function(){      color: var(--brand);
+
+      const headline = document.getElementById('headline');
+
+      const flipEl = document.getElementById('flip');      margin-bottom: 15px;      -webkit-backface-visibility: hidden;      font-weight: 900;
+
+      if (!headline || !flipEl) return;
+
+          }
+
+      const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+                backface-visibility: hidden;
+
+      function flipTo(text) {
+
+        flipEl.classList.remove('enter');    .team-quote .quote-caption {
+
+        void flipEl.offsetWidth;
+
+        flipEl.textContent = text;      color: #666;      transform-style: preserve-3d;      letter-spacing: .045em;          <div class="team-member">
+
+        flipEl.classList.add('enter');
+
+      }      font-size: 1rem;
+
+      
+
+      (async function run(){    }      will-change: transform, opacity;
+
+        headline.textContent = 'NERALLY';
+
+        await wait(1000);    
+
+        headline.innerHTML = 'N' + '<span class="gap g1"></span>' + 'ER' + '<span class="gap g2"></span>' + 'ALLY';
+
+        await wait(1200);    .team-grid {    }      line-height: 1.05;            <h3>Digital Marketing Experts</h3>
+
+        headline.querySelector('.g1').innerHTML = '<span class="rise">EW&nbsp;</span>';
+
+        await wait(500);      display: grid;
+
+        headline.querySelector('.g2').innerHTML = '<span class="rise">A&nbsp;</span>';
+
+        await wait(1200);      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));    
+
+        headline.innerHTML = '<b>NEW ERA</b> ALLY';
+
+              gap: 30px;
+
+        const words = ['TEAM','ΟΜΑΔΑ','EXPERTS','ΣΥΜΒΟΥΛΟΙ','CONSULTING','ΣΥΝΕΡΓΑΣΙΑ'];
+
+        let i = 0;      margin-top: 40px;    .hero-animated .flip.enter {      text-align: left;            <p>Προώθηση της επιχείρησής σας στο διαδίκτυο</p>
+
+        flipTo(words[i++ % words.length]);
+
+        setInterval(() => flipTo(words[i++ % words.length]), 1900);    }
+
+      })();
+
+    })();          animation: flipIn .7s cubic-bezier(.2,.8,.2,1) forwards;
+
+  </script>
+
+</body>    .team-member {
+
+</html>
       background: white;    }      font-size: clamp(1.8rem, 5.5vw, 3.5rem);          </div>
 
       padding: 30px;
