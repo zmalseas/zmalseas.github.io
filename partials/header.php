@@ -62,6 +62,11 @@
       <img src="/images/logo.png" alt="Nerally logo" />
       <span class="title">Nerally</span>
     </a>
+    <button class="overlay-close" aria-label="Κλείσιμο μενού" title="Κλείσιμο">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
   </div>
 
   <div class="menu-wrap">

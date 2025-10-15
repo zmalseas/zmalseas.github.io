@@ -120,6 +120,15 @@ class NavigationManager {
         }
       });
 
+      // Close menu with the header close button (X)
+      const closeBtn = overlay.querySelector('.overlay-close');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          this.closeMobileMenu();
+        });
+      }
+
       // Handle submenu toggles with auto-scroll into view
       overlay.querySelectorAll('.menu-item .menu-toggle').forEach(btn => {
         btn.addEventListener('click', (e) => {
