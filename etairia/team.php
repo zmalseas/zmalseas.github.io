@@ -1,36 +1,36 @@
-<!DOCTYPE html><!DOCTYPE html><!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html><!DOCTYPE html><!DOCTYPE html>
 
 <html lang="el">
 
-<head><html lang="el"><html lang="el">
+<head><html lang="el">
 
   <meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><head><head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><head><html lang="el"><html lang="el">
 
   <title>Ομάδα — Nerally</title>
 
-  <link rel="icon" type="image/png" href="../images/logo.png" />  <meta charset="UTF-8">  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="../images/logo.png" />  <meta charset="UTF-8">
 
   <link rel="stylesheet" href="../main.css">
 
-  <link rel="stylesheet" href="/css/cookie-consent.css">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/cookie-consent.css">  <meta name="viewport" content="width=device-width, initial-scale=1.0"><head><head>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <title>Ομάδα — Nerally</title>  <title>Η Ομάδα μας - Nerally</title>
+    <title>Ομάδα — Nerally</title>
 
   <style>
 
-    /* Hero Section - Exact copy from company.php */  <link rel="icon" type="image/png" href="../images/logo.png" />  <link rel="icon" type="image/png" href="../images/logo.png" />
+    /* Hero Section - Copy από company.php */  <link rel="icon" type="image/png" href="../images/logo.png" />  <meta charset="UTF-8">  <meta charset="UTF-8">
 
     .hero-animated {
 
-      height: 170px;  <link rel="stylesheet" href="../main.css">  <link rel="stylesheet" href="../main.css">
+      height: 170px;  <link rel="stylesheet" href="../main.css">
 
       background: #000;
 
-      color: #f6f8fb;  <link rel="stylesheet" href="/css/cookie-consent.css">  <link rel="stylesheet" href="/css/cookie-consent.css">
+      color: #f6f8fb;  <link rel="stylesheet" href="/css/cookie-consent.css">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, "Helvetica Neue", Arial;
 
@@ -38,31 +38,31 @@
 
       position: sticky;
 
-      top: 0;    
+      top: 0;    <title>Ομάδα — Nerally</title>  <title>Η Ομάδα μας - Nerally</title>
 
       z-index: 50;
 
-      border-bottom: 1px solid #333;  <style>  <!-- GTM loads via cookie-consent.js after analytics consent -->
+      border-bottom: 1px solid #333;  <style>
 
     }
 
-    /* Hero Section - Exact copy from company.php */</head>
+    /* Hero Section - Exact copy from company.php */  <link rel="icon" type="image/png" href="../images/logo.png" />  <link rel="icon" type="image/png" href="../images/logo.png" />
 
     .hero-animated .stage {
 
-      position: relative;    .hero-animated {<body>
+      position: relative;    .hero-animated {
 
       z-index: 1;
 
-      height: 100%;      height: 170px;  
+      height: 100%;      height: 170px;  <link rel="stylesheet" href="../main.css">  <link rel="stylesheet" href="../main.css">
 
       display: flex;
 
-      align-items: center;      background: #000;  
+      align-items: center;      background: #000;
 
       justify-content: flex-start;
 
-    }      color: #f6f8fb;  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/header.php'; ?>
+    }      color: #f6f8fb;  <link rel="stylesheet" href="/css/cookie-consent.css">  <link rel="stylesheet" href="/css/cookie-consent.css">
 
     
 
@@ -70,87 +70,87 @@
 
       display: flex;
 
-      flex-direction: column;      overflow: hidden;  <main class="main-content">
+      flex-direction: column;      overflow: hidden;  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
       gap: 0.8rem;
 
-      align-items: flex-start;      position: sticky;    <div class="container">
+      align-items: flex-start;      position: sticky;
 
       padding: 1.5rem 2.5rem;
 
-      max-width: min(1200px, 92vw);      top: 0;      <div class="page-header">
+      max-width: min(1200px, 92vw);      top: 0;    
 
     }
 
-          z-index: 50;        <h1>Η Ομάδα μας</h1>
+          z-index: 50;
 
     .hero-animated .headline {
 
-      font-weight: 900;      border-bottom: 1px solid #333;        <p>Γνωρίστε τους ειδικούς που κάνουν τη διαφορά</p>
+      font-weight: 900;      border-bottom: 1px solid #333;  <style>  <!-- GTM loads via cookie-consent.js after analytics consent -->
 
       letter-spacing: .045em;
 
-      line-height: 1.05;    }      </div>
+      line-height: 1.05;    }
 
       text-align: left;
 
-      font-size: clamp(1.8rem, 5.5vw, 3.5rem);
+      font-size: clamp(1.8rem, 5.5vw, 3.5rem);    /* Hero Section - Exact copy from company.php */</head>
 
       text-shadow: 0 0 24px rgba(255,255,255,.22);
 
-      white-space: nowrap;    .hero-animated .stage {      <div class="content-section">
+      white-space: nowrap;    .hero-animated .stage {
 
     }
 
-          position: relative;        <h2>Έμπειροι Επαγγελματίες</h2>
+          position: relative;    .hero-animated {<body>
 
     .hero-animated .headline b {
 
-      background: linear-gradient(90deg, var(--brand), #3498db);      z-index: 1;        <p>Η ομάδα της Nerally αποτελείται από έμπειρους επαγγελματίες με εξειδίκευση σε διάφορους τομείς:</p>
+      background: linear-gradient(90deg, var(--brand), #3498db);      z-index: 1;
 
       -webkit-background-clip: text;
 
-      -webkit-text-fill-color: transparent;      height: 100%;
+      -webkit-text-fill-color: transparent;      height: 100%;      height: 170px;  
 
       background-clip: text;
 
-    }      display: flex;        <div class="team-grid">
+    }      display: flex;
 
     
 
-    .hero-animated .row {      align-items: center;          <div class="team-member">
+    .hero-animated .row {      align-items: center;      background: #000;  
 
       display: flex;
 
-      align-items: baseline;      justify-content: flex-start;            <h3>Πιστοποιημένοι Λογιστές</h3>
+      align-items: baseline;      justify-content: flex-start;
 
       gap: clamp(.4rem, 1.2vw, .8rem);
 
-      opacity: 1;    }            <p>Με πολυετή εμπειρία στη λογιστική και φορολογία</p>
+      opacity: 1;    }      color: #f6f8fb;  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/header.php'; ?>
 
     }
 
-                  </div>
+        
 
     .hero-animated .left {
 
-      font-weight: 900;    .hero-animated .stack {
+      font-weight: 900;    .hero-animated .stack {      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, "Helvetica Neue", Arial;
 
       letter-spacing: .045em;
 
-      line-height: 1;      display: flex;          <div class="team-member">
+      line-height: 1;      display: flex;
 
       font-size: clamp(1.2rem, 3.8vw, 2.8rem);
 
-      text-shadow: 0 0 14px rgba(255,255,255,.22);      flex-direction: column;            <h3>Φορολογικοί Σύμβουλοι</h3>
+      text-shadow: 0 0 14px rgba(255,255,255,.22);      flex-direction: column;      overflow: hidden;  <main class="main-content">
 
     }
 
-          gap: 0.8rem;            <p>Ειδικοί σε φορολογικά θέματα και νομοθεσία</p>
+          gap: 0.8rem;
 
     .hero-animated .right {
 
-      font-weight: 900;      align-items: flex-start;          </div>
+      font-weight: 900;      align-items: flex-start;      position: sticky;    <div class="container">
 
       letter-spacing: .045em;
 
@@ -158,103 +158,103 @@
 
       font-size: clamp(1.2rem, 3.8vw, 2.8rem);
 
-      min-width: 8ch;      max-width: min(1200px, 92vw);          <div class="team-member">
+      min-width: 8ch;      max-width: min(1200px, 92vw);      top: 0;      <div class="page-header">
 
       text-align: left;
 
-      color: #e8f6ff;    }            <h3>Ειδικοί Κυβερνοασφάλειας</h3>
+      color: #e8f6ff;    }
 
     }
 
-                    <p>Προστασία των δεδομένων σας είναι προτεραιότητά μας</p>
+              z-index: 50;        <h1>Η Ομάδα μας</h1>
 
     .hero-animated .flip {
 
-      display: inline-block;    .hero-animated .headline {          </div>
+      display: inline-block;    .hero-animated .headline {
 
       transform-origin: 50% 80%;
 
-      -webkit-backface-visibility: hidden;      font-weight: 900;
+      -webkit-backface-visibility: hidden;      font-weight: 900;      border-bottom: 1px solid #333;        <p>Γνωρίστε τους ειδικούς που κάνουν τη διαφορά</p>
 
       backface-visibility: hidden;
 
-      transform-style: preserve-3d;      letter-spacing: .045em;          <div class="team-member">
+      transform-style: preserve-3d;      letter-spacing: .045em;
 
       will-change: transform, opacity;
 
-    }      line-height: 1.05;            <h3>Digital Marketing Experts</h3>
+    }      line-height: 1.05;    }      </div>
 
     
 
-    .hero-animated .flip.enter {      text-align: left;            <p>Προώθηση της επιχείρησής σας στο διαδίκτυο</p>
+    .hero-animated .flip.enter {      text-align: left;
 
       animation: flipIn .7s cubic-bezier(.2,.8,.2,1) forwards;
 
-    }      font-size: clamp(1.8rem, 5.5vw, 3.5rem);          </div>
+    }      font-size: clamp(1.8rem, 5.5vw, 3.5rem);
 
     
 
-    @keyframes flipIn {      text-shadow: 0 0 24px rgba(255,255,255,.22);        </div>
+    @keyframes flipIn {      text-shadow: 0 0 24px rgba(255,255,255,.22);
 
       0% { transform: rotateX(90deg); opacity: 0; filter: blur(6px); }
 
-      60% { opacity: 1; }      white-space: nowrap;
+      60% { opacity: 1; }      white-space: nowrap;    .hero-animated .stage {      <div class="content-section">
 
       100% { transform: rotateX(0); opacity: 1; filter: blur(0); }
 
-    }    }        <h2>Η Φιλοσοφία μας</h2>
+    }    }
 
 
 
-    .hero-animated .gap {            <p>Πιστεύουμε στη συνεχή εκπαίδευση και στην ανάπτυξη των δεξιοτήτων της ομάδας μας, ώστε να μπορούμε να παρέχουμε πάντα τις καλύτερες λύσεις στους πελάτες μας.</p>
+    .hero-animated .gap {          position: relative;        <h2>Έμπειροι Επαγγελματίες</h2>
 
       display: inline-block;
 
-      width: 0;    .hero-animated .headline b {      </div>
+      width: 0;    .hero-animated .headline b {
 
       vertical-align: baseline;
 
-    }      background: linear-gradient(90deg, var(--brand), #3498db);    </div>
+    }      background: linear-gradient(90deg, var(--brand), #3498db);      z-index: 1;        <p>Η ομάδα της Nerally αποτελείται από έμπειρους επαγγελματίες με εξειδίκευση σε διάφορους τομείς:</p>
 
     
 
-    .hero-animated .gap.g1 { width: 3ch; }      -webkit-background-clip: text;  </main>
+    .hero-animated .gap.g1 { width: 3ch; }      -webkit-background-clip: text;
 
     .hero-animated .gap.g2 { width: 2ch; }
 
-          -webkit-text-fill-color: transparent;
+          -webkit-text-fill-color: transparent;      height: 100%;
 
     .hero-animated .rise {
 
-      display: inline-block;      background-clip: text;  <div id="site-footer"></div>
+      display: inline-block;      background-clip: text;
 
       transform: translateY(.9em);
 
-      opacity: 0;    }    
+      opacity: 0;    }      display: flex;        <div class="team-grid">
 
       animation: riseIn .7s ease forwards;
 
-    }      <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>
+    }    
 
     
 
-    @keyframes riseIn {    .hero-animated .row {
+    @keyframes riseIn {    .hero-animated .row {      align-items: center;          <div class="team-member">
 
       to { transform: translateY(0); opacity: 1; }
 
-    }      display: flex;    <script src="/js/cookie-consent.js"></script>
+    }      display: flex;
 
 
 
-    @media (max-width: 768px) {      align-items: baseline;    <script src="../app.js"></script>
+    @media (max-width: 768px) {      align-items: baseline;      justify-content: flex-start;            <h3>Πιστοποιημένοι Λογιστές</h3>
 
       .hero-animated {
 
-        height: 120px;      gap: clamp(.4rem, 1.2vw, .8rem);</body>
+        height: 120px;      gap: clamp(.4rem, 1.2vw, .8rem);
 
       }
 
-      .hero-animated .stack {      opacity: 1;</html>
+      .hero-animated .stack {      opacity: 1;    }            <p>Με πολυετή εμπειρία στη λογιστική και φορολογία</p>
 
         padding: 1rem 1.5rem;
 
@@ -262,115 +262,487 @@
 
       }
 
-      .hero-animated .headline {    
+    }                  </div>
 
-        font-size: clamp(1.4rem, 4.5vw, 2.5rem);
 
-      }    .hero-animated .left {
 
-      .hero-animated .left,
+    /* Team page content */    .hero-animated .left {
 
-      .hero-animated .right {      font-weight: 900;
+    .team-content {
 
-        font-size: clamp(1rem, 3.2vw, 2rem);
+      max-width: 1200px;      font-weight: 900;    .hero-animated .stack {
 
-      }      letter-spacing: .045em;
+      margin: 0 auto;
+
+      padding: 60px 32px;      letter-spacing: .045em;
 
     }
 
-      line-height: 1;
+          line-height: 1;      display: flex;          <div class="team-member">
 
-    /* Team page styling - adapted from provided HTML with our colors */      font-size: clamp(1.2rem, 3.8vw, 2.8rem);
+    .team-header h1 {
 
-    .team-page .main-content { margin-top: 0; }      text-shadow: 0 0 14px rgba(255,255,255,.22);
+      font-size: 2.5rem;      font-size: clamp(1.2rem, 3.8vw, 2.8rem);
+
+      color: var(--brand);
+
+      margin-bottom: 16px;      text-shadow: 0 0 14px rgba(255,255,255,.22);      flex-direction: column;            <h3>Φορολογικοί Σύμβουλοι</h3>
+
+    }
 
         }
 
-    .wrap {    
+    .team-header p {
 
-      max-width: 1140px;    .hero-animated .right {
+      font-size: 1.2rem;          gap: 0.8rem;            <p>Ειδικοί σε φορολογικά θέματα και νομοθεσία</p>
 
-      margin: 0 auto;      font-weight: 900;
+      color: #666;
 
-      padding: 56px 20px 96px;      letter-spacing: .045em;
+      margin-bottom: 40px;    .hero-animated .right {
 
-      background: var(--bg);      line-height: 1;
+    }
 
-      color: var(--ink);      font-size: clamp(1.2rem, 3.8vw, 2.8rem);
+          font-weight: 900;      align-items: flex-start;          </div>
 
-    }      min-width: 8ch;
+    .team-intro {
+
+      display: grid;      letter-spacing: .045em;
+
+      grid-template-columns: 2fr 1fr;
+
+      gap: 40px;      line-height: 1;      padding: 1.5rem 2.5rem;
+
+      margin-bottom: 60px;
+
+    }      font-size: clamp(1.2rem, 3.8vw, 2.8rem);
+
+    
+
+    .team-intro p {      min-width: 8ch;      max-width: min(1200px, 92vw);          <div class="team-member">
+
+      line-height: 1.7;
+
+      margin-bottom: 20px;      text-align: left;
+
+    }
+
+          color: #e8f6ff;    }            <h3>Ειδικοί Κυβερνοασφάλειας</h3>
+
+    .team-quote {
+
+      background: #f8fafc;    }
+
+      padding: 30px;
+
+      border-radius: 12px;                    <p>Προστασία των δεδομένων σας είναι προτεραιότητά μας</p>
+
+      border-left: 4px solid var(--brand);
+
+    }    .hero-animated .flip {
+
+    
+
+    .team-quote .quote-text {      display: inline-block;    .hero-animated .headline {          </div>
+
+      font-size: 1.1rem;
+
+      font-weight: 600;      transform-origin: 50% 80%;
+
+      color: var(--brand);
+
+      margin-bottom: 15px;      -webkit-backface-visibility: hidden;      font-weight: 900;
+
+    }
+
+          backface-visibility: hidden;
+
+    .team-quote .quote-caption {
+
+      color: #666;      transform-style: preserve-3d;      letter-spacing: .045em;          <div class="team-member">
+
+      font-size: 1rem;
+
+    }      will-change: transform, opacity;
+
+    
+
+    .team-grid {    }      line-height: 1.05;            <h3>Digital Marketing Experts</h3>
+
+      display: grid;
+
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));    
+
+      gap: 30px;
+
+      margin-top: 40px;    .hero-animated .flip.enter {      text-align: left;            <p>Προώθηση της επιχείρησής σας στο διαδίκτυο</p>
+
+    }
+
+          animation: flipIn .7s cubic-bezier(.2,.8,.2,1) forwards;
+
+    .team-member {
+
+      background: white;    }      font-size: clamp(1.8rem, 5.5vw, 3.5rem);          </div>
+
+      padding: 30px;
+
+      border-radius: 12px;    
+
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+      text-align: center;    @keyframes flipIn {      text-shadow: 0 0 24px rgba(255,255,255,.22);        </div>
+
+    }
+
+          0% { transform: rotateX(90deg); opacity: 0; filter: blur(6px); }
+
+    .team-member img {
+
+      width: 120px;      60% { opacity: 1; }      white-space: nowrap;
+
+      height: 120px;
+
+      border-radius: 50%;      100% { transform: rotateX(0); opacity: 1; filter: blur(0); }
+
+      margin-bottom: 20px;
+
+      object-fit: cover;    }    }        <h2>Η Φιλοσοφία μας</h2>
+
+    }
+
+    
+
+    .team-member h3 {
+
+      font-size: 1.3rem;    .hero-animated .gap {            <p>Πιστεύουμε στη συνεχή εκπαίδευση και στην ανάπτυξη των δεξιοτήτων της ομάδας μας, ώστε να μπορούμε να παρέχουμε πάντα τις καλύτερες λύσεις στους πελάτες μας.</p>
+
+      color: var(--brand);
+
+      margin-bottom: 8px;      display: inline-block;
+
+    }
+
+          width: 0;    .hero-animated .headline b {      </div>
+
+    .team-member .role {
+
+      color: #666;      vertical-align: baseline;
+
+      margin-bottom: 15px;
+
+    }    }      background: linear-gradient(90deg, var(--brand), #3498db);    </div>
+
+    
+
+    .team-member .contact a {    
+
+      display: inline-block;
+
+      background: var(--brand);    .hero-animated .gap.g1 { width: 3ch; }      -webkit-background-clip: text;  </main>
+
+      color: white;
+
+      padding: 8px 16px;    .hero-animated .gap.g2 { width: 2ch; }
+
+      text-decoration: none;
+
+      border-radius: 6px;          -webkit-text-fill-color: transparent;
+
+      margin-top: 10px;
+
+    }    .hero-animated .rise {
+
+    
+
+    @media (max-width: 900px) {      display: inline-block;      background-clip: text;  <div id="site-footer"></div>
+
+      .team-intro {
+
+        grid-template-columns: 1fr;      transform: translateY(.9em);
+
+        gap: 30px;
+
+      }      opacity: 0;    }    
+
+    }
+
+  </style>      animation: riseIn .7s ease forwards;
+
+</head>
+
+<body>    }      <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>
+
+  
+
+  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/header.php'; ?>    
+
+
+
+  <!-- Hero Section -->    @keyframes riseIn {    .hero-animated .row {
+
+  <div class="hero-animated">
+
+    <main class="stage">      to { transform: translateY(0); opacity: 1; }
+
+      <div class="stack">
+
+        <div id="headline" class="headline"></div>    }      display: flex;    <script src="/js/cookie-consent.js"></script>
+
+        <div class="row">
+
+          <div class="left">NERA</div>
+
+          <div class="right"><span id="flip" class="flip">LLY</span></div>
+
+        </div>    @media (max-width: 768px) {      align-items: baseline;    <script src="../app.js"></script>
+
+      </div>
+
+    </main>      .hero-animated {
+
+  </div>
+
+        height: 120px;      gap: clamp(.4rem, 1.2vw, .8rem);</body>
+
+  <!-- Main Content -->
+
+  <main class="team-content">      }
+
+    <div class="team-header">
+
+      <h1>Ομάδα</h1>      .hero-animated .stack {      opacity: 1;</html>
+
+      <p>Γνωρίστε τους ανθρώπους που κάνουν τη διαφορά</p>
+
+    </div>        padding: 1rem 1.5rem;
+
+
+
+    <div class="team-intro">        gap: 0.6rem;    }
+
+      <div>
+
+        <p>Στη Nerally, πιστεύουμε πως η επιτυχία μιας επιχείρησης εξαρτάται από τους ανθρώπους που βρίσκονται γύρω της. Για αυτό και η δική μας ομάδα αποτελεί την καρδιά της φιλοσοφίας μας.</p>      }
+
+        <p>Είμαστε μια ομάδα επαγγελματιών που προερχόμαστε από διαφορετικούς κλάδους, φέρνοντας μαζί μας εμπειρία, γνώση και εξειδίκευση — αλλά πάνω απ' όλα, κοινό όραμα.</p>
+
+        <p>Ο καθένας μας έχει διανύσει μια πορεία μέσα στον χώρο του: άλλοι στην επιχειρηματική στρατηγική, άλλοι στο digital marketing, στα οικονομικά, στη νομική καθοδήγηση, στην οργάνωση ή στο σχεδιασμό επιχειρησιακών διαδικασιών.</p>      .hero-animated .headline {    
+
+      </div>
+
+              font-size: clamp(1.4rem, 4.5vw, 2.5rem);
+
+      <div class="team-quote">
+
+        <div class="quote-text">«Πίσω από κάθε επιχείρηση που εξελίσσεται, υπάρχει μια ομάδα που πιστεύει σε αυτήν.»</div>      }    .hero-animated .left {
+
+        <div class="quote-caption">Η επιτυχία δεν είναι ατομική — είναι συλλογική.</div>
+
+      </div>      .hero-animated .left,
+
+    </div>
+
+      .hero-animated .right {      font-weight: 900;
+
+    <h2 style="color: var(--brand); font-size: 2rem; margin-bottom: 20px;">Τα μέλη μας</h2>
+
+        font-size: clamp(1rem, 3.2vw, 2rem);
+
+    <div class="team-grid">
+
+      <div class="team-member">      }      letter-spacing: .045em;
+
+        <img src="/images/team-xristos.jpg" alt="Χρήστος Γκουτούλας">
+
+        <h3>Χρήστος Γκουτούλας</h3>    }
+
+        <p class="role">Λογιστής – Φοροτεχνικός</p>
+
+        <div class="contact">      line-height: 1;
+
+          <a href="tel:+306946365798">📞 694 636 5798</a>
+
+        </div>    /* Team page styling - adapted from provided HTML with our colors */      font-size: clamp(1.2rem, 3.8vw, 2.8rem);
+
+      </div>
+
+    .team-page .main-content { margin-top: 0; }      text-shadow: 0 0 14px rgba(255,255,255,.22);
+
+      <div class="team-member">
+
+        <img src="/images/team-aris.jpg" alt="Άρης Χαραλαμπίδης">        }
+
+        <h3>Άρης Χαραλαμπίδης</h3>
+
+        <p class="role">Λογιστής – Φοροτεχνικός</p>    .wrap {    
+
+        <div class="contact">
+
+          <a href="tel:+30697400944">📞 697 400 944</a>      max-width: 1140px;    .hero-animated .right {
+
+        </div>
+
+      </div>      margin: 0 auto;      font-weight: 900;
+
+
+
+      <div class="team-member">      padding: 56px 20px 96px;      letter-spacing: .045em;
+
+        <img src="/images/team-ioannis.jpg" alt="Ιωάννης Λάμπης">
+
+        <h3>Ιωάννης Λαμπής</h3>      background: var(--bg);      line-height: 1;
+
+        <p class="role">Μισθοδοσία – Εργατικά</p>
+
+        <div class="contact">      color: var(--ink);      font-size: clamp(1.2rem, 3.8vw, 2.8rem);
+
+          <a href="tel:+306951302516">📞 695 130 2516</a>
+
+        </div>    }      min-width: 8ch;
+
+      </div>
 
           text-align: left;
 
-    .eyebrow {      color: #e8f6ff;
+      <div class="team-member">
 
-      color: var(--brand);    }
+        <img src="/images/team-charalampos.jpg" alt="Χαράλαμπος Ζυγκιρίδης">    .eyebrow {      color: #e8f6ff;
 
-      font-size: 14px;    
+        <h3>Χαράλαμπος Ζυγκιρίδης</h3>
 
-      font-weight: 600;    .hero-animated .flip {
+        <p class="role">Σύμβουλος Επιχειρήσεων</p>      color: var(--brand);    }
 
-      text-transform: uppercase;      display: inline-block;
+        <div class="contact">
 
-      letter-spacing: 0.1em;      transform-origin: 50% 80%;
+          <a href="tel:+306945793486">📞 694 579 3486</a>      font-size: 14px;    
 
-      margin-bottom: 8px;      -webkit-backface-visibility: hidden;
+        </div>
 
-    }      backface-visibility: hidden;
+      </div>      font-weight: 600;    .hero-animated .flip {
+
+
+
+      <div class="team-member">      text-transform: uppercase;      display: inline-block;
+
+        <img src="/images/team-sotiris.jpg" alt="Σωτήρης Θυμιανίδης">
+
+        <h3>Σωτήρης Θυμιανίδης</h3>      letter-spacing: 0.1em;      transform-origin: 50% 80%;
+
+        <p class="role">Social Media Expert</p>
+
+        <div class="contact">      margin-bottom: 8px;      -webkit-backface-visibility: hidden;
+
+          <a href="tel:+306978424022">📞 697 842 4022</a>
+
+        </div>    }      backface-visibility: hidden;
+
+      </div>
 
           transform-style: preserve-3d;
 
-    .team-title {      will-change: transform, opacity;
+      <div class="team-member">
 
-      font-size: 2rem;    }
+        <img src="/images/team-avramidis.jpg" alt="Αναστάσιος Αβραμίδης">    .team-title {      will-change: transform, opacity;
 
-      line-height: 1.2;    
+        <h3>Αναστάσιος Αβραμίδης</h3>
 
-      color: var(--brand);    .hero-animated .flip.enter {
+        <p class="role">Αρχιτέκτονας Μηχανικός</p>      font-size: 2rem;    }
+
+        <div class="contact">
+
+          <a href="tel:+306940420695">📞 694 042 0695</a>      line-height: 1.2;    
+
+        </div>
+
+      </div>      color: var(--brand);    .hero-animated .flip.enter {
+
+    </div>
 
       margin: 0 0 8px;      animation: flipIn .7s cubic-bezier(.2,.8,.2,1) forwards;
 
+  </main>
+
       font-weight: 800;    }
 
-    }    
+  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>
 
-        @keyframes flipIn {
+      }    
 
-    .lead {      0% { transform: rotateX(90deg); opacity: 0; filter: blur(6px); }
+  <script src="/js/cookie-consent.js"></script>
 
-      font-weight: 600;      60% { opacity: 1; }
+  <script src="/js/chat-widget.js"></script>        @keyframes flipIn {
 
-      margin: 0 0 24px;      100% { transform: rotateX(0); opacity: 1; filter: blur(0); }
+  <script>
 
-      font-size: 18px;    }
+    // Hero animation    .lead {      0% { transform: rotateX(90deg); opacity: 0; filter: blur(6px); }
 
-      line-height: 1.6;
+    (function(){
 
-    }    .hero-animated .gap {
+      const headline = document.getElementById('headline');      font-weight: 600;      60% { opacity: 1; }
 
-          display: inline-block;
+      const flipEl = document.getElementById('flip');
 
-    .section {      width: 0;
+      if (!headline || !flipEl) return;      margin: 0 0 24px;      100% { transform: rotateX(0); opacity: 1; filter: blur(0); }
 
-      margin-top: 48px;      vertical-align: baseline;
+      
 
-    }    }
+      const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));      font-size: 18px;    }
+
+      
+
+      function flipTo(text) {      line-height: 1.6;
+
+        flipEl.classList.remove('enter');
+
+        void flipEl.offsetWidth;    }    .hero-animated .gap {
+
+        flipEl.textContent = text;
+
+        flipEl.classList.add('enter');          display: inline-block;
+
+      }
+
+          .section {      width: 0;
+
+      (async function run(){
+
+        headline.textContent = 'NERALLY';      margin-top: 48px;      vertical-align: baseline;
+
+        await wait(1000);
+
+        headline.innerHTML = 'N' + '<span class="gap g1"></span>' + 'ER' + '<span class="gap g2"></span>' + 'ALLY';    }    }
+
+        await wait(1200);
+
+        headline.querySelector('.g1').innerHTML = '<span class="rise">EW&nbsp;</span>';        
+
+        await wait(500);
+
+        headline.querySelector('.g2').innerHTML = '<span class="rise">A&nbsp;</span>';    .divider {    .hero-animated .gap.g1 { width: 3ch; }
+
+        await wait(1200);
+
+        headline.innerHTML = '<b>NEW ERA</b> ALLY';      height: 3px;    .hero-animated .gap.g2 { width: 2ch; }
 
         
 
-    .divider {    .hero-animated .gap.g1 { width: 3ch; }
+        const words = ['TEAM','ΟΜΑΔΑ','EXPERTS','ΣΥΜΒΟΥΛΟΙ'];      width: 48px;    
 
-      height: 3px;    .hero-animated .gap.g2 { width: 2ch; }
+        let i = 0;
 
-      width: 48px;    
+        flipTo(words[i++ % words.length]);      background: var(--brand);    .hero-animated .rise {
 
-      background: var(--brand);    .hero-animated .rise {
+        setInterval(() => flipTo(words[i++ % words.length]), 1900);
 
-      border-radius: 8px;      display: inline-block;
+      })();      border-radius: 8px;      display: inline-block;
 
-      margin: 0 0 18px;      transform: translateY(.9em);
+    })();
 
-    }      opacity: 0;
+  </script>      margin: 0 0 18px;      transform: translateY(.9em);
+
+</body>
+
+</html>    }      opacity: 0;
 
       animation: riseIn .7s ease forwards;
 
