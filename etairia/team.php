@@ -160,10 +160,35 @@
     .badge{display:inline-block;margin-top:8px;padding:4px 8px;border-radius:999px;background:#f1f6ff;border:1px solid #dbeafe;font-size:.8rem}
     .profile-link{display:inline-block;margin-top:10px;font-size:.92rem;color:var(--brand);text-decoration:none;font-weight:700}
 
-    /* Category headers */
-    .cat{display:flex;align-items:center;gap:10px;margin:34px 0 14px}
-    .cat h3{margin:0;font-size:1.2rem;color:var(--brand)}
-    .cat .bar{height:3px;width:32px;background:var(--brand);border-radius:8px}
+    /* Category headers - styled like company.php h2 */
+    @keyframes fadeSlideIn {
+      from {opacity:0; transform: translateY(20px);}
+      to {opacity:1; transform: translateY(0);}
+    }
+    .cat {
+      margin: 48px 0 20px;
+    }
+    .cat h3 {
+      margin: 0 0 20px;
+      font-size: clamp(24px, 2.4vw, 34px);
+      line-height: 1.15;
+      color: var(--brand);
+      position: relative;
+      opacity: 0;
+      animation: fadeSlideIn 0.8s ease forwards;
+    }
+    .cat h3::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--brand);
+      margin-top: 10px;
+      border-radius: 4px;
+    }
+    .cat .bar {
+      display: none; /* Αφαιρούμε το παλιό bar element */
+    }
 
     /* Modal */
     .modal{display:none;position:fixed;inset:0;background:rgba(2,6,23,.6);align-items:center;justify-content:center;z-index:50;padding:20px}
@@ -215,7 +240,18 @@
 
   <!-- Main Content -->
   <main class="wrap">
-    <h2>Η ομάδα μας</h2>
+    <h2 style="margin: 0 0 20px; font-size: clamp(26px, 2.6vw, 38px); line-height: 1.15; color: var(--brand); position: relative; opacity: 0; animation: fadeSlideIn 0.8s ease forwards;">Η ομάδα μας</h2>
+    <style>
+      h2::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: var(--brand);
+        margin-top: 10px;
+        border-radius: 4px;
+      }
+    </style>
     <p class="lead">Στη Nerally, πιστεύουμε πως η επιτυχία μιας επιχείρησης εξαρτάται από τους ανθρώπους που βρίσκονται γύρω της. Για αυτό και η δική μας ομάδα αποτελεί την καρδιά της φιλοσοφίας μας. Είμαστε μια ομάδα επαγγελματιών που προερχόμαστε από διαφορετικούς κλάδους, φέρνοντας μαζί μας εμπειρία, γνώση και εξειδίκευση — αλλά πάνω απ' όλα, κοινό όραμα.</p>
 
     <!-- Λογιστική (3 μέλη) -->
