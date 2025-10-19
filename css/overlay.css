@@ -46,7 +46,17 @@ body.menu-open .chat-widget {
 .menu-sub a.clicked{color:var(--brand)}
 .menu-sub a.clicked .sm-arrow{opacity:1;transform:translateX(0)}
 
-/* Overlay footer removed per request */
+/* Overlay footer completely hidden */
+.overlay .overlay-footer,
+.overlay-footer,
+.overlay .footer,
+.overlay footer {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
 
 /* Mobile scrolling enhancements */
 @media (max-width: 1100px) {
