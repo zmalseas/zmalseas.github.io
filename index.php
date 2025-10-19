@@ -244,7 +244,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </section>
 
-    <!-- Services Section - Black -->
+    <!-- Services Section - Modern Cards -->
     <section class="services-section" id="services">
       <div class="container">
         <div class="services-header">
@@ -252,125 +252,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <p>Ολοκληρωμένες λύσεις για την ανάπτυξη της επιχείρησής σας</p>
         </div>
         
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-card-inner">
-              <div class="service-card-front">
-                <div class="flip-trigger">+</div>
-                <div class="service-icon">🏢</div>
-                <h3>Λογιστική Εταιρειών</h3>
-                <a href="/ipiresies/logistiki.php" class="service-more-btn">Περισσότερα</a>
-              </div>
-              <div class="service-card-back">
-                <div class="service-icon">🏢</div>
-                <h3>Λογιστική Εταιρειών</h3>
-                <p>Ολοκληρωμένες λογιστικές υπηρεσίες και φοροσχεδιασμός για επιχειρήσεις που στοχεύουν στην ανάπτυξη.</p>
-                <a href="/ipiresies/logistiki.php" class="service-more-btn">Περισσότερα</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="service-card">
-            <div class="service-card-inner">
-              <div class="service-card-front">
-                <div class="flip-trigger">+</div>
-                <div class="service-icon">👥</div>
-                <h3>Μισθοδοσία</h3>
-                <a href="/ipiresies/misthodosia.php" class="service-more-btn">Περισσότερα</a>
-              </div>
-              <div class="service-card-back">
-                <div class="service-icon">👥</div>
-                <h3>Μισθοδοσία</h3>
-                <p>Διαχείριση μισθοδοσίας και ασφαλιστικών εργασιών για την αποτελεσματική οργάνωση της ομάδας σας.</p>
-                <a href="/ipiresies/misthodosia.php" class="service-more-btn">Περισσότερα</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="service-card">
-            <div class="service-card-inner">
-              <div class="service-card-front">
-                <div class="flip-trigger">+</div>
-                <div class="service-icon">📊</div>
-                <h3>Consulting</h3>
-                <a href="/ipiresies/consulting.php" class="service-more-btn">Περισσότερα</a>
-              </div>
-              <div class="service-card-back">
-                <div class="service-icon">�</div>
-                <h3>Consulting</h3>
-                <p>Στρατηγικός σχεδιασμός και επιχειρηματικά πλάνα για την επίτευξη των στόχων ανάπτυξης.</p>
-                <a href="/ipiresies/consulting.php" class="service-more-btn">Περισσότερα</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="service-card">
-            <div class="service-card-inner">
-              <div class="service-card-front">
-                <div class="flip-trigger">+</div>
-                <div class="service-icon">🎯</div>
-                <h3>Επιχορηγήσεις</h3>
-                <a href="/ipiresies/epixorigiseis.php" class="service-more-btn">Περισσότερα</a>
-              </div>
-              <div class="service-card-back">
-                <div class="service-icon">🎯</div>
-                <h3>Επιχορηγήσεις</h3>
-                <p>Εντοπισμός και αξιοποίηση χρηματοδοτικών προγραμμάτων για την ενίσχυση της επιχείρησής σας.</p>
-                <a href="/ipiresies/epixorigiseis.php" class="service-more-btn">Περισσότερα</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="service-card">
-            <div class="service-card-inner">
-              <div class="service-card-front">
-                <div class="flip-trigger">+</div>
-                <div class="service-icon">�</div>
-                <h3>Social Media Marketing</h3>
-                <a href="/ipiresies/social-media.php" class="service-more-btn">Περισσότερα</a>
-              </div>
-              <div class="service-card-back">
-                <div class="service-icon">�</div>
-                <h3>Social Media Marketing</h3>
-                <p>Στρατηγική διαχείριση social media και δημιουργία περιεχομένου για ψηφιακή ανάπτυξη.</p>
-                <a href="/ipiresies/social-media.php" class="service-more-btn">Περισσότερα</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="service-card">
-            <div class="service-card-inner">
-              <div class="service-card-front">
-                <div class="flip-trigger">+</div>
-                <div class="service-icon">⚙️</div>
-                <h3>Σύμβουλος Μηχανικός</h3>
-                <a href="/ipiresies/symvoulos-mixanikos.php" class="service-more-btn">Περισσότερα</a>
-              </div>
-              <div class="service-card-back">
-                <div class="service-icon">⚙️</div>
-                <h3>Σύμβουλος Μηχανικός</h3>
-                <p>Τεχνική υποστήριξη και συμβουλευτική για μηχανικές και κατασκευαστικές εργασίες.</p>
-                <a href="/ipiresies/symvoulos-mixanikos.php" class="service-more-btn">Περισσότερα</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="service-card">
-            <div class="service-card-inner">
-              <div class="service-card-front">
-                <div class="flip-trigger">+</div>
-                <div class="service-icon">�</div>
-                <h3>Cyber Security</h3>
-                <a href="/ipiresies/cyber-security.php" class="service-more-btn">Περισσότερα</a>
-              </div>
-              <div class="service-card-back">
-                <div class="service-icon">�</div>
-                <h3>Cyber Security</h3>
-                <p>Προστασία ψηφιακών περιουσιακών στοιχείων με σύγχρονες λύσεις κυβερνοασφάλειας.</p>
-                <a href="/ipiresies/cyber-security.php" class="service-more-btn">Περισσότερα</a>
-              </div>
-            </div>
-          </div>
+        <div class="services-grid-new" id="servicesGrid">
         </div>
       </div>
     </section>
@@ -600,35 +482,82 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Cookie Consent Script -->
   <script src="/js/cookie-consent.js"></script>
   
-  <!-- Service Cards Flip Animation Script -->
+  <!-- Modern Service Cards Script -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Get all flip trigger buttons
-      const flipTriggers = document.querySelectorAll('.flip-trigger');
-      
-      flipTriggers.forEach(trigger => {
-        trigger.addEventListener('click', function(e) {
-          e.preventDefault();
+      const services = [
+        { title:'Λογιστική Εταιρειών', icon:'calculator', desc:'Πλήρεις λογιστικές υπηρεσίες για εταιρείες κάθε μεγέθους.', link:'/ipiresies/logistiki.php' },
+        { title:'Μισθοδοσία', icon:'users', desc:'Ολοκληρωμένη διαχείριση μισθοδοσίας για κάθε τύπο επιχείρησης.', link:'/ipiresies/misthodosia.php' },
+        { title:'Consulting', icon:'chart', desc:'Στρατηγική καθοδήγηση και επιχειρηματικές συμβουλές.', link:'/ipiresies/consulting.php' },
+        { title:'Επιχορηγήσεις', icon:'target', desc:'Εύρεση και διαχείριση επιχορηγήσεων για την επιχείρησή σας.', link:'/ipiresies/epixorigiseis.php' },
+        { title:'Social Media Marketing', icon:'share', desc:'Προώθηση στα κοινωνικά δίκτυα για ενίσχυση της παρουσίας σας.', link:'/ipiresies/social-media.php' },
+        { title:'Cyber Security', icon:'shield', desc:'Προστασία δεδομένων και λύσεις κυβερνοασφάλειας.', link:'/ipiresies/cyber-security.php' },
+        { title:'Σύμβουλος Μηχανικός', icon:'wrench', desc:'Τεχνικές μελέτες και ενεργειακές λύσεις από εξειδικευμένους μηχανικούς.', link:'/ipiresies/symvoulos-mixanikos.php' },
+      ];
+
+      const icons = {
+        calculator:`<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="4" y="2" width="16" height="20" rx="2" />
+          <rect x="7" y="5" width="10" height="3" rx="1" />
+          <path d="M8 11h2M8 15h2M12 11h2M12 15h2M16 11h0M16 15h0"/>
+        </svg>`,
+        users:`<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+        chart:`<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></svg>`,
+        target:`<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/><path d="M22 2l-5 5"/></svg>`,
+        share:`<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51 8.59 10.49"/></svg>`,
+        shield:`<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+        wrench:`<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 1 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4z"/></svg>`,
+        arrow:`<svg class="arrow" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 8-8h6"/><polyline points="14 2 18 4 14 6"/></svg>`
+      };
+
+      const grid = document.getElementById('servicesGrid');
+
+      services.forEach((s, i) => {
+        const wrap = document.createElement('div');
+        wrap.className = 'modern-card' + (i === services.length-1 ? ' center-last' : '');
+
+        const inner = document.createElement('div');
+        inner.className = 'inner';
+
+        const front = document.createElement('div');
+        front.className = 'face front';
+        front.innerHTML = `
+          <div class="corner">${icons.arrow}</div>
+          <div class="stack">
+            <div class="icon-wrap">${icons[s.icon]}</div>
+            <div class="title">${s.title}</div>
+          </div>
+          <div class="btn-row"><a class="btn linklike" href="${s.link}" rel="noopener">Περισσότερα →</a></div>
+        `;
+
+        const back = document.createElement('div');
+        back.className = 'face back';
+        back.innerHTML = `
+          <div class="corner">${icons.arrow}</div>
+          <div class="stack">
+            <p class="desc">${s.desc}</p>
+          </div>
+          <div class="btn-row"><a class="btn linklike" href="${s.link}" rel="noopener">Μετάβαση στη σελίδα →</a></div>
+        `;
+
+        inner.appendChild(front);
+        inner.appendChild(back);
+        wrap.appendChild(inner);
+        grid.appendChild(wrap);
+
+        const corners = wrap.querySelectorAll('.corner');
+        corners.forEach(btn => btn.addEventListener('click', (e)=>{
           e.stopPropagation();
-          
-          // Find the parent service card
-          const serviceCard = this.closest('.service-card');
-          if (serviceCard) {
-            // Toggle the flipped state
-            serviceCard.classList.toggle('flipped');
-          }
+          flipExclusive(wrap);
+        }));
+      });
+
+      function flipExclusive(activeCard){
+        document.querySelectorAll('.modern-card .inner').forEach(el => {
+          if(el !== activeCard.querySelector('.inner')) el.classList.remove('flipped');
         });
-      });
-      
-      // Optional: Close card when clicking outside
-      document.addEventListener('click', function(e) {
-        if (!e.target.closest('.service-card')) {
-          // Remove flipped state from all cards when clicking outside
-          document.querySelectorAll('.service-card.flipped').forEach(card => {
-            card.classList.remove('flipped');
-          });
-        }
-      });
+        activeCard.querySelector('.inner').classList.toggle('flipped');
+      }
     });
   </script>
 </body>
