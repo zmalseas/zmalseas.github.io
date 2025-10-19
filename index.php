@@ -93,7 +93,7 @@
             </div>
           </li>
 
-          <li class="nav-item"><a href="arthra/articles.html"><span class="text">Άρθρα</span></a></li>
+          <li class="nav-item"><a href="/arthra/"><span class="text">Άρθρα</span></a></li>
           
           <li class="nav-item dropdown">
             <a href="#"><span class="text">Εφαρμογές</span><span class="caret">▾</span></a>
@@ -148,7 +148,7 @@
         </div>
       </div>
       
-      <a class="menu-toggle" href="arthra/articles.html">Άρθρα</a>
+      <a class="menu-toggle" href="/arthra/">Άρθρα</a>
       
       <div class="menu-item">
         <button class="menu-toggle">Εφαρμογές <span class="exp-caret">›</span></button>
@@ -352,15 +352,14 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
 
             <div class="contact-info-item">
-              <div class="contact-icon">🕒</div>
-              <h4>Ωράριο</h4>
-              <p>Δευτέρα - Παρασκευή<br>09:00 - 18:00</p>
+              <div class="contact-icon">�</div>
+              <h4>Διεύθυνση</h4>
+              <p>Κωνσταντίνου Παλαιολόγου 12<br>Καισαριανή, 16121</p>
             </div>
           </div>
 
           <div class="contact-actions">
             <a href="/epikoinonia/contact.html" class="btn btn-primary">Επικοινωνήστε μαζί μας</a>
-            <a href="#" class="btn btn-secondary">Κλείστε ραντεβού</a>
           </div>
 
           <div class="social-links-section">
