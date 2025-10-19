@@ -590,14 +590,13 @@ main,
   right: 0;
   width: 92px; 
   height: 92px;
-  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 0%);
   clip-path: polygon(100% 0, 50% 0, 100% 50%);
   display: flex; 
   align-items: center; 
   justify-content: center;
   cursor: pointer;
   backdrop-filter: blur(5px);
-  z-index: 10;
 }
 
 .modern-card .corner svg { 
