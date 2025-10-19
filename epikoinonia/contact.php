@@ -270,13 +270,13 @@
               <div style="margin-top: 24px;">
                 <h4 style="font-weight: 600; font-size: 14px; margin-bottom: 12px; color: #374151;">Connect with us</h4>
                 <div style="display: flex; gap: 16px; color: #6b7280;">
-                  <a href="#" aria-label="LinkedIn" style="color: inherit; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#0077B5'" onmouseout="this.style.color='#6b7280'">
+                  <a href="https://www.linkedin.com/company/nerally" aria-label="LinkedIn" style="color: inherit; text-decoration: none; transition: color 0.2s;" target="_blank" rel="noopener noreferrer" onmouseover="this.style.color='#0077B5'" onmouseout="this.style.color='#6b7280'">
                     <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                   </a>
-                  <a href="#" aria-label="Instagram" style="color: inherit; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#E4405F'" onmouseout="this.style.color='#6b7280'">
+                  <a href="https://www.instagram.com/nerally_co/" aria-label="Instagram" style="color: inherit; text-decoration: none; transition: color 0.2s;" target="_blank" rel="noopener noreferrer" onmouseover="this.style.color='#E4405F'" onmouseout="this.style.color='#6b7280'">
                     <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3h10z"/><circle cx="12" cy="12" r="3.5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
                   </a>
-                  <a href="#" aria-label="TikTok" style="color: inherit; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#010101'" onmouseout="this.style.color='#6b7280'">
+                  <a href="https://www.tiktok.com/@nerally_co?lang=el-GR" aria-label="TikTok" style="color: inherit; text-decoration: none; transition: color 0.2s;" target="_blank" rel="noopener noreferrer" onmouseover="this.style.color='#010101'" onmouseout="this.style.color='#6b7280'">
                     <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2c1.1 1.8 3.3 3 5.5 3v3.1c-1.3 0-2.5-.4-3.5-1v7.9a5.5 5.5 0 1 1-5.5-5.5v3a2.5 2.5 0 1 0 2.5 2.5V2z"/></svg>
                   </a>
                 </div>
