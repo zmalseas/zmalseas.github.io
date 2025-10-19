@@ -193,7 +193,7 @@
             </div>
 
             <div class="contact-info-item">
-              <div class="contact-icon">�</div>
+              <div class="contact-icon">📍</div>
               <h4>Διεύθυνση</h4>
               <p>Κωνσταντίνου Παλαιολόγου 12<br>Καισαριανή, 16121</p>
             </div>
