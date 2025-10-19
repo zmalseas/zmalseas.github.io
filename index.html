@@ -59,8 +59,155 @@
 </head>
 <body class="has-fullscreen-hero">
   <!-- GTM noscript fallback omitted intentionally; GTM is injected post-consent by cookie-consent.js -->
-  
-  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/header.php'; ?>
+  <a class="skip-link" href="#main-content">Μετάβαση στο περιεχόμενο</a>
+<header class="site-header">
+  <div class="header-row">
+      <a class="brand" href="/" aria-label="Nerally Home">
+        <img src="images/logo.png" alt="Nerally logo" width="36" height="36" />
+        <span class="name">Nerally</span>
+      </a>
+
+      <nav class="primary" aria-label="Κύρια Πλοήγηση">
+        <ul class="nav-links">
+          <li class="nav-item"><a href="/"><span class="text">Αρχική</span></a></li>
+          
+          <li class="nav-item dropdown">
+            <a href="#"><span class="text">Η Εταιρία</span><span class="caret">▾</span></a>
+            <div class="submenu" role="menu">
+              <a href="etairia/company.html">Εταιρεία <span class="sm-arrow">→</span></a>
+              <a href="etairia/team.html">Ομάδα <span class="sm-arrow">→</span></a>
+              <a href="etairia/join-us.html">Γίνε Μέλος <span class="sm-arrow">→</span></a>
+            </div>
+          </li>
+          
+          <li class="nav-item dropdown">
+            <a href="#"><span class="text">Υπηρεσίες</span><span class="caret">▾</span></a>
+            <div class="submenu" role="menu">
+              <a href="ipiresies/logistiki.php">Λογιστική Εταιρειών <span class="sm-arrow">→</span></a>
+              <a href="ipiresies/misthodosia.php">Μισθοδοσία <span class="sm-arrow">→</span></a>
+              <a href="ipiresies/consulting.php">Consulting <span class="sm-arrow">→</span></a>
+              <a href="ipiresies/epixorigiseis.php">Επιχορηγήσεις <span class="sm-arrow">→</span></a>
+              <a href="ipiresies/social-media.php">Social Media Marketing <span class="sm-arrow">→</span></a>
+              <a href="ipiresies/symvoulos-mixanikos.php" style="white-space: nowrap;">Σύμβουλος Μηχανικός <span class="sm-arrow">→</span></a>
+              <a href="ipiresies/cyber-security.php">Cyber Security <span class="sm-arrow">→</span></a>
+            </div>
+          </li>
+
+          <li class="nav-item"><a href="arthra/articles.html"><span class="text">Άρθρα</span></a></li>
+          
+          <li class="nav-item dropdown">
+            <a href="#"><span class="text">Εφαρμογές</span><span class="caret">▾</span></a>
+            <div class="submenu" role="menu">
+              <a href="efarmoges/rent-tax-calculator.html">Φόρος Ενοικίου <span class="sm-arrow">→</span></a>
+              <a href="efarmoges/income-tax-calculator.html">Φόρος Εισοδήματος <span class="sm-arrow">→</span></a>
+            </div>
+          </li>
+          
+          <li class="nav-item"><a href="epikoinonia/contact.html"><span class="text">Επικοινωνία</span></a></li>
+        </ul>
+
+        <button class="hamburger" aria-label="Άνοιγμα μενού">
+          <span class="bar"></span>
+        </button>
+      </nav>
+  </div>
+</header>
+
+<!-- Mobile overlay menu -->
+<div class="overlay" aria-hidden="true">
+  <div class="overlay-header">
+    <a href="/index.html">
+      <img src="images/logo.png" alt="Nerally logo" />
+      <span class="title">Nerally</span>
+    </a>
+  </div>
+
+  <div class="menu-wrap">
+    <div class="menu-list">
+      <a class="menu-toggle" href="index.html">Αρχική</a>
+      
+      <div class="menu-item">
+        <button class="menu-toggle">Η Εταιρία <span class="exp-caret">›</span></button>
+        <div class="menu-sub">
+          <a href="etairia/company.html">Εταιρεία</a>
+          <a href="etairia/team.html">Ομάδα</a>
+          <a href="etairia/join-us.html">Γίνε Μέλος</a>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <button class="menu-toggle">Υπηρεσίες <span class="exp-caret">›</span></button>
+        <div class="menu-sub">
+          <a href="ipiresies/logistiki.php">Λογιστική Εταιρειών</a>
+          <a href="ipiresies/misthodosia.php">Μισθοδοσία</a>
+          <a href="ipiresies/consulting.php">Consulting</a>
+          <a href="ipiresies/epixorigiseis.php">Επιχορηγήσεις</a>
+          <a href="ipiresies/social-media.php">Social Media Marketing</a>
+          <a href="ipiresies/symvoulos-mixanikos.php" style="white-space: nowrap;">Σύμβουλος Μηχανικός</a>
+          <a href="ipiresies/cyber-security.php">Cyber Security</a>
+        </div>
+      </div>
+      
+      <a class="menu-toggle" href="arthra/articles.html">Άρθρα</a>
+      
+      <div class="menu-item">
+        <button class="menu-toggle">Εφαρμογές <span class="exp-caret">›</span></button>
+        <div class="menu-sub">
+          <a href="efarmoges/rent-tax-calculator.html">Φόρος Ενοικίου</a>
+          <a href="efarmoges/income-tax-calculator.html">Φόρος Εισοδήματος</a>
+        </div>
+      </div>
+      
+      <a class="menu-toggle" href="epikoinonia/contact.html">Επικοινωνία</a>
+    </div>
+    
+    <!-- Footer in overlay -->
+    <div class="overlay-footer">
+      <div class="overlay-footer-content">
+        <div class="legal-links">
+          <a href="/legal/privacy.php" class="legal-link">Πολιτική Απορρήτου</a>
+          <a href="/legal/terms.php" class="legal-link">Όροι Χρήσης</a>
+          <a href="/legal/cookies.php" class="legal-link">Cookies</a>
+        </div>
+        
+        <div class="social-section">
+          <span class="connect-text">Connect with us</span>
+          <div class="social-links">
+            <a href="https://www.tiktok.com/@nerally_co?lang=el-GR" class="social-link tiktok" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="20" height="20">
+                <path fill="currentColor" d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/nerally_co/" class="social-link instagram" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="20" height="20">
+                <path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/company/nerally" class="social-link linkedin" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="20" height="20">
+                <path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="copyright">
+          <p>© <span id="overlay-year"></span> Nerally. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Set year for overlay footer
+document.addEventListener('DOMContentLoaded', function() {
+  const overlayYear = document.getElementById("overlay-year");
+  if (overlayYear) {
+    overlayYear.textContent = new Date().getFullYear();
+  }
+});
+</script>
 
   <main>
     <section class="hero-fullscreen" role="banner" aria-labelledby="hero-title">
@@ -105,11 +252,10 @@
           <p>Ολοκληρωμένες λύσεις για την ανάπτυξη της επιχείρησής σας</p>
         </div>
         
-        <div class="services-grid" id="services-grid">
-          <!-- Service cards will be generated by JavaScript -->
-        </div>
-      </div>
-    </section>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-card-inner">
+              <div class="service-card-front">
                 <div class="flip-trigger">+</div>
                 <div class="service-icon">🏢</div>
                 <h3>Λογιστική Εταιρειών</h3>
@@ -406,11 +552,44 @@
         "name": "Cyber Security",
         "description": "Προστασία των ψηφιακών σας περιουσιακών στοιχείων με σύγχρονες λύσεις κυβερνοασφάλειας"
       }
-    ]
   }
   </script>
 
-  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>
+  <footer class="site-footer">
+  <div class="footer-content">
+      <div class="legal-links">
+        <a href="/legal/privacy.php" class="legal-link">Πολιτική Απορρήτου</a>
+        <a href="/legal/terms.php" class="legal-link">Όροι Χρήσης</a>
+        <a href="/legal/cookies.php" class="legal-link">Cookies</a>
+      </div>
+      
+      <div class="social-section">
+        <span class="connect-text">Connect with us</span>
+        <div class="social-links">
+          <a href="https://www.tiktok.com/@nerally_co?lang=el-GR" class="social-link tiktok" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="20" height="20">
+              <path fill="currentColor" d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/nerally_co/" class="social-link instagram" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="20" height="20">
+              <path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/company/nerally" class="social-link linkedin" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="20" height="20">
+              <path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>© <span id="y"></span> Nerally. All rights reserved.</p>
+      </div>
+  </div>
+  <script>document.getElementById("y").textContent=new Date().getFullYear()</script>
+</footer>
   
   
   <script src="app.js"></script>
@@ -421,83 +600,35 @@
   <!-- Cookie Consent Script -->
   <script src="/js/cookie-consent.js"></script>
   
-  <!-- Service Cards Generation Script -->
+  <!-- Service Cards Flip Animation Script -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const services = [
-        { title:'Λογιστική Εταιρειών', icon:'calculator', desc:'Πλήρεις λογιστικές υπηρεσίες για εταιρείες κάθε μεγέθους.', link:'/ipiresies/logistiki.php' },
-        { title:'Μισθοδοσία', icon:'users', desc:'Ολοκληρωμένη διαχείριση μισθοδοσίας για κάθε τύπο επιχείρησης.', link:'/ipiresies/misthodosia.php' },
-        { title:'Consulting', icon:'chart', desc:'Στρατηγική καθοδήγηση και επιχειρηματικές συμβουλές.', link:'/ipiresies/consulting.php' },
-        { title:'Επιχορηγήσεις', icon:'target', desc:'Εύρεση και διαχείριση επιχορηγήσεων για την επιχείρησή σας.', link:'/ipiresies/epixorigiseis.php' },
-        { title:'Social Media Marketing', icon:'share', desc:'Προώθηση στα κοινωνικά δίκτυα για ενίσχυση της παρουσίας σας.', link:'/ipiresies/social-media.php' },
-        { title:'Cyber Security', icon:'shield', desc:'Προστασία δεδομένων και λύσεις κυβερνοασφάλειας.', link:'/ipiresies/cyber-security.php' },
-        { title:'Σύμβουλος Μηχανικός', icon:'wrench', desc:'Τεχνικές μελέτες και ενεργειακές λύσεις από εξειδικευμένους μηχανικούς.', link:'/ipiresies/symvoulos-mixanikos.php' },
-      ];
-
-      const icons = {
-        calculator:`<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2980b9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="4" y="2" width="16" height="20" rx="2" />
-          <rect x="7" y="5" width="10" height="3" rx="1" />
-          <path d="M8 11h2M8 15h2M12 11h2M12 15h2M16 11h0M16 15h0"/>
-        </svg>`,
-        users:`<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2980b9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
-        chart:`<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2980b9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></svg>`,
-        target:`<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2980b9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/><path d="M22 2l-5 5"/></svg>`,
-        share:`<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2980b9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51 8.59 10.49"/></svg>`,
-        shield:`<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2980b9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
-        wrench:`<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2980b9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 1 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4z"/></svg>`,
-        arrow:`<svg class="arrow" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 8-8h6"/><polyline points="14 2 18 4 14 6"/></svg>`
-      };
-
-      const grid = document.getElementById('services-grid');
-      if (!grid) return;
-
-      services.forEach((s, i) => {
-        const wrap = document.createElement('div');
-        wrap.className = 'service-card' + (i === services.length-1 ? ' center-last' : '');
-
-        const inner = document.createElement('div');
-        inner.className = 'service-inner';
-
-        const front = document.createElement('div');
-        front.className = 'service-face service-front';
-        front.innerHTML = `
-          <div class="service-corner">${icons.arrow}</div>
-          <div class="service-stack">
-            <div class="service-icon-wrap">${icons[s.icon]}</div>
-            <div class="service-title">${s.title}</div>
-          </div>
-          <div class="service-btn-row"><a class="service-btn" href="${s.link}">Περισσότερα →</a></div>
-        `;
-
-        const back = document.createElement('div');
-        back.className = 'service-face service-back';
-        back.innerHTML = `
-          <div class="service-corner">${icons.arrow}</div>
-          <div class="service-stack">
-            <p class="service-desc">${s.desc}</p>
-          </div>
-          <div class="service-btn-row"><a class="service-btn" href="${s.link}">Μετάβαση στη σελίδα →</a></div>
-        `;
-
-        inner.appendChild(front);
-        inner.appendChild(back);
-        wrap.appendChild(inner);
-        grid.appendChild(wrap);
-
-        const corners = wrap.querySelectorAll('.service-corner');
-        corners.forEach(btn => btn.addEventListener('click', (e)=>{
+      // Get all flip trigger buttons
+      const flipTriggers = document.querySelectorAll('.flip-trigger');
+      
+      flipTriggers.forEach(trigger => {
+        trigger.addEventListener('click', function(e) {
+          e.preventDefault();
           e.stopPropagation();
-          flipExclusive(wrap);
-        }));
-      });
-
-      function flipExclusive(activeCard){
-        document.querySelectorAll('.service-card .service-inner').forEach(el => {
-          if(el !== activeCard.querySelector('.service-inner')) el.classList.remove('flipped');
+          
+          // Find the parent service card
+          const serviceCard = this.closest('.service-card');
+          if (serviceCard) {
+            // Toggle the flipped state
+            serviceCard.classList.toggle('flipped');
+          }
         });
-        activeCard.querySelector('.service-inner').classList.toggle('flipped');
-      }
+      });
+      
+      // Optional: Close card when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.service-card')) {
+          // Remove flipped state from all cards when clicking outside
+          document.querySelectorAll('.service-card.flipped').forEach(card => {
+            card.classList.remove('flipped');
+          });
+        }
+      });
     });
   </script>
 </body>
