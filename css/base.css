@@ -588,10 +588,10 @@ main,
   position: absolute; 
   top: 0; 
   right: 0;
-  width: 0;
-  height: 0;
-  border-left: 60px solid transparent;
-  border-top: 60px solid var(--brand);
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+  clip-path: polygon(100% 0%, 30% 0%, 100% 70%);
   display: flex; 
   align-items: flex-start; 
   justify-content: flex-end;
@@ -600,16 +600,16 @@ main,
 
 .modern-card .corner svg { 
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 10px;
+  right: 15px;
   filter: drop-shadow(0 0 4px rgba(255,255,255,.7));
   z-index: 10;
 }
 
 .modern-card .corner .arrow { 
   transform: rotate(45deg);
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   color: white;
 }
 
@@ -636,8 +636,18 @@ main,
   }
   
   .modern-card .corner {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
+  }
+  
+  .modern-card .corner svg {
+    top: 8px;
+    right: 12px;
+  }
+  
+  .modern-card .corner .arrow {
+    width: 16px;
+    height: 16px;
   }
   
   .modern-card .icon-wrap {
@@ -672,8 +682,18 @@ main,
   }
   
   .modern-card .corner {
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .modern-card .corner svg {
+    top: 6px;
+    right: 10px;
+  }
+  
+  .modern-card .corner .arrow {
+    width: 14px;
+    height: 14px;
   }
   
   .modern-card .icon-wrap {
