@@ -591,7 +591,7 @@ main,
   width: 92px; 
   height: 92px;
   background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 0%);
-  clip-path: polygon(100% 0, 50% 0, 100% 50%);
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
   display: flex; 
   align-items: center; 
   justify-content: center;
