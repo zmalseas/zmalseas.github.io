@@ -589,18 +589,7 @@ main,
 }
 
 .modern-card .corner {
-  position: absolute; 
-  top: 0; 
-  right: 0;
-  width: 92px; 
-  height: 92px;
-  background: linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.15) 100%);
-  clip-path: polygon(100% 0, 0 0, 100% 100%);
-  display: flex; 
-  align-items: center; 
-  justify-content: center;
-  cursor: pointer;
-  backdrop-filter: blur(5px);
+  display: none !important;
 }
 
 .modern-card .corner svg { 
@@ -634,8 +623,7 @@ main,
   }
   
   .modern-card .corner {
-    width: 80px;
-    height: 80px;
+    display: none !important;
   }
   
   .modern-card .icon-wrap {
@@ -670,8 +658,7 @@ main,
   }
   
   .modern-card .corner {
-    width: 70px;
-    height: 70px;
+    display: none !important;
   }
   
   .modern-card .icon-wrap {
