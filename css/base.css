@@ -687,27 +687,28 @@ main,
   }
   
   .modern-card .corner {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
   }
   
   .modern-card .corner svg {
-    top: 6px;
-    right: 10px;
+    top: 10px;
+    right: 14px;
   }
   
   .modern-card .corner .arrow {
-    width: 14px;
-    height: 14px;
+    width: 18px;
+    height: 18px;
   }
   
   .modern-card .icon-wrap {
-    width: 48px;
-    height: 48px;
+    width: 68px;
+    height: 68px;
   }
   
   .modern-card .title {
-    font-size: 16px;
+    font-size: 19px;
+    font-weight: 600;
     margin: 8px 0 0;
   }
   
