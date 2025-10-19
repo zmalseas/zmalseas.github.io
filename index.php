@@ -277,12 +277,11 @@
   }
   </script>
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>
+  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>
   
   
   <script src="app.js"></script>
-  
-  <!-- Legal Modal Script -->
+  <script src="/js/chat-widget.js"></script>  <!-- Legal Modal Script -->
 
   
   <!-- Cookie Consent Script -->
@@ -366,9 +365,6 @@
       }
     });
   </script>
-
-  <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/chat.html'; ?>
-  <script src="/js/chat-widget.js"></script>
 </body>
 </html>
 
