@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Λογιστική - Nerally | Σύμμαχος Νέας Εποχής</title>
-  <meta name="description" content="Ολοκληρωμένες λογιστικές υπηρεσίες, φοροσχεδιασμός και οικονομικές καταστάσεις που ανοίγουν πόρτες χρηματοδότησης." />
+  <title>Λογιστική Εταιρειών - Nerally | Σύμμαχος Νέας Εποχής</title>
+  <meta name="description" content="Ολοκληρωμένες λογιστικές υπηρεσίες για εταιρείες, φοροσχεδιασμός και οικονομικές καταστάσεις που ανοίγουν πόρτες χρηματοδότησης." />
   <meta name="keywords" content="λογιστικές υπηρεσίες, φοροτεχνικά, λογιστής, φόροι επιχειρήσεων, λογιστική διαχείριση, Nerally" />
   <meta name="author" content="Nerally" />
   <link rel="canonical" href="https://nerally.gr/ipiresies/logistiki.php" />
@@ -12,16 +12,16 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nerally.gr/ipiresies/logistiki.php" />
-  <meta property="og:title" content="Λογιστική - Nerally | Σύμμαχος Νέας Εποχής" />
-  <meta property="og:description" content="Ολοκληρωμένες λογιστικές υπηρεσίες, φοροσχεδιασμός και οικονομικές καταστάσεις που ανοίγουν πόρτες χρηματοδότησης." />
+  <meta property="og:title" content="Λογιστική Εταιρειών - Nerally | Σύμμαχος Νέας Εποχής" />
+  <meta property="og:description" content="Ολοκληρωμένες λογιστικές υπηρεσίες για εταιρείες, φοροσχεδιασμός και οικονομικές καταστάσεις που ανοίγουν πόρτες χρηματοδότησης." />
   <meta property="og:image" content="https://nerally.gr/images/logo.png" />
   <meta property="og:locale" content="el_GR" />
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary" />
   <meta property="twitter:url" content="https://nerally.gr/ipiresies/logistiki.php" />
-  <meta property="twitter:title" content="Λογιστική - Nerally | Σύμμαχος Νέας Εποχής" />
-  <meta property="twitter:description" content="Ολοκληρωμένες λογιστικές υπηρεσίες, φοροσχεδιασμός και οικονομικές καταστάσεις που ανοίγουν πόρτες χρηματοδότησης." />
+  <meta property="twitter:title" content="Λογιστική Εταιρειών - Nerally | Σύμμαχος Νέας Εποχής" />
+  <meta property="twitter:description" content="Ολοκληρωμένες λογιστικές υπηρεσίες για εταιρείες, φοροσχεδιασμός και οικονομικές καταστάσεις που ανοίγουν πόρτες χρηματοδότησης." />
   <meta property="twitter:image" content="https://nerally.gr/images/logo.png" />
   
   <link rel="icon" type="image/png" href="../images/logo.png" />
@@ -250,7 +250,7 @@
   <main class="main-content">
     <section class="company-section">
       <div class="company-container">
-        <h2>Λογιστική</h2>
+        <h2>Λογιστική Εταιρειών</h2>
 
         <div class="split">
           <div><p>Για πολλούς, η λογιστική περιορίζεται στην εμπρόθεσμη υποβολή δηλώσεων. Για τη <strong>Nerally</strong>, είναι το εργαλείο που αποτυπώνει την πραγματική εικόνα της επιχείρησης και καθοδηγεί κάθε στρατηγικό της βήμα. Με σωστά και έγκαιρα δεδομένα, ο επιχειρηματίας μπορεί να γνωρίζει πού βρίσκεται, να σχεδιάζει το μέλλον του και να αποφεύγει περιττά κόστη και ρίσκα.</p>

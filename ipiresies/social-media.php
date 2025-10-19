@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Social Media - Nerally | Σύμμαχος Νέας Εποχής</title>
-  <meta name="description" content="Στρατηγική και διαχείριση social media, δημιουργία περιεχομένου και βίντεο που αναδεικνύουν την επιχείρησή σας." />
+  <title>Social Media Marketing - Nerally | Σύμμαχος Νέας Εποχής</title>
+  <meta name="description" content="Στρατηγική social media marketing, διαχείριση περιεχομένου και βίντεο που αναδεικνύουν την επιχείρησή σας." />
   <meta name="keywords" content="social media, digital marketing, content creation, video production, online presence, Nerally" />
   <meta name="author" content="Nerally" />
   <link rel="canonical" href="https://nerally.gr/ipiresies/social-media.php" />
@@ -12,16 +12,16 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nerally.gr/ipiresies/social-media.php" />
-  <meta property="og:title" content="Social Media - Nerally | Σύμμαχος Νέας Εποχής" />
-  <meta property="og:description" content="Στρατηγική και διαχείριση social media, δημιουργία περιεχομένου και βίντεο που αναδεικνύουν την επιχείρησή σας." />
+  <meta property="og:title" content="Social Media Marketing - Nerally | Σύμμαχος Νέας Εποχής" />
+  <meta property="og:description" content="Στρατηγική social media marketing, διαχείριση περιεχομένου και βίντεο που αναδεικνύουν την επιχείρησή σας." />
   <meta property="og:image" content="https://nerally.gr/images/logo.png" />
   <meta property="og:locale" content="el_GR" />
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary" />
   <meta property="twitter:url" content="https://nerally.gr/ipiresies/social-media.php" />
-  <meta property="twitter:title" content="Social Media - Nerally | Σύμμαχος Νέας Εποχής" />
-  <meta property="twitter:description" content="Στρατηγική και διαχείριση social media, δημιουργία περιεχομένου και βίντεο που αναδεικνύουν την επιχείρησή σας." />
+  <meta property="twitter:title" content="Social Media Marketing - Nerally | Σύμμαχος Νέας Εποχής" />
+  <meta property="twitter:description" content="Στρατηγική social media marketing, διαχείριση περιεχομένου και βίντεο που αναδεικνύουν την επιχείρησή σας." />
   <meta property="twitter:image" content="https://nerally.gr/images/logo.png" />
   
   <link rel="icon" type="image/png" href="../images/logo.png" />
@@ -250,7 +250,7 @@
   <main class="main-content">
     <section class="company-section">
       <div class="company-container">
-        <h2>Social Media & Ψηφιακή Παρουσία</h2>
+        <h2>Social Media Marketing & Ψηφιακή Παρουσία</h2>
 
         <div class="split">
           <div>

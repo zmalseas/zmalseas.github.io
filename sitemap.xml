@@ -32,59 +32,52 @@
   
   <!-- Services Pages -->
   <url>
-    <loc>https://nerally.gr/ipiresies/logistiki.html</loc>
-    <lastmod>2025-09-28</lastmod>
+    <loc>https://nerally.gr/ipiresies/logistiki.php</loc>
+    <lastmod>2025-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
-    <loc>https://nerally.gr/ipiresies/misthodosia.html</loc>
-    <lastmod>2025-09-28</lastmod>
+    <loc>https://nerally.gr/ipiresies/misthodosia.php</loc>
+    <lastmod>2025-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
-    <loc>https://nerally.gr/ipiresies/assurance.html</loc>
-    <lastmod>2025-09-28</lastmod>
+    <loc>https://nerally.gr/ipiresies/consulting.php</loc>
+    <lastmod>2025-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://nerally.gr/ipiresies/epixorigiseis.php</loc>
+    <lastmod>2025-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://nerally.gr/ipiresies/consulting.html</loc>
-    <lastmod>2025-09-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://nerally.gr/ipiresies/cyber-security.html</loc>
-    <lastmod>2025-09-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://nerally.gr/ipiresies/social-media.html</loc>
-    <lastmod>2025-09-28</lastmod>
+    <loc>https://nerally.gr/ipiresies/social-media.php</loc>
+    <lastmod>2025-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://nerally.gr/ipiresies/epixorigiseis.html</loc>
-    <lastmod>2025-09-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://nerally.gr/ipiresies/symvoulos-mixanikos.html</loc>
-    <lastmod>2025-09-28</lastmod>
+    <loc>https://nerally.gr/ipiresies/symvoulos-mixanikos.php</loc>
+    <lastmod>2025-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://nerally.gr/ipiresies/cyber-security.php</loc>
+    <lastmod>2025-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   
   <!-- Applications -->
