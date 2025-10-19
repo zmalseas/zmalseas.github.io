@@ -332,7 +332,6 @@
             <div class="icon-wrap">${icons[s.icon]}</div>
             <div class="title">${s.title}</div>
           </div>
-          <div class="btn-row"><a class="btn linklike" href="${s.link}" rel="noopener">Περισσότερα →</a></div>
         `;
 
         const back = document.createElement('div');
@@ -349,6 +348,13 @@
         inner.appendChild(back);
         wrap.appendChild(inner);
         grid.appendChild(wrap);
+
+        // Make the card clickable (except corner)
+        front.addEventListener('click', (e) => {
+          if (!e.target.closest('.corner')) {
+            window.location.href = s.link;
+          }
+        });
 
         const corners = wrap.querySelectorAll('.corner');
         corners.forEach(btn => btn.addEventListener('click', (e)=>{

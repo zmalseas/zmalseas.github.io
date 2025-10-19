@@ -525,6 +525,10 @@ main,
   overflow: hidden;
 }
 
+.modern-card .front {
+  cursor: pointer;
+}
+
 .modern-card .back { 
   transform: rotateY(180deg); 
 }
