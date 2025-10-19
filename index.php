@@ -189,7 +189,7 @@
             <div class="contact-info-item">
               <div class="contact-icon">✉️</div>
               <h4>Email</h4>
-              <p>info@nerally.gr<br>support@nerally.gr</p>
+              <p>info@nerally.gr</p>
             </div>
 
             <div class="contact-info-item">
