@@ -600,15 +600,16 @@ main,
 
 .modern-card .corner svg { 
   position: absolute;
-  top: 12px;
-  right: 12px;
-  filter: drop-shadow(0 0 4px rgba(255,255,255,.7)); 
+  top: 8px;
+  right: 8px;
+  filter: drop-shadow(0 0 4px rgba(255,255,255,.7));
+  z-index: 10;
 }
 
 .modern-card .corner .arrow { 
   transform: rotate(45deg);
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   color: white;
 }
 
