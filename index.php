@@ -294,12 +294,12 @@
     "name": "Nerally",
     "url": "https://nerally.gr",
     "logo": "https://nerally.gr/images/logo.png",
-    "description": "Ολοκληρωμένες λογιστικές υπηρεσίες, φοροτεχνικές συμβουλές, μισθοδοσία, business consulting και cyber security για επιχειρήσεις.",
+    "description": "Ένα δίκτυο υπηρεσιών και συνεργασιών στο πλευρό της επιχείρησής σου..",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "",
-      "addressLocality": "Αθήνα",
-      "postalCode": "",
+      "addressLocality": "Θεσσαλονίκη",
+      "postalCode": "57019",
       "addressCountry": "GR"
     },
     "contactPoint": {
@@ -336,7 +336,7 @@
       },
       {
         "@type": "Service", 
-        "name": "Μισθοδοσία & HR",
+        "name": "Μισθοδοσία",
         "description": "Διαχείριση μισθοδοσίας και συμβουλευτικές υπηρεσίες ανθρώπινου δυναμικού",
         "serviceType": "Human Resources",
         "provider": {
