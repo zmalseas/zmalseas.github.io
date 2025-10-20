@@ -498,7 +498,16 @@ main,
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   transition: all 0.25s ease;
   backdrop-filter: saturate(130%) blur(8px);
+  -webkit-backdrop-filter: saturate(130%) blur(8px);
   min-height: 270px;
+  width: 100%;
+}
+
+/* Fallback for browsers that don't support backdrop-filter */
+@supports not (backdrop-filter: blur(8px)) {
+  .service-glass-card {
+    background: rgba(30, 30, 30, 0.85);
+  }
 }
 
 .service-glass-card:hover {

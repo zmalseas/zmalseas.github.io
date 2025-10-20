@@ -27,7 +27,7 @@
   <meta property="twitter:description" content="Ολοκληρωμένες λογιστικές υπηρεσίες, φοροτεχνικές συμβουλές, μισθοδοσία, business consulting και cyber security για επιχειρήσεις." />
   <meta property="twitter:image" content="https://nerally.gr/images/logo.png" />
   <link rel="icon" type="image/png" href="images/logo.png" />
-  <link rel="stylesheet" href="main.css?v=2.1" />
+  <link rel="stylesheet" href="main.css?v=2.2" />
   <link rel="preload" as="image" href="images/Hero1_enhanced.webp" fetchpriority="high" />
   <link rel="preload" as="image" href="images/Hero1.png" fetchpriority="high" />
   <!-- RemixIcon for glass cards -->

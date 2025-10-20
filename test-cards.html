@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Glass Cards</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    :root {
+      --brand: #2980B9;
+      --brand-dark: #1f5f8b;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), 
+                  url('images/Hero2.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      min-height: 100vh;
+      padding: 50px 20px;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .services-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .services-header h2 {
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+    
+    .services-header p {
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    
+    /* Glass Cards Grid */
+    .services-grid-glass {
+      display: grid;
+      gap: 22px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      justify-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Center last card if odd number */
+    .services-grid-glass:has(.service-glass-card:last-child:nth-child(odd)) .service-glass-card:last-child {
+      grid-column: span 2;
+      justify-self: center;
+      max-width: 540px;
+    }
+    
+    /* Glass Card */
+    .service-glass-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 28px 22px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      transition: all 0.25s ease;
+      backdrop-filter: saturate(130%) blur(8px);
+      -webkit-backdrop-filter: saturate(130%) blur(8px);
+      min-height: 270px;
+      width: 100%;
+    }
+    
+    .service-glass-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 50px rgba(0, 0, 0, 0.45);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(92, 200, 255, 0.35);
+    }
+    
+    /* Theme-based icon colors */
+    .service-glass-card[data-theme="blue"] .service-icon {
+      background: linear-gradient(135deg, rgba(92, 200, 255, 0.25), rgba(92, 200, 255, 0.07));
+      border-color: rgba(92, 200, 255, 0.4);
+    }
+    
+    .service-glass-card[data-theme="green"] .service-icon {
+      background: linear-gradient(135deg, rgba(110, 231, 183, 0.25), rgba(110, 231, 183, 0.07));
+      border-color: rgba(110, 231, 183, 0.4);
+    }
+    
+    .service-glass-card[data-theme="orange"] .service-icon {
+      background: linear-gradient(135deg, rgba(247, 185, 85, 0.25), rgba(247, 185, 85, 0.07));
+      border-color: rgba(247, 185, 85, 0.4);
+    }
+    
+    .service-glass-card[data-theme="purple"] .service-icon {
+      background: linear-gradient(135deg, rgba(170, 141, 252, 0.25), rgba(170, 141, 252, 0.07));
+      border-color: rgba(170, 141, 252, 0.4);
+    }
+    
+    .service-glass-card[data-theme="red"] .service-icon {
+      background: linear-gradient(135deg, rgba(255, 122, 122, 0.25), rgba(255, 122, 122, 0.07));
+      border-color: rgba(255, 122, 122, 0.4);
+    }
+    
+    /* Icon wrapper */
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 14px;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .service-icon i {
+      font-size: 26px;
+      color: #ffffff;
+    }
+    
+    .service-glass-card h3 {
+      font-size: 1.12rem;
+      margin: 0 0 6px;
+      color: #ffffff;
+      font-weight: 600;
+    }
+    
+    .service-glass-card p {
+      margin: 0 0 14px;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.45;
+      min-height: 60px;
+    }
+    
+    /* Button */
+    .service-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      align-self: flex-start;
+      margin-top: auto;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #cfe9ff;
+      background: rgba(255, 255, 255, 0.05);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    
+    .service-btn:hover {
+      transform: translateY(-1px);
+      border-color: rgba(92, 200, 255, 0.6);
+      color: white;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      body {
+        padding: 30px 16px;
+      }
+      
+      .services-grid-glass {
+        gap: 18px;
+        padding: 0 16px;
+      }
+      
+      .service-glass-card {
+        padding: 24px 18px;
+        min-height: 250px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .services-grid-glass {
+        grid-template-columns: 1fr;
+      }
+      
+      .services-grid-glass:has(.service-glass-card:last-child:nth-child(odd)) .service-glass-card:last-child {
+        grid-column: span 1;
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="services-header">
+      <h2>Οι υπηρεσίες μας</h2>
+      <p>Ολοκληρωμένες λύσεις για την ανάπτυξη της επιχείρησής σας. Επιλέξτε υπηρεσία για περισσότερα.</p>
+    </div>
+    
+    <div class="services-grid-glass">
+      <article class="service-glass-card" data-theme="blue">
+        <div>
+          <div class="service-icon"><i class="ri-bank-card-2-line"></i></div>
+          <h3>Λογιστική Εταιρειών</h3>
+          <p>Λογιστική, φορολογία, υποχρεώσεις και αυτοματισμοί για κάθε μέγεθος επιχείρησης.</p>
+        </div>
+        <a class="service-btn" href="#test">Μάθε περισσότερα →</a>
+      </article>
+      
+      <article class="service-glass-card" data-theme="green">
+        <div>
+          <div class="service-icon"><i class="ri-hand-coin-line"></i></div>
+          <h3>Επιχορηγήσεις</h3>
+          <p>Έλεγχος επιλεξιμότητας, υποβολές και διαχείριση φακέλων για προγράμματα ΕΣΠΑ.</p>
+        </div>
+        <a class="service-btn" href="#test">Μάθε περισσότερα →</a>
+      </article>
+      
+      <article class="service-glass-card" data-theme="purple">
+        <div>
+          <div class="service-icon"><i class="ri-line-chart-line"></i></div>
+          <h3>Consulting</h3>
+          <p>Στρατηγική, κοστολόγηση και BI dashboards για βιώσιμη ανάπτυξη.</p>
+        </div>
+        <a class="service-btn" href="#test">Μάθε περισσότερα →</a>
+      </article>
+      
+      <article class="service-glass-card" data-theme="orange">
+        <div>
+          <div class="service-icon"><i class="ri-share-forward-line"></i></div>
+          <h3>Social Media Marketing</h3>
+          <p>Σχεδιασμός περιεχομένου, διαφημίσεις και ανάλυση καμπανιών.</p>
+        </div>
+        <a class="service-btn" href="#test">Μάθε περισσότερα →</a>
+      </article>
+      
+      <article class="service-glass-card" data-theme="red">
+        <div>
+          <div class="service-icon"><i class="ri-shield-keyhole-line"></i></div>
+          <h3>Cyber Security</h3>
+          <p>Έλεγχοι ασφαλείας, πολιτικές συμμόρφωσης και εκπαίδευση ομάδων.</p>
+        </div>
+        <a class="service-btn" href="#test">Μάθε περισσότερα →</a>
+      </article>
+      
+      <article class="service-glass-card" data-theme="blue">
+        <div>
+          <div class="service-icon"><i class="ri-team-line"></i></div>
+          <h3>Μισθοδοσία</h3>
+          <p>Πλήρης διαχείριση μισθοδοσίας με αυτοματισμούς και e-αρχειοθέτηση.</p>
+        </div>
+        <a class="service-btn" href="#test">Μάθε περισσότερα →</a>
+      </article>
+      
+      <article class="service-glass-card" data-theme="purple">
+        <div>
+          <div class="service-icon"><i class="ri-compasses-2-line"></i></div>
+          <h3>Σύμβουλος Μηχανικός</h3>
+          <p>Αδειοδοτήσεις, ενεργειακές μελέτες και τεχνική συμβουλευτική.</p>
+        </div>
+        <a class="service-btn" href="#test">Μάθε περισσότερα →</a>
+      </article>
+    </div>
+  </div>
+</body>
+</html>
