@@ -28,6 +28,16 @@
   <link rel="stylesheet" href="../main.css">
   <link rel="stylesheet" href="/css/cookie-consent.css">
 
+  <?php
+  $serviceData = [
+    'name' => 'Social Media Marketing',
+    'description' => 'Στρατηγική social media marketing, σχεδιασμός και δημιουργία περιεχομένου, διαχείριση διαφημιστικών καμπανιών και ανάλυση αποτελεσμάτων. Αναδείξτε την επιχείρησή σας στα social media με επαγγελματικό περιεχόμενο και βίντεο.',
+    'url' => 'https://nerally.gr/ipiresies/social-media.php',
+    'serviceType' => 'Marketing'
+  ];
+  include $_SERVER['DOCUMENT_ROOT'].'/partials/schema-service.php';
+  ?>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <style>

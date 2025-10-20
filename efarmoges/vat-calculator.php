@@ -22,6 +22,29 @@
   <link rel="icon" type="image/png" href="../images/logo.png" />
   <link rel="stylesheet" href="../main.css" />
   <link rel="stylesheet" href="/css/cookie-consent.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Υπολογιστής ΦΠΑ",
+    "url": "https://nerally.gr/efarmoges/vat-calculator.php",
+    "description": "Δωρεάν online υπολογιστής ΦΠΑ. Υπολόγισε καθαρή αξία, ΦΠΑ και τελική τιμή με βάση 24%, 13%, 6% ή προσαρμοσμένο συντελεστή.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "Nerally",
+      "url": "https://nerally.gr"
+    }
+  }
+  </script>
+
   <style>
     :root { --accent:#2980B9; }
     body { margin:0; overflow-x:hidden; }

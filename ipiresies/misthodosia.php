@@ -7,11 +7,11 @@
   <meta name="description" content="Ολοκληρωμένες υπηρεσίες μισθοδοσίας, διαχείρισης ανθρώπινου δυναμικού και εργατικής νομοθεσίας από την Nerally." />
   <meta name="keywords" content="μισθοδοσία, HR, ανθρώπινο δυναμικό, εργατική νομοθεσία, ασφαλιστικές εισφορές, Nerally" />
   <meta name="author" content="Nerally" />
-  <link rel="canonical" href="https://nerally.gr/ipiresies/misthodosia.html" />
+  <link rel="canonical" href="https://nerally.gr/ipiresies/misthodosia.php" />
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://nerally.gr/ipiresies/misthodosia.html" />
+  <meta property="og:url" content="https://nerally.gr/ipiresies/misthodosia.php" />
   <meta property="og:title" content="Υπηρεσίες Μισθοδοσίας & HR - Nerally" />
   <meta property="og:description" content="Ολοκληρωμένες υπηρεσίες μισθοδοσίας, διαχείρισης ανθρώπινου δυναμικού και εργατικής νομοθεσίας." />
   <meta property="og:image" content="https://nerally.gr/images/logo.png" />
@@ -19,7 +19,7 @@
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary" />
-  <meta property="twitter:url" content="https://nerally.gr/ipiresies/misthodosia.html" />
+  <meta property="twitter:url" content="https://nerally.gr/ipiresies/misthodosia.php" />
   <meta property="twitter:title" content="Υπηρεσίες Μισθοδοσίας & HR - Nerally" />
   <meta property="twitter:description" content="Ολοκληρωμένες υπηρεσίες μισθοδοσίας, διαχείρισης ανθρώπινου δυναμικού και εργατικής νομοθεσίας." />
   <meta property="twitter:image" content="https://nerally.gr/images/logo.png" />
@@ -28,6 +28,15 @@
   <link rel="stylesheet" href="../main.css" />
   <link rel="stylesheet" href="/css/cookie-consent.css" />
 
+  <?php
+  $serviceData = [
+    'name' => 'Υπηρεσίες Μισθοδοσίας & HR',
+    'description' => 'Ολοκληρωμένη διαχείριση μισθοδοσίας, ανθρώπινου δυναμικού και εργατικής νομοθεσίας με ακρίβεια και συμμόρφωση. Υπολογισμός μισθοδοσίας, ασφαλιστικές εισφορές, διαχείριση προσωπικού, εργατικές συμβάσεις και πλήρης τήρηση εργατικής νομοθεσίας.',
+    'url' => 'https://nerally.gr/ipiresies/misthodosia.php',
+    'serviceType' => 'Human Resources'
+  ];
+  include $_SERVER['DOCUMENT_ROOT'].'/partials/schema-service.php';
+  ?>
   
   <!-- GTM loads via cookie-consent.js after analytics consent -->
 </head>
@@ -136,7 +145,7 @@
           <p>📞 Τηλέφωνο: <a href="tel:+306946365798">+30 694 636 5798</a></p>
         </div>
         <div class="cta-buttons">
-          <a href="../epikoinonia/contact.html" class="btn btn-primary">Επικοινωνήστε μαζί μας</a>
+          <a href="../epikoinonia/contact.php" class="btn btn-primary">Επικοινωνήστε μαζί μας</a>
           <a href="mailto:info@nerally.gr" class="btn btn-secondary">Στείλτε Email</a>
         </div>
       </div>

@@ -5,9 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nerally — Consulting</title>
   <meta name="description" content="Business consulting & βελτιστοποίηση λειτουργιών." />
+  <meta name="keywords" content="business consulting, συμβουλευτικές υπηρεσίες, στρατηγικός σχεδιασμός, οργανωτική ανάπτυξη, Nerally" />
+  <link rel="canonical" href="https://nerally.gr/ipiresies/consulting.php" />
   <link rel="icon" type="image/png" href="../images/logo.png" />
   <link rel="stylesheet" href="../main.css" />
   <link rel="stylesheet" href="/css/cookie-consent.css" />
+  
+  <?php
+  // Schema Markup for SEO
+  $serviceData = [
+    'name' => 'Business Consulting',
+    'description' => 'Συμβουλευτικές υπηρεσίες επιχειρηματικής στρατηγικής, λειτουργικής βελτίωσης και ψηφιακού μετασχηματισμού. Στρατηγικός σχεδιασμός, κοστολόγηση και BI dashboards για βιώσιμη ανάπτυξη.',
+    'url' => 'https://nerally.gr/ipiresies/consulting.php',
+    'serviceType' => 'Business Consulting'
+  ];
+  include $_SERVER['DOCUMENT_ROOT'].'/partials/schema-service.php';
+  ?>
 
   
   <!-- GTM loads via cookie-consent.js after analytics consent -->

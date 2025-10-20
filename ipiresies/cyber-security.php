@@ -5,10 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nerally — Cyber Security</title>
   <meta name="description" content="Υπηρεσίες Κυβερνοασφάλειας Nerally." />
+  <meta name="keywords" content="cyber security, κυβερνοασφάλεια, προστασία δεδομένων, information security, Nerally" />
+  <link rel="canonical" href="https://nerally.gr/ipiresies/cyber-security.php" />
   <link rel="icon" type="image/png" href="../images/logo.png" />
   <link rel="stylesheet" href="../main.css" />
   <link rel="stylesheet" href="/css/cookie-consent.css" />
 
+  <?php
+  $serviceData = [
+    'name' => 'Cyber Security',
+    'description' => 'Προστασία των ψηφιακών σας περιουσιακών στοιχείων με σύγχρονες λύσεις κυβερνοασφάλειας. Ασφάλεια συστημάτων, διαχείριση κινδύνων, συμμόρφωση με πρότυπα ασφαλείας και εκπαίδευση προσωπικού για την αποτροπή κυβερνοεπιθέσεων.',
+    'url' => 'https://nerally.gr/ipiresies/cyber-security.php',
+    'serviceType' => 'Information Technology'
+  ];
+  include $_SERVER['DOCUMENT_ROOT'].'/partials/schema-service.php';
+  ?>
   
   <!-- GTM loads via cookie-consent.js after analytics consent -->
 </head>

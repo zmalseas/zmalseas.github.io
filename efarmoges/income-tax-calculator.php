@@ -28,6 +28,28 @@
   <link rel="stylesheet" href="../main.css" />
   <link rel="stylesheet" href="/css/cookie-consent.css" />
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Υπολογιστής Φόρου Εισοδήματος 2025",
+    "url": "https://nerally.gr/efarmoges/income-tax-calculator.php",
+    "description": "Δωρεάν online υπολογιστής φόρου εισοδήματος για το 2025. Υπολογίστε εύκολα και γρήγορα τον φόρο που οφείλετε με βάση το εισόδημά σας.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "Nerally",
+      "url": "https://nerally.gr"
+    }
+  }
+  </script>
+
   <style>
     /* Page-local, scoped layout to match rent-tax-calculator */
     :root { 

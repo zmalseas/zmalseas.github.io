@@ -4,9 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nerally — Σύμμαχος Νέας Εποχής | Εταιρεία</title>
+  <meta name="description" content="Η Nerally είναι η σύμμαχός σας στη νέα εποχή. Συνδυάζουμε παραδοσιακές υπηρεσίες με σύγχρονες λύσεις για ολοκληρωμένη υποστήριξη της επιχείρησής σας." />
+  <meta name="keywords" content="Nerally, εταιρεία, σύμμαχος επιχειρήσεων, λογιστικές υπηρεσίες, συμβουλευτική" />
+  <link rel="canonical" href="https://nerally.gr/etairia/company.php" />
   <link rel="icon" type="image/png" href="../images/logo.png" />
   <link rel="stylesheet" href="../main.css">
   <link rel="stylesheet" href="/css/cookie-consent.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "Σχετικά με την Nerally",
+    "url": "https://nerally.gr/etairia/company.php",
+    "description": "Η Nerally είναι η σύμμαχός σας στη νέα εποχή. Συνδυάζουμε παραδοσιακές υπηρεσίες με σύγχρονες λύσεις για ολοκληρωμένη υποστήριξη της επιχείρησής σας.",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Nerally",
+      "url": "https://nerally.gr",
+      "logo": "https://nerally.gr/images/logo.png",
+      "description": "Λογιστικές υπηρεσίες, HR, Business Consulting, Cyber Security και άλλες σύγχρονες λύσεις για επιχειρήσεις",
+      "foundingDate": "2020",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Greece"
+      }
+    }
+  }
+  </script>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>

@@ -4,9 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Επικοινωνία - Nerally</title>
+  <meta name="description" content="Επικοινωνήστε με την ομάδα της Nerally για οποιαδήποτε ερώτηση ή ανάγκη. Είμαστε εδώ για να σας βοηθήσουμε." />
+  <meta name="keywords" content="επικοινωνία Nerally, contact, info@nerally.gr, φόρμα επικοινωνίας" />
+  <link rel="canonical" href="https://nerally.gr/epikoinonia/contact.php" />
   <link rel="icon" type="image/png" href="../images/logo.png" />
   <link rel="stylesheet" href="../main.css" />
   <link rel="stylesheet" href="/css/cookie-consent.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Επικοινωνία με την Nerally",
+    "url": "https://nerally.gr/epikoinonia/contact.php",
+    "description": "Επικοινωνήστε με την ομάδα της Nerally για οποιαδήποτε ερώτηση ή ανάγκη. Είμαστε εδώ για να σας βοηθήσουμε.",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Nerally",
+      "url": "https://nerally.gr",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+30-210-1234567",
+        "contactType": "Customer Service",
+        "email": "info@nerally.gr",
+        "areaServed": "GR",
+        "availableLanguage": ["Greek", "English"]
+      }
+    }
+  }
+  </script>
 
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/site-config-inline.php'; ?>
   <style>

@@ -64,7 +64,7 @@
         <p class="hero-description">Στηρίζουμε το όραμά σου, ώστε να αφιερωθείς στην ανάπτυξη.</p>
         <div class="hero-buttons">
           <a class="btn btn-primary" href="#services" aria-label="Δείτε τις υπηρεσίες που προσφέρουμε">Τι σου προσφέρουμε</a>
-          <a class="btn btn-secondary" href="/epikoinonia/contact.html" aria-label="Επικοινωνήστε μαζί μας">Επικοινωνία</a>
+          <a class="btn btn-secondary" href="/epikoinonia/contact.php" aria-label="Επικοινωνήστε μαζί μας">Επικοινωνία</a>
         </div>
       </div>
       <!-- Skip to main content link for screen readers -->
@@ -208,14 +208,14 @@
             <div class="app-icon">🧮</div>
             <h3>Υπολογιστής Φόρου Εισοδήματος</h3>
             <p>Υπολογίστε εύκολα και γρήγορα τον φόρο εισοδήματός σας με το διαδραστικό μας εργαλείο.</p>
-            <a href="/efarmoges/income-tax-calculator.html" class="app-link">Χρησιμοποιήστε το →</a>
+            <a href="/efarmoges/income-tax-calculator.php" class="app-link">Χρησιμοποιήστε το →</a>
           </div>
 
           <div class="app-preview-card">
             <div class="app-icon">🏠</div>
             <h3>Υπολογιστής Φόρου Ενοικίου</h3>
             <p>Υπολογίστε τον φόρο που οφείλετε από ενοικιαστικά εισοδήματα με ακρίβεια και απλότητα.</p>
-            <a href="/efarmoges/rent-tax-calculator.html" class="app-link">Χρησιμοποιήστε το →</a>
+            <a href="/efarmoges/rent-tax-calculator.php" class="app-link">Χρησιμοποιήστε το →</a>
           </div>
 
           <div class="app-preview-card">
@@ -227,7 +227,7 @@
         </div>
 
         <div class="section-cta">
-          <a href="/efarmoges/income-tax-calculator.html" class="btn btn-primary">Δείτε όλες τις εφαρμογές</a>
+          <a href="/efarmoges/income-tax-calculator.php" class="btn btn-primary">Δείτε όλες τις εφαρμογές</a>
         </div>
       </div>
     </section>
@@ -260,7 +260,7 @@
           </div>
 
           <div class="contact-actions">
-            <a href="/epikoinonia/contact.html" class="btn btn-primary">Επικοινωνήστε μαζί μας</a>
+            <a href="/epikoinonia/contact.php" class="btn btn-primary">Επικοινωνήστε μαζί μας</a>
           </div>
 
           <div class="social-links-section">
@@ -310,30 +310,91 @@
     },
     "sameAs": [
       "https://www.linkedin.com/company/nerally",
-      "https://www.facebook.com/nerally",
-      "https://www.instagram.com/nerally"
+      "https://www.instagram.com/nerally_co/",
+      "https://www.tiktok.com/@nerally_co"
     ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "20"
+    },
+    "priceRange": "€€",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Greece"
+    },
     "service": [
       {
         "@type": "Service",
         "name": "Λογιστικές Υπηρεσίες",
-        "description": "Πλήρης διαχείριση λογιστικών εργασιών και φορολογικών υποχρεώσεων"
+        "description": "Πλήρης διαχείριση λογιστικών εργασιών και φορολογικών υποχρεώσεων",
+        "serviceType": "Accounting",
+        "provider": {
+          "@type": "Organization",
+          "name": "Nerally"
+        }
       },
       {
         "@type": "Service", 
         "name": "Μισθοδοσία & HR",
-        "description": "Διαχείριση μισθοδοσίας και συμβουλευτικές υπηρεσίες ανθρώπινου δυναμικού"
+        "description": "Διαχείριση μισθοδοσίας και συμβουλευτικές υπηρεσίες ανθρώπινου δυναμικού",
+        "serviceType": "Human Resources",
+        "provider": {
+          "@type": "Organization",
+          "name": "Nerally"
+        }
       },
       {
         "@type": "Service",
         "name": "Business Consulting", 
-        "description": "Στρατηγικός σχεδιασμός και συμβουλευτικές υπηρεσίες για την ανάπτυξη της επιχείρησής σας"
+        "description": "Στρατηγικός σχεδιασμός και συμβουλευτικές υπηρεσίες για την ανάπτυξη της επιχείρησής σας",
+        "serviceType": "Consulting",
+        "provider": {
+          "@type": "Organization",
+          "name": "Nerally"
+        }
       },
       {
         "@type": "Service",
         "name": "Cyber Security",
-        "description": "Προστασία των ψηφιακών σας περιουσιακών στοιχείων με σύγχρονες λύσεις κυβερνοασφάλειας"
+        "description": "Προστασία των ψηφιακών σας περιουσιακών στοιχείων με σύγχρονες λύσεις κυβερνοασφάλειας",
+        "serviceType": "Information Technology",
+        "provider": {
+          "@type": "Organization",
+          "name": "Nerally"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": "Επιχορηγήσεις",
+        "description": "Έλεγχος επιλεξιμότητας, υποβολές και διαχείριση φακέλων για προγράμματα ΕΣΠΑ",
+        "serviceType": "Consulting",
+        "provider": {
+          "@type": "Organization",
+          "name": "Nerally"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": "Social Media Marketing",
+        "description": "Σχεδιασμός περιεχομένου, διαφημίσεις και ανάλυση καμπανιών",
+        "serviceType": "Marketing",
+        "provider": {
+          "@type": "Organization",
+          "name": "Nerally"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": "Σύμβουλος Μηχανικός",
+        "description": "Αδειοδοτήσεις, ενεργειακές μελέτες και τεχνική συμβουλευτική",
+        "serviceType": "Engineering",
+        "provider": {
+          "@type": "Organization",
+          "name": "Nerally"
+        }
       }
+    ]
   }
   </script>
 

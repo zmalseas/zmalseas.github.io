@@ -4,9 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nerally - Υπολογισμος Φορου Ενοικίων</title>
+  <meta name="description" content="Δωρεάν online υπολογιστής φόρου ενοικίων. Υπολογίστε τον φόρο που οφείλετε από εισοδήματα ακινήτων με ακρίβεια και ευκολία." />
+  <meta name="keywords" content="φόρος ενοικίων, υπολογιστής φόρου ακινήτων, εισόδημα από ενοίκια, φορολόγηση ακινήτων, Nerally" />
+  <link rel="canonical" href="https://nerally.gr/efarmoges/rent-tax-calculator.php" />
   <link rel="icon" type="image/png" href="../images/logo.png" />
   <link rel="stylesheet" href="../main.css" />
   <link rel="stylesheet" href="/css/cookie-consent.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Υπολογιστής Φόρου Ενοικίων",
+    "url": "https://nerally.gr/efarmoges/rent-tax-calculator.php",
+    "description": "Δωρεάν online υπολογιστής φόρου ενοικίων. Υπολογίστε τον φόρο που οφείλετε από εισοδήματα ακινήτων με ακρίβεια και ευκολία.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "Nerally",
+      "url": "https://nerally.gr"
+    }
+  }
+  </script>
 
       <style>
         /* Page-local, scoped layout so global CSS can't break it */

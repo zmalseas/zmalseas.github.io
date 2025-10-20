@@ -229,6 +229,26 @@
     }
   </style>
   
+  <?php
+  // Schema Markup for SEO
+  $serviceData = [
+    'name' => 'Λογιστική Εταιρειών',
+    'description' => 'Ολοκληρωμένες λογιστικές υπηρεσίες για εταιρείες: φοροσχεδιασμός, οικονομικές καταστάσεις, λογιστική διαχείριση, φορολογικές δηλώσεις και συμβουλευτικές υπηρεσίες για επιχειρήσεις κάθε μεγέθους.',
+    'url' => 'https://nerally.gr/ipiresies/logistiki.php',
+    'serviceType' => 'Accounting and Bookkeeping Services',
+    'offers' => [
+      '@type' => 'Offer',
+      'availability' => 'https://schema.org/InStock',
+      'priceSpecification' => [
+        '@type' => 'PriceSpecification',
+        'priceCurrency' => 'EUR',
+        'price' => 'Contact for pricing'
+      ]
+    ]
+  ];
+  include $_SERVER['DOCUMENT_ROOT'].'/partials/schema-service.php';
+  ?>
+  
   <!-- GTM loads via cookie-consent.js after analytics consent -->
 </head>
 <body>

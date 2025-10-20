@@ -27,6 +27,17 @@
   <link rel="icon" type="image/png" href="../images/logo.png" />
   <link rel="stylesheet" href="../main.css">
   <link rel="stylesheet" href="/css/cookie-consent.css">
+
+  <?php
+  $serviceData = [
+    'name' => 'Σύμβουλος Μηχανικός',
+    'description' => 'Αρχιτεκτονικός σχεδιασμός, έκδοση αδειών μικρής κλίμακας, μελέτες πυροπροστασίας και ενεργειακές μελέτες, επίβλεψη έργων, project management και φωτορεαλιστικές απεικονίσεις. Ολοκληρωμένη τεχνική υποστήριξη από τη μελέτη έως την κατασκευή.',
+    'url' => 'https://nerally.gr/ipiresies/symvoulos-mixanikos.php',
+    'serviceType' => 'Engineering'
+  ];
+  include $_SERVER['DOCUMENT_ROOT'].'/partials/schema-service.php';
+  ?>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>

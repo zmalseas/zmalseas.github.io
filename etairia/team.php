@@ -4,9 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ομάδα — Nerally</title>
+  <meta name="description" content="Γνωρίστε την ομάδα επαγγελματιών της Nerally. Έμπειροι σύμβουλοι, λογιστές, μηχανικοί και ειδικοί που συνεργάζονται για την επιτυχία σας." />
+  <meta name="keywords" content="ομάδα Nerally, επαγγελματίες, λογιστές, σύμβουλοι, μηχανικοί" />
+  <link rel="canonical" href="https://nerally.gr/etairia/team.php" />
   <link rel="icon" type="image/png" href="../images/logo.png" />
   <link rel="stylesheet" href="../main.css">
   <link rel="stylesheet" href="/css/cookie-consent.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "Η Ομάδα της Nerally",
+    "url": "https://nerally.gr/etairia/team.php",
+    "description": "Γνωρίστε την ομάδα επαγγελματιών της Nerally. Έμπειροι σύμβουλοι, λογιστές, μηχανικοί και ειδικοί που συνεργάζονται για την επιτυχία σας.",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Nerally",
+      "url": "https://nerally.gr"
+    }
+  }
+  </script>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <style>

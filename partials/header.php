@@ -26,9 +26,9 @@
           <li class="nav-item dropdown">
             <a href="#"><span class="text">Η Εταιρεία</span><span class="caret">▾</span></a>
             <div class="submenu" role="menu">
-              <a href="/etairia/company.html">Ποιοι Είμαστε <span class="sm-arrow">›</span></a>
-              <a href="/etairia/team.html">Ομάδα <span class="sm-arrow">›</span></a>
-              <a href="/etairia/join-us.html">Θέσεις Εργασίας <span class="sm-arrow">›</span></a>
+              <a href="/etairia/company.php">Ποιοι Είμαστε <span class="sm-arrow">›</span></a>
+              <a href="/etairia/team.php">Ομάδα <span class="sm-arrow">›</span></a>
+              <a href="/etairia/join-us.php">Θέσεις Εργασίας <span class="sm-arrow">›</span></a>
             </div>
           </li>
           
@@ -56,7 +56,7 @@
             </div>
           </li>
           
-          <li class="nav-item"><a href="/epikoinonia/contact.html"><span class="text">Επικοινωνία</span></a></li>
+          <li class="nav-item"><a href="/epikoinonia/contact.php"><span class="text">Επικοινωνία</span></a></li>
         </ul>
 
         <button class="hamburger" aria-label="Άνοιγμα μενού">
@@ -87,9 +87,9 @@
       <div class="menu-item">
         <button class="menu-toggle">Η Εταιρεία <span class="exp-caret">▾</span></button>
         <div class="menu-sub">
-          <a href="/etairia/company.html">Ποιοι Είμαστε</a>
-          <a href="/etairia/team.html">Ομάδα</a>
-          <a href="/etairia/join-us.html">Θέσεις Εργασίας</a>
+          <a href="/etairia/company.php">Ποιοι Είμαστε</a>
+          <a href="/etairia/team.php">Ομάδα</a>
+          <a href="/etairia/join-us.php">Θέσεις Εργασίας</a>
         </div>
       </div>
       
@@ -111,13 +111,13 @@
       <div class="menu-item">
         <button class="menu-toggle">Εφαρμογές <span class="exp-caret">▾</span></button>
         <div class="menu-sub">
-          <a href="/efarmoges/rent-tax-calculator.html">Φόρος Ενοικίων</a>
-          <a href="/efarmoges/income-tax-calculator.html">Φόρος Εισοδήματος</a>
+          <a href="/efarmoges/rent-tax-calculator.php">Φόρος Ενοικίων</a>
+          <a href="/efarmoges/income-tax-calculator.php">Φόρος Εισοδήματος</a>
           <a href="/efarmoges/vat-calculator.php">Υπολογισμός ΦΠΑ</a>
         </div>
       </div>
       
-      <a class="menu-toggle" href="/epikoinonia/contact.html">Επικοινωνία</a>
+      <a class="menu-toggle" href="/epikoinonia/contact.php">Επικοινωνία</a>
     </div>
     
   </div>

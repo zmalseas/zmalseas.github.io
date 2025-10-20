@@ -4,9 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Αίτηση Θέσης – Nerally</title>
+  <meta name="description" content="Γίνε μέλος της ομάδας Nerally. Αναζητούμε ταλαντούχους επαγγελματίες για λογιστικές υπηρεσίες, consulting, τεχνολογία και άλλες θέσεις." />
+  <meta name="keywords" content="καριέρα Nerally, θέσεις εργασίας, αιτήσεις, λογιστής, consultant, job openings" />
+  <link rel="canonical" href="https://nerally.gr/etairia/join-us.php" />
   <link rel="icon" type="image/png" href="../images/logo.png" />
   <link rel="stylesheet" href="../main.css">
   <link rel="stylesheet" href="/css/cookie-consent.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Καριέρα στην Nerally",
+    "url": "https://nerally.gr/etairia/join-us.php",
+    "description": "Γίνε μέλος της ομάδας Nerally. Αναζητούμε ταλαντούχους επαγγελματίες για λογιστικές υπηρεσίες, consulting, τεχνολογία και άλλες θέσεις.",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Nerally",
+      "url": "https://nerally.gr"
+    }
+  }
+  </script>
 
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/site-config-inline.php'; ?>
   <style>
