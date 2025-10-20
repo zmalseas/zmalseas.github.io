@@ -235,15 +235,6 @@ html {
   }
 }
 
-/* Gesture Support */
-.swipeable {
-  touch-action: pan-x pan-y;
-}
-
-.pinch-zoom {
-  touch-action: pinch-zoom;
-}
-
 /* Prevent Text Selection on UI Elements */
 .btn,
 .nav-links,

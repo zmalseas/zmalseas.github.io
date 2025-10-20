@@ -62,19 +62,6 @@ class NerallyApp {
     } catch (_) {}
   }
 
-  async loadPartials() {
-    // Server-side includes now handle header/footer. No client fetch needed.
-    return;
-  }
-
-  async injectHeader() { return; }
-
-  fixHeaderPaths() { return; }
-
-  fixFooterPaths() { return; }
-
-  async injectFooter() { return; }
-
   initializeNavigation() {
     // Load navigation.js if missing (static pages), otherwise just init
     try {
@@ -235,22 +222,6 @@ class NerallyApp {
     } else {
       console.warn('⚠️ Service Worker not supported');
     }
-  }
-
-  isInSubfolder(currentPath) {
-    return currentPath.includes('/arthra/') || 
-           currentPath.includes('/etairia/') || 
-           currentPath.includes('/ipiresies/') || 
-           currentPath.includes('/efarmoges/') || 
-           currentPath.includes('/epikoinonia/') || 
-           currentPath.includes('/legal/') || 
-           currentPath.includes('/css/') || 
-           currentPath.includes('/js/') ||
-           (currentPath.split('/').length > 2 && !currentPath.endsWith('/'));
-  }
-
-  showSimpleError() {
-    console.warn('Using minimal fallback for critical component');
   }
 
   showError(message) {

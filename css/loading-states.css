@@ -10,91 +10,6 @@
   color: var(--muted);
 }
 
-/* Image Lazy Loading & Optimization */
-.responsive-image {
-  max-width: 100%;
-  height: auto;
-  transition: opacity 0.3s ease;
-}
-
-.lazy-loading {
-  opacity: 0.3;
-  filter: blur(2px);
-  transition: all 0.3s ease;
-}
-
-.lazy-loaded {
-  opacity: 1;
-  filter: none;
-}
-
-.lazy-error {
-  opacity: 0.8;
-  border: 2px dashed var(--warning);
-}
-
-.image-loading-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.9);
-  padding: var(--spacing-md);
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-}
-
-.image-loading-overlay .loading-spinner {
-  width: 24px;
-  height: 24px;
-  border: 2px solid var(--secondary);
-  border-top-color: var(--primary);
-  border-radius: var(--radius-full);
-  animation: spin 1s linear infinite;
-}
-
-/* WebP Support Detection */
-.no-webp .webp-image {
-  display: none;
-}
-
-.webp .fallback-image {
-  display: none;
-}
-
-/* Picture element optimization */
-picture {
-  display: block;
-  position: relative;
-}
-
-picture img {
-  width: 100%;
-  height: auto;
-}
-
-/* High Contrast Mode Support */
-@media (prefers-contrast: high) {
-  .error-message {
-    border-width: 2px;
-  }
-  
-  .success-message {
-    border-width: 2px;
-  }
-  
-  .btn {
-    border-width: 2px;
-  }
-  
-  .skip-link {
-    border: 2px solid var(--white);
-  }
-}
-
 .loading-spinner::before {
   content: '';
   width: 20px;
@@ -238,21 +153,6 @@ select:focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
   box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.1);
-}
-
-/* Smooth Transitions */
-.btn,
-input,
-textarea,
-select,
-.card,
-.service-card {
-  transition: 
-    background-color var(--transition-base),
-    border-color var(--transition-base),
-    color var(--transition-base),
-    box-shadow var(--transition-base),
-    transform var(--transition-base);
 }
 
 /* Responsive Improvements */

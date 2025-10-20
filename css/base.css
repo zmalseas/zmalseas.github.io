@@ -378,9 +378,6 @@ main,
   }
 }
 
-/* ===== Animation Keyframes ===== */
-/* fadeInUp animation removed - scroll animations disabled */
-
 /* ===== Hero Animation Only ===== */
 .hero-content {
   animation: heroContentSlideIn 1.5s ease-out 0.5s both;
