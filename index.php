@@ -30,6 +30,8 @@
   <link rel="stylesheet" href="main.css?v=2.1" />
   <link rel="preload" as="image" href="images/Hero1_enhanced.webp" fetchpriority="high" />
   <link rel="preload" as="image" href="images/Hero1.png" fetchpriority="high" />
+  <!-- RemixIcon for glass cards -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
   <!-- No web fonts loaded; removed unused Google Fonts preconnects to reduce overhead -->
   <!-- Optional: preconnects for analytics when consent is granted -->
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
@@ -87,15 +89,71 @@
       </div>
     </section>
 
-    <!-- Services Section - Modern Cards -->
+    <!-- Services Section - Glass Cards -->
     <section class="services-section" id="services">
       <div class="container">
         <div class="services-header">
           <h2>Οι υπηρεσίες μας</h2>
-          <p>Ολοκληρωμένες λύσεις για την ανάπτυξη της επιχείρησής σας</p>
+          <p>Ολοκληρωμένες λύσεις για την ανάπτυξη της επιχείρησής σας. Επιλέξτε υπηρεσία για περισσότερα.</p>
         </div>
         
-        <div class="services-grid-new" id="servicesGrid">
+        <div class="services-grid-glass">
+          <article class="service-glass-card" data-theme="blue">
+            <div>
+              <div class="service-icon"><i class="ri-bank-card-2-line"></i></div>
+              <h3>Λογιστική Εταιρειών</h3>
+              <p>Λογιστική, φορολογία, υποχρεώσεις και αυτοματισμοί για κάθε μέγεθος επιχείρησης.</p>
+            </div>
+            <a class="service-btn" href="/ipiresies/logistiki.php">Μάθε περισσότερα →</a>
+          </article>
+          <article class="service-glass-card" data-theme="green">
+            <div>
+              <div class="service-icon"><i class="ri-hand-coin-line"></i></div>
+              <h3>Επιχορηγήσεις</h3>
+              <p>Έλεγχος επιλεξιμότητας, υποβολές και διαχείριση φακέλων για προγράμματα ΕΣΠΑ.</p>
+            </div>
+            <a class="service-btn" href="/ipiresies/epixorigiseis.php">Μάθε περισσότερα →</a>
+          </article>
+          <article class="service-glass-card" data-theme="purple">
+            <div>
+              <div class="service-icon"><i class="ri-line-chart-line"></i></div>
+              <h3>Consulting</h3>
+              <p>Στρατηγική, κοστολόγηση και BI dashboards για βιώσιμη ανάπτυξη.</p>
+            </div>
+            <a class="service-btn" href="/ipiresies/consulting.php">Μάθε περισσότερα →</a>
+          </article>
+          <article class="service-glass-card" data-theme="orange">
+            <div>
+              <div class="service-icon"><i class="ri-share-forward-line"></i></div>
+              <h3>Social Media Marketing</h3>
+              <p>Σχεδιασμός περιεχομένου, διαφημίσεις και ανάλυση καμπανιών.</p>
+            </div>
+            <a class="service-btn" href="/ipiresies/social-media.php">Μάθε περισσότερα →</a>
+          </article>
+          <article class="service-glass-card" data-theme="red">
+            <div>
+              <div class="service-icon"><i class="ri-shield-keyhole-line"></i></div>
+              <h3>Cyber Security</h3>
+              <p>Έλεγχοι ασφαλείας, πολιτικές συμμόρφωσης και εκπαίδευση ομάδων.</p>
+            </div>
+            <a class="service-btn" href="/ipiresies/cyber-security.php">Μάθε περισσότερα →</a>
+          </article>
+          <article class="service-glass-card" data-theme="blue">
+            <div>
+              <div class="service-icon"><i class="ri-team-line"></i></div>
+              <h3>Μισθοδοσία</h3>
+              <p>Πλήρης διαχείριση μισθοδοσίας με αυτοματισμούς και e-αρχειοθέτηση.</p>
+            </div>
+            <a class="service-btn" href="/ipiresies/misthodosia.php">Μάθε περισσότερα →</a>
+          </article>
+          <article class="service-glass-card" data-theme="purple">
+            <div>
+              <div class="service-icon"><i class="ri-compasses-2-line"></i></div>
+              <h3>Σύμβουλος Μηχανικός</h3>
+              <p>Αδειοδοτήσεις, ενεργειακές μελέτες και τεχνική συμβουλευτική.</p>
+            </div>
+            <a class="service-btn" href="/ipiresies/symvoulos-mixanikos.php">Μάθε περισσότερα →</a>
+          </article>
         </div>
       </div>
     </section>
@@ -289,90 +347,6 @@
   <!-- Cookie Consent Script -->
   <script src="/js/cookie-consent.js"></script>
   
-  <!-- Modern Service Cards Script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const services = [
-        { title:'Λογιστική Εταιρειών', icon:'calculator', desc:'Πλήρεις λογιστικές υπηρεσίες για εταιρείες κάθε μεγέθους.', link:'/ipiresies/logistiki.php' },
-        { title:'Μισθοδοσία', icon:'users', desc:'Ολοκληρωμένη διαχείριση μισθοδοσίας για κάθε τύπο επιχείρησης.', link:'/ipiresies/misthodosia.php' },
-        { title:'Consulting', icon:'chart', desc:'Στρατηγική καθοδήγηση και επιχειρηματικές συμβουλές.', link:'/ipiresies/consulting.php' },
-        { title:'Επιχορηγήσεις', icon:'target', desc:'Εύρεση και διαχείριση επιχορηγήσεων για την επιχείρησή σας.', link:'/ipiresies/epixorigiseis.php' },
-        { title:'Social Media Marketing', icon:'share', desc:'Προώθηση στα κοινωνικά δίκτυα για ενίσχυση της παρουσίας σας.', link:'/ipiresies/social-media.php' },
-        { title:'Cyber Security', icon:'shield', desc:'Προστασία δεδομένων και λύσεις κυβερνοασφάλειας.', link:'/ipiresies/cyber-security.php' },
-        { title:'Σύμβουλος Μηχανικός', icon:'wrench', desc:'Τεχνικές μελέτες και ενεργειακές λύσεις από εξειδικευμένους μηχανικούς.', link:'/ipiresies/symvoulos-mixanikos.php' },
-      ];
-
-      const icons = {
-        calculator:`<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="4" y="2" width="16" height="20" rx="2" />
-          <rect x="7" y="5" width="10" height="3" rx="1" />
-          <path d="M8 11h2M8 15h2M12 11h2M12 15h2M16 11h0M16 15h0"/>
-        </svg>`,
-        users:`<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
-        chart:`<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></svg>`,
-        target:`<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/><path d="M22 2l-5 5"/></svg>`,
-        share:`<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51 8.59 10.49"/></svg>`,
-        shield:`<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
-        wrench:`<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 1 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4z"/></svg>`,
-        arrow:`<svg class="arrow" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 8-8h6"/><polyline points="14 2 18 4 14 6"/></svg>`
-      };
-
-      const grid = document.getElementById('servicesGrid');
-
-      services.forEach((s, i) => {
-        const wrap = document.createElement('div');
-        wrap.className = 'modern-card' + (i === services.length-1 ? ' center-last' : '');
-
-        const inner = document.createElement('div');
-        inner.className = 'inner';
-
-        const front = document.createElement('div');
-        front.className = 'face front';
-        front.innerHTML = `
-          <div class="corner">${icons.arrow}</div>
-          <div class="stack">
-            <div class="icon-wrap">${icons[s.icon]}</div>
-            <div class="title">${s.title}</div>
-          </div>
-        `;
-
-        const back = document.createElement('div');
-        back.className = 'face back';
-        back.innerHTML = `
-          <div class="corner">${icons.arrow}</div>
-          <div class="stack">
-            <p class="desc">${s.desc}</p>
-          </div>
-          <div class="btn-row"><a class="btn linklike" href="${s.link}" rel="noopener">Μετάβαση στη σελίδα →</a></div>
-        `;
-
-        inner.appendChild(front);
-        inner.appendChild(back);
-        wrap.appendChild(inner);
-        grid.appendChild(wrap);
-
-        // Make the card clickable (except corner)
-        front.addEventListener('click', (e) => {
-          if (!e.target.closest('.corner')) {
-            window.location.href = s.link;
-          }
-        });
-
-        const corners = wrap.querySelectorAll('.corner');
-        corners.forEach(btn => btn.addEventListener('click', (e)=>{
-          e.stopPropagation();
-          flipExclusive(wrap);
-        }));
-      });
-
-      function flipExclusive(activeCard){
-        document.querySelectorAll('.modern-card .inner').forEach(el => {
-          if(el !== activeCard.querySelector('.inner')) el.classList.remove('flipped');
-        });
-        activeCard.querySelector('.inner').classList.toggle('flipped');
-      }
-    });
-  </script>
 </body>
 </html>
 

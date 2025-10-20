@@ -429,7 +429,7 @@ main,
   font-weight: 700;
 }
 
-/* ===== Services Section - New Modern Cards ===== */
+/* ===== Services Section - Glass Cards ===== */
 .services-section {
   /* Use image-set for modern browsers with WebP, fallback to PNG */
   background:
@@ -450,7 +450,7 @@ main,
 
 .services-header {
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 .services-header h2 {
@@ -463,262 +463,160 @@ main,
 .services-header p {
   font-size: clamp(1.1rem, 2vw, 1.4rem);
   color: rgba(255, 255, 255, 0.8);
-  max-width: 600px;
+  max-width: 760px;
   margin: 0 auto;
 }
 
-.services-grid-new {
+/* Glass Cards Grid */
+.services-grid-glass {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   justify-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 22px;
+  padding: 0 20px;
 }
 
-@media (min-width: 640px) {
-  .services-grid-new { 
-    grid-template-columns: repeat(2, minmax(0, 1fr)); 
-  }
+/* Center last card if odd number */
+.services-grid-glass:has(.service-glass-card:last-child:nth-child(odd)) .service-glass-card:last-child {
+  grid-column: span 2;
+  justify-self: center;
+  max-width: 540px;
 }
 
-@media (min-width: 1024px) {
-  .services-grid-new { 
-    grid-template-columns: repeat(3, minmax(0, 1fr)); 
-  }
-  .center-last { 
-    grid-column: 2; 
-  }
-}
-
-.modern-card {
-  width: 360px;
-  height: 288px;
-  perspective: 1200px;
-}
-
-.modern-card .inner {
+/* Glass Card */
+.service-glass-card {
   position: relative;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: transform .7s;
-}
-
-.modern-card .inner.flipped { 
-  transform: rotateY(180deg); 
-}
-
-.modern-card .face {
-  position: absolute; 
-  inset: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 24px;
-  border-radius: 22px;
-  border: 1px solid rgba(255,255,255,0.2);
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
-  backface-visibility: hidden;
-  overflow: hidden;
-}
-
-.modern-card .front {
-  cursor: pointer;
-}
-
-.modern-card .back { 
-  transform: rotateY(180deg); 
-}
-
-.modern-card .icon-wrap {
-  width: 76px; 
-  height: 76px;
+  padding: 28px 22px;
   border-radius: 18px;
-  border: 1px solid rgba(255,255,255,.3);
-  background: rgba(255,255,255,.15);
-  backdrop-filter: blur(5px);
-  display: flex; 
-  align-items: center; 
-  justify-content: center;
-  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: all 0.25s ease;
+  backdrop-filter: saturate(130%) blur(8px);
+  min-height: 270px;
 }
 
-.modern-card .title { 
-  font-size: 22px; 
-  font-weight: 700; 
-  margin: 10px 0 0; 
-  color: #ffffff;
-  text-align: center;
+.service-glass-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.45);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(92, 200, 255, 0.35);
 }
 
-.modern-card .desc { 
-  color: #e5e7eb; 
-  line-height: 1.6; 
-  max-width: 22rem; 
-  margin: 0 auto; 
-  text-align: center;
+/* Theme-based icon colors */
+.service-glass-card[data-theme="blue"] .service-icon {
+  background: linear-gradient(135deg, rgba(92, 200, 255, 0.25), rgba(92, 200, 255, 0.07));
+  border-color: rgba(92, 200, 255, 0.4);
 }
 
-.modern-card .btn-row { 
-  display: flex; 
-  justify-content: center; 
-  margin-bottom: 6px; 
+.service-glass-card[data-theme="green"] .service-icon {
+  background: linear-gradient(135deg, rgba(110, 231, 183, 0.25), rgba(110, 231, 183, 0.07));
+  border-color: rgba(110, 231, 183, 0.4);
 }
 
-.modern-card .btn {
-  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
-  color: #ffffff;
-  border: 0;
-  border-radius: 8px;
-  padding: 12px 24px;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(41, 128, 185, 0.3);
+.service-glass-card[data-theme="orange"] .service-icon {
+  background: linear-gradient(135deg, rgba(247, 185, 85, 0.25), rgba(247, 185, 85, 0.07));
+  border-color: rgba(247, 185, 85, 0.4);
+}
+
+.service-glass-card[data-theme="purple"] .service-icon {
+  background: linear-gradient(135deg, rgba(170, 141, 252, 0.25), rgba(170, 141, 252, 0.07));
+  border-color: rgba(170, 141, 252, 0.4);
+}
+
+.service-glass-card[data-theme="red"] .service-icon {
+  background: linear-gradient(135deg, rgba(255, 122, 122, 0.25), rgba(255, 122, 122, 0.07));
+  border-color: rgba(255, 122, 122, 0.4);
+}
+
+/* Icon wrapper */
+.service-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 14px;
   transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.service-icon i {
+  font-size: 26px;
+  color: #ffffff;
+}
+
+.service-glass-card h3 {
+  font-size: 1.12rem;
+  margin: 0 0 6px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.service-glass-card p {
+  margin: 0 0 14px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.45;
+  min-height: 60px;
+}
+
+/* Button */
+.service-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #cfe9ff;
+  background: rgba(255, 255, 255, 0.05);
   text-decoration: none;
-  display: inline-block;
-  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
 }
 
-.modern-card .btn:hover { 
-  transform: translateY(-2px); 
-  box-shadow: 0 6px 20px rgba(41, 128, 185, 0.4);
-}
-
-.modern-card .corner {
-  position: absolute; 
-  top: 0; 
-  right: 0;
-  width: 90px;
-  height: 90px;
-  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
-  clip-path: polygon(100% 0%, 30% 0%, 100% 70%);
-  display: flex; 
-  align-items: flex-start; 
-  justify-content: flex-end;
-  cursor: pointer;
-}
-
-.modern-card .corner svg { 
-  position: absolute;
-  top: 12px;
-  right: 18px;
-  filter: drop-shadow(0 0 4px rgba(255,255,255,.7));
-  z-index: 10;
-}
-
-.modern-card .corner .arrow { 
-  transform: rotate(45deg);
-  width: 18px;
-  height: 18px;
+.service-btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(92, 200, 255, 0.6);
   color: white;
 }
 
-.modern-card .stack { 
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
-  gap: 16px; 
-  flex: 1; 
-  justify-content: center; 
-}
-
-.modern-card a.linklike { 
-  color: inherit; 
-  text-decoration: none; 
-}
-
-/* Modern Cards Mobile Responsive */
+/* Responsive */
 @media (max-width: 768px) {
-  .modern-card {
-    width: 100%;
-    max-width: 320px;
-    height: 260px;
+  .services-section {
+    padding: 60px 0;
   }
   
-  .modern-card .corner {
-    width: 85px;
-    height: 85px;
+  .services-header {
+    margin-bottom: 40px;
   }
   
-  .modern-card .corner svg {
-    top: 12px;
-    right: 17px;
+  .services-grid-glass {
+    gap: 18px;
+    padding: 0 16px;
   }
   
-  .modern-card .corner .arrow {
-    width: 18px;
-    height: 18px;
-  }
-  
-  .modern-card .icon-wrap {
-    width: 72px;
-    height: 72px;
-  }
-  
-  .modern-card .title {
-    font-size: 20px;
-    font-weight: 600;
-  }
-  
-  .modern-card .desc {
-    font-size: 14px;
-    line-height: 1.5;
+  .service-glass-card {
+    padding: 24px 18px;
+    min-height: 250px;
   }
 }
 
 @media (max-width: 480px) {
-  .services-grid-new {
-    padding: 0 16px;
-    gap: 1.5rem;
+  .services-grid-glass {
+    grid-template-columns: 1fr;
   }
   
-  .modern-card {
-    width: 100%;
-    max-width: 280px;
-    height: 240px;
-  }
-  
-  .modern-card .face {
-    padding: 20px;
-  }
-  
-  .modern-card .corner {
-    width: 80px;
-    height: 80px;
-  }
-  
-  .modern-card .corner svg {
-    top: 10px;
-    right: 14px;
-  }
-  
-  .modern-card .corner .arrow {
-    width: 18px;
-    height: 18px;
-  }
-  
-  .modern-card .icon-wrap {
-    width: 68px;
-    height: 68px;
-  }
-  
-  .modern-card .title {
-    font-size: 19px;
-    font-weight: 600;
-    margin: 8px 0 0;
-  }
-  
-  .modern-card .desc {
-    font-size: 13px;
-  }
-  
-  .modern-card .btn {
-    padding: 10px 20px;
-    font-size: 14px;
+  .services-grid-glass:has(.service-glass-card:last-child:nth-child(odd)) .service-glass-card:last-child {
+    grid-column: span 1;
+    max-width: none;
   }
 }
 
@@ -941,95 +839,18 @@ main,
     background-attachment: scroll;
   }
   
-  .services-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
+  .services-grid-glass {
+    gap: 18px;
+    padding: 0 16px;
   }
   
-  .service-card {
-    height: 280px;
-  }
-  
-  .service-card-front,
-  .service-card-back {
-    padding: 25px 20px;
-  }
-  
-  .service-card h3 {
-    font-size: 1.2rem;
-    text-align: center;
-    line-height: 1.3;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
-  }
-  
-  .service-card p {
-    font-size: 0.9rem;
-    text-align: center;
-    line-height: 1.5;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+  .service-glass-card {
+    padding: 24px 18px;
+    min-height: 250px;
   }
   
   .about-text {
     text-align: center;
-  }
-  
-  /* Mobile touch - enhanced flip behavior */
-  .service-card {
-    cursor: pointer;
-    user-select: none;
-  }
-  
-  .service-card-inner {
-    transition: transform 0.6s ease-in-out;
-  }
-  
-  /* Mobile: Disable flip cards completely, show direct buttons */
-  @media (hover: none) {
-    .service-card:hover .service-card-inner {
-      transform: none;
-    }
-    
-    .service-card-back {
-      display: none;
-    }
-    
-    .service-card-front {
-      position: relative;
-      backface-visibility: visible;
-    }
-    
-    /* Add mobile button to front card */
-    .service-card-front::after {
-      content: "Περισσότερα →";
-      display: block;
-      margin-top: auto;
-      padding: 12px 20px;
-      background: var(--brand);
-      color: white;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-align: center;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    }
-    
-    .service-card:active .service-card-front::after {
-      transform: scale(0.95);
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-    }
-    
-    .service-card {
-      transform-style: flat;
-      transition: transform 0.2s ease;
-    }
-    
-    .service-card:active {
-      transform: scale(0.98);
-    }
   }
 }
 
