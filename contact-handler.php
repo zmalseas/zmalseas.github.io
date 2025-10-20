@@ -177,11 +177,13 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 /**
- * Sanitize input data
+ * Sanitize input data (prevents header injection)
  */
 function sanitizeInput($data) {
     $data = trim($data);
     $data = stripslashes($data);
+    // Remove CRLF characters to prevent header injection
+    $data = str_replace(["\r", "\n", "%0a", "%0d", "\x0a", "\x0d"], '', $data);
     $data = htmlspecialchars($data, ENT_QUOTES, 'UTF-8');
     return $data;
 }

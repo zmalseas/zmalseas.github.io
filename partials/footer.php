@@ -31,7 +31,7 @@
         <p>© <span id="y"></span> Nerally. All rights reserved.</p>
       </div>
   </div>
-  <script>document.getElementById("y").textContent=new Date().getFullYear()</script>
+  <script<?php echo isset($nonce_attr) ? $nonce_attr : ''; ?>>document.getElementById("y").textContent=new Date().getFullYear()</script>
 </footer>
 
 <?php

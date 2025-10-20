@@ -1,5 +1,12 @@
+<?php 
+// CSP Nonce for inline scripts security
+if (!isset($csp_nonce) && is_file(__DIR__.'/csp-nonce.php')) { 
+  include_once __DIR__.'/csp-nonce.php'; 
+}
+$nonce_attr = isset($csp_nonce) ? ' nonce="'.$csp_nonce.'"' : '';
+?>
 <a class="skip-link" href="#main-content">Μετάβαση στο περιεχόμενο</a>
-<script>
+<script<?php echo $nonce_attr; ?>>
 // Global Site Configuration
 (function () {
   if (window.SITE_CONFIG) return;

@@ -1,5 +1,58 @@
+# ============================================
+# Nerally.gr - Git Ignore Configuration
+# ============================================
+
+# Environment Variables (CRITICAL - NEVER COMMIT)
 .env
+.env.*
+!.env.example
 config/*.local.php
 
 # WordPress installation directory - managed manually
 arthra/
+
+# Logs and Debugging
+*.log
+logs/
+*.sql
+*.sqlite
+
+# WordPress Core Protection
+wp-config.php
+wp-content/uploads/
+wp-content/cache/
+wp-content/backup-db/
+
+# Temporary Files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# PHP
+vendor/
+composer.phar
+composer.lock
+
+# Node (if used)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Uploaded Files (CV uploads from careers form)
+uploads/
+cv-uploads/
+
+# Backup Files
+*.bak
+*.backup
+backup/

@@ -138,20 +138,35 @@ try {
   if (!$privacy) $errors[] = 'privacy';
   if (!isset($_FILES['cv']) || ($_FILES['cv']['error'] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_OK) $errors[] = 'cv';
 
-  // File validation
+  // File validation (enhanced security)
   $allowedMime = ['application/pdf','image/png','image/jpeg'];
   $allowedExt = ['pdf','png','jpg','jpeg'];
+  $dangerousExt = ['php','phtml','php3','php4','php5','pht','exe','sh','bat','cmd','js','html','htm','svg'];
   $maxSize = 5 * 1024 * 1024; // 5MB
   $cvTmp = $_FILES['cv']['tmp_name'] ?? '';
   $cvName = $_FILES['cv']['name'] ?? '';
   $cvSize = (int)($_FILES['cv']['size'] ?? 0);
+  
   if ($cvTmp && is_uploaded_file($cvTmp)) {
     $ext = strtolower(pathinfo($cvName, PATHINFO_EXTENSION));
-    $finfo = function_exists('finfo_open') ? finfo_open(FILEINFO_MIME_TYPE) : null;
-    $mime = $finfo ? finfo_file($finfo, $cvTmp) : mime_content_type($cvTmp);
-    if ($finfo) { finfo_close($finfo); }
-    if ($cvSize <= 0 || $cvSize > $maxSize) $errors[] = 'cv_size';
-    if (!in_array($ext, $allowedExt, true) || !in_array($mime, $allowedMime, true)) $errors[] = 'cv_type';
+    $fileNameLower = strtolower($cvName);
+    
+    // CRITICAL: Check for double extensions (e.g., malicious.pdf.php)
+    if (preg_match('/\.(' . implode('|', $dangerousExt) . ')($|\.)/i', $fileNameLower)) {
+      $errors[] = 'cv_dangerous_extension';
+    }
+    
+    // ALWAYS use finfo_open for MIME detection (more secure than mime_content_type)
+    if (!function_exists('finfo_open')) {
+      $errors[] = 'cv_finfo_missing'; // Server configuration issue
+    } else {
+      $finfo = finfo_open(FILEINFO_MIME_TYPE);
+      $mime = finfo_file($finfo, $cvTmp);
+      finfo_close($finfo);
+      
+      if ($cvSize <= 0 || $cvSize > $maxSize) $errors[] = 'cv_size';
+      if (!in_array($ext, $allowedExt, true) || !in_array($mime, $allowedMime, true)) $errors[] = 'cv_type';
+    }
   }
 
   if (!empty($errors)) {
