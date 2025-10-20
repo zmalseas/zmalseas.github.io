@@ -378,11 +378,14 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
   
   <!-- Footer -->
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>
+  
+  <!-- reCAPTCHA v3 - Load before contact-form.js -->
+  <script src="https://www.google.com/recaptcha/api.js?render=6Lcd7dcrAAAAADzfwDc4AG_kN6jKU0-0Fo78NmYx" async defer></script>
+  
   <script src="/js/navigation.js"></script>
   <script src="../js/contact-form.js"></script>
   <script src="/js/cookie-consent.js"></script>
   <script src="/js/chat-widget.js"></script>
-
   <script src="../app.js"></script>
   <script<?php echo isset($nonce_attr) ? $nonce_attr : ''; ?>>
     // Hero animation controller for contact - copy from company.php
