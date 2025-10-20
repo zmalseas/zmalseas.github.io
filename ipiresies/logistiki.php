@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Λογιστική Εταιρειών - Nerally | Σύμμαχος Νέας Εποχής</title>
-  <meta name="description" content="Ολοκληρωμένες λογιστικές υπηρεσίες για εταιρείες, φοροσχεδιασμός και οικονομικές καταστάσεις που ανοίγουν πόρτες χρηματοδότησης." />
-  <meta name="keywords" content="λογιστικές υπηρεσίες, φοροτεχνικά, λογιστής, φόροι επιχειρήσεων, λογιστική διαχείριση, Nerally" />
+  <title>Nerally - Λογιστική Εταιρειών</title>
+  <meta name="description" content="Ολοκληρωμένες λογιστικές υπηρεσίες για εταιρείες, φοροσχεδιασμός, μισθοδοσία και οικονομικό reporting ." />
+  <meta name="keywords" content="λογιστικές υπηρεσίες, φοροτεχνικά, λογιστής, φόροι επιχειρήσεων, λογιστική διαχείριση, Nerally, φόρος, φοροσχεδιασμός" />
   <meta name="author" content="Nerally" />
   <link rel="canonical" href="https://nerally.gr/ipiresies/logistiki.php" />
   
