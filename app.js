@@ -39,7 +39,6 @@ class NerallyApp {
       this.initializeSecurity();
       
       // Initialize advanced modules
-      this.initializeServiceCards();
       this.initializeServiceWorker();
       
       this.isInitialized = true;
@@ -257,42 +256,6 @@ class NerallyApp {
   showError(message) {
     console.error('App Error:', message);
     // Error handling would be implemented here
-  }
-
-  initializeServiceCards() {
-    try {
-      const serviceCards = document.querySelectorAll('.service-card');
-      
-      serviceCards.forEach(card => {
-        let isFlipped = false;
-        
-        card.addEventListener('click', (e) => {
-          e.preventDefault();
-          
-          if (isFlipped) {
-            // Flip back to front
-            card.querySelector('.service-card-inner').style.transform = 'rotateY(0deg)';
-            isFlipped = false;
-          } else {
-            // Flip to back
-            card.querySelector('.service-card-inner').style.transform = 'rotateY(180deg)';
-            isFlipped = true;
-          }
-        });
-        
-        // Reset flip state on mouse leave (desktop only)
-        if (!('ontouchstart' in window)) {
-          card.addEventListener('mouseleave', () => {
-            card.querySelector('.service-card-inner').style.transform = 'rotateY(0deg)';
-            isFlipped = false;
-          });
-        }
-      });
-      
-      console.log('🎴 Service cards initialized');
-    } catch (error) {
-      console.error('Service cards initialization failed:', error);
-    }
   }
 }
 
