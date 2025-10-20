@@ -3,101 +3,101 @@
   <!-- Homepage -->
   <url>
     <loc>https://nerally.gr/</loc>
-    <lastmod>2025-10-20</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <!-- Company Pages -->
   <url>
-    <loc>https://nerally.gr/etairia/company.php</loc>
-    <lastmod>2025-10-20</lastmod>
+    <loc>https://nerally.gr/etairia/company</loc>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://nerally.gr/etairia/team.php</loc>
-    <lastmod>2025-10-20</lastmod>
+    <loc>https://nerally.gr/etairia/team</loc>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://nerally.gr/etairia/join-us.php</loc>
-    <lastmod>2025-10-20</lastmod>
+    <loc>https://nerally.gr/etairia/join-us</loc>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <!-- Services Pages -->
   <url>
-    <loc>https://nerally.gr/ipiresies/logistiki.php</loc>
-    <lastmod>2025-10-20</lastmod>
+    <loc>https://nerally.gr/ipiresies/logistiki</loc>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
-    <loc>https://nerally.gr/ipiresies/misthodosia.php</loc>
-    <lastmod>2025-10-20</lastmod>
+    <loc>https://nerally.gr/ipiresies/misthodosia</loc>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
-    <loc>https://nerally.gr/ipiresies/consulting.php</loc>
-    <lastmod>2025-10-20</lastmod>
+    <loc>https://nerally.gr/ipiresies/consulting</loc>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
-    <loc>https://nerally.gr/ipiresies/epixorigiseis.php</loc>
-    <lastmod>2025-10-20</lastmod>
+    <loc>https://nerally.gr/ipiresies/epixorigiseis</loc>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://nerally.gr/ipiresies/social-media.php</loc>
-    <lastmod>2025-10-20</lastmod>
+    <loc>https://nerally.gr/ipiresies/social-media</loc>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://nerally.gr/ipiresies/symvoulos-mixanikos.php</loc>
-    <lastmod>2025-10-20</lastmod>
+    <loc>https://nerally.gr/ipiresies/symvoulos-mixanikos</loc>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://nerally.gr/ipiresies/cyber-security.php</loc>
-    <lastmod>2025-10-20</lastmod>
+    <loc>https://nerally.gr/ipiresies/cyber-security</loc>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <!-- Applications -->
   <url>
-    <loc>https://nerally.gr/efarmoges/income-tax-calculator.php</loc>
-    <lastmod>2025-10-20</lastmod>
+    <loc>https://nerally.gr/efarmoges/income-tax-calculator</loc>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://nerally.gr/efarmoges/rent-tax-calculator.php</loc>
-    <lastmod>2025-10-20</lastmod>
+    <loc>https://nerally.gr/efarmoges/rent-tax-calculator</loc>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://nerally.gr/efarmoges/vat-calculator.php</loc>
-    <lastmod>2025-10-20</lastmod>
+    <loc>https://nerally.gr/efarmoges/vat-calculator</loc>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -105,37 +105,37 @@
   <!-- Articles -->
   <url>
     <loc>https://nerally.gr/arthra/</loc>
-    <lastmod>2025-10-20</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <!-- Contact -->
   <url>
-    <loc>https://nerally.gr/epikoinonia/contact.php</loc>
-    <lastmod>2025-10-20</lastmod>
+    <loc>https://nerally.gr/epikoinonia/contact</loc>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <!-- Legal Pages -->
   <url>
-    <loc>https://nerally.gr/legal/privacy.php</loc>
-    <lastmod>2025-10-20</lastmod>
+    <loc>https://nerally.gr/legal/privacy</loc>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   
   <url>
-    <loc>https://nerally.gr/legal/terms.php</loc>
-    <lastmod>2025-10-20</lastmod>
+    <loc>https://nerally.gr/legal/terms</loc>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   
   <url>
-    <loc>https://nerally.gr/legal/cookies.php</loc>
-    <lastmod>2025-10-20</lastmod>
+    <loc>https://nerally.gr/legal/cookies</loc>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

@@ -277,7 +277,7 @@
     <div class="cat"><div class="bar"></div><h3>Λογιστική</h3></div>
     <div class="team-grid cols-3">
       <article class="team-card">
-        <img class="avatar" src="/images/team-xristos.jpg" alt="Χρήστος Γκουτούλας">
+        <img class="avatar" src="/images/team-xristos.jpg" alt="Χρήστος Γκουτούλας" loading="lazy" decoding="async">
         <h4>Χρήστος Γκουτούλας</h4>
         <p class="role">Λογιστής – Φοροτεχνικός</p>
         <div class="contact"><a href="tel:+306946365798"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.11 5.18 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.72c.12.9.3 1.77.57 2.6a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.83.27 1.7.45 2.6.57A2 2 0 0 1 22 16.92z"/></svg>694 636 5798</a></div>
@@ -287,7 +287,7 @@
         </div>
       </article>
       <article class="team-card">
-        <img class="avatar" src="/images/team-aris.jpg" alt="Άρης Χαραλαμπίδης">
+        <img class="avatar" src="/images/team-aris.jpg" alt="Άρης Χαραλαμπίδης" loading="lazy" decoding="async">
         <h4>Άρης Χαραλαμπίδης</h4>
         <p class="role">Λογιστής – Φοροτεχνικός</p>
         <div class="contact"><a href="tel:+30697400944"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.11 5.18 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.72c.12.9.3 1.77.57 2.6a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.83.27 1.7.45 2.6.57A2 2 0 0 1 22 16.92z"/></svg>697 400 944</a></div>
@@ -297,7 +297,7 @@
         </div>
       </article>
       <article class="team-card">
-        <img class="avatar" src="/images/team-ioannis.webp" alt="Ιωάννης Λάμπης">
+        <img class="avatar" src="/images/team-ioannis.webp" alt="Ιωάννης Λάμπης" loading="lazy" decoding="async">
         <h4>Ιωάννης Λαμπής</h4>
         <p class="role">Μισθοδοσία – Εργατικά</p>
         <div class="contact"><a href="tel:+306951302516"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.11 5.18 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.72c.12.9.3 1.77.57 2.6a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.83.27 1.7.45 2.6.57A2 2 0 0 1 22 16.92z"/></svg>695 130 2516</a></div>
@@ -312,7 +312,7 @@
     <div class="cat"><div class="bar"></div><h3>Consulting</h3></div>
     <div class="team-grid cols-3">
       <article class="team-card">
-        <img class="avatar" src="/images/team-charalampos.jpg" alt="Χαράλαμπος Ζυγκιρίδης">
+        <img class="avatar" src="/images/team-charalampos.jpg" alt="Χαράλαμπος Ζυγκιρίδης" loading="lazy" decoding="async">
         <h4>Χαράλαμπος Ζυγκιρίδης</h4>
         <p class="role">Σύμβουλος Επιχειρήσεων</p>
         <div class="contact"><a href="tel:+306945793486"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.11 5.18 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.72c.12.9.3 1.77.57 2.6a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.83.27 1.7.45 2.6.57A2 2 0 0 1 22 16.92z"/></svg>694 579 3486</a></div>
@@ -327,7 +327,7 @@
     <div class="cat"><div class="bar"></div><h3>Cyber Security</h3></div>
     <div class="team-grid cols-3">
       <article class="team-card">
-        <img class="avatar" src="/images/placeholder-cyber.jpg" alt="Προσθήκη σύντομα">
+        <img class="avatar" src="/images/placeholder-cyber.jpg" alt="Προσθήκη σύντομα" loading="lazy" decoding="async">
         <h4>—</h4>
         <p class="role">Προσθήκη σύντομα</p>
         <div class="contact"><a href="tel:"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.11 5.18 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.72c.12.9.3 1.77.57 2.6a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.83.27 1.7.45 2.6.57A2 2 0 0 1 22 16.92z"/></svg>—</a></div>
@@ -342,7 +342,7 @@
     <div class="cat"><div class="bar"></div><h3>Επιχορηγήσεις</h3></div>
     <div class="team-grid cols-3">
       <article class="team-card">
-        <img class="avatar" src="/images/placeholder-grants.jpg" alt="Προσθήκη σύντομα">
+        <img class="avatar" src="/images/placeholder-grants.jpg" alt="Προσθήκη σύντομα" loading="lazy" decoding="async">
         <h4>—</h4>
         <p class="role">Προσθήκη σύντομα</p>
         <div class="contact"><a href="tel:"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.11 5.18 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.72c.12.9.3 1.77.57 2.6a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.83.27 1.7.45 2.6.57A2 2 0 0 1 22 16.92z"/></svg>—</a></div>
@@ -357,7 +357,7 @@
     <div class="cat"><div class="bar"></div><h3>Social Media Management</h3></div>
     <div class="team-grid cols-3">
       <article class="team-card">
-        <img class="avatar" src="/images/team-sotiris.jpg" alt="Σωτήρης Θυμιανίδης">
+        <img class="avatar" src="/images/team-sotiris.jpg" alt="Σωτήρης Θυμιανίδης" loading="lazy" decoding="async">
         <h4>Σωτήρης Θυμιανίδης</h4>
         <p class="role">Social Media Expert</p>
         <div class="contact"><a href="tel:+306978424022"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.11 5.18 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.72c.12.9.3 1.77.57 2.6a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.83.27 1.7.45 2.6.57A2 2 0 0 1 22 16.92z"/></svg>697 842 4022</a></div>
@@ -372,7 +372,7 @@
     <div class="cat"><div class="bar"></div><h3>Σύμβουλος Μηχανικός</h3></div>
     <div class="team-grid cols-3">
       <article class="team-card">
-        <img class="avatar" src="/images/team-avramidis.jpg" alt="Αναστάσιος Αβραμίδης">
+        <img class="avatar" src="/images/team-avramidis.jpg" alt="Αναστάσιος Αβραμίδης" loading="lazy" decoding="async">
         <h4>Αναστάσιος Αβραμίδης</h4>
         <p class="role">Αρχιτέκτονας Μηχανικός</p>
         <div class="contact"><a href="tel:+306940420695"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.11 5.18 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.72c.12.9.3 1.77.57 2.6a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.83.27 1.7.45 2.6.57A2 2 0 0 1 22 16.92z"/></svg>694 042 0695</a></div>

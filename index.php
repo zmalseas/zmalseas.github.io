@@ -27,6 +27,12 @@
   <meta property="twitter:description" content="Ολοκληρωμένες λογιστικές υπηρεσίες, φοροτεχνικές συμβουλές, μισθοδοσία, business consulting και cyber security για επιχειρήσεις." />
   <meta property="twitter:image" content="https://nerally.gr/images/logo.png" />
   <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#2980B9" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Nerally" />
+  <link rel="apple-touch-icon" href="/images/logo.png" />
   <link rel="stylesheet" href="main.css?v=2.2" />
   <link rel="preload" as="image" href="images/Hero1_enhanced.webp" fetchpriority="high" />
   <link rel="preload" as="image" href="images/Hero1.png" fetchpriority="high" />
@@ -64,7 +70,7 @@
         <p class="hero-description">Στηρίζουμε το όραμά σου, ώστε να αφιερωθείς στην ανάπτυξη.</p>
         <div class="hero-buttons">
           <a class="btn btn-primary" href="#services" aria-label="Δείτε τις υπηρεσίες που προσφέρουμε">Τι σου προσφέρουμε</a>
-          <a class="btn btn-secondary" href="/epikoinonia/contact.php" aria-label="Επικοινωνήστε μαζί μας">Επικοινωνία</a>
+          <a class="btn btn-secondary" href="/epikoinonia/contact" aria-label="Επικοινωνήστε μαζί μας">Επικοινωνία</a>
         </div>
       </div>
       <!-- Skip to main content link for screen readers -->
@@ -104,7 +110,7 @@
               <h3>Λογιστική Εταιρειών</h3>
               <p>Λογιστική, φορολογία, υποχρεώσεις και αυτοματισμοί για κάθε μέγεθος επιχείρησης.</p>
             </div>
-            <a class="service-btn" href="/ipiresies/logistiki.php">Μάθε περισσότερα →</a>
+            <a class="service-btn" href="/ipiresies/logistiki">Μάθε περισσότερα →</a>
           </article>
           <article class="service-glass-card" data-theme="green">
             <div>
@@ -112,7 +118,7 @@
               <h3>Επιχορηγήσεις</h3>
               <p>Έλεγχος επιλεξιμότητας, υποβολές και διαχείριση φακέλων για προγράμματα ΕΣΠΑ.</p>
             </div>
-            <a class="service-btn" href="/ipiresies/epixorigiseis.php">Μάθε περισσότερα →</a>
+            <a class="service-btn" href="/ipiresies/epixorigiseis">Μάθε περισσότερα →</a>
           </article>
           <article class="service-glass-card" data-theme="purple">
             <div>
@@ -120,7 +126,7 @@
               <h3>Consulting</h3>
               <p>Στρατηγική, κοστολόγηση και BI dashboards για βιώσιμη ανάπτυξη.</p>
             </div>
-            <a class="service-btn" href="/ipiresies/consulting.php">Μάθε περισσότερα →</a>
+            <a class="service-btn" href="/ipiresies/consulting">Μάθε περισσότερα →</a>
           </article>
           <article class="service-glass-card" data-theme="orange">
             <div>
@@ -128,7 +134,7 @@
               <h3>Social Media Marketing</h3>
               <p>Σχεδιασμός περιεχομένου, διαφημίσεις και ανάλυση καμπανιών.</p>
             </div>
-            <a class="service-btn" href="/ipiresies/social-media.php">Μάθε περισσότερα →</a>
+            <a class="service-btn" href="/ipiresies/social-media">Μάθε περισσότερα →</a>
           </article>
           <article class="service-glass-card" data-theme="red">
             <div>
@@ -136,7 +142,7 @@
               <h3>Cyber Security</h3>
               <p>Έλεγχοι ασφαλείας, πολιτικές συμμόρφωσης και εκπαίδευση ομάδων.</p>
             </div>
-            <a class="service-btn" href="/ipiresies/cyber-security.php">Μάθε περισσότερα →</a>
+            <a class="service-btn" href="/ipiresies/cyber-security">Μάθε περισσότερα →</a>
           </article>
           <article class="service-glass-card" data-theme="blue">
             <div>
@@ -144,7 +150,7 @@
               <h3>Μισθοδοσία</h3>
               <p>Πλήρης διαχείριση μισθοδοσίας με αυτοματισμούς και e-αρχειοθέτηση.</p>
             </div>
-            <a class="service-btn" href="/ipiresies/misthodosia.php">Μάθε περισσότερα →</a>
+            <a class="service-btn" href="/ipiresies/misthodosia">Μάθε περισσότερα →</a>
           </article>
           <article class="service-glass-card" data-theme="purple">
             <div>
@@ -152,7 +158,7 @@
               <h3>Σύμβουλος Μηχανικός</h3>
               <p>Αδειοδοτήσεις, ενεργειακές μελέτες και τεχνική συμβουλευτική.</p>
             </div>
-            <a class="service-btn" href="/ipiresies/symvoulos-mixanikos.php">Μάθε περισσότερα →</a>
+            <a class="service-btn" href="/ipiresies/symvoulos-mixanikos">Μάθε περισσότερα →</a>
           </article>
         </div>
       </div>
@@ -208,26 +214,26 @@
             <div class="app-icon">🧮</div>
             <h3>Υπολογιστής Φόρου Εισοδήματος</h3>
             <p>Υπολογίστε εύκολα και γρήγορα τον φόρο εισοδήματός σας με το διαδραστικό μας εργαλείο.</p>
-            <a href="/efarmoges/income-tax-calculator.php" class="app-link">Χρησιμοποιήστε το →</a>
+            <a href="/efarmoges/income-tax-calculator" class="app-link">Χρησιμοποιήστε το →</a>
           </div>
 
           <div class="app-preview-card">
             <div class="app-icon">🏠</div>
             <h3>Υπολογιστής Φόρου Ενοικίου</h3>
             <p>Υπολογίστε τον φόρο που οφείλετε από ενοικιαστικά εισοδήματα με ακρίβεια και απλότητα.</p>
-            <a href="/efarmoges/rent-tax-calculator.php" class="app-link">Χρησιμοποιήστε το →</a>
+            <a href="/efarmoges/rent-tax-calculator" class="app-link">Χρησιμοποιήστε το →</a>
           </div>
 
           <div class="app-preview-card">
             <div class="app-icon">📊</div>
             <h3>Υπολογισμός ΦΠΑ</h3>
             <p>Άμεσος υπολογισμός καθαρής αξίας, ποσού ΦΠΑ και τελικής τιμής με 24%, 13%, 6% ή custom συντελεστή.</p>
-            <a href="/efarmoges/vat-calculator.php" class="app-link">Χρησιμοποιήστε το →</a>
+            <a href="/efarmoges/vat-calculator" class="app-link">Χρησιμοποιήστε το →</a>
           </div>
         </div>
 
         <div class="section-cta">
-          <a href="/efarmoges/income-tax-calculator.php" class="btn btn-primary">Δείτε όλες τις εφαρμογές</a>
+          <a href="/efarmoges/income-tax-calculator" class="btn btn-primary">Δείτε όλες τις εφαρμογές</a>
         </div>
       </div>
     </section>
@@ -260,7 +266,7 @@
           </div>
 
           <div class="contact-actions">
-            <a href="/epikoinonia/contact.php" class="btn btn-primary">Επικοινωνήστε μαζί μας</a>
+            <a href="/epikoinonia/contact" class="btn btn-primary">Επικοινωνήστε μαζί μας</a>
           </div>
 
           <div class="social-links-section">

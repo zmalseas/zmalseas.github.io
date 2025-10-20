@@ -41,6 +41,21 @@ DirectoryIndex index.php index.html
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
 
+# Clean URLs - Remove .php extension
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Redirect .php URLs to clean URLs (SEO-friendly 301 redirect)
+    RewriteCond %{THE_REQUEST} ^GET\ /(.+)\.php [NC]
+    RewriteRule ^(.+)\.php$ /$1 [R=301,L]
+    
+    # Serve .php file when clean URL is requested
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME}.php -f
+    RewriteRule ^(.+?)/?$ $1.php [L]
+</IfModule>
+
 # Keep .html URLs visible but serve the corresponding .php internally (exclude WordPress dir)
 <IfModule mod_rewrite.c>
     RewriteEngine On

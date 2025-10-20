@@ -1,9 +1,9 @@
 <footer class="site-footer">
   <div class="footer-content">
       <div class="legal-links">
-        <a href="/legal/privacy.php" class="legal-link">Πολιτική Απορρήτου</a>
-        <a href="/legal/terms.php" class="legal-link">Όροι Χρήσης</a>
-        <a href="/legal/cookies.php" class="legal-link">Cookies</a>
+        <a href="/legal/privacy" class="legal-link">Πολιτική Απορρήτου</a>
+        <a href="/legal/terms" class="legal-link">Όροι Χρήσης</a>
+        <a href="/legal/cookies" class="legal-link">Cookies</a>
       </div>
       
       <div class="social-section">

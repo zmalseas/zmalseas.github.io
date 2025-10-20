@@ -29,14 +29,34 @@ class CookieConsent {
   getConsent() {
     try {
       const raw = localStorage.getItem(this.consentKey);
-      return raw ? JSON.parse(raw) : null;
+      if (!raw) return null;
+      
+      const consent = JSON.parse(raw);
+      
+      // Check if consent has expired (1 year)
+      if (consent.expires && Date.now() > consent.expires) {
+        this.revokeConsent();
+        return null;
+      }
+      
+      return consent;
     } catch (_) { return null; }
   }
 
   setConsent(analytics) {
-    const consent = { analytics: !!analytics, ts: Date.now(), v: '1.0' };
+    const consent = {
+      analytics: !!analytics,
+      ts: Date.now(),
+      v: '1.1',
+      expires: Date.now() + (365 * 24 * 60 * 60 * 1000) // 1 year from now
+    };
     localStorage.setItem(this.consentKey, JSON.stringify(consent));
     localStorage.setItem(this.analyticsKey, String(!!analytics));
+    
+    // Also store in cookie for 1 year (for server-side access if needed)
+    const expires = new Date(consent.expires);
+    document.cookie = `${this.consentKey}=${JSON.stringify(consent)}; expires=${expires.toUTCString()}; path=/; SameSite=Lax; Secure`;
+    
     this.applyConsent(consent);
   }
 
@@ -153,9 +173,6 @@ class CookieConsent {
     window.dataLayer.push({ event: 'cookie_consent_update', analytics_consent: 'granted' });
     localStorage.setItem(this.analyticsKey, 'true');
     
-    // Debug logging
-    console.log('🟢 Analytics enabled, GTM loaded:', this.gtmLoaded);
-    
     // Ensure GTM is loaded after consent
     if (!this.gtmLoaded) {
       this.loadGTM();
@@ -171,11 +188,9 @@ class CookieConsent {
 
   loadGTM() {
     if (this.gtmLoaded || !this.gtmContainerId) {
-      console.log('⚠️ GTM load skipped - already loaded:', this.gtmLoaded, 'or no container ID:', this.gtmContainerId);
       return;
     }
     
-    console.log('🚀 Loading analytics (GTM + GA4)');
     window.dataLayer = window.dataLayer || [];
     
     // Load GA4 directly
@@ -187,12 +202,7 @@ class CookieConsent {
     s.src = 'https://www.googletagmanager.com/gtm.js?id=' + this.gtmContainerId;
     
     s.onload = () => {
-      console.log('✅ GTM script loaded successfully');
       window.dataLayer.push({ event: 'gtm_loaded' });
-    };
-    
-    s.onerror = () => {
-      console.error('❌ GTM script failed to load');
     };
     
     const first = document.getElementsByTagName('script')[0];
@@ -202,7 +212,6 @@ class CookieConsent {
 
   loadGA4() {
     const measurementId = (window.SITE_CONFIG && window.SITE_CONFIG.GA4_ID) || 'G-84CY5EBJJX';
-    console.log('📊 Loading GA4:', measurementId);
     
     // Load gtag script
     const gtagScript = document.createElement('script');
@@ -220,8 +229,6 @@ class CookieConsent {
       page_title: document.title,
       page_location: window.location.href
     });
-    
-    console.log('✅ GA4 initialized with ID:', measurementId);
   }
 
   clearAnalyticsCookies() {

@@ -1,0 +1,76 @@
+{
+  "name": "Nerally - Επιχειρηματικό Οικοσύστημα",
+  "short_name": "Nerally",
+  "description": "Ένα δίκτυο υπηρεσιών και συνεργασιών στο πλευρό της επιχείρησής σου",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2980B9",
+  "orientation": "portrait-primary",
+  "categories": ["business", "finance", "productivity"],
+  "lang": "el-GR",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/Hero1.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Επικοινωνία",
+      "short_name": "Επικοινωνία",
+      "description": "Επικοινωνήστε μαζί μας",
+      "url": "/epikoinonia/contact",
+      "icons": [
+        {
+          "src": "/images/logo.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Υπηρεσίες",
+      "short_name": "Υπηρεσίες",
+      "description": "Δείτε τις υπηρεσίες μας",
+      "url": "/#services",
+      "icons": [
+        {
+          "src": "/images/logo.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Υπολογιστής Φόρου",
+      "short_name": "Φόροι",
+      "description": "Υπολογισμός φόρων",
+      "url": "/efarmoges/income-tax-calculator",
+      "icons": [
+        {
+          "src": "/images/logo.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}

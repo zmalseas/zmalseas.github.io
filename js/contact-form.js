@@ -2,7 +2,6 @@
  * Contact Form Handler with reCAPTCHA v3
  * Handles form submission with enhanced security features
  */
-
 class ContactFormHandler {
   constructor(options = {}) {
     const defaultKey = (window.SITE_CONFIG && window.SITE_CONFIG.RECAPTCHA_SITE) || '';
@@ -10,16 +9,13 @@ class ContactFormHandler {
     this.apiUrl = options.apiUrl || '/contact-handler.php';
     this.formSelector = options.formSelector || '.contact-form';
     this.recaptchaLoaded = false;
-    
     this.init();
   }
-
   init() {
     this.loadRecaptcha();
     this.bindFormEvents();
     this.addHoneypot();
   }
-
   /**
    * Load reCAPTCHA v3 script
    */
@@ -28,19 +24,15 @@ class ContactFormHandler {
       this.recaptchaLoaded = true;
       return;
     }
-
     const script = document.createElement('script');
     script.src = `https://www.google.com/recaptcha/api.js?render=${this.siteKey}`;
     script.onload = () => {
       this.recaptchaLoaded = true;
-      console.log('✅ reCAPTCHA loaded successfully');
     };
     script.onerror = () => {
-      console.error('❌ Failed to load reCAPTCHA');
     };
     document.head.appendChild(script);
   }
-
   /**
    * Add honeypot field for bot detection
    */
@@ -58,7 +50,6 @@ class ContactFormHandler {
       }
     });
   }
-
   /**
    * Bind form submission events
    */
@@ -68,7 +59,6 @@ class ContactFormHandler {
       form.addEventListener('submit', (e) => this.handleSubmit(e));
     });
   }
-
   /**
    * Handle form submission
    */
@@ -76,17 +66,14 @@ class ContactFormHandler {
     event.preventDefault();
     const form = event.target;
     const submitButton = form.querySelector('[type="submit"]');
-    
     try {
       // Disable submit button
       this.setButtonState(submitButton, true, 'Αποστολή...');
-      
       // Validate form
       if (!this.validateForm(form)) {
         this.setButtonState(submitButton, false);
         return;
       }
-
       // Get reCAPTCHA token
       const recaptchaToken = await this.getRecaptchaToken();
       if (!recaptchaToken) {
@@ -94,20 +81,13 @@ class ContactFormHandler {
         this.setButtonState(submitButton, false);
         return;
       }
-
       // Prepare form data
       const formData = this.getFormData(form);
       formData.recaptcha_token = recaptchaToken;
-
       // Debugging reCAPTCHA token and response
-      console.log('reCAPTCHA token:', recaptchaToken);
-      console.log('Form data:', formData);
-
       // Debugging form submission
       try {
         const response = await this.submitForm(formData);
-        console.log('Form submission response:', response);
-
         if (response.success) {
           this.showSuccess(response.message || 'Το μήνυμά σας στάλθηκε επιτυχώς!');
           form.reset();
@@ -119,29 +99,23 @@ class ContactFormHandler {
           }
         }
       } catch (error) {
-        console.error('Form submission error:', error);
         this.showError('Σφάλμα δικτύου. Παρακαλώ δοκιμάστε ξανά.');
       } finally {
         this.setButtonState(submitButton, false);
       }
-      
     } catch (error) {
-      console.error('Form submission error:', error);
       this.showError('Σφάλμα δικτύου. Παρακαλώ δοκιμάστε ξανά.');
     } finally {
       this.setButtonState(submitButton, false);
     }
   }
-
   /**
    * Get reCAPTCHA token
    */
   async getRecaptchaToken() {
     if (!this.recaptchaLoaded || typeof grecaptcha === 'undefined') {
-      console.error('reCAPTCHA not loaded');
       return null;
     }
-
     try {
       const token = await new Promise((resolve) => {
         if (typeof grecaptcha.ready === 'function') {
@@ -159,18 +133,15 @@ class ContactFormHandler {
       console.log('reCAPTCHA token:', token); // Debug: log the reCAPTCHA token
       return token;
     } catch (error) {
-      console.error('reCAPTCHA error:', error);
       return null;
     }
   }
-
   /**
    * Validate form fields
    */
   validateForm(form) {
     let isValid = true;
     this.clearErrors(form);
-
     // Required fields
     const requiredFields = ['name', 'email', 'message'];
     requiredFields.forEach(fieldName => {
@@ -180,7 +151,6 @@ class ContactFormHandler {
         isValid = false;
       }
     });
-
     // Email validation
     const emailField = form.querySelector('[name="email"]');
     if (emailField && emailField.value) {
@@ -190,7 +160,6 @@ class ContactFormHandler {
         isValid = false;
       }
     }
-
     // Phone validation (if provided)
     const phoneField = form.querySelector('[name="phone"]');
     if (phoneField && phoneField.value) {
@@ -200,24 +169,20 @@ class ContactFormHandler {
         isValid = false;
       }
     }
-
     // Message length
     const messageField = form.querySelector('[name="message"]');
     if (messageField && messageField.value.length > 5000) {
       this.showFieldError(messageField, 'Το μήνυμα είναι πολύ μεγάλο (μέγιστο 5000 χαρακτήρες).');
       isValid = false;
     }
-
     return isValid;
   }
-
   /**
    * Get form data as object
    */
   getFormData(form) {
     const formData = new FormData(form);
     const data = {};
-    
     for (const [key, value] of formData.entries()) {
       data[key] = value;
     }
@@ -226,10 +191,8 @@ class ContactFormHandler {
     if (this.siteKey && typeof this.siteKey === 'string') {
       data.recaptcha_site_suffix = this.siteKey.slice(-4);
     }
-    
     return data;
   }
-
   /**
    * Submit form data
    */
@@ -244,20 +207,16 @@ class ContactFormHandler {
       },
       body
     });
-
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-
     return await response.json();
   }
-
   /**
    * Set button state
    */
   setButtonState(button, loading, text = null) {
     if (!button) return;
-
     if (loading) {
       button.disabled = true;
       button.dataset.originalText = button.textContent;
@@ -271,7 +230,6 @@ class ContactFormHandler {
       button.classList.remove('loading');
     }
   }
-
   /**
    * Show success message
    */
@@ -285,14 +243,12 @@ class ContactFormHandler {
         <span class="message-text">${message}</span>
       </div>
     `;
-    
     const form = document.querySelector(this.formSelector);
     if (form) {
       form.parentNode.insertBefore(successDiv, form);
       setTimeout(() => successDiv.remove(), 8000);
     }
   }
-
   /**
    * Show error message
    */
@@ -306,46 +262,37 @@ class ContactFormHandler {
         <span class="message-text">${message}</span>
       </div>
     `;
-    
     const form = document.querySelector(this.formSelector);
     if (form) {
       form.parentNode.insertBefore(errorDiv, form);
       setTimeout(() => errorDiv.remove(), 8000);
     }
   }
-
   /**
    * Show field-specific error
    */
   showFieldError(field, message) {
     if (!field) return;
-
     // Remove existing error
     const existingError = field.parentNode.querySelector('.field-error');
     if (existingError) {
       existingError.remove();
     }
-
     // Add error class to field
     field.classList.add('error');
-
     // Create error message
     const errorDiv = document.createElement('div');
     errorDiv.className = 'field-error';
     errorDiv.textContent = message;
-    
     field.parentNode.appendChild(errorDiv);
   }
-
   /**
    * Show field errors from server response
    */
   showFieldErrors(form, errors) {
     errors.forEach(error => {
-      console.error('Field error:', error);
     });
   }
-
   /**
    * Clear all error messages
    */
@@ -354,7 +301,6 @@ class ContactFormHandler {
     form.querySelectorAll('.field-error').forEach(error => error.remove());
     form.querySelectorAll('.error').forEach(field => field.classList.remove('error'));
   }
-
   /**
    * Remove global messages
    */
@@ -362,7 +308,6 @@ class ContactFormHandler {
     document.querySelectorAll('.form-message').forEach(msg => msg.remove());
   }
 }
-
 // Auto-initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize contact form handler
@@ -371,10 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
     apiUrl: '/contact-handler.php',
     formSelector: '.contact-form'
   });
-
-  console.log('📧 Contact form handler initialized');
 });
-
 // Export for module use
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = ContactFormHandler;
