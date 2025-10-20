@@ -1,3 +1,7 @@
+<?php 
+// CSP Nonce for inline scripts security
+require_once __DIR__ . '/../partials/csp-nonce.php';
+?>
 <!DOCTYPE html>
 <html lang="el">
 <head>
@@ -11,7 +15,7 @@
   <link rel="stylesheet" href="../main.css">
   <link rel="stylesheet" href="/css/cookie-consent.css">
 
-  <script type="application/ld+json">
+  <script type="application/ld+json"<?php echo isset($nonce_attr) ? $nonce_attr : ''; ?>>
   {
     "@context": "https://schema.org",
     "@type": "AboutPage",
@@ -361,7 +365,7 @@
   <script src="/js/cookie-consent.js"></script>
   <script src="/js/chat-widget.js"></script>
   <script src="../app.js"></script>
-  <script>
+  <script<?php echo isset($nonce_attr) ? $nonce_attr : ''; ?>>
     // Clean animation script
     const headline = document.getElementById('headline');
     const row = document.getElementById('row');

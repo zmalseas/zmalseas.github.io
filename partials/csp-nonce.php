@@ -11,9 +11,9 @@ if (!isset($GLOBALS['csp_nonce'])) {
     $csp_nonce = base64_encode(random_bytes(16));
     $GLOBALS['csp_nonce'] = $csp_nonce;
     
-    // Set CSP header with nonce
+    // Set CSP header with nonce (removed 'strict-dynamic' for compatibility with external scripts)
     $csp_policy = "default-src 'self'; " .
-                  "script-src 'nonce-{$csp_nonce}' 'strict-dynamic' https://www.googletagmanager.com https://www.google-analytics.com https://www.gstatic.com https://www.google.com; " .
+                  "script-src 'self' 'nonce-{$csp_nonce}' https://www.googletagmanager.com https://www.google-analytics.com https://www.gstatic.com https://www.google.com; " .
                   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; " .
                   "img-src 'self' data: https:; " .
                   "font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; " .
