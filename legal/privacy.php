@@ -1,3 +1,7 @@
+<?php 
+// CSP Nonce for inline scripts security
+require_once __DIR__ . '/../partials/csp-nonce.php';
+?>
 <!DOCTYPE html>
 <html lang="el">
 <head>
@@ -423,7 +427,7 @@ H επεξεργασία των δεδομένων σας προσωπικού �
   <script src="/js/cookie-consent.js"></script>
   <script src="/js/chat-widget.js"></script>
   <script src="../app.js"></script>
-  <script>
+  <script<?php echo isset($nonce_attr) ? $nonce_attr : ''; ?>>
     // Set current year
     document.getElementById('year').textContent = new Date().getFullYear();
     

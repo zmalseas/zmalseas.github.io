@@ -1,3 +1,7 @@
+<?php 
+// CSP Nonce for inline scripts security
+require_once __DIR__ . '/../partials/csp-nonce.php';
+?>
 <!doctype html>
 <html lang="el">
 <head>

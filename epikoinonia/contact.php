@@ -1,3 +1,7 @@
+<?php 
+// CSP Nonce for inline scripts security
+require_once __DIR__ . '/../partials/csp-nonce.php';
+?>
 <!DOCTYPE html>
 <html lang="el">
 <head>
@@ -11,7 +15,7 @@
   <link rel="stylesheet" href="../main.css" />
   <link rel="stylesheet" href="/css/cookie-consent.css" />
 
-  <script type="application/ld+json">
+  <script<?php echo isset($nonce_attr) ? $nonce_attr : ''; ?> type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ContactPage",
@@ -380,7 +384,7 @@
   <script src="/js/chat-widget.js"></script>
 
   <script src="../app.js"></script>
-  <script>
+  <script<?php echo isset($nonce_attr) ? $nonce_attr : ''; ?>>
     // Hero animation controller for contact - copy from company.php
     (function(){
       const headline = document.getElementById('headline');

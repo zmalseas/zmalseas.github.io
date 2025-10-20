@@ -1,3 +1,7 @@
+<?php 
+// CSP Nonce for inline scripts security
+require_once __DIR__ . '/../partials/csp-nonce.php';
+?>
 <!doctype html>
 <html lang="el">
 <head>
@@ -153,7 +157,7 @@
   </main>
 
   <!-- Structured Data -->
-  <script type="application/ld+json">
+  <script<?php echo isset($nonce_attr) ? $nonce_attr : ''; ?> type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Service",
