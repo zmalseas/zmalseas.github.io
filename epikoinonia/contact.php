@@ -316,7 +316,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
 
           <!-- Right: Contact Form -->
           <div style="background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.06); padding: 24px;">
-            <form id="contactForm" action="../contact-handler.php" method="POST">
+            <form id="contactForm" class="contact-form" action="../contact-handler.php" method="POST">
               <h3 style="text-align: center; font-size: 1.2rem; margin: 0 0 12px 0; color: #111827;">Φόρμα Επικοινωνίας</h3>
 
               <div class="form-group">
@@ -378,14 +378,11 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
   
   <!-- Footer -->
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>
-  
-  <!-- reCAPTCHA v3 - Load before contact-form.js -->
-  <script src="https://www.google.com/recaptcha/api.js?render=6Lcd7dcrAAAAADzfwDc4AG_kN6jKU0-0Fo78NmYx" async defer></script>
-  
   <script src="/js/navigation.js"></script>
   <script src="../js/contact-form.js"></script>
   <script src="/js/cookie-consent.js"></script>
   <script src="/js/chat-widget.js"></script>
+
   <script src="../app.js"></script>
   <script<?php echo isset($nonce_attr) ? $nonce_attr : ''; ?>>
     // Hero animation controller for contact - copy from company.php
