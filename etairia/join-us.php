@@ -1,7 +1,3 @@
-<?php 
-// CSP Nonce for inline scripts security
-require_once __DIR__ . '/../partials/csp-nonce.php';
-?>
 <!DOCTYPE html>
 <html lang="el">
 <head>
@@ -11,20 +7,6 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
   <link rel="icon" type="image/png" href="../images/logo.png" />
   <link rel="stylesheet" href="../main.css">
   <link rel="stylesheet" href="/css/cookie-consent.css">
-  <script<?php echo isset($nonce_attr) ? $nonce_attr : ''; ?> type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Καριέρα στην Nerally",
-    "url": "https://nerally.gr/etairia/join-us.php",
-    "description": "Γίνε μέλος της ομάδας Nerally. Αναζητούμε ταλαντούχους επαγγελματίες.",
-    "mainEntity": {
-      "@type": "Organization",
-      "name": "Nerally",
-      "url": "https://nerally.gr"
-    }
-  }
-  </script>
 
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/site-config-inline.php'; ?>
   <style>
