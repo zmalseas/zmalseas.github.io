@@ -1,38 +1,564 @@
+<?php 
+// CSP Nonce for inline scripts security
+require_once __DIR__ . '/../partials/csp-nonce.php';
+?>
 <!DOCTYPE html>
 <html lang="el">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nerally - Careers</title>
+  <meta name="description" content="Γίνε μέλος της ομάδας Nerally. Αναζητούμε ταλαντούχους επαγγελματίες." />
+  <meta name="keywords" content="καριέρα Nerally, θέσεις εργασίας, αιτήσεις, βιογραφικό" />
+  <link rel="canonical" href="https://nerally.gr/etairia/join-us.php" />
   <link rel="icon" type="image/png" href="../images/logo.png" />
-  <link rel="stylesheet" href="../main.css">
-  <link rel="stylesheet" href="/css/cookie-consent.css">
+  <link rel="stylesheet" href="../main.css" />
+  <link rel="stylesheet" href="/css/cookie-consent.css" />
+
+  <script<?php echo isset($nonce_attr) ? $nonce_attr : ''; ?> type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Καριέρα στην Nerally",
+    "url": "https://nerally.gr/etairia/join-us.php",
+    "description": "Γίνε μέλος της ομάδας Nerally. Αναζητούμε ταλαντούχους επαγγελματίες.",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Nerally",
+      "url": "https://nerally.gr"
+    }
+  }
+  </script>
 
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/site-config-inline.php'; ?>
   <style>
-    /* Careers hero animation (based on company.php) */
-    .hero-animated { height: 170px; background:#000; color:#f6f8fb; overflow:hidden; position: sticky; top:0; z-index:50; border-bottom:1px solid #333; }
-    .hero-animated .stage{position:relative;z-index:1;height:100%;display:flex;align-items:center;justify-content:flex-start}
-    .hero-animated .stack{display:flex;flex-direction:column;gap:.8rem;align-items:flex-start;padding:1.5rem 2.5rem;max-width:min(1200px,92vw)}
-    .hero-animated .headline{font-weight:900;letter-spacing:.045em;line-height:1.05;text-align:left;font-size:clamp(1.8rem,5.5vw,3.5rem);text-shadow:0 0 24px rgba(255,255,255,.22);white-space:nowrap}
-    .hero-animated .headline b{background:linear-gradient(90deg,var(--brand),#3498db);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-    .hero-animated .row{display:flex;align-items:baseline;gap:clamp(.4rem,1.2vw,.8rem)}
-    .hero-animated .left,.hero-animated .right{font-weight:900;letter-spacing:.045em;line-height:1;font-size:clamp(1.2rem,3.8vw,2.8rem)}
-    .hero-animated .right{min-width:10ch;text-align:left;color:#e8f6ff}
-    .hero-animated .flip{display:inline-block;transform-origin:50% 80%;-webkit-backface-visibility:hidden;backface-visibility:hidden;transform-style:preserve-3d;will-change:transform,opacity}
-    .hero-animated .flip.enter{animation:flipIn .7s cubic-bezier(.2,.8,.2,1) forwards}
-    @keyframes flipIn{0%{transform:rotateX(90deg);opacity:0;filter:blur(6px)}60%{opacity:1}100%{transform:rotateX(0);opacity:1;filter:blur(0)}}
-    .hero-animated .gap{display:inline-block;width:0;vertical-align:baseline}
-    .hero-animated .gap.g1{width:3ch}.hero-animated .gap.g2{width:2ch}
-    .hero-animated .rise{display:inline-block;transform:translateY(.9em);opacity:0;animation:riseIn .7s ease forwards}
-    @keyframes riseIn{to{transform:translateY(0);opacity:1}}
-    @media(max-width:768px){.hero-animated{height:120px}.hero-animated .stack{padding:1rem 1.5rem;gap:.6rem}.hero-animated .headline{font-size:clamp(1.4rem,4.5vw,2.5rem)}.hero-animated .left,.hero-animated .right{font-size:clamp(1rem,3.2vw,2rem)}}
+    /* Hero Section - Exact copy from contact.php */
+    .hero-animated {
+      height: 170px;
+      background: #000;
+      color: #f6f8fb;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, "Helvetica Neue", Arial;
+      overflow: hidden;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid #333;
+    }
+
+    .hero-animated .stage {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    
+    .hero-animated .stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      align-items: flex-start;
+      padding: 1.5rem 2.5rem;
+      max-width: min(1200px, 92vw);
+    }
+    
+    .hero-animated .headline {
+      font-weight: 900;
+      letter-spacing: .045em;
+      line-height: 1.05;
+      text-align: left;
+      font-size: clamp(1.8rem, 5.5vw, 3.5rem);
+      text-shadow: 0 0 24px rgba(255,255,255,.22);
+      white-space: nowrap;
+    }
+    
+    .hero-animated .headline b {
+      background: linear-gradient(90deg, var(--brand), #3498db);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .hero-animated .row {
+      display: flex;
+      align-items: baseline;
+      gap: clamp(.4rem, 1.2vw, .8rem);
+      opacity: 1;
+    }
+    
+    .hero-animated .left {
+      font-weight: 900;
+      letter-spacing: .045em;
+      line-height: 1;
+      font-size: clamp(1.2rem, 3.8vw, 2.8rem);
+      text-shadow: 0 0 14px rgba(255,255,255,.22);
+    }
+    
+    .hero-animated .right {
+      font-weight: 900;
+      letter-spacing: .045em;
+      line-height: 1;
+      font-size: clamp(1.2rem, 3.8vw, 2.8rem);
+      min-width: 8ch;
+      text-align: left;
+      color: #e8f6ff;
+    }
+    
+    .hero-animated .flip {
+      display: inline-block;
+      transform-origin: 50% 80%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transform-style: preserve-3d;
+      will-change: transform, opacity;
+    }
+    
+    .hero-animated .flip.enter {
+      animation: flipIn .7s cubic-bezier(.2,.8,.2,1) forwards;
+    }
+    
+    @keyframes flipIn {
+      0% { transform: rotateX(90deg); opacity: 0; filter: blur(6px); }
+      60% { opacity: 1; }
+      100% { transform: rotateX(0); opacity: 1; filter: blur(0); }
+    }
+
+    .hero-animated .gap {
+      display: inline-block;
+      width: 0;
+      vertical-align: baseline;
+    }
+    
+    .hero-animated .gap.g1 { width: 3ch; }
+    .hero-animated .gap.g2 { width: 2ch; }
+    
+    .hero-animated .rise {
+      display: inline-block;
+      transform: translateY(.9em);
+      opacity: 0;
+      animation: riseIn .7s ease forwards;
+    }
+    
+    @keyframes riseIn {
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      .hero-animated {
+        height: 120px;
+      }
+      .hero-animated .stack {
+        padding: 1rem 1.5rem;
+        gap: 0.6rem;
+      }
+      .hero-animated .headline {
+        font-size: clamp(1.4rem, 4.5vw, 2.5rem);
+      }
+      .hero-animated .left,
+      .hero-animated .right {
+        font-size: clamp(1rem, 3.2vw, 2rem);
+      }
+    }
+
+    /* Careers page styling */
+    .careers-page .main-content { margin-top: 0; }
+    
+    .careers-section {
+      position: relative;
+      padding: 48px 0 64px;
+    }
+
+    .careers-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: #f4f6fb;
+    }
+
+    .careers-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .careers-left {
+      display: grid;
+      gap: 20px;
+      align-content: start;
+    }
+
+    .careers-intro h2 {
+      margin: 0 0 20px;
+      font-size: clamp(26px, 2.6vw, 38px);
+      line-height: 1.15;
+      color: var(--brand);
+      position: relative;
+    }
+
+    .careers-intro h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--brand);
+      margin-top: 10px;
+      border-radius: 4px;
+    }
+
+    .careers-subtitle {
+      color: #4b5563;
+      line-height: 1.7;
+      margin-top: 20px;
+    }
+
+    .careers-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+      padding: 24px;
+    }
+
+    .careers-card h3 {
+      margin: 0 0 20px;
+      font-size: 1.2rem;
+      color: #111827;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .card-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    .positions-box {
+      background: #f9fafb;
+      border-radius: 8px;
+      padding: 16px;
+      color: #374151;
+      line-height: 1.6;
+    }
+
+    .positions-box p {
+      margin: 0;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .faq-item {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 12px;
+      cursor: pointer;
+    }
+
+    .faq-item summary {
+      font-weight: 600;
+      color: #111827;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item p {
+      margin: 8px 0 0;
+      color: #6b7280;
+      line-height: 1.5;
+    }
+
+    /* Form styling */
+    .careers-form {
+      display: grid;
+      gap: 16px;
+    }
+
+    .form-title {
+      text-align: center;
+      font-size: 1.2rem;
+      margin: 0 0 12px 0;
+      color: #111827;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: #333;
+      font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 2px solid #e9ecef;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--brand);
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    /* File dropzone */
+    .file-dropzone {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      border: 2px dashed #d1d5db;
+      border-radius: 8px;
+      background: #f9fafb;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      min-height: 120px;
+      gap: 8px;
+    }
+
+    .file-dropzone:hover {
+      border-color: var(--brand);
+      background: #f0f9ff;
+    }
+
+    .file-dropzone.dragover {
+      border-color: var(--brand);
+      background: #dbeafe;
+    }
+
+    .file-dropzone.has-file {
+      border-color: #10b981;
+      background: #d1fae5;
+    }
+
+    .dz-icon {
+      font-size: 2rem;
+    }
+
+    .dz-title {
+      font-size: 14px;
+      color: #6b7280;
+      text-align: center;
+    }
+
+    .dz-file {
+      font-size: 14px;
+      color: var(--brand);
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .dz-clear {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: none;
+      background: #ef4444;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease;
+    }
+
+    .file-dropzone.has-file .dz-clear {
+      display: flex;
+    }
+
+    .dz-clear:hover {
+      background: #dc2626;
+    }
+
+    /* Checkboxes */
+    .form-checkboxes {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .careers-check {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .careers-check input[type="checkbox"] {
+      margin: 0;
+      margin-top: 2px;
+      flex-shrink: 0;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+
+    .careers-check .checkmark {
+      display: none;
+    }
+
+    .careers-check .text-content {
+      color: #111827;
+      line-height: 1.4;
+      flex: 1;
+      font-size: 14px;
+    }
+
+    .careers-check .text-content a {
+      color: var(--brand);
+      text-decoration: underline;
+    }
+
+    /* Form actions */
+    .form-actions {
+      display: flex;
+      justify-content: center;
+      margin-top: 8px;
+    }
+
+    .submit-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 32px;
+      background: var(--brand);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,.08);
+    }
+
+    .submit-btn:hover {
+      background: #1f5f8b;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(0,0,0,.12);
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .btn-icon {
+      font-size: 1.2rem;
+    }
+
+    /* reCAPTCHA info */
+    .recaptcha-info {
+      text-align: center;
+      font-size: 11px;
+      color: #9ca3af;
+      line-height: 1.4;
+      margin-top: 12px;
+    }
+
+    .recaptcha-info a {
+      color: #6b7280;
+      text-decoration: underline;
+    }
+
+    /* Form message feedback */
+    .form-message {
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      animation: slideIn 0.3s ease;
+    }
+
+    .form-message.success {
+      background: #dcfce7;
+      color: #166534;
+      border: 1px solid #bbf7d0;
+    }
+
+    .form-message.error {
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+    }
+
+    .message-content {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .careers-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .careers-section {
+        padding: 52px 0 64px;
+      }
+      .careers-grid {
+        gap: 56px;
+      }
+    }
   </style>
   
   <!-- GTM loads via cookie-consent.js after analytics consent -->
 </head>
 <body>
-  
   
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/header.php'; ?>
 
@@ -57,13 +583,13 @@
           <!-- Αριστερά: περιεχόμενο -->
           <div class="careers-left">
             <div class="careers-intro">
-              <h2 class="careers-title">Κάνε το επόμενο βήμα στην καριέρα σου</h2>
+              <h2>Κάνε το επόμενο βήμα στην καριέρα σου</h2>
               <p class="careers-subtitle">Συμπλήρωσε τη φόρμα δεξιά με τα στοιχεία σου και επισύναψε το <strong>βιογραφικό</strong> σου (PDF/JPG/PNG).</p>
             </div>
 
-            <div class="positions-card">
+            <div class="positions-card careers-card">
               <div class="card-header">
-                <span class="card-icon" aria-hidden="true"></span>
+                <span class="card-icon" aria-hidden="true">💼</span>
                 <h3>Διαθέσιμες Θέσεις</h3>
               </div>
               <div class="positions-box">
@@ -98,7 +624,7 @@
           <!-- Δεξιά: φόρμα -->
           <div class="careers-right">
             <form id="careersForm" class="careers-form careers-card" action="/careers-handler.php" method="POST" enctype="multipart/form-data">
-              <h3 class="form-title" style="text-align:center;">Φόρμα Υποψηφίου</h3>
+              <h3 class="form-title">Φόρμα Υποψηφίου</h3>
 
               <div class="form-group">
                 <label for="name">Ονοματεπώνυμο</label>
@@ -120,7 +646,7 @@
                 <textarea id="about" name="about" rows="5" required></textarea>
               </div>
 
-              <div class="form-group">
+              <div class="form-group full-width">
                 <label for="cv">Βιογραφικό</label>
                 <label for="cv" class="file-dropzone" id="cvDrop">
                   <input type="file" id="cv" name="cv" accept="application/pdf,image/png,image/jpeg" required hidden />
@@ -146,10 +672,10 @@
               </div>
 
               <div class="form-actions">
-              <button type="submit" class="submit-btn">
-                <span class="btn-icon" aria-hidden="true">✉️</span>
-                <span class="btn-text">Αποστολή Αίτησης</span>
-              </button>
+                <button type="submit" class="submit-btn">
+                  <span class="btn-icon" aria-hidden="true">✉️</span>
+                  <span class="btn-text">Αποστολή Αίτησης</span>
+                </button>
               </div>
 
               <div class="recaptcha-info">
@@ -166,26 +692,28 @@
   </main>
 
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>
-    
 
   <script src="/js/navigation.js"></script>
   <script src="/js/cookie-consent.js"></script>
   <script src="/js/chat-widget.js"></script>
   <script src="/js/careers-form.js"></script>
   <script src="../app.js"></script>
-  <script>
+  <script<?php echo isset($nonce_attr) ? $nonce_attr : ''; ?>>
     // Careers hero animation controller
     (function(){
       const headline = document.getElementById('headline-careers');
       const flipEl = document.getElementById('flip-careers');
       if (!headline || !flipEl) return;
+      
       const wait = (ms) => new Promise(r=>setTimeout(r,ms));
+      
       function flipTo(text){
         flipEl.classList.remove('enter');
         void flipEl.offsetWidth;
         flipEl.textContent = text;
         flipEl.classList.add('enter');
       }
+      
       (async function run(){
         headline.textContent = 'NERALLY';
         await wait(1000);
@@ -196,16 +724,13 @@
         headline.querySelector('.g2').innerHTML = '<span class="rise">A&nbsp;</span>';
         await wait(1200);
         headline.innerHTML = '<b>NEW ERA</b> ALLY';
+        
         const words = ['CAREERS','ΕΥΚΑΙΡΙΕΣ','ΑΝΑΠΤΥΞΗ','ΟΜΑΔΑ','ΠΡΟΟΔΟΣ'];
-        let i = 0; flipTo(words[i++ % words.length]);
+        let i = 0;
+        flipTo(words[i++ % words.length]);
         setInterval(()=> flipTo(words[i++ % words.length]), 1900);
       })();
     })();
   </script>
 </body>
 </html>
-
-
-
-
-
