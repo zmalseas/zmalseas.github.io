@@ -7,21 +7,17 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Αίτηση Θέσης – Nerally</title>
-  <meta name="description" content="Γίνε μέλος της ομάδας Nerally. Αναζητούμε ταλαντούχους επαγγελματίες για λογιστικές υπηρεσίες, consulting, τεχνολογία και άλλες θέσεις." />
-  <meta name="keywords" content="καριέρα Nerally, θέσεις εργασίας, αιτήσεις, λογιστής, consultant, job openings" />
-  <link rel="canonical" href="https://nerally.gr/etairia/join-us.php" />
+  <title>Nerally - Careers</title>
   <link rel="icon" type="image/png" href="../images/logo.png" />
   <link rel="stylesheet" href="../main.css">
   <link rel="stylesheet" href="/css/cookie-consent.css">
-
   <script<?php echo isset($nonce_attr) ? $nonce_attr : ''; ?> type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Καριέρα στην Nerally",
     "url": "https://nerally.gr/etairia/join-us.php",
-    "description": "Γίνε μέλος της ομάδας Nerally. Αναζητούμε ταλαντούχους επαγγελματίες για λογιστικές υπηρεσίες, consulting, τεχνολογία και άλλες θέσεις.",
+    "description": "Γίνε μέλος της ομάδας Nerally. Αναζητούμε ταλαντούχους επαγγελματίες.",
     "mainEntity": {
       "@type": "Organization",
       "name": "Nerally",
@@ -91,8 +87,8 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
               <div class="positions-box">
               <p>
                 Αυτή τη στιγμή <strong>δεν υπάρχουν ανοιχτές θέσεις εργασίας</strong>.<br>
-                Μπορείς να στείλεις το <strong>βιογραφικό σου</strong> για το αρχείο μας·
-                εφόσον το επιθυμείς, θα μπορούμε να το <strong>προωθήσουμε σε συνεργαζόμενους πελάτες</strong>
+                Μπορείς να στείλεις το <strong>βιογραφικό σου</strong> για το αρχείο μας.
+                Εφόσον το επιθυμείς, θα μπορούμε να το <strong>προωθήσουμε σε συνεργαζόμενους πελάτες</strong>
                 όταν υπάρξει ανάγκη που ταιριάζει στο προφίλ σου.
               </p>
               </div>
@@ -195,7 +191,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
   <script src="/js/chat-widget.js"></script>
   <script src="/js/careers-form.js"></script>
   <script src="../app.js"></script>
-  <script<?php echo isset($nonce_attr) ? $nonce_attr : ''; ?>>
+  <script>
     // Careers hero animation controller
     (function(){
       const headline = document.getElementById('headline-careers');
