@@ -16,25 +16,28 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
   <link rel="stylesheet" href="/css/cookie-consent.css" />
 
   <script<?php echo isset($nonce_attr) ? $nonce_attr : ''; ?> type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Υπολογισμός Φόρου Ενοικίων 2025",
-    "url": "https://nerally.gr/efarmoges/rent-tax-calculator.php",
-    "description": "Online Υπολογισμός Φόρου Ενοικίων 2025. Υπολογίστε τον φόρο που οφείλετε από εισοδήματα ακινήτων με ακρίβεια και ευκολία.",
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "Any",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "EUR"
-    },
-    "provider": {
-      "@type": "Organization",
-      "name": "Nerally",
-      "url": "https://nerally.gr"
-    }
-  }
+  <?php
+  $schema = [
+    "@context" => "https://schema.org",
+    "@type" => "WebApplication",
+    "name" => "Υπολογισμός Φόρου Ενοικίων 2025",
+    "url" => "https://nerally.gr/efarmoges/rent-tax-calculator.php",
+    "description" => "Online Υπολογισμός Φόρου Ενοικίων 2025. Υπολογίστε τον φόρο που οφείλετε από εισοδήματα ακινήτων με ακρίβεια και ευκολία.",
+    "applicationCategory" => "FinanceApplication",
+    "operatingSystem" => "Any",
+    "offers" => [
+      "@type" => "Offer",
+      "price" => "0",
+      "priceCurrency" => "EUR"
+    ],
+    "provider" => [
+      "@type" => "Organization",
+      "name" => "Nerally",
+      "url" => "https://nerally.gr"
+    ]
+  ];
+  echo json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+  ?>
   </script>
 
       <style>

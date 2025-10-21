@@ -296,117 +296,100 @@ require_once __DIR__ . '/partials/csp-nonce.php';
     </section>
   </main>
   
-  <!-- Structured Data -->
-  <script type="application/ld+json"<?php echo isset($nonce_attr) ? $nonce_attr : ''; ?>>
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Nerally",
-    "url": "https://nerally.gr",
-    "logo": "https://nerally.gr/images/logo.png",
-    "description": "Ένα δίκτυο υπηρεσιών και συνεργασιών στο πλευρό της επιχείρησής σου..",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "",
-      "addressLocality": "Θεσσαλονίκη",
-      "postalCode": "57019",
-      "addressCountry": "GR"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+30-694-636-5798", 
-      "contactType": "customer service",
-      "availableLanguage": "Greek"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/company/nerally",
-      "https://www.instagram.com/nerally_co/",
-      "https://www.tiktok.com/@nerally_co"
+  <!-- Structured Data (generated via PHP to ensure valid JSON) -->
+  <?php
+  $schema = [
+    '@context' => 'https://schema.org',
+    '@type' => 'Organization',
+    'name' => 'Nerally',
+    'url' => 'https://nerally.gr',
+    'logo' => 'https://nerally.gr/images/logo.png',
+    'description' => 'Ένα δίκτυο υπηρεσιών και συνεργασιών στο πλευρό της επιχείρησής σου.',
+    'address' => [
+      '@type' => 'PostalAddress',
+      'streetAddress' => '',
+      'addressLocality' => 'Θεσσαλονίκη',
+      'postalCode' => '57019',
+      'addressCountry' => 'GR'
     ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5",
-      "reviewCount": "20"
-    },
-    "priceRange": "€€",
-    "areaServed": {
-      "@type": "Country",
-      "name": "Greece"
-    },
-    "service": [
-      {
-        "@type": "Service",
-        "name": "Λογιστικές Υπηρεσίες",
-        "description": "Πλήρης διαχείριση λογιστικών εργασιών και φορολογικών υποχρεώσεων",
-        "serviceType": "Accounting",
-        "provider": {
-          "@type": "Organization",
-          "name": "Nerally"
-        }
-      },
-      {
-        "@type": "Service", 
-        "name": "Μισθοδοσία",
-        "description": "Διαχείριση μισθοδοσίας και συμβουλευτικές υπηρεσίες ανθρώπινου δυναμικού",
-        "serviceType": "Human Resources",
-        "provider": {
-          "@type": "Organization",
-          "name": "Nerally"
-        }
-      },
-      {
-        "@type": "Service",
-        "name": "Business Consulting", 
-        "description": "Στρατηγικός σχεδιασμός και συμβουλευτικές υπηρεσίες για την ανάπτυξη της επιχείρησής σας",
-        "serviceType": "Consulting",
-        "provider": {
-          "@type": "Organization",
-          "name": "Nerally"
-        }
-      },
-      {
-        "@type": "Service",
-        "name": "Cyber Security",
-        "description": "Προστασία των ψηφιακών σας περιουσιακών στοιχείων με σύγχρονες λύσεις κυβερνοασφάλειας",
-        "serviceType": "Information Technology",
-        "provider": {
-          "@type": "Organization",
-          "name": "Nerally"
-        }
-      },
-      {
-        "@type": "Service",
-        "name": "Επιχορηγήσεις",
-        "description": "Έλεγχος επιλεξιμότητας, υποβολές και διαχείριση φακέλων για προγράμματα ΕΣΠΑ",
-        "serviceType": "Consulting",
-        "provider": {
-          "@type": "Organization",
-          "name": "Nerally"
-        }
-      },
-      {
-        "@type": "Service",
-        "name": "Social Media Marketing",
-        "description": "Σχεδιασμός περιεχομένου, διαφημίσεις και ανάλυση καμπανιών",
-        "serviceType": "Marketing",
-        "provider": {
-          "@type": "Organization",
-          "name": "Nerally"
-        }
-      },
-      {
-        "@type": "Service",
-        "name": "Σύμβουλος Μηχανικός",
-        "description": "Αδειοδοτήσεις, ενεργειακές μελέτες και τεχνική συμβουλευτική",
-        "serviceType": "Engineering",
-        "provider": {
-          "@type": "Organization",
-          "name": "Nerally"
-        }
-      }
+    'contactPoint' => [
+      '@type' => 'ContactPoint',
+      'telephone' => '+30-694-636-5798',
+      'contactType' => 'customer service',
+      'availableLanguage' => 'Greek'
+    ],
+    'sameAs' => [
+      'https://www.linkedin.com/company/nerally',
+      'https://www.instagram.com/nerally_co/',
+      'https://www.tiktok.com/@nerally_co'
+    ],
+    'aggregateRating' => [
+      '@type' => 'AggregateRating',
+      'ratingValue' => '5',
+      'reviewCount' => '20'
+    ],
+    'priceRange' => '€€',
+    'areaServed' => [
+      '@type' => 'Country',
+      'name' => 'Greece'
+    ],
+    'service' => [
+      [
+        '@type' => 'Service',
+        'name' => 'Λογιστικές Υπηρεσίες',
+        'description' => 'Πλήρης διαχείριση λογιστικών εργασιών και φορολογικών υποχρεώσεων',
+        'serviceType' => 'Accounting',
+        'provider' => ['@type' => 'Organization','name' => 'Nerally']
+      ],
+      [
+        '@type' => 'Service',
+        'name' => 'Μισθοδοσία',
+        'description' => 'Διαχείριση μισθοδοσίας και συμβουλευτικές υπηρεσίες ανθρώπινου δυναμικού',
+        'serviceType' => 'Human Resources',
+        'provider' => ['@type' => 'Organization','name' => 'Nerally']
+      ],
+      [
+        '@type' => 'Service',
+        'name' => 'Business Consulting',
+        'description' => 'Στρατηγικός σχεδιασμός και συμβουλευτικές υπηρεσίες για την ανάπτυξη της επιχείρησής σας',
+        'serviceType' => 'Consulting',
+        'provider' => ['@type' => 'Organization','name' => 'Nerally']
+      ],
+      [
+        '@type' => 'Service',
+        'name' => 'Cyber Security',
+        'description' => 'Προστασία των ψηφιακών σας περιουσιακών στοιχείων με σύγχρονες λύσεις κυβερνοασφάλειας',
+        'serviceType' => 'Information Technology',
+        'provider' => ['@type' => 'Organization','name' => 'Nerally']
+      ],
+      [
+        '@type' => 'Service',
+        'name' => 'Επιχορηγήσεις',
+        'description' => 'Έλεγχος επιλεξιμότητας, υποβολές και διαχείριση φακέλων για προγράμματα ΕΣΠΑ',
+        'serviceType' => 'Consulting',
+        'provider' => ['@type' => 'Organization','name' => 'Nerally']
+      ],
+      [
+        '@type' => 'Service',
+        'name' => 'Social Media Marketing',
+        'description' => 'Σχεδιασμός περιεχομένου, διαφημίσεις και ανάλυση καμπανιών',
+        'serviceType' => 'Marketing',
+        'provider' => ['@type' => 'Organization','name' => 'Nerally']
+      ],
+      [
+        '@type' => 'Service',
+        'name' => 'Σύμβουλος Μηχανικός',
+        'description' => 'Αδειοδοτήσεις, ενεργειακές μελέτες και τεχνική συμβουλευτική',
+        'serviceType' => 'Engineering',
+        'provider' => ['@type' => 'Organization','name' => 'Nerally']
+      ]
     ]
-  }
-  </script>
+  ];
+
+  echo '<script type="application/ld+json"' . (isset($nonce_attr) ? $nonce_attr : '') . '>' . "\n";
+  echo json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+  echo "\n</script>\n";
+  ?>
 
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>
   

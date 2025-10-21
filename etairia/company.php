@@ -16,25 +16,28 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
   <link rel="stylesheet" href="/css/cookie-consent.css">
 
   <script type="application/ld+json"<?php echo isset($nonce_attr) ? $nonce_attr : ''; ?>>
-  {
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "Σχετικά με την Nerally",
-    "url": "https://nerally.gr/etairia/company.php",
-    "description": "Η Nerally είναι ο σύμμαχός σας στη νέα εποχή. Συνδυάζουμε παραδοσιακές υπηρεσίες με σύγχρονες λύσεις για ολοκληρωμένη υποστήριξη της επιχείρησής σας.",
-    "mainEntity": {
-      "@type": "Organization",
-      "name": "Nerally",
-      "url": "https://nerally.gr",
-      "logo": "https://nerally.gr/images/logo.png",
-      "description": "Λογιστικές υπηρεσίες, Μισθοδοσία, Business Consulting, Cyber Security, Social Media Management και άλλες σύγχρονες λύσεις για επιχειρήσεις",
-      "foundingDate": "2020",
-      "areaServed": {
-        "@type": "Country",
-        "name": "Greece"
-      }
-    }
-  }
+  <?php
+  $schema = [
+    "@context" => "https://schema.org",
+    "@type" => "AboutPage",
+    "name" => "Σχετικά με την Nerally",
+    "url" => "https://nerally.gr/etairia/company.php",
+    "description" => "Η Nerally είναι ο σύμμαχός σας στη νέα εποχή. Συνδυάζουμε παραδοσιακές υπηρεσίες με σύγχρονες λύσεις για ολοκληρωμένη υποστήριξη της επιχείρησής σας.",
+    "mainEntity" => [
+      "@type" => "Organization",
+      "name" => "Nerally",
+      "url" => "https://nerally.gr",
+      "logo" => "https://nerally.gr/images/logo.png",
+      "description" => "Λογιστικές υπηρεσίες, Μισθοδοσία, Business Consulting, Cyber Security, Social Media Management και άλλες σύγχρονες λύσεις για επιχειρήσεις",
+      "foundingDate" => "2020",
+      "areaServed" => [
+        "@type" => "Country",
+        "name" => "Greece"
+      ]
+    ]
+  ];
+  echo json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+  ?>
   </script>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
