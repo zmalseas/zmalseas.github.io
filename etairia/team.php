@@ -16,18 +16,21 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
   <link rel="stylesheet" href="/css/cookie-consent.css">
 
   <script type="application/ld+json"<?php echo isset($nonce_attr) ? $nonce_attr : ''; ?>>
-  {
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "Η Ομάδα της Nerally",
-    "url": "https://nerally.gr/etairia/team.php",
-    "description": "Γνωρίστε την ομάδα επαγγελματιών της Nerally. Έμπειροι σύμβουλοι, λογιστές, μηχανικοί και ειδικοί που συνεργάζονται για την επιτυχία σας.",
-    "mainEntity": {
-      "@type": "Organization",
-      "name": "Nerally",
-      "url": "https://nerally.gr"
-    }
-  }
+  <?php
+  $schema = [
+    "@context" => "https://schema.org",
+    "@type" => "AboutPage",
+    "name" => "Η Ομάδα της Nerally",
+    "url" => "https://nerally.gr/etairia/team.php",
+    "description" => "Γνωρίστε την ομάδα επαγγελματιών της Nerally. Έμπειροι σύμβουλοι, λογιστές, μηχανικοί και ειδικοί που συνεργάζονται για την επιτυχία σας.",
+    "mainEntity" => [
+      "@type" => "Organization",
+      "name" => "Nerally",
+      "url" => "https://nerally.gr"
+    ]
+  ];
+  echo json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+  ?>
   </script>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">

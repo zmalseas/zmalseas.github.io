@@ -16,26 +16,29 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
   <link rel="stylesheet" href="/css/cookie-consent.css" />
 
   <script<?php echo isset($nonce_attr) ? $nonce_attr : ''; ?> type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "name": "Επικοινωνία με την Nerally",
-    "url": "https://nerally.gr/epikoinonia/contact.php",
-    "description": "Επικοινωνήστε με την ομάδα της Nerally για οποιαδήποτε ερώτηση ή ανάγκη. Είμαστε εδώ για να σας βοηθήσουμε.",
-    "mainEntity": {
-      "@type": "Organization",
-      "name": "Nerally",
-      "url": "https://nerally.gr",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+30 6946365798",
-        "contactType": "Customer Service",
-        "email": "info@nerally.gr",
-        "areaServed": "GR",
-        "availableLanguage": ["Greek", "English"]
-      }
-    }
-  }
+  <?php
+  $schema = [
+    "@context" => "https://schema.org",
+    "@type" => "ContactPage",
+    "name" => "Επικοινωνία με την Nerally",
+    "url" => "https://nerally.gr/epikoinonia/contact.php",
+    "description" => "Επικοινωνήστε με την ομάδα της Nerally για οποιαδήποτε ερώτηση ή ανάγκη. Είμαστε εδώ για να σας βοηθήσουμε.",
+    "mainEntity" => [
+      "@type" => "Organization",
+      "name" => "Nerally",
+      "url" => "https://nerally.gr",
+      "contactPoint" => [
+        "@type" => "ContactPoint",
+        "telephone" => "+30 6946365798",
+        "contactType" => "Customer Service",
+        "email" => "info@nerally.gr",
+        "areaServed" => "GR",
+        "availableLanguage" => ["Greek", "English"]
+      ]
+    ]
+  ];
+  echo json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+  ?>
   </script>
 
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/site-config-inline.php'; ?>
