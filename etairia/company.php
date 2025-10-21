@@ -7,7 +7,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nerally — Σύμμαχος Νέας Εποχής | Εταιρεία</title>
+  <title>Nerally — Ποιοι Είμαστε</title>
   <meta name="description" content="Η Nerally είναι η σύμμαχός σας στη νέα εποχή. Συνδυάζουμε παραδοσιακές υπηρεσίες με σύγχρονες λύσεις για ολοκληρωμένη υποστήριξη της επιχείρησής σας." />
   <meta name="keywords" content="Nerally, εταιρεία, σύμμαχος επιχειρήσεων, λογιστικές υπηρεσίες, συμβουλευτική" />
   <link rel="canonical" href="https://nerally.gr/etairia/company.php" />
@@ -21,13 +21,13 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     "@type": "AboutPage",
     "name": "Σχετικά με την Nerally",
     "url": "https://nerally.gr/etairia/company.php",
-    "description": "Η Nerally είναι η σύμμαχός σας στη νέα εποχή. Συνδυάζουμε παραδοσιακές υπηρεσίες με σύγχρονες λύσεις για ολοκληρωμένη υποστήριξη της επιχείρησής σας.",
+    "description": "Η Nerally είναι ο σύμμαχός σας στη νέα εποχή. Συνδυάζουμε παραδοσιακές υπηρεσίες με σύγχρονες λύσεις για ολοκληρωμένη υποστήριξη της επιχείρησής σας.",
     "mainEntity": {
       "@type": "Organization",
       "name": "Nerally",
       "url": "https://nerally.gr",
       "logo": "https://nerally.gr/images/logo.png",
-      "description": "Λογιστικές υπηρεσίες, HR, Business Consulting, Cyber Security και άλλες σύγχρονες λύσεις για επιχειρήσεις",
+      "description": "Λογιστικές υπηρεσίες, Μισθοδοσία, Business Consulting, Cyber Security, Social Media Management και άλλες σύγχρονες λύσεις για επιχειρήσεις",
       "foundingDate": "2020",
       "areaServed": {
         "@type": "Country",

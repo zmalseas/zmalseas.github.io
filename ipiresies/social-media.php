@@ -7,7 +7,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Social Media Marketing - Nerally | Σύμμαχος Νέας Εποχής</title>
+  <title>Nerally - Social Media Marketing</title>
   <meta name="description" content="Στρατηγική social media marketing, διαχείριση περιεχομένου και βίντεο που αναδεικνύουν την επιχείρησή σας." />
   <meta name="keywords" content="social media, digital marketing, content creation, video production, online presence, Nerally" />
   <meta name="author" content="Nerally" />

@@ -7,7 +7,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Υπηρεσίες Μισθοδοσίας & HR - Nerally</title>
+  <title>Nerally - Μισθοδοσία</title>
   <meta name="description" content="Ολοκληρωμένες υπηρεσίες μισθοδοσίας, διαχείρισης ανθρώπινου δυναμικού και εργατικής νομοθεσίας από την Nerally." />
   <meta name="keywords" content="μισθοδοσία, HR, ανθρώπινο δυναμικό, εργατική νομοθεσία, ασφαλιστικές εισφορές, Nerally" />
   <meta name="author" content="Nerally" />

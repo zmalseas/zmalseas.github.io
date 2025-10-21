@@ -7,9 +7,9 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Επικοινωνία - Nerally</title>
+  <title>Nerally - Επικοινωνία</title>
   <meta name="description" content="Επικοινωνήστε με την ομάδα της Nerally για οποιαδήποτε ερώτηση ή ανάγκη. Είμαστε εδώ για να σας βοηθήσουμε." />
-  <meta name="keywords" content="επικοινωνία Nerally, contact, info@nerally.gr, φόρμα επικοινωνίας" />
+  <meta name="keywords" content="επικοινωνία Nerally, contact, info@nerally.gr, φόρμα επικοινωνίας, 6946365798" />
   <link rel="canonical" href="https://nerally.gr/epikoinonia/contact.php" />
   <link rel="icon" type="image/png" href="../images/logo.png" />
   <link rel="stylesheet" href="../main.css" />
@@ -28,7 +28,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
       "url": "https://nerally.gr",
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+30-210-1234567",
+        "telephone": "+30 6946365798",
         "contactType": "Customer Service",
         "email": "info@nerally.gr",
         "areaServed": "GR",

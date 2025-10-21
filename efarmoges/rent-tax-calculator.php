@@ -8,8 +8,8 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nerally - Υπολογισμος Φορου Ενοικίων</title>
-  <meta name="description" content="Δωρεάν online υπολογιστής φόρου ενοικίων. Υπολογίστε τον φόρο που οφείλετε από εισοδήματα ακινήτων με ακρίβεια και ευκολία." />
-  <meta name="keywords" content="φόρος ενοικίων, υπολογιστής φόρου ακινήτων, εισόδημα από ενοίκια, φορολόγηση ακινήτων, Nerally" />
+  <meta name="description" content="Online υπολογισμός φόρου ενοικίων. Υπολογίστε τον φόρο που οφείλετε από εισοδήματα ακινήτων με ακρίβεια και ευκολία." />
+  <meta name="keywords" content="φόρος ενοικίων, υπολογισμός φόρου ενοικίων, εισόδημα από ενοίκια, φορολόγηση ακινήτων, Φόρος απο νοίκι, Nerally" />
   <link rel="canonical" href="https://nerally.gr/efarmoges/rent-tax-calculator.php" />
   <link rel="icon" type="image/png" href="../images/logo.png" />
   <link rel="stylesheet" href="../main.css" />
@@ -19,9 +19,9 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Υπολογιστής Φόρου Ενοικίων",
+    "name": "Υπολογισμός Φόρου Ενοικίων 2025",
     "url": "https://nerally.gr/efarmoges/rent-tax-calculator.php",
-    "description": "Δωρεάν online υπολογιστής φόρου ενοικίων. Υπολογίστε τον φόρο που οφείλετε από εισοδήματα ακινήτων με ακρίβεια και ευκολία.",
+    "description": "Online Υπολογισμός Φόρου Ενοικίων 2025. Υπολογίστε τον φόρο που οφείλετε από εισοδήματα ακινήτων με ακρίβεια και ευκολία.",
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Any",
     "offers": {

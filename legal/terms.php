@@ -7,7 +7,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Όροι Χρήσης - Nerally</title>
+  <title>Nerally - Όροι Χρήσης</title>
   <link rel="icon" type="image/png" href="../images/logo.png" />
   <link rel="stylesheet" href="../main.css" />
   <link rel="stylesheet" href="/css/cookie-consent.css" />

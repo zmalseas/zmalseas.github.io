@@ -7,7 +7,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ομάδα — Nerally</title>
+  <title>Nerally - Ομάδα</title>
   <meta name="description" content="Γνωρίστε την ομάδα επαγγελματιών της Nerally. Έμπειροι σύμβουλοι, λογιστές, μηχανικοί και ειδικοί που συνεργάζονται για την επιτυχία σας." />
   <meta name="keywords" content="ομάδα Nerally, επαγγελματίες, λογιστές, σύμβουλοι, μηχανικοί" />
   <link rel="canonical" href="https://nerally.gr/etairia/team.php" />

@@ -7,25 +7,25 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Υπολογιστής Φόρου Εισοδήματος 2025 - Δωρεάν Online | Nerally</title>
-  <meta name="description" content="Δωρεάν online υπολογιστής φόρου εισοδήματος για το 2025. Υπολογίστε εύκολα και γρήγορα τον φόρο που οφείλετε με βάση το εισόδημά σας." />
-  <meta name="keywords" content="υπολογιστής φόρου εισοδήματος, φόρος εισοδήματος 2025, online calculator, φορολογία, Nerally" />
+  <title>Nerally - Υπολογισμός Φόρου Εισοδήματος</title>
+  <meta name="description" content="Online υπολογισμός φόρου εισοδήματος 2025" />
+  <meta name="keywords" content="Υπολογισμός Φόρου Εισοδήματος, φόρος εισοδήματος 2025, ποσο φόρο θα πληρώσω, πως φορολογούμαι, Φορολογική Δήλωση, Ε1, Nerally" />
   <meta name="author" content="Nerally" />
   <link rel="canonical" href="https://nerally.gr/efarmoges/income-tax-calculator.php" />
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nerally.gr/efarmoges/income-tax-calculator.php" />
-  <meta property="og:title" content="Υπολογιστής Φόρου Εισοδήματος 2025 - Δωρεάν Online | Nerally" />
-  <meta property="og:description" content="Δωρεάν online υπολογιστής φόρου εισοδήματος για το 2025. Υπολογίστε εύκολα και γρήγορα τον φόρο που οφείλετε." />
+  <meta property="og:title" content="Nerally - Υπολογισμός Φόρου Εισοδήματος 2025" />
+  <meta property="og:description" content="Online υπολογισμός φόρου εισοδήματος 2025" />
   <meta property="og:image" content="https://nerally.gr/images/ForosEisodimatos.webp" />
   <meta property="og:locale" content="el_GR" />
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://nerally.gr/efarmoges/income-tax-calculator.php" />
-  <meta property="twitter:title" content="Υπολογιστής Φόρου Εισοδήματος 2025 - Δωρεάν Online | Nerally" />
-  <meta property="twitter:description" content="Δωρεάν online υπολογιστής φόρου εισοδήματος για το 2025. Υπολογίστε εύκολα και γρήγορα τον φόρο που οφείλετε." />
+  <meta property="twitter:title" content="Nerally - Υπολογισμός Φόρου Εισοδήματος 2025" />
+  <meta property="twitter:description" content="Online υπολογισμός φόρου εισοδήματος 2025" />
   <meta property="twitter:image" content="https://nerally.gr/images/ForosEisodimatos.webp" />
   
   <link rel="icon" type="image/png" href="../images/logo.png" />
@@ -36,9 +36,9 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Υπολογιστής Φόρου Εισοδήματος 2025",
+    "name": "Υπολογισμός Φόρου Εισοδήματος 2025",
     "url": "https://nerally.gr/efarmoges/income-tax-calculator.php",
-    "description": "Δωρεάν online υπολογιστής φόρου εισοδήματος για το 2025. Υπολογίστε εύκολα και γρήγορα τον φόρο που οφείλετε με βάση το εισόδημά σας.",
+    "description": "Online Υπολογισμός Φόρου Εισοδήματος 2025 για μισθωτές υπηρεσίες και συντάξεις.",
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Any",
     "offers": {

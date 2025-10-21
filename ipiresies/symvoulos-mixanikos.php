@@ -7,7 +7,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Σύμβουλος Μηχανικός - Nerally | Αρχιτεκτονικός Σχεδιασμός & Δόμηση</title>
+  <title>Nerally - Σύμβουλος Μηχανικός</title>
   <meta name="description" content="Αρχιτεκτονικός σχεδιασμός, έκδοση αδειών μικρής κλίμακας, μελέτες πυροπροστασίας, επίβλεψη, project management και φωτορεαλιστικές απεικονίσεις. Ολοκληρωμένη τεχνική υποστήριξη από τη μελέτη έως την κατασκευή." />
   <meta name="keywords" content="σύμβουλος μηχανικός, αρχιτεκτονικός σχεδιασμός, άδεια μικρής κλίμακας, μελέτες πυροπροστασίας, επίβλεψη, project management, φωτορεαλισμοί, Nerally" />
   <meta name="author" content="Nerally" />

@@ -7,21 +7,21 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Υπολογιστής ΦΠΑ - Γρήγορος Υπολογισμός Online | Nerally</title>
-  <meta name="description" content="Δωρεάν online υπολογιστής ΦΠΑ. Υπολόγισε καθαρή αξία, ΦΠΑ και τελική τιμή με βάση 24%, 13%, 6% ή προσαρμοσμένο συντελεστή." />
-  <meta name="keywords" content="υπολογιστής ΦΠΑ, ΦΠΑ 24%, ΦΠΑ 13%, ΦΠΑ 6%, VAT calculator, nerally" />
+  <title>Nerally - Υπολογισμός ΦΠΑ</title>
+  <meta name="description" content="Online Υπολογισμός ΦΠΑ. Υπολόγισε καθαρή αξία, ΦΠΑ και τελική τιμή με βάση 24%, 13%, 6% ή προσαρμοσμένο συντελεστή." />
+  <meta name="keywords" content="Yπολογισμός ΦΠΑ, Υπολογιστής ΦΠΑ, 24%, 13%, 6%, VAT calculator, nerally, Ενδοκοινοτικές Συναλλαγές, Απαλλαγή ΦΠΑ" />
   <meta name="author" content="Nerally" />
   <link rel="canonical" href="https://nerally.gr/efarmoges/vat-calculator.php" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nerally.gr/efarmoges/vat-calculator.php" />
-  <meta property="og:title" content="Υπολογιστής ΦΠΑ - Γρήγορος Υπολογισμός Online | Nerally" />
+  <meta property="og:title" content="Nerally - Υπολογισμός ΦΠΑ" />
   <meta property="og:description" content="Υπολόγισε καθαρή αξία, ΦΠΑ και τελικό ποσό άμεσα για όλους τους βασικούς συντελεστές." />
   <meta property="og:image" content="https://nerally.gr/images/logo.png" />
   <meta property="og:locale" content="el_GR" />
   <meta property="twitter:card" content="summary" />
   <meta property="twitter:url" content="https://nerally.gr/efarmoges/vat-calculator.php" />
-  <meta property="twitter:title" content="Υπολογιστής ΦΠΑ - Γρήγορος Υπολογισμός Online | Nerally" />
-  <meta property="twitter:description" content="Δωρεάν online υπολογιστής ΦΠΑ για επιχειρήσεις και ιδιώτες." />
+  <meta property="twitter:title" content="Nerally - Υπολογισμός ΦΠΑ" />
+  <meta property="twitter:description" content="Online υπολογισμός ΦΠΑ." />
   <meta property="twitter:image" content="https://nerally.gr/images/logo.png" />
   <link rel="icon" type="image/png" href="../images/logo.png" />
   <link rel="stylesheet" href="../main.css" />
