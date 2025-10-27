@@ -31,6 +31,25 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
   <link rel="icon" type="image/png" href="../images/logo.png" />
   <link rel="stylesheet" href="../main.css" />
   <link rel="stylesheet" href="/css/cookie-consent.css" />
+  <style>
+    /* Fix datalist dropdown text color */
+    input[list]::-webkit-calendar-picker-indicator {
+      filter: invert(0.5);
+    }
+    
+    /* Ensure dropdown options are visible */
+    datalist option {
+      background-color: white;
+      color: #333;
+      padding: 8px;
+    }
+    
+    /* Input styling for better visibility */
+    input[list] {
+      background-color: white;
+      color: #333;
+    }
+  </style>
   <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -219,7 +238,6 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
 </div>
 
 <?php require_once __DIR__ . '/../partials/footer.php'; ?>
-<?php require_once __DIR__ . '/../partials/chat.html'; ?>
 
 <script nonce="<?php echo $csp_nonce; ?>" type="text/babel">
 const { useMemo, useState } = React;
