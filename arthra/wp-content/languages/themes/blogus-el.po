@@ -1,0 +1,872 @@
+# Translation of Themes - Blogus in Greek
+# This file is distributed under the same license as the Themes - Blogus package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2025-05-26 12:34:40+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.1\n"
+"Language: el_GR\n"
+"Project-Id-Version: Themes - Blogus\n"
+
+#. Theme Name of the theme
+#: style.css inc/ansar/customizer-admin/blogus-admin-plugin-install.php:84
+#, gp-priority: high
+msgid "Blogus"
+msgstr "Blogus"
+
+#: inc/ansar/customizer-admin/blogus-admin-plugin-install.php:56
+msgid "Customize Site"
+msgstr "Παραμετροποίηση ιστότοπου"
+
+#: inc/ansar/widgets/widget-featured-post-widget.php:117
+msgid "All categories"
+msgstr "Όλες οι κατηγορίες"
+
+#: inc/ansar/customize/customizer-control.php:150
+#: inc/ansar/widgets/widget-featured-post-widget.php:103
+msgid "All"
+msgstr "Όλα"
+
+#: inc/ansar/widgets/widget-featured-post-widget.php:102
+msgid "Featured Posts"
+msgstr "Προβεβλημένα Άρθρα"
+
+#: inc/ansar/widgets/widget-featured-post-widget.php:10
+msgid "Featured Posts List"
+msgstr "Λίστα επιλεγμένων άρθρων"
+
+#: inc/ansar/hooks/blocks/header/header-one.php:47
+msgid "Toggle navigation"
+msgstr "Εναλλαγή πλοήγησης"
+
+#: inc/ansar/customize/theme-layout.php:150
+#: inc/ansar/customize/theme-layout.php:169
+msgid "Page"
+msgstr "Σελίδα"
+
+#: inc/ansar/customize/theme-options.php:870
+msgid "Logo Height"
+msgstr "Ύψος λογότυπου"
+
+#: inc/ansar/customize/theme-options.php:854
+msgid "Logo Width"
+msgstr "Πλάτος Λογότυπου"
+
+#: inc/ansar/customize/header-options.php:65
+msgid "Add New"
+msgstr "Προσθήκη Νέου"
+
+#: inc/ansar/customize/theme-options.php:565
+msgid "Author"
+msgstr "Συντάκτης"
+
+#: inc/ansar/customize/customizer.php:123
+msgid "Site Info Color"
+msgstr "Χρώμα πληροφοριών ιστότοπου"
+
+#. Template Name of the theme
+msgid "Full Width Page"
+msgstr "Σελίδα πλήρους πλάτους"
+
+#: inc/ansar/hooks/hook-index-main.php:75
+#: inc/ansar/hooks/hook-index-main.php:159
+msgid "By"
+msgstr "Από"
+
+#: inc/ansar/template-tags.php:412
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr "Συγνώμη, αλλα δεν βρέθηκε τίποτα που να ταιριάζει με τα κριτήρια αναζήτησης που θέσατε. Παρακαλώ προσπαθήστε ξανά χρησιμοποιώντας διαφορετικές λέξεις προς αναζήτηση."
+
+#: inc/ansar/template-tags.php:409
+msgid "Nothing Found"
+msgstr "Δε βρέθηκε τίποτα"
+
+#. translators: %s: search term
+#: inc/ansar/template-tags.php:159
+msgid "Search Results for: %s"
+msgstr "Αποτελέσματα αναζήτησης για %s"
+
+#: inc/ansar/widgets/widget-featured-post-widget.php:113
+#: inc/ansar/widgets/widgets-common-functions.php:24
+msgid "Select Category"
+msgstr "Επιλέξτε Κατηγορία"
+
+#: inc/ansar/widgets/widgets-base.php:198
+msgid "Choose Image"
+msgstr "Επιλέξτε εικόνα"
+
+#: inc/ansar/widgets/widgets-base.php:197
+msgid "Select Image"
+msgstr "Επιλέξτε εικόνα"
+
+#: inc/ansar/widgets/widgets-base.php:196
+msgid "Upload"
+msgstr "Μεταφόρτωση"
+
+#: inc/ansar/widgets/widget-recent-post.php:86
+msgid "Enable feature image"
+msgstr "Ενεργοποίησης χαρακτηριστικής εικόνας"
+
+#: inc/ansar/widgets/widget-recent-post.php:81
+msgid "Full"
+msgstr "Πλήρες"
+
+#: inc/ansar/widgets/widget-recent-post.php:80
+msgid "Thumbnail"
+msgstr "Μικρογραφία"
+
+#: inc/ansar/widgets/widget-recent-post.php:12
+msgid "AR: Recent Post"
+msgstr "AR: Πρόσφατα Άρθρα"
+
+#: inc/ansar/widgets/widget-author-info.php:178
+msgid "YouTube Link"
+msgstr "Σύνδεσμος Youtube"
+
+#: inc/ansar/widgets/widget-author-info.php:168
+msgid "Instagram Link"
+msgstr "Σύνδεσμος Instagram"
+
+#: inc/ansar/widgets/widget-author-info.php:148
+msgid "Facebook Link"
+msgstr "Σύνδεσμος Facebook"
+
+#: inc/ansar/widgets/widget-author-info.php:142
+msgid "Description"
+msgstr "Περιγραφή"
+
+#: inc/ansar/widgets/widget-author-info.php:138
+msgid "Name"
+msgstr "Όνομα"
+
+#: inc/ansar/widgets/widget-author-info.php:130
+msgid "Uploaded image"
+msgstr "Μεταφορτωμένες εικόνες"
+
+#: inc/ansar/template-tags.php:205
+msgid "Read More"
+msgstr "Ανάγνωση του υπολοίπου"
+
+#: inc/ansar/template-tags.php:32
+msgid "View all posts in %s"
+msgstr "Προβολή όλων των άρθρων στο %s"
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: inc/ansar/template-functions.php:159
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr "Επεξεργασία του<span class=\"screen-reader-text\"> \"%s\"</span>"
+
+#: inc/ansar/hooks/hook-meta.php:17 inc/ansar/hooks/hook-meta.php:45
+msgid "Color Class"
+msgstr "Κατηγορία χρώματος"
+
+#: inc/ansar/hooks/hook-meta.php:12 inc/ansar/hooks/hook-meta.php:52
+msgid "Category Color 4"
+msgstr "Κατηγορία Χρώμα 4"
+
+#: inc/ansar/hooks/hook-meta.php:11 inc/ansar/hooks/hook-meta.php:51
+msgid "Category Color 3"
+msgstr "Κατηγορία Χρώμα 3"
+
+#: inc/ansar/hooks/hook-meta.php:10 inc/ansar/hooks/hook-meta.php:50
+msgid "Category Color 2"
+msgstr "Κατηγορία Χρώμα 2"
+
+#: inc/ansar/hooks/hook-meta.php:9 inc/ansar/hooks/hook-meta.php:49
+msgid "Category Color 1"
+msgstr "Κατηγορία Χρώμα 1"
+
+#: inc/ansar/customizer-repeater/class/customizer-repeater-control.php:537
+#: inc/ansar/customizer-repeater/class/customizer-repeater-control.php:567
+msgid "Remove Icon"
+msgstr "Αφαίρεση εικονιδίου"
+
+#: inc/ansar/customizer-repeater/class/customizer-repeater-control.php:512
+msgid "None"
+msgstr "Καμία"
+
+#: inc/ansar/customizer-repeater/class/customizer-repeater-control.php:507
+msgid "Image type"
+msgstr "Τύπος Εικόνας"
+
+#: inc/ansar/customizer-repeater/class/customizer-repeater-control.php:317
+#: inc/ansar/customizer-repeater/class/customizer-repeater-control.php:374
+msgid "Color"
+msgstr "Χρώμα"
+
+#: inc/ansar/customizer-repeater/class/customizer-repeater-control.php:284
+#: inc/ansar/customizer-repeater/class/customizer-repeater-control.php:400
+#: inc/ansar/customizer-repeater/class/customizer-repeater-control.php:534
+#: inc/ansar/customizer-repeater/class/customizer-repeater-control.php:556
+msgid "Link"
+msgstr "Συνδέσμου"
+
+#: inc/ansar/customizer-repeater/class/customizer-repeater-control.php:38
+msgid "Customizer Repeater"
+msgstr "Επαναλαμβανόμενος Προσαρμογέας"
+
+#: inc/ansar/customizer-repeater/class/customizer-repeater-control.php:33
+msgid "Add new field"
+msgstr "Προσθήκη πεδίου"
+
+#: inc/ansar/customizer-admin/blogus-admin-plugin-install.php:61
+msgid "View Demos"
+msgstr "Παρακολούθηση επίδειξης"
+
+#: inc/ansar/customizer-admin/blogus-admin-plugin-install.php:65
+msgid "View Documentation"
+msgstr "Προβολή τεκμηρίωσης"
+
+#: inc/ansar/customizer-admin/blogus-admin-plugin-install.php:36
+msgid "Welcome to %1$s"
+msgstr "Καλώς ορίσατε στο %1$s"
+
+#: inc/ansar/customize/theme-options.php:1008
+msgid "Copyright Text"
+msgstr "Κείμενο copyright"
+
+#: inc/ansar/customize/theme-options.php:958
+msgid "Social Icons"
+msgstr "Εικονίδια κοινωνικής δικτύωσης"
+
+#: inc/ansar/customize/theme-options.php:939
+msgid "Hide / Show Social Icon"
+msgstr "Απόκρυψη / Εμφάνιση εικονιδίου κοινωνικής δικτύωσης"
+
+#: inc/ansar/customize/theme-options.php:696
+msgid "Hide/Show Comments"
+msgstr "Απόκρυψη/εμφάνιση σχολίων"
+
+#: inc/ansar/customize/theme-options.php:631
+#: inc/ansar/customize/theme-options.php:779
+#: inc/ansar/customizer-repeater/class/customizer-repeater-control.php:263
+#: inc/ansar/customizer-repeater/class/customizer-repeater-control.php:382
+#: inc/ansar/widgets/widget-author-info.php:123
+#: inc/ansar/widgets/widget-recent-post.php:68
+msgid "Title"
+msgstr "Τίτλος"
+
+#: inc/ansar/customize/theme-options.php:624
+msgid "Related Posts"
+msgstr "Σχετικά Άρθρα"
+
+#: inc/ansar/customize/theme-options.php:615
+msgid "Enable Related Posts"
+msgstr "Ενεργοποίηση σχετικών αναρτήσεων"
+
+#: inc/ansar/customize/theme-options.php:599
+#: inc/ansar/hooks/hook-index-main.php:172
+#: inc/ansar/hooks/hook-index-main.php:180
+msgid "Related Post"
+msgstr "Σχετικό Άρθρο"
+
+#: inc/ansar/customize/theme-options.php:530
+msgid "Hide/Show Featured Image"
+msgstr "Απόκρυψη/εμφάνιση εικόνας με προεξέχουσα θέση"
+
+#: inc/ansar/customize/theme-options.php:512
+msgid "Hide/Show Tag"
+msgstr "Απόκρυψη/εμφάνιση ετικέτας"
+
+#: inc/ansar/customize/theme-options.php:496
+#: inc/ansar/customize/theme-options.php:664
+msgid "Hide/Show Date"
+msgstr "Απόκρυψη/εμφάνιση ημερομηνίας"
+
+#: inc/ansar/customize/theme-options.php:480
+#: inc/ansar/customize/theme-options.php:581
+#: inc/ansar/customize/theme-options.php:680
+msgid "Hide/Show Author Details"
+msgstr "Απόκρυψη/εμφάνιση στοιχείων συγγραφέα"
+
+#: inc/ansar/customize/theme-options.php:464
+#: inc/ansar/customize/theme-options.php:648
+msgid "Hide/Show Categories"
+msgstr "Απόκρυψη/εμφάνιση κατηγοριών"
+
+#: inc/ansar/customize/theme-options.php:429
+msgid "Hide/Show Next Pagination"
+msgstr "Εμφάνιση σελιδοποίησης άρθρου"
+
+#: inc/ansar/customize/theme-options.php:413
+msgid "Pagination"
+msgstr "Σελιδοποίηση"
+
+#: inc/ansar/customize/theme-options.php:398
+msgid "Full Content"
+msgstr "Πλήρες περιεχόμενο"
+
+#: inc/ansar/customize/theme-options.php:154
+msgid "Footer Copyright"
+msgstr "Κείμενο Υποσέλιδου πνευματικών δικαιωμάτων"
+
+#: inc/ansar/customize/theme-options.php:147
+msgid "Footer Options"
+msgstr "Επιλογές υποσέλιδου"
+
+#: inc/ansar/customize/theme-options.php:138
+msgid "You Missed Section"
+msgstr "Χάσατε το τμήμα"
+
+#: inc/ansar/customize/theme-options.php:118
+msgid "Breadcrumb Settings"
+msgstr "Επιλογές Breadcrumb"
+
+#: inc/ansar/customize/theme-options.php:108
+msgid "Single Page"
+msgstr "Μονή σελίδα"
+
+#: inc/ansar/customize/theme-options.php:98
+msgid "Blog Page"
+msgstr "Σελίδα ιστολογίου"
+
+#: inc/ansar/customize/theme-options.php:89
+msgid "Typography Settings"
+msgstr "Ρυθμίσεις Τυπογραφίας"
+
+#: inc/ansar/customize/theme-options.php:79
+msgid "Theme Options"
+msgstr "Επιλογές θέματος"
+
+#: inc/ansar/customize/theme-layout.php:117
+msgid "Single Blog Pages"
+msgstr "Μεμονωμένες σελίδες ιστολογίου"
+
+#: inc/ansar/customize/theme-layout.php:44
+#: inc/ansar/customize/theme-layout.php:61
+msgid "Blog Layout"
+msgstr "Διάταξη ιστολογίου"
+
+#: inc/ansar/customize/customizer.php:486
+msgid "Theme layout"
+msgstr "Διάταξη Θέματος"
+
+#: inc/ansar/customize/header-options.php:12
+#: inc/ansar/customize/header-options.php:30
+#: inc/ansar/customize/header-options.php:63
+#: inc/ansar/customizer-repeater/class/customizer-repeater-control.php:520
+msgid "Social icons"
+msgstr "Εικόνες κοινωνικών δικτύων"
+
+#: inc/ansar/customize/header-options.php:5
+msgid "Header Options"
+msgstr "Επιλογές Κεφαλίδας"
+
+#: inc/ansar/customize/frontpage-options.php:151
+msgid "Hide / Show Meta"
+msgstr "Απόκρυψη / Εμφάνιση ημερομηνίας"
+
+#: inc/ansar/customize/frontpage-options.php:137
+msgid "Slider title font Size"
+msgstr "Μέγεθος γραμματοσειράς Τίτλου Ιστοτόπου"
+
+#: inc/ansar/customize/frontpage-options.php:122
+msgid "Overlay Text Color"
+msgstr "Χρώμα κειμένου επικάλυψης"
+
+#: inc/ansar/customize/frontpage-options.php:112
+#: inc/ansar/customize/theme-options.php:896
+msgid "Overlay Color"
+msgstr "Χρώμα επικάλυψης"
+
+#: inc/ansar/customize/frontpage-options.php:82
+#: inc/ansar/customize/theme-options.php:329
+msgid "Category"
+msgstr "Κατηγορία"
+
+#: inc/ansar/customize/frontpage-options.php:64
+msgid "Enable Slider Banner Section"
+msgstr "Ενεργοποίηση τμήματος Slider Banner"
+
+#: inc/ansar/customize/frontpage-featured.php:123
+#: inc/ansar/customize/frontpage-featured.php:213
+#: inc/ansar/customize/frontpage-featured.php:303
+#: inc/ansar/customize/header-options.php:180
+#: inc/ansar/customizer-repeater/class/customizer-repeater-control.php:458
+#: inc/ansar/widgets/widget-author-info.php:193
+msgid "Open link in new tab"
+msgstr "Άνοιγμα συνδέσμου σε νέα καρτέλα"
+
+#: inc/ansar/customize/frontpage-featured.php:107
+#: inc/ansar/customize/frontpage-featured.php:197
+#: inc/ansar/customize/frontpage-featured.php:287
+#: inc/ansar/customize/header-options.php:165
+msgid "Button Link"
+msgstr "Σύνδεσμος Κουμπιού"
+
+#: inc/ansar/customize/frontpage-featured.php:90
+#: inc/ansar/customize/frontpage-featured.php:180
+#: inc/ansar/customize/frontpage-featured.php:270
+#: inc/ansar/customizer-repeater/class/customizer-repeater-control.php:273
+#: inc/ansar/customizer-repeater/class/customizer-repeater-control.php:390
+msgid "Button Text"
+msgstr "Κείμενο Κουμπιού"
+
+#: inc/ansar/customize/frontpage-featured.php:72
+#: inc/ansar/customize/frontpage-featured.php:161
+#: inc/ansar/customize/frontpage-featured.php:251
+#: inc/ansar/customizer-repeater/class/customizer-repeater-control.php:492
+#: inc/ansar/customizer-repeater/class/customizer-repeater-control.php:511
+msgid "Image"
+msgstr "Εικόνα"
+
+#: inc/ansar/custom-control/custom_tab_control/custom_tab_control_class.php:40
+msgid "Style"
+msgstr "Στυλ"
+
+#: inc/ansar/custom-control/custom_tab_control/custom_tab_control_class.php:38
+msgid "General"
+msgstr "Γενικά"
+
+#: inc/ansar/breadcrumb-trail/breadcrumbs.php:840
+msgctxt "weekly archives date format"
+msgid "W"
+msgstr "W"
+
+#: inc/ansar/breadcrumb-trail/breadcrumbs.php:812
+#: inc/ansar/breadcrumb-trail/breadcrumbs.php:1239
+msgctxt "daily archives date format"
+msgid "j"
+msgstr "j"
+
+#: inc/ansar/breadcrumb-trail/breadcrumbs.php:811
+#: inc/ansar/breadcrumb-trail/breadcrumbs.php:867
+#: inc/ansar/breadcrumb-trail/breadcrumbs.php:1234
+msgctxt "monthly archives date format"
+msgid "F"
+msgstr "F"
+
+#: inc/ansar/breadcrumb-trail/breadcrumbs.php:810
+#: inc/ansar/breadcrumb-trail/breadcrumbs.php:839
+#: inc/ansar/breadcrumb-trail/breadcrumbs.php:866
+#: inc/ansar/breadcrumb-trail/breadcrumbs.php:893
+#: inc/ansar/breadcrumb-trail/breadcrumbs.php:1228
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: inc/ansar/breadcrumb-trail/breadcrumbs.php:794
+msgctxt "hour archives time format"
+msgid "g a"
+msgstr "g a"
+
+#: inc/ansar/breadcrumb-trail/breadcrumbs.php:777
+msgctxt "minute archives time format"
+msgid "i"
+msgstr "i"
+
+#: inc/ansar/breadcrumb-trail/breadcrumbs.php:760
+msgctxt "minute and hour archives time format"
+msgid "g:i a"
+msgstr "g:i a"
+
+#. Translators: Minute archive title. %s is the minute time format.
+#: inc/ansar/breadcrumb-trail/breadcrumbs.php:306
+msgid "Minute %s"
+msgstr "Λεπτό %s"
+
+#. Translators: %s is the page number.
+#: inc/ansar/breadcrumb-trail/breadcrumbs.php:304
+msgid "Comment Page %s"
+msgstr "Σελίδα σχολίων %s"
+
+#. Translators: %s is the page number.
+#: inc/ansar/breadcrumb-trail/breadcrumbs.php:302
+msgid "Page %s"
+msgstr "Σελίδα %s"
+
+#. Translators: %s is the search query.
+#: inc/ansar/breadcrumb-trail/breadcrumbs.php:300
+msgid "Search results for: %s"
+msgstr "Αποτελέσματα για %s"
+
+#: inc/ansar/breadcrumb-trail/breadcrumbs.php:298
+msgid "Archives"
+msgstr "Ιστορικό"
+
+#: comments.php:54 comments.php:75
+msgid "Comment navigation"
+msgstr "Πλοήγηση σχολίων"
+
+#. translators: 1: number of comments, 2: post title
+#: comments.php:36
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s σκέψη για το &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s σκέψη για το &ldquo;%2$s&rdquo;"
+
+#. translators: %s: post title
+#: comments.php:31
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr "Μια σκέψη στο &ldquo;%s&rdquo;"
+
+#: 404.php:20
+msgid "Go Back"
+msgstr "Επιστροφή"
+
+#: 404.php:19
+msgid "We are sorry, but the page you are looking for does not exist."
+msgstr "Λυπούμαστε, αλλά η σελίδα που ψάχνετε δεν υπάρχει."
+
+#: 404.php:18
+msgid "Oops! Page not found"
+msgstr "Ωχ! Η σελίδα δεν βρέθηκε"
+
+#: 404.php:17
+msgid "4"
+msgstr "4"
+
+#: inc/ansar/hooks/hook-meta.php:23 inc/ansar/hooks/hook-meta.php:60
+msgid "Select category color class. You can set appropriate categories color on \"Categories\" section of the theme customizer."
+msgstr "Επιλέξτε class κατηγορίας χρώματος. Μπορείτε να ορίσετε το κατάλληλο χρώμα κατηγοριών στην ενότητα \"Κατηγορίες\" του προσαρμογέα του θέματος."
+
+#: inc/ansar/customize/theme-options.php:547
+msgid "Hide/Show Sharing Icons"
+msgstr "Απόκρυψη/εμφάνιση εικονιδίων κοινοποίησης"
+
+#: inc/ansar/customizer-admin/blogus-admin-plugin-install.php:28
+msgid "Hello, "
+msgstr "Γεια σας, "
+
+#: inc/ansar/widgets/widget-author-info.php:127
+msgid "Author Image"
+msgstr "Εικόνα Συντάκτη"
+
+#: inc/ansar/customizer-repeater/class/customizer-repeater-control.php:542
+#: inc/ansar/customizer-repeater/class/customizer-repeater-control.php:575
+msgid "Add Icon"
+msgstr "Προσθήκη εικονιδίου"
+
+#: inc/ansar/customizer-repeater/class/customizer-repeater-control.php:495
+#: inc/ansar/widgets/widget-author-info.php:134
+msgid "Upload Image"
+msgstr "Φόρτωση εικόνας"
+
+#: inc/ansar/customizer-repeater/class/customizer-repeater-control.php:475
+msgid "http://fontawesome.io/icons/"
+msgstr "http://fontawesome.io/icons/"
+
+#: inc/ansar/customizer-repeater/class/customizer-repeater-control.php:469
+#: inc/ansar/customizer-repeater/class/customizer-repeater-control.php:510
+msgid "Icon"
+msgstr "Εικονίδιο"
+
+#: inc/ansar/customizer-repeater/class/customizer-repeater-control.php:344
+#: inc/ansar/customizer-repeater/class/customizer-repeater-control.php:421
+msgid "Delete field"
+msgstr "Διαγραφή πεδίου"
+
+#: inc/ansar/customizer-repeater/class/customizer-repeater-control.php:327
+msgid "Shortcode"
+msgstr "Συντόμευση κώδικα"
+
+#: inc/ansar/customize/theme-options.php:883
+msgid "Background Image"
+msgstr "Εικόνα υπόβαθρου"
+
+#: inc/ansar/customize/theme-options.php:771
+#: inc/ansar/hooks/hook-footer-missed-posts.php:11
+msgid "You Missed"
+msgstr "Σας ξέφυγε"
+
+#: inc/ansar/customize/theme-options.php:761
+msgid "Hide / Show"
+msgstr "Απόκρυψη / Εμφάνιση"
+
+#: inc/ansar/customize/theme-options.php:732
+msgid "Rank Math"
+msgstr "Rank Math"
+
+#: inc/ansar/customize/theme-options.php:731
+msgid "Yoast SEO"
+msgstr "Yoast SEO"
+
+#: inc/ansar/customize/theme-options.php:729
+msgid "Default"
+msgstr "Προεπιλεγμένη"
+
+#: inc/ansar/customize/theme-options.php:726
+msgid "Breadcrumb type"
+msgstr "Τύπος Breadcrumb"
+
+#: inc/ansar/customize/theme-options.php:397
+msgid "Excerpt"
+msgstr "Απόσπασμα"
+
+#: inc/ansar/customize/theme-options.php:364 inc/ansar/template-tags.php:239
+msgid "Comments"
+msgstr "Σχόλια"
+
+#: inc/ansar/customize/theme-options.php:351
+msgid "Hide All"
+msgstr "Απόκρυψη όλων"
+
+#: inc/ansar/customize/theme-layout.php:20
+#: inc/ansar/customize/theme-layout.php:35
+msgid "Sidebar Width"
+msgstr "Πλάτος πλευρικής στήλης"
+
+#: inc/ansar/customize/theme-layout.php:12
+msgid "General Layout"
+msgstr "Γενική διάταξη"
+
+#: inc/ansar/customize/header-options.php:134
+msgid "Hide / Show Search"
+msgstr "Απόκρυψη / Εμφάνιση αναζήτησης"
+
+#: inc/ansar/customize/header-options.php:102
+#: inc/ansar/customize/header-options.php:120
+msgid "Menu"
+msgstr "Μενού"
+
+#: inc/ansar/customize/header-options.php:79
+msgid "Upgrade to Pro"
+msgstr "Αναβάθμιση σε Pro"
+
+#: comments.php:57 comments.php:78
+msgid "Older Comments"
+msgstr "Παλιότερα σχόλια"
+
+#: comments.php:58 comments.php:79
+msgid "Newer Comments"
+msgstr "Νεότερα σχόλια"
+
+#: comments.php:90
+msgid "Comments are closed."
+msgstr "Τα σχόλια είναι απενεργοποιημένα."
+
+#: inc/ansar/hooks/hook-footer-section.php:112
+#: inc/ansar/hooks/hook-footer-section.php:130
+msgid "%1$s by %2$s."
+msgstr "%1$s από %2$s."
+
+#: functions.php:100
+msgid "Primary menu"
+msgstr "Κύριο μενού"
+
+#: functions.php:101
+msgid "Footer menu"
+msgstr "Μενού υποσέλιδου"
+
+#: functions.php:220
+msgid "Sidebar Widget Area"
+msgstr "Περιοχή μικροεφαρμογών πλευρικής στήλης"
+
+#: functions.php:232
+msgid "Footer Widget Area"
+msgstr "Περιοχή μονάδων υποσέλιδου"
+
+#: header.php:22
+msgid "Skip to content"
+msgstr "Μετάβαση στο περιεχόμενο"
+
+#: inc/ansar/blogus-custom-navwalker.php:207
+msgid "Add a menu"
+msgstr "Προσθήκη μενού"
+
+#: inc/ansar/breadcrumb-trail/breadcrumbs.php:294
+msgid "Browse:"
+msgstr "Πλοήγηση:"
+
+#: inc/ansar/breadcrumb-trail/breadcrumbs.php:295
+msgctxt "breadcrumbs aria label"
+msgid "Breadcrumbs"
+msgstr "Διαδρομές"
+
+#: inc/ansar/customize/customizer.php:540
+#: inc/ansar/customize/theme-options.php:1022
+msgid "Background Color"
+msgstr "Χρώμα Φόντου"
+
+#: inc/ansar/customize/customizer.php:454
+msgid "Site Title Size"
+msgstr "Μέγεθος γραμματοσειράς Ιστοτόπου"
+
+#: inc/ansar/customize/customizer-default.php:57
+msgid "You may have missed"
+msgstr "Μπορεί να χάσατε"
+
+#: inc/ansar/customize/customizer-default.php:30
+msgid "Featured Story"
+msgstr "Προτεινόμενη ιστορία"
+
+#: inc/ansar/customize-pro/class-customize.php:65
+msgid "Go Pro"
+msgstr "Μετάβαση στην έκδοση Pro"
+
+#: inc/ansar/customize-pro/class-customize.php:64
+msgid "Blogus Pro Available!"
+msgstr "Blogus Pro Διαθέσιμο!"
+
+#. Translators: Weekly archive title. %s is the week date format.
+#: inc/ansar/breadcrumb-trail/breadcrumbs.php:308
+msgid "Week %s"
+msgstr "Εβδομάδα %s"
+
+#: inc/ansar/customize/theme-options.php:350
+msgid "Show Author Only"
+msgstr "Εμφάνιση μόνο του συγγραφέα"
+
+#: inc/ansar/customize/theme-options.php:349
+msgid "Show Date Only"
+msgstr "Προβολή μόνο ημερομηνίας"
+
+#: inc/ansar/customize/theme-options.php:348
+msgid "Show Date and Author"
+msgstr "Εμφάνιση ημερομηνίας και συντάκτη"
+
+#: inc/ansar/customize/theme-options.php:344
+msgid "Date and Author"
+msgstr "Ημερομηνία και συγγραφέας"
+
+#: inc/ansar/customize/theme-options.php:299
+msgid "Post Meta"
+msgstr "Μεταδεδομένα άρθρου"
+
+#: inc/ansar/customize/theme-options.php:265
+msgid "Menu Font"
+msgstr "Γραμματοσειρά Μενού"
+
+#: inc/ansar/customize/theme-options.php:248
+msgid "Font Weight"
+msgstr "Βάρος Γραμματοσειράς"
+
+#: inc/ansar/customize/theme-options.php:231
+#: inc/ansar/customize/theme-options.php:281
+msgid "Font family"
+msgstr "Οικογένεια γραμματοσειρών"
+
+#: inc/ansar/customize/frontpage-featured.php:53
+#: inc/ansar/customize/frontpage-featured.php:142
+#: inc/ansar/customize/frontpage-featured.php:232
+#: inc/ansar/customize/theme-options.php:447
+msgid "Featured Post"
+msgstr "Προβεβλημένο άρθρο"
+
+#: inc/ansar/customize/theme-options.php:924
+msgid "Select Column Layout"
+msgstr "Επιλέξτε διάταξη στήλης"
+
+#: inc/ansar/customize/theme-options.php:910
+#: inc/ansar/customize/theme-options.php:1036
+msgid "Text Color"
+msgstr "Χρώμα κειμένου"
+
+#: inc/ansar/customize/theme-options.php:200
+msgid "Site Title Font"
+msgstr "Γραμματοσειρά τίτλου ιστότοπου"
+
+#: inc/ansar/customize/theme-options.php:128
+msgid "Sidebar Settings"
+msgstr "Ρυθμίσεις πλευρικής στήλης"
+
+#: inc/ansar/customize/header-options.php:66
+#: inc/ansar/customize/theme-options.php:961
+msgid "Social"
+msgstr "Social"
+
+#: inc/ansar/customize/header-options.php:44
+msgid "Hide / Show Social icons"
+msgstr "Απόκρυψη / Εμφάνιση εικονιδίου κοινωνικής δικτύωσης"
+
+#: inc/ansar/breadcrumb-trail/breadcrumbs.php:297
+msgid "404 Not Found"
+msgstr "404 Δεν βρέθηκε"
+
+#: inc/ansar/breadcrumb-trail/breadcrumbs.php:296
+msgid "Home"
+msgstr "Αρχική σελίδα"
+
+#: inc/ansar/customize/theme-options.php:730
+msgid "NavXT"
+msgstr "NavXT"
+
+#: inc/ansar/hooks/hook-index-main.php:63
+msgid "Permalink to: "
+msgstr "Μόνιμος σύνδεσμος: "
+
+#: inc/ansar/customize/theme-options.php:712
+msgid "Hide/Show Breadcrumb"
+msgstr "Απόκρυψη/Εμφάνιση διαδρομής"
+
+#: inc/ansar/customize/frontpage-featured.php:35
+msgid "Hide/Show Featured Links"
+msgstr "Απόκρυψη/Εμφάνιση επιλεγμένων συνδέσμων"
+
+#: inc/ansar/customize/theme-options.php:1003
+msgid "Copyright &copy; All rights reserved"
+msgstr "Copyright &copy; Όλα τα δικαιώματα κατοχυρωμένα"
+
+#: inc/ansar/customize/frontpage-featured.php:20
+msgid "Featured Links"
+msgstr "Προτεινόμενοι Σύνδεσμοι"
+
+#: inc/ansar/widgets/widget-recent-post.php:77
+msgid "Featured post image size"
+msgstr "Μέγεθος εικόνας προβεβλημένου άρθρου"
+
+#: inc/ansar/customize/theme-options.php:995
+msgid "Hide / Show Copyright"
+msgstr "Απόκρυψη / Εμφάνιση πνευματικών δικαιωμάτων"
+
+#: inc/ansar/customize/frontpage-options.php:101
+msgid "Hide / Show Slider Overlay"
+msgstr "Απόκρυψη / Εμφάνιση επικάλυψης slider"
+
+#: inc/ansar/customize/header-options.php:149
+msgid "Hide / Show Subscribe Button"
+msgstr "Απόκρυψη / Εμφάνιση κουμπιού εγγραφής"
+
+#: inc/ansar/customizer-repeater/class/customizer-repeater-control.php:474
+msgid "Note: Some icons may not be displayed here. You can see the full list of icons at %1$s."
+msgstr "Σημείωση: Κάποια εικονίδια ίσως να μην εμφανίζονται εδώ. Μπορείτε να δείτε την πλήρη λιστα των εικονιδίων στο %1$s."
+
+#: inc/ansar/widgets/widget-recent-post.php:73
+msgid "Number of posts to show"
+msgstr "Αριθμός άρθρων προς εμφάνιση"
+
+#: inc/ansar/customize/frontpage-options.php:83
+msgid "Posts to be shown on banner slider section"
+msgstr "Άρθρα που θα εμφανίζονται στην ενότητα slider banner"
+
+#: inc/ansar/customize/customizer.php:522
+msgid "Primary Menu Color"
+msgstr "Χρώμα κύριου μενού"
+
+#: inc/ansar/widgets/widget-recent-post.php:79
+msgid "Select post image size"
+msgstr "Επιλέξτε μέγεθος εικόνας άρθρου"
+
+#: inc/ansar/custom-control/custom_tab_control/custom_tab_control_class.php:42
+msgid "Sharing Social Icon"
+msgstr "Εικονίδιο κοινής χρήσης κοινωνικών δικτύων"
+
+#: inc/ansar/widgets/widget-author-info.php:158
+msgid "Twitter Link"
+msgstr "Σύνδεσμος Twitter"
+
+#: inc/ansar/customize/theme-options.php:185
+msgid "Typography Enable/Disable"
+msgstr "Ενεργοποίηση ή απενεργοποίηση Τυπογραφίας"
+
+#. Theme URI of the theme
+#: style.css
+#, gp-priority: low
+msgid "https://themeansar.com/free-themes/blogus-free-blog-wordpress-theme/"
+msgstr "https://themeansar.com/free-themes/blogus-free-blog-wordpress-theme/"
+
+#. Author URI of the theme
+#: style.css
+#, gp-priority: low
+msgid "https://themeansar.com"
+msgstr "https://themeansar.com"
+
+#. Author of the theme
+#: style.css
+#, gp-priority: low
+msgid "Themeansar"
+msgstr "Themeansar"

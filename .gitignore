@@ -8,9 +8,6 @@
 !.env.example
 config/*.local.php
 
-# WordPress installation directory - managed manually
-arthra/
-
 # Logs and Debugging
 *.log
 logs/

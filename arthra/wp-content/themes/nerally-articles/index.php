@@ -1,0 +1,1 @@
+<?php /* Fallback to home.php */ include __DIR__ . '/home.php';

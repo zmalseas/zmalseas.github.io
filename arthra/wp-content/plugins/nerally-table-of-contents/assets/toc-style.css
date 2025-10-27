@@ -1,0 +1,470 @@
+/* Nerally Table of Contents - Floating Navigation */
+
+/* ============================================
+   FLOATING TOC BUTTON & PANEL
+   ============================================ */
+
+#nerally-toc-floating {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Right position (default - δίπλα από scrollbar) */
+#nerally-toc-floating.nerally-toc-right {
+  right: 20px;
+}
+
+/* Left position */
+#nerally-toc-floating.nerally-toc-left {
+  left: 20px;
+}
+
+/* Toggle Button (3 dots) */
+#nerally-toc-toggle {
+  width: 48px;
+  height: 140px;
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 24px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 0;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+#nerally-toc-toggle:hover {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+  transform: scale(1.05);
+}
+
+/* Dots inside button */
+.toc-dots {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.toc-dots .dot {
+  width: 8px;
+  height: 8px;
+  background: #374151;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+#nerally-toc-toggle:hover .dot {
+  background: #1f2937;
+  transform: scale(1.2);
+}
+
+/* TOC Panel (dropdown) */
+#nerally-toc-panel {
+  position: absolute;
+  top: 0;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  min-width: 280px;
+  max-width: 350px;
+  max-height: 80vh;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Panel positioning based on button position */
+.nerally-toc-right #nerally-toc-panel {
+  right: 70px;
+}
+
+.nerally-toc-left #nerally-toc-panel {
+  left: 70px;
+}
+
+/* Panel visible state */
+#nerally-toc-floating.toc-open #nerally-toc-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* TOC Header */
+.toc-header {
+  font-size: 14px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+/* TOC List */
+.toc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.toc-item {
+  margin: 0;
+  padding: 0;
+}
+
+.toc-item a {
+  display: block;
+  padding: 10px 12px;
+  color: #374151;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.toc-item a:hover {
+  background: #f3f4f6;
+  color: #1f2937;
+  transform: translateX(4px);
+}
+
+.toc-item a.active {
+  background: #dbeafe;
+  color: #1e40af;
+  font-weight: 600;
+}
+
+/* Indentation for different heading levels */
+.toc-item.toc-h2 a {
+  padding-left: 12px;
+  font-weight: 600;
+}
+
+.toc-item.toc-h3 a {
+  padding-left: 28px;
+  font-size: 13px;
+}
+
+.toc-item.toc-h4 a {
+  padding-left: 44px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* Active indicator */
+.toc-item a.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 20px;
+  background: #1e40af;
+  border-radius: 2px;
+}
+
+/* Custom scrollbar for TOC panel */
+#nerally-toc-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+#nerally-toc-panel::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 10px;
+}
+
+#nerally-toc-panel::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 10px;
+}
+
+#nerally-toc-panel::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* ============================================
+   FULL-WIDTH ARTICLE LAYOUT
+   ============================================ */
+
+body.nerally-toc-full-width.single-post .site-content {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+body.nerally-toc-full-width.single-post .entry-content {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 40px 60px !important;
+}
+
+body.nerally-toc-full-width.single-post .sidebar,
+body.nerally-toc-full-width.single-post #secondary {
+  display: none !important;
+}
+
+body.nerally-toc-full-width.single-post article {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+  #nerally-toc-floating {
+    display: none; /* Hide on mobile - can be changed to bottom sheet */
+  }
+  
+  body.nerally-toc-full-width.single-post .entry-content {
+    padding: 20px !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  #nerally-toc-panel {
+    min-width: 240px;
+    max-width: 280px;
+  }
+  
+  .nerally-toc-right #nerally-toc-panel {
+    right: 60px;
+  }
+  
+  .nerally-toc-left #nerally-toc-panel {
+    left: 60px;
+  }
+}
+
+/* ============================================
+   SMOOTH SCROLL BEHAVIOR
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Highlight target heading when clicked */
+:target,
+.toc-target-highlight {
+  animation: highlight-heading 2s ease;
+}
+
+@keyframes highlight-heading {
+  0% {
+    background: rgba(219, 234, 254, 0.5);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3);
+  }
+  100% {
+    background: transparent;
+    box-shadow: none;
+  }
+}
+
+/* ============================================
+   BACK TO TOP BUTTON
+   ============================================ */
+
+#nerally-back-to-top {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 9998;
+  backdrop-filter: blur(10px);
+}
+
+#nerally-back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+#nerally-back-to-top:hover {
+  background: #ffffff;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+  transform: translateX(-50%) translateY(-4px);
+}
+
+#nerally-back-to-top svg {
+  width: 24px;
+  height: 24px;
+  fill: #374151;
+  transition: fill 0.2s ease;
+}
+
+#nerally-back-to-top:hover svg {
+  fill: #1f2937;
+}
+
+/* ============================================
+   BACK TO ARTICLES BUTTON
+   ============================================ */
+
+#nerally-back-to-articles {
+  position: fixed;
+  top: 120px;
+  left: 20px;
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 9998;
+  backdrop-filter: blur(10px);
+}
+
+#nerally-back-to-articles:hover {
+  background: #ffffff;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+  transform: translateX(-4px);
+}
+
+#nerally-back-to-articles svg {
+  width: 24px;
+  height: 24px;
+  fill: #374151;
+  transition: fill 0.2s ease;
+}
+
+#nerally-back-to-articles:hover svg {
+  fill: #1f2937;
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+#nerally-toc-toggle:focus {
+  outline: 3px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.toc-item a:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  #nerally-toc-floating,
+  #nerally-toc-panel,
+  #nerally-toc-toggle,
+  .toc-item a {
+    transition: none !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ============================================
+   RELATED ARTICLES WIDGET (Δείτε Επίσης)
+   ============================================ */
+
+#nerally-related-articles {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 40px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+#nerally-related-articles h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 16px 0;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.related-articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.related-article-item {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.related-article-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.related-article-thumb {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  background: #f3f4f6;
+}
+
+.related-article-content {
+  padding: 12px;
+}
+
+.related-article-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.related-article-excerpt {
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.related-article-meta {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-top: 8px;
+}
+

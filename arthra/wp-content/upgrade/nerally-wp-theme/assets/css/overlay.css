@@ -1,0 +1,256 @@
+/* Overlay Full-Screen Menu Styles */
+
+/* ===== Body scroll lock when menu is open ===== */
+body.menu-open {
+  overflow: hidden !important;
+  position: fixed !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Hide chat widget when overlay menu is open */
+body.menu-open .chat-widget {
+  display: none !important;
+}
+
+/* ===== Overlay (full screen) ===== */
+.overlay{position:fixed;inset:0;background:#000;display:none;z-index:60;overflow:hidden}
+.overlay.open{display:block;animation:fadeIn var(--speed) ease forwards}
+@keyframes fadeIn{from{opacity:0} to{opacity:1}}
+.overlay-header{position:absolute;top:16px;left:22px;display:flex;align-items:center;gap:10px;z-index:2}
+.overlay-header a{display:flex;align-items:center;gap:10px;color:var(--white);text-decoration:none}
+.overlay-header img{width:42px;height:42px}
+.overlay-header .title{font-weight:900;letter-spacing:.2px;font-size:1.5rem;color:var(--white)}
+.menu-wrap{position:absolute;top:0;left:0;right:0;bottom:120px;display:flex;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.menu-list{width:min(90vw,560px);padding:96px 28px 40px 28px;display:flex;flex-direction:column !important;gap:8px;align-items:flex-start;box-sizing:border-box}
+
+/* Overlay expandable */
+.menu-item{width:100%;display:block !important}
+.menu-list > *{width:100%;display:block !important}
+.menu-toggle{display:inline-block;color:var(--white);background:transparent;border:none;cursor:pointer;font-weight:700;font-size:1.06rem;padding:10px 0;text-align:left;line-height:1;text-decoration:none;position:relative;width:auto}
+.menu-toggle span{display:inline-block}
+.menu-toggle .text{position:relative}
+.menu-toggle .text::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--brand);transition:width var(--speed) ease}
+.menu-toggle:hover .text::after,.menu-toggle:focus-visible .text::after{width:100%}
+.menu-toggle .exp-caret{margin-left:6px}
+.menu-toggle .exp-caret{display:inline-block;transition:transform var(--speed) ease,color var(--speed) ease}
+.menu-item.open .menu-toggle .exp-caret{transform:rotate(90deg);color:var(--brand)}
+.menu-toggle:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
+.menu-sub{overflow:hidden;max-height:0;opacity:.0;transform:translateY(-4px);transition:max-height var(--speed) ease,opacity var(--speed) ease,transform var(--speed) ease;padding-left:30px;display:flex;flex-direction:column;gap:4px}
+.menu-item.open .menu-sub{max-height:400px;opacity:1;transform:translateY(0)}
+.menu-sub a{display:block;color:var(--white);text-decoration:none;font-weight:700;font-size:1rem;padding:8px 0;position:relative;transition:all 0.4s ease;transform:scale(1);width:100%;margin-bottom:4px}
+.menu-sub a:hover,.menu-sub a:focus-visible{color:var(--brand);transform:scale(1.05);text-shadow:0 0 8px rgba(0,229,255,0.3)}
+.menu-sub a .sm-arrow{opacity:0;transform:translateX(-6px);transition:transform var(--speed) ease,opacity var(--speed) ease;color:var(--brand)}
+.menu-sub a.clicked{color:var(--brand)}
+.menu-sub a.clicked .sm-arrow{opacity:1;transform:translateX(0)}
+
+/* Overlay footer */
+.overlay-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: #000;
+  border-top: 1px solid #333;
+  padding: 20px 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 70;
+  box-sizing: border-box;
+}
+
+.overlay-footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: center;
+  max-width: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-footer .legal-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.overlay-footer .legal-link {
+  color: #999;
+  text-decoration: none;
+  font-size: 0.75rem;
+  padding: 3px 6px;
+  border: 1px solid #444;
+  border-radius: 3px;
+  background: transparent;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.overlay-footer .legal-link:hover {
+  color: #fff;
+  border-color: #666;
+  transform: translateY(-1px);
+}
+
+.overlay-footer .social-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.overlay-footer .connect-text {
+  font-size: 0.9rem;
+  color: #d6d6d6;
+  font-weight: 500;
+}
+
+.overlay-footer .social-links {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.overlay-footer .social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  color: #666;
+  flex-shrink: 0;
+}
+
+.overlay-footer .social-link svg {
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s ease;
+}
+
+.overlay-footer .social-link.tiktok:hover {
+  background: #ff0050;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.overlay-footer .social-link.instagram:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.overlay-footer .social-link.linkedin:hover {
+  background: #0077b5;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.overlay-footer .copyright {
+  width: 100%;
+  text-align: center;
+}
+
+.overlay-footer .copyright p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #d6d6d6;
+  text-align: center;
+}
+
+/* Mobile scrolling enhancements */
+@media (max-width: 1100px) {
+  .overlay {
+    touch-action: manipulation;
+    height: 100vh;
+    height: 100dvh; /* Use dynamic viewport height on modern browsers */
+  }
+  
+  .menu-wrap {
+    overscroll-behavior: contain;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .menu-list {
+    padding-bottom: 40px; /* Consistent padding */
+    min-height: auto; /* Let it size naturally */
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+  
+  .menu-list > * {
+    width: 100% !important;
+    display: block !important;
+  }
+}
+
+/* Responsive adjustments for overlay footer */
+@media (max-width: 768px) {
+  .menu-wrap {
+    bottom: 140px; /* Adjust for mobile footer height */
+  }
+  
+  .overlay-footer {
+    height: 140px; /* Taller on mobile */
+    padding: 16px 20px;
+  }
+  
+  .menu-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    align-items: flex-start !important;
+  }
+  
+  .menu-list > *,
+  .menu-item {
+    width: 100% !important;
+    display: block !important;
+    flex: none !important;
+  }
+  
+  .overlay-footer-content {
+    gap: 12px;
+  }
+  
+  .overlay-footer .legal-links {
+    gap: 8px;
+  }
+  
+  .overlay-footer .legal-link {
+    font-size: 0.55rem;
+    padding: 1px 3px;
+  }
+  
+  .overlay-footer .social-section {
+    gap: 16px;
+  }
+  
+  .overlay-footer .connect-text {
+    font-size: 0.85rem;
+  }
+  
+  .overlay-footer .social-link {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .overlay-footer .social-link svg {
+    width: 18px;
+    height: 18px;
+  }
+}

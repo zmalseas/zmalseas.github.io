@@ -1,0 +1,37 @@
+/* Main CSS - Imports all modular CSS files in correct order */
+
+/* 1. Base styles - Variables, resets & fundamentals */
+@import url('css/base.css');
+
+/* 2. Layout components - Header & navigation */
+@import url('css/header.css');
+
+/* 3. Overlay menu */
+@import url('css/overlay.css');
+
+/* 4. Footer & responsive design */
+@import url('css/footer.css');
+
+/* 5. Page-specific styles */
+@import url('css/pages.css');
+
+/* 6. Components & widgets */
+@import url('css/components.css');
+
+/* 7. Loading states and UX improvements */
+@import url('css/loading-states.css');
+
+/* 8. Mobile enhancements and touch targets */
+@import url('css/mobile-enhancements.css');
+
+/* 9. Security styles and error states */
+@import url('css/security.css');
+
+/* 10. Calculator applications - Consolidated */
+@import url('css/calculators.css');
+
+/* 11. Global overrides */
+/* Hide reCAPTCHA badge completely */
+.grecaptcha-badge {
+  display: none !important;
+}

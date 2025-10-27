@@ -1,0 +1,4 @@
+<IfModule mod_headers.c>
+  Header always unset Content-Security-Policy
+  Header always set Content-Security-Policy "default-src 'self' https: data: blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https: blob: *.googletagmanager.com *.google.com *.gstatic.com; style-src 'self' 'unsafe-inline' https:; img-src 'self' https: data: blob:; font-src 'self' https: data: fonts.gstatic.com; connect-src 'self' https: wss:; frame-src 'self' https: blob: *.googletagmanager.com *.google.com; worker-src 'self' blob:; frame-ancestors 'self';"
+</IfModule>

@@ -1,0 +1,132 @@
+/* Header, Navigation & Dropdown Styles */
+
+/* ===== Header (fixed) ===== */
+.site-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 100;
+  background: #000;
+  border-bottom: 1px solid #333;
+  transition: all 0.3s ease;
+}
+
+/* Black header for fullscreen hero pages */
+.has-fullscreen-hero .site-header {
+  background: #000;
+  border-bottom: 1px solid #333;
+  backdrop-filter: none;
+}
+
+.has-fullscreen-hero .site-header:hover {
+  background: #000;
+}
+
+.header-row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  max-width: none;
+  padding: 0 40px;
+  margin: 0;
+  width: 100%;
+}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+.brand img{width:36px;height:36px;object-fit:contain}
+.brand .name{font-weight:900;letter-spacing:.2px;font-size:1.35rem;white-space:nowrap;color:var(--white)}
+nav.primary{display:flex;align-items:center;gap:16px}
+
+/* Top-level nav */
+.nav-links{display:flex;align-items:center;gap:clamp(12px,2.6vw,30px);flex-wrap:nowrap;list-style:none;margin:0;padding:0}
+.nav-item{position:relative;line-height:1}
+.nav-item>a{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--white);
+  text-decoration: none;
+  padding: 15px 20px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-item>a .text{
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.nav-item>a .text::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  height: 2px;
+  width: 100%;
+  background: #00e5ff;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+  border-radius: 1px;
+}
+.caret{display:inline-block;font-size:.85rem;transform-origin:center;transition:transform var(--speed) ease}
+.nav-item>a:hover .text::after,
+.nav-item:focus-within>a .text::after{transform:scaleX(1)}
+.nav-item>a:hover{color:var(--white)}
+
+/* Dropdown */
+.submenu{position:absolute;top:100%;left:0;min-width:220px;background:#0b0b0b;border:1px solid #141414;border-radius:12px;
+  padding:8px;box-shadow:0 10px 30px rgba(0,0,0,.35);opacity:0;visibility:hidden;transform:translateY(8px);
+  transition:opacity var(--speed) ease,transform var(--speed) ease,visibility var(--speed) step-end;pointer-events:none}
+.nav-item.dropdown:hover .submenu{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto;transition:opacity var(--speed),transform var(--speed),visibility 0s}
+.nav-item.dropdown:hover>a .caret{transform:rotate(180deg)}
+.submenu a{display:flex;align-items:center;justify-content:flex-start !important;gap:8px;color:var(--white);text-decoration:none;font-weight:700;font-size:.98rem;padding:10px 10px;border-radius:8px;transition:all 0.4s ease;transform:scale(1);text-align:left !important}
+.submenu{text-align:left !important}
+.submenu a:hover{color:var(--brand);transform:scale(1.05);text-shadow:0 0 8px rgba(0,229,255,0.3);background:rgba(0,229,255,0.1)}
+.sm-arrow{opacity:0;transform:translateX(-6px);transition:transform var(--speed) ease,opacity var(--speed) ease;color:var(--brand)}
+.submenu a.clicked{color:var(--brand)}
+.submenu a.clicked .sm-arrow{opacity:1;transform:translateX(0)}
+
+/* Hamburger - SINGLE CONSOLIDATED RULE */
+.hamburger {
+  display: none; /* Hidden by default - no !important to allow JS override */
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: none;
+  background: transparent !important;
+  cursor: pointer;
+  position: relative;
+  z-index: 101;
+  padding: 8px;
+}
+
+.hamburger:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
+.hamburger .bar,.hamburger .bar::before,.hamburger .bar::after{content:"";display:block;width:26px;height:2px;background:var(--white);border-radius:2px;transition:transform var(--speed) ease,opacity var(--speed) ease,background var(--speed) ease}
+.hamburger .bar{position:relative}
+.hamburger .bar::before{position:absolute;top:-8px}
+.hamburger .bar::after{position:absolute;top:8px}
+.hamburger:hover .bar,.hamburger:hover .bar::before,.hamburger:hover .bar::after{background:var(--brand)}
+.hamburger.active .bar{transform:rotate(45deg); background:var(--brand) !important}
+.hamburger.active .bar::before{transform:rotate(-90deg) translateX(-8px); background:var(--brand) !important; opacity:1}
+.hamburger.active .bar::after{opacity:0}
+
+/* Dynamic navigation visibility controlled by JavaScript */
+.site-header.nav-overflow .nav-links { display: none !important; }
+.site-header.nav-overflow .hamburger { display: flex !important; }
+
+/* ΑΠΛΟΣ ΚΑΝΟΝΑΣ: Όταν έχει nav-overflow κλάση */
+.site-header.nav-overflow .hamburger { 
+  display: flex !important; 
+}
+
+.site-header.nav-overflow .nav-links { 
+  display: none !important; 
+}

@@ -1,0 +1,17 @@
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /arthra/
+RewriteRule ^index\.php$ - [L]
+
+# Handle requests that aren't real files or directories
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /arthra/index.php [L]
+</IfModule>
+# END WordPress
+
+# Loosen CSP only within /arthra to allow WP Customizer/admin previews
+<IfModule mod_headers.c>
+	Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' *.googletagmanager.com *.google.com *.gstatic.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com *.google.com; img-src 'self' data: https:; font-src 'self' data: fonts.gstatic.com; connect-src 'self' *.google.com *.gstatic.com *.googletagmanager.com *.google-analytics.com; frame-src 'self' *.googletagmanager.com *.google.com; worker-src 'self' blob:; frame-ancestors 'self'; base-uri 'self'; form-action 'self';"
+</IfModule>
