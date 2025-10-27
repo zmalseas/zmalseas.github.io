@@ -170,9 +170,10 @@
         
         // Get WordPress admin bar height if exists
         const adminBarHeight = $('#wpadminbar').length ? $('#wpadminbar').outerHeight() : 0;
-        const stickyHeaderHeight = $('.site-header.sticky').length ? $('.site-header.sticky').outerHeight() : 0;
+        const stickyHeaderHeight = $('.site-header').length ? $('.site-header').outerHeight() : 0;
         const wpArticlesHeroHeight = $('.wp-articles-hero').length ? $('.wp-articles-hero').outerHeight() : 0;
-        const offset = 100 + adminBarHeight + stickyHeaderHeight;
+        // Increased offset to account for sticky header and provide breathing room
+        const offset = 150 + adminBarHeight + stickyHeaderHeight + (wpArticlesHeroHeight * 0.5);
         const targetPosition = $target.offset().top - offset;
         
         console.log('Scrolling to:', cleanId, 'Position:', targetPosition); // Debug
