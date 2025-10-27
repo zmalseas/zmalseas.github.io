@@ -630,6 +630,13 @@ function formatNumber(v) {
   return NUMBER_FORMAT.format(v);
 }
 
+function getInputValue(value, isFocused) {
+  if (isFocused) {
+    return value || '';
+  }
+  return formatNumber(value);
+}
+
 function daysInYear(year) {
   const start = new Date(year, 0, 1);
   const end = new Date(year + 1, 0, 1);
@@ -673,6 +680,8 @@ function App() {
     startDate: "",
     endDate: "",
   });
+
+  const [focusedInput, setFocusedInput] = useState(null);
 
   const set = (k, v) => setState((s) => ({ ...s, [k]: v }));
   const setDeep = (group, k, v) => setState((s) => ({ ...s, [group]: { ...s[group], [k]: v } }));
@@ -851,8 +860,10 @@ function App() {
               <label>Ετήσια μισθοδοσία (€)</label>
               <input 
                 type="text" 
-                value={formatNumber(state.payrollTotal)} 
+                value={getInputValue(state.payrollTotal, focusedInput === 'payrollTotal')} 
                 onChange={(e)=>set("payrollTotal", parseNumber(e.target.value))} 
+                onFocus={()=>setFocusedInput('payrollTotal')}
+                onBlur={()=>setFocusedInput(null)}
                 placeholder="0,00"
               />
             </div>
@@ -860,8 +871,10 @@ function App() {
               <label>Υψηλότερες μικτές αποδοχές (€)</label>
               <input 
                 type="text" 
-                value={formatNumber(state.highestGrossSalary)} 
+                value={getInputValue(state.highestGrossSalary, focusedInput === 'highestGrossSalary')} 
                 onChange={(e)=>set("highestGrossSalary", parseNumber(e.target.value))} 
+                onFocus={()=>setFocusedInput('highestGrossSalary')}
+                onBlur={()=>setFocusedInput(null)}
                 placeholder="0,00"
               />
             </div>
@@ -875,16 +888,29 @@ function App() {
           <label>Επιλέξτε τον ΚΑΔ σας</label>
           <input 
             list="kad-list" 
-            value={state.selectedKAD} 
-            onChange={(e)=>set("selectedKAD", e.target.value)}
+            value={selectedKADData ? `${selectedKADData.code} - ${selectedKADData.description}` : state.selectedKAD} 
+            onChange={(e)=>{
+              const inputValue = e.target.value;
+              // Αν ο χρήστης επιλέγει από τη λίστα, πάρε μόνο τον κωδικό
+              const selectedOption = KAD_DATA.find(kad => 
+                `${kad.code} - ${kad.description}` === inputValue || kad.code === inputValue
+              );
+              set("selectedKAD", selectedOption ? selectedOption.code : inputValue);
+            }}
+            onBlur={(e)=>{
+              // Όταν κάνει blur, αν έχει γράψει μόνο τον κωδικό, βρες τον ΚΑΔ
+              const kod = e.target.value.split(' - ')[0].trim();
+              const found = KAD_DATA.find(kad => kad.code === kod);
+              if (found) {
+                set("selectedKAD", found.code);
+              }
+            }}
             placeholder="Πληκτρολογήστε ή επιλέξτε ΚΑΔ..."
             style={{width: '100%'}}
           />
           <datalist id="kad-list">
             {KAD_DATA.map(kad => (
-              <option key={kad.code} value={kad.code}>
-                {kad.description}
-              </option>
+              <option key={kad.code} value={`${kad.code} - ${kad.description}`} />
             ))}
           </datalist>
           {avgKAD > 0 && (
@@ -897,8 +923,10 @@ function App() {
           <label>Ετήσιος τζίρος (€)</label>
           <input 
             type="text" 
-            value={formatNumber(state.turnover)} 
+            value={getInputValue(state.turnover, focusedInput === 'turnover')} 
             onChange={(e)=>set("turnover", parseNumber(e.target.value))} 
+            onFocus={()=>setFocusedInput('turnover')}
+            onBlur={()=>setFocusedInput(null)} 
             placeholder="0,00"
           />
         </div>
@@ -933,8 +961,10 @@ function App() {
             <label>Μισθωτή εργασία (€)</label>
             <input 
               type="text" 
-              value={formatNumber(state.otherIncome.employment)} 
+              value={getInputValue(state.otherIncome.employment, focusedInput === 'employment')} 
               onChange={(e)=>setDeep("otherIncome","employment", parseNumber(e.target.value))} 
+              onFocus={()=>setFocusedInput('employment')}
+              onBlur={()=>setFocusedInput(null)}
               placeholder="0,00"
             />
           </div>
@@ -942,8 +972,10 @@ function App() {
             <label>Συντάξεις (€)</label>
             <input 
               type="text" 
-              value={formatNumber(state.otherIncome.pension)} 
+              value={getInputValue(state.otherIncome.pension, focusedInput === 'pension')} 
               onChange={(e)=>setDeep("otherIncome","pension", parseNumber(e.target.value))} 
+              onFocus={()=>setFocusedInput('pension')}
+              onBlur={()=>setFocusedInput(null)}
               placeholder="0,00"
             />
           </div>
@@ -951,8 +983,10 @@ function App() {
             <label>Αγροτικό (€)</label>
             <input 
               type="text" 
-              value={formatNumber(state.otherIncome.agricultural)} 
+              value={getInputValue(state.otherIncome.agricultural, focusedInput === 'agricultural')} 
               onChange={(e)=>setDeep("otherIncome","agricultural", parseNumber(e.target.value))} 
+              onFocus={()=>setFocusedInput('agricultural')}
+              onBlur={()=>setFocusedInput(null)}
               placeholder="0,00"
             />
           </div>
