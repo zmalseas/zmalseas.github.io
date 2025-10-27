@@ -52,13 +52,47 @@
         $content = $('body'); // Fallback to body
       }
       
+      // Greek to Latin transliteration map
+      const greekToLatin = {
+        'α': 'a', 'ά': 'a', 'Α': 'A', 'Ά': 'A',
+        'β': 'v', 'Β': 'V',
+        'γ': 'g', 'Γ': 'G',
+        'δ': 'd', 'Δ': 'D',
+        'ε': 'e', 'έ': 'e', 'Ε': 'E', 'Έ': 'E',
+        'ζ': 'z', 'Ζ': 'Z',
+        'η': 'i', 'ή': 'i', 'Η': 'I', 'Ή': 'I',
+        'θ': 'th', 'Θ': 'TH',
+        'ι': 'i', 'ί': 'i', 'ϊ': 'i', 'ΐ': 'i', 'Ι': 'I', 'Ί': 'I', 'Ϊ': 'I',
+        'κ': 'k', 'Κ': 'K',
+        'λ': 'l', 'Λ': 'L',
+        'μ': 'm', 'Μ': 'M',
+        'ν': 'n', 'Ν': 'N',
+        'ξ': 'x', 'Ξ': 'X',
+        'ο': 'o', 'ό': 'o', 'Ο': 'O', 'Ό': 'O',
+        'π': 'p', 'Π': 'P',
+        'ρ': 'r', 'Ρ': 'R',
+        'σ': 's', 'ς': 's', 'Σ': 'S',
+        'τ': 't', 'Τ': 'T',
+        'υ': 'y', 'ύ': 'y', 'ϋ': 'y', 'ΰ': 'y', 'Υ': 'Y', 'Ύ': 'Y', 'Ϋ': 'Y',
+        'φ': 'f', 'Φ': 'F',
+        'χ': 'ch', 'Χ': 'CH',
+        'ψ': 'ps', 'Ψ': 'PS',
+        'ω': 'o', 'ώ': 'o', 'Ω': 'O', 'Ώ': 'O'
+      };
+      
+      const transliterate = (text) => {
+        return text.split('').map(char => greekToLatin[char] || char).join('');
+      };
+      
       $content.find(selector).each((index, element) => {
         const $heading = $(element);
         
         // If heading doesn't have an ID, create one
         if (!$heading.attr('id')) {
           const text = $heading.text().trim();
-          const id = text
+          // Transliterate Greek to Latin
+          const transliterated = transliterate(text);
+          const id = transliterated
             .toLowerCase()
             .replace(/[^\w\s-]/g, '') // Remove special characters
             .replace(/\s+/g, '-')      // Replace spaces with hyphens
@@ -127,9 +161,13 @@
     scrollToSection(targetId) {
       // Remove the # if present
       const cleanId = targetId.replace('#', '');
-      const $target = $('#' + cleanId);
       
-      if ($target.length) {
+      // Use native getElementById to avoid jQuery selector issues with special characters
+      const targetElement = document.getElementById(cleanId);
+      
+      if (targetElement) {
+        const $target = $(targetElement);
+        
         // Get WordPress admin bar height if exists
         const adminBarHeight = $('#wpadminbar').length ? $('#wpadminbar').outerHeight() : 0;
         const stickyHeaderHeight = $('.site-header.sticky').length ? $('.site-header.sticky').outerHeight() : 0;
@@ -161,7 +199,7 @@
           setTimeout(() => $target.removeClass('toc-target-highlight'), 2000);
         }, 400);
       } else {
-        console.warn('TOC: Target heading not found:', targetId); // Debug
+        console.warn('TOC: Target heading not found:', cleanId); // Debug
       }
     }
 

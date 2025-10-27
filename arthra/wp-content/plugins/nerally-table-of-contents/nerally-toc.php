@@ -181,6 +181,57 @@ class Nerally_Table_Of_Contents {
     }
     
     /**
+     * Transliterate Greek characters to Latin
+     */
+    private function transliterate_greek($text) {
+        $greek_to_latin = array(
+            'α' => 'a', 'ά' => 'a', 'Α' => 'A', 'Ά' => 'A',
+            'β' => 'v', 'Β' => 'V',
+            'γ' => 'g', 'Γ' => 'G',
+            'δ' => 'd', 'Δ' => 'D',
+            'ε' => 'e', 'έ' => 'e', 'Ε' => 'E', 'Έ' => 'E',
+            'ζ' => 'z', 'Ζ' => 'Z',
+            'η' => 'i', 'ή' => 'i', 'Η' => 'I', 'Ή' => 'I',
+            'θ' => 'th', 'Θ' => 'TH',
+            'ι' => 'i', 'ί' => 'i', 'ϊ' => 'i', 'ΐ' => 'i', 'Ι' => 'I', 'Ί' => 'I', 'Ϊ' => 'I',
+            'κ' => 'k', 'Κ' => 'K',
+            'λ' => 'l', 'Λ' => 'L',
+            'μ' => 'm', 'Μ' => 'M',
+            'ν' => 'n', 'Ν' => 'N',
+            'ξ' => 'x', 'Ξ' => 'X',
+            'ο' => 'o', 'ό' => 'o', 'Ο' => 'O', 'Ό' => 'O',
+            'π' => 'p', 'Π' => 'P',
+            'ρ' => 'r', 'Ρ' => 'R',
+            'σ' => 's', 'ς' => 's', 'Σ' => 'S',
+            'τ' => 't', 'Τ' => 'T',
+            'υ' => 'y', 'ύ' => 'y', 'ϋ' => 'y', 'ΰ' => 'y', 'Υ' => 'Y', 'Ύ' => 'Y', 'Ϋ' => 'Y',
+            'φ' => 'f', 'Φ' => 'F',
+            'χ' => 'ch', 'Χ' => 'CH',
+            'ψ' => 'ps', 'Ψ' => 'PS',
+            'ω' => 'o', 'ώ' => 'o', 'Ω' => 'O', 'Ώ' => 'O'
+        );
+        
+        return strtr($text, $greek_to_latin);
+    }
+    
+    /**
+     * Create a clean ID from text
+     */
+    private function create_heading_id($text) {
+        // First transliterate Greek to Latin
+        $transliterated = $this->transliterate_greek($text);
+        
+        // Then sanitize
+        $id = strtolower($transliterated);
+        $id = preg_replace('/[^a-z0-9\s-]/', '', $id);  // Remove special chars
+        $id = preg_replace('/\s+/', '-', $id);           // Spaces to hyphens
+        $id = preg_replace('/-+/', '-', $id);            // Multiple hyphens to single
+        $id = trim($id, '-');                            // Remove leading/trailing hyphens
+        
+        return $id;
+    }
+    
+    /**
      * Extract headings from content
      */
     private function extract_headings($content) {
@@ -190,10 +241,11 @@ class Nerally_Table_Of_Contents {
         
         if (preg_match_all($pattern, $content, $matches, PREG_SET_ORDER)) {
             foreach ($matches as $match) {
+                $text = strip_tags($match[2]);
                 $headings[] = array(
                     'level' => strtolower($match[1]),
-                    'text' => strip_tags($match[2]),
-                    'id' => sanitize_title($match[2])
+                    'text' => $text,
+                    'id' => $this->create_heading_id($text)
                 );
             }
         }
