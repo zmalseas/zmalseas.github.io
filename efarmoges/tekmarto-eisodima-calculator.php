@@ -18,7 +18,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
   <meta property="og:url" content="https://nerally.gr/efarmoges/tekmarto-eisodima-calculator.php" />
   <meta property="og:title" content="Nerally - Υπολογισμός Τεκμαρτού Εισοδήματος 2025" />
   <meta property="og:description" content="Online υπολογισμός τεκμαρτού εισοδήματος ατομικής επιχείρησης 2025" />
-  <meta property="og:image" content="https://nerally.gr/images/Hero2_enhanced.webp" />
+  <meta property="og:image" content="https://nerally.gr/images/tekmarto.webp" />
   <meta property="og:locale" content="el_GR" />
   
   <!-- Twitter -->
@@ -26,11 +26,14 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
   <meta property="twitter:url" content="https://nerally.gr/efarmoges/tekmarto-eisodima-calculator.php" />
   <meta property="twitter:title" content="Nerally - Υπολογισμός Τεκμαρτού Εισοδήματος 2025" />
   <meta property="twitter:description" content="Online υπολογισμός τεκμαρτού εισοδήματος ατομικής επιχείρησης 2025" />
-  <meta property="twitter:image" content="https://nerally.gr/images/Hero2_enhanced.webp" />
+  <meta property="twitter:image" content="https://nerally.gr/images/tekmarto.webp" />
   
   <link rel="icon" type="image/png" href="../images/logo.png" />
   <link rel="stylesheet" href="../main.css" />
   <link rel="stylesheet" href="/css/cookie-consent.css" />
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
   <script<?php echo isset($nonce_attr) ? $nonce_attr : ''; ?> type="application/ld+json">
   <?php
@@ -68,7 +71,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     .rent-left { background:#f4f6fb; padding:40px 32px; overflow:auto; animation: contentFade 0.5s ease-out 0.06s both; }
     .rent-right { 
       padding:40px 24px; display:flex; align-items:center; justify-content:center;
-      background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url('../images/Hero2_enhanced.webp');
+      background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url('../images/tekmarto.webp');
       background-size: cover; background-position: center; 
     }
     .rent-left h1 { color: #000; font-size: 28px; margin: 0 0 20px; text-align: center; }
@@ -146,9 +149,6 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     .multi-select-item.selected { background-color: #f3f4f6; }
   </style>
 
-  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
 <?php require_once __DIR__ . '/../partials/header.php'; ?>
@@ -156,8 +156,6 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
 <div class="rent-wrap">
   <div class="rent-left">
     <h1>Υπολογισμός Τεκμαρτού Εισοδήματος 2025</h1>
-    
-    <div id="tekmartoApp"></div>
     
     <div class="quote">
       <strong>Χρειάζεστε βοήθεια με το τεκμαρτό εισόδημα;</strong><br />
@@ -407,7 +405,7 @@ function App() {
   }, [state]);
 
   return (
-    <div id="tekmartoApp">
+    <>
       <div className="card">
         <h2>Βασικά Στοιχεία</h2>
         <div className="input-group">
@@ -583,7 +581,7 @@ function App() {
           </div>
         )}
       </div>
-    </div>
+    </>
   );
 }
 
@@ -628,7 +626,7 @@ function MultiSelectDropdown({ label, options, values, onChange }) {
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('tekmartoApp'));
+const root = ReactDOM.createRoot(document.getElementById('tekmartoCalculator'));
 root.render(<App />);
 </script>
 
