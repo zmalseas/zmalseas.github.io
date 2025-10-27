@@ -168,17 +168,34 @@
       if (targetElement) {
         const $target = $(targetElement);
         
-        // Calculate offset based on fixed and sticky elements
+        // Calculate all fixed/sticky header heights
         const adminBarHeight = $('#wpadminbar').length ? $('#wpadminbar').outerHeight() : 0;
-        const siteHeaderHeight = $('.site-header').length ? $('.site-header').outerHeight() : 0;
         
-        // Fixed large offset - adjusted empirically to show title clearly
-        // This accounts for sticky header + hero section + breathing room
-        const baseOffset = 250; // Increased base offset
-        const offset = baseOffset + adminBarHeight + siteHeaderHeight;
-        const targetPosition = $target.offset().top - offset;
+        // The main site header is fixed at top (70px height typically)
+        const siteHeaderHeight = $('.site-header').length ? $('.site-header').outerHeight() : 70;
         
-        console.log('Scrolling to:', cleanId, 'Offset:', offset, 'Position:', targetPosition); // Debug
+        // The wp-articles-hero section (black bar with filters) - NOT fixed, but we add margin
+        const wpArticlesHeroHeight = $('.wp-articles-hero').length ? $('.wp-articles-hero').outerHeight() : 0;
+        
+        // Debug: Log all heights
+        console.log('Header Heights:', {
+          adminBar: adminBarHeight,
+          siteHeader: siteHeaderHeight,
+          wpArticlesHero: wpArticlesHeroHeight,
+          'total headers': adminBarHeight + siteHeaderHeight
+        });
+        
+        // Total offset = all fixed headers + extra margin for readability
+        const extraMargin = 30; // Extra breathing room above the heading
+        const totalOffset = adminBarHeight + siteHeaderHeight + extraMargin;
+        const targetPosition = $target.offset().top - totalOffset;
+        
+        console.log('TOC Scroll:', {
+          targetId: cleanId,
+          targetTop: $target.offset().top,
+          totalOffset: totalOffset,
+          finalPosition: targetPosition
+        });
         
         // Stop any ongoing animations first
         $('html, body').stop();
