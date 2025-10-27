@@ -208,6 +208,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
           }
           .two-col {
             gap: 20px;
+            grid-template-columns: 1fr;
           }
           .modern-table {
             margin: 0 auto;

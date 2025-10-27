@@ -1130,6 +1130,7 @@ const root = ReactDOM.createRoot(document.getElementById('tekmartoCalculator'));
 root.render(<App />);
 </script>
 
+<script<?php echo isset($nonce_attr) ? $nonce_attr : ''; ?> src="/js/navigation.js"></script>
 <script<?php echo isset($nonce_attr) ? $nonce_attr : ''; ?> src="/js/cookie-consent.js"></script>
 <script<?php echo isset($nonce_attr) ? $nonce_attr : ''; ?> src="/js/chat-widget.js"></script>
 </body>
