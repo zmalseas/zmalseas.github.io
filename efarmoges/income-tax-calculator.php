@@ -107,7 +107,9 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
       .rent-right { padding:28px 18px; order: 1; }
       .rent-left { order: 2; }
       .two-col { gap: 20px; }
-      .modern-table { margin: 0 auto; max-width: 480px; }
+      .modern-table { margin: 0 auto; max-width: 100%; font-size: 12px; }
+      .modern-table thead th { padding: 10px 8px; font-size: 12px; }
+      .modern-table tbody td { padding: 10px 8px; font-size: 12px; }
       .quote { padding-bottom: 64px; }
       .quote .quote-cta { position: static; display: inline-flex; margin-top: 12px; }
     }

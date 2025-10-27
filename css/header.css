@@ -122,5 +122,11 @@ nav.primary{display:flex;align-items:center;gap:16px}
 .site-header.nav-overflow .nav-links { display: none !important; }
 .site-header.nav-overflow .hamburger { display: flex !important; }
 
+/* Mobile menu - always show hamburger on small screens */
+@media (max-width: 992px) {
+  .nav-links { display: none !important; }
+  .hamburger { display: flex !important; }
+}
+
 /* ΑΠΛΟΣ ΚΑΝΟΝΑΣ: Όταν έχει nav-overflow κλάση */
 /* duplicate nav-overflow rules removed (kept canonical set above) */

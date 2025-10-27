@@ -109,8 +109,8 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     .calc-slab { width:100%; max-width:640px; }
 
     .modern-table { max-width: 500px; margin: 20px auto; border-collapse: separate; border-spacing: 0; background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,.06); overflow: hidden; text-align: center; }
-    .modern-table thead th { background: #1f2937; color: #fff; text-align: center; padding: 14px 18px; }
-    .modern-table tbody td { padding: 14px 18px; border-top: 1px solid #eef2f7; color: #111827; text-align: center; }
+    .modern-table thead th { background: #1f2937; color: #fff; text-align: center; padding: 14px 18px; font-size: 13px; }
+    .modern-table tbody td { padding: 14px 18px; border-top: 1px solid #eef2f7; color: #111827; text-align: center; font-size: 14px; }
     .modern-table tbody tr:hover td { background: #f9fbff; }
 
     .quote { background: #fff; border-radius: 12px; padding: 24px 24px 88px 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); margin-top: 40px; font-size: 17px; color: #111827; position: relative; }
@@ -121,8 +121,14 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
 
     /* Mobile responsive */
     @media (max-width: 992px) {
-      .rent-wrap { grid-template-columns: 1fr; }
-      .rent-right { min-height: 300px; }
+      .rent-wrap { grid-template-columns: 1fr; display: flex; flex-direction: column; }
+      .rent-right { min-height: 300px; padding: 28px 18px; order: 1; }
+      .rent-left { order: 2; }
+      .modern-table { max-width: 100%; overflow-x: auto; font-size: 12px; }
+      .modern-table thead th { padding: 10px 8px; font-size: 12px; }
+      .modern-table tbody td { padding: 10px 8px; font-size: 12px; }
+      .quote { padding-bottom: 64px; }
+      .quote .quote-cta { position: static; display: inline-flex; margin-top: 12px; }
     }
 
     /* Calculator specific styles */
