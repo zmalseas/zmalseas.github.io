@@ -309,18 +309,28 @@ if (file_exists(get_template_directory() . '/functions-navigation.php')) {
 
 // Fix page title for archive pages
 add_filter('pre_get_document_title', function($title) {
-    if (is_home() || is_post_type_archive('post')) {
-        return 'Nerally - Άρθρα';
+    // Check if we're on the articles page
+    if (is_home() || is_post_type_archive('post') || is_archive()) {
+        return 'Άρθρα | Nerally';
+    }
+    // Check for /arthra/ path
+    $current_url = $_SERVER['REQUEST_URI'] ?? '';
+    if (strpos($current_url, '/arthra') !== false) {
+        return 'Άρθρα | Nerally';
     }
     return $title;
-}, 10);
+}, 999); // High priority to override other filters
 
 // Also fix with wp_title filter for older themes
 add_filter('wp_title', function($title, $sep) {
-    if (is_home() || is_post_type_archive('post')) {
+    if (is_home() || is_post_type_archive('post') || is_archive()) {
+        return 'Άρθρα ' . $sep . ' Nerally';
+    }
+    $current_url = $_SERVER['REQUEST_URI'] ?? '';
+    if (strpos($current_url, '/arthra') !== false) {
         return 'Άρθρα ' . $sep . ' Nerally';
     }
     return $title;
-}, 10, 2);
+}, 999, 2);
 
 

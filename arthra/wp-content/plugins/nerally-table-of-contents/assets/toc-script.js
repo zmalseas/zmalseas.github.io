@@ -19,6 +19,9 @@
     }
 
     init() {
+      // First, ensure all headings have IDs
+      this.ensureHeadingIds();
+      
       // Bind events
       this.bindEvents();
       
@@ -30,6 +33,43 @@
       
       // Track scroll position
       this.trackScroll();
+    }
+    
+    ensureHeadingIds() {
+      // Ensure all headings in the content have IDs
+      const levels = nerallyTOC.headingLevels || ['h2', 'h3'];
+      const selector = levels.map(level => level.toUpperCase()).join(', ');
+      const contentSelectors = ['.single-content', '.entry-content', 'article', 'main'];
+      
+      // Find the main content container
+      let $content = null;
+      for (let sel of contentSelectors) {
+        $content = $(sel).first();
+        if ($content.length) break;
+      }
+      
+      if (!$content || !$content.length) {
+        $content = $('body'); // Fallback to body
+      }
+      
+      $content.find(selector).each((index, element) => {
+        const $heading = $(element);
+        
+        // If heading doesn't have an ID, create one
+        if (!$heading.attr('id')) {
+          const text = $heading.text().trim();
+          const id = text
+            .toLowerCase()
+            .replace(/[^\w\s-]/g, '') // Remove special characters
+            .replace(/\s+/g, '-')      // Replace spaces with hyphens
+            .replace(/-+/g, '-')       // Replace multiple hyphens with single
+            .replace(/^-|-$/g, '');    // Remove leading/trailing hyphens
+          
+          if (id) {
+            $heading.attr('id', id);
+          }
+        }
+      });
     }
 
     bindEvents() {
@@ -85,25 +125,31 @@
     }
 
     scrollToSection(targetId) {
-      const $target = $(targetId);
+      // Remove the # if present
+      const cleanId = targetId.replace('#', '');
+      const $target = $('#' + cleanId);
+      
       if ($target.length) {
         // Get WordPress admin bar height if exists
         const adminBarHeight = $('#wpadminbar').length ? $('#wpadminbar').outerHeight() : 0;
         const stickyHeaderHeight = $('.site-header.sticky').length ? $('.site-header.sticky').outerHeight() : 0;
-        const offset = 120 + adminBarHeight + stickyHeaderHeight; // Offset for fixed headers
+        const wpArticlesHeroHeight = $('.wp-articles-hero').length ? $('.wp-articles-hero').outerHeight() : 0;
+        const offset = 100 + adminBarHeight + stickyHeaderHeight;
         const targetPosition = $target.offset().top - offset;
+        
+        console.log('Scrolling to:', cleanId, 'Position:', targetPosition); // Debug
         
         // Stop any ongoing animations first
         $('html, body').stop();
         
         // Use native smooth scroll for better performance
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
-        
-        // Fallback to jQuery animation for older browsers
-        if (!('scrollBehavior' in document.documentElement.style)) {
+        try {
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        } catch (e) {
+          // Fallback to jQuery animation for older browsers
           $('html, body').animate({
             scrollTop: targetPosition
           }, 600);
@@ -113,7 +159,9 @@
         setTimeout(() => {
           $target.addClass('toc-target-highlight');
           setTimeout(() => $target.removeClass('toc-target-highlight'), 2000);
-        }, 300);
+        }, 400);
+      } else {
+        console.warn('TOC: Target heading not found:', targetId); // Debug
       }
     }
 

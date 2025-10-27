@@ -53,7 +53,6 @@
       font-weight: 700;
       margin: 0;
       letter-spacing: 0.5px;
-      white-space: nowrap;
       color: #fff;
     }
     
@@ -62,6 +61,7 @@
       display: inline-block;
       min-width: 120px;
       transition: opacity 0.4s ease;
+      white-space: pre; /* Preserve spaces */
     }
     
     .articles-animated-word.fade-out {
