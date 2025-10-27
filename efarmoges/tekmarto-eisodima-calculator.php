@@ -1015,23 +1015,23 @@ function App() {
         <h2>Εξαιρέσεις</h2>
         <div className="checkbox">
           <input type="checkbox" checked={state.exceptions.agriculturalBusiness} onChange={(e)=>setDeep("exceptions","agriculturalBusiness", e.target.checked)} />
-          <label>Αγροτική επιχειρηματική δραστηριότητα</label>
+          <label style={{color: '#111827', fontWeight: 500}}>Αγροτική επιχειρηματική δραστηριότητα</label>
         </div>
         <div className="checkbox">
           <input type="checkbox" checked={state.exceptions.freelancingUpTo2Contracts} onChange={(e)=>setDeep("exceptions","freelancingUpTo2Contracts", e.target.checked)} />
-          <label>Μπλοκάκι έως 2 συμβάσεις</label>
+          <label style={{color: '#111827', fontWeight: 500}}>Μπλοκάκι έως 2 συμβάσεις</label>
         </div>
         <div className="checkbox">
           <input type="checkbox" checked={state.exceptions.insuranceBrokerUpTo2} onChange={(e)=>setDeep("exceptions","insuranceBrokerUpTo2", e.target.checked)} />
-          <label>Ασφαλιστικός διαμεσολαβητής (έως 2)</label>
+          <label style={{color: '#111827', fontWeight: 500}}>Ασφαλιστικός διαμεσολαβητής (έως 2)</label>
         </div>
         <div className="checkbox">
           <input type="checkbox" checked={state.exceptions.disability80} onChange={(e)=>setDeep("exceptions","disability80", e.target.checked)} />
-          <label>Αναπηρία ≥ 80%</label>
+          <label style={{color: '#111827', fontWeight: 500}}>Αναπηρία ≥ 80%</label>
         </div>
         <div className="checkbox">
           <input type="checkbox" checked={state.exceptions.cafeUnder500} onChange={(e)=>setDeep("exceptions","cafeUnder500", e.target.checked)} />
-          <label>Καφενείο σε οικισμό &lt;500</label>
+          <label style={{color: '#111827', fontWeight: 500}}>Καφενείο σε οικισμό &lt;500</label>
         </div>
       </div>
 
