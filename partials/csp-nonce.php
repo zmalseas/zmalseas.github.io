@@ -16,7 +16,7 @@ if (!isset($GLOBALS['csp_nonce'])) {
     // Nonce is ONLY for inline <script> tags, NOT for <script src="">
     // This is the correct approach - strict-dynamic breaks normal script loading
     $csp_policy = "default-src 'self'; " .
-                  "script-src 'self' 'nonce-{$csp_nonce}' https://www.googletagmanager.com https://www.google-analytics.com https://www.gstatic.com https://www.google.com; " .
+                  "script-src 'self' 'nonce-{$csp_nonce}' https://www.googletagmanager.com https://www.google-analytics.com https://www.gstatic.com https://www.google.com https://unpkg.com; " .
                   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; " .
                   "img-src 'self' data: https:; " .
                   "font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; " .
