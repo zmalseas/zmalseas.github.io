@@ -168,17 +168,17 @@
       if (targetElement) {
         const $target = $(targetElement);
         
-        // Get WordPress admin bar height if exists
+        // Calculate offset based on fixed and sticky elements
         const adminBarHeight = $('#wpadminbar').length ? $('#wpadminbar').outerHeight() : 0;
         const siteHeaderHeight = $('.site-header').length ? $('.site-header').outerHeight() : 0;
-        const wpArticlesHeroHeight = $('.wp-articles-hero').length ? $('.wp-articles-hero').outerHeight() : 0;
         
-        // Large offset to ensure title is visible below sticky headers
-        // Base offset + all header heights + extra breathing room
-        const offset = 200 + adminBarHeight + siteHeaderHeight + wpArticlesHeroHeight;
+        // Fixed large offset - adjusted empirically to show title clearly
+        // This accounts for sticky header + hero section + breathing room
+        const baseOffset = 250; // Increased base offset
+        const offset = baseOffset + adminBarHeight + siteHeaderHeight;
         const targetPosition = $target.offset().top - offset;
         
-        console.log('Scrolling to:', cleanId, 'Position:', targetPosition); // Debug
+        console.log('Scrolling to:', cleanId, 'Offset:', offset, 'Position:', targetPosition); // Debug
         
         // Stop any ongoing animations first
         $('html, body').stop();

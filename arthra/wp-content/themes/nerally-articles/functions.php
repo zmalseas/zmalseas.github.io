@@ -85,13 +85,16 @@ add_action('wp_enqueue_scripts', function(){
   wp_enqueue_style('nerally-footer-css', $origin . '/css/footer.css', ['nerally-base'], null);
   wp_enqueue_style('nerally-components', $origin . '/css/components.css', ['nerally-base'], null);
   wp_enqueue_style('nerally-cookie', $origin . '/css/cookie-consent.css', ['nerally-main'], null);
-  wp_enqueue_style('nerally-legal', $origin . '/css/legal-modal.css', ['nerally-main'], null);
+  
+  // Optional: Only load legal-modal if it exists
+  // wp_enqueue_style('nerally-legal', $origin . '/css/legal-modal.css', ['nerally-main'], null);
 
   // Theme CSS
   wp_enqueue_style('nerally-theme', get_stylesheet_uri(), ['nerally-main'], wp_get_theme()->get('Version'));
 
   // Site JS
-  wp_enqueue_script('nerally-legal-js', $origin . '/js/legal-modal.js', [], null, true);
+  // Optional: Only load legal-modal if it exists
+  // wp_enqueue_script('nerally-legal-js', $origin . '/js/legal-modal.js', [], null, true);
   wp_enqueue_script('nerally-cookie-js', $origin . '/js/cookie-consent.js', [], null, true);
   wp_enqueue_script('nerally-navigation', $origin . '/js/navigation.js', [], null, true);
   wp_enqueue_script('nerally-app', $origin . '/app.js', [], null, true);
