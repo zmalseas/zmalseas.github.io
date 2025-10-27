@@ -225,6 +225,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
 const { useMemo, useState } = React;
 
 const CURRENCY = new Intl.NumberFormat("el-GR", { style: "currency", currency: "EUR" });
+const NUMBER_FORMAT = new Intl.NumberFormat("el-GR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
 // ΚΑΔ Data με Μέσους Όρους
 const KAD_DATA = [
@@ -620,8 +621,13 @@ function clampMoney(n) {
 
 function parseNumber(v) {
   if (v === "" || v === null || v === undefined) return 0;
-  const n = typeof v === "number" ? v : parseFloat(String(v).replace(",", "."));
+  const n = typeof v === "number" ? v : parseFloat(String(v).replace(/\./g, '').replace(",", "."));
   return isNaN(n) ? 0 : n;
+}
+
+function formatNumber(v) {
+  if (!v || v === 0) return '';
+  return NUMBER_FORMAT.format(v);
 }
 
 function daysInYear(year) {
@@ -843,11 +849,21 @@ function App() {
           <div className="grid-2">
             <div className="input-group">
               <label>Ετήσια μισθοδοσία (€)</label>
-              <input type="number" value={state.payrollTotal} onChange={(e)=>set("payrollTotal", parseNumber(e.target.value))} />
+              <input 
+                type="text" 
+                value={formatNumber(state.payrollTotal)} 
+                onChange={(e)=>set("payrollTotal", parseNumber(e.target.value))} 
+                placeholder="0,00"
+              />
             </div>
             <div className="input-group">
               <label>Υψηλότερες μικτές αποδοχές (€)</label>
-              <input type="number" value={state.highestGrossSalary} onChange={(e)=>set("highestGrossSalary", parseNumber(e.target.value))} />
+              <input 
+                type="text" 
+                value={formatNumber(state.highestGrossSalary)} 
+                onChange={(e)=>set("highestGrossSalary", parseNumber(e.target.value))} 
+                placeholder="0,00"
+              />
             </div>
           </div>
         )}
@@ -855,27 +871,36 @@ function App() {
 
       <div className="card">
         <h2>Τζίρος & Μ.Ο. ΚΑΔ</h2>
-        <div className="grid-2">
-          <div className="input-group">
-            <label>Επιλέξτε τον ΚΑΔ σας</label>
-            <select value={state.selectedKAD} onChange={(e)=>set("selectedKAD", e.target.value)}>
-              <option value="">-- Επιλέξτε ΚΑΔ --</option>
-              {KAD_DATA.map(kad => (
-                <option key={kad.code} value={kad.code}>
-                  {kad.code} - {kad.description}
-                </option>
-              ))}
-            </select>
-            {avgKAD > 0 && (
-              <small style={{marginTop: '4px', color: '#666'}}>
-                Μ.Ο. τζίρου: {CURRENCY.format(avgKAD)}
-              </small>
-            )}
-          </div>
-          <div className="input-group">
-            <label>Ετήσιος τζίρος (€)</label>
-            <input type="number" value={state.turnover} onChange={(e)=>set("turnover", parseNumber(e.target.value))} />
-          </div>
+        <div className="input-group">
+          <label>Επιλέξτε τον ΚΑΔ σας</label>
+          <input 
+            list="kad-list" 
+            value={state.selectedKAD} 
+            onChange={(e)=>set("selectedKAD", e.target.value)}
+            placeholder="Πληκτρολογήστε ή επιλέξτε ΚΑΔ..."
+            style={{width: '100%'}}
+          />
+          <datalist id="kad-list">
+            {KAD_DATA.map(kad => (
+              <option key={kad.code} value={kad.code}>
+                {kad.description}
+              </option>
+            ))}
+          </datalist>
+          {avgKAD > 0 && (
+            <small style={{marginTop: '4px', color: '#666', display: 'block'}}>
+              Μ.Ο. τζίρου: {CURRENCY.format(avgKAD)}
+            </small>
+          )}
+        </div>
+        <div className="input-group">
+          <label>Ετήσιος τζίρος (€)</label>
+          <input 
+            type="text" 
+            value={formatNumber(state.turnover)} 
+            onChange={(e)=>set("turnover", parseNumber(e.target.value))} 
+            placeholder="0,00"
+          />
         </div>
       </div>
 
@@ -906,15 +931,30 @@ function App() {
         <div className="grid-3">
           <div className="input-group">
             <label>Μισθωτή εργασία (€)</label>
-            <input type="number" value={state.otherIncome.employment} onChange={(e)=>setDeep("otherIncome","employment", parseNumber(e.target.value))} />
+            <input 
+              type="text" 
+              value={formatNumber(state.otherIncome.employment)} 
+              onChange={(e)=>setDeep("otherIncome","employment", parseNumber(e.target.value))} 
+              placeholder="0,00"
+            />
           </div>
           <div className="input-group">
             <label>Συντάξεις (€)</label>
-            <input type="number" value={state.otherIncome.pension} onChange={(e)=>setDeep("otherIncome","pension", parseNumber(e.target.value))} />
+            <input 
+              type="text" 
+              value={formatNumber(state.otherIncome.pension)} 
+              onChange={(e)=>setDeep("otherIncome","pension", parseNumber(e.target.value))} 
+              placeholder="0,00"
+            />
           </div>
           <div className="input-group">
             <label>Αγροτικό (€)</label>
-            <input type="number" value={state.otherIncome.agricultural} onChange={(e)=>setDeep("otherIncome","agricultural", parseNumber(e.target.value))} />
+            <input 
+              type="text" 
+              value={formatNumber(state.otherIncome.agricultural)} 
+              onChange={(e)=>setDeep("otherIncome","agricultural", parseNumber(e.target.value))} 
+              placeholder="0,00"
+            />
           </div>
         </div>
       </div>
