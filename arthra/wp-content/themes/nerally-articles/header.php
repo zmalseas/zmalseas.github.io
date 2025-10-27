@@ -12,16 +12,8 @@
       background: #000;
       color: #fff;
       padding: 20px 0;
-      margin: 40px 0 0 0;
+      margin: 0;
       border-top: 1px solid #333;
-    }
-    
-    /* Mobile - add spacing */
-    @media (max-width: 768px) {
-      .wp-articles-hero {
-        margin-top: 20px;
-        padding: 15px 0;
-      }
     }
     
     .wp-articles-container {
