@@ -89,20 +89,31 @@
       if ($target.length) {
         // Get WordPress admin bar height if exists
         const adminBarHeight = $('#wpadminbar').length ? $('#wpadminbar').outerHeight() : 0;
-        const offset = 120 + adminBarHeight; // Offset for fixed headers
+        const stickyHeaderHeight = $('.site-header.sticky').length ? $('.site-header.sticky').outerHeight() : 0;
+        const offset = 120 + adminBarHeight + stickyHeaderHeight; // Offset for fixed headers
         const targetPosition = $target.offset().top - offset;
         
         // Stop any ongoing animations first
         $('html, body').stop();
         
-        // Smooth scroll with easing
-        $('html, body').animate({
-          scrollTop: targetPosition
-        }, 800, 'easeInOutCubic', function() {
-          // Add flash highlight to target heading
+        // Use native smooth scroll for better performance
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+        
+        // Fallback to jQuery animation for older browsers
+        if (!('scrollBehavior' in document.documentElement.style)) {
+          $('html, body').animate({
+            scrollTop: targetPosition
+          }, 600);
+        }
+        
+        // Add flash highlight to target heading after scroll
+        setTimeout(() => {
           $target.addClass('toc-target-highlight');
           setTimeout(() => $target.removeClass('toc-target-highlight'), 2000);
-        });
+        }, 300);
       }
     }
 

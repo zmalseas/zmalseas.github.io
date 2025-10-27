@@ -307,4 +307,20 @@ if (file_exists(get_template_directory() . '/functions-navigation.php')) {
     require_once get_template_directory() . '/functions-navigation.php';
 }
 
+// Fix page title for archive pages
+add_filter('pre_get_document_title', function($title) {
+    if (is_home() || is_post_type_archive('post')) {
+        return 'Nerally - Άρθρα';
+    }
+    return $title;
+}, 10);
+
+// Also fix with wp_title filter for older themes
+add_filter('wp_title', function($title, $sep) {
+    if (is_home() || is_post_type_archive('post')) {
+        return 'Άρθρα ' . $sep . ' Nerally';
+    }
+    return $title;
+}, 10, 2);
+
 
