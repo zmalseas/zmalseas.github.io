@@ -144,7 +144,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     .toggle label { font-size: 14px; color: #374151; }
     .checkbox { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
     .checkbox input[type="checkbox"] { width: 16px; height: 16px; }
-    .checkbox label { font-size: 14px; color: #374151; }
+    .checkbox label { font-size: 14px; color: #111827; font-weight: 500; }
     .result-card { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 16px; padding: 20px; }
     .result-card h2 { color: white; margin-bottom: 16px; }
     .stat { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; border-radius: 12px; margin-bottom: 8px; }
