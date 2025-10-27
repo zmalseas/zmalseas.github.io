@@ -221,7 +221,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
 <?php require_once __DIR__ . '/../partials/footer.php'; ?>
 <?php require_once __DIR__ . '/../partials/chat.html'; ?>
 
-<script type="text/babel">
+<script nonce="<?php echo $csp_nonce; ?>" type="text/babel">
 const { useMemo, useState } = React;
 
 const CURRENCY = new Intl.NumberFormat("el-GR", { style: "currency", currency: "EUR" });

@@ -20,7 +20,7 @@ if (!isset($GLOBALS['csp_nonce'])) {
                   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; " .
                   "img-src 'self' data: https:; " .
                   "font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; " .
-                  "connect-src 'self' https://*.google.com https://*.gstatic.com https://*.googletagmanager.com https://*.google-analytics.com; " .
+                  "connect-src 'self' https://*.google.com https://*.gstatic.com https://*.googletagmanager.com https://*.google-analytics.com https://unpkg.com; " .
                   "frame-src https://www.googletagmanager.com https://www.google.com; " .
                   "frame-ancestors 'none'; " .
                   "base-uri 'self'; " .
