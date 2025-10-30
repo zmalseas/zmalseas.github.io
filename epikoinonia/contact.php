@@ -306,6 +306,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
       color: #9ca3af !important;
       margin-top: 12px !important;
       line-height: 1.4 !important;
+      padding: 0 10px !important;
     }
     
     .contact-form .recaptcha-info a {
@@ -418,7 +419,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
           </div>
 
           <!-- Right: Contact Form -->
-          <div style="background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.06); padding: 24px 20px;">
+          <div style="background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.06); padding: 24px;">
             <form id="contactForm" class="contact-form" action="../contact-handler.php" method="POST">
               <h3 style="text-align: center; font-size: 1.2rem; margin: 0 0 4px 0; color: #111827;">Φόρμα Επικοινωνίας</h3>
               <p style="text-align: center; color: #6b7280; font-size: 13px; margin: 0 0 18px 0; line-height: 1.4;">Συμπληρώστε τα στοιχεία σας και θα σας απαντήσουμε.</p>
