@@ -301,20 +301,20 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     }
     
     .contact-form .recaptcha-info {
-      text-align: center;
-      font-size: 11px;
-      color: #9ca3af;
-      margin-top: 12px;
-      line-height: 1.4;
+      text-align: center !important;
+      font-size: 11px !important;
+      color: #9ca3af !important;
+      margin-top: 12px !important;
+      line-height: 1.4 !important;
     }
     
     .contact-form .recaptcha-info a {
-      color: #9ca3af;
-      text-decoration: underline;
+      color: #9ca3af !important;
+      text-decoration: underline !important;
     }
     
     .contact-form .recaptcha-info a:hover {
-      color: #6b7280;
+      color: #6b7280 !important;
     }
     
     /* Fix contact list alignment */
