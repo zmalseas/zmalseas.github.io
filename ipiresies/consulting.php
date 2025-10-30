@@ -10,7 +10,6 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
   <title>Συμβουλευτικές Υπηρεσίες — Nerally</title>
   <meta name="description" content="Στρατηγική, χρηματοοικονομικός σχεδιασμός, M&A, εσωτερικός έλεγχος και οργάνωση λογιστηρίου. Συμβουλευτική με εφαρμογή." />
   <meta name="keywords" content="business consulting, συμβουλευτικές υπηρεσίες, στρατηγικός σχεδιασμός, M&A, due diligence, εσωτερικός έλεγχος, Nerally" />
-  <link rel="canonical" href="https://nerally.gr/ipiresies/consulting.php" />
   <link rel="icon" type="image/png" href="../images/logo.png" />
   <link rel="stylesheet" href="../main.css" />
   <link rel="stylesheet" href="/css/cookie-consent.css" />
@@ -25,8 +24,152 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
   ];
   include $_SERVER['DOCUMENT_ROOT'].'/partials/schema-service.php';
   ?>
-
+  
   <style>
+    /* Consulting page styles - matching logistiki.php & misthodosia.php */
+    .company-container{max-width:1200px;margin:0 auto;padding:0 32px}
+    .company-section{padding:80px 0;}
+
+    @keyframes fadeSlideIn {
+      from {opacity:0; transform: translateY(20px);}
+      to {opacity:1; transform: translateY(0);}
+    }
+    .company-section h2 {
+      margin:0 0 20px;
+      font-size:clamp(26px,2.6vw,38px);
+      line-height:1.15;
+      color:var(--brand);
+      position:relative;
+      opacity:0;
+      animation: fadeSlideIn 0.8s ease forwards;
+    }
+    .company-section h2::after{
+      content:"";
+      display:block;
+      width:60px;
+      height:4px;
+      background:var(--brand);
+      margin-top:10px;
+      border-radius:4px;
+    }
+    .company-section h3 {
+      margin:34px 0 8px;
+      font-size:clamp(20px,3.4vw,26px);
+      color:var(--brand);
+      letter-spacing:-.01em;
+    }
+    .company-section p{line-height:1.8;font-size:18px;margin:0 0 18px;color:#111827}
+
+    /* Callout (διακριτικό) */
+    .callout{background:linear-gradient(180deg, #ffffff 0%, #f6f9ff 100%);border:1px solid #e6ecff;border-radius:16px;padding:20px 22px;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+    .callout .quote{font-style:italic;color:#3b4b6a;margin-bottom:8px}
+    .callout p{margin:0;color:#5b6b7b}
+
+    /* Split layout */
+    .split{display:grid;grid-template-columns:1.3fr .9fr;gap:28px;align-items:start;margin-top:10px}
+    @media (max-width:860px){.split{grid-template-columns:1fr}}
+
+    .muted{color:#5b6b7b}
+
+    /* Service grid sections */
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin: 32px 0;
+    }
+    
+    .section-box {
+      background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
+      border: 1px solid #e6ecff;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.04);
+    }
+    
+    .section-box h4 {
+      margin: 0 0 16px;
+      font-size: 19px;
+      color: var(--brand);
+      font-weight: 700;
+    }
+    
+    .section-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .section-box li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+      color: #111827;
+      line-height: 1.6;
+    }
+    
+    .section-box li:last-child {
+      margin-bottom: 0;
+    }
+    
+    .blue-check {
+      flex: 0 0 20px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--brand);
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    
+    .service-category {
+      font-size: 13px;
+      color: var(--brand);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+      font-weight: 600;
+      display: block;
+      opacity: 0.8;
+    }
+    
+    /* Quote box at the end */
+    .quote-box {
+      background: linear-gradient(180deg, #ffffff 0%, #f6f9ff 100%);
+      border: 1px solid #e6ecff;
+      border-radius: 16px;
+      padding: 30px 36px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+      margin-top: 48px;
+    }
+    
+    .quote-box .big-quote {
+      font-size: 19px;
+      font-style: italic;
+      color: #3b4b6a;
+      line-height: 1.7;
+      margin: 0 0 16px;
+    }
+    
+    .quote-box .attribution {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--brand);
+    }
+    
+    @media(max-width:768px) {
+      .section-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* Hero Section - Matching misthodosia.php */
       height: 170px;
       background: #000;
@@ -209,7 +352,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
 
         <h3>Τι προσφέρουμε</h3>
         <div class="section-grid">
-          <div class="service-box">
+          <div class="section-box">
             <h4>Επιχειρηματικά & Στρατηγικά Πλάνα</h4>
             <p class="service-category">Επιχειρηματικός & Χρηματοοικονομικός Σχεδιασμός</p>
             <ul>
@@ -221,7 +364,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
             </ul>
           </div>
 
-          <div class="service-box">
+          <div class="section-box">
             <h4>M&A, αποτιμήσεις και due diligence</h4>
             <p class="service-category">Υποστήριξη Συναλλαγών</p>
             <ul>
@@ -233,7 +376,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
             </ul>
           </div>
 
-          <div class="service-box">
+          <div class="section-box">
             <h4>Έλεγχος, πολιτικές και συμμόρφωση</h4>
             <p class="service-category">Εσωτερικός Έλεγχος & Διακυβέρνηση</p>
             <ul>
@@ -248,7 +391,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
 
         <h3 style="margin-top: 3rem;">Οργάνωση & Επίβλεψη Εσωτερικού Λογιστηρίου</h3>
         <div class="section-grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
-          <div class="service-box">
+          <div class="section-box">
             <h4>Αναδιοργάνωση λογιστικής λειτουργίας</h4>
             <ul>
               <li><span class="blue-check">✓</span> Χαρτογράφηση υφιστάμενων ροών και ρόλων</li>
@@ -258,7 +401,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
             </ul>
           </div>
 
-          <div class="service-box">
+          <div class="section-box">
             <h4>Επόπτευση & περιοδικός έλεγχος</h4>
             <ul>
               <li><span class="blue-check">✓</span> Εβδομαδιαία ή μηνιαία εποπτεία κινήσεων</li>
