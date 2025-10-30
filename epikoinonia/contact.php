@@ -177,31 +177,31 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     
     /* Form styling adjustments */
     .contact-form h3 {
-      font-size: clamp(1.5rem, 2vw, 1.75rem) !important;
-      padding-bottom: 8px;
-      margin-bottom: 20px !important;
+      font-size: clamp(1.4rem, 2vw, 1.6rem) !important;
+      padding-bottom: 4px;
+      margin-bottom: 12px !important;
     }
     
     .contact-form .form-group {
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
     
     .contact-form label {
       display: block;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       font-weight: 500;
       color: #374151;
-      font-size: 15px;
+      font-size: 14px;
     }
     
     .contact-form input[type="text"],
     .contact-form input[type="email"],
     .contact-form input[type="tel"] {
       width: 100%;
-      padding: 14px 16px;
+      padding: 12px 14px;
       border: 1px solid #d1d5db;
-      border-radius: 10px;
-      font-size: 15px;
+      border-radius: 8px;
+      font-size: 14px;
       font-family: inherit;
       transition: border-color 0.2s, box-shadow 0.2s;
       background: #f9fafb;
@@ -217,11 +217,11 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     .contact-form textarea { 
       width: 100%;
       resize: vertical; 
-      min-height: 140px;
-      padding: 14px 16px;
+      min-height: 110px;
+      padding: 12px 14px;
       border: 1px solid #d1d5db;
-      border-radius: 10px;
-      font-size: 15px;
+      border-radius: 8px;
+      font-size: 14px;
       font-family: inherit;
       transition: border-color 0.2s, box-shadow 0.2s;
       background: #f9fafb;
@@ -238,18 +238,18 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     .careers-check { 
       background: #f9fafb; 
       border: 1px solid #e5e7eb; 
-      border-radius: 10px; 
-      padding: 14px; 
+      border-radius: 8px; 
+      padding: 11px 12px; 
       display: flex;
       align-items: flex-start;
       gap: 10px;
     }
     .careers-check input[type="checkbox"] {
       margin: 0;
-      margin-top: 3px;
+      margin-top: 2px;
       flex-shrink: 0;
-      width: 18px;
-      height: 18px;
+      width: 17px;
+      height: 17px;
       cursor: pointer;
     }
     .careers-check .checkmark {
@@ -259,7 +259,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
       color: #374151 !important; 
       line-height: 1.5;
       flex: 1;
-      font-size: 14px;
+      font-size: 13.5px;
     }
     .careers-check .text-content a { 
       color: var(--brand) !important; 
@@ -267,19 +267,19 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     }
     .form-checkboxes { 
       display: grid; 
-      gap: 14px; 
-      margin-bottom: 24px; 
+      gap: 12px; 
+      margin-bottom: 20px; 
     }
     
     /* Submit button styling */
     .contact-form .submit-btn {
       width: 100%;
-      padding: 16px 24px;
+      padding: 14px 24px;
       background: var(--brand);
       color: #fff;
       border: none;
-      border-radius: 12px;
-      font-size: 16px;
+      border-radius: 10px;
+      font-size: 15px;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.2s;
@@ -302,9 +302,9 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     
     .contact-form .recaptcha-info {
       text-align: center;
-      font-size: 12px;
+      font-size: 11.5px;
       color: #9ca3af;
-      margin-top: 20px;
+      margin-top: 16px;
       line-height: 1.5;
     }
     
@@ -419,10 +419,10 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
           </div>
 
           <!-- Right: Contact Form -->
-          <div style="background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.06); padding: 32px 28px;">
+          <div style="background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.06); padding: 28px 24px;">
             <form id="contactForm" class="contact-form" action="../contact-handler.php" method="POST">
-              <h3 style="text-align: center; font-size: 1.2rem; margin: 0 0 12px 0; color: #111827;">Φόρμα Επικοινωνίας</h3>
-              <p style="text-align: center; color: #6b7280; font-size: 14px; margin: 0 0 24px 0;">Συμπληρώστε τα στοιχεία σας και θα σας απαντήσουμε.</p>
+              <h3 style="text-align: center; font-size: 1.2rem; margin: 0 0 8px 0; color: #111827;">Φόρμα Επικοινωνίας</h3>
+              <p style="text-align: center; color: #6b7280; font-size: 13.5px; margin: 0 0 20px 0;">Συμπληρώστε τα στοιχεία σας και θα σας απαντήσουμε.</p>
 
               <div class="form-group">
                 <label for="name">Ονοματεπώνυμο</label>
