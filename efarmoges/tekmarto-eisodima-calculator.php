@@ -142,12 +142,12 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
     .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
     .toggle { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
-    .toggle-btn { position: relative; display: inline-flex; height: 24px; width: 44px; items-center; border-radius: 9999px; cursor: pointer; transition: background-color 0.3s; }
+    .toggle-btn { position: relative; display: inline-flex; align-items: center; height: 24px; width: 44px; border-radius: 9999px; cursor: pointer; transition: background-color 0.3s; flex-shrink: 0; }
     .toggle-btn.active { background-color: #6366f1; }
     .toggle-btn.inactive { background-color: #d1d5db; }
-    .toggle-btn span { display: inline-block; height: 16px; width: 16px; transform: translateX(4px); border-radius: 9999px; background-color: white; transition: transform 0.3s; }
-    .toggle-btn.active span { transform: translateX(24px); }
-    .toggle label { font-size: 14px; color: #374151; }
+    .toggle-btn span { display: inline-block; height: 16px; width: 16px; transform: translateX(4px); border-radius: 9999px; background-color: white; transition: transform 0.3s; position: absolute; top: 50%; margin-top: -8px; }
+    .toggle-btn.active span { transform: translateX(24px) translateY(-50%); margin-top: 0; top: 50%; }
+    .toggle label { font-size: 14px; color: #374151; cursor: pointer; user-select: none; }
     .checkbox { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
     .checkbox input[type="checkbox"] { width: 16px; height: 16px; }
     .checkbox label { font-size: 14px; color: #111827; font-weight: 500; }
