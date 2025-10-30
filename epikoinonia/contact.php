@@ -236,13 +236,13 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     
     /* Careers-style checkboxes */
     .careers-check { 
-      background: #f9fafb; 
-      border: 1px solid #e5e7eb; 
-      border-radius: 8px; 
-      padding: 10px 12px; 
+      background: transparent; 
+      border: none; 
+      border-radius: 0; 
+      padding: 8px 0; 
       display: flex;
       align-items: flex-start;
-      gap: 10px;
+      gap: 8px;
     }
     .careers-check input[type="checkbox"] {
       margin: 0;
@@ -267,7 +267,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     }
     .form-checkboxes { 
       display: grid; 
-      gap: 10px; 
+      gap: 8px; 
       margin-bottom: 16px; 
     }
     
