@@ -90,7 +90,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     .rent-left { background:#f4f6fb; padding:40px 32px; overflow:auto; animation: contentFade 0.5s ease-out 0.06s both; }
     .rent-right { 
       padding:40px 24px; display:flex; align-items:center; justify-content:center;
-      background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url('../images/tekmarto.webp');
+      background: linear-gradient(rgba(0,0,0,.70), rgba(0,0,0,.70)), url('../images/tekmarto.webp');
       background-size: cover; background-position: center; 
     }
     .rent-left h1 { color: #000; font-size: 28px; margin: 0 0 20px; text-align: center; }
@@ -154,13 +154,13 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     .result-card { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 16px; padding: 20px; }
     .result-card h2 { color: white; margin-bottom: 16px; }
     .stat { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; border-radius: 12px; margin-bottom: 8px; }
-    .stat.highlight { background-color: white; color: #1f2937; }
+    .stat.highlight { background-color: white; color: #1f2937; font-size: 18px; font-weight: 700; }
     .stat.normal { background-color: rgba(255,255,255,0.1); color: white; }
     .stat-label { font-size: 14px; opacity: 0.9; }
     .stat-value { font-weight: 600; font-size: 16px; }
-    .breakdown { background-color: rgba(255,255,255,0.1); border-radius: 12px; padding: 16px; margin-top: 16px; }
-    .breakdown p { font-size: 13px; margin-bottom: 4px; }
-    .breakdown ul { list-style-type: disc; padding-left: 20px; font-size: 13px; }
+    .breakdown { background-color: white; color: #1f2937; border-radius: 12px; padding: 16px; margin-top: 16px; }
+    .breakdown p { font-size: 13px; margin-bottom: 4px; color: #1f2937; font-weight: 600; }
+    .breakdown ul { list-style-type: disc; padding-left: 20px; font-size: 13px; color: #374151; }
     .breakdown ul li { margin-bottom: 4px; }
     .btn-primary { padding: 10px 16px; background-color: #6366f1; color: white; border-radius: 20px; border: none; cursor: pointer; font-weight: 600; box-shadow: 0 2px 8px rgba(99,102,241,0.3); }
     .btn-primary:hover { background-color: #4f46e5; }
@@ -988,27 +988,9 @@ function App() {
               <span className="stat-label">Τελικό Τεκμαρτό Εισόδημα</span>
               <span className="stat-value">{CURRENCY.format(result.finalImputed)}</span>
             </div>
-            <div className="stat normal">
-              <span className="stat-label">Βάση (μετά cap 50.000€)</span>
-              <span className="stat-value">{CURRENCY.format(result.base)}</span>
-            </div>
-            <div className="stat normal">
-              <span className="stat-label">Μετά νέο επαγγελματία</span>
-              <span className="stat-value">{CURRENCY.format(result.afterNewPro)}</span>
-            </div>
-            {state.specialReductions.length > 0 && (
-              <div className="stat normal">
-                <span className="stat-label">Μετά λοιπές μειώσεις -50%</span>
-                <span className="stat-value">{CURRENCY.format(result.afterSpecial)}</span>
-              </div>
-            )}
-            <div className="stat normal">
-              <span className="stat-label">Κάλυψη από άλλα</span>
-              <span className="stat-value">-{CURRENCY.format(result.cover)}</span>
-            </div>
 
             <div className="breakdown">
-              <p><strong>Ανάλυση Βημάτων:</strong></p>
+              <p>Ανάλυση Βημάτων:</p>
               <ul>
                 {result.breakdown.map((b,i)=> (<li key={i}>{b}</li>))}
               </ul>
