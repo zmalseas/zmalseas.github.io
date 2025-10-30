@@ -56,26 +56,31 @@
             <label for="message">Μήνυμα *</label>
           </div>
           
-          <div class="form-group checkbox-group">
-            <label class="checkbox-label">
+          <div class="form-checkboxes">
+            <label class="checkbox-label careers-check">
               <input type="checkbox" id="privacy" name="privacy" required>
-              <span class="text-content">Αποδέχομαι την <a href="/legal/privacy.php" target="_blank">Πολιτική Απορρήτου</a> *</span>
+              <span class="checkmark"></span>
+              <span class="text-content">Συμφωνώ με την <a href="/legal/privacy.php" target="_blank">Πολιτική Απορρήτου</a> *</span>
             </label>
           </div>
           
-          <div class="form-group checkbox-group">
-            <label class="checkbox-label">
+          <div class="form-checkboxes">
+            <label class="checkbox-label careers-check">
               <input type="checkbox" id="newsletter" name="newsletter">
-              <span class="text-content">Θέλω να λαμβάνω ενημερωτικά emails (newsletter)</span>
+              <span class="checkmark"></span>
+              <span class="text-content">Θέλω να λαμβάνω ενημερώσεις και προσφορές</span>
             </label>
-          </div>
-          
-          <div class="recaptcha-info">
-            Αυτός ο ιστότοπος προστατεύεται από το reCAPTCHA και ισχύουν η <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Πολιτική Απορρήτου</a> και οι <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Όροι Υπηρεσίας</a> της Google.
           </div>
           
           <div class="form-actions">
-            <button type="submit" class="submit-btn">Αποστολή Μηνύματος</button>
+            <button type="submit" class="submit-btn">
+              <span class="btn-icon" aria-hidden="true">✉️</span>
+              <span class="btn-text">Αποστολή Μηνύματος</span>
+            </button>
+          </div>
+          
+          <div class="recaptcha-info">
+            Αυτός ο ιστότοπος προστατεύεται από το reCAPTCHA και ισχύουν η <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Πολιτική Απορρήτου</a> και οι <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Όροι Χρήσης</a> της Google.
           </div>
         </form>
       </div>
