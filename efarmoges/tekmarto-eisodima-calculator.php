@@ -203,27 +203,41 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     </ul>
 
     <h3>Μειώσεις Τεκμαρτού</h3>
+    <p><strong>Νέος Επαγγελματίας:</strong></p>
     <ul>
-      <li><strong>Νέος επαγγελματίας (1ο-3ο έτος):</strong> 100% μείωση</li>
-      <li><strong>Νέος επαγγελματίας (4ο έτος):</strong> Μείωση 2/3</li>
-      <li><strong>Νέος επαγγελματίας (5ο έτος):</strong> Μείωση 1/3</li>
-      <li><strong>Ειδικές κατηγορίες:</strong> 50% μείωση (πολύτεκνοι, αναπηρία ≥67%, μονογονεϊκή οικογένεια, κ.ά.)</li>
+      <li><strong>1ο-3ο έτος λειτουργίας:</strong> 100% μείωση (τεκμαρτό = 0€)</li>
+      <li><strong>4ο έτος λειτουργίας:</strong> Μείωση 2/3 (66,67%)</li>
+      <li><strong>5ο έτος λειτουργίας:</strong> Μείωση 1/3 (33,33%)</li>
+      <li><strong>6ο έτος και μετά:</strong> Χωρίς μείωση νέου επαγγελματία</li>
+    </ul>
+    <p><strong>Ειδικές κατηγορίες (50% μείωση):</strong></p>
+    <ul>
+      <li>Πολύτεκνοι ή ορφανό πολύτεκνης οικογένειας</li>
+      <li>Άτομα με αναπηρία ≥67%</li>
+      <li>Μονογονεϊκές οικογένειες</li>
+      <li>Γονέας με τέκνο αναπηρίας ≥67%</li>
+      <li>Ιδιοκτήτες ΤΑΞΙ με μερίδιο <25%</li>
+      <li>Χωριά <500 κατοίκων</li>
+      <li>Κοινότητες <1.500 κατοίκων</li>
+      <li>Νησιά <3.100 κατοίκων</li>
     </ul>
 
     <table class="modern-table">
       <thead>
         <tr>
           <th>Έτη Λειτουργίας</th>
+          <th>Μείωση Νέου</th>
           <th>Προσαύξηση</th>
-          <th>Βάση (830€ × 14)</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>1 – 3</td><td>0,00€</td><td>11.620,00 €</td></tr>
-        <tr><td>4 – 6</td><td>0,00€</td><td>11.620,00 €</td></tr>
-        <tr><td>7 – 9</td><td>1.162,00€</td><td>12.782,00 €</td></tr>
-        <tr><td>10 – 12</td><td>1.278,20€</td><td>14.060,20 €</td></tr>
-        <tr><td>>13</td><td>1.406,02€</td><td>15.466,22 €</td></tr>
+        <tr><td>1 – 3</td><td>-100%</td><td>0,00€</td></tr>
+        <tr><td>4</td><td>-66,67%</td><td>0,00€</td></tr>
+        <tr><td>5</td><td>-33,33%</td><td>0,00€</td></tr>
+        <tr><td>6</td><td>-</td><td>0,00€</td></tr>
+        <tr><td>7 – 9</td><td>-</td><td>1.162,00€</td></tr>
+        <tr><td>10 – 12</td><td>-</td><td>1.278,20€</td></tr>
+        <tr><td>>13</td><td>-</td><td>1.406,02€</td></tr>
       </tbody>
     </table>
   </div>
@@ -676,7 +690,6 @@ function App() {
     highestGrossSalary: 0,
     turnover: 0,
     selectedKAD: "",
-    newProYear: "none",
     specialReductions: [],
     otherIncome: {
       employment: 0,
@@ -705,6 +718,8 @@ function App() {
 
     const yearsGroup = state.yearsInOperationGroup;
     let yearsAdd = 0;
+    
+    // Προσαυξήσεις ανάλογα με τα έτη (μόνο για 7+)
     if (yearsGroup === "7-9") yearsAdd = 1162;
     else if (yearsGroup === "10-12") yearsAdd = 1278.2;
     else if (yearsGroup === ">13") yearsAdd = 1406.02;
@@ -754,24 +769,20 @@ function App() {
       base = 50000;
     }
 
+    // Μειώσεις νέου επαγγελματία (ενσωματωμένες στα έτη λειτουργίας)
     let afterNewPro = base;
-    switch (state.newProYear) {
-      case "1":
-      case "2":
-      case "3":
-        breakdown.push("Νέος επαγγελματίας (1ο–3ο): -100%");
-        afterNewPro = 0;
-        break;
-      case "4":
-        breakdown.push("Νέος επαγγελματίας (4ο): -2/3");
-        afterNewPro = base * (1 / 3);
-        break;
-      case "5":
-        breakdown.push("Νέος επαγγελματίας (5ο): -1/3");
-        afterNewPro = base * (2 / 3);
-        break;
-      default:
-        break;
+    if (yearsGroup === "1-3") {
+      breakdown.push("Νέος επαγγελματίας (1ο–3ο έτος): -100%");
+      afterNewPro = 0;
+    } else if (yearsGroup === "4") {
+      breakdown.push("Νέος επαγγελματίας (4ο έτος): -2/3");
+      afterNewPro = base * (1 / 3);
+    } else if (yearsGroup === "5") {
+      breakdown.push("Νέος επαγγελματίας (5ο έτος): -1/3");
+      afterNewPro = base * (2 / 3);
+    } else {
+      // 6 έτη και άνω: καμία μείωση νέου επαγγελματία
+      afterNewPro = base;
     }
 
     const hasAny50 = state.specialReductions.length > 0;
@@ -805,11 +816,13 @@ function App() {
         <div className="input-group">
           <label>Έτη λειτουργίας</label>
           <select value={state.yearsInOperationGroup} onChange={(e)=>set("yearsInOperationGroup", e.target.value)}>
-            <option value="1-3">1–3</option>
-            <option value="4-6">4–6</option>
-            <option value="7-9">7–9</option>
-            <option value="10-12">10–12</option>
-            <option value=">13">&gt;13</option>
+            <option value="1-3">1–3 έτη (Νέος επαγγελματίας: -100%)</option>
+            <option value="4">4ο έτος (Νέος επαγγελματίας: -66,67%)</option>
+            <option value="5">5ο έτος (Νέος επαγγελματίας: -33,33%)</option>
+            <option value="6">6 έτη (Χωρίς μείωση)</option>
+            <option value="7-9">7–9 έτη</option>
+            <option value="10-12">10–12 έτη</option>
+            <option value=">13">&gt;13 έτη</option>
           </select>
         </div>
 
@@ -923,26 +936,12 @@ function App() {
 
       <div className="card">
         <h2>Μειώσεις</h2>
-        <div className="grid-3">
-          <div className="input-group">
-            <label>Νέος επαγγελματίας</label>
-            <select value={state.newProYear} onChange={(e)=>set("newProYear", e.target.value)}>
-              <option value="none">Όχι</option>
-              <option value="1">1ο έτος</option>
-              <option value="2">2ο έτος</option>
-              <option value="3">3ο έτος</option>
-              <option value="4">4ο έτος</option>
-              <option value="5">5ο έτος</option>
-            </select>
-          </div>
-
-          <MultiSelectDropdown
-            label="Λοιπές μειώσεις (-50%)"
-            options={REDUCTION_OPTIONS}
-            values={state.specialReductions}
-            onChange={(vals)=>set("specialReductions", vals)}
-          />
-        </div>
+        <MultiSelectDropdown
+          label="Ειδικές μειώσεις (-50%)"
+          options={REDUCTION_OPTIONS}
+          values={state.specialReductions}
+          onChange={(vals)=>set("specialReductions", vals)}
+        />
 
         <h2 style={{marginTop: '20px'}}>Άλλα Εισοδήματα</h2>
         <div className="grid-3">
