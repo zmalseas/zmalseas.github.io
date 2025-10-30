@@ -27,7 +27,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
   ?>
 
   <style>
-    .hero-animated {
+    /* Hero Section - Matching misthodosia.php */
       height: 170px;
       background: #000;
       color: #f6f8fb;
@@ -155,190 +155,20 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
       }
     }
 
-    /* Page content */
-    .page-header {
-      padding: 48px 0 32px;
-      background: #f3f6f9;
-    }
-
-    .page-title-wrapper {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 2rem;
-      align-items: start;
-      margin-bottom: 2rem;
-    }
-
-    .page-title-wrapper h1 {
-      font-size: clamp(2rem, 4vw, 2.6rem);
-      margin: 0 0 0.5rem;
-      color: #111827;
-    }
-
-    .page-title-wrapper .intro-text {
-      color: #5e6a75;
-      font-size: 1.05rem;
-      line-height: 1.6;
-      margin: 0;
-    }
-
-    .highlight-box {
-      background: white;
-      border-left: 4px solid var(--brand);
-      padding: 1.25rem 1.5rem;
-      border-radius: 0 12px 12px 0;
-      box-shadow: 0 10px 25px rgba(22, 48, 68, 0.08);
-    }
-
-    .highlight-box strong {
-      display: block;
-      color: #111827;
-      margin-bottom: 0.5rem;
-    }
-
-    .highlight-box p {
-      margin: 0;
-      font-size: 0.93rem;
-      color: #5e6a75;
-      line-height: 1.5;
-    }
-
-    .section {
-      padding: 48px 0;
-    }
-
-    .section:nth-child(even) {
-      background: white;
-    }
-
-    .section-title {
-      font-size: clamp(1.5rem, 3vw, 1.8rem);
-      margin: 0 0 1rem;
-      color: #111827;
-    }
-
-    .section-intro {
-      color: #5e6a75;
-      max-width: 900px;
-      margin-bottom: 2rem;
-      line-height: 1.6;
-    }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .service-card {
-      background: white;
-      border-radius: 14px;
-      padding: 1.5rem 1.75rem;
-      box-shadow: 0 10px 25px rgba(22, 48, 68, 0.08);
-      border: 1px solid #e5e7eb;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .section:nth-child(even) .service-card {
-      background: #f9fafb;
-    }
-
-    .service-pill {
-      background: rgba(12, 111, 191, 0.08);
-      color: #111827;
-      display: inline-block;
-      padding: 0.35rem 0.9rem;
-      border-radius: 999px;
-      font-size: 0.7rem;
-      letter-spacing: 0.04em;
+    /* Additional styling for service category */
+    .service-category {
+      font-size: 0.85rem;
+      color: var(--brand);
       text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
       font-weight: 600;
-      margin-bottom: 1rem;
-    }
-
-    .service-card-title {
-      font-weight: 600;
-      font-size: 1.1rem;
-      margin: 0 0 1rem;
-      display: flex;
-      gap: 0.75rem;
-      align-items: center;
-      color: #111827;
-    }
-
-    .service-chip {
-      width: 32px;
-      height: 32px;
-      background: var(--brand);
-      border-radius: 50%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 0.9rem;
-      font-weight: 700;
-      flex-shrink: 0;
-    }
-
-    .service-card ul {
-      padding-left: 1.25rem;
-      margin: 0;
-      flex: 1;
-    }
-
-    .service-card ul li {
-      margin-bottom: 0.5rem;
-      color: #374151;
-      line-height: 1.5;
     }
 
     .blue-check {
       color: var(--brand);
-      font-weight: 600;
-      margin-right: 0.25rem;
-    }
-
-    .footer-highlight {
-      background: white;
-      border-radius: 12px;
-      padding: 2rem 2.5rem;
-      border-left: 4px solid rgba(12, 111, 191, 0.3);
-      box-shadow: 0 10px 25px rgba(22, 48, 68, 0.08);
-      margin-top: 3rem;
-    }
-
-    .footer-highlight h3 {
-      margin: 0 0 1rem;
-      color: #111827;
-    }
-
-    .footer-highlight p {
-      color: #5e6a75;
-      line-height: 1.6;
-      margin: 0 0 1rem;
-    }
-
-    .footer-highlight p:last-child {
-      margin-bottom: 0;
-      font-weight: 600;
-      color: #111827;
-    }
-
-    @media (max-width: 768px) {
-      .page-title-wrapper {
-        grid-template-columns: 1fr;
-      }
-
-      .service-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .highlight-box {
-        max-width: 100%;
-      }
+      font-weight: 700;
+      margin-right: 0.5rem;
     }
   </style>
   
@@ -361,49 +191,27 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     </main>
   </div>
 
-  <!-- Main Content -->
-  <main class="main-content" style="margin-top:0;">
-    
-    <!-- Page Header -->
-    <section class="page-header">
-      <div class="container">
-        <div class="page-title-wrapper">
+  <main class="main-content">
+    <section class="company-section">
+      <div class="company-container">
+        <h2>Συμβουλευτικές Υπηρεσίες</h2>
+
+        <div class="split">
           <div>
-            <h1>Συμβουλευτικές Υπηρεσίες</h1>
-            <p class="intro-text">Στη Nerally Consulting βοηθάμε τις επιχειρήσεις να σχεδιάσουν τη στρατηγική τους, να οργανώσουν σωστά τα οικονομικά και διοικητικά τους συστήματα και να πάρουν αποφάσεις βασισμένες σε δεδομένα.</p>
+            <p>Στη Nerally Consulting βοηθάμε τις επιχειρήσεις να σχεδιάσουν τη στρατηγική τους, να οργανώσουν σωστά τα οικονομικά και διοικητικά τους συστήματα και να πάρουν αποφάσεις βασισμένες σε δεδομένα.</p>
+            <p>Η συμβουλευτική μας φιλοσοφία βασίζεται στη σύνδεση στρατηγικής, δεδομένων και καθημερινής λειτουργίας. Ξεκινάμε από την κατανόηση της επιχειρησιακής πραγματικότητας, εντοπίζουμε τα σημεία βελτίωσης και διαμορφώνουμε λύσεις που μπορούν να εφαρμοστούν άμεσα, είτε πρόκειται για ανάπτυξη, είτε για αναδιοργάνωση, είτε για έλεγχο κινδύνων.</p>
           </div>
-          <div class="highlight-box">
-            <strong>«Στρατηγική με εφαρμογή»</strong>
-            <p>Εργαζόμαστε δίπλα στη διοίκηση ώστε η στρατηγική να μετατρέπεται σε πράξη.</p>
-          </div>
+          <aside class="callout">
+            <div class="quote">«Στρατηγική με εφαρμογή»</div>
+            <p class="muted">Εργαζόμαστε δίπλα στη διοίκηση ώστε η στρατηγική να μετατρέπεται σε πράξη.</p>
+          </aside>
         </div>
-      </div>
-    </section>
 
-    <!-- Η προσέγγισή μας -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Η προσέγγισή μας</h2>
-        <p class="section-intro">
-          Η συμβουλευτική μας φιλοσοφία βασίζεται στη σύνδεση στρατηγικής, δεδομένων και καθημερινής λειτουργίας.
-          Ξεκινάμε από την κατανόηση της επιχειρησιακής πραγματικότητας, εντοπίζουμε τα σημεία βελτίωσης και
-          διαμορφώνουμε λύσεις που μπορούν να εφαρμοστούν άμεσα, είτε πρόκειται για ανάπτυξη, είτε για αναδιοργάνωση, είτε για έλεγχο κινδύνων.
-        </p>
-      </div>
-    </section>
-
-    <!-- Τι προσφέρουμε -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Τι προσφέρουμε</h2>
-        
-        <div class="service-grid">
-          <article class="service-card">
-            <div class="service-pill">Επιχειρηματικός & Χρηματοοικονομικός Σχεδιασμός</div>
-            <div class="service-card-title">
-              <div class="service-chip">1</div>
-              Επιχειρηματικά & Στρατηγικά Πλάνα
-            </div>
+        <h3>Τι προσφέρουμε</h3>
+        <div class="section-grid">
+          <div class="service-box">
+            <h4>Επιχειρηματικά & Στρατηγικά Πλάνα</h4>
+            <p class="service-category">Επιχειρηματικός & Χρηματοοικονομικός Σχεδιασμός</p>
             <ul>
               <li><span class="blue-check">✓</span> Business Plans για επενδύσεις ή χρηματοδότηση</li>
               <li><span class="blue-check">✓</span> Χρηματοοικονομική και λειτουργική αναδιάρθρωση</li>
@@ -411,14 +219,11 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
               <li><span class="blue-check">✓</span> Μελέτες βιωσιμότητας και σκοπιμότητας</li>
               <li><span class="blue-check">✓</span> Προβλέψεις ταμειακών ροών</li>
             </ul>
-          </article>
+          </div>
 
-          <article class="service-card">
-            <div class="service-pill">Υποστήριξη Συναλλαγών</div>
-            <div class="service-card-title">
-              <div class="service-chip">2</div>
-              M&A, αποτιμήσεις και due diligence
-            </div>
+          <div class="service-box">
+            <h4>M&A, αποτιμήσεις και due diligence</h4>
+            <p class="service-category">Υποστήριξη Συναλλαγών</p>
             <ul>
               <li><span class="blue-check">✓</span> Αποτιμήσεις εταιρειών και περιουσιακών στοιχείων</li>
               <li><span class="blue-check">✓</span> Υποστήριξη εξαγορών και συγχωνεύσεων</li>
@@ -426,14 +231,11 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
               <li><span class="blue-check">✓</span> Οικονομικό και επιχειρησιακό due diligence</li>
               <li><span class="blue-check">✓</span> Διαπραγματευτική υποστήριξη με επενδυτές</li>
             </ul>
-          </article>
+          </div>
 
-          <article class="service-card">
-            <div class="service-pill">Εσωτερικός Έλεγχος & Διακυβέρνηση</div>
-            <div class="service-card-title">
-              <div class="service-chip">3</div>
-              Έλεγχος, πολιτικές και συμμόρφωση
-            </div>
+          <div class="service-box">
+            <h4>Έλεγχος, πολιτικές και συμμόρφωση</h4>
+            <p class="service-category">Εσωτερικός Έλεγχος & Διακυβέρνηση</p>
             <ul>
               <li><span class="blue-check">✓</span> Σχεδιασμός συστήματος εσωτερικού ελέγχου</li>
               <li><span class="blue-check">✓</span> Risk assessment και προτάσεις βελτίωσης</li>
@@ -441,55 +243,39 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
               <li><span class="blue-check">✓</span> Corporate Governance health check</li>
               <li><span class="blue-check">✓</span> Κανονισμοί – διαδικασίες – reporting</li>
             </ul>
-          </article>
+          </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Οργάνωση & Επίβλεψη Εσωτερικού Λογιστηρίου -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Οργάνωση & Επίβλεψη Εσωτερικού Λογιστηρίου</h2>
-        
-        <div class="service-grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
-          <article class="service-card">
-            <div class="service-card-title">
-              <div class="service-chip">4</div>
-              Αναδιοργάνωση λογιστικής λειτουργίας
-            </div>
+        <h3 style="margin-top: 3rem;">Οργάνωση & Επίβλεψη Εσωτερικού Λογιστηρίου</h3>
+        <div class="section-grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
+          <div class="service-box">
+            <h4>Αναδιοργάνωση λογιστικής λειτουργίας</h4>
             <ul>
               <li><span class="blue-check">✓</span> Χαρτογράφηση υφιστάμενων ροών και ρόλων</li>
               <li><span class="blue-check">✓</span> Καθορισμός αρμοδιοτήτων και εγκρίσεων</li>
               <li><span class="blue-check">✓</span> Διασύνδεση με εμπορικό / ERP / myDATA</li>
               <li><span class="blue-check">✓</span> Πρότυπες φόρμες και οδηγίες εργασίας</li>
             </ul>
-          </article>
+          </div>
 
-          <article class="service-card">
-            <div class="service-card-title">
-              <div class="service-chip">5</div>
-              Επόπτευση & περιοδικός έλεγχος
-            </div>
+          <div class="service-box">
+            <h4>Επόπτευση & περιοδικός έλεγχος</h4>
             <ul>
               <li><span class="blue-check">✓</span> Εβδομαδιαία ή μηνιαία εποπτεία κινήσεων</li>
               <li><span class="blue-check">✓</span> Έλεγχος συμφωνιών, υποχρεώσεων και προθεσμιών</li>
               <li><span class="blue-check">✓</span> Δείκτες παρακολούθησης κόστους και ρευστότητας</li>
               <li><span class="blue-check">✓</span> Εκπαίδευση προσωπικού λογιστηρίου</li>
             </ul>
-          </article>
+          </div>
         </div>
 
-        <div class="footer-highlight">
-          <h3>Το όραμά μας</h3>
-          <p>
-            Να μετατρέπουμε τη συμβουλευτική από μία αποσπασματική υπηρεσία σε έναν σταθερό μηχανισμό υποστήριξης της διοίκησης.
-            Η αξία δεν βρίσκεται μόνο στο σχέδιο, αλλά στην υλοποίηση και στη συνεχή παρακολούθηση.
-          </p>
-          <p>Η ομάδα της Nerally Consulting</p>
+        <div class="quote-box" style="margin-top: 3rem;">
+          <p class="big-quote">«Να μετατρέπουμε τη συμβουλευτική από μία αποσπασματική υπηρεσία σε έναν σταθερό μηχανισμό υποστήριξης της διοίκησης. Η αξία δεν βρίσκεται μόνο στο σχέδιο, αλλά στην υλοποίηση και στη συνεχή παρακολούθηση.»</p>
+          <p class="attribution">— Η ομάδα της Nerally Consulting</p>
         </div>
+
       </div>
     </section>
-
   </main>
 
   <?php include $_SERVER['DOCUMENT_ROOT'].'/partials/footer.php'; ?>
