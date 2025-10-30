@@ -90,7 +90,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     .rent-left { background:#f4f6fb; padding:40px 32px; overflow:auto; animation: contentFade 0.5s ease-out 0.06s both; }
     .rent-right { 
       padding:40px 24px; display:flex; align-items:center; justify-content:center;
-      background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url('../images/tekmarto.webp');
+      background: linear-gradient(rgba(0,0,0,.70), rgba(0,0,0,.70)), url('../images/tekmarto.webp');
       background-size: cover; background-position: center; 
     }
     .rent-left h1 { color: #000; font-size: 28px; margin: 0 0 20px; text-align: center; }
@@ -142,25 +142,25 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
     .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
     .toggle { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
-    .toggle-btn { position: relative; display: inline-flex; height: 24px; width: 44px; items-center; border-radius: 9999px; cursor: pointer; transition: background-color 0.3s; }
+    .toggle-btn { position: relative; display: inline-flex; align-items: center; height: 24px; width: 44px; border-radius: 9999px; cursor: pointer; transition: background-color 0.3s; flex-shrink: 0; }
     .toggle-btn.active { background-color: #6366f1; }
     .toggle-btn.inactive { background-color: #d1d5db; }
-    .toggle-btn span { display: inline-block; height: 16px; width: 16px; transform: translateX(4px); border-radius: 9999px; background-color: white; transition: transform 0.3s; }
-    .toggle-btn.active span { transform: translateX(24px); }
-    .toggle label { font-size: 14px; color: #374151; }
+    .toggle-btn span { display: inline-block; height: 16px; width: 16px; transform: translateX(4px); border-radius: 9999px; background-color: white; transition: transform 0.3s; position: absolute; top: 50%; margin-top: -8px; }
+    .toggle-btn.active span { transform: translateX(24px) translateY(-50%); margin-top: 0; top: 50%; }
+    .toggle label { font-size: 14px; color: #374151; cursor: pointer; user-select: none; }
     .checkbox { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
     .checkbox input[type="checkbox"] { width: 16px; height: 16px; }
     .checkbox label { font-size: 14px; color: #111827; font-weight: 500; }
     .result-card { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 16px; padding: 20px; }
     .result-card h2 { color: white; margin-bottom: 16px; }
     .stat { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; border-radius: 12px; margin-bottom: 8px; }
-    .stat.highlight { background-color: white; color: #1f2937; }
+    .stat.highlight { background-color: white; color: #1f2937; font-size: 18px; font-weight: 700; }
     .stat.normal { background-color: rgba(255,255,255,0.1); color: white; }
     .stat-label { font-size: 14px; opacity: 0.9; }
     .stat-value { font-weight: 600; font-size: 16px; }
-    .breakdown { background-color: rgba(255,255,255,0.1); border-radius: 12px; padding: 16px; margin-top: 16px; }
-    .breakdown p { font-size: 13px; margin-bottom: 4px; }
-    .breakdown ul { list-style-type: disc; padding-left: 20px; font-size: 13px; }
+    .breakdown { background-color: white; color: #1f2937; border-radius: 12px; padding: 16px; margin-top: 16px; }
+    .breakdown p { font-size: 13px; margin-bottom: 4px; color: #1f2937; font-weight: 600; }
+    .breakdown ul { list-style-type: disc; padding-left: 20px; font-size: 13px; color: #374151; }
     .breakdown ul li { margin-bottom: 4px; }
     .btn-primary { padding: 10px 16px; background-color: #6366f1; color: white; border-radius: 20px; border: none; cursor: pointer; font-weight: 600; box-shadow: 0 2px 8px rgba(99,102,241,0.3); }
     .btn-primary:hover { background-color: #4f46e5; }
@@ -169,7 +169,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     .multi-select { position: relative; }
     .multi-select-btn { width: 100%; text-align: left; border-radius: 12px; border: 1px solid #d1d5db; padding: 10px 12px; background: white; cursor: pointer; font-size: 14px; }
     .multi-select-dropdown { position: absolute; z-index: 20; margin-top: 4px; width: 100%; background: white; border: 1px solid #e5e7eb; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.12); padding: 8px; max-height: 240px; overflow-y: auto; }
-    .multi-select-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; border-radius: 8px; cursor: pointer; font-size: 14px; }
+    .multi-select-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; border-radius: 8px; cursor: pointer; font-size: 14px; color: #1f2937; }
     .multi-select-item:hover { background-color: #f9fafb; }
     .multi-select-item.selected { background-color: #f3f4f6; }
   </style>
@@ -181,12 +181,6 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
 <div class="rent-wrap">
   <div class="rent-left">
     <h1>Υπολογισμός Τεκμαρτού Εισοδήματος 2025</h1>
-    
-    <div class="quote">
-      <strong>Χρειάζεστε βοήθεια με το τεκμαρτό εισόδημα;</strong><br />
-      Οι σύμβουλοι της Nerally είναι εδώ για να σας καθοδηγήσουν σε όλα τα φορολογικά σας ζητήματα.
-      <a href="/epikoinonia/contact.php" class="quote-cta">Επικοινωνήστε μαζί μας</a>
-    </div>
 
     <h2>Τι είναι το Τεκμαρτό Εισόδημα;</h2>
     <p>
@@ -203,39 +197,55 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     </ul>
 
     <h3>Μειώσεις Τεκμαρτού</h3>
-    <ul>
-      <li><strong>Νέος επαγγελματίας (1ο-3ο έτος):</strong> 100% μείωση</li>
-      <li><strong>Νέος επαγγελματίας (4ο έτος):</strong> Μείωση 2/3</li>
-      <li><strong>Νέος επαγγελματίας (5ο έτος):</strong> Μείωση 1/3</li>
-      <li><strong>Ειδικές κατηγορίες:</strong> 50% μείωση (πολύτεκνοι, αναπηρία ≥67%, μονογονεϊκή οικογένεια, κ.ά.)</li>
-    </ul>
-
-    <h3>Εξαιρέσεις</h3>
-    <p>Δεν εφαρμόζεται τεκμαρτό εισόδημα σε:</p>
-    <ul>
-      <li>Αγροτικές επιχειρηματικές δραστηριότητες</li>
-      <li>Ελεύθερους επαγγελματίες με έως 2 συμβάσεις</li>
-      <li>Ασφαλιστικούς διαμεσολαβητές (έως 2)</li>
-      <li>Άτομα με αναπηρία ≥80%</li>
-      <li>Καφενεία σε οικισμούς <500 κατοίκων</li>
-    </ul>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 20px;">
+      <div>
+        <h4 style="color: var(--brand); font-size: 18px; font-weight: 700; margin: 0 0 12px 0;">Νέος Επαγγελματίας</h4>
+        <ul style="margin-top: 0;">
+          <li><strong>1ο-3ο έτος λειτουργίας:</strong> 100% μείωση (τεκμαρτό = 0€)</li>
+          <li><strong>4ο έτος λειτουργίας:</strong> Μείωση 2/3 (66,67%)</li>
+          <li><strong>5ο έτος λειτουργίας:</strong> Μείωση 1/3 (33,33%)</li>
+          <li><strong>6ο έτος και μετά:</strong> Χωρίς μείωση νέου επαγγελματία</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color: var(--brand); font-size: 18px; font-weight: 700; margin: 0 0 12px 0;">Ειδικές κατηγορίες (50% μείωση)</h4>
+        <ul style="margin-top: 0;">
+          <li>Πολύτεκνοι ή ορφανό πολύτεκνης οικογένειας</li>
+          <li>Άτομα με αναπηρία ≥67%</li>
+          <li>Μονογονεϊκές οικογένειες</li>
+          <li>Γονέας με τέκνο αναπηρίας ≥67%</li>
+          <li>Ιδιοκτήτες ΤΑΞΙ με μερίδιο <25%</li>
+          <li>Χωριά <500 κατοίκων</li>
+          <li>Κοινότητες <1.500 κατοίκων</li>
+          <li>Νησιά <3.100 κατοίκων</li>
+        </ul>
+      </div>
+    </div>
 
     <table class="modern-table">
       <thead>
         <tr>
           <th>Έτη Λειτουργίας</th>
+          <th>Μείωση Νέου</th>
           <th>Προσαύξηση</th>
-          <th>Βάση (830€ × 14)</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>1 – 3</td><td>0,00€</td><td>11.620,00 €</td></tr>
-        <tr><td>4 – 6</td><td>0,00€</td><td>11.620,00 €</td></tr>
-        <tr><td>7 – 9</td><td>1.162,00€</td><td>12.782,00 €</td></tr>
-        <tr><td>10 – 12</td><td>1.278,20€</td><td>14.060,20 €</td></tr>
-        <tr><td>>13</td><td>1.406,02€</td><td>15.466,22 €</td></tr>
+        <tr><td>1 – 3</td><td>-100%</td><td>0,00€</td></tr>
+        <tr><td>4</td><td>-66,67%</td><td>0,00€</td></tr>
+        <tr><td>5</td><td>-33,33%</td><td>0,00€</td></tr>
+        <tr><td>6</td><td>-</td><td>0,00€</td></tr>
+        <tr><td>7 – 9</td><td>-</td><td>1.162,00€</td></tr>
+        <tr><td>10 – 12</td><td>-</td><td>1.278,20€</td></tr>
+        <tr><td>>13</td><td>-</td><td>1.406,02€</td></tr>
       </tbody>
     </table>
+
+    <div class="quote">
+      <strong>Χρειάζεστε βοήθεια με το τεκμαρτό εισόδημα;</strong><br />
+      Οι σύμβουλοι της Nerally είναι εδώ για να σας καθοδηγήσουν σε όλα τα φορολογικά σας ζητήματα.
+      <a href="/epikoinonia/contact.php" class="quote-cta">Επικοινωνήστε μαζί μας</a>
+    </div>
   </div>
 
   <div class="rent-right">
@@ -686,19 +696,11 @@ function App() {
     highestGrossSalary: 0,
     turnover: 0,
     selectedKAD: "",
-    newProYear: "none",
     specialReductions: [],
     otherIncome: {
       employment: 0,
       pension: 0,
       agricultural: 0,
-    },
-    exceptions: {
-      agriculturalBusiness: false,
-      freelancingUpTo2Contracts: false,
-      insuranceBrokerUpTo2: false,
-      disability80: false,
-      cafeUnder500: false,
     },
     hasPartialYear: false,
     startDate: "",
@@ -715,30 +717,15 @@ function App() {
   const avgKAD = selectedKADData ? selectedKADData.avgRevenue : 0;
 
   const result = useMemo(() => {
-    const ex = state.exceptions;
-    const isExempt =
-      ex.agriculturalBusiness ||
-      ex.freelancingUpTo2Contracts ||
-      ex.insuranceBrokerUpTo2 ||
-      ex.disability80 ||
-      ex.cafeUnder500;
-
     const breakdown = [];
-
-    if (isExempt) {
-      return {
-        exempt: true,
-        breakdown: [
-          "Εξαίρεση από τον προσδιορισμό τεκμαρτού εισοδήματος βάσει επιλεγμένης κατηγορίας.",
-        ],
-      };
-    }
 
     const baseAnnual = 14 * 830;
     let base = baseAnnual;
 
     const yearsGroup = state.yearsInOperationGroup;
     let yearsAdd = 0;
+    
+    // Προσαυξήσεις ανάλογα με τα έτη (μόνο για 7+)
     if (yearsGroup === "7-9") yearsAdd = 1162;
     else if (yearsGroup === "10-12") yearsAdd = 1278.2;
     else if (yearsGroup === ">13") yearsAdd = 1406.02;
@@ -754,7 +741,7 @@ function App() {
       const days = Math.ceil(millis / (1000 * 60 * 60 * 24)) + 1;
       const ratio = Math.min(1, Math.max(0, days / totalDays));
       base = base * ratio;
-      breakdown.push(`Αναλογία έτους: ${Math.round(ratio * 100)}%`);
+      breakdown.push(`Αναλογία έτους: ${Math.round(ratio * 100)}% (${days}/${totalDays} ημέρες)`);
     }
 
     breakdown.push(`Βάση: ${CURRENCY.format(clampMoney(baseAnnual))}`);
@@ -788,24 +775,20 @@ function App() {
       base = 50000;
     }
 
+    // Μειώσεις νέου επαγγελματία (ενσωματωμένες στα έτη λειτουργίας)
     let afterNewPro = base;
-    switch (state.newProYear) {
-      case "1":
-      case "2":
-      case "3":
-        breakdown.push("Νέος επαγγελματίας (1ο–3ο): -100%");
-        afterNewPro = 0;
-        break;
-      case "4":
-        breakdown.push("Νέος επαγγελματίας (4ο): -2/3");
-        afterNewPro = base * (1 / 3);
-        break;
-      case "5":
-        breakdown.push("Νέος επαγγελματίας (5ο): -1/3");
-        afterNewPro = base * (2 / 3);
-        break;
-      default:
-        break;
+    if (yearsGroup === "1-3") {
+      breakdown.push("Νέος επαγγελματίας (1ο–3ο έτος): -100%");
+      afterNewPro = 0;
+    } else if (yearsGroup === "4") {
+      breakdown.push("Νέος επαγγελματίας (4ο έτος): -2/3");
+      afterNewPro = base * (1 / 3);
+    } else if (yearsGroup === "5") {
+      breakdown.push("Νέος επαγγελματίας (5ο έτος): -1/3");
+      afterNewPro = base * (2 / 3);
+    } else {
+      // 6 έτη και άνω: καμία μείωση νέου επαγγελματία
+      afterNewPro = base;
     }
 
     const hasAny50 = state.specialReductions.length > 0;
@@ -823,7 +806,6 @@ function App() {
     finalImputed = Math.min(50000, clampMoney(finalImputed));
 
     return {
-      exempt: false,
       breakdown,
       base: clampMoney(base),
       afterNewPro: clampMoney(afterNewPro),
@@ -840,11 +822,13 @@ function App() {
         <div className="input-group">
           <label>Έτη λειτουργίας</label>
           <select value={state.yearsInOperationGroup} onChange={(e)=>set("yearsInOperationGroup", e.target.value)}>
-            <option value="1-3">1–3</option>
-            <option value="4-6">4–6</option>
-            <option value="7-9">7–9</option>
-            <option value="10-12">10–12</option>
-            <option value=">13">&gt;13</option>
+            <option value="1-3">1–3 έτη (Νέος επαγγελματίας: -100%)</option>
+            <option value="4">4ο έτος (Νέος επαγγελματίας: -66,67%)</option>
+            <option value="5">5ο έτος (Νέος επαγγελματίας: -33,33%)</option>
+            <option value="6">6 έτη (Χωρίς μείωση)</option>
+            <option value="7-9">7–9 έτη</option>
+            <option value="10-12">10–12 έτη</option>
+            <option value=">13">&gt;13 έτη</option>
           </select>
         </div>
 
@@ -958,26 +942,12 @@ function App() {
 
       <div className="card">
         <h2>Μειώσεις</h2>
-        <div className="grid-3">
-          <div className="input-group">
-            <label>Νέος επαγγελματίας</label>
-            <select value={state.newProYear} onChange={(e)=>set("newProYear", e.target.value)}>
-              <option value="none">Όχι</option>
-              <option value="1">1ο έτος</option>
-              <option value="2">2ο έτος</option>
-              <option value="3">3ο έτος</option>
-              <option value="4">4ο έτος</option>
-              <option value="5">5ο έτος</option>
-            </select>
-          </div>
-
-          <MultiSelectDropdown
-            label="Λοιπές μειώσεις (-50%)"
-            options={REDUCTION_OPTIONS}
-            values={state.specialReductions}
-            onChange={(vals)=>set("specialReductions", vals)}
-          />
-        </div>
+        <MultiSelectDropdown
+          label="Ειδικές μειώσεις (-50%)"
+          options={REDUCTION_OPTIONS}
+          values={state.specialReductions}
+          onChange={(vals)=>set("specialReductions", vals)}
+        />
 
         <h2 style={{marginTop: '20px'}}>Άλλα Εισοδήματα</h2>
         <div className="grid-3">
@@ -1017,70 +987,22 @@ function App() {
         </div>
       </div>
 
-      <div className="card">
-        <h2>Εξαιρέσεις</h2>
-        <div className="checkbox">
-          <input type="checkbox" checked={state.exceptions.agriculturalBusiness} onChange={(e)=>setDeep("exceptions","agriculturalBusiness", e.target.checked)} />
-          <label style={{color: '#111827', fontWeight: 500}}>Αγροτική επιχειρηματική δραστηριότητα</label>
-        </div>
-        <div className="checkbox">
-          <input type="checkbox" checked={state.exceptions.freelancingUpTo2Contracts} onChange={(e)=>setDeep("exceptions","freelancingUpTo2Contracts", e.target.checked)} />
-          <label style={{color: '#111827', fontWeight: 500}}>Μπλοκάκι έως 2 συμβάσεις</label>
-        </div>
-        <div className="checkbox">
-          <input type="checkbox" checked={state.exceptions.insuranceBrokerUpTo2} onChange={(e)=>setDeep("exceptions","insuranceBrokerUpTo2", e.target.checked)} />
-          <label style={{color: '#111827', fontWeight: 500}}>Ασφαλιστικός διαμεσολαβητής (έως 2)</label>
-        </div>
-        <div className="checkbox">
-          <input type="checkbox" checked={state.exceptions.disability80} onChange={(e)=>setDeep("exceptions","disability80", e.target.checked)} />
-          <label style={{color: '#111827', fontWeight: 500}}>Αναπηρία ≥ 80%</label>
-        </div>
-        <div className="checkbox">
-          <input type="checkbox" checked={state.exceptions.cafeUnder500} onChange={(e)=>setDeep("exceptions","cafeUnder500", e.target.checked)} />
-          <label style={{color: '#111827', fontWeight: 500}}>Καφενείο σε οικισμό &lt;500</label>
-        </div>
-      </div>
-
       <div className="result-card">
         <h2>Αποτέλεσμα</h2>
-        {result.exempt ? (
-          <div>
-            <p style={{fontSize: '16px', marginBottom: '12px'}}>Εξαιρείται από τον προσδιορισμό τεκμαρτού εισοδήματος.</p>
-          </div>
-        ) : (
-          <div>
-            <div className="stat highlight">
+        <div>
+          <div className="stat highlight">
               <span className="stat-label">Τελικό Τεκμαρτό Εισόδημα</span>
               <span className="stat-value">{CURRENCY.format(result.finalImputed)}</span>
             </div>
-            <div className="stat normal">
-              <span className="stat-label">Βάση (μετά cap 50.000€)</span>
-              <span className="stat-value">{CURRENCY.format(result.base)}</span>
-            </div>
-            <div className="stat normal">
-              <span className="stat-label">Μετά νέο επαγγελματία</span>
-              <span className="stat-value">{CURRENCY.format(result.afterNewPro)}</span>
-            </div>
-            {state.specialReductions.length > 0 && (
-              <div className="stat normal">
-                <span className="stat-label">Μετά λοιπές μειώσεις -50%</span>
-                <span className="stat-value">{CURRENCY.format(result.afterSpecial)}</span>
-              </div>
-            )}
-            <div className="stat normal">
-              <span className="stat-label">Κάλυψη από άλλα</span>
-              <span className="stat-value">-{CURRENCY.format(result.cover)}</span>
-            </div>
 
             <div className="breakdown">
-              <p><strong>Ανάλυση Βημάτων:</strong></p>
+              <p>Ανάλυση Βημάτων:</p>
               <ul>
                 {result.breakdown.map((b,i)=> (<li key={i}>{b}</li>))}
               </ul>
             </div>
           </div>
-        )}
-      </div>
+        </div>
     </>
   );
 }
