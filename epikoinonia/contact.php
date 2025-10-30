@@ -304,9 +304,17 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
       text-align: center;
       font-size: 11px;
       color: #9ca3af;
-      margin-top: 14px;
+      margin-top: 12px;
       line-height: 1.4;
-      max-width: 100%;
+    }
+    
+    .contact-form .recaptcha-info a {
+      color: #9ca3af;
+      text-decoration: underline;
+    }
+    
+    .contact-form .recaptcha-info a:hover {
+      color: #6b7280;
     }
     
     /* Fix contact list alignment */
@@ -337,16 +345,6 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     }
     .contact-li a:hover {
       text-decoration: underline;
-    }
-    
-    /* Override recaptcha-info to match careers style */
-    .contact-form .recaptcha-info a {
-      color: #9ca3af;
-      text-decoration: underline;
-    }
-    
-    .contact-form .recaptcha-info a:hover {
-      color: #6b7280;
     }
 
   </style>
