@@ -60,7 +60,7 @@ $nonce_attr = isset($csp_nonce) ? ' nonce="'.$csp_nonce.'"' : '';
               <a href="/efarmoges/rent-tax-calculator">Φόρος Ενοικίων <span class="sm-arrow">›</span></a>
               <a href="/efarmoges/income-tax-calculator">Φόρος Εισοδήματος <span class="sm-arrow">›</span></a>
               <a href="/efarmoges/vat-calculator">Υπολογισμός ΦΠΑ <span class="sm-arrow">›</span></a>
-              <a href="/efarmoges/tekmarto-eisodima-calculator">Τεκμαρτό Εισόδημα <span class="sm-arrow">›</span></a>
+              <a href="/efarmoges/tekmarto-eisodima-calculator">Τεκμαρτό Εισόδημα Ατομικής <span class="sm-arrow">›</span></a>
             </div>
           </li>
           
@@ -122,7 +122,7 @@ $nonce_attr = isset($csp_nonce) ? ' nonce="'.$csp_nonce.'"' : '';
           <a href="/efarmoges/rent-tax-calculator">Φόρος Ενοικίων</a>
           <a href="/efarmoges/income-tax-calculator">Φόρος Εισοδήματος</a>
           <a href="/efarmoges/vat-calculator">Υπολογισμός ΦΠΑ</a>
-          <a href="/efarmoges/tekmarto-eisodima-calculator">Τεκμαρτό Εισόδημα</a>
+          <a href="/efarmoges/tekmarto-eisodima-calculator">Τεκμαρτό Εισόδημα Ατομικής</a>
         </div>
       </div>
       
