@@ -102,6 +102,101 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
 
     .muted{color:#5b6b7b}
 
+    /* Additional sections styling */
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin: 32px 0;
+    }
+    
+    .section-box {
+      background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
+      border: 1px solid #e6ecff;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.04);
+    }
+    
+    .section-box h4 {
+      margin: 0 0 16px;
+      font-size: 19px;
+      color: var(--brand);
+      font-weight: 700;
+    }
+    
+    .section-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .section-box li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+      color: #111827;
+      line-height: 1.6;
+    }
+    
+    .section-box li:last-child {
+      margin-bottom: 0;
+    }
+    
+    .blue-check {
+      flex: 0 0 20px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--brand);
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    
+    .distinction-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin: 24px 0;
+    }
+    
+    .distinction-box {
+      background: white;
+      border: 2px solid #e6ecff;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: left;
+    }
+    
+    .distinction-box h4 {
+      margin: 0 0 12px;
+      font-size: 17px;
+      color: var(--brand);
+      font-weight: 700;
+    }
+    
+    .distinction-box p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #4a5568;
+    }
+    
+    @media(max-width:768px) {
+      .section-grid {
+        grid-template-columns: 1fr;
+      }
+      .distinction-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* Hero Section - Clean Animation Style */
     .hero-animated {
       height: 170px;
@@ -320,7 +415,125 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
           </div>
         </div>
 
-        <div class="callout" style="margin-top:40px;">
+        <h3 style="margin-top:48px;">Αναλυτικές Υπηρεσίες</h3>
+        
+        <div class="section-grid">
+          <div class="section-box">
+            <h4>Οργάνωση – Εκτίμηση μισθοδοσίας</h4>
+            <ul>
+              <li>
+                <span class="blue-check">✓</span>
+                <span>Καταγραφή προσωπικού, συμβάσεων & στοιχείων αμοιβών.</span>
+              </li>
+              <li>
+                <span class="blue-check">✓</span>
+                <span>Έλεγχος ορθής εφαρμογής συλλογικής σύμβασης.</span>
+              </li>
+              <li>
+                <span class="blue-check">✓</span>
+                <span>Σχεδιασμός πολιτικών υπερωριών, βαρδιών, bonus, παροχών.</span>
+              </li>
+              <li>
+                <span class="blue-check">✓</span>
+                <span>Διασύνδεση με λογιστήριο & οικονομική διεύθυνση.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="section-box">
+            <h4>Μηνιαία/περιοδική μισθοδοσία</h4>
+            <ul>
+              <li>
+                <span class="blue-check">✓</span>
+                <span>Υπολογισμός μισθών, ημερομισθίων, υπερωριών & επιδομάτων.</span>
+              </li>
+              <li>
+                <span class="blue-check">✓</span>
+                <span>Υποβολή ΑΠΔ & λοιπών αρχείων σε ΕΦΚΑ/Εργάνη.</span>
+              </li>
+              <li>
+                <span class="blue-check">✓</span>
+                <span>Έκδοση αναλυτικών αποδείξεων & αρχείου τραπεζών.</span>
+              </li>
+              <li>
+                <span class="blue-check">✓</span>
+                <span>Διαχείριση αδειών, ασθενειών, επιδομάτων μητρότητας.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="section-box">
+            <h4>Μεταβολές προσωπικού</h4>
+            <ul>
+              <li>
+                <span class="blue-check">✓</span>
+                <span>Προσλήψεις: απαιτήσεις, στοιχεία & αποζημιώσεις.</span>
+              </li>
+              <li>
+                <span class="blue-check">✓</span>
+                <span>Αλλαγές ωραρίων, εξαιρέσεων, αποδοχών.</span>
+              </li>
+              <li>
+                <span class="blue-check">✓</span>
+                <span>Υποβολές στο ΕΡΓΑΝΗ (έντυπα Ε3, Ε4, κ.λπ.).</span>
+              </li>
+              <li>
+                <span class="blue-check">✓</span>
+                <span>Ενημέρωση για προγράμματα/επιδότηση εργασίας.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 style="margin-top:48px;">Reporting & συμμόρφωση</h3>
+        <div class="services">
+          <div class="service">
+            <span class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <p><strong>Μισθολογικά reports</strong> για διοίκηση, ορκωτούς, τράπεζες.</p>
+          </div>
+          <div class="service">
+            <span class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <p><strong>Κοστολόγηση προσωπικού</strong> ανά τμήμα/έργο.</p>
+          </div>
+          <div class="service">
+            <span class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <p><strong>Προετοιμασία φακέλων</strong> για ελέγχους ΣΕΠΕ/ΕΦΚΑ.</p>
+          </div>
+          <div class="service">
+            <span class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <p><strong>Αρχειοθέτηση & ασφάλεια</strong> προσωπικών δεδομένων (GDPR).</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top:48px;">Πού διαφοροποιούμαστε;</h3>
+        <div class="distinction-grid">
+          <div class="distinction-box">
+            <h4>Προλαβαίνουμε, δεν «σβήνουμε φωτιές».</h4>
+            <p>Παρακολουθούμε καθημερινά τις προθεσμίες και τις αλλαγές, ώστε να μην εκπροσωπούμε σε κρίσεις – με ενιαία γνώμη επικοινωνίας.</p>
+          </div>
+          <div class="distinction-box">
+            <h4>Μιλάμε με τους ανθρώπους σας.</h4>
+            <p>Μπορούμε να απαντάμε απευθείας σε εργαζομένους/συνεταίρους για θέματα μισθού, αδειών ή κρατήσεων – με ενιαία γραμμή επικοινωνίας.</p>
+          </div>
+          <div class="distinction-box">
+            <h4>Διαφάνεια κόστους.</h4>
+            <p>Δίνουμε κάθε είδους του συνολικού μισθολογικού κόστους ανά μήνα και βοηθάμε στον προϋπολογισμό.</p>
+          </div>
+          <div class="distinction-box">
+            <h4>Τεχνολογία & αυτοματισμοί.</h4>
+            <p>Λειτουργούμε με ψηφιακή υποδομή, αποστολή αποδείξεων σε πλατφόρμα και διασύνδεση με τραπεζικό σύστημα.</p>
+          </div>
+        </div>
+
+        <div class="callout" style="margin-top:40px;")>
           <div class="quote">«Η συμμόρφωση είναι σταθερά εξασφαλισμένη — η αξία βρίσκεται στους ανθρώπους, στα καθαρά δεδομένα και στη συνέπεια που δημιουργεί εμπιστοσύνη.»</div>
           <p class="muted" style="margin:0;"><em>Η ομάδα της Nerally</em></p>
         </div>
