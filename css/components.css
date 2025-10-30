@@ -582,13 +582,12 @@ p{margin:0 0 12px 0;line-height:1.6;color:#222}
   border-radius: 8px;
   padding: 10px 12px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
 }
 
 .careers-check input[type="checkbox"] {
   margin: 0;
-  margin-top: 2px;
   flex-shrink: 0;
   width: 16px;
   height: 16px;
@@ -600,15 +599,16 @@ p{margin:0 0 12px 0;line-height:1.6;color:#222}
 }
 
 .careers-check .text-content {
-  color: #374151;
+  color: #1f2937;
   line-height: 1.5;
   flex: 1;
-  font-size: 13.5px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .careers-check .text-content a {
   color: var(--brand);
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: underline;
 }
 
