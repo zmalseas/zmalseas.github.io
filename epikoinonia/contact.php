@@ -236,13 +236,13 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     
     /* Careers-style checkboxes */
     .careers-check { 
-      background: transparent; 
-      border: none; 
-      border-radius: 0; 
-      padding: 8px 0; 
+      background: #f9fafb; 
+      border: 1px solid #e5e7eb; 
+      border-radius: 8px; 
+      padding: 10px 12px; 
       display: flex;
       align-items: flex-start;
-      gap: 8px;
+      gap: 10px;
     }
     .careers-check input[type="checkbox"] {
       margin: 0;
@@ -267,7 +267,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     }
     .form-checkboxes { 
       display: grid; 
-      gap: 8px; 
+      gap: 10px; 
       margin-bottom: 16px; 
     }
     
@@ -302,10 +302,11 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     
     .contact-form .recaptcha-info {
       text-align: center;
-      font-size: 11.5px;
+      font-size: 11px;
       color: #9ca3af;
       margin-top: 14px;
-      line-height: 1.5;
+      line-height: 1.4;
+      max-width: 100%;
     }
     
     /* Fix contact list alignment */
@@ -421,8 +422,8 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
           <!-- Right: Contact Form -->
           <div style="background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.06); padding: 24px 20px;">
             <form id="contactForm" class="contact-form" action="../contact-handler.php" method="POST">
-              <h3 style="text-align: center; font-size: 1.2rem; margin: 0 0 6px 0; color: #111827;">Φόρμα Επικοινωνίας</h3>
-              <p style="text-align: center; color: #6b7280; font-size: 13.5px; margin: 0 0 16px 0;">Συμπληρώστε τα στοιχεία σας και θα σας απαντήσουμε.</p>
+              <h3 style="text-align: center; font-size: 1.2rem; margin: 0 0 4px 0; color: #111827;">Φόρμα Επικοινωνίας</h3>
+              <p style="text-align: center; color: #6b7280; font-size: 13px; margin: 0 0 18px 0; line-height: 1.4;">Συμπληρώστε τα στοιχεία σας και θα σας απαντήσουμε.</p>
 
               <div class="form-group">
                 <label for="name">Ονοματεπώνυμο</label>
