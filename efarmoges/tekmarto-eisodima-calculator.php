@@ -210,16 +210,6 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
       <li><strong>Ειδικές κατηγορίες:</strong> 50% μείωση (πολύτεκνοι, αναπηρία ≥67%, μονογονεϊκή οικογένεια, κ.ά.)</li>
     </ul>
 
-    <h3>Εξαιρέσεις</h3>
-    <p>Δεν εφαρμόζεται τεκμαρτό εισόδημα σε:</p>
-    <ul>
-      <li>Αγροτικές επιχειρηματικές δραστηριότητες</li>
-      <li>Ελεύθερους επαγγελματίες με έως 2 συμβάσεις</li>
-      <li>Ασφαλιστικούς διαμεσολαβητές (έως 2)</li>
-      <li>Άτομα με αναπηρία ≥80%</li>
-      <li>Καφενεία σε οικισμούς <500 κατοίκων</li>
-    </ul>
-
     <table class="modern-table">
       <thead>
         <tr>
@@ -693,13 +683,6 @@ function App() {
       pension: 0,
       agricultural: 0,
     },
-    exceptions: {
-      agriculturalBusiness: false,
-      freelancingUpTo2Contracts: false,
-      insuranceBrokerUpTo2: false,
-      disability80: false,
-      cafeUnder500: false,
-    },
     hasPartialYear: false,
     startDate: "",
     endDate: "",
@@ -715,24 +698,7 @@ function App() {
   const avgKAD = selectedKADData ? selectedKADData.avgRevenue : 0;
 
   const result = useMemo(() => {
-    const ex = state.exceptions;
-    const isExempt =
-      ex.agriculturalBusiness ||
-      ex.freelancingUpTo2Contracts ||
-      ex.insuranceBrokerUpTo2 ||
-      ex.disability80 ||
-      ex.cafeUnder500;
-
     const breakdown = [];
-
-    if (isExempt) {
-      return {
-        exempt: true,
-        breakdown: [
-          "Εξαίρεση από τον προσδιορισμό τεκμαρτού εισοδήματος βάσει επιλεγμένης κατηγορίας.",
-        ],
-      };
-    }
 
     const baseAnnual = 14 * 830;
     let base = baseAnnual;
@@ -823,7 +789,6 @@ function App() {
     finalImputed = Math.min(50000, clampMoney(finalImputed));
 
     return {
-      exempt: false,
       breakdown,
       base: clampMoney(base),
       afterNewPro: clampMoney(afterNewPro),
@@ -1017,39 +982,10 @@ function App() {
         </div>
       </div>
 
-      <div className="card">
-        <h2>Εξαιρέσεις</h2>
-        <div className="checkbox">
-          <input type="checkbox" checked={state.exceptions.agriculturalBusiness} onChange={(e)=>setDeep("exceptions","agriculturalBusiness", e.target.checked)} />
-          <label style={{color: '#111827', fontWeight: 500}}>Αγροτική επιχειρηματική δραστηριότητα</label>
-        </div>
-        <div className="checkbox">
-          <input type="checkbox" checked={state.exceptions.freelancingUpTo2Contracts} onChange={(e)=>setDeep("exceptions","freelancingUpTo2Contracts", e.target.checked)} />
-          <label style={{color: '#111827', fontWeight: 500}}>Μπλοκάκι έως 2 συμβάσεις</label>
-        </div>
-        <div className="checkbox">
-          <input type="checkbox" checked={state.exceptions.insuranceBrokerUpTo2} onChange={(e)=>setDeep("exceptions","insuranceBrokerUpTo2", e.target.checked)} />
-          <label style={{color: '#111827', fontWeight: 500}}>Ασφαλιστικός διαμεσολαβητής (έως 2)</label>
-        </div>
-        <div className="checkbox">
-          <input type="checkbox" checked={state.exceptions.disability80} onChange={(e)=>setDeep("exceptions","disability80", e.target.checked)} />
-          <label style={{color: '#111827', fontWeight: 500}}>Αναπηρία ≥ 80%</label>
-        </div>
-        <div className="checkbox">
-          <input type="checkbox" checked={state.exceptions.cafeUnder500} onChange={(e)=>setDeep("exceptions","cafeUnder500", e.target.checked)} />
-          <label style={{color: '#111827', fontWeight: 500}}>Καφενείο σε οικισμό &lt;500</label>
-        </div>
-      </div>
-
       <div className="result-card">
         <h2>Αποτέλεσμα</h2>
-        {result.exempt ? (
-          <div>
-            <p style={{fontSize: '16px', marginBottom: '12px'}}>Εξαιρείται από τον προσδιορισμό τεκμαρτού εισοδήματος.</p>
-          </div>
-        ) : (
-          <div>
-            <div className="stat highlight">
+        <div>
+          <div className="stat highlight">
               <span className="stat-label">Τελικό Τεκμαρτό Εισόδημα</span>
               <span className="stat-value">{CURRENCY.format(result.finalImputed)}</span>
             </div>
@@ -1079,8 +1015,7 @@ function App() {
               </ul>
             </div>
           </div>
-        )}
-      </div>
+        </div>
     </>
   );
 }
