@@ -181,12 +181,6 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
 <div class="rent-wrap">
   <div class="rent-left">
     <h1>Υπολογισμός Τεκμαρτού Εισοδήματος 2025</h1>
-    
-    <div class="quote">
-      <strong>Χρειάζεστε βοήθεια με το τεκμαρτό εισόδημα;</strong><br />
-      Οι σύμβουλοι της Nerally είναι εδώ για να σας καθοδηγήσουν σε όλα τα φορολογικά σας ζητήματα.
-      <a href="/epikoinonia/contact.php" class="quote-cta">Επικοινωνήστε μαζί μας</a>
-    </div>
 
     <h2>Τι είναι το Τεκμαρτό Εισόδημα;</h2>
     <p>
@@ -246,6 +240,12 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
         <tr><td>>13</td><td>-</td><td>1.406,02€</td></tr>
       </tbody>
     </table>
+
+    <div class="quote">
+      <strong>Χρειάζεστε βοήθεια με το τεκμαρτό εισόδημα;</strong><br />
+      Οι σύμβουλοι της Nerally είναι εδώ για να σας καθοδηγήσουν σε όλα τα φορολογικά σας ζητήματα.
+      <a href="/epikoinonia/contact.php" class="quote-cta">Επικοινωνήστε μαζί μας</a>
+    </div>
   </div>
 
   <div class="rent-right">
