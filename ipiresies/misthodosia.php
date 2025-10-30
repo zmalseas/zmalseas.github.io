@@ -188,11 +188,51 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
       color: #4a5568;
     }
     
+    /* Reporting section - centered with 2 columns on desktop */
+    .reporting-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 900px;
+      margin: 24px auto;
+    }
+    
+    .reporting-box {
+      background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
+      border: 1px solid #e6ecff;
+      border-radius: 14px;
+      padding: 20px 24px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.04);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    
+    .reporting-box .check {
+      flex: 0 0 24px;
+      margin-top: 2px;
+    }
+    
+    .reporting-box p {
+      margin: 0;
+      color: #111827;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    
+    .reporting-box strong {
+      color: var(--brand);
+      font-weight: 700;
+    }
+    
     @media(max-width:768px) {
       .section-grid {
         grid-template-columns: 1fr;
       }
       .distinction-grid {
+        grid-template-columns: 1fr;
+      }
+      .reporting-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -486,26 +526,26 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
         </div>
 
         <h3 style="margin-top:48px;">Reporting & συμμόρφωση</h3>
-        <div class="services">
-          <div class="service">
+        <div class="reporting-grid">
+          <div class="reporting-box">
             <span class="check" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <p><strong>Μισθολογικά reports</strong> για διοίκηση, ορκωτούς, τράπεζες.</p>
           </div>
-          <div class="service">
+          <div class="reporting-box">
             <span class="check" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <p><strong>Κοστολόγηση προσωπικού</strong> ανά τμήμα/έργο.</p>
           </div>
-          <div class="service">
+          <div class="reporting-box">
             <span class="check" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <p><strong>Προετοιμασία φακέλων</strong> για ελέγχους ΣΕΠΕ/ΕΦΚΑ.</p>
           </div>
-          <div class="service">
+          <div class="reporting-box">
             <span class="check" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
