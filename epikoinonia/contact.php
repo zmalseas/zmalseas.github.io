@@ -468,9 +468,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
               </div>
               
               <div class="recaptcha-info">
-                Αυτός ο ιστότοπος προστατεύεται από το reCAPTCHA και ισχύουν η 
-                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Πολιτική Απορρήτου</a> και οι 
-                <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Όροι Χρήσης</a> της Google.
+                Αυτός ο ιστότοπος προστατεύεται από το reCAPTCHA και ισχύουν η <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Πολιτική Απορρήτου</a> και οι <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Όροι Χρήσης</a> της Google.
               </div>
             </form>
           </div>
