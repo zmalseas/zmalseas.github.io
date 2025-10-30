@@ -184,7 +184,7 @@ require_once __DIR__ . '/partials/csp-nonce.php';
             </div>
             <h3>Τεκμαρτό Εισόδημα Ατομικής Επιχείρησης 2025</h3>
             <p>Γενικά Το τεκμαρτό εισόδημα 2025 αποτελεί ένα από τα πιο καυτά θέματα που απασχολούν σήμερα τους...</p>
-            <a href="https://nerally.gr/arthra/tekmarto-eisodima-atomikis-epixeiriseis-2025/" target="_blank" rel="noopener" class="read-more-link" aria-label="Διαβάστε το πλήρες άρθρο για το Τεκμαρτό Εισόδημα 2025">Διαβάστε περισσότερα →</a>
+            <a href="https://www.nerally.gr/arthra/%cf%84%ce%b5%ce%ba%ce%bc%ce%b1%cf%81%cf%84%ce%bf-%ce%b5%ce%b9%cf%83%ce%bf%ce%b4%ce%b7%ce%bc%ce%b1-%ce%b1%cf%84%ce%bf%ce%bc%ce%b9%ce%ba%ce%b7%cf%83-%ce%b5%cf%80%ce%b9%cf%87%ce%b5%ce%b9%cf%81%ce%b7/" target="_blank" rel="noopener" class="read-more-link" aria-label="Διαβάστε το πλήρες άρθρο για το Τεκμαρτό Εισόδημα 2025">Διαβάστε περισσότερα →</a>
           </article>
 
           <article class="article-preview-card">
@@ -193,7 +193,7 @@ require_once __DIR__ . '/partials/csp-nonce.php';
             </div>
             <h3>Φορολογία Εισοδήματος από μισθωτές υπηρεσίες και συντάξεις</h3>
             <p>Όλα όσα πρέπει να ξέρεις όποιος έχει εισοδήματα από μισθωτές υπηρεσίες ή συντάξεις, για το πώς φορολογούνται τα...</p>
-            <a href="https://nerally.gr/arthra/forologia-eisodimatos-apo-misthotes-ypiresies-kai-syntakseis/" target="_blank" rel="noopener" class="read-more-link" aria-label="Διαβάστε το πλήρες άρθρο για τη φορολογία εισοδήματος">Διαβάστε περισσότερα →</a>
+            <a href="https://www.nerally.gr/arthra/%cf%86%ce%bf%cf%81%ce%bf%ce%bb%ce%bf%ce%b3%ce%af%ce%b1-%ce%b5%ce%b9%cf%83%ce%bf%ce%b4%ce%ae%ce%bc%ce%b1%cf%84%ce%bf%cf%82-%ce%b1%cf%80%cf%8c-%ce%bc%ce%b9%cf%83%ce%b8%cf%89%cf%84%ce%ad%cf%82-%cf%85/" target="_blank" rel="noopener" class="read-more-link" aria-label="Διαβάστε το πλήρες άρθρο για τη φορολογία εισοδήματος">Διαβάστε περισσότερα →</a>
           </article>
 
           <article class="article-preview-card">
@@ -203,7 +203,7 @@ require_once __DIR__ . '/partials/csp-nonce.php';
             </div>
             <h3>Εισόδημα από ακίνητη περιουσία</h3>
             <p>Εισόδημα από ακίνητη περιουσία</p>
-            <a href="https://nerally.gr/arthra/eisodima-apo-akiniti-periousia/" target="_blank" rel="noopener" class="read-more-link" aria-label="Διαβάστε το πλήρες άρθρο για το εισόδημα από ακίνητη περιουσία">Διαβάστε περισσότερα →</a>
+            <a href="https://www.nerally.gr/arthra/%ce%ba%ce%b1%ce%bb%ce%b7%ce%bc%ce%ad%cf%81%ce%b1/" target="_blank" rel="noopener" class="read-more-link" aria-label="Διαβάστε το πλήρες άρθρο για το εισόδημα από ακίνητη περιουσία">Διαβάστε περισσότερα →</a>
           </article>
         </div>
 
