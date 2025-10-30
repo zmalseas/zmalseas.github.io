@@ -679,6 +679,9 @@ main,
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   border: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .article-preview-card:hover {
@@ -718,6 +721,8 @@ main,
   font-weight: 600;
   font-size: 0.95rem;
   transition: all 0.3s ease;
+  align-self: flex-end;
+  margin-top: auto;
 }
 
 .read-more-link:hover {
