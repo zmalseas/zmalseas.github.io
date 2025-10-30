@@ -171,6 +171,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     }
 
     /* Hero Section - Matching misthodosia.php */
+    .hero-animated {
       height: 170px;
       background: #000;
       color: #f6f8fb;
@@ -298,20 +299,32 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
       }
     }
 
-    /* Additional styling for service category */
+    /* Blue check styling - circular with background like misthodosia */
+    .blue-check {
+      flex: 0 0 20px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--brand);
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    
+    /* Service category label */
     .service-category {
-      font-size: 0.85rem;
+      font-size: 13px;
       color: var(--brand);
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      margin-bottom: 0.75rem;
+      margin-bottom: 10px;
       font-weight: 600;
-    }
-
-    .blue-check {
-      color: var(--brand);
-      font-weight: 700;
-      margin-right: 0.5rem;
+      display: block;
+      opacity: 0.8;
     }
   </style>
   
