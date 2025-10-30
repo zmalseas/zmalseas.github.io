@@ -178,24 +178,32 @@ require_once __DIR__ . '/partials/csp-nonce.php';
         
         <div class="articles-preview-grid">
           <article class="article-preview-card">
-            <div class="article-category" aria-label="Κατηγορία άρθρου">Φοροτεχνικά</div>
-            <h3>Νέες φορολογικές αλλαγές για το 2025</h3>
-            <p>Όλα όσα πρέπει να γνωρίζετε για τις νέες φορολογικές ρυθμίσεις που επηρεάζουν τις επιχειρήσεις...</p>
-            <a href="/arthra/" class="read-more-link" aria-label="Διαβάστε το πλήρες άρθρο για τις φορολογικές αλλαγές του 2025">Διαβάστε περισσότερα →</a>
+            <div class="article-category" aria-label="Κατηγορία άρθρου">
+              <span class="cat-blue">Φορολογία</span>
+              <span class="cat-green">Επιχειρήσεων</span>
+            </div>
+            <h3>Τεκμαρτό Εισόδημα Ατομικής Επιχείρησης 2025</h3>
+            <p>Γενικά Το τεκμαρτό εισόδημα 2025 αποτελεί ένα από τα πιο καυτά θέματα που απασχολούν σήμερα τους...</p>
+            <a href="https://nerally.gr/arthra/tekmarto-eisodima-atomikis-epixeiriseis-2025/" target="_blank" rel="noopener" class="read-more-link" aria-label="Διαβάστε το πλήρες άρθρο για το Τεκμαρτό Εισόδημα 2025">Διαβάστε περισσότερα →</a>
           </article>
 
           <article class="article-preview-card">
-            <div class="article-category" aria-label="Κατηγορία άρθρου">Τεχνολογία</div>
-            <h3>Ψηφιακός μετασχηματισμός στις ΜΜΕ</h3>
-            <p>Πώς οι μικρές επιχειρήσεις μπορούν να αξιοποιήσουν την τεχνολογία για ανταγωνιστικό πλεονέκτημα...</p>
-            <a href="/arthra/" class="read-more-link" aria-label="Διαβάστε το πλήρες άρθρο για τον ψηφιακό μετασχηματισμό στις ΜΜΕ">Διαβάστε περισσότερα →</a>
+            <div class="article-category" aria-label="Κατηγορία άρθρου">
+              <span class="cat-blue">Φορολογία</span>
+            </div>
+            <h3>Φορολογία Εισοδήματος από μισθωτές υπηρεσίες και συντάξεις</h3>
+            <p>Όλα όσα πρέπει να ξέρεις όποιος έχει εισοδήματα από μισθωτές υπηρεσίες ή συντάξεις, για το πώς φορολογούνται τα...</p>
+            <a href="https://nerally.gr/arthra/forologia-eisodimatos-apo-misthotes-ypiresies-kai-syntakseis/" target="_blank" rel="noopener" class="read-more-link" aria-label="Διαβάστε το πλήρες άρθρο για τη φορολογία εισοδήματος">Διαβάστε περισσότερα →</a>
           </article>
 
           <article class="article-preview-card">
-            <div class="article-category" aria-label="Κατηγορία άρθρου">Κυβερνοασφάλεια</div>
-            <h3>10 βήματα για ασφαλή επιχείρηση</h3>
-            <p>Οδηγός προστασίας από κυβερνοεπιθέσεις με πρακτικές συμβουλές που μπορείτε να εφαρμόσετε σήμερα...</p>
-            <a href="/arthra/" class="read-more-link" aria-label="Διαβάστε τον πλήρη οδηγό για την κυβερνοασφάλεια επιχειρήσεων">Διαβάστε περισσότερα →</a>
+            <div class="article-category" aria-label="Κατηγορία άρθρου">
+              <span class="cat-blue">Φορολογία</span>
+              <span class="cat-green">Μισθώσεις</span>
+            </div>
+            <h3>Εισόδημα από ακίνητη περιουσία</h3>
+            <p>Εισόδημα από ακίνητη περιουσία</p>
+            <a href="https://nerally.gr/arthra/eisodima-apo-akiniti-periousia/" target="_blank" rel="noopener" class="read-more-link" aria-label="Διαβάστε το πλήρες άρθρο για το εισόδημα από ακίνητη περιουσία">Διαβάστε περισσότερα →</a>
           </article>
         </div>
 
