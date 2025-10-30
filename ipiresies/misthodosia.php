@@ -226,8 +226,13 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
       line-height: 1.6;
     }
     
+    .reporting-box li span {
+      color: #111827;
+    }
+    
     .reporting-box li strong {
-      color: var(--brand);
+      color: #111827;
+      font-weight: 600;
     }
     
     @media(max-width:768px) {
@@ -530,9 +535,9 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
           </div>
         </div>
 
-        <h3 style="margin-top:48px;">Reporting & συμμόρφωση</h3>
         <div class="reporting-container">
           <div class="reporting-box">
+            <h4>Reporting & συμμόρφωση</h4>
             <ul>
               <li>
                 <span class="blue-check">✓</span>
