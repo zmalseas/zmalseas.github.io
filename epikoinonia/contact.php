@@ -179,16 +179,16 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     .contact-form h3 {
       font-size: clamp(1.4rem, 2vw, 1.6rem) !important;
       padding-bottom: 4px;
-      margin-bottom: 12px !important;
+      margin-bottom: 8px !important;
     }
     
     .contact-form .form-group {
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
     
     .contact-form label {
       display: block;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
       font-weight: 500;
       color: #374151;
       font-size: 14px;
@@ -198,7 +198,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     .contact-form input[type="email"],
     .contact-form input[type="tel"] {
       width: 100%;
-      padding: 12px 14px;
+      padding: 10px 12px;
       border: 1px solid #d1d5db;
       border-radius: 8px;
       font-size: 14px;
@@ -217,8 +217,8 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     .contact-form textarea { 
       width: 100%;
       resize: vertical; 
-      min-height: 110px;
-      padding: 12px 14px;
+      min-height: 100px;
+      padding: 10px 12px;
       border: 1px solid #d1d5db;
       border-radius: 8px;
       font-size: 14px;
@@ -239,7 +239,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
       background: #f9fafb; 
       border: 1px solid #e5e7eb; 
       border-radius: 8px; 
-      padding: 11px 12px; 
+      padding: 10px 12px; 
       display: flex;
       align-items: flex-start;
       gap: 10px;
@@ -248,8 +248,8 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
       margin: 0;
       margin-top: 2px;
       flex-shrink: 0;
-      width: 17px;
-      height: 17px;
+      width: 16px;
+      height: 16px;
       cursor: pointer;
     }
     .careers-check .checkmark {
@@ -267,14 +267,14 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     }
     .form-checkboxes { 
       display: grid; 
-      gap: 12px; 
-      margin-bottom: 20px; 
+      gap: 10px; 
+      margin-bottom: 16px; 
     }
     
     /* Submit button styling */
     .contact-form .submit-btn {
       width: 100%;
-      padding: 14px 24px;
+      padding: 12px 20px;
       background: var(--brand);
       color: #fff;
       border: none;
@@ -304,7 +304,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
       text-align: center;
       font-size: 11.5px;
       color: #9ca3af;
-      margin-top: 16px;
+      margin-top: 14px;
       line-height: 1.5;
     }
     
@@ -419,10 +419,10 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
           </div>
 
           <!-- Right: Contact Form -->
-          <div style="background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.06); padding: 28px 24px;">
+          <div style="background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.06); padding: 24px 20px;">
             <form id="contactForm" class="contact-form" action="../contact-handler.php" method="POST">
-              <h3 style="text-align: center; font-size: 1.2rem; margin: 0 0 8px 0; color: #111827;">Φόρμα Επικοινωνίας</h3>
-              <p style="text-align: center; color: #6b7280; font-size: 13.5px; margin: 0 0 20px 0;">Συμπληρώστε τα στοιχεία σας και θα σας απαντήσουμε.</p>
+              <h3 style="text-align: center; font-size: 1.2rem; margin: 0 0 6px 0; color: #111827;">Φόρμα Επικοινωνίας</h3>
+              <p style="text-align: center; color: #6b7280; font-size: 13.5px; margin: 0 0 16px 0;">Συμπληρώστε τα στοιχεία σας και θα σας απαντήσουμε.</p>
 
               <div class="form-group">
                 <label for="name">Ονοματεπώνυμο</label>
