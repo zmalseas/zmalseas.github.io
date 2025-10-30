@@ -735,7 +735,7 @@ function App() {
       const days = Math.ceil(millis / (1000 * 60 * 60 * 24)) + 1;
       const ratio = Math.min(1, Math.max(0, days / totalDays));
       base = base * ratio;
-      breakdown.push(`Αναλογία έτους: ${Math.round(ratio * 100)}%`);
+      breakdown.push(`Αναλογία έτους: ${Math.round(ratio * 100)}% (${days}/${totalDays} ημέρες)`);
     }
 
     breakdown.push(`Βάση: ${CURRENCY.format(clampMoney(baseAnnual))}`);
