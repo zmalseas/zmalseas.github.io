@@ -169,7 +169,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     .multi-select { position: relative; }
     .multi-select-btn { width: 100%; text-align: left; border-radius: 12px; border: 1px solid #d1d5db; padding: 10px 12px; background: white; cursor: pointer; font-size: 14px; }
     .multi-select-dropdown { position: absolute; z-index: 20; margin-top: 4px; width: 100%; background: white; border: 1px solid #e5e7eb; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.12); padding: 8px; max-height: 240px; overflow-y: auto; }
-    .multi-select-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; border-radius: 8px; cursor: pointer; font-size: 14px; }
+    .multi-select-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; border-radius: 8px; cursor: pointer; font-size: 14px; color: #1f2937; }
     .multi-select-item:hover { background-color: #f9fafb; }
     .multi-select-item.selected { background-color: #f3f4f6; }
   </style>
@@ -203,24 +203,30 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     </ul>
 
     <h3>Μειώσεις Τεκμαρτού</h3>
-    <p><strong>Νέος Επαγγελματίας:</strong></p>
-    <ul>
-      <li><strong>1ο-3ο έτος λειτουργίας:</strong> 100% μείωση (τεκμαρτό = 0€)</li>
-      <li><strong>4ο έτος λειτουργίας:</strong> Μείωση 2/3 (66,67%)</li>
-      <li><strong>5ο έτος λειτουργίας:</strong> Μείωση 1/3 (33,33%)</li>
-      <li><strong>6ο έτος και μετά:</strong> Χωρίς μείωση νέου επαγγελματία</li>
-    </ul>
-    <p><strong>Ειδικές κατηγορίες (50% μείωση):</strong></p>
-    <ul>
-      <li>Πολύτεκνοι ή ορφανό πολύτεκνης οικογένειας</li>
-      <li>Άτομα με αναπηρία ≥67%</li>
-      <li>Μονογονεϊκές οικογένειες</li>
-      <li>Γονέας με τέκνο αναπηρίας ≥67%</li>
-      <li>Ιδιοκτήτες ΤΑΞΙ με μερίδιο <25%</li>
-      <li>Χωριά <500 κατοίκων</li>
-      <li>Κοινότητες <1.500 κατοίκων</li>
-      <li>Νησιά <3.100 κατοίκων</li>
-    </ul>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 20px;">
+      <div>
+        <h4 style="color: var(--brand); font-size: 18px; font-weight: 700; margin: 0 0 12px 0;">Νέος Επαγγελματίας</h4>
+        <ul style="margin-top: 0;">
+          <li><strong>1ο-3ο έτος λειτουργίας:</strong> 100% μείωση (τεκμαρτό = 0€)</li>
+          <li><strong>4ο έτος λειτουργίας:</strong> Μείωση 2/3 (66,67%)</li>
+          <li><strong>5ο έτος λειτουργίας:</strong> Μείωση 1/3 (33,33%)</li>
+          <li><strong>6ο έτος και μετά:</strong> Χωρίς μείωση νέου επαγγελματία</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color: var(--brand); font-size: 18px; font-weight: 700; margin: 0 0 12px 0;">Ειδικές κατηγορίες (50% μείωση)</h4>
+        <ul style="margin-top: 0;">
+          <li>Πολύτεκνοι ή ορφανό πολύτεκνης οικογένειας</li>
+          <li>Άτομα με αναπηρία ≥67%</li>
+          <li>Μονογονεϊκές οικογένειες</li>
+          <li>Γονέας με τέκνο αναπηρίας ≥67%</li>
+          <li>Ιδιοκτήτες ΤΑΞΙ με μερίδιο <25%</li>
+          <li>Χωριά <500 κατοίκων</li>
+          <li>Κοινότητες <1.500 κατοίκων</li>
+          <li>Νησιά <3.100 κατοίκων</li>
+        </ul>
+      </div>
+    </div>
 
     <table class="modern-table">
       <thead>
