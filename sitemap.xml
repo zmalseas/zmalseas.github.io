@@ -102,6 +102,13 @@
     <priority>0.8</priority>
   </url>
   
+  <url>
+    <loc>https://nerally.gr/efarmoges/tekmarto-eisodima-calculator</loc>
+    <lastmod>2025-10-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
   <!-- Articles -->
   <url>
     <loc>https://nerally.gr/arthra/</loc>
