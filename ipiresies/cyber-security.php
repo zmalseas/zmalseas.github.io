@@ -32,7 +32,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
       align-items: center;
       justify-content: center;
       padding: 80px 32px;
-      background: #1a202c;
+      background: linear-gradient(135deg, #f8fafc 0%, #e8f4f8 100%);
     }
     
     .construction-container {
@@ -53,7 +53,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     
     .construction-title {
       font-size: clamp(32px, 5vw, 48px);
-      color: #ffffff;
+      color: #1a202c;
       margin: 0 0 16px;
       font-weight: 800;
     }
@@ -67,7 +67,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     
     .construction-description {
       font-size: 18px;
-      color: #e2e8f0;
+      color: #4a5568;
       line-height: 1.7;
       margin: 0 0 40px;
     }
@@ -122,30 +122,34 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     
     .contact-cta {
       margin-top: 48px;
+      padding: 40px;
+      background: linear-gradient(135deg, rgba(41,128,185,0.8) 0%, rgba(233,100,120,0.8) 100%);
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
     }
     
     .contact-cta p {
       font-size: 16px;
-      color: #cbd5e1;
+      color: #ffffff;
       margin-bottom: 20px;
     }
     
     .contact-cta .btn {
       display: inline-block;
       padding: 14px 32px;
-      background: var(--brand);
+      background: #1a202c;
       color: white;
       text-decoration: none;
       border-radius: 8px;
       font-weight: 600;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(41, 128, 185, 0.2);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
     
     .contact-cta .btn:hover {
-      background: #1f5f8b;
+      background: #2d3748;
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(41, 128, 185, 0.3);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     }
   </style>
   
@@ -167,8 +171,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
         <h2 class="construction-subtitle">Προστασία & Ασφάλεια Δεδομένων</h2>
         
         <p class="construction-description">
-          Η σελίδα βρίσκεται υπό κατασκευή. Ήδη προσφέρουμε ολοκληρωμένες λύσεις 
-          κυβερνοασφάλειας για την προστασία της επιχείρησής σας από ψηφιακές απειλές.
+          Η σελίδα βρίσκεται υπό κατασκευή.
         </p>
         
         <div class="dots-container">
