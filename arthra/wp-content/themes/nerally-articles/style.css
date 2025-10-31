@@ -555,6 +555,90 @@ Text Domain: nerally-articles
   margin: 24px 0;
 }
 
+/* Table Styles - Dark Theme */
+.single-content table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 24px 0;
+  background: #1a1d2e;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.single-content table thead {
+  background: #252a3f;
+}
+
+.single-content table thead th {
+  padding: 16px 20px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  color: #ffffff;
+  text-transform: capitalize;
+  border-bottom: 2px solid #2d3348;
+}
+
+/* First header cell gets left border radius */
+.single-content table thead th:first-child {
+  border-top-left-radius: 12px;
+}
+
+/* Last header cell gets right border radius */
+.single-content table thead th:last-child {
+  border-top-right-radius: 12px;
+}
+
+.single-content table tbody tr {
+  background: #1a1d2e;
+  transition: background 0.2s ease;
+}
+
+.single-content table tbody tr:hover {
+  background: #252a3f;
+}
+
+.single-content table tbody td {
+  padding: 14px 20px;
+  color: #e0e0e0;
+  font-size: 14px;
+  border-bottom: 1px solid #2d3348;
+}
+
+/* Last row cells get bottom border radius */
+.single-content table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 12px;
+}
+
+.single-content table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 12px;
+}
+
+/* Remove border from last row */
+.single-content table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Special styling for percentage or numeric columns */
+.single-content table td:not(:first-child),
+.single-content table th:not(:first-child) {
+  text-align: center;
+}
+
+/* Responsive table on mobile */
+@media (max-width: 768px) {
+  .single-content table {
+    font-size: 12px;
+  }
+  
+  .single-content table thead th,
+  .single-content table tbody td {
+    padding: 10px 12px;
+  }
+}
+
 /* Author Card */
 .author-card {
   background: #f8fafc;
