@@ -571,7 +571,7 @@ Text Domain: nerally-articles
 }
 
 .single-content table thead {
-  background: #2d3548;
+  background: #2d3548 !important;
 }
 
 .single-content table thead th {
@@ -582,6 +582,15 @@ Text Domain: nerally-articles
   color: #ffffff !important;
   letter-spacing: 0.3px;
   border: none;
+  background: #2d3548 !important;
+}
+
+/* Override any WordPress default styles for table headers */
+.single-content table thead tr th,
+.single-content table thead tr td,
+.single-content table th {
+  color: #ffffff !important;
+  background: #2d3548 !important;
 }
 
 /* First header cell - left aligned for labels */
