@@ -575,7 +575,7 @@ Text Domain: nerally-articles
 }
 
 .single-content table thead th {
-  padding: 14px 18px;
+  padding: 12px 16px;
   text-align: center;
   font-weight: 600;
   font-size: 14px;
@@ -583,6 +583,7 @@ Text Domain: nerally-articles
   letter-spacing: 0.3px;
   border: none;
   background: #2d3548 !important;
+  vertical-align: middle;
 }
 
 /* Override any WordPress default styles for table headers */
@@ -591,6 +592,8 @@ Text Domain: nerally-articles
 .single-content table th {
   color: #ffffff !important;
   background: #2d3548 !important;
+  text-align: center;
+  vertical-align: middle;
 }
 
 /* First header cell - left aligned for labels */
@@ -614,12 +617,13 @@ Text Domain: nerally-articles
 }
 
 .single-content table tbody td {
-  padding: 14px 18px;
+  padding: 12px 16px;
   color: #111827;
   font-size: 14px;
   text-align: center;
   border: none;
   border-top: 1px solid #e5e7eb;
+  vertical-align: middle;
 }
 
 /* First column - left aligned for labels */
