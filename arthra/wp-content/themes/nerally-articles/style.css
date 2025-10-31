@@ -567,7 +567,7 @@ Text Domain: nerally-articles
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0,0,0,0.15);
   font-size: 14px;
-  border: 1px solid #e5e7eb;
+  border: none;
 }
 
 .single-content table thead {
@@ -579,7 +579,7 @@ Text Domain: nerally-articles
   text-align: center;
   font-weight: 600;
   font-size: 14px;
-  color: #ffffff;
+  color: #ffffff !important;
   letter-spacing: 0.3px;
   border: none;
 }
@@ -609,6 +609,7 @@ Text Domain: nerally-articles
   color: #111827;
   font-size: 14px;
   text-align: center;
+  border: none;
   border-top: 1px solid #e5e7eb;
 }
 
