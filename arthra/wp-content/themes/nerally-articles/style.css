@@ -555,34 +555,37 @@ Text Domain: nerally-articles
   margin: 24px 0;
 }
 
-/* Table Styles - Dark Theme */
+/* Table Styles - Matching Calculator Dark Theme */
 .single-content table {
   width: 100%;
+  max-width: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  margin: 24px 0;
-  background: #1a1d2e;
+  margin: 24px auto;
+  background: #2d3548;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  font-size: 14px;
 }
 
 .single-content table thead {
-  background: #252a3f;
+  background: #1f2937;
 }
 
 .single-content table thead th {
-  padding: 16px 20px;
-  text-align: left;
+  padding: 14px 18px;
+  text-align: center;
   font-weight: 600;
   font-size: 14px;
   color: #ffffff;
-  text-transform: capitalize;
-  border-bottom: 2px solid #2d3348;
+  letter-spacing: 0.3px;
+  border: none;
 }
 
-/* First header cell gets left border radius */
+/* First header cell - left aligned for labels */
 .single-content table thead th:first-child {
+  text-align: left;
   border-top-left-radius: 12px;
 }
 
@@ -592,19 +595,26 @@ Text Domain: nerally-articles
 }
 
 .single-content table tbody tr {
-  background: #1a1d2e;
+  background: #2d3548;
   transition: background 0.2s ease;
 }
 
 .single-content table tbody tr:hover {
-  background: #252a3f;
+  background: #3a4459;
 }
 
 .single-content table tbody td {
-  padding: 14px 20px;
-  color: #e0e0e0;
+  padding: 14px 18px;
+  color: #ffffff;
   font-size: 14px;
-  border-bottom: 1px solid #2d3348;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* First column - left aligned for labels */
+.single-content table tbody td:first-child {
+  text-align: left;
+  font-weight: 500;
 }
 
 /* Last row cells get bottom border radius */
@@ -616,17 +626,6 @@ Text Domain: nerally-articles
   border-bottom-right-radius: 12px;
 }
 
-/* Remove border from last row */
-.single-content table tbody tr:last-child td {
-  border-bottom: none;
-}
-
-/* Special styling for percentage or numeric columns */
-.single-content table td:not(:first-child),
-.single-content table th:not(:first-child) {
-  text-align: center;
-}
-
 /* Responsive table on mobile */
 @media (max-width: 768px) {
   .single-content table {
@@ -635,7 +634,8 @@ Text Domain: nerally-articles
   
   .single-content table thead th,
   .single-content table tbody td {
-    padding: 10px 12px;
+    padding: 10px 8px;
+    font-size: 12px;
   }
 }
 
