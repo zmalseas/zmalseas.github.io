@@ -27,7 +27,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
   
   <style>
     .under-construction-section {
-      min-height: 70vh;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -120,36 +120,36 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
       box-shadow: 0 4px 15px rgba(41, 128, 185, 0.3);
     }
     
-    .contact-cta {
+    .construction-cta {
       margin-top: 48px;
-      padding: 40px;
-      background: #1a202c;
-      border-radius: 16px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
     }
     
-    .contact-cta p {
+    .construction-cta p {
       font-size: 16px;
-      color: #ffffff;
+      color: #4a5568;
       margin-bottom: 20px;
+      font-weight: 500;
     }
     
-    .contact-cta .btn {
+    .construction-cta .btn {
       display: inline-block;
-      padding: 14px 32px;
+      padding: 16px 40px;
       background: var(--brand);
       color: white;
       text-decoration: none;
       border-radius: 8px;
       font-weight: 600;
+      font-size: 16px;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(41, 128, 185, 0.2);
+      box-shadow: 0 4px 15px rgba(41, 128, 185, 0.3);
+      border: none;
+      cursor: pointer;
     }
     
-    .contact-cta .btn:hover {
+    .construction-cta .btn:hover {
       background: #1f5f8b;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(41, 128, 185, 0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(41, 128, 185, 0.4);
     }
   </style>
   
@@ -180,7 +180,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
           <div class="dot"></div>
         </div>
         
-        <div class="contact-cta">
+        <div class="construction-cta">
           <p>Θέλετε να ενημερωθείτε πρώτοι;</p>
           <a class="btn" href="/epikoinonia/contact">Επικοινωνήστε μαζί μας</a>
         </div>
