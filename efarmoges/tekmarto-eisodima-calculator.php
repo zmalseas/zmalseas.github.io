@@ -205,17 +205,12 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
             <tr>
               <th>Έτη Λειτουργίας</th>
               <th>Μείωση Νέου</th>
-              <th>Προσαύξηση</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>1 – 3</td><td>-100%</td><td>0,00€</td></tr>
-            <tr><td>4</td><td>-66,67%</td><td>0,00€</td></tr>
-            <tr><td>5</td><td>-33,33%</td><td>0,00€</td></tr>
-            <tr><td>6</td><td>-</td><td>0,00€</td></tr>
-            <tr><td>7 – 9</td><td>-</td><td>1.162,00€</td></tr>
-            <tr><td>10 – 12</td><td>-</td><td>1.278,20€</td></tr>
-            <tr><td>>13</td><td>-</td><td>1.406,02€</td></tr>
+            <tr><td>1 – 3</td><td>-100%</td></tr>
+            <tr><td>4</td><td>-66,67%</td></tr>
+            <tr><td>5</td><td>-33,33%</td></tr>
           </tbody>
         </table>
       </div>
