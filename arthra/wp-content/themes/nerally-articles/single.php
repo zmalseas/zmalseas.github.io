@@ -26,10 +26,17 @@
       $subcategory = get_post_meta(get_the_ID(), '_nerally_subcategory', true);
       $author_tag = get_post_meta(get_the_ID(), '_nerally_author_tag', true);
       
-      // Calculate reading time
+      // Calculate reading time - improved for Greek text and blocks
       $content = get_post_field('post_content', get_the_ID());
-      $word_count = str_word_count(strip_tags($content));
-      $reading_time = ceil($word_count / 200); // 200 words per minute
+      // Apply WordPress filters to process blocks
+      $content = apply_filters('the_content', $content);
+      // Remove all HTML tags and scripts
+      $content = wp_strip_all_tags($content);
+      // Remove multiple spaces and newlines
+      $content = preg_replace('/\s+/', ' ', $content);
+      // Count words (works better with Greek text)
+      $word_count = count(preg_split('/\s+/', trim($content), -1, PREG_SPLIT_NO_EMPTY));
+      $reading_time = max(1, ceil($word_count / 200)); // 200 words per minute, minimum 1 minute
       ?>
       
       <?php if ($category || $subcategory || $author_tag): ?>
