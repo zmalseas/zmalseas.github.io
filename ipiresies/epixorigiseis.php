@@ -32,7 +32,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
       align-items: center;
       justify-content: center;
       padding: 80px 32px;
-      background: #1a202c;
+      background: linear-gradient(135deg, #f8fafc 0%, #e8f4f8 100%);
     }
     
     .construction-container {
@@ -53,7 +53,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     
     .construction-title {
       font-size: clamp(32px, 5vw, 48px);
-      color: #ffffff;
+      color: #1a202c;
       margin: 0 0 16px;
       font-weight: 800;
     }
@@ -67,7 +67,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     
     .construction-description {
       font-size: 18px;
-      color: #e2e8f0;
+      color: #4a5568;
       line-height: 1.7;
       margin: 0 0 40px;
     }
@@ -122,11 +122,15 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     
     .contact-cta {
       margin-top: 48px;
+      padding: 40px;
+      background: #1a202c;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
     }
     
     .contact-cta p {
       font-size: 16px;
-      color: #cbd5e1;
+      color: #ffffff;
       margin-bottom: 20px;
     }
     
@@ -167,8 +171,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
         <h2 class="construction-subtitle">ΕΣΠΑ & Ευρωπαϊκά Προγράμματα</h2>
         
         <p class="construction-description">
-          Η σελίδα βρίσκεται υπό κατασκευή. Ήδη προσφέρουμε πλήρη υποστήριξη 
-          για την αξιοποίηση προγραμμάτων ΕΣΠΑ και ευρωπαϊκών επιδοτήσεων για την ανάπτυξη της επιχείρησής σας.
+          Η σελίδα βρίσκεται υπό κατασκευή.
         </p>
         
         <div class="dots-container">

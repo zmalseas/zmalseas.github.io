@@ -53,7 +53,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     
     .construction-title {
       font-size: clamp(32px, 5vw, 48px);
-      color: #1a202c;
+      color: #000000ff;
       margin: 0 0 16px;
       font-weight: 800;
     }
