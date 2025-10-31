@@ -123,7 +123,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     .contact-cta {
       margin-top: 48px;
       padding: 40px;
-      background: #1a202c;
+      background: #000000ff;
       border-radius: 16px;
       box-shadow: 0 10px 40px rgba(0,0,0,0.1);
     }
