@@ -627,6 +627,60 @@ Text Domain: nerally-articles
   line-height: 1.4;
 }
 
+/* Responsive table on mobile */
+@media (max-width: 768px) {
+  /* Create wrapper for horizontal scroll */
+  .single-content table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    font-size: 11px;
+    margin: 16px 0;
+    border-radius: 8px;
+  }
+  
+  .single-content table thead th,
+  .single-content table tbody td {
+    padding: 8px 10px !important;
+    font-size: 11px !important;
+  }
+  
+  /* Make first column sticky on mobile for better UX */
+  .single-content table thead th:first-child,
+  .single-content table tbody td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background: inherit;
+  }
+  
+  .single-content table thead th:first-child {
+    background: #2d3548 !important;
+  }
+  
+  .single-content table tbody td:first-child {
+    background: #ffffff !important;
+    font-weight: 600;
+  }
+  
+  .single-content table tbody tr:hover td:first-child {
+    background: #f8f9fa !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .single-content table {
+    font-size: 10px;
+  }
+  
+  .single-content table thead th,
+  .single-content table tbody td {
+    padding: 6px 8px !important;
+    font-size: 10px !important;
+  }
+}
+
 /* Last row cells get bottom border radius */
 .single-content table tbody tr:last-child td:first-child {
   border-bottom-left-radius: 12px;
