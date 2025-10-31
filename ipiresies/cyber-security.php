@@ -32,7 +32,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
       align-items: center;
       justify-content: center;
       padding: 80px 32px;
-      background: linear-gradient(135deg, #f8fafc 0%, #e8f4f8 100%);
+      background: #1a202c;
     }
     
     .construction-container {
@@ -53,7 +53,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     
     .construction-title {
       font-size: clamp(32px, 5vw, 48px);
-      color: #1a202c;
+      color: #ffffff;
       margin: 0 0 16px;
       font-weight: 800;
     }
@@ -67,7 +67,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     
     .construction-description {
       font-size: 18px;
-      color: #4a5568;
+      color: #e2e8f0;
       line-height: 1.7;
       margin: 0 0 40px;
     }
@@ -126,7 +126,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     
     .contact-cta p {
       font-size: 16px;
-      color: #64748b;
+      color: #cbd5e1;
       margin-bottom: 20px;
     }
     
@@ -167,7 +167,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
         <h2 class="construction-subtitle">Προστασία & Ασφάλεια Δεδομένων</h2>
         
         <p class="construction-description">
-          Η υπηρεσία Cyber Security βρίσκεται υπό ανάπτυξη. Σύντομα θα σας προσφέρουμε ολοκληρωμένες λύσεις 
+          Η σελίδα βρίσκεται υπό κατασκευή. Ήδη προσφέρουμε ολοκληρωμένες λύσεις 
           κυβερνοασφάλειας για την προστασία της επιχείρησής σας από ψηφιακές απειλές.
         </p>
         
