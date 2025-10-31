@@ -180,8 +180,6 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
 
 <div class="rent-wrap">
   <div class="rent-left">
-    <h1>Υπολογισμός Τεκμαρτού Εισοδήματος 2025</h1>
-
     <h2>Τι είναι το Τεκμαρτό Εισόδημα;</h2>
     <p>
       Το <strong>τεκμαρτό εισόδημα</strong> είναι το ελάχιστο ποσό που θεωρεί η ΑΑΔΕ ότι πρέπει να δηλώσει ένας ελεύθερος επαγγελματίας ή μια ατομική επιχείρηση, ανεξάρτητα από τα πραγματικά του κέρδη.
@@ -202,11 +200,24 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 20px;">
       <div>
         <h4 style="color: var(--brand); font-size: 18px; font-weight: 700; margin: 0 0 12px 0;">Νέοι επαγγελματίες</h4>
-        <ul style="margin-top: 0;">
-          <li><strong>1–3 έτη λειτουργίας:</strong> μείωση 100 % (τεκμαρτό = 0 €)</li>
-          <li><strong>4ο έτος:</strong> μείωση 66,7 %</li>
-          <li><strong>5ο έτος:</strong> μείωση 33,3 %</li>
-        </ul>
+        <table class="modern-table" style="font-size: 14px;">
+          <thead>
+            <tr>
+              <th>Έτη Λειτουργίας</th>
+              <th>Μείωση Νέου</th>
+              <th>Προσαύξηση</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1 – 3</td><td>-100%</td><td>0,00€</td></tr>
+            <tr><td>4</td><td>-66,67%</td><td>0,00€</td></tr>
+            <tr><td>5</td><td>-33,33%</td><td>0,00€</td></tr>
+            <tr><td>6</td><td>-</td><td>0,00€</td></tr>
+            <tr><td>7 – 9</td><td>-</td><td>1.162,00€</td></tr>
+            <tr><td>10 – 12</td><td>-</td><td>1.278,20€</td></tr>
+            <tr><td>>13</td><td>-</td><td>1.406,02€</td></tr>
+          </tbody>
+        </table>
       </div>
       <div>
         <h4 style="color: var(--brand); font-size: 18px; font-weight: 700; margin: 0 0 12px 0;">Ειδικές κατηγορίες (–50 %)</h4>
@@ -232,25 +243,6 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     <p style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, rgba(41,128,185,0.1) 0%, rgba(41,128,185,0.05) 100%); border-left: 4px solid var(--brand); border-radius: 8px;">
       <strong>💡 Συμβουλή:</strong> Χρησιμοποίησε τον υπολογιστή στα δεξιά για να δεις άμεσα και εύκολα ποιο θα είναι το τεκμαρτό εισόδημά σου για το 2025.
     </p>
-
-    <table class="modern-table">
-      <thead>
-        <tr>
-          <th>Έτη Λειτουργίας</th>
-          <th>Μείωση Νέου</th>
-          <th>Προσαύξηση</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>1 – 3</td><td>-100%</td><td>0,00€</td></tr>
-        <tr><td>4</td><td>-66,67%</td><td>0,00€</td></tr>
-        <tr><td>5</td><td>-33,33%</td><td>0,00€</td></tr>
-        <tr><td>6</td><td>-</td><td>0,00€</td></tr>
-        <tr><td>7 – 9</td><td>-</td><td>1.162,00€</td></tr>
-        <tr><td>10 – 12</td><td>-</td><td>1.278,20€</td></tr>
-        <tr><td>>13</td><td>-</td><td>1.406,02€</td></tr>
-      </tbody>
-    </table>
 
     <div class="quote">
       <strong>Χρειάζεστε βοήθεια με το τεκμαρτό εισόδημα;</strong><br />
