@@ -180,10 +180,10 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
           <div class="dot"></div>
         </div>
         
-        
+        <div class="construction-cta">
           <p>Θέλετε να ενημερωθείτε πρώτοι;</p>
           <a class="btn" href="/epikoinonia/contact">Επικοινωνήστε μαζί μας</a>
-        
+        </div>
       </div>
     </section>
   </main>
