@@ -482,15 +482,70 @@ Text Domain: nerally-articles
 }
 
 .single-content h2,
-.single-content h3,
-.single-content h4 {
+.single-content h3 {
   color: var(--brand);
   margin-top: 32px;
   margin-bottom: 16px;
 }
 
+.single-content h4 {
+  color: #000;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
 .single-content p {
   margin-bottom: 20px;
+}
+
+/* Lists styling */
+.single-content ul,
+.single-content ol {
+  margin: 16px 0 24px 0;
+  padding-left: 32px;
+  line-height: 1.8;
+}
+
+.single-content ul {
+  list-style-type: disc;
+}
+
+.single-content ol {
+  list-style-type: decimal;
+}
+
+.single-content li {
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+/* Nested lists */
+.single-content ul ul,
+.single-content ol ul {
+  list-style-type: circle;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding-left: 24px;
+}
+
+.single-content ul ul ul,
+.single-content ol ul ul {
+  list-style-type: square;
+}
+
+.single-content ol ol,
+.single-content ul ol {
+  list-style-type: lower-alpha;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding-left: 24px;
+}
+
+.single-content ol ol ol,
+.single-content ul ol ol {
+  list-style-type: lower-roman;
 }
 
 .single-content img {
