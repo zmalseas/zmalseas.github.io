@@ -123,7 +123,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     .contact-cta {
       margin-top: 48px;
       padding: 40px;
-      background: linear-gradient(135deg, rgba(41,128,185,0.8) 0%, rgba(233,100,120,0.8) 100%);
+      background: #1a202c;
       border-radius: 16px;
       box-shadow: 0 10px 40px rgba(0,0,0,0.1);
     }
@@ -137,19 +137,19 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     .contact-cta .btn {
       display: inline-block;
       padding: 14px 32px;
-      background: #1a202c;
+      background: var(--brand);
       color: white;
       text-decoration: none;
       border-radius: 8px;
       font-weight: 600;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 15px rgba(41, 128, 185, 0.2);
     }
     
     .contact-cta .btn:hover {
-      background: #2d3748;
+      background: #1f5f8b;
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 8px 25px rgba(41, 128, 185, 0.3);
     }
   </style>
   
