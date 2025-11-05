@@ -541,19 +541,19 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
             <ul>
               <li>
                 <span class="blue-check">✓</span>
-                <span><strong>Μισθολογικά reports</strong> για διοίκηση, ορκωτούς, τράπεζες.</span>
+                <span>Μισθολογικά reports για διοίκηση, ορκωτούς, τράπεζες.</span>
               </li>
               <li>
                 <span class="blue-check">✓</span>
-                <span><strong>Κοστολόγηση προσωπικού</strong> ανά τμήμα/έργο.</span>
+                <span>Κοστολόγηση προσωπικού ανά τμήμα/έργο.</span>
               </li>
               <li>
                 <span class="blue-check">✓</span>
-                <span><strong>Προετοιμασία φακέλων</strong> για ελέγχους ΣΕΠΕ/ΕΦΚΑ.</span>
+                <span>Προετοιμασία φακέλων για ελέγχους ΣΕΠΕ/ΕΦΚΑ.</span>
               </li>
               <li>
                 <span class="blue-check">✓</span>
-                <span><strong>Αρχειοθέτηση & ασφάλεια</strong> προσωπικών δεδομένων (GDPR).</span>
+                <span>Αρχειοθέτηση & ασφάλεια προσωπικών δεδομένων (GDPR).</span>
               </li>
             </ul>
           </div>
