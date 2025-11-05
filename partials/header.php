@@ -48,7 +48,6 @@ $nonce_attr = isset($csp_nonce) ? ' nonce="'.$csp_nonce.'"' : '';
               <a href="/ipiresies/epixorigiseis">Επιχορηγήσεις <span class="sm-arrow">›</span></a>
               <a href="/ipiresies/social-media">Social Media Marketing <span class="sm-arrow">›</span></a>
               <a href="/ipiresies/symvoulos-mixanikos" style="white-space: nowrap;">Σύμβουλος Μηχανικός <span class="sm-arrow">›</span></a>
-              <a href="/ipiresies/cyber-security">Cyber Security <span class="sm-arrow">›</span></a>
             </div>
           </li>
 
@@ -110,7 +109,6 @@ $nonce_attr = isset($csp_nonce) ? ' nonce="'.$csp_nonce.'"' : '';
           <a href="/ipiresies/epixorigiseis">Επιχορηγήσεις</a>
           <a href="/ipiresies/social-media">Social Media Marketing</a>
           <a href="/ipiresies/symvoulos-mixanikos" style="white-space: nowrap;">Σύμβουλος Μηχανικός</a>
-          <a href="/ipiresies/cyber-security">Cyber Security</a>
         </div>
       </div>
       

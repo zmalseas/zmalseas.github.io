@@ -52,7 +52,6 @@ get_header(); ?>
                                 <option value="misthodosia"><?php _e('Μισθοδοσία', 'nerally'); ?></option>
                                 <option value="assurance">Assurance</option>
                                 <option value="consulting">Consulting</option>
-                                <option value="cyber-security">Cyber Security</option>
                                 <option value="social-media">Social Media</option>
                                 <option value="epixorigiseis"><?php _e('Επιχορηγήσεις', 'nerally'); ?></option>
                                 <option value="symvoulos-mixanikos"><?php _e('Σύμβουλος Μηχανικός', 'nerally'); ?></option>

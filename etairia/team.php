@@ -326,21 +326,6 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
       </article>
     </div>
 
-    <!-- Cyber Security (placeholder) -->
-    <div class="cat"><div class="bar"></div><h3>Cyber Security</h3></div>
-    <div class="team-grid cols-3">
-      <article class="team-card">
-        <img class="avatar" src="/images/placeholder-cyber.jpg" alt="Προσθήκη σύντομα" loading="lazy" decoding="async">
-        <h4>—</h4>
-        <p class="role">Προσθήκη σύντομα</p>
-        <div class="contact"><a href="tel:"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.11 5.18 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.72c.12.9.3 1.77.57 2.6a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.83.27 1.7.45 2.6.57A2 2 0 0 1 22 16.92z"/></svg>—</a></div>
-        <div class="social">
-          <a aria-label="LinkedIn" href="#" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8.98h5V24H0zM8.5 8.98H13v2.05h.07c.63-1.2 2.17-2.46 4.47-2.46 4.78 0 5.66 3.15 5.66 7.25V24h-5v-6.67c0-1.59-.03-3.63-2.21-3.63-2.21 0-2.55 1.73-2.55 3.52V24h-5z"/></svg></a>
-          <a aria-label="Instagram" href="#" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>
-        </div>
-      </article>
-    </div>
-
     <!-- Επιχορηγήσεις (placeholder) -->
     <div class="cat"><div class="bar"></div><h3>Επιχορηγήσεις</h3></div>
     <div class="team-grid cols-3">

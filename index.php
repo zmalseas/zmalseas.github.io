@@ -9,7 +9,7 @@ require_once __DIR__ . '/partials/csp-nonce.php';
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nerally — Αρχική</title>
   <meta name="description" content="Nerally: Το επιχειρηματικό σου οικοσύστημα. Ένα δίκτυο υπηρεσιών και συνεργασιών στο πλευρό της επιχείρησής σου." />
-  <meta name="keywords" content="λογιστικές υπηρεσίες, φοροτεχνικά, μισθοδοσία, consulting, cyber security, επιχειρήσεις, φόρος εισοδήματος, φόρος ενοικίων, Social Media Management, Studio, Λογιστής, Ορκωτός Λογιστής, Αρχιτέκτονας, Σύμβουλος Μηχανικός, Φορολογία, ΕΣΠΑ" />
+  <meta name="keywords" content="λογιστικές υπηρεσίες, φοροτεχνικά, μισθοδοσία, consulting, επιχειρήσεις, φόρος εισοδήματος, φόρος ενοικίων, Social Media Management, Studio, Λογιστής, Ορκωτός Λογιστής, Αρχιτέκτονας, Σύμβουλος Μηχανικός, Φορολογία, ΕΣΠΑ" />
   <meta name="author" content="Nerally" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://nerally.gr/" />
@@ -28,7 +28,7 @@ require_once __DIR__ . '/partials/csp-nonce.php';
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://nerally.gr/" />
   <meta property="twitter:title" content="Nerally: Το επιχειρηματικό σου οικοσύστημα." />
-  <meta property="twitter:description" content="Ολοκληρωμένες λογιστικές υπηρεσίες, φοροτεχνικές συμβουλές, μισθοδοσία, business consulting και cyber security για επιχειρήσεις." />
+  <meta property="twitter:description" content="Ολοκληρωμένες λογιστικές υπηρεσίες, φοροτεχνικές συμβουλές, μισθοδοσία και business consulting για επιχειρήσεις." />
   <meta property="twitter:image" content="https://nerally.gr/images/logo.png" />
   <link rel="icon" type="image/png" href="images/logo.png" />
   <link rel="manifest" href="/manifest.json" />
@@ -90,7 +90,7 @@ require_once __DIR__ . '/partials/csp-nonce.php';
             <p><strong>Σύμμαχοι της νέας εποχής για κάθε επιχείρηση.</strong><br>
             Η <strong>Nerally</strong> δημιουργήθηκε με στόχο να σταθεί δίπλα σε κάθε επαγγελματία που θέλει να εξελίσσεται, προσφέροντας ολοκληρωμένες λύσεις στρατηγικής, οργάνωσης και τεχνολογίας. Είμαστε μια ομάδα έμπειρων και εξειδικευμένων επαγγελματιών από διαφορετικούς κλάδους, που συνεργαζόμαστε μέσα σε ένα ενιαίο οικοσύστημα υπηρεσιών.</p>
             
-            <p>Αναλαμβάνουμε όσα επιβαρύνουν την επιχείρηση — από λογιστικά και μισθοδοσία έως digital marketing, τεχνολογική υποστήριξη και cyber security — ώστε ο επαγγελματίας να μπορεί να επικεντρωθεί σε αυτό που έχει πραγματική αξία: τη δική του ανάπτυξη.</p>
+            <p>Αναλαμβάνουμε όσα επιβαρύνουν την επιχείρηση — από λογιστικά και μισθοδοσία έως digital marketing και τεχνολογική υποστήριξη — ώστε ο επαγγελματίας να μπορεί να επικεντρωθεί σε αυτό που έχει πραγματική αξία: τη δική του ανάπτυξη.</p>
 
             <p>Με γνώμονα τη <strong>συνεργασία, την αξιοπιστία και την εξειδίκευση</strong>, σχεδιάζουμε στρατηγικές που μετατρέπουν την πολυπλοκότητα σε ευκαιρία και προσφέρουμε πρακτικές, μετρήσιμες λύσεις.<br>
             Στη Nerally δεν βλέπουμε απλώς επιχειρήσεις, βλέπουμε ανθρώπους, ιδέες και στόχους που αξίζουν να στηριχθούν με ασφάλεια και προοπτική.</p>
@@ -139,14 +139,6 @@ require_once __DIR__ . '/partials/csp-nonce.php';
               <p>Σχεδιασμός περιεχομένου, διαφημίσεις και ανάλυση καμπανιών.</p>
             </div>
             <a class="service-btn" href="/ipiresies/social-media">Μάθε περισσότερα →</a>
-          </article>
-          <article class="service-glass-card" data-theme="red">
-            <div>
-              <div class="service-icon"><i class="ri-shield-keyhole-line"></i></div>
-              <h3>Cyber Security</h3>
-              <p>Έλεγχοι ασφαλείας, πολιτικές συμμόρφωσης και εκπαίδευση ομάδων.</p>
-            </div>
-            <a class="service-btn" href="/ipiresies/cyber-security">Μάθε περισσότερα →</a>
           </article>
           <article class="service-glass-card" data-theme="blue">
             <div>
@@ -361,13 +353,6 @@ require_once __DIR__ . '/partials/csp-nonce.php';
         'name' => 'Business Consulting',
         'description' => 'Στρατηγικός σχεδιασμός και συμβουλευτικές υπηρεσίες για την ανάπτυξη της επιχείρησής σας',
         'serviceType' => 'Consulting',
-        'provider' => ['@type' => 'Organization','name' => 'Nerally']
-      ],
-      [
-        '@type' => 'Service',
-        'name' => 'Cyber Security',
-        'description' => 'Προστασία των ψηφιακών σας περιουσιακών στοιχείων με σύγχρονες λύσεις κυβερνοασφάλειας',
-        'serviceType' => 'Information Technology',
         'provider' => ['@type' => 'Organization','name' => 'Nerally']
       ],
       [

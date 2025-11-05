@@ -28,7 +28,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
       "name" => "Nerally",
       "url" => "https://nerally.gr",
       "logo" => "https://nerally.gr/images/logo.png",
-      "description" => "Λογιστικές υπηρεσίες, Μισθοδοσία, Business Consulting, Cyber Security, Social Media Management και άλλες σύγχρονες λύσεις για επιχειρήσεις",
+      "description" => "Λογιστικές υπηρεσίες, Μισθοδοσία, Business Consulting, Social Media Management και άλλες σύγχρονες λύσεις για επιχειρήσεις",
       "foundingDate" => "2020",
       "areaServed" => [
         "@type" => "Country",
@@ -341,7 +341,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
       <h2>Γιατί Εμάς</h2>
       <div class="why">
         <ul>
-          <li><span class="check">✓</span><span><strong>Ένας συνεργάτης, όλες οι λύσεις:</strong> από λογιστικά και μισθοδοσία έως marketing, cyber security και τεχνικές υπηρεσίες.</span></li>
+          <li><span class="check">✓</span><span><strong>Ένας συνεργάτης, όλες οι λύσεις:</strong> από λογιστικά και μισθοδοσία έως marketing και τεχνικές υπηρεσίες.</span></li>
           <li><span class="check">✓</span><span><strong>Ολιστική προσέγγιση:</strong> δεν βλέπουμε μεμονωμένα τις ανάγκες, σχεδιάζουμε στρατηγικά για το σύνολο της επιχείρησης.</span></li>
           <li><span class="check">✓</span><span><strong>Εμπειρία & τεχνογνωσία:</strong> ομάδα με πολυετή εμπειρία σε διαφορετικούς κλάδους.</span></li>
         </ul>
