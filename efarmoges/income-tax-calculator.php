@@ -86,10 +86,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     .rent-note { font-size: 13px; color: #555; background: #f6f7f8; border-radius: 6px; padding: 10px; margin-top: 6px; }
     .calc-slab { 
       width:100%; 
-      max-width:540px; 
-      position: sticky;
-      top: 20px;
-      align-self: flex-start;
+      max-width:540px;
     }
 
     .two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 40px; align-items: start; margin-top: 40px; }
