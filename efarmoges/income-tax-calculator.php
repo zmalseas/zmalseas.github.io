@@ -64,12 +64,17 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
       --accent: #2980B9; 
     }
     body { margin: 0; overflow-x: hidden; }
-    .rent-wrap { display: grid; grid-template-columns: 1fr 1fr; min-height: calc(100vh - 120px); }
+    .rent-wrap { display: grid; grid-template-columns: 1fr 1fr; min-height: calc(100vh - 120px); align-items: start; }
     .rent-left { background:#f4f6fb; padding:40px 32px; overflow:auto; animation: contentFade 0.5s ease-out 0.06s both; }
     .rent-right { 
       padding:40px 24px; display:flex; align-items:flex-start; justify-content:center;
       background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url('../images/ForosEisodimatos.webp');
-      background-size: cover; background-position: center; 
+      background-size: cover; background-position: center;
+      position: sticky;
+      top: 80px;
+      align-self: start;
+      max-height: calc(100vh - 100px);
+      overflow-y: auto;
     }
     .rent-left h1 { color: #000; font-size: 28px; margin: 0 0 20px; text-align: center; }
     .rent-left h1::after { display: none; }
@@ -87,10 +92,6 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     .calc-slab { 
       width:100%; 
       max-width:540px;
-      position: -webkit-sticky;
-      position: sticky;
-      top: 80px;
-      align-self: flex-start;
     }
 
     .two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 40px; align-items: start; margin-top: 40px; }
