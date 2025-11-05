@@ -11,6 +11,7 @@
   const op1 = $('op1');
 
   const fmt = new Intl.NumberFormat('el-GR', { style:'currency', currency:'EUR', minimumFractionDigits:2, maximumFractionDigits:2 });
+  const numberFmt = new Intl.NumberFormat('el-GR', { minimumFractionDigits:2, maximumFractionDigits:2 });
   
   let isCalculating = false;
 
@@ -24,6 +25,26 @@
       .replace(/,/g,'.'); // Convert decimal comma to dot
     const n = Number(cleaned);
     return isNaN(n)?0:n;
+  }
+  
+  // Format number input
+  function formatNumberInput(input){
+    const value = parseAmount(input.value);
+    if(value > 0){
+      input.value = numberFmt.format(value);
+    }
+  }
+  
+  // Set inputmode for numeric keyboard on mobile
+  if(amountEl){
+    amountEl.setAttribute('inputmode', 'decimal');
+    amountEl.addEventListener('blur', () => formatNumberInput(amountEl));
+    amountEl.addEventListener('focus', function(){
+      if(this.value){
+        const num = parseAmount(this.value);
+        if(num > 0) this.value = num.toString();
+      }
+    });
   }
 
   function activeVatRate(){
@@ -81,7 +102,7 @@
     vatOut.textContent = '—';
     rightOut.textContent = '—';
     op1.textContent = '+';
-    amountEl.focus();
+    if(amountEl) amountEl.focus();
   }
 
   function formatNumberInput(input){
@@ -91,12 +112,7 @@
     // Convert to number and format back
     const number = parseAmount(value);
     if(number && number > 0){
-      // Format as Greek number (1.234,56)
-      const formatted = new Intl.NumberFormat('el-GR', { 
-        minimumFractionDigits: 2, 
-        maximumFractionDigits: 2 
-      }).format(number);
-      input.value = formatted;
+      input.value = numberFmt.format(number);
     }
   }
 

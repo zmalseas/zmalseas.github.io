@@ -1,6 +1,7 @@
 // Logic and UI wiring for Income Tax Calculator, matching provided HTML logic
 (function(){
   const taxFmt = new Intl.NumberFormat('el-GR', { style:'currency', currency:'EUR', minimumFractionDigits:0, maximumFractionDigits:0 });
+  const numberFmt = new Intl.NumberFormat('el-GR', { minimumFractionDigits:2, maximumFractionDigits:2 });
   const pctFmt = v => (v*100).toFixed(0).replace('.',',')+'%';
 
   // Parse income like "14.944,40" or "14944.40" etc
@@ -9,6 +10,14 @@
     const cleaned = String(raw).replace(/€/g,'').replace(/\s+/g,'').replace(/\./g,'').replace(/,/g,'.');
     const n = Number(cleaned);
     return isNaN(n)?0:n;
+  }
+
+  // Format input on blur
+  function formatNumberInput(input){
+    const value = parseIncome(input.value);
+    if(value > 0){
+      input.value = numberFmt.format(value);
+    }
   }
 
   const BRACKETS = [
@@ -64,6 +73,18 @@
   const kpiTaxBefore = $('kpi-taxBefore');
   const kpiCredit = $('kpi-credit');
   const kpiFinalTax = $('kpi-finalTax');
+
+  // Add inputmode and blur formatting for income input
+  if(incomeEl){
+    incomeEl.setAttribute('inputmode', 'decimal');
+    incomeEl.addEventListener('blur', () => formatNumberInput(incomeEl));
+    incomeEl.addEventListener('focus', function(){
+      if(this.value){
+        const num = parseIncome(this.value);
+        if(num > 0) this.value = num.toString();
+      }
+    });
+  }
 
   function render(){
     const income = parseIncome(incomeEl.value);

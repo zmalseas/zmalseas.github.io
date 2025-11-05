@@ -14,6 +14,11 @@ class RentTaxCalculator {
         currency: 'EUR', 
         maximumFractionDigits: 2 
       });
+      
+      this.numberFmt = new Intl.NumberFormat('el-GR', { 
+        minimumFractionDigits: 2, 
+        maximumFractionDigits: 2 
+      });
 
       this.setupEventListeners();
       this.renderProps(1); // Initial render
@@ -133,13 +138,36 @@ class RentTaxCalculator {
       <div class="calc-grid calc-grid-2">
         <div>
           <label class="calc-label" for="rent_${i}">Μίσθωμα μηνιαίως (€)</label>
-          <input class="calc-input" id="rent_${i}" type="number" min="0" max="10000" step="0.01" placeholder="π.χ. 650" />
+          <input class="calc-input rent-input" id="rent_${i}" type="text" inputmode="decimal" placeholder="π.χ. 650,00" />
         </div>
         <div>
           <label class="calc-label" for="months_${i}">Μήνες μίσθωσης</label>
-          <input class="calc-input" id="months_${i}" type="number" min="1" max="12" step="1" placeholder="π.χ. 12" />
+          <input class="calc-input" id="months_${i}" type="number" inputmode="numeric" min="1" max="12" step="1" placeholder="π.χ. 12" />
         </div>
       </div>`;
+    
+    // Add event listeners for formatting
+    setTimeout(() => {
+      const rentInput = document.getElementById(`rent_${i}`);
+      if(rentInput){
+        rentInput.addEventListener('focus', (e) => {
+          const val = e.target.value.replace(/\./g, '').replace(',', '.');
+          const num = parseFloat(val);
+          if(!isNaN(num) && num > 0){
+            e.target.value = num.toString();
+          }
+        });
+        
+        rentInput.addEventListener('blur', (e) => {
+          const val = e.target.value.replace(/\./g, '').replace(',', '.');
+          const num = parseFloat(val);
+          if(!isNaN(num) && num > 0){
+            e.target.value = this.numberFmt.format(num);
+          }
+        });
+      }
+    }, 0);
+    
     return wrap;
   }
 
@@ -228,7 +256,8 @@ class RentTaxCalculator {
         const rentEl = document.getElementById(`rent_${i}`);
         const monthsEl = document.getElementById(`months_${i}`);
         
-        const rent = Number(rentEl?.value || 0);
+        const rentVal = rentEl?.value.replace(/\./g, '').replace(',', '.') || '0';
+        const rent = parseFloat(rentVal) || 0;
         const months = Math.max(0, Math.min(12, Number(monthsEl?.value || 0)));
         
         if (rent > 0 && months > 0) {

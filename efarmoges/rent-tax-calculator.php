@@ -315,7 +315,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
                 <div class="calc-grid">
                   <div>
                     <label class="calc-label" for="count">Αριθμός ακινήτων (1–5)</label>
-                    <input class="calc-input" id="count" type="number" min="0" max="5" step="1" value="1" />
+                    <input class="calc-input" id="count" type="number" inputmode="numeric" min="0" max="5" step="1" value="1" />
                   </div>
                   <div class="calc-muted" style="align-self:end; font-size:12px;">Συμπλήρωσε μίσθωμα/μήνες για κάθε ακίνητο και πάτησε <strong>Υπολογισμός</strong>.</div>
                 </div>
