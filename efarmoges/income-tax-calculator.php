@@ -84,7 +84,13 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     .rent-left ul li { margin-bottom: 14px; font-size: 17px; }
     .rent-left p strong, .rent-left ul li strong { color: #000; font-weight: 600; }
     .rent-note { font-size: 13px; color: #555; background: #f6f7f8; border-radius: 6px; padding: 10px; margin-top: 6px; }
-    .calc-slab { width:100%; max-width:540px; }
+    .calc-slab { 
+      width:100%; 
+      max-width:540px; 
+      position: sticky;
+      top: 20px;
+      align-self: flex-start;
+    }
 
     .two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 40px; align-items: start; margin-top: 40px; }
     .modern-table { max-width: 500px; margin: 0 auto; border-collapse: separate; border-spacing: 0; background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,.06); overflow: hidden; text-align: center; }
