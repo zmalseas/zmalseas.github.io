@@ -222,12 +222,12 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
       display: flex;
       align-items: flex-start;
       gap: 10px;
-      color: #111827;
+      color: #ffffffff;
       line-height: 1.6;
     }
     
     .reporting-box li span {
-      color: #111827;
+      color: #ffffffff;
     }
     
     .reporting-box li strong {
