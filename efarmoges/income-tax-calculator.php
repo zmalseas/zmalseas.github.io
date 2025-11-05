@@ -87,6 +87,10 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     .calc-slab { 
       width:100%; 
       max-width:540px;
+      position: -webkit-sticky;
+      position: sticky;
+      top: 80px;
+      align-self: flex-start;
     }
 
     .two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 40px; align-items: start; margin-top: 40px; }
