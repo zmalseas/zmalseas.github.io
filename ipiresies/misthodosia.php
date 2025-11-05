@@ -227,7 +227,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     }
     
     .reporting-box li span {
-      color: #ffffffff;
+      color: #000000ff;
     }
     
     .reporting-box li strong {
