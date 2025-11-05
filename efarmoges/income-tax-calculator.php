@@ -67,7 +67,7 @@ require_once __DIR__ . '/../partials/csp-nonce.php';
     .rent-wrap { display: grid; grid-template-columns: 1fr 1fr; min-height: calc(100vh - 120px); }
     .rent-left { background:#f4f6fb; padding:40px 32px; overflow:auto; animation: contentFade 0.5s ease-out 0.06s both; }
     .rent-right { 
-      padding:40px 24px; display:flex; align-items:center; justify-content:center;
+      padding:40px 24px; display:flex; align-items:flex-start; justify-content:center;
       background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url('../images/ForosEisodimatos.webp');
       background-size: cover; background-position: center; 
     }
